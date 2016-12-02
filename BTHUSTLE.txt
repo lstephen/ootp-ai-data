@@ -29,12 +29,13 @@ Pitching: 14014/20092 0.411/0.589
        HomeRuns | 0.013
           Walks | 0.058
              Ks | 0.217
-Features: Contact, Gap, Power, Eye, K, Speed
+Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: RandomForest
 Scores: [(0.22579218150750427, RandomForest(...))]
-Best Parameters: {'selection__k': 1, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}
+Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 1}
 Feature Scores: [ 124.   71.   89.   79.   89.   15.]
+Feature Mask: [ True False False False False False]
 Feature Importances: [ 1.]
 
 -- Doubles
@@ -42,6 +43,7 @@ Selected: RandomForest
 Scores: [(0.11711726277906975, RandomForest(...))]
 Best Parameters: {'regressor__max_depth': 35, 'selection__k': 3, 'regressor__n_estimators': 33}
 Feature Scores: [ 41.  46.  45.  40.  41.   8.]
+Feature Mask: [False  True  True False  True False]
 Feature Importances: [ 0.54  0.2   0.26]
 
 -- Triples
@@ -49,27 +51,31 @@ Selected: RandomForest
 Scores: [(-0.0016051749614682069, RandomForest(...))]
 Best Parameters: {'selection__k': 3, 'regressor__max_depth': 26, 'regressor__n_estimators': 14}
 Feature Scores: [ 0.  1.  0.  0.  0.  4.]
+Feature Mask: [False  True False False  True  True]
 Feature Importances: [ 0.25   0.271  0.479]
 
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.41994764708679139, RandomForest(...))]
-Best Parameters: {'selection__k': 3, 'regressor__max_depth': 32, 'regressor__n_estimators': 68}
+Best Parameters: {'regressor__max_depth': 32, 'selection__k': 3, 'regressor__n_estimators': 68}
 Feature Scores: [ 152.   69.  255.  184.  138.   14.]
+Feature Mask: [ True False  True  True False False]
 Feature Importances: [ 0.136  0.78   0.084]
 
 -- Walks
 Selected: RandomForest
 Scores: [(0.26224257720147881, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 3, 'selection__k': 1, 'regressor__n_estimators': 56}
+Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 1, 'regressor__max_depth': 3}
 Feature Scores: [  73.   48.   97.  134.   73.    4.]
+Feature Mask: [False False False  True False False]
 Feature Importances: [ 1.]
 
 -- Ks
 Selected: RandomForest
 Scores: [(0.065523831255444406, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 40, 'selection__k': 2, 'regressor__n_estimators': 4}
+Best Parameters: {'regressor__n_estimators': 4, 'selection__k': 2, 'regressor__max_depth': 40}
 Feature Scores: [ 33.  38.  40.  45.  57.   2.]
+Feature Mask: [False False False  True  True False]
 Feature Importances: [ 0.123  0.877]
 
 
@@ -79,48 +85,54 @@ Feature Importances: [ 0.123  0.877]
        HomeRuns | 0.037
           Walks | 0.053
              Ks | 0.045
-Features: Movement, Control, Stuff, GB%
+Features: Stuff, Control, Movement, Groundball Pct.
 -- Hits
 Selected: RandomForest
-Scores: [(0.1136665036906999, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 2, 'selection__k': 4, 'regressor__n_estimators': 84}
-Feature Scores: [  6.   3.  25.   0.]
-Feature Importances: [ 0.112  0.03   0.852  0.007]
+Scores: [(0.11315621508620106, RandomForest(...))]
+Best Parameters: {'selection__k': 4, 'regressor__max_depth': 2, 'regressor__n_estimators': 84}
+Feature Scores: [ 25.   3.   6.   0.]
+Feature Mask: [ True  True  True  True]
+Feature Importances: [ 0.852  0.03   0.112  0.007]
 
 -- Doubles
 Selected: RandomForest
 Scores: [(0.073741826321360213, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 1}
-Feature Scores: [ 6.  1.  0.  0.]
+Best Parameters: {'selection__k': 1, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}
+Feature Scores: [ 0.  1.  6.  0.]
+Feature Mask: [False False  True False]
 Feature Importances: [ 1.]
 
 -- Triples
 Selected: RandomForest
 Scores: [(-0.056235312361426017, RandomForest(...))]
-Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 19, 'regressor__max_depth': 1}
-Feature Scores: [ 3.  0.  2.  0.]
-Feature Importances: [ 0.526  0.474]
+Best Parameters: {'regressor__max_depth': 1, 'selection__k': 2, 'regressor__n_estimators': 19}
+Feature Scores: [ 2.  0.  3.  0.]
+Feature Mask: [ True False  True False]
+Feature Importances: [ 0.474  0.526]
 
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.053771739019558451, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 19, 'selection__k': 2, 'regressor__max_depth': 1}
-Feature Scores: [ 22.   1.   2.   0.]
-Feature Importances: [ 1.  0.]
+Best Parameters: {'regressor__n_estimators': 19, 'regressor__max_depth': 1, 'selection__k': 2}
+Feature Scores: [  2.   1.  22.   0.]
+Feature Mask: [ True False  True False]
+Feature Importances: [ 0.  1.]
 
 -- Walks
 Selected: RandomForest
 Scores: [(0.16178613329818473, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 78, 'selection__k': 1, 'regressor__max_depth': 35}
+Best Parameters: {'regressor__n_estimators': 78, 'regressor__max_depth': 35, 'selection__k': 1}
 Feature Scores: [  0.  23.   0.   0.]
+Feature Mask: [False  True False False]
 Feature Importances: [ 1.]
 
 -- Ks
 Selected: RandomForest
-Scores: [(0.50752549540558978, RandomForest(...))]
-Best Parameters: {'selection__k': 4, 'regressor__max_depth': 42, 'regressor__n_estimators': 92}
-Feature Scores: [   1.    1.  205.    5.]
-Feature Importances: [ 0.113  0.1    0.762  0.026]
+Scores: [(0.50977550158903295, RandomForest(...))]
+Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 92, 'regressor__max_depth': 42}
+Feature Scores: [ 205.    1.    1.    5.]
+Feature Mask: [ True  True  True  True]
+Feature Importances: [ 0.762  0.101  0.112  0.025]
 
 
 2B Goodridge, J    21| .321/.395/.532 127 117 | .287/.351/.489 115 110 | -3965---   2 |    || 117 || ML     *    |
@@ -196,25 +208,25 @@ MR Diep, R        I  *     DL 21 | 11.1  4.3  2.9  0.8 |  71  39 |  79  51 |  + 
 SP Klotz, R       IF  + ~ AAA 33 | 11.8  5.4  2.8  1.3 |  80  37 |  67  59 |  + ||  67 |
 SP Zubiaga, M             AAA 23 | 12.0  5.1  2.6  1.3 |  62     |  67     |  + ||  64 |
 MR Cañizares, H    F    ~ AAA 31 | 11.6  4.7  4.1  0.8 |  63  18 |  69   9 |  + ||  59 |
-SP Stegman, B       1     AAA 22 | 11.4  8.3  6.1  1.4 |  54     |  58     | -+ ||  57 |
-SP Mora, J             #  AAA 26 | 11.8  8.3  6.0  1.4 |  53     |  58     |  + ||  57 |
+SP Stegman, B       1     AAA 22 | 11.4  8.2  6.1  1.4 |  54     |  58     | -+ ||  57 |
+SP Mora, J             #  AAA 26 | 11.8  8.2  6.0  1.4 |  53     |  58     |  + ||  57 |
 SP Plante, A       F  + ~ AAA 32 | 12.2  6.1  6.2  0.8 |  57  63 |  57  30 | +  ||  55 |
-MR Quintana, M            AAA 20 | 12.1  4.8  3.2  1.3 |  58     |  63     |  + ||  54 |
+MR Quintana, M            AAA 20 | 12.1  4.7  3.2  1.3 |  58     |  63     |  + ||  54 |
 SP Rodriguez, M        #~ AAA 26 | 13.0  8.3  6.3  1.3 |  58     |  49     |  - ||  50 |
 SP Hernandez, F            AA 26 | 13.1  5.4  6.2  1.4 |  49     |  49     |  - ||  49 |
 SP Wingert, J       6      AA 18 | 13.5  5.5  6.2  1.5 |  47     |  47     | +  ||  47 |
 SP Lyon, A                 AA 21 | 13.4  5.4  6.2  1.5 |  47     |  47     |  + ||  47 |
 MR Melillo, R             AAA 24 | 12.7  5.5  6.1  0.9 |  54     |  54     |  + ||  47 |
 SP Taveras, M               A 21 | 13.6  5.6  6.4  1.5 |  46     |  46     | +- ||  46 |
-SP Leu, T              #   AA 20 | 13.3  5.5  6.3  1.4 |  49     |  50     | +- ||  46 |
+SP Leu, T              #   AA 20 | 13.3  5.6  6.3  1.4 |  49     |  50     | +- ||  46 |
 SP Rodriguez, A            AA 19 | 13.5  5.6  6.4  1.5 |  46     |  46     |  + ||  46 |
-SP Mailloux, J      T       A 19 | 13.5  5.5  6.2  1.5 |  46     |  47     | +  ||  45 |
+SP Mailloux, J      T       A 19 | 13.5  5.6  6.2  1.5 |  46     |  47     | +  ||  45 |
 SP Kluge, W                 A 20 | 13.5  5.5  6.4  1.5 |  46     |  46     | ++ ||  45 |
 MR Herrera, G          #   AA 26 | 12.9  6.0  6.0  1.3 |  69     |  49     |    ||  43 |
 MR Gaspar, M                A 22 | 13.3  6.4  6.2  1.5 |  47     |  47     |  + ||  41 |
 MR Hernandez, P            AA 21 | 13.5  5.5  6.2  1.5 |  48     |  47     |  - ||  41 |
 MR Tarver, S           #~  AA 25 | 13.3  6.3  6.2  1.5 |  49     |  47     |  + ||  41 |
-MR Ayo, S                  AA 24 | 13.3  5.3  6.2  1.5 |  47     |  47     |  + ||  41 |
+MR Ayo, S                  AA 24 | 13.3  5.2  6.2  1.5 |  47     |  47     |  + ||  41 |
 MR Serra, J                 A 19 | 13.5  5.6  6.4  1.5 |  46     |  46     |  - ||  40 |
 MR Volkman, W               A 19 | 13.6  5.6  6.4  1.5 |  46     |  46     |  - ||  40 |
 MR Wingard, B               A 22 | 13.6  5.6  6.4  1.5 |  46     |  46     |    ||  40 |
@@ -252,8 +264,8 @@ Balance:53/42 = 1.262 (ideal: 1.273)
 
  AAA -> AA    C Arthur Orr
   AA -> AAA  LF Juan Santos
-  AA -> A     C George Bradley Jr.
   AA -> A    SP Joshua Mailloux
+  AA -> A     C George Bradley Jr.
    A -> AA   MR Sergio Ayo
    A -> AA   3B Kuemon Takamasa
   DL ->      CF Michal Evelyn
@@ -354,42 +366,43 @@ DH:  74
 
 SP:  78
 MR:  68
+
 Hitters
-CF Patrick Gildersleeve      | 37 CF : 115     -13  10 : 112 | 38 CF : 115     -11  12 : 117 |  +4
-SS Luis Ramos                | 21 SS :  86       1  -3 :  84 | 22 SS :  86       1  -3 :  84 |  +0
- C Larry Davis               | 24  C :  71       7 -16 :  63 | 24  C :  71       7 -16 :  63 |  +0
- C James Ikner               | 23  C :  93       5   4 : 102 | 24  C :  93       5   4 : 102 |  +0
-RF Austin Anderson           | 30 CF :  98      -4   2 :  96 | 31 CF :  98      -4   2 :  96 |  +0
-3B Hollis Rowland            | 30 3B :  93       1   9 : 104 | 31 3B :  93       1   9 : 104 |  +0
-CF Craig Parkhill            | 31 CF : 123     -11  20 : 132 | 32 CF : 123     -11  20 : 132 |  +0
+ C Larry Davis               | 24  C :  62       7 :  69 | 24  C :  71       7 :  78 |  +9
+ C James Ikner               | 23  C :  90       5 :  95 | 24  C :  93       5 :  98 |  +3
+CF Patrick Gildersleeve      | 37 CF : 115     -13 : 102 | 38 CF : 115     -11 : 104 |  +2
+RF Austin Anderson           | 30 CF :  97      -4 :  93 | 31 CF :  98      -4 :  94 |  +1
+SS Luis Ramos                | 21 SS :  87       1 :  88 | 22 SS :  86       1 :  87 |  -1
+3B Hollis Rowland            | 30 3B :  94       1 :  95 | 31 3B :  93       1 :  94 |  -1
+CF Craig Parkhill            | 31 CF : 124     -11 : 113 | 32 CF : 123     -11 : 112 |  -1
 
 Pitchers
-SP Jeffrey Ash               | 30 SP :      97      19 : 116 | 30 SP :     101      23 : 124 |  +8
-SP Miguel Rodriguez          | 25 MR :      43     -22 :  22 | 26 MR :      43     -22 :  22 |  +0
-MR Greg Dunkley              | 27 MR :      75       6 :  81 | 27 MR :      75       6 :  81 |  +0
-SP James Lashley             | 30 SP :      80       2 :  82 | 31 SP :      80       2 :  82 |  +0
-MR Alex Gutierrez            | 31 MR :      95      23 : 118 | 32 MR :      95      23 : 118 |  +0
-SP Gary Reith                | 32 SP :      87       9 :  96 | 33 SP :      87       9 :  96 |  +0
-SP George Coletti            | 34 SP :      97      19 : 115 | 35 SP :      97      19 : 115 |  +0
-MR Nestor Urbina             | 34 MR :      88      17 : 105 | 35 MR :      88      17 : 105 |  +0
+SP Jeffrey Ash               | 30 SP :     100     : 100 | 30 SP :     101     : 101 |  +1
+MR Greg Dunkley              | 27 MR :      75     :  75 | 27 MR :      75     :  75 |  +0
+SP James Lashley             | 30 SP :      80     :  80 | 31 SP :      80     :  80 |  +0
+MR Alex Gutierrez            | 31 MR :      96     :  96 | 32 MR :      95     :  95 |  -1
+SP Gary Reith                | 32 SP :      88     :  88 | 33 SP :      87     :  87 |  -1
+MR Nestor Urbina             | 34 MR :      90     :  90 | 35 MR :      88     :  88 |  -2
+SP Miguel Rodriguez          | 25 SP :      54     :  54 | 26 SP :      50     :  50 |  -4
+SP George Coletti            | 34 SP :     108     : 108 | 35 SP :      97     :  97 | -11
 
-1E | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 139 ( 53-185) | 145 ( 59-191) 132/160 |  20/ 20
+1E | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 139 (123-185) | 145 (129-191) 132/160 |  20/ 20
 1M | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 120 (114-132) | 126 (120-138) 114/138 |  20/ 20
 1L | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 113 (102-119) | 119 (108-125) 108/131 |  24/ 24
 2E | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 100 ( 90-114) | 106 ( 96-120)  96/117 |  32/ 32
 2L | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  91 ( 85- 99) |  97 ( 91-105)  89/107 |  32/ 32
 
- 1 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 119 ( 53-185) | 125 ( 59-191) 114/138 |  64/ 64
+ 1 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 119 (102-185) | 125 (108-191) 114/138 |  64/ 64
  2 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  96 ( 85-114) | 102 ( 91-120)  92/112 |  64/ 64
  3 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  83 ( 51- 93) |  89 ( 57- 99)  81/ 98 |  64/ 64
- 4 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  71 ( 63- 78) |  77 ( 69- 84)  70/ 84 |  64/ 64
+ 4 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  71 ( 50- 78) |  77 ( 56- 84)  70/ 84 |  64/ 64
  5 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  65 ( 54- 71) |  71 ( 60- 77)  64/ 78 |  64/ 64
- 6 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  60 ( -8- 67) |  66 ( -2- 73)  60/ 72 |  64/ 64
+ 6 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  61 ( 46- 67) |  67 ( 52- 73)  61/ 73 |  64/ 64
  7 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  56 ( 41- 62) |  62 ( 47- 68)  57/ 69 |  64/ 64
  8 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  53 ( 35- 58) |  59 ( 41- 64)  53/ 65 |  64/ 64
- 9 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  47 (-21- 55) |  53 (-15- 61)  48/ 59 |  64/ 64
-10 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  47 (  6- 73) |  53 ( 12- 79)  49/ 59 |  64/ 64
-11 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  47 ( 30- 50) |  53 ( 36- 56)  48/ 58 |  48/ 48
+ 9 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  50 ( 25- 55) |  56 ( 31- 61)  51/ 61 |  64/ 64
+10 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  47 (  6- 63) |  53 ( 12- 69)  49/ 59 |  64/ 64
+11 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  47 ( 39-110) |  53 ( 45-116)  48/ 58 |  48/ 48
 12 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  43 ( 32- 46) |  49 ( 38- 52)  45/ 54 |  48/ 48
 13 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  40 ( 23- 44) |  46 ( 29- 50)  42/ 51 |  48/ 48
 14 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  38 ( 15- 41) |  44 ( 21- 47)  40/ 48 |  48/ 48
@@ -397,8 +410,8 @@ MR Nestor Urbina             | 34 MR :      88      17 : 105 | 35 MR :      88  
 16 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  31 ( 29- 35) |  37 ( 35- 41)  34/ 41 |  32/ 32
 17 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  29 ( 26- 43) |  35 ( 32- 49)  32/ 38 |  32/ 32
 18 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  25 ( 21- 28) |  31 ( 27- 34)  28/ 34 |  32/ 32
-19 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  19 (-50- 24) |  25 (-44- 30)  22/ 27 |  32/ 32
-20 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  13 ( 10- 17) |  21 ( 16- 23)  19/ 23 |  32/ 32
+19 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  19 ( 16- 24) |  25 ( 22- 30)  23/ 27 |  32/ 32
+20 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  13 ( 10- 30) |  21 ( 16- 36)  19/ 23 |  32/ 32
 
 CF Parkhill, C     32|  20,000,000            
 SP Barney, C       34|  15,000,000  15,000,000
@@ -759,7 +772,7 @@ MR Marvin Gaspar             22| MR :      41     -24 :  17 | MR :      43     -
 MR Scott Tarver              25| MR :      41     -24 :  17 | MR :      42     -29 :  13 |   6 |  23 |          |      #~           |        :        |  p359 | Houston Astros       | +++
 
 --- Philadelphia A's ---
-SP Ryan Loya                 23| SP :     111      33 : 144 | SP :     120      39 : 159 |   6 | 165 |          | I    #    $500k a | $19.51M:$32.46M |  p847 | Philadelphia A's     | +++++
+SP Ryan Loya                 23| SP :     112      34 : 146 | SP :     120      39 : 159 |   6 | 165 |          | I    #    $500k a |  $20.1M:$33.44M |  p847 | Philadelphia A's     | +++++
 2B Dean Stafford             31| 2B : 124      -9  31 : 145 |    :                 :   0 |   2 | 147 | -3521--- |    *+      $23Mx6 | $18.33M:$30.49M |  p384 | Philadelphia A's     | ****
 SP Edward Salguero           22| MR :      40     -25 :  15 | SP :     105      24 : 129 |   6 | 135 |          |   2               |        :        | p1849 | Philadelphia A's     | +++++
 3B Marcelo Amato             24| 3B :  94      -2   8 : 100 | 3B : 108      -2  22 : 128 |   6 | 134 | -3574--- |   3               |  $4.73M: $7.87M |  p590 | Philadelphia A's     | +++++
@@ -1395,10 +1408,10 @@ CF William Reger             22| CF :  99      -3   4 : 100 | CF : 111      -3  
 MR Miguel Landeros           24| MR :      92      20 : 112 | MR :      98      19 : 117 |   6 | 123 |          |    *      $500k r | $11.83M:$19.67M |  p889 | Kansas City Royals   | +++++
 SS Harley Dyess              25| 3B :  98      -4   9 : 103 | 3B : 103      -4  15 : 114 |   6 | 120 | -86751-1 |    *      $500k r |  $5.32M: $8.85M | p1104 | Kansas City Royals   | +++-
 3B Philip Davies             25| 3B :  95      -2   8 : 101 | 3B : 100      -2  14 : 112 |   6 | 118 | -8776313 |    *      $500k a |  $4.73M: $7.87M |  p916 | Kansas City Royals   | ++++
-SP Giovanni Greene           31| SP :      97      19 : 116 |    :                 :   0 |   2 | 118 |          |    *+    $14.5Mx3 | $11.23M:$18.69M |  p430 | Kansas City Royals   | **^
 MR Lawrence Barber           30| MR :      93      21 : 114 |    :                 :   0 |   3 | 117 |          |  F *     $2.34M   | $12.42M:$20.66M |   p78 | Kansas City Royals   | ***
 SS Alberto Valdivieso        21| SS :  91       3   4 :  98 | SS :  96       3  12 : 110 |   6 | 116 | -87771-1 |    *              |  $2.37M: $3.93M | p1131 | Kansas City Royals   | +++
 SP Billy Landwehr            23| SP :      91      13 : 105 | SP :      95      14 : 110 |   6 | 116 |          |    *      $500k a |  $7.69M:$12.79M |  p876 | Kansas City Royals   | +++++
+SP Giovanni Greene           31| SP :      96      18 : 114 |    :                 :   0 |   2 | 116 |          |    *+    $14.5Mx3 | $10.64M:$17.71M |  p430 | Kansas City Royals   | **^
 3B Brian McKernan            23| SS :  87       6   3 :  96 | SS :  91       6  10 : 107 |   6 | 113 | 39877767 |    *      $500k r |  $1.77M: $2.95M |  p841 | Kansas City Royals   | +++
  C Lee Campbell              26|  C :  95      -1   0 :  94 |  C :  99      -1   9 : 107 |   6 | 113 | 68353--- |    *      $500k a |        :        |  p940 | Kansas City Royals   | ***^
 SP Nickolas Orduna           28| SP :      93      15 : 108 |    :                 :   0 |   5 | 113 |          |    *+     $500k a |  $8.87M:$14.75M |  p833 | Kansas City Royals   | *^
@@ -1595,8 +1608,8 @@ SP Jordan Goss               26| MR :      55     -11 :  44 | SP :      75      
 American League
 East ----------------+
 Cincinnati Reds      | 105.0 105.2 109.9 | 110.8 115.7 124.0 | 105- 57 0.650 |  78- 40 0.661 | 107- 55 0.660 ( 1) 
-Philadelphia A's     |  98.4  97.4  95.8 |  98.4  94.4  92.5 |  71- 91 0.440 |  66- 52 0.559 |  85- 77 0.525 ( 5) 
-Colorado Rockies     |  99.0  99.1  98.0 | 104.3 100.7 105.0 |  83- 79 0.515 |  55- 63 0.466 |  78- 84 0.481 ( 8) 
+Philadelphia A's     |  98.4  97.4  95.8 |  98.5  94.6  92.8 |  71- 91 0.441 |  66- 52 0.559 |  85- 77 0.525 ( 5) 
+Colorado Rockies     |  99.0  99.1  98.0 | 104.3 100.7 105.0 |  83- 79 0.514 |  55- 63 0.466 |  78- 84 0.481 ( 8) 
 St. Louis (C) Car... | 100.9 102.0 102.8 |  91.1  89.8  79.9 |  65- 97 0.403 |  58- 60 0.492 |  76- 86 0.469 ( 9) 
 West ----------------+
 Detroit Tigers       |  97.2  96.9  94.0 | 103.9 107.6 110.9 |  84- 78 0.521 |  61- 57 0.517 |  84- 78 0.519 ( 6) 
@@ -1609,12 +1622,12 @@ East ----------------+
 St. Louis (B) Browns | 102.8 102.1 104.8 | 112.9 115.5 125.9 | 103- 59 0.635 |  77- 41 0.653 | 105- 57 0.648 ( 2) 
 New York Mets        | 104.6 103.4 107.9 | 118.7 116.7 132.1 | 109- 53 0.670 |  71- 47 0.602 | 100- 62 0.617 ( 3) 
 Brooklyn Dodgers     | 100.3 101.3 101.6 |  93.9  93.7  87.2 |  71- 91 0.440 |  63- 55 0.534 |  82- 80 0.506 ( 7) 
-Chicago Cubs         |  98.3 101.3  99.6 |  94.4  92.7  86.5 |  69- 93 0.426 |  55- 63 0.466 |  74- 88 0.457 (11) 
+Chicago Cubs         |  98.3 101.3  99.6 |  94.5  92.7  86.6 |  69- 93 0.427 |  55- 63 0.466 |  74- 88 0.457 (11) 
 West ----------------+
 Boston Red Sox       | 107.0 109.5 115.6 | 105.7 109.8 114.6 | 103- 59 0.637 |  62- 56 0.525 |  90- 72 0.556 ( 4) 
 Seattle Pilots       | 101.1 100.4 101.5 |  93.6  92.7  85.7 |  70- 92 0.431 |  52- 66 0.441 |  71- 91 0.438 (12) 
 Houston Astros       | 104.2 102.7 106.9 |  96.3  94.1  90.1 |  78- 84 0.481 |  48- 70 0.407 |  69- 93 0.426 (13) 
-Kansas City Royals   |  99.0  96.1  94.9 |  94.7  93.4  87.7 |  66- 96 0.409 |  44- 74 0.373 |  62-100 0.383 (15) 
+Kansas City Royals   |  99.0  96.1  94.9 |  94.6  93.3  87.4 |  66- 96 0.408 |  44- 74 0.373 |  62-100 0.383 (15) 
                      |              97.0 |              92.8 |
 
 --- Non Top prospects ---
