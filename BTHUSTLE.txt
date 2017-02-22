@@ -41,7 +41,7 @@ Feature Importances: [ 1.]
 -- Doubles
 Selected: RandomForest
 Scores: [(0.14681119738812362, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 2, 'selection__k': 4, 'regressor__n_estimators': 84}
+Best Parameters: {'regressor__max_depth': 2, 'regressor__n_estimators': 84, 'selection__k': 4}
 Feature Scores: [ 69.  71.  68.  56.  67.  10.]
 Feature Mask: [ True  True  True False  True False]
 Feature Importances: [ 0.042  0.685  0.234  0.039]
@@ -49,7 +49,7 @@ Feature Importances: [ 0.042  0.685  0.234  0.039]
 -- Triples
 Selected: RandomForest
 Scores: [(0.11145048277534149, RandomForest(...))]
-Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 64, 'regressor__max_depth': 2}
+Best Parameters: {'regressor__n_estimators': 64, 'regressor__max_depth': 2, 'selection__k': 4}
 Feature Scores: [ 0.  1.  0.  0.  0.  4.]
 Feature Mask: [False  True  True False  True  True]
 Feature Importances: [ 0.03   0.031  0.049  0.889]
@@ -65,7 +65,7 @@ Feature Importances: [ 0.068  0.752  0.087  0.093]
 -- Walks
 Selected: RandomForest
 Scores: [(0.20452717992387157, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 36, 'selection__k': 3, 'regressor__n_estimators': 13}
+Best Parameters: {'selection__k': 3, 'regressor__max_depth': 36, 'regressor__n_estimators': 13}
 Feature Scores: [  55.   33.   72.  100.   45.    2.]
 Feature Mask: [ True False  True  True False False]
 Feature Importances: [ 0.162  0.149  0.689]
@@ -89,7 +89,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: RandomForest
 Scores: [(0.073141681985230078, RandomForest(...))]
-Best Parameters: {'selection__k': 1, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}
+Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 1}
 Feature Scores: [ 28.   6.   6.   1.   1.]
 Feature Mask: [ True False False False False]
 Feature Importances: [ 1.]
@@ -105,7 +105,7 @@ Feature Importances: [ 0.184  0.256  0.202  0.268  0.09 ]
 -- Triples
 Selected: RandomForest
 Scores: [(1.0, RandomForest(...))]
-Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 52, 'regressor__max_depth': 39}
+Best Parameters: {'regressor__n_estimators': 52, 'regressor__max_depth': 39, 'selection__k': 5}
 Feature Scores: [ nan  nan  nan  nan  nan]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.  0.  0.  0.  0.]
@@ -113,7 +113,7 @@ Feature Importances: [ 0.  0.  0.  0.  0.]
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.079296780280412135, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 54, 'selection__k': 2, 'regressor__max_depth': 6}
+Best Parameters: {'selection__k': 2, 'regressor__max_depth': 6, 'regressor__n_estimators': 54}
 Feature Scores: [  1.   1.  25.   0.   0.]
 Feature Mask: [ True False  True False False]
 Feature Importances: [ 0.36  0.64]
@@ -129,7 +129,7 @@ Feature Importances: [ 0.092  0.646  0.083  0.087  0.092]
 -- Ks
 Selected: RandomForest
 Scores: [(0.51038138976286218, RandomForest(...))]
-Best Parameters: {'selection__k': 5, 'regressor__max_depth': 11, 'regressor__n_estimators': 88}
+Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 88, 'regressor__max_depth': 11}
 Feature Scores: [ 231.    3.    3.    2.    3.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.779  0.069  0.089  0.026  0.037]
@@ -155,39 +155,39 @@ Pitching Features
 2B Goodridge, J    22| .313/.393/.529 127 169 | .279/.350/.415 108  94 | -3965---   3 |    || 112 || ML     *    |
 CF Parkhill, C     33| .284/.369/.544 124 130 | .272/.355/.545 122 115 | -1---245 -11 |  - || 111 || ML     *+   |
 SS Sharma, A       36| .258/.317/.361  97  72 | .252/.315/.366  97  99 | -3398---  10 |  + || 107 || ML   F *+   |
-2B Harris, W       36| .246/.297/.342  91  62 | .282/.353/.397 107  91 | -3863---   0 | -+ || 106 || AAA  F  +   |
+2B Harris, W       36| .246/.297/.342  91  62 | .282/.353/.397 107  91 | -3863---   0 | -+ || 106 || ML   F  +   |
 CF West, B         27| .245/.332/.439 107 100 | .250/.325/.429 105  96 | -7142888   0 |  + || 105 || ML     *+   |
 CF Tomas, F        33| .261/.308/.341  93  81 | .280/.352/.398 107 111 | -2---377  -3 |  + || 103 || ML     *+   |
 2B Serrano, R      38| .243/.354/.356 104 109 | .274/.355/.397 107 105 | -2621---  -4 |    || 103 || ML   F *    |
 C  Howell, J       25| .244/.291/.333  89 132 | .245/.294/.356  92  94 | 81------  10 | -  || 102 || ML     *    |
 CF Gildersleeve, P 39| .183/.300/.285  87  76 | .260/.361/.469 115  99 | -3---242 -12 |  + || 102 || DL  IF  +   |
 C  Ikner, J        25| .254/.302/.376  95 109 | .249/.304/.360  94  92 | 73666---   5 |  + ||  99 || ML     *+   |
-RF McCown, H       37| .252/.322/.460 107     | .252/.319/.432 104     | -3---439  -5 |  + ||  99 || AAA  F      |
+RF McCown, H       37| .252/.322/.460 107     | .252/.319/.432 104     | -3---439  -5 |  + ||  99 || ML   F      |
 C  Fasching, A     25| .242/.288/.301  85 114 | .244/.289/.293  85  87 | 91------  13 |  - ||  98 || AAA    *    |
 SS Watson, I       35| .235/.270/.358  88  15 | .224/.260/.365  86 115 | -3878---  11 |  + ||  97 || ML   F *  ~ |
 CF Starr, M        26| .261/.318/.412 102  96 | .257/.314/.405 101  96 | -5---969  -4 |  - ||  97 || ML     *    |
-SS Drysdale, W     30| .252/.280/.418  96 124 | .244/.289/.389  94 117 | -8836114   2 |  + ||  96 || ML     *+ ~ |
-3B Rowland, H      32| .246/.304/.375  96  69 | .248/.320/.326  94  87 | -3383---   2 | -+ ||  96 || ML     *+ ~ |
+SS Drysdale, W     30| .252/.280/.418  96 124 | .244/.289/.389  94 117 | -8836114   2 |  + ||  96 || AAA    *+ ~ |
+3B Rowland, H      32| .246/.304/.375  96  69 | .248/.320/.326  94  87 | -3383---   2 | -+ ||  96 || AAA    *+ ~ |
 3B Suarez, A       31| .257/.304/.388  97  72 | .259/.305/.409  99 108 | -3362---  -4 | -+ ||  95 || ML     *+   |
 CF Anderson, A     32| .238/.284/.397  94 120 | .242/.287/.418  97  85 | -2---676  -3 |  - ||  94 || AAA  F *+ ~ |
 SS Goldstein, J    30| .226/.284/.369  91  57 | .209/.249/.346  83 113 | -3838---  10 |  - ||  93 || AAA     + ~ |
 C  Orr, A          21| .244/.289/.306  86     | .244/.289/.306  86     | 71------   7 |  + ||  93 || AAA   8*    |
 CF Mailloux, J     30| .243/.285/.340  89 221 | .243/.285/.339  88  70 | -7---993   4 |    ||  92 || AAA    *+ ~ |
-SS Bell, L         33| .237/.272/.406  93     | .220/.244/.359  83     | -3378---   8 |    ||  91 || AAA    *+ ~ |
-SS Santoro, M      23| .222/.252/.318  80     | .227/.261/.324  82     | -3767---   5 |  + ||  87 || AAA  F  +#~ |
+SS Bell, L         33| .237/.272/.406  93     | .220/.244/.359  83     | -3378---   8 |    ||  91 || AA     *+ ~ |
+SS Santoro, M      23| .222/.252/.318  80     | .227/.261/.324  82     | -3767---   5 |  + ||  87 || AA   F  +#~ |
 LF Williams, F     23| .248/.300/.342  92  61 | .256/.305/.370  95  94 | -2---737  -8 |  + ||  87 || AAA   6*    |
 2B Charlie, P      23| .236/.273/.310  83     | .244/.290/.315  87     | -2771512  -1 |  - ||  86 || AAA  F   #  |
 SS Portillo, D     26| .210/.250/.287  77     | .219/.261/.297  80     | -3387---   6 | +  ||  86 || AA   F   #~ |
 CF Sauter, L       23| .247/.304/.316  90   0 | .241/.292/.311  87  86 | -2---878  -1 | -  ||  86 || AAA   9*    |
-CF Lantigua, A     19| .203/.234/.290  74     | .241/.279/.332  86     | -2---878  -1 |  - ||  85 || A     7     |
+CF Lantigua, A     19| .203/.234/.290  74     | .241/.279/.332  86     | -2---878  -1 |  - ||  85 || AAA   7     |
 C  Forest, J       23| .198/.229/.282  72     | .237/.281/.327  87     | 51------  -1 |  + ||  85 || AAA         |
 3B Tepper, J       20| .255/.307/.371  96     | .236/.273/.359  88     | -3362---  -6 | -  ||  83 || AAA   5*    |
 CF Schafer, R      33| .235/.294/.317  88 156 | .220/.266/.304  82 114 | -2---983   0 |  + ||  82 || DL  IF      |
-CF Schipper, J     21| .205/.243/.310  78     | .208/.248/.313  79     | -2---388   1 | -+ ||  80 || AA          |
+CF Schipper, J     21| .205/.243/.310  78     | .208/.248/.313  79     | -2---388   1 | -+ ||  80 || A           |
 CF Olivares, A     25| .219/.261/.322  82     | .225/.265/.337  85     | -2---667  -5 |  + ||  79 || AA       #  |
 SS Macaulay, C     24| .226/.259/.294  79     | .204/.239/.261  72     | -3367---   6 |  - ||  78 || AA          |
 C  Bongiorno, H    21| .206/.237/.264  72     | .206/.237/.266  72     | 71------   6 |  + ||  78 || A           |
-LF Lamberth, D     26| .239/.272/.332  85     | .241/.272/.328  85     | -611-857  -8 | -+ ||  77 || AA   F  +   |
+LF Lamberth, D     26| .239/.272/.332  85     | .241/.272/.328  85     | -611-857  -8 | -+ ||  77 || AAA  F  +   |
 3B Devera, J       20| .237/.281/.298  83     | .206/.236/.260  71     | -3993115   4 |  + ||  76 || A           |
 LF Santos, J       23| .214/.240/.309  77     | .242/.276/.360  89     | -3---414 -15 |  - ||  73 || AAA         |
 CF Fano, R         26| .203/.234/.318  77     | .202/.232/.316  76     | -2---378  -3 | -  ||  73 || AA          |
@@ -244,13 +244,13 @@ SP Rodriguez, M    F   #   AA 27 | 11.4  7.4  6.4  1.6 |  56     |  53     |  - 
 SP Chavez, S      I 3      AA 21 | 12.0  8.3  6.6  1.5 |  52     |  52     |  + ||  52 |
 SP Nampo, S                 A 17 | 14.1  4.7  3.5  1.5 |  49     |  56     |  + ||  51 |
 SP Kluge, W                AA 21 | 14.8  5.4  6.9  1.6 |  41     |  42     | ++ ||  41 |
-SP Lyon, A                 AA 22 | 15.1  5.5  6.9  1.8 |  41     |  40     |  + ||  40 |
 MR Dial, E                  A 17 | 14.7  4.8  4.8  1.5 |  39     |  47     |  + ||  40 |
-SP Taveras, M              AA 22 | 15.9  5.5  7.1  1.6 |  38     |  38     | +- ||  38 |
+SP Lyon, A                 AA 22 | 15.1  5.5  6.9  1.8 |  41     |  40     |  + ||  40 |
 SP Coughlin, D              A 19 | 15.7  5.4  7.1  1.6 |  39     |  39     |  - ||  38 |
 SP Rodriguez, A     T*      A 20 | 15.8  5.6  7.0  1.7 |  39     |  38     |  + ||  38 |
-MR Ayo, S              #   AA 25 | 14.8  4.9  6.9  1.6 |  42     |  43     |  + ||  37 |
+SP Taveras, M              AA 22 | 15.9  5.5  7.1  1.6 |  38     |  38     | +- ||  38 |
 SP Mailloux, J         #    A 20 | 15.8  5.5  7.2  1.7 |  39     |  38     | +  ||  37 |
+MR Ayo, S              #   AA 25 | 14.8  4.9  6.9  1.6 |  42     |  43     |  + ||  37 |
 MR Anaya, A                 A 21 | 15.6  5.4  6.5  1.6 |  44     |  39     |  + ||  34 |
 MR Sarvis, F                A 18 | 15.7  5.4  7.1  1.6 |  38     |  38     |  + ||  33 |
 MR Volkman, W               A 20 | 15.8  5.4  7.1  1.7 |  38     |  38     |  - ||  33 |
@@ -270,40 +270,41 @@ MR Nam, D                   A 19 | 15.9  5.4  7.1  1.6 |  38     |  38     |    
  MR Gutierrez, A    33 | MR Lenard, J       25 | MR Quintana, M     21 | MR Volkman, W      20 |                       |
  MR Rego, M         34 | MR Williamson, D   35 |  C Davis, L        25 |  C Au, N           17 |                       |
  MR Urbina, N       36 |  C Fasching, A     25 | 1B Gonzalez, J     22 |  C Barcenas, M     21 |                       |
-  C Howell, J       25 |  C Forest, J       23 | 1B Lamberth, D     26 |  C Bongiorno, H    21 |                       |
-  C Ikner, J        25 |  C Orr, A          21 | 2B Sachs, J        22 |  C Bradley Jr., G  21 |                       |
- 1B West, B         27 | 1B Mailloux, J     30 | 3B Hirsh, H        24 |  C Pauley, B       20 |                       |
- 2B Drysdale, W     30 | 2B Goldstein, J    30 | 3B Menjivar, P     23 | 1B Truman, J       21 |                       |
- 2B Goodridge, J    22 | 2B Harris, W       36 | 3B Portillo, D     26 | 2B Hidalgo, A      20 |                       |
- 2B Serrano, R      38 | 2B Santoro, M      23 | 3B Takamasa, K     22 | 3B Devera, J       20 |                       |
- 2B Watson, I       35 | 3B Tepper, J       20 | SS Macaulay, C     24 | 3B Stephen, J      20 |                       |
- 3B Rowland, H      32 | SS Bell, L         33 | LF Contreras, J    22 | SS Bellido, B      21 |                       |
- 3B Sharma, A       36 | LF Charlie, P      23 | LF Olivares, A     25 | LF Lantigua, A     19 |                       |
- 3B Suarez, A       31 | LF Williams, F     23 | CF Fano, R         26 | LF Takamuku, R     18 |                       |
- CF Parkhill, C     33 | CF Sauter, L       23 | CF Mason, F        22 | RF Albarado, H     20 |                       |
- CF Starr, M        26 | RF Anderson, A     32 | CF Schipper, J     21 | RF Wilson, R       21 |                       |
- RF Tomas, F        33 | RF McCown, H       37 | RF Maziarz, D      25 |                       |                       |
+  C Howell, J       25 |  C Forest, J       23 | 2B Sachs, J        22 |  C Bongiorno, H    21 |                       |
+  C Ikner, J        25 |  C Orr, A          21 | 2B Santoro, M      23 |  C Bradley Jr., G  21 |                       |
+ 1B West, B         27 | 1B Lamberth, D     26 | 3B Hirsh, H        24 |  C Pauley, B       20 |                       |
+ 2B Goodridge, J    22 | 1B Mailloux, J     30 | 3B Menjivar, P     23 | 1B Truman, J       21 |                       |
+ 2B Harris, W       36 | 2B Drysdale, W     30 | 3B Portillo, D     26 | 2B Hidalgo, A      20 |                       |
+ 2B Serrano, R      38 | 2B Goldstein, J    30 | 3B Takamasa, K     22 | 3B Devera, J       20 |                       |
+ 2B Watson, I       35 | 3B Rowland, H      32 | SS Bell, L         33 | 3B Stephen, J      20 |                       |
+ 3B Sharma, A       36 | 3B Tepper, J       20 | SS Macaulay, C     24 | SS Bellido, B      21 |                       |
+ 3B Suarez, A       31 | LF Charlie, P      23 | LF Contreras, J    22 | LF Takamuku, R     18 |                       |
+ CF Parkhill, C     33 | LF Lantigua, A     19 | LF Olivares, A     25 | CF Schipper, J     21 |                       |
+ CF Starr, M        26 | LF Williams, F     23 | CF Fano, R         26 | RF Albarado, H     20 |                       |
+ RF McCown, H       37 | CF Sauter, L       23 | CF Mason, F        22 | RF Wilson, R       21 |                       |
+ RF Tomas, F        33 | RF Anderson, A     32 | RF Maziarz, D      25 |                       |                       |
                        | RF Santos, J       23 |                       |                       |                       |
 Total:102 (target 70-75)
 Balance:59/43 = 1.372 (ideal: 1.273)
 
   ML -> AAA   C Adam Fasching
- AAA -> ML   3B Hollis Rowland
- AAA -> AA   MR Lamar Alvarez
+  ML -> AAA  2B Weston Drysdale
  AAA -> AA   3B Daniel Portillo
+ AAA -> AA   SS Lesley Bell
+ AAA -> AA   MR Lamar Alvarez
  AAA -> AA    C Larry Davis
- AAA -> A    LF Arthur Lantigua
- AAA -> A    3B Jose Devera
+ AAA -> AA   2B Manuel Santoro
  AAA -> A     C Hayden Bongiorno
-  AA -> AAA  CF Lawrence Sauter
+ AAA -> A    3B Jose Devera
   AA -> AAA  RF Juan Santos
+  AA -> AAA  1B Donald Lamberth
+  AA -> AAA  CF Lawrence Sauter
   AA -> AAA  SP Andrew Battle
   AA -> A    MR Armando Anaya
    A -> AAA  3B Justin Tepper
-   A -> AA   CF James Schipper
+  DL -> ML   2B Willie Harris
+  DL -> ML   RF Homer McCown
   DL -> AAA  RF Austin Anderson
-  DL -> AAA  RF Homer McCown
-  DL -> AAA  2B Willie Harris
 
 SP
 Jame Meany
@@ -333,63 +334,62 @@ BP Ability: 106
 
 vs RHP
  C| Howell, J       (D)                 | C| ( 1) Ikner, J       
-1B| Parkhill, C     (D) Drysdale, W     |1B| ( 1) Drysdale, W    
-2B| Serrano, R      (D) Watson, I       |2B| ( 1) Drysdale, W    
-3B| Goodridge, J    (D) Rowland, H      |3B| ( 1) Rowland, H     
+1B| Parkhill, C     (D) Starr, M        |1B| ( 1) Serrano, R     
+2B| Harris, W       (D)                 |2B| ( 1) Serrano, R     
+3B| Goodridge, J    (D) Watson, I       |3B| ( 1) Suarez, A      
 SS| Sharma, A       (D)                 |SS| ( 1) Watson, I      
-LF| Starr, M        (D)                 |LF| ( 1) Drysdale, W    
-CF| West, B         (D)                 |CF| ( 1) Drysdale, W    
-RF| Tomas, F        (D)                 |RF| ( 1) Drysdale, W    
+LF| West, B         (D)                 |LF| ( 1) Starr, M       
+CF| Tomas, F        (D)                 |CF| ( 1) Starr, M       
+RF| McCown, H       (D)                 |RF| ( 1) Starr, M       
 
 vs RHP+DH
  C| Howell, J       (D)                 | C| ( 1) Ikner, J       
-1B| Serrano, R      (D) Drysdale, W     |1B| ( 1) Drysdale, W    
-2B| Goodridge, J    (D)                 |2B| ( 1) Drysdale, W    
-3B| Rowland, H      (D)                 |3B| ( 1) Suarez, A      
+1B| Serrano, R      (D) Starr, M        |1B| ( 1) Starr, M       
+2B| Harris, W       (D)                 |2B| ( 1) Ikner, J       
+3B| Goodridge, J    (D) Watson, I       |3B| ( 1) Suarez, A      
 SS| Sharma, A       (D)                 |SS| ( 1) Watson, I      
-LF| Starr, M        (D)                 |LF| ( 1) Drysdale, W    
-CF| West, B         (D)                 |CF| ( 1) Drysdale, W    
-RF| Tomas, F        (D)                 |RF| ( 1) Drysdale, W    
-DH| Parkhill, C     (D)                 |DH| ( 1) Suarez, A      
+LF| West, B         (D)                 |LF| ( 1) Starr, M       
+CF| Tomas, F        (D)                 |CF| ( 1) Starr, M       
+RF| McCown, H       (D)                 |RF| ( 1) Starr, M       
+DH| Parkhill, C     (D)                 |DH| ( 1) Starr, M       
 
 vs LHP
  C| Ikner, J        (D) Howell, J       | C| ( 1) Howell, J      
-1B| Serrano, R      (D) Drysdale, W     |1B| ( 1) Drysdale, W    
-2B| Goodridge, J    (D)                 |2B| ( 1) Drysdale, W    
-3B| Rowland, H      (D)                 |3B| ( 1) Suarez, A      
-SS| Sharma, A       (D)                 |SS| ( 1) Watson, I      
-LF| Starr, M        (D)                 |LF| ( 1) Drysdale, W    
-CF| West, B         (D)                 |CF| ( 1) Tomas, F       
-RF| Parkhill, C     (D) Tomas, F        |RF| ( 1) Tomas, F       
-
-vs LHP+DH
- C| Ikner, J        (D) Howell, J       | C| ( 1) Howell, J      
-1B| Drysdale, W     (D)                 |1B| ( 1) Suarez, A      
-2B| Goodridge, J    (D)                 |2B| ( 1) Watson, I      
-3B| Rowland, H      (D)                 |3B| ( 1) Suarez, A      
+1B| Parkhill, C     (D) Watson, I       |1B| ( 1) Suarez, A      
+2B| Serrano, R      (D) Watson, I       |2B| ( 1) Harris, W      
+3B| Goodridge, J    (D) Watson, I       |3B| ( 1) Suarez, A      
 SS| Sharma, A       (D)                 |SS| ( 1) Watson, I      
 LF| Starr, M        (D)                 |LF| ( 1) Tomas, F       
 CF| West, B         (D)                 |CF| ( 1) Tomas, F       
-RF| Parkhill, C     (D) Tomas, F        |RF| ( 1) Tomas, F       
-DH| Serrano, R      (D)                 |DH| ( 1) Suarez, A      
+RF| McCown, H       (D)                 |RF| ( 1) Tomas, F       
+
+vs LHP+DH
+ C| Ikner, J        (D) Howell, J       | C| ( 1) Howell, J      
+1B| Serrano, R      (D) Watson, I       |1B| ( 1) Tomas, F       
+2B| Goodridge, J    (D)                 |2B| ( 1) Harris, W      
+3B| Suarez, A       (D) Watson, I       |3B| ( 1) Watson, I      
+SS| Sharma, A       (D)                 |SS| ( 1) Watson, I      
+LF| Starr, M        (D)                 |LF| ( 1) Tomas, F       
+CF| West, B         (D)                 |CF| ( 1) Tomas, F       
+RF| McCown, H       (D)                 |RF| ( 1) Tomas, F       
+DH| Parkhill, C     (D)                 |DH| ( 1) Tomas, F       
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 2B L Serrano, R       1B L Serrano, R       1B L Serrano, R       DH L Serrano, R      
-2. CF S West, B          CF S West, B          CF S West, B          CF S West, B         
-3. 1B S Parkhill, C      DH S Parkhill, C      RF S Parkhill, C      RF S Parkhill, C     
-4. 3B R Goodridge, J     2B R Goodridge, J     2B R Goodridge, J     2B R Goodridge, J    
-5. RF L Tomas, F         RF L Tomas, F         LF R Starr, M         LF R Starr, M        
-6. LF R Starr, M         LF R Starr, M         SS R Sharma, A        SS R Sharma, A       
-7. SS R Sharma, A        SS R Sharma, A        3B R Rowland, H       1B R Drysdale, W     
-8.  C R Howell, J        3B R Rowland, H        C R Ikner, J         3B R Rowland, H      
+1. 3B R Goodridge, J     1B L Serrano, R       2B L Serrano, R       1B L Serrano, R      
+2. LF S West, B          LF S West, B          CF S West, B          CF S West, B         
+3. RF R McCown, H        DH S Parkhill, C      RF R McCown, H        RF R McCown, H       
+4. 1B S Parkhill, C      3B R Goodridge, J     1B S Parkhill, C      DH S Parkhill, C     
+5. CF L Tomas, F         CF L Tomas, F         3B R Goodridge, J     2B R Goodridge, J    
+6. 2B L Harris, W        RF R McCown, H        LF R Starr, M         LF R Starr, M        
+7. SS R Sharma, A        2B L Harris, W        SS R Sharma, A        SS R Sharma, A       
+8.  C R Howell, J        SS R Sharma, A         C R Ikner, J         3B R Suarez, A       
 9.  P                     C R Howell, J         P                     C R Ikner, J        
 
 --- Bunt for Hit ---
 
---- Stealing @ 66.5 ---
-3B Hollis Rowland            32| 3B :  94       2   1     :  97 |    :                     :   0 |   1 |  98 | -3383--- |    *+ ~     $1Mx2 | $486.6k:$694.7k |  p507 | Houston Astros       | *
+--- Stealing @ 66.8 ---
 
-40 man: 38/40, Remove: 6, Add: 5
+40 man: 38/40, Remove: 5, Add: 5
 
 --- +40 ---
 2B Willie Harris             36| 2B : 106       0  11     : 117 |    :                     :   0 | -12 | 105 | -3863--- |  F  +     $3.5M   |  $5.35M: $7.64M |  p473 | Houston Astros       | **
@@ -402,7 +402,6 @@ CF Patrick Gildersleeve      39| CF : 114     -12   8     : 109 |    :          
 CF Lawrence Sauter           23| CF :  87      -1  -8     :  78 | CF :  97      -1   5     : 101 |   6 | 107 | -2---878 |   9*      $500k r |        :        | p1696 | Houston Astros       | ++++
 SP Leo Cortez                23| SP :      75      -7     :  68 | SP :      91       6     :  97 |   6 | 103 |          |   4*      $500k r |        :        | p1510 | Houston Astros       | +++++
 MR Ronald Diep               22| MR :      68      -4     :  65 | MR :      87       6     :  94 |   6 | 100 |          |    *      $500k r |        :        |  p200 | Houston Astros       | +++++
-RF Austin Anderson           32| CF :  97      -3   0     :  94 |    :                     :   0 |   1 |  95 | -2---676 |  F *+ ~   $3.2M   |        :        |  p497 | Houston Astros       | *
 SS Lesley Bell               33| SS :  83       8  -6     :  85 |    :                     :   0 |   0 |  85 | -3378--- |    *+ ~           |        :        |  p242 | Houston Astros       | *^
 MR Marcelo Rego              34| MR :      69      -3     :  66 |    :                     :   0 |  -2 |  64 |          |    *+       $1Mx3 |        :        |  p150 | Houston Astros       | *
 
@@ -454,8 +453,8 @@ CF Craig Parkhill            33 | CF : 121     -10 : 111 | CF : 122     -11 : 11
 RF Houston Albarado          20 | CF :  74      -1 :  73 | CF :  74      -1 :  73 |  +0 |     +2 +6    +4    :     +2 +6    +5    | ++
  C Arthur Orr                21 |  C :  86       7 :  93 |  C :  86       7 :  93 |  +0 |     +8 +3 +1 +4    :     +8 +3 +1 +4    | ++++
 3B Kuemon Takamasa           22 | 3B :  70      -8 :  62 | 3B :  70      -8 :  62 |  +0 |                    :                    | ++
-2B Manuel Santoro            23 | SS :  82       5 :  87 | SS :  82       5 :  87 |  +0 |              +1    :              +1    | ++
 LF Freeman Williams          23 | LF :  95      -8 :  87 | LF :  95      -8 :  87 |  +0 |  -1 -2    +2 +4    :  -1 -2    +1 +4    | ++++-
+2B Manuel Santoro            23 | SS :  82       5 :  87 | SS :  82       5 :  87 |  +0 |              +1    :              +1    | ++
 3B Horace Hirsh              24 | 3B :  77      -7 :  70 | 3B :  77      -7 :  70 |  +0 |  -1    -1 +2       :  -1    -1 +1       | ++-
  C Adam Fasching             25 |  C :  85      13 :  98 |  C :  85      13 :  98 |  +0 |     +2   +10 -1    :     +2   +10 -1    | +++
 1B Donald Lamberth           26 | LF :  85      -8 :  77 | LF :  85      -8 :  77 |  +0 |  -3 -2    +2 -1    :  -3 -2    +2 -1    | *
@@ -1106,22 +1105,22 @@ Nestor Urbina             |                                                     
 1E | 118 ( 94-166) | 124 (100-172) 113/136 |   5/  5 || 138 ( 94-218) | 144 (100-224) 131/159 |  25/ 25
 1M | 105 ( 91-121) | 111 ( 97-127) 101/122 |   5/  5 || 117 ( 91-126) | 123 ( 97-132) 112/135 |  25/ 25
 1L |  94 ( 53-113) | 100 ( 59-119)  91/110 |   6/  6 || 104 ( 53-114) | 110 ( 59-120) 100/121 |  30/ 30
-2E |  83 ( 56- 94) |  89 ( 62-100)  81/ 97 |   8/  8 ||  96 ( 49-104) | 102 ( 55-110)  93/112 |  40/ 40
-2L |  81 ( 50- 85) |  87 ( 56- 91)  79/ 95 |   8/  8 ||  89 ( 50- 96) |  95 ( 56-102)  86/104 |  40/ 40
+2E |  83 ( 56- 94) |  89 ( 62-100)  81/ 97 |   8/  8 ||  96 ( 56-104) | 102 ( 62-110)  93/112 |  40/ 40
+2L |  81 ( 50- 85) |  87 ( 56- 91)  79/ 95 |   8/  8 ||  89 ( 47- 96) |  95 ( 53-102)  86/104 |  40/ 40
 
  1 | 102 ( 53-166) | 108 ( 59-172)  98/118 |  16/ 16 || 114 ( 53-218) | 120 ( 59-224) 109/132 |  80/ 80
- 2 |  81 ( 50- 94) |  87 ( 56-100)  79/ 96 |  16/ 16 ||  91 ( 49-104) |  97 ( 55-110)  88/107 |  80/ 80
+ 2 |  81 ( 50- 94) |  87 ( 56-100)  79/ 96 |  16/ 16 ||  91 ( 47-104) |  97 ( 53-110)  88/107 |  80/ 80
  3 |  72 ( 50- 83) |  78 ( 56- 89)  71/ 86 |  16/ 16 ||  80 ( 50- 89) |  86 ( 56- 95)  78/ 95 |  80/ 80
  4 |  65 ( 36- 91) |  71 ( 42- 97)  64/ 78 |  16/ 16 ||  71 ( 36- 91) |  77 ( 42- 97)  70/ 85 |  80/ 80
  5 |  58 ( 39- 73) |  64 ( 45- 79)  58/ 71 |  16/ 16 ||  66 (-36- 73) |  72 (-30- 79)  65/ 79 |  80/ 80
- 6 |  54 ( 34- 76) |  60 ( 40- 82)  54/ 65 |  16/ 16 ||  61 ( 34- 76) |  67 ( 40- 82)  61/ 74 |  80/ 80
- 7 |  50 ( 27- 73) |  56 ( 33- 79)  51/ 62 |  16/ 16 ||  55 ( 27- 73) |  61 ( 33- 79)  55/ 67 |  80/ 80
- 8 |  46 (  2- 52) |  52 (  8- 58)  47/ 57 |  16/ 16 ||  49 (-48- 84) |  55 (-41- 90)  50/ 61 |  80/ 80
+ 6 |  54 ( 34- 76) |  60 ( 40- 82)  54/ 65 |  16/ 16 ||  61 (-49- 76) |  67 (-42- 82)  61/ 74 |  80/ 80
+ 7 |  50 ( 27- 73) |  56 ( 33- 79)  51/ 62 |  16/ 16 ||  55 ( 27- 73) |  61 ( 33- 79)  56/ 67 |  80/ 80
+ 8 |  46 (  2- 52) |  52 (  8- 58)  47/ 57 |  16/ 16 ||  50 (-48- 95) |  56 (-41-101)  50/ 61 |  80/ 80
  9 |  43 (  8- 51) |  49 ( 14- 57)  45/ 54 |  16/ 16 ||  45 (-48- 58) |  51 (-42- 64)  47/ 56 |  80/ 80
 10 |  42 ( 18- 79) |  48 ( 24- 85)  44/ 53 |  16/ 16 ||  42 (-53-156) |  48 (-47-162)  44/ 53 |  80/ 80
-11 |  36 ( 19- 42) |  42 ( 25- 48)  38/ 46 |  16/ 16 ||  37 (-48-112) |  43 (-42-118)  39/ 48 |  80/ 80
-12 |  33 ( 27- 61) |  39 ( 33- 67)  35/ 43 |  16/ 16 ||  35 (-44- 73) |  41 (-38- 79)  37/ 45 |  80/ 80
-13 |  31 ( 20- 49) |  37 ( 26- 55)  34/ 41 |  16/ 16 ||  31 (-62- 94) |  37 (-56-100)  34/ 41 |  80/ 80
+11 |  36 ( 19- 42) |  42 ( 25- 48)  38/ 46 |  16/ 16 ||  38 (-29-112) |  44 (-23-118)  40/ 48 |  80/ 80
+12 |  33 ( 27- 61) |  39 ( 33- 67)  35/ 43 |  16/ 16 ||  36 (-43- 61) |  42 (-36- 67)  38/ 46 |  80/ 80
+13 |  31 ( 20- 49) |  37 ( 26- 55)  34/ 41 |  16/ 16 ||  31 (-52- 94) |  37 (-46-100)  34/ 41 |  80/ 80
 14 |  27 ( 17- 75) |  33 ( 23- 81)  30/ 36 |  16/ 16 ||  28 (-46- 75) |  34 (-36- 81)  31/ 38 |  80/ 80
 15 |  24 ( 20- 68) |  30 ( 26- 74)  27/ 32 |  16/ 16 ||  25 (-65-102) |  31 (-57-108)  29/ 35 |  80/ 80
 16 |  21 ( 17- 58) |  27 ( 23- 64)  25/ 30 |  16/ 16 ||  27 (-42- 58) |  33 (-36- 64)  30/ 36 |  64/ 64
@@ -1290,8 +1289,8 @@ CATCHER
  6 | Forest, J         86  -1  85 | Parkhill, C      124 -33  91 | Forest, J         87  -1  86
  7 | Gildersleeve, P  114 -33  81 | Davis, L          76   8  84 | Gildersleeve, P  115 -33  82
  8 | Bongiorno, H      72   6  78 | Bongiorno, H      72   6  78 | Bongiorno, H      72   6  78
- 9 | Goodridge, J     109 -33  76 | McCown, H        107 -33  74 | Goodridge, J     108 -33  75
-10 | Serrano, R       107 -33  74 | West, B          107 -33  74 | Harris, W        107 -33  74
+ 9 | Goodridge, J     109 -33  76 | West, B          107 -33  74 | Goodridge, J     108 -33  75
+10 | Serrano, R       107 -33  74 | McCown, H        107 -33  74 | Tomas, F         107 -33  74
 
 FIRST_BASE
  1 | Parkhill, C      122 -22 100 | Goodridge, J     127 -20 107 | Parkhill, C      122 -22 100
@@ -1330,8 +1329,8 @@ THIRD_BASE
 10 | Serrano, R       107 -18  89 | Devera, J         83   4  87 | Serrano, R       107 -18  89
 
 SHORTSTOP
- 1 | Sharma, A         97  10 107 | Goodridge, J     127  -2 125 | Sharma, A         97  10 107
- 2 | Goodridge, J     109  -2 107 | Sharma, A         97  10 107 | Goodridge, J     108  -2 106
+ 1 | Goodridge, J     109  -2 107 | Goodridge, J     127  -2 125 | Sharma, A         97  10 107
+ 2 | Sharma, A         97  10 107 | Sharma, A         97  10 107 | Goodridge, J     108  -2 106
  3 | Watson, I         86  11  97 | Goldstein, J      91  10 101 | Watson, I         86  11  97
  4 | Drysdale, W       94   2  96 | Bell, L           93   8 101 | Drysdale, W       94   2  96
  5 | Ikner, J          94   2  96 | Watson, I         88  11  99 | Ikner, J          94   2  96
@@ -1380,14 +1379,14 @@ RIGHT_FIELD
 DESIGNATED_HITTER
  1 | Parkhill, C      122 -23  99 | Goodridge, J     127 -23 104 | Parkhill, C      122 -23  99
  2 | Gildersleeve, P  114 -23  91 | Parkhill, C      124 -23 101 | Gildersleeve, P  115 -23  92
- 3 | Goodridge, J     109 -23  86 | McCown, H        107 -23  84 | Goodridge, J     108 -23  85
- 4 | Serrano, R       107 -23  84 | West, B          107 -23  84 | Harris, W        107 -23  84
- 5 | Harris, W        106 -23  83 | Serrano, R       104 -23  81 | Tomas, F         107 -23  84
- 6 | Tomas, F         106 -23  83 | Starr, M         102 -23  79 | Serrano, R       107 -23  84
+ 3 | Goodridge, J     109 -23  86 | West, B          107 -23  84 | Goodridge, J     108 -23  85
+ 4 | Serrano, R       107 -23  84 | McCown, H        107 -23  84 | Tomas, F         107 -23  84
+ 5 | Tomas, F         106 -23  83 | Serrano, R       104 -23  81 | Serrano, R       107 -23  84
+ 6 | Harris, W        106 -23  83 | Starr, M         102 -23  79 | Harris, W        107 -23  84
  7 | West, B          105 -23  82 | Suarez, A         97 -23  74 | West, B          105 -23  82
  8 | McCown, H        104 -23  81 | Sharma, A         97 -23  74 | McCown, H        104 -23  81
- 9 | Starr, M         101 -23  78 | Tepper, J         96 -23  73 | Starr, M         101 -23  78
-10 | Suarez, A         99 -23  76 | Rowland, H        96 -23  73 | Suarez, A         99 -23  76
+ 9 | Starr, M         101 -23  78 | Rowland, H        96 -23  73 | Starr, M         101 -23  78
+10 | Suarez, A         99 -23  76 | Tepper, J         96 -23  73 | Suarez, A         99 -23  76
 
 --- Trade Values ---
 SP Brian Stegman             23| SP :     134      52  33 : 219 | SP :     150      65  45 : 260 |   6 | 266 |          |   2*      $500k r | $41.36M:$59.05M | p1096 | Houston Astros       | +++++
@@ -2342,11 +2341,11 @@ Atlanta Braves       |  92.2  93.3  85.1 |  82.0  81.7  61.2 |  35-127 0.213 |  
 National League
 East ----------------+
 St. Louis (B) Browns | 100.3  99.4  99.7 | 119.7 120.1 135.2 | 105- 57 0.645 |  66- 33 0.667 | 107- 55 0.660 ( 1) 
-New York Mets        | 102.9 103.1 105.9 | 121.8 123.3 139.1 | 111- 51 0.684 |  58- 41 0.586 | 101- 61 0.623 ( 2) 
+New York Mets        | 102.9 103.1 105.9 | 121.8 123.3 139.1 | 111- 51 0.684 |  58- 41 0.586 | 101- 61 0.623 ( 3) 
 Cincinnati Reds      | 104.5 105.9 110.0 | 110.4 113.4 121.9 | 104- 58 0.643 |  49- 50 0.495 |  90- 72 0.556 ( 5) 
 Chicago Cubs         |  95.2  94.7  89.7 |  92.4  92.3  84.1 |  59-103 0.363 |  27- 72 0.273 |  50-112 0.309 (15) 
 West ----------------+
-Boston Red Sox       | 108.1 111.5 118.2 | 103.0 106.3 109.0 | 101- 61 0.624 |  62- 37 0.626 | 101- 61 0.623 ( 3) 
+Boston Red Sox       | 108.1 111.5 118.2 | 103.0 106.3 109.0 | 101- 61 0.624 |  62- 37 0.626 | 101- 61 0.623 ( 2) 
 Houston Astros       | 107.6 106.0 113.2 | 100.2  98.5  98.7 |  90- 72 0.555 |  52- 47 0.525 |  87- 75 0.537 ( 8) 
 Kansas City Royals   |  98.9  97.5  96.4 |  97.0  97.4  94.3 |  73- 89 0.452 |  45- 54 0.455 |  73- 89 0.451 (12) 
 Seattle Pilots       |  95.2  93.3  88.1 |  93.8  90.0  82.7 |  56-106 0.347 |  37- 62 0.374 |  59-103 0.364 (14) 
