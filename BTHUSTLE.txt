@@ -33,7 +33,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: RandomForest
 Scores: [(0.22320179804527432, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 1, 'regressor__max_depth': 3}
+Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 1}
 Feature Scores: [ 162.   97.  110.   91.  114.   13.]
 Feature Mask: [ True False False False False False]
 Feature Importances: [ 1.]
@@ -41,7 +41,7 @@ Feature Importances: [ 1.]
 -- Doubles
 Selected: RandomForest
 Scores: [(0.15413603737200099, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 2, 'selection__k': 4, 'regressor__n_estimators': 84}
+Best Parameters: {'regressor__max_depth': 2, 'regressor__n_estimators': 84, 'selection__k': 4}
 Feature Scores: [ 66.  71.  68.  54.  66.  10.]
 Feature Mask: [ True  True  True False  True False]
 Feature Importances: [ 0.017  0.705  0.258  0.02 ]
@@ -57,7 +57,7 @@ Feature Importances: [ 0.107  0.08   0.056  0.103  0.079  0.575]
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.42654909731488827, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 90, 'regressor__max_depth': 18, 'selection__k': 4}
+Best Parameters: {'selection__k': 4, 'regressor__max_depth': 18, 'regressor__n_estimators': 90}
 Feature Scores: [ 192.   99.  340.  223.  180.   12.]
 Feature Mask: [ True False  True  True  True False]
 Feature Importances: [ 0.098  0.73   0.083  0.089]
@@ -65,7 +65,7 @@ Feature Importances: [ 0.098  0.73   0.083  0.089]
 -- Walks
 Selected: RandomForest
 Scores: [(0.1955559273696347, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 24, 'regressor__n_estimators': 37, 'selection__k': 3}
+Best Parameters: {'regressor__n_estimators': 37, 'regressor__max_depth': 24, 'selection__k': 3}
 Feature Scores: [  55.   33.   71.  102.   45.    2.]
 Feature Mask: [ True False  True  True False False]
 Feature Importances: [ 0.176  0.139  0.685]
@@ -89,7 +89,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: RandomForest
 Scores: [(0.098487363000732173, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 1}
+Best Parameters: {'selection__k': 1, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}
 Feature Scores: [ 29.   5.   6.   0.   1.]
 Feature Mask: [ True False False False False]
 Feature Importances: [ 1.]
@@ -97,7 +97,7 @@ Feature Importances: [ 1.]
 -- Doubles
 Selected: RandomForest
 Scores: [(-0.017445014441337763, RandomForest(...))]
-Best Parameters: {'selection__k': 1, 'regressor__n_estimators': 27, 'regressor__max_depth': 1}
+Best Parameters: {'selection__k': 1, 'regressor__max_depth': 1, 'regressor__n_estimators': 27}
 Feature Scores: [ 0.  0.  4.  1.  1.]
 Feature Mask: [False False  True False False]
 Feature Importances: [ 1.]
@@ -105,7 +105,7 @@ Feature Importances: [ 1.]
 -- Triples
 Selected: RandomForest
 Scores: [(1.0, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 39, 'regressor__n_estimators': 52, 'selection__k': 5}
+Best Parameters: {'selection__k': 5, 'regressor__max_depth': 39, 'regressor__n_estimators': 52}
 Feature Scores: [ nan  nan  nan  nan  nan]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.  0.  0.  0.  0.]
@@ -121,7 +121,7 @@ Feature Importances: [ 1.]
 -- Walks
 Selected: RandomForest
 Scores: [(0.17926311384326532, RandomForest(...))]
-Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 33, 'regressor__max_depth': 34}
+Best Parameters: {'regressor__n_estimators': 33, 'regressor__max_depth': 34, 'selection__k': 5}
 Feature Scores: [  0.  32.   1.   3.   4.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.099  0.658  0.059  0.091  0.093]
@@ -129,7 +129,7 @@ Feature Importances: [ 0.099  0.658  0.059  0.091  0.093]
 -- Ks
 Selected: RandomForest
 Scores: [(0.49013087227838725, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 9, 'regressor__n_estimators': 62, 'selection__k': 5}
+Best Parameters: {'regressor__max_depth': 9, 'selection__k': 5, 'regressor__n_estimators': 62}
 Feature Scores: [ 231.    4.    2.    2.    3.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.773  0.06   0.084  0.036  0.047]
@@ -243,8 +243,8 @@ SP Nampo, S       I         A 17 | 14.2  4.7  3.5  1.5 |  46     |  53     |  + 
 SP Kluge, W                AA 21 | 14.7  5.4  7.0  1.7 |  41     |  42     | ++ ||  41 |
 SP Lyon, A                 AA 22 | 15.1  5.3  7.1  2.0 |  41     |  39     |  + ||  40 |
 MR Dial, E                  A 17 | 15.0  4.8  5.2  1.6 |  39     |  46     |  + ||  39 |
-SP Taveras, M              AA 22 | 16.0  5.5  7.4  1.7 |  38     |  38     | +- ||  38 |
 SP Rodriguez, A     T*      A 20 | 16.0  5.4  7.2  1.8 |  38     |  38     |  + ||  38 |
+SP Taveras, M              AA 22 | 16.0  5.5  7.4  1.7 |  38     |  38     | +- ||  38 |
 SP Coughlin, D              A 19 | 16.0  5.5  7.4  1.7 |  38     |  38     |  - ||  37 |
 SP Mailloux, J         #    A 20 | 16.0  5.5  7.4  1.9 |  38     |  37     | +  ||  36 |
 MR Ayo, S              #   AA 25 | 14.8  5.1  7.1  1.7 |  40     |  42     |  + ||  35 |
@@ -370,20 +370,20 @@ DH| Parkhill, C     (D)                 |DH| ( 1) Suarez, A
 
 --- Stealing @ 67.5 ---
 
-40 man: 37/40, Remove: 4, Add: 5
+40 man: 37/40, Remove: 3, Add: 6
 
 --- +40 ---
 LF Paul Charlie              23| 2B :  84      -1  -7     :  76 | 2B :  93      -1   3     :  95 |   6 | 101 | -2771512 |  F   #            |        :        |   p23 | Houston Astros       | ++-
 2B Weston Drysdale           30| 2B :  93       0   3     :  97 |    :                     :   0 |   3 | 100 | -8836114 |     + ~   $550k a |  $1.31M:  $1.8M |  p199 | Houston Astros       | **
+3B Hollis Rowland            32| 3B :  93       2  -2     :  93 |    :                     :   0 |   1 |  94 | -3383--- |     + ~     $1Mx2 |        :        |  p507 | Houston Astros       | *
 SP Wendell Cox               38| SP :     104      19     : 123 |    :                     :   0 | -30 |  93 |          | IF  +    $7.99M   |  $8.29M:$11.42M |  p130 | Houston Astros       | **
 1B Rico Areytio              33| 1B :  99     -18   0     :  81 |    :                     :   0 |   0 |  81 | -5------ |  F *     $4.03M   |        :        |  p235 | Houston Astros       | **
 CF Ron Schafer               33| CF :  80       0 -17     :  63 |    :                     :   0 |   0 |  63 | -2---983 | IF        $900k   |        :        |  p265 | Houston Astros       | *
 CF Patrick Gildersleeve      39| CF : 113     -13   4     : 104 |    :                     :   0 | -42 |  62 | -3---242 | IF  +    $12.5M   |  $1.75M: $2.41M |  p288 | Houston Astros       | **
 
 --- -40 ---
-SP Tanner Campbell           32| SP :      90       5     :  96 |    :                     :   0 |   1 |  97 |          |  F *+     $500k   |  $2.18M: $3.01M |  p372 | Houston Astros       | *^
-SP James Lashley             32| SP :      87       2     :  89 |    :                     :   0 |   1 |  90 |          |  F *+     $500k   | $873.1k:  $1.2M |  p181 | Houston Astros       | *
-MR Greg Dunkley              28| MR :      76       1     :  78 |    :                     :   0 |   5 |  83 |          |    *+     $550k a | $436.5k:$601.3k |  p903 | Houston Astros       | *
+3B Allen Suarez              31| 3B : 101      -4   0     :  97 |    :                     :   0 |   2 |  99 | -3362--- |    *+       $5Mx2 |        :        |   p44 | Houston Astros       | **^
+LF Freeman Williams          23| LF :  99      -8   0     :  91 | LF :  98      -8   0     :  90 |   6 |  97 | -2---737 |   7*      $500k r |        :        | p1433 | Houston Astros       | ++++-
 SP Gary Reith                34| SP :      85       0     :  85 |    :                     :   0 |  -2 |  83 |          |  F *+      $11M   |        :        |  p350 | Houston Astros       | **
 
 --- Waive ---
@@ -473,13 +473,13 @@ SP James Lashley             32 | SP :      86     :  86 | SP :      87     :  8
 MR Lamar Alvarez             27 | MR :      66     :  66 | MR :      67     :  67 |  +1 |  +1             :  +1             | *
 MR David Nam                 19 | MR :      33     :  33 | MR :      34     :  34 |  +1 |  +7 +3 -4       :  +6 +2 -4       | +++
 SP Ariel Rodriguez           20 | SP :      38     :  38 | SP :      38     :  38 |  +0 |  +5+11+13       :  +5+10+13       | ++++
-MR William Volkman           20 | MR :      33     :  33 | MR :      33     :  33 |  +0 |  +7    +3       :  +5    +2       | +++
 SP Joshua Mailloux           20 | SP :      36     :  36 | SP :      36     :  36 |  +0 |  +1             :  +2             | +++-
+MR William Volkman           20 | MR :      33     :  33 | MR :      33     :  33 |  +0 |  +7    +3       :  +5    +2       | +++
 MR Marcos Quintana           21 | MR :      51     :  51 | MR :      51     :  51 |  +0 |  +3 -2 -2    +1 :  +3 -2 -3    +1 | +++
 SP William Kluge             21 | SP :      41     :  41 | SP :      41     :  41 |  +0 |       -11       :       -11       | +
 SP Miguel Taveras            22 | SP :      38     :  38 | SP :      38     :  38 |  +0 | +10 +6 +7       : +10 +6 +7       | +++-
-SP Miguel Zubiaga            24 | SP :      60     :  60 | SP :      60     :  60 |  +0 |  -1 +1 +6       :  -1 +1 +5       | ++
 SP Andrew Battle             24 | SP :      60     :  60 | SP :      60     :  60 |  +0 |  -4-10 -3       :  -4-10 -3       | +-
+SP Miguel Zubiaga            24 | SP :      60     :  60 | SP :      60     :  60 |  +0 |  -1 +1 +6       :  -1 +1 +5       | ++
 MR Alex Gutierrez            33 | MR :     101     : 101 | MR :     101     : 101 |  +0 |                 :                 | ***
 SP Richard Dagostino         32 | SP :      69     :  69 | SP :      67     :  67 |  -2 |        -2       :        -2       | *
 SP Gary Reith                34 | SP :      87     :  87 | SP :      85     :  85 |  -2 |     +1          :     +1          | **
@@ -500,8 +500,8 @@ SP Santo Chavez              21 | SP :      52     :  52 | SP :      53     :  5
 MR Armando Anaya             21 | MR :      33     :  33 | MR :      34     :  34 |  +1 |  +9 +6+16       :  +9 +6+16       | ++++-
 MR Earnest Dial              17 | MR :      38     :  38 | MR :      39     :  39 |  +1 |     +1          :  -1 +1          | ++++
 SP Shuutarou Nampo           17 | SP :      49     :  49 | SP :      49     :  49 |  +0 |  +1    +3       :        +4       | ++++
-MR Wesley Mercado            18 | MR :      33     :  33 | MR :      33     :  33 |  +0 |  +2 +3+10       :  +3 +2+11       | +++-
 MR Fernando Sarvis           18 | MR :      33     :  33 | MR :      33     :  33 |  +0 |                 :                 | +++
+MR Wesley Mercado            18 | MR :      33     :  33 | MR :      33     :  33 |  +0 |  +2 +3+10       :  +3 +2+11       | +++-
 SP Darron Coughlin           19 | SP :      37     :  37 | SP :      37     :  37 |  +0 |  +2 +4 +8       :  +1 +3 +8       | +++
 
 Hitters                   |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45 |
@@ -1087,28 +1087,28 @@ Nestor Urbina             |                                                     
                           |                                                                  +0  +0  +0  +0  +0                                         |
 
 1E | 124 ( 90-145) | 130 ( 96-151) 118/143 |   5/  5 || 126 ( 90-307) | 132 ( 96-313) 120/145 |  25/ 25
-1M |  96 ( 58-111) | 102 ( 64-117)  93/112 |   5/  5 || 111 ( 34-122) | 117 ( 40-128) 107/129 |  25/ 25
+1M |  96 ( 58-111) | 102 ( 64-117)  93/112 |   5/  5 || 112 ( 58-122) | 118 ( 64-128) 107/129 |  25/ 25
 1L |  96 ( 43-110) | 102 ( 49-116)  93/112 |   6/  6 ||  99 ( 43-111) | 105 ( 49-117)  95/116 |  30/ 30
 2E |  82 ( 52- 87) |  88 ( 58- 93)  80/ 97 |   8/  8 ||  92 ( 52- 99) |  98 ( 58-105)  89/108 |  40/ 40
 2L |  82 ( 57- 89) |  88 ( 63- 95)  80/ 97 |   8/  8 ||  84 ( 57- 92) |  90 ( 63- 98)  82/ 99 |  40/ 40
 
- 1 |  97 ( 43-145) | 103 ( 49-151)  94/113 |  16/ 16 || 107 ( 34-307) | 113 ( 40-313) 102/124 |  80/ 80
+ 1 |  97 ( 43-145) | 103 ( 49-151)  94/113 |  16/ 16 || 107 ( 43-307) | 113 ( 49-313) 103/125 |  80/ 80
  2 |  82 ( 52- 89) |  88 ( 58- 95)  80/ 97 |  16/ 16 ||  87 ( 52- 99) |  93 ( 58-105)  85/103 |  80/ 80
  3 |  69 ( 38- 85) |  75 ( 44- 91)  68/ 82 |  16/ 16 ||  78 ( 38- 87) |  84 ( 44- 93)  76/ 92 |  80/ 80
- 4 |  59 ( 36- 86) |  65 ( 42- 92)  59/ 71 |  16/ 16 ||  69 ( 36- 86) |  75 ( 42- 92)  68/ 83 |  80/ 80
+ 4 |  59 ( 36- 86) |  65 ( 42- 92)  59/ 71 |  16/ 16 ||  69 ( 36- 86) |  75 ( 42- 92)  68/ 82 |  80/ 80
  5 |  56 ( 34- 76) |  62 ( 40- 82)  56/ 68 |  16/ 16 ||  63 ( 34- 76) |  69 ( 40- 82)  63/ 76 |  80/ 80
  6 |  50 (  7- 55) |  56 ( 13- 61)  51/ 62 |  16/ 16 ||  59 (-43- 71) |  65 (-37- 77)  59/ 71 |  80/ 80
- 7 |  46 ( 26- 49) |  52 ( 32- 55)  48/ 58 |  16/ 16 ||  53 ( 26- 84) |  59 ( 32- 90)  53/ 64 |  80/ 80
- 8 |  43 ( -6- 61) |  49 ( -0- 67)  45/ 54 |  16/ 16 ||  48 (-43- 61) |  54 (-37- 67)  49/ 59 |  80/ 80
- 9 |  40 ( 16- 79) |  46 ( 22- 85)  42/ 51 |  16/ 16 ||  44 (-54- 79) |  50 (-48- 85)  46/ 55 |  80/ 80
+ 7 |  46 ( 26- 49) |  52 ( 32- 55)  48/ 58 |  16/ 16 ||  53 (-56- 84) |  59 (-50- 90)  53/ 64 |  80/ 80
+ 8 |  43 ( -6- 61) |  49 ( -0- 67)  45/ 54 |  16/ 16 ||  48 (-43- 66) |  54 (-37- 72)  49/ 60 |  80/ 80
+ 9 |  40 ( 16- 79) |  46 ( 22- 85)  42/ 51 |  16/ 16 ||  44 (-54- 94) |  50 (-48-100)  46/ 55 |  80/ 80
 10 |  35 ( 19- 79) |  41 ( 25- 85)  38/ 45 |  16/ 16 ||  40 (-60- 99) |  46 (-54-105)  41/ 50 |  80/ 80
-11 |  33 ( 23- 57) |  39 ( 29- 63)  35/ 43 |  16/ 16 ||  36 (-55- 76) |  42 (-49- 82)  38/ 46 |  80/ 80
-12 |  30 ( 23- 57) |  36 ( 29- 63)  32/ 39 |  16/ 16 ||  34 ( 23- 87) |  40 ( 29- 93)  36/ 43 |  80/ 80
-13 |  28 ( 18- 67) |  34 ( 24- 73)  31/ 37 |  16/ 16 ||  31 (-59- 67) |  37 (-53- 73)  33/ 40 |  80/ 80
+11 |  33 ( 23- 57) |  39 ( 29- 63)  35/ 43 |  16/ 16 ||  36 (-55-100) |  42 (-49-106)  39/ 47 |  80/ 80
+12 |  30 ( 23- 57) |  36 ( 29- 63)  32/ 39 |  16/ 16 ||  34 (-49- 87) |  40 (-43- 93)  36/ 43 |  80/ 80
+13 |  28 ( 18- 67) |  34 ( 24- 73)  31/ 37 |  16/ 16 ||  31 (-59- 67) |  37 (-53- 73)  34/ 41 |  80/ 80
 14 |  25 ( 13- 83) |  31 ( 19- 89)  28/ 34 |  16/ 16 ||  28 (  2- 88) |  34 (  8- 94)  31/ 37 |  80/ 80
-15 |  22 ( 19- 67) |  28 ( 25- 73)  26/ 31 |  16/ 16 ||  25 (-22- 73) |  31 (-16- 79)  28/ 34 |  80/ 80
+15 |  22 ( 19- 67) |  28 ( 25- 73)  26/ 31 |  16/ 16 ||  26 (-52- 73) |  32 (-42- 79)  29/ 35 |  80/ 80
 16 |  23 (  8- 64) |  29 ( 14- 70)  26/ 31 |  16/ 16 ||  26 (-68-100) |  32 (-58-106)  29/ 35 |  64/ 64
-17 |  14 ( 10- 46) |  20 ( 16- 52)  18/ 21 |  16/ 16 ||  21 (-70- 46) |  27 (-58- 52)  25/ 30 |  64/ 64
+17 |  14 ( 10- 46) |  20 ( 16- 52)  18/ 21 |  16/ 16 ||  22 (-70- 46) |  28 (-58- 52)  25/ 30 |  64/ 64
 18 |   8 (  4- 52) |  14 ( 10- 58)  12/ 15 |  16/ 16 ||  19 (-51- 52) |  25 (-45- 58)  22/ 27 |  64/ 64
 19 |  -1 ( -9- 49) |   5 ( -3- 55)   5/  6 |  16/ 16 ||  11 (-70- 51) |  17 (-58- 57)  15/ 18 |  64/ 64
 20 |  15 (-15- 36) |  21 ( -9- 42)  19/ 23 |  16/ 16 ||   6 (-70- 72) |  12 (-58- 78)  11/ 13 |  64/ 64
@@ -2315,7 +2315,7 @@ SS Raymond Carper            22| SS :  73       6 -15     :  64 | SS :  74      
 
 American League
 East ----------------+
-Brooklyn Dodgers     | 106.7 105.7 112.0 | 106.2 110.2 115.3 | 101- 61 0.625 |  65- 58 0.528 |  89- 73 0.549 ( 7) 
+Brooklyn Dodgers     | 106.7 105.7 112.0 | 106.2 110.2 115.3 | 101- 61 0.625 |  65- 58 0.528 |  89- 73 0.549 ( 8) 
 Philadelphia A's     |  98.6  99.9  98.5 | 103.6 101.7 105.2 |  84- 78 0.518 |  66- 57 0.537 |  86- 76 0.531 ( 9) 
 Colorado Rockies     |  97.9  98.7  96.6 |  94.9  94.6  89.2 |  69- 93 0.426 |  60- 63 0.488 |  77- 85 0.475 (10) 
 St. Louis (C) Car... |  98.7  99.3  98.0 |  90.4  85.8  74.3 |  56-106 0.346 |  58- 65 0.472 |  72- 90 0.444 (11) 
@@ -2333,7 +2333,7 @@ Cincinnati Reds      | 105.5 105.9 111.0 | 112.1 115.1 124.8 | 106- 56 0.657 |  
 Chicago Cubs         |  94.9  94.3  88.9 |  89.7  87.2  75.3 |  50-112 0.310 |  36- 87 0.293 |  48-114 0.296 (16) 
 West ----------------+
 Boston Red Sox       | 109.9 114.2 122.1 | 101.6 103.0 104.5 | 100- 62 0.619 |  73- 50 0.593 |  97- 65 0.599 ( 3) 
-Houston Astros       | 106.8 105.2 111.7 | 106.4 106.3 112.3 |  99- 63 0.611 |  65- 58 0.528 |  89- 73 0.549 ( 8) 
+Houston Astros       | 106.8 105.2 111.7 | 106.4 106.3 112.3 |  99- 63 0.611 |  65- 58 0.528 |  89- 73 0.549 ( 7) 
 Kansas City Royals   |  99.8  98.1  97.9 |  93.8  93.6  87.0 |  68- 94 0.420 |  54- 69 0.439 |  70- 92 0.432 (12) 
 Seattle Pilots       |  95.8  93.9  89.3 |  93.4  89.6  82.0 |  57-105 0.349 |  47- 76 0.382 |  61-101 0.377 (14) 
                      |              97.5 |              93.5 |
