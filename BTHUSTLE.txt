@@ -33,7 +33,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: RandomForest
 Scores: [(0.21623227874636422, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 16, 'selection__k': 1, 'regressor__max_depth': 11}
+Best Parameters: {'regressor__n_estimators': 16, 'regressor__max_depth': 11, 'selection__k': 1}
 Feature Scores: [ 165.   95.  112.   89.  109.   20.]
 Feature Mask: [ True False False False False False]
 Feature Importances: [ 1.]
@@ -41,7 +41,7 @@ Feature Importances: [ 1.]
 -- Doubles
 Selected: RandomForest
 Scores: [(0.10306496504506853, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 64, 'regressor__max_depth': 2, 'selection__k': 4}
+Best Parameters: {'regressor__max_depth': 2, 'selection__k': 4, 'regressor__n_estimators': 64}
 Feature Scores: [ 58.  60.  59.  44.  52.   8.]
 Feature Mask: [ True  True  True False  True False]
 Feature Importances: [ 0.061  0.803  0.122  0.014]
@@ -49,7 +49,7 @@ Feature Importances: [ 0.061  0.803  0.122  0.014]
 -- Triples
 Selected: RandomForest
 Scores: [(0.11979029242556094, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 64, 'regressor__max_depth': 2, 'selection__k': 4}
+Best Parameters: {'regressor__n_estimators': 64, 'selection__k': 4, 'regressor__max_depth': 2}
 Feature Scores: [ 0.  1.  0.  0.  0.  5.]
 Feature Mask: [False  True False  True  True  True]
 Feature Importances: [ 0.045  0.033  0.068  0.853]
@@ -57,7 +57,7 @@ Feature Importances: [ 0.045  0.033  0.068  0.853]
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.37115058552093688, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 4, 'regressor__n_estimators': 89, 'selection__k': 4}
+Best Parameters: {'regressor__max_depth': 4, 'selection__k': 4, 'regressor__n_estimators': 89}
 Feature Scores: [ 209.  108.  358.  248.  187.   19.]
 Feature Mask: [ True False  True  True  True False]
 Feature Importances: [ 0.052  0.817  0.063  0.068]
@@ -97,7 +97,7 @@ Feature Importances: [ 0.717  0.082  0.098  0.066  0.037]
 -- Doubles
 Selected: RandomForest
 Scores: [(-0.049144863130517837, RandomForest(...))]
-Best Parameters: {'regressor__n_estimators': 27, 'selection__k': 1, 'regressor__max_depth': 1}
+Best Parameters: {'selection__k': 1, 'regressor__max_depth': 1, 'regressor__n_estimators': 27}
 Feature Scores: [ 1.  0.  5.  0.  1.]
 Feature Mask: [False False  True False False]
 Feature Importances: [ 1.]
@@ -105,7 +105,7 @@ Feature Importances: [ 1.]
 -- Triples
 Selected: RandomForest
 Scores: [(1.0, RandomForest(...))]
-Best Parameters: {'selection__k': 5, 'regressor__max_depth': 39, 'regressor__n_estimators': 52}
+Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 52, 'regressor__max_depth': 39}
 Feature Scores: [ nan  nan  nan  nan  nan]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.  0.  0.  0.  0.]
@@ -113,7 +113,7 @@ Feature Importances: [ 0.  0.  0.  0.  0.]
 -- HomeRuns
 Selected: RandomForest
 Scores: [(0.074528639077813597, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 4, 'selection__k': 5, 'regressor__n_estimators': 54}
+Best Parameters: {'regressor__n_estimators': 54, 'selection__k': 5, 'regressor__max_depth': 4}
 Feature Scores: [  2.   2.  30.   0.   0.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.095  0.086  0.602  0.15   0.067]
@@ -121,7 +121,7 @@ Feature Importances: [ 0.095  0.086  0.602  0.15   0.067]
 -- Walks
 Selected: RandomForest
 Scores: [(0.1661540990496593, RandomForest(...))]
-Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 2, 'regressor__max_depth': 19}
+Best Parameters: {'regressor__n_estimators': 2, 'selection__k': 5, 'regressor__max_depth': 19}
 Feature Scores: [  0.  42.   0.   4.   2.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.103  0.66   0.122  0.051  0.064]
@@ -129,7 +129,7 @@ Feature Importances: [ 0.103  0.66   0.122  0.051  0.064]
 -- Ks
 Selected: RandomForest
 Scores: [(0.45338489299774842, RandomForest(...))]
-Best Parameters: {'regressor__max_depth': 4, 'selection__k': 5, 'regressor__n_estimators': 54}
+Best Parameters: {'regressor__max_depth': 4, 'regressor__n_estimators': 54, 'selection__k': 5}
 Feature Scores: [ 214.    6.    2.    4.    6.]
 Feature Mask: [ True  True  True  True  True]
 Feature Importances: [ 0.843  0.027  0.054  0.022  0.055]
@@ -214,21 +214,21 @@ MR Diep, R           *     ML 23 |  9.2  6.9  1.2  0.6 | 114  89 | 114  74 |  + 
 SP Secrest, C        *+    ML 31 |  9.9  3.9  1.5  0.8 |  70  54 | 103 114 |  + ||  96 |
 MR Gutierrez, A      *+ ~  ML 34 |  8.5  9.3  3.2  0.4 | 115 100 | 110  99 |    ||  95 |
 SP Campbell, T     F *+ ~  ML 33 | 10.3  5.3  1.6  0.9 |  84  51 |  92  65 | ++ ||  89 |
-SP Meany, J          *+ ~  ML 28 | 10.3  5.3  1.3  1.0 |  68  58 |  95  65 | ++ ||  89 |
+SP Meany, J          *+ ~ AAA 28 | 10.3  5.3  1.3  1.0 |  68  58 |  95  65 | ++ ||  89 |
 MR Lenard, J         *+ ~ AAA 26 |  8.9  7.7  2.6  0.7 |  74 999 | 109 200 |  + ||  88 |
 SP Cox, W          F *+    ML 38 |  9.3  7.4  2.3  1.4 |  74  60 |  91  75 |  + ||  87 |
 SP Horne, J       I  *  ~  DL 35 |  8.3 10.0  3.6  1.5 |  87  85 |  87  85 |  + ||  86 |
-SP Reith, G        F *+ ~ AAA 35 |  9.7  7.3  3.1  0.9 |  94 106 |  86  97 |    ||  85 |
+SP Reith, G        F *+ ~  ML 35 |  9.7  7.3  3.1  0.9 |  94 106 |  86  97 |    ||  85 |
 MR Dubois, W         *    AAA 26 |  8.1 10.4  3.8  1.1 |  83   0 |  99 200 | ++ ||  83 |
 SP Quinto, O          + ~ AAA 32 | 10.4  6.7  2.1  1.1 |  76     |  85     | -- ||  83 |
 SP Granados, D     F  + ~ AAA 33 | 10.1  7.0  2.4  1.3 |  88     |  81     | -  ||  80 |
 MR Figueredo, R      *+ ~ AAA 31 |  9.8  6.9  1.4  1.3 |  76   5 |  94  91 |  + ||  79 |
-SP Orduna, N         *+ ~ AAA 30 | 10.3  7.1  3.2  1.2 |  90 103 |  75 103 |  + ||  77 |
 SP Wright, W         *+ ~  ML 34 | 10.7  6.6  1.9  1.5 |  73  92 |  78  65 |  + ||  77 |
+SP Orduna, N         *+ ~ AAA 30 | 10.3  7.1  3.2  1.2 |  90 103 |  75 103 |  + ||  77 |
 SP Lashley, J        *+ ~  ML 33 | 10.7  7.1  2.8  1.3 |  80  69 |  74  56 |  + ||  74 |
 MR Lebowitz, R     F  + ~ AAA 35 | 10.9  5.0  2.2  0.9 |  73     |  82     |    ||  70 |
-SP Dagostino, R    F  +   AAA 33 | 10.2  6.3  4.1  1.4 |  63     |  71     |    ||  69 |
 SP Woodward, A      1*+    ML 25 | 10.7  6.7  2.3  1.9 |  89  86 |  68  53 | -+ ||  69 |
+SP Dagostino, R    F  +   AAA 33 | 10.2  6.3  4.1  1.4 |  63     |  71     |    ||  69 |
 SP Shepherd, M             AA 22 | 11.6  4.3  1.8  1.8 |  67     |  68     |  - ||  66 |
 MR Alvarez, L      F   #  AAA 27 | 12.4  3.9  2.0  0.5 |  60     |  77     |  + ||  64 |
 MR Rego, M         F  + ~  AA 34 | 10.4  6.7  3.1  1.6 |  84     |  70     |  + ||  62 |
@@ -241,8 +241,8 @@ SP Lyon, A                 AA 23 | 12.7  5.8  6.3  1.7 |  49     |  49     |  + 
 MR Sarachaga, K        #   AA 27 | 12.2  5.4  4.1  1.7 |  49     |  58     | +- ||  49 |
 SP Amaral, T               AA 23 | 13.5  4.8  4.9  2.1 |  41     |  48     |  + ||  46 |
 SP Rodriguez, A      *      A 21 | 14.0  5.2  6.5  1.9 |  43     |  43     |  + ||  43 |
-MR Dial, E                  A 18 | 13.5  4.7  4.7  2.0 |  48     |  48     |  + ||  42 |
 SP Taveras, M              AA 23 | 14.2  5.2  6.5  2.1 |  42     |  42     | +- ||  42 |
+MR Dial, E                  A 18 | 13.5  4.7  4.7  2.0 |  48     |  48     |  + ||  42 |
 SP Coughlin, D              A 20 | 14.4  5.2  6.6  2.1 |  41     |  41     |  - ||  41 |
 SP Foster, M                A 18 | 14.6  5.2  6.6  1.9 |  41     |  41     |    ||  41 |
 MR Anaya, A                 A 22 | 14.0  5.0  6.2  1.8 |  50     |  43     |  + ||  38 |
@@ -254,8 +254,8 @@ MR Albers, J                A 18 | 14.5  5.1  6.6  2.1 |  41     |  41     |  + 
  (25) ML               | (23) AAA              | (23) AA               | (23) A                | ( 2) DL               |
  SP Campbell, T     33 | SP Dagostino, R    33 | SP Amaral, T       23 | SP Addy, C         21 | SP Horne, J        35 |
  SP Cox, W          38 | SP Granados, D     33 | SP Chavez, S       22 | SP Coughlin, D     20 | LF Depaul, O       35 |
- SP Lashley, J      33 | SP Orduna, N       30 | SP Lyon, A         23 | SP Foster, M       18 |                       |
- SP Meany, J        28 | SP Reith, G        35 | SP Shepherd, M     22 | SP Henriques, J    20 |                       |
+ SP Lashley, J      33 | SP Meany, J        28 | SP Lyon, A         23 | SP Foster, M       18 |                       |
+ SP Reith, G        35 | SP Orduna, N       30 | SP Shepherd, M     22 | SP Henriques, J    20 |                       |
  SP Secrest, C      31 | MR Alvarez, L      27 | SP Taveras, M      23 | SP Rodriguez, A    21 |                       |
  SP Stegman, B      24 | MR Dubois, W       26 | SP Zubiaga, M      25 | MR Albers, J       18 |                       |
  SP Woodward, A     25 | MR Figueredo, R    31 | MR Embrey, C       27 | MR Anaya, A        22 |                       |
@@ -280,26 +280,24 @@ MR Albers, J                A 18 | 14.5  5.1  6.6  2.1 |  41     |  41     |  + 
 Total:96 (target 70-75)
 Balance:54/42 = 1.286 (ideal: 1.273)
 
-  ML -> AAA  SP Gary Reith
   ML -> AAA  SP Nickolas Orduna
   ML -> DL   SP Jeffrey Horne
  AAA -> ML   SS Robert Broaddus
  AAA -> ML   MR Ronald Diep
- AAA -> ML   SP Jame Meany
- AAA -> AA    C Arthur Orr
  AAA -> AA   MR Charles Embrey
+ AAA -> AA    C Arthur Orr
  AAA -> A    3B Justin Tepper
-  AA -> AAA  SS Cordell Macaulay
   AA -> AAA  CF Rigo Fano
+  AA -> AAA  SS Cordell Macaulay
   AA -> A    MR Armando Anaya
    A -> AA    C Manny Barcenas
 
 SP
 Brian Stegman
 Carey Secrest
-Jame Meany
 Tanner Campbell
 Wendell Cox
+Gary Reith
 
 LR
 James Lashley
@@ -334,14 +332,14 @@ RF| Arrington, G    (D)                 |RF| ( 1) West, B
 
 vs RHP+DH
  C| Howell, J       (D)                 | C| ( 1) Ikner, J       
-1B| West, B         (D)                 |1B| ( 1) Almonte, E     
+1B| Torrealba, U    (D)                 |1B| ( 1) Almonte, E     
 2B| Harris, W       (D)                 |2B| ( 1) Broaddus, R    
 3B| Goodridge, J    (D) Rowland, H      |3B| ( 1) Rowland, H     
 SS| Lozada, L       (D) Broaddus, R     |SS| ( 1) Broaddus, R    
-LF| Lantigua, A     (D)                 |LF| ( 1) Almonte, E     
+LF| West, B         (D)                 |LF| ( 1) Almonte, E     
 CF| Quijano, L      (D)                 |CF| ( 1) Almonte, E     
-RF| Arrington, G    (D)                 |RF| ( 1) Almonte, E     
-DH| Torrealba, U    (D)                 |DH| ( 1) Almonte, E     
+RF| Lantigua, A     (D)                 |RF| ( 1) Almonte, E     
+DH| Arrington, G    (D)                 |DH| ( 1) Almonte, E     
 
 vs LHP
  C| Howell, J       (D)                 | C| ( 1) Ikner, J       
@@ -355,30 +353,30 @@ RF| Arrington, G    (D) Lantigua, A     |RF| ( 1) Lantigua, A
 
 vs LHP+DH
  C| Howell, J       (D)                 | C| ( 1) Ikner, J       
-1B| Torrealba, U    (D)                 |1B| ( 1) Harris, W      
-2B| Goodridge, J    (D)                 |2B| ( 1) Harris, W      
-3B| Rowland, H      (D)                 |3B| ( 1) Harris, W      
-SS| Broaddus, R     (D)                 |SS| ( 1) Ikner, J       
+1B| Torrealba, U    (D)                 |1B| ( 1) Lozada, L      
+2B| Goodridge, J    (D)                 |2B| ( 1) Ikner, J       
+3B| Rowland, H      (D)                 |3B| ( 1) Ikner, J       
+SS| Broaddus, R     (D)                 |SS| ( 1) Lozada, L      
 LF| West, B         (D)                 |LF| ( 1) Lantigua, A    
 CF| Quijano, L      (D)                 |CF| ( 1) Lantigua, A    
 RF| Arrington, G    (D) Lantigua, A     |RF| ( 1) Lantigua, A    
-DH| Lozada, L       (D)                 |DH| ( 1) Harris, W      
+DH| Harris, W       (D)                 |DH| ( 1) Lozada, L      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. 3B R Goodridge, J     3B R Goodridge, J     LF S West, B          2B R Goodridge, J    
-2. 1B S Torrealba, U     DH S Torrealba, U     1B S Torrealba, U     1B S Torrealba, U    
+2. 1B S Torrealba, U     1B S Torrealba, U     1B S Torrealba, U     1B S Torrealba, U    
 3. SS R Lozada, L        SS R Lozada, L        RF L Arrington, G     RF L Arrington, G    
-4. RF L Arrington, G     RF L Arrington, G     2B R Goodridge, J     CF S Quijano, L      
-5. CF S Quijano, L       CF S Quijano, L       CF S Quijano, L       DH R Lozada, L       
+4. RF L Arrington, G     DH L Arrington, G     2B R Goodridge, J     CF S Quijano, L      
+5. CF S Quijano, L       CF S Quijano, L       CF S Quijano, L       DH L Harris, W       
 6. 2B L Harris, W        2B L Harris, W        3B R Rowland, H       LF S West, B         
-7. LF L Lantigua, A      1B S West, B           C R Howell, J         C R Howell, J       
-8.  C R Howell, J        LF L Lantigua, A      SS R Broaddus, R      3B R Rowland, H      
+7. LF L Lantigua, A      LF S West, B           C R Howell, J         C R Howell, J       
+8.  C R Howell, J        RF L Lantigua, A      SS R Broaddus, R      3B R Rowland, H      
 9.  P                     C R Howell, J         P                    SS R Broaddus, R     
 
 --- Bunt for Hit ---
 SS Robert Broaddus           32| SS :  90       6   5     : 101 |    :                     :   0 |   1 | 102 | -3887--- |    *+ ~  $1.13Mx3 |  $2.19M: $3.33M |  p511 | Houston Astros       | *
 
---- Stealing @ 65.9 ---
+--- Stealing @ 65.8 ---
 3B Hollis Rowland            32| 3B :  92       1   8     : 101 |    :                     :   0 |   1 | 102 | -3383--- |  F *+ ~     $1M   |  $3.51M: $5.32M |  p507 | Houston Astros       | *
 
 40 man: 39/40, Remove: 2, Add: 2
@@ -421,8 +419,8 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 CF Arthur Lantigua           20 | CF :  92       1 :  93 | CF : 100       1 : 101 |  +8 |  +9 +6+19 +5       :  +9 +6+19 +5       | +++++
 3B Kuemon Takamasa           23 | 3B :  67      -8 :  59 | 3B :  72      -8 :  64 |  +5 |  +1 +4 +3    +4    :  +1 +4 +3    +5    | ++
 CF Rigo Fano                 27 | CF :  75      -3 :  72 | CF :  79      -3 :  76 |  +4 |  +6 +3 +4 +2       :  +6 +3 +4 +2       | *
- C George Bradley Jr.        21 |  C :  67      -5 :  62 |  C :  70      -5 :  65 |  +3 |  +1 +4             :  +1 +4             | +
 LF Ru-zuberuto Takamuku      19 | CF :  73      -4 :  69 | CF :  76      -4 :  72 |  +3 |  +3    +6 +3 +3    :  +3    +6 +4 +4    | +++
+ C George Bradley Jr.        21 |  C :  67      -5 :  62 |  C :  70      -5 :  65 |  +3 |  +1 +4             :  +1 +4             | +
  C Manny Barcenas            22 |  C :  64       3 :  67 |  C :  67       3 :  70 |  +3 |  +3 +6 +3 +3 +3    :  +4 +6 +3 +2 +3    | ++
  C James Howell              26 |  C :  94       9 : 103 |  C :  96       9 : 105 |  +2 |           +3 +2    :           +2 +2    | *
 RF Houston Albarado          21 | CF :  71      -2 :  69 | CF :  72      -2 :  70 |  +1 |  +1 +2 +3 +1 -1    :  +1 +2 +3 +1 -1    | ++
@@ -445,8 +443,8 @@ CF James Mailloux            31 | CF :  87       3 :  90 | CF :  87       1 :  8
  C Adam Fasching             26 |  C :  94      12 : 106 |  C :  90      12 : 102 |  -4 |  +1       -1       :  +1       -1       | *
 1B Bill West                 28 | CF : 104       0 : 104 | CF :  99       0 :  99 |  -5 |  +1          +3    :  +1          +3    | **
 2B Amadeo Hidalgo            21 | 2B :  67       0 :  67 | 2B :  61       0 :  61 |  -6 |  -2 +2    +1 +1    :  -2 +2    +1 +1    | +
- C Arthur Orr                22 |  C :  89       6 :  95 |  C :  82       6 :  88 |  -7 |  +6 +2       +2    :  +6 +2       +2    | ++++-
 RF Julian Contreras          23 | CF :  67       3 :  70 | CF :  60       3 :  63 |  -7 |  -1    -3 -1 -1    :  -1    -3 -1 -1    | ++
+ C Arthur Orr                22 |  C :  89       6 :  95 |  C :  82       6 :  88 |  -7 |  +6 +2       +2    :  +6 +2       +2    | ++++-
 3B Allen Suarez              32 | 3B : 111      -5 : 106 | 3B : 100      -5 :  95 | -11 |  -3       -1 -1    :  -3       -1 -1    | **^
 2B Paul Charlie              24 | 2B :  92      -1 :  91 | 2B :  79      -1 :  78 | -13 |  +3 -2    +2       :  +3 -2    +2       | +++
 2B Weston Drysdale           31 | SS :  98       1 :  99 | SS :  85       1 :  86 | -13 |  -1          -1    :  -1          -1    | **^
@@ -492,8 +490,8 @@ Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
 SP Mark Shepherd             22 | SP :      53     :  53 | SP :      66     :  66 | +14 |  +1 +6          :  +3 +5          | +++-
 SP Chris Addy                21 | SP :      37     :  37 | SP :      37     :  37 |  +1 |  +1 +3 +5       :  +1 +2 +5       | ++++
-SP Michael Foster            18 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                 :  +2             | +++-
 MR James Albers              18 | MR :      35     :  35 | MR :      35     :  35 |  +0 |  +4             :  +5             | +++++
+SP Michael Foster            18 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                 :  +2             | +++-
 MR Erik Vanetten             22 | MR :      35     :  35 | MR :      35     :  35 |  +0 |  +5 +4+11    +1 :  +6 +4+10    +1 | +++
 SP Tony Amaral               23 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                 :                 | +++-
 
@@ -1578,23 +1576,23 @@ Nestor Urbina             |                                                     
  1 | 114 ( 90-189) | 120 ( 96-195) 109/132 |  16/ 16 || 112 ( 90-251) | 118 ( 96-257) 107/130 |  80/ 80
  2 |  98 ( 47-160) | 104 ( 53-166)  95/114 |  16/ 16 ||  96 ( -1-160) | 102 (  5-166)  93/112 |  80/ 80
  3 |  82 ( 21- 91) |  88 ( 27- 97)  80/ 97 |  16/ 16 ||  80 (-19- 91) |  86 (-13- 97)  79/ 95 |  80/ 80
- 4 |  76 ( 34-143) |  82 ( 40-149)  75/ 90 |  16/ 16 ||  72 ( 34-143) |  78 ( 40-149)  71/ 85 |  80/ 80
+ 4 |  76 ( 34-143) |  82 ( 40-149)  75/ 90 |  16/ 16 ||  71 (-63-143) |  77 (-57-149)  70/ 85 |  80/ 80
  5 |  66 ( 24- 73) |  72 ( 30- 79)  66/ 79 |  16/ 16 ||  65 (-38- 73) |  71 (-32- 79)  64/ 78 |  80/ 80
- 6 |  60 ( 29-108) |  66 ( 35-114)  60/ 73 |  16/ 16 ||  60 ( 24-108) |  66 ( 30-114)  60/ 72 |  80/ 80
- 7 |  58 ( 46- 65) |  64 ( 52- 71)  58/ 70 |  16/ 16 ||  55 (-35-105) |  61 (-29-111)  55/ 67 |  80/ 80
- 8 |  55 ( 26- 62) |  61 ( 32- 68)  56/ 67 |  16/ 16 ||  51 (-47- 82) |  57 (-41- 88)  52/ 63 |  80/ 80
- 9 |  53 ( 47- 87) |  59 ( 53- 93)  53/ 65 |  16/ 16 ||  47 (-66- 87) |  53 (-59- 93)  48/ 58 |  80/ 80
+ 6 |  60 ( 29-108) |  66 ( 35-114)  60/ 73 |  16/ 16 ||  60 (-65-108) |  66 (-59-114)  60/ 72 |  80/ 80
+ 7 |  58 ( 46- 65) |  64 ( 52- 71)  58/ 70 |  16/ 16 ||  55 (-19-105) |  61 (-13-111)  55/ 67 |  80/ 80
+ 8 |  55 ( 26- 62) |  61 ( 32- 68)  56/ 67 |  16/ 16 ||  52 (-35- 65) |  58 (-29- 71)  52/ 63 |  80/ 80
+ 9 |  53 ( 47- 87) |  59 ( 53- 93)  53/ 65 |  16/ 16 ||  47 (-63- 87) |  53 (-57- 93)  48/ 58 |  80/ 80
 10 |  48 ( 36- 51) |  54 ( 42- 57)  49/ 60 |  16/ 16 ||  44 (-71- 73) |  50 (-62- 79)  45/ 55 |  80/ 80
-11 |  45 ( 41- 47) |  51 ( 47- 53)  47/ 56 |  16/ 16 ||  38 (-57- 51) |  44 (-48- 57)  40/ 49 |  80/ 80
+11 |  45 ( 41- 47) |  51 ( 47- 53)  47/ 56 |  16/ 16 ||  42 (-30- 51) |  48 (-24- 57)  44/ 53 |  80/ 80
 12 |  41 ( 36- 76) |  47 ( 42- 82)  43/ 52 |  16/ 16 ||  39 (-71- 85) |  45 (-62- 91)  41/ 49 |  80/ 80
-13 |  37 ( 33- 41) |  43 ( 39- 47)  39/ 48 |  16/ 16 ||  34 (-55- 92) |  40 (-49- 98)  36/ 44 |  80/ 80
+13 |  37 ( 33- 41) |  43 ( 39- 47)  39/ 48 |  16/ 16 ||  34 (-60- 63) |  40 (-54- 69)  37/ 44 |  80/ 80
 14 |  34 ( 24- 46) |  40 ( 30- 53)  36/ 44 |  16/ 16 ||  31 (-54-112) |  37 (-48-118)  33/ 40 |  80/ 80
-15 |  30 (  7- 62) |  36 ( 13- 68)  32/ 39 |  16/ 16 ||  25 (-58- 71) |  31 (-52- 77)  28/ 34 |  80/ 80
+15 |  30 (  7- 62) |  36 ( 13- 68)  32/ 39 |  16/ 16 ||  26 (-58- 71) |  32 (-52- 77)  29/ 35 |  80/ 80
 16 |  27 ( 25- 60) |  33 ( 31- 66)  30/ 36 |  16/ 16 ||  24 (-28- 96) |  30 (-22-102)  27/ 33 |  80/ 80
-17 |  24 ( 10- 70) |  30 ( 16- 76)  27/ 33 |  16/ 16 ||  21 (-62-118) |  27 (-56-124)  24/ 29 |  80/ 80
-18 |  19 ( 13- 59) |  25 ( 19- 65)  22/ 27 |  16/ 16 ||  17 (-71- 85) |  23 (-62- 91)  21/ 26 |  80/ 80
+17 |  24 ( 10- 70) |  30 ( 16- 76)  27/ 33 |  16/ 16 ||  21 (-23-118) |  27 (-17-124)  25/ 30 |  80/ 80
+18 |  19 ( 13- 59) |  25 ( 19- 65)  22/ 27 |  16/ 16 ||  17 (  1- 85) |  23 (  7- 91)  21/ 26 |  80/ 80
 19 |  13 ( 11- 80) |  19 ( 17- 86)  17/ 21 |  16/ 16 ||  13 (-71- 86) |  19 (-62- 92)  17/ 21 |  80/ 80
-20 |   8 (  7- 48) |  14 ( 13- 54)  13/ 16 |  16/ 16 ||   8 (-71- 92) |  14 (-62- 98)  13/ 16 |  80/ 80
+20 |   8 (  7- 48) |  14 ( 13- 54)  13/ 16 |  16/ 16 ||   8 (-71- 61) |  14 (-62- 67)  13/ 16 |  80/ 80
 
 SP Horne, J        35|  17,700,500  17,700,500
 MR Gutierrez, A    34|  13,780,000  13,780,000
@@ -1843,10 +1841,10 @@ DESIGNATED_HITTER
  4 | Depaul, O        110 -24  86 | Suarez, A        101 -24  77 | Depaul, O        111 -24  87
  5 | Lozada, L        102 -24  78 | West, B          100 -24  76 | Lozada, L        102 -24  78
  6 | Harris, W        102 -24  78 | Lozada, L        100 -24  76 | Harris, W        102 -24  78
- 7 | Lantigua, A      100 -24  76 | Harris, W        100 -24  76 | Lantigua, A      101 -24  77
- 8 | Quijano, L       100 -24  76 | Dickerson, M      97 -24  73 | Vinci, R         100 -24  76
- 9 | Suarez, A        100 -24  76 | Anderson, A       97 -24  73 | West, B           99 -24  75
-10 | West, B           99 -24  75 | Rowland, H        96 -24  72 | Quijano, L        99 -24  75
+ 7 | Suarez, A        100 -24  76 | Harris, W        100 -24  76 | Lantigua, A      101 -24  77
+ 8 | Lantigua, A      100 -24  76 | Dickerson, M      97 -24  73 | Vinci, R         100 -24  76
+ 9 | Quijano, L       100 -24  76 | Anderson, A       97 -24  73 | Suarez, A         99 -24  75
+10 | Vinci, R          99 -24  75 | Rowland, H        96 -24  72 | West, B           99 -24  75
 
 --- Trade Values ---
 SP Brian Stegman             24| SP :     106      21  10 : 137 | SP :     150      65  47 : 262 |   6 | 268 |          |   2*      $500k r | $13.59M:$20.62M | p1096 | Houston Astros       | +++++
