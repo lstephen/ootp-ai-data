@@ -82,7 +82,7 @@ Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., End
 -- Hits
 Selected: RandomForest
 Scores: [(0.076836132837508675, RandomForest(...)), (-0.020799513030572925, Isotonic(...))]
-Best Parameters: {'selection__k': 6, 'regressor__n_estimators': 41, 'regressor__max_depth': 45}
+Best Parameters: {'selection__k': 6, 'regressor__max_depth': 45, 'regressor__n_estimators': 41}
 Feature Scores: [  5.  20.   9.   8.   1.   0.   1.   0.]
 Feature Mask: [ True  True  True  True  True False  True False]
 Feature Importances: [ 0.096  0.372  0.14   0.111  0.123  0.157]
@@ -112,7 +112,7 @@ Feature Importances: [ 0.1  0.9]
 -- Ks
 Selected: RandomForest
 Scores: [(0.31628931545871403, RandomForest(...)), (0.30254738375528145, Isotonic(...))]
-Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}
+Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}
 Feature Scores: [   4.    2.    0.   18.   21.  127.    1.    2.]
 Feature Mask: [False False False False  True  True False False]
 Feature Importances: [ 0.05  0.95]
@@ -193,20 +193,20 @@ SP Chavez, N       F   ML 37 |  9.9  3.7  1.9  0.5 |  78     | 105     |    ||  
 SP Bethke, J           ML 38 | 10.7  5.3  1.3  0.1 |  65  80 | 110  73 |  - ||  92 |
 SP Hammaker, A        AAA 27 |  9.7  3.9  1.2  1.4 |  79     |  97     |  + ||  92 |
 SP Bruhert, M         AAA 33 | 11.4  3.7  1.2  0.5 |  80 308 |  89  96 | -  ||  88 |
+SP Moose, B            ML 37 | 11.4  4.0  1.9  0.5 |  86 107 |  88  55 |  + ||  87 |
 SP LaGrow, L          AAA 36 | 11.1  4.8  1.9  0.5 |  76   0 |  90 187 |    ||  87 |
-SP Moose, B           AAA 37 | 11.4  4.0  1.9  0.5 |  86 107 |  88  55 |  + ||  87 |
 SP Tidrow, D       F   ML 37 | 11.0  5.0  1.7  1.0 |  68  36 |  89  19 |    ||  83 |
-SP McEnaney, W         ML 33 | 11.4  2.5  3.4  0.4 | 124     |  73     |  - ||  79 |
+SP McEnaney, W        AAA 33 | 11.4  2.5  3.4  0.4 | 124     |  73     |  - ||  79 |
 SP Welch, B           AAA 28 | 10.4  3.4  3.0  1.5 |  73     |  75     | ++ ||  75 |
 SP W. Davis, M    I 5  DL 24 |  9.4  6.4  4.4  1.5 |  75     |  75     | ++ ||  73 |
 MR Mohorcic, D         AA 29 | 11.2  2.5  1.2  2.2 |  64     |  67     | -  ||  58 |
 SP Gaff, B            AAA 26 | 12.8  2.7  4.4  0.8 |  52     |  59     |    ||  56 |
-SP L. Smith, B         AA 30 | 10.7  2.3  1.2  4.6 |  55     |  55     | -  ||  51 |
 SP Hurst, B             A 27 | 12.9  4.9  3.2  2.4 |  52     |  51     | ++ ||  51 |
+SP L. Smith, B         AA 30 | 10.7  2.3  1.2  4.6 |  55     |  55     | -  ||  51 |
 SP Owchinko, B         AA 30 | 13.8  3.0  3.3  1.6 |  57     |  50     |  - ||  50 |
 SP Botting, R          AA 29 | 11.6  3.9  1.2  4.6 |  55     |  51     | -- ||  49 |
-MR Schuler, D          AA 31 | 11.3  7.0  1.2  4.5 |  58     |  52     | -- ||  46 |
 MR Booker, G            A 24 | 12.8  2.6  4.5  1.6 |  53     |  53     |  - ||  46 |
+MR Schuler, D          AA 31 | 11.3  7.0  1.2  4.5 |  58     |  52     | -- ||  46 |
 SP Hawkins, A           A 25 | 13.5  2.7  4.6  2.6 |  45     |  44     |    ||  45 |
 MR Tufts, B            AA 29 | 13.2  4.9  3.3  2.5 |  51     |  49     |  - ||  42 |
 MR Rodas, R             A 25 | 10.9  2.7  4.3  4.2 |  44     |  48     |  - ||  41 |
@@ -218,12 +218,12 @@ SP Oliveras, F      2   A 22 | 13.1  2.6  4.5  5.3 |  38     |  38     |    ||  
  SP Chavez, N       37 | SP Hammaker, A     27 | SP Owchinko, B     30 | SP Oliveras, F     22 |                       |
  SP Cram, J         37 | SP Welch, B        28 | MR Mohorcic, D     29 | MR Booker, G       24 |                       |
  SP Denny, J        32 | MR LaGrow, L       36 | MR Schuler, D      31 | MR Rodas, R        25 |                       |
- SP Dues, H         30 | MR Moose, B        37 | MR Tufts, B        29 |  C Pagnozzi, T     22 |                       |
+ SP Dues, H         30 | MR McEnaney, W     33 | MR Tufts, B        29 |  C Pagnozzi, T     22 |                       |
  SP Tidrow, D       37 |  C Hodges, R       35 |  C Nelson, J       25 |  C Sasser, M       22 |                       |
  SP Vossler, D      33 | 1B Bernhardt, J    31 |  C Pruitt, R       33 | 1B McKnight, J     22 |                       |
  MR Andersen, L     31 | 2B Perconte, J     30 | 1B Anderson, D     24 | 2B Gant, R         20 |                       |
- MR McEnaney, W     33 | 3B Kelleher, M     37 | 1B Oberkfell, K    28 | 3B Hamilton, J     21 |                       |
- MR Mitchell, P     35 | SS Almon, B        32 | 2B Gonzales, R     24 | SS A. Miller, K    21 |                       |
+ MR Mitchell, P     35 | 3B Kelleher, M     37 | 1B Oberkfell, K    28 | 3B Hamilton, J     21 |                       |
+ MR Moose, B        37 | SS Almon, B        32 | 2B Gonzales, R     24 | SS A. Miller, K    21 |                       |
   C Simmons, T      35 | LF V. Mitchell, B  30 | 3B Sharperson, M   23 | LF Litton, G       20 |                       |
   C Varney, P       36 | CF D. Wright, G    26 | SS Andrews, F      32 | CF T. McLemore, M  20 |                       |
   C Wynegar, B      29 | CF Law, R          28 | SS Riles, E        24 | RF Jose, F         19 |                       |
@@ -241,15 +241,13 @@ SP Oliveras, F      2   A 22 | 13.1  2.6  4.5  5.3 |  38     |  38     |    ||  
 Total:70 (target 70-75)
 Balance:41/29 = 1.414 (ideal: 1.273)
 
-  ML -> AAA  MR Bob Moose
   ML -> AAA  MR Lerrin LaGrow
   ML -> AAA  SP Mike Bruhert
- AAA -> ML   MR Will McEnaney
+ AAA -> ML   SP Cy Acosta
  AAA -> ML   SP Nestor Chavez
  AAA -> ML   SP Hal Dues
- AAA -> ML   SP Cy Acosta
- AAA -> AA    C Ron Pruitt
  AAA -> AA   MR Dale Mohorcic
+ AAA -> AA    C Ron Pruitt
   AA -> AAA  CF George D. Wright
   AA -> AAA  SP Bob Welch
    A -> DL   SP Mark W. Davis
@@ -265,8 +263,8 @@ LR
 Dick Tidrow
 
 MR
+Bob Moose
 Jim Bethke
-Will McEnaney
 
 SU
 Hal Dues
@@ -278,7 +276,7 @@ Larry Andersen
 NONE
 
 
-BP Ability: 119
+BP Ability: 120
 
 --- Slow Hook ---
 John Denny
@@ -317,29 +315,29 @@ RF| Lisi, R         (D)                 |RF| ( 1) Collins, D
 
 vs LHP+DH
  C| Wynegar, B      (D) Varney, P       | C| ( 1) Varney, P      
-1B| Smalley III, R  (D) Maloof, J       |1B| ( 1) Young, J       
-2B| DeJohn, M       (D)                 |2B| ( 1) Young, J       
-3B| Phillips, T     (D)                 |3B| ( 1) Young, J       
-SS| Harrah, T       (D)                 |SS| ( 1) Young, J       
-LF| Collins, D      (D)                 |LF| ( 1) Woods, A       
-CF| Lynn, F         (D)                 |CF| ( 1) Maloof, J      
-RF| Lisi, R         (D)                 |RF| ( 1) Maloof, J      
-DH| Burleson, R     (D)                 |DH| ( 1) Young, J       
+1B| Young, J        (D) Maloof, J       |1B| ( 1) Maloof, J      
+2B| DeJohn, M       (D)                 |2B| ( 1) Maloof, J      
+3B| Smalley III, R  (D)                 |3B| ( 1) Maloof, J      
+SS| Harrah, T       (D)                 |SS| ( 1) Maloof, J      
+LF| Phillips, T     (D) Collins, D      |LF| ( 1) Collins, D     
+CF| Lynn, F         (D) Collins, D      |CF| ( 1) Collins, D     
+RF| Lisi, R         (D)                 |RF| ( 1) Collins, D     
+DH| Burleson, R     (D)                 |DH| ( 1) Maloof, J      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. SS R Harrah, T        SS R Harrah, T        3B R Harrah, T        SS R Harrah, T       
-2. 3B S Smalley III, R   DH S Smalley III, R   1B S Smalley III, R   1B S Smalley III, R  
-3. RF S Phillips, T      3B S Phillips, T      LF S Phillips, T      3B S Phillips, T     
+2. 3B S Smalley III, R   DH S Smalley III, R   1B S Smalley III, R   3B S Smalley III, R  
+3. RF S Phillips, T      3B S Phillips, T      LF S Phillips, T      LF S Phillips, T     
 4. CF L Lynn, F          CF L Lynn, F          SS R Burleson, R      DH R Burleson, R     
 5. 1B L Young, J         1B L Young, J         CF L Lynn, F          CF L Lynn, F         
 6.  C S Wynegar, B        C S Wynegar, B        C S Wynegar, B        C S Wynegar, B      
-7. LF L Woods, A         RF L Maloof, J        RF R Lisi, R          RF R Lisi, R         
-8. 2B S DeJohn, M        LF L Woods, A         2B S DeJohn, M        2B S DeJohn, M       
-9.  P                    2B S DeJohn, M         P                    LF S Collins, D      
+7. LF L Woods, A         RF L Maloof, J        RF R Lisi, R          1B L Young, J        
+8. 2B S DeJohn, M        LF L Woods, A         2B S DeJohn, M        RF R Lisi, R         
+9.  P                    2B S DeJohn, M         P                    2B S DeJohn, M       
 
 --- Bunt for Hit ---
 
---- Stealing @ 65.4 ---
+--- Stealing @ 65.5 ---
 1B John Young                36| 1B : 114     -17  13   1 : 111 |    :                     :   0 | -12 |  99 | -4------ |  F   $8.34M   |  $5.33M: $6.39M | p1203 | Cleveland Indians    | **^
 LF Dave Collins              32| CF :  93       3   0     :  96 |    :                     :   0 |   1 |  97 | -4---886 |       $576kx2 |        :        |  p488 | Cleveland Indians    | **^
 1B Jack Maloof               35| RF : 103     -12   8     :  99 |    :                     :   0 |  -6 |  93 | -5---435 |       $980kx3 |  $2.84M: $3.41M | p1394 | Cleveland Indians    | *
@@ -376,26 +374,26 @@ LF Greg Litton               20 | SS :  65      -1 :  64 | SS :  65      -1 :  6
 CF Mark T. McLemore          20 | CF :  85     -11 :  74 | CF :  85     -11 :  74 |  +0 |                       :                       | +++-
 3B Jeff Hamilton             21 | 3B :  73      -7 :  66 | 3B :  73      -7 :  66 |  +0 |                       :                       | ++
  C Tom Pagnozzi              22 |  C :  73       3 :  76 |  C :  73       3 :  76 |  +0 |                       :                       | +++
-3B Mike Sharperson           23 | SS :  88       4 :  92 | SS :  88       4 :  92 |  +0 |    +10                :                +10    | ++-
 LF Rich Amaral               23 | SS :  68       4 :  72 | SS :  68       4 :  72 |  +0 |                       :                       | ++
+3B Mike Sharperson           23 | SS :  88       4 :  92 | SS :  88       4 :  92 |  +0 |    +10                :                +10    | ++-
+SS Ernie Riles               24 | 2B :  78      -7 :  71 | 2B :  78      -7 :  71 |  +0 |                       :                       | ++-
 1B Dave Anderson             24 | SS :  81      -1 :  80 | SS :  81      -1 :  80 |  +0 |    +10         +10    :                       | +++-
 2B Rene Gonzales             24 | SS :  81      -1 :  80 | SS :  81      -1 :  80 |  +0 |                       :                       | +++-
-SS Ernie Riles               24 | 2B :  78      -7 :  71 | 2B :  78      -7 :  71 |  +0 |                       :                       | ++-
 3B Tony Phillips             25 | SS : 108       3 : 111 | SS : 108       3 : 111 |  +0 |                       :                       | ***^
  C Jamie Nelson              25 |  C :  82       4 :  86 |  C :  82       4 :  86 |  +0 |                       :                       | +++
 CF George D. Wright          26 | CF :  88     -11 :  77 | CF :  88     -11 :  77 |  +0 |                +10    :                +10    | *
 CF Rudy Law                  28 | CF :  93      -5 :  88 | CF :  93      -5 :  88 |  +0 |                       :                       | **
- C Butch Wynegar             29 |  C : 106       9 : 115 |  C : 106       9 : 115 |  +0 |                       :                       | **^
 RF Rick Lisi                 29 | RF : 100      -6 :  94 | RF : 100      -6 :  94 |  +0 |                       :                       | **
+ C Butch Wynegar             29 |  C : 106       9 : 115 |  C : 106       9 : 115 |  +0 |                       :                       | **^
 2B Jack Perconte             30 | SS :  95       5 : 100 | SS :  95       5 : 100 |  +0 |                       :                       | **^
-2B Mark DeJohn               31 | SS : 100      10 : 110 | SS : 100      10 : 110 |  +0 |                       :                       | **^
-1B Juan Bernhardt            31 | 3B : 102     -11 :  91 | 3B : 102     -11 :  91 |  +0 |                       :                       | **^
 LF Al Woods                  31 | LF : 101     -10 :  91 | LF : 101     -10 :  91 |  +0 |                       :                       | **
-SS Fred Andrews              32 | SS :  88      11 :  99 | SS :  88      11 :  99 |  +0 |                       :                       | **
-SS Roy Smalley III           32 | SS : 109       3 : 112 | SS : 109       3 : 112 |  +0 |                       :                       | **^
+1B Juan Bernhardt            31 | 3B : 102     -11 :  91 | 3B : 102     -11 :  91 |  +0 |                       :                       | **^
+2B Mark DeJohn               31 | SS : 100      10 : 110 | SS : 100      10 : 110 |  +0 |                       :                       | **^
 RF Glenn Burke               32 | CF :  93     -11 :  82 | CF :  93     -11 :  82 |  +0 |                       :                       | *
 LF Dave Collins              32 | CF :  93       3 :  96 | CF :  93       3 :  96 |  +0 |                       :                       | **^
 SS Bill Almon                32 | SS :  92     -11 :  81 | SS :  92     -11 :  81 |  +0 |                       :                       | **
+SS Roy Smalley III           32 | SS : 109       3 : 112 | SS : 109       3 : 112 |  +0 |                       :                       | **^
+SS Fred Andrews              32 | SS :  88      11 :  99 | SS :  88      11 :  99 |  +0 |                       :                       | **
  C Ron Pruitt                33 |  C :  83      15 :  98 |  C :  83      15 :  98 |  +0 |                       :                       | *
 SS Rick Burleson             33 | SS : 104       4 : 108 | SS : 104       4 : 108 |  +0 |                       :                       | ***^
  C Ron Hodges                35 |  C :  93      15 : 108 |  C :  93      15 : 108 |  +0 |                       :                       | **
@@ -414,23 +412,23 @@ MR Greg Booker               24 | MR :      46     :  46 | MR :      46     :  4
 MR Rich Rodas                25 | MR :      41     :  41 | MR :      41     :  41 |  +0 | +10         +10          : +10   -10                | +++
 SP Bruce Hurst               27 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | *
 SP Atlee Hammaker            27 | SP :      92     :  92 | SP :      92     :  92 |  +0 |                          :                          | **^
-SP Ralph Botting             29 | SP :      49     :  49 | SP :      49     :  49 |  +0 |                          :                          | *
 MR Bob Tufts                 29 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                          | *
-SP Bob Owchinko              30 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                          :                          | *
+SP Ralph Botting             29 | SP :      49     :  49 | SP :      49     :  49 |  +0 |                          :                          | *
 SP Billy L. Smith            30 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | *
 SP Hal Dues                  30 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                          :                          | **
+SP Bob Owchinko              30 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                          :                          | *
 MR Dave Schuler              31 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                          :                          | *
 SP John Denny                32 | SP :     122     : 122 | SP :     122     : 122 |  +0 |                          :                          | ***
 SP Mike Bruhert              33 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | *
 SP Dan Vossler               33 | SP :     100     : 100 | SP :     100     : 100 |  +0 |                          :                          | **^
 MR Paul Mitchell             35 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                          :                          | **
 MR Lerrin LaGrow             36 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                          :                          | **^
-SP Jerry Cram                37 | SP :     121     : 121 | SP :     121     : 121 |  +0 |                          :                          | **
 SP Nestor Chavez             37 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                          :                          | *
-SP Dick Tidrow               37 | SP :      83     :  83 | SP :      83     :  83 |  +0 |                          :                          | *
 MR Bob Moose                 37 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                          :                          | *
-SP Cy Acosta                 38 | SP :     107     : 107 | SP :     107     : 107 |  +0 |                          :                          | **
+SP Dick Tidrow               37 | SP :      83     :  83 | SP :      83     :  83 |  +0 |                          :                          | *
+SP Jerry Cram                37 | SP :     121     : 121 | SP :     121     : 121 |  +0 |                          :                          | **
 SP Jim Bethke                38 | SP :      92     :  92 | SP :      92     :  92 |  +0 |                          :                          | **^
+SP Cy Acosta                 38 | SP :     107     : 107 | SP :     107     : 107 |  +0 |                          :                          | **
 SP Bob Welch                 28 | SP :      79     :  79 | SP :      75     :  75 |  -4 |                          :    -10                   | **
 
 Drafted Players
