@@ -61,7 +61,7 @@ Feature Mask: [False False False  True False False False]
 -- Walks
 Selected: RandomForest
 Scores: [(0.15484128586898349, RandomForest(...)), (0.14480008669252545, Isotonic(...))]
-Best Parameters: {'regressor__max_depth': 14, 'regressor__n_estimators': 9, 'selection__k': 3}
+Best Parameters: {'regressor__max_depth': 14, 'selection__k': 3, 'regressor__n_estimators': 9}
 Feature Scores: [  0.   0.   2.   3.  63.   1.   1.]
 Feature Mask: [False False  True  True  True False False]
 Feature Importances: [ 0.066  0.128  0.806]
@@ -111,7 +111,7 @@ Feature Mask: [False False False False  True False False False]
 -- Ks
 Selected: RandomForest
 Scores: [(0.24099676600061323, RandomForest(...)), (0.2139232178787179, Isotonic(...))]
-Best Parameters: {'selection__k': 2, 'regressor__max_depth': 33, 'regressor__n_estimators': 1}
+Best Parameters: {'regressor__max_depth': 33, 'regressor__n_estimators': 1, 'selection__k': 2}
 Feature Scores: [   2.    3.    0.   16.   18.  127.    1.    5.]
 Feature Mask: [False False False False  True  True False False]
 Feature Importances: [ 0.114  0.886]
@@ -153,11 +153,11 @@ CF Collins, D      33| .251/.312/.341  93     | .251/.312/.345  94     | -4---88
 SS Sharperson, M   24| .262/.288/.346  89     | .262/.288/.341  88     | -6656---   6 |    ||  94 || AA    T |
 C  Nelson, J       26| .261/.286/.333  87     | .261/.286/.328  87     | 61------   7 | -- ||  94 || ML      |
 LF Woods, A        32| .268/.309/.377  96     | .275/.334/.390 102     | -2---624  -8 | -  ||  93 || ML      |
-SS Anderson, D     25| .264/.294/.359  91     | .264/.294/.354  91     | -43551-1   2 |  + ||  93 || AA    3 |
-RF Lisi, R         29| .280/.350/.350 101     | .277/.339/.346  99     | -3---336  -7 | -  ||  92 || AAA  F  |
-CF Maloof, J       36| .243/.344/.311  97     | .244/.350/.330 100     | -5---435  -9 |    ||  90 || ML      |
+SS Anderson, D     25| .264/.294/.359  91     | .264/.294/.354  91     | -43551-1   2 |  + ||  93 || AAA   3 |
+RF Lisi, R         29| .280/.350/.350 101     | .277/.339/.346  99     | -3---336  -7 | -  ||  92 || ML   F  |
+CF Maloof, J       36| .243/.344/.311  97     | .244/.350/.330 100     | -5---435  -9 |    ||  90 || AAA     |
 CF Law, R          29| .263/.293/.377  93     | .263/.293/.376  93     | -312-353  -3 |  - ||  90 || AAA     |
-CF V. Mitchell, B  30| .227/.284/.277  82     | .227/.284/.277  82     | -3---883   6 | -  ||  88 || AAA     |
+CF V. Mitchell, B  30| .227/.284/.277  82     | .227/.284/.277  82     | -3---883   6 | -  ||  88 || AA      |
 SS Gonzales, R     25| .262/.288/.332  87     | .261/.286/.319  86     | -4465---   2 |  - ||  88 || AA    6 |
 C  Sasser, M       23| .218/.246/.293  76     | .218/.246/.302  77     | 76---3-3  10 |    ||  87 || AAA     |
 CF Burke, G        33| .267/.308/.354  93     | .267/.308/.344  92     | -222-245  -8 | -  ||  84 || AAA     |
@@ -183,9 +183,9 @@ SP Mitchell, P     F   ML 36 | 10.8  4.4  1.6  0.5 |  88     |  95     |  - ||  
 SP LaGrow, L       F   ML 37 | 10.8  4.4  1.6  0.5 |  88     |  92     |    ||  90 |
 SP Dues, H         F   ML 31 | 10.1  2.5  3.6  0.5 |  89     |  94     |  - ||  90 |
 SP Bruhert, M          ML 34 | 11.7  2.2  1.3  0.4 |  80     |  88     | -  ||  86 |
-SP Welch, B           AAA 29 | 10.5  3.5  2.4  1.4 |  74     |  83     | ++ ||  81 |
+SP Welch, B            ML 29 | 10.5  3.5  2.4  1.4 |  74     |  83     | ++ ||  81 |
 SP Bethke, J           ML 39 | 10.9  5.4  2.4  0.5 |  72     |  87     |  - ||  79 |
-SP Moose, B        F   ML 38 | 12.2  2.7  2.3  0.5 |  75     |  78     |  + ||  77 |
+SP Moose, B        F  AAA 38 | 12.2  2.7  2.3  0.5 |  75     |  78     |  + ||  77 |
 SP W. Davis, M      4 AAA 25 | 10.1  6.5  3.6  1.4 |  78     |  76     | ++ ||  74 |
 SP Owchinko, B        AAA 31 | 11.1  2.9  2.4  1.3 |  71     |  73     |  - ||  71 |
 SP Gaff, B            AAA 27 | 12.8  2.9  3.9  0.7 |  62     |  62     |    ||  62 |
@@ -204,17 +204,16 @@ SP Botting, R          AA 30 | 11.9  4.6  1.7  4.9 |  49     |  49     | -- ||  
  SP Bethke, J       39 | SP Gaff, B         27 | SP Botting, R      30 | SP Hawkins, A      26 |                       |
  SP Bruhert, M      34 | SP Owchinko, B     31 | SP Hurst, B        27 | SP Oliveras, F     23 |                       |
  SP Cram, J         38 | SP W. Davis, M     25 | SP L. Smith, B     31 | MR Booker, G       25 |                       |
- SP Denny, J        33 | SP Welch, B        29 | MR Schuler, D      32 | MR Rodas, R        26 |                       |
- SP Dues, H         31 | MR Mohorcic, D     30 | MR Tufts, B        30 | 1B McKnight, J     22 |                       |
- SP Hammaker, A     28 |  C Pagnozzi, T     23 | 1B Anderson, D     25 | 3B Hamilton, J     21 |                       |
- SP Vossler, D      34 |  C Sasser, M       23 | 1B Sharperson, M   24 | SS A. Miller, K    22 |                       |
- MR Andersen, L     32 | SS Smalley III, R  33 | 2B Riles, E        25 | LF Litton, G       21 |                       |
- MR LaGrow, L       37 | LF V. Mitchell, B  30 | 3B Oberkfell, K    29 | CF T. McLemore, M  21 |                       |
- MR Mitchell, P     36 | CF Burke, G        33 | SS Gonzales, R     25 | RF Jose, F         20 |                       |
- MR Moose, B        38 | CF Law, R          29 | LF Amaral, R       23 |                       |                       |
-  C Nelson, J       26 | RF Lisi, R         29 | CF D. Wright, G    27 |                       |                       |
+ SP Denny, J        33 | MR Mohorcic, D     30 | MR Schuler, D      32 | MR Rodas, R        26 |                       |
+ SP Dues, H         31 | MR Moose, B        38 | MR Tufts, B        30 | 1B McKnight, J     22 |                       |
+ SP Hammaker, A     28 |  C Pagnozzi, T     23 | 1B Sharperson, M   24 | 3B Hamilton, J     21 |                       |
+ SP Vossler, D      34 |  C Sasser, M       23 | 2B Riles, E        25 | SS A. Miller, K    22 |                       |
+ SP Welch, B        29 | 1B Anderson, D     25 | 3B Oberkfell, K    29 | LF Litton, G       21 |                       |
+ MR Andersen, L     32 | 1B Maloof, J       36 | SS Gonzales, R     25 | CF T. McLemore, M  21 |                       |
+ MR LaGrow, L       37 | SS Smalley III, R  33 | LF Amaral, R       23 | RF Jose, F         20 |                       |
+ MR Mitchell, P     36 | CF Burke, G        33 | LF V. Mitchell, B  30 |                       |                       |
+  C Nelson, J       26 | CF Law, R          29 | CF D. Wright, G    27 |                       |                       |
   C Wynegar, B      29 |                       |                       |                       |                       |
- 1B Maloof, J       36 |                       |                       |                       |                       |
  1B Ochiai, H       32 |                       |                       |                       |                       |
  1B Young, J        36 |                       |                       |                       |                       |
  2B DeJohn, M       32 |                       |                       |                       |                       |
@@ -225,25 +224,32 @@ SP Botting, R          AA 30 | 11.9  4.6  1.7  4.9 |  49     |  49     | -- ||  
  SS Harrah, T       37 |                       |                       |                       |                       |
  LF Collins, D      33 |                       |                       |                       |                       |
  LF Woods, A        32 |                       |                       |                       |                       |
+ RF Lisi, R         29 |                       |                       |                       |                       |
  RF Lynn, F         33 |                       |                       |                       |                       |
 Total:59 (target 70-75)
 Balance:34/25 = 1.360 (ideal: 1.273)
 
+  ML -> AAA  MR Bob Moose
   ML -> AAA  SS Roy Smalley III
- AAA -> ML   SP Mike Bruhert
- AAA -> ML   SP Atlee Hammaker
- AAA -> ML   3B Juan Bernhardt
+  ML -> AAA  1B Jack Maloof
+ AAA -> ML   2B Jack Perconte
  AAA -> ML   SP Hal Dues
  AAA -> ML   MR Lerrin LaGrow
- AAA -> ML   2B Jack Perconte
+ AAA -> ML   SP Bob Welch
+ AAA -> ML   RF Rick Lisi
+ AAA -> ML   3B Juan Bernhardt
+ AAA -> ML   SP Mike Bruhert
+ AAA -> ML   SP Atlee Hammaker
+ AAA -> AA   LF Bobby V. Mitchell
  AAA -> AA   SS Rene Gonzales
   AA -> ML    C Jamie Nelson
-  AA -> AAA  SP Bob Owchinko
   AA -> AAA   C Mackey Sasser
   AA -> AAA  MR Dale Mohorcic
+  AA -> AAA  SP Bob Owchinko
+  AA -> AAA  1B Dave Anderson
+   A -> AAA  SP Brent Gaff
    A -> AAA  SP Mark W. Davis
    A -> AAA   C Tom Pagnozzi
-   A -> AAA  SP Brent Gaff
    A -> AA   LF Rich Amaral
 
 SP
@@ -254,7 +260,7 @@ Atlee Hammaker
 Paul Mitchell
 
 LR
-Bob Moose
+Bob Welch
 
 MR
 Mike Bruhert
@@ -283,7 +289,7 @@ vs RHP
 SS| Burleson, R     (D)                 |SS| ( 1) Perconte, J    
 LF| Woods, A        (D) Collins, D      |LF| ( 1) Young, J       
 CF| Lynn, F         (D) Collins, D      |CF| ( 1) Collins, D     
-RF| Phillips, T     (D) Collins, D      |RF| ( 1) Young, J       
+RF| Phillips, T     (D) Lisi, R         |RF| ( 1) Lisi, R        
 
 vs RHP+DH
  C| Wynegar, B      (D)                 | C| ( 1) Nelson, J      
@@ -293,7 +299,7 @@ vs RHP+DH
 SS| Burleson, R     (D)                 |SS| ( 1) Perconte, J    
 LF| Woods, A        (D) Collins, D      |LF| ( 1) Collins, D     
 CF| Lynn, F         (D) Collins, D      |CF| ( 1) Collins, D     
-RF| Phillips, T     (D) Collins, D      |RF| ( 1) Maloof, J      
+RF| Phillips, T     (D) Lisi, R         |RF| ( 1) Lisi, R        
 DH| Young, J        (D)                 |DH| ( 1) Bernhardt, J   
 
 vs LHP
@@ -302,39 +308,38 @@ vs LHP
 2B| DeJohn, M       (D) Perconte, J     |2B| ( 1) Perconte, J    
 3B| Harrah, T       (D)                 |3B| ( 1) Bernhardt, J   
 SS| Burleson, R     (D)                 |SS| ( 1) Perconte, J    
-LF| Phillips, T     (D) Woods, A        |LF| ( 1) Woods, A       
-CF| Collins, D      (D)                 |CF| ( 1) Maloof, J      
-RF| Lynn, F         (D)                 |RF| ( 1) Maloof, J      
+LF| Phillips, T     (D) Collins, D      |LF| ( 1) Collins, D     
+CF| Lynn, F         (D) Collins, D      |CF| ( 1) Collins, D     
+RF| Lisi, R         (D)                 |RF| ( 1) Collins, D     
 
 vs LHP+DH
  C| Wynegar, B      (D)                 | C| ( 1) Nelson, J      
-1B| Ochiai, H       (D)                 |1B| ( 1) Young, J       
+1B| Ochiai, H       (D)                 |1B| ( 1) Bernhardt, J   
 2B| DeJohn, M       (D) Perconte, J     |2B| ( 1) Perconte, J    
-3B| Harrah, T       (D)                 |3B| ( 1) Young, J       
-SS| Burleson, R     (D)                 |SS| ( 1) Perconte, J    
-LF| Phillips, T     (D) Woods, A        |LF| ( 1) Woods, A       
-CF| Collins, D      (D)                 |CF| ( 1) Maloof, J      
-RF| Lynn, F         (D)                 |RF| ( 1) Maloof, J      
-DH| Bernhardt, J    (D)                 |DH| ( 1) Young, J       
+3B| Phillips, T     (D)                 |3B| ( 1) Bernhardt, J   
+SS| Harrah, T       (D)                 |SS| ( 1) Perconte, J    
+LF| Collins, D      (D)                 |LF| ( 1) Woods, A       
+CF| Lynn, F         (D)                 |CF| ( 1) Woods, A       
+RF| Lisi, R         (D)                 |RF| ( 1) Woods, A       
+DH| Burleson, R     (D)                 |DH| ( 1) Bernhardt, J   
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1.  C S Wynegar, B        C S Wynegar, B       3B R Harrah, T        3B R Harrah, T       
+1.  C S Wynegar, B        C S Wynegar, B       3B R Harrah, T        SS R Harrah, T       
 2. CF L Lynn, F          CF L Lynn, F          1B R Ochiai, H        1B R Ochiai, H       
-3. RF S Phillips, T      RF S Phillips, T      LF S Phillips, T      LF S Phillips, T     
-4. 1B R Ochiai, H        1B R Ochiai, H        SS R Burleson, R      SS R Burleson, R     
-5. SS R Burleson, R      3B R Harrah, T        RF L Lynn, F          RF L Lynn, F         
+3. RF S Phillips, T      RF S Phillips, T      LF S Phillips, T      3B S Phillips, T     
+4. 1B R Ochiai, H        1B R Ochiai, H        SS R Burleson, R      DH R Burleson, R     
+5. SS R Burleson, R      3B R Harrah, T        CF L Lynn, F          CF L Lynn, F         
 6. 3B R Harrah, T        DH L Young, J          C S Wynegar, B        C S Wynegar, B      
-7. 2B S DeJohn, M        SS R Burleson, R      2B S DeJohn, M        DH R Bernhardt, J    
-8. LF L Woods, A         2B S DeJohn, M        CF S Collins, D       2B S DeJohn, M       
-9.  P                    LF L Woods, A          P                    CF S Collins, D      
+7. 2B S DeJohn, M        SS R Burleson, R      2B S DeJohn, M        2B S DeJohn, M       
+8. LF L Woods, A         2B S DeJohn, M        RF R Lisi, R          RF R Lisi, R         
+9.  P                    LF L Woods, A          P                    LF S Collins, D      
 
 --- Bunt for Hit ---
 
---- Stealing @ 66.0 ---
+--- Stealing @ 65.8 ---
 2B Jack Perconte             31| 2B :  96       4   7     : 107 |    :                     :   0 |   2 | 109 | -3837--- |       $300k a |  $1.61M:  $2.2M |  p911 | Cleveland Indians    | **^
 LF Dave Collins              33| CF :  94       6   9     : 109 |    :                     :   0 |   0 | 109 | -4---886 |  F    $576k   |  $2.07M: $2.83M |  p488 | Cleveland Indians    | **
 1B John Young                36| 1B : 113     -15   7     : 105 |    :                     :   0 | -12 |  93 | -4------ |      $3.31Mx3 |  $1.61M:  $2.2M | p1203 | Cleveland Indians    | **^
-1B Jack Maloof               36| CF :  99      -9   0     :  90 |    :                     :   0 | -12 |  78 | -5---435 |       $980kx2 |        :        | p1394 | Cleveland Indians    | *
 
 --- Release ---
 
@@ -358,35 +363,35 @@ Active Players
 Hitters
 Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 RF Felix Jose                20 | CF :  74       1 :  75 | CF :  74       1 :  75 |  +0 |                       :                       | ++++
-CF Mark T. McLemore          21 | RF :  83     -14 :  69 | RF :  83     -14 :  69 |  +0 |                       :                       | +++-
 3B Jeff Hamilton             21 | 3B :  71      -5 :  66 | 3B :  71      -5 :  66 |  +0 |                       :                       | ++
 LF Greg Litton               21 | SS :  64       2 :  66 | SS :  64       2 :  66 |  +0 |                       :                       | ++
-1B Jeff McKnight             22 | SS :  70       5 :  75 | SS :  70       5 :  75 |  +0 |                       :                       | ++
+CF Mark T. McLemore          21 | RF :  83     -14 :  69 | RF :  83     -14 :  69 |  +0 |                       :                       | +++-
 SS Keith A. Miller           22 | CF :  75       0 :  75 | CF :  75       0 :  75 |  +0 |                       :                       | +++
- C Mackey Sasser             23 |  C :  77      10 :  87 |  C :  77      10 :  87 |  +0 |                       :                       | ++
- C Tom Pagnozzi              23 |  C :  72       5 :  77 |  C :  72       5 :  77 |  +0 |                       :                       | +++
+1B Jeff McKnight             22 | SS :  70       5 :  75 | SS :  70       5 :  75 |  +0 |                       :                       | ++
 LF Rich Amaral               23 | SS :  74       6 :  80 | SS :  74       6 :  80 |  +0 |                       :                       | ++
+ C Tom Pagnozzi              23 |  C :  72       5 :  77 |  C :  72       5 :  77 |  +0 |                       :                       | +++
+ C Mackey Sasser             23 |  C :  77      10 :  87 |  C :  77      10 :  87 |  +0 |                       :                       | ++
 1B Mike Sharperson           24 | SS :  88       6 :  94 | SS :  88       6 :  94 |  +0 |                       :                       | ++-
 2B Ernie Riles               25 | 2B :  78      -4 :  74 | 2B :  78      -4 :  74 |  +0 |                       :                       | +++
 SS Rene Gonzales             25 | SS :  86       2 :  88 | SS :  86       2 :  88 |  +0 |                       :                       | +++-
 1B Dave Anderson             25 | SS :  91       2 :  93 | SS :  91       2 :  93 |  +0 |                       :                       | +++-
-3B Tony Phillips             26 | SS : 111       6 : 117 | SS : 111       6 : 117 |  +0 |                       :                       | ****
  C Jamie Nelson              26 |  C :  87       7 :  94 |  C :  87       7 :  94 |  +0 |                       :                       | *
+3B Tony Phillips             26 | SS : 111       6 : 117 | SS : 111       6 : 117 |  +0 |                       :                       | ****
 CF George D. Wright          27 | CF :  89      -8 :  81 | CF :  89      -8 :  81 |  +0 |                       :                       | *
-3B Ken Oberkfell             29 | 3B :  84      -4 :  80 | 3B :  84      -4 :  80 |  +0 |                       :                       | *
 CF Rudy Law                  29 | CF :  93      -3 :  90 | CF :  93      -3 :  90 |  +0 |                       :                       | **
- C Butch Wynegar             29 |  C : 111      11 : 122 |  C : 111      11 : 122 |  +0 |                       :                       | **^
+3B Ken Oberkfell             29 | 3B :  84      -4 :  80 | 3B :  84      -4 :  80 |  +0 |                       :                       | *
 RF Rick Lisi                 29 | RF :  99      -7 :  92 | RF :  99      -7 :  92 |  +0 |                       :                       | **
+ C Butch Wynegar             29 |  C : 111      11 : 122 |  C : 111      11 : 122 |  +0 |                       :                       | **^
 LF Bobby V. Mitchell         30 | CF :  82       6 :  88 | CF :  82       6 :  88 |  +0 |                       :                       | *
 2B Jack Perconte             31 | SS :  96       7 : 103 | SS :  96       7 : 103 |  +0 |                       :                       | **^
-1B Hiromitsu Ochiai          32 | 3B : 127      -9 : 118 | 3B : 127      -9 : 118 |  +0 |                       :                       | ****
 3B Juan Bernhardt            32 | 3B : 105      -8 :  97 | 3B : 105      -8 :  97 |  +0 |                       :                       | **^
-LF Al Woods                  32 | LF : 101      -8 :  93 | LF : 101      -8 :  93 |  +0 |                       :                       | **^
 2B Mark DeJohn               32 | SS : 102       7 : 109 | SS : 102       7 : 109 |  +0 |                       :                       | **
+LF Al Woods                  32 | LF : 101      -8 :  93 | LF : 101      -8 :  93 |  +0 |                       :                       | **^
+1B Hiromitsu Ochiai          32 | 3B : 127      -9 : 118 | 3B : 127      -9 : 118 |  +0 |                       :                       | ****
 CF Glenn Burke               33 | CF :  92      -8 :  84 | CF :  92      -8 :  84 |  +0 |                       :                       | *
+RF Fred Lynn                 33 | CF : 119       3 : 122 | CF : 119       3 : 122 |  +0 |                       :                       | ****
 SS Roy Smalley III           33 | SS : 107       0 : 107 | SS : 107       0 : 107 |  +0 |                       :                       | **^
 LF Dave Collins              33 | CF :  94       6 : 100 | CF :  94       6 : 100 |  +0 |                       :                       | **
-RF Fred Lynn                 33 | CF : 119       3 : 122 | CF : 119       3 : 122 |  +0 |                       :                       | ****
 SS Rick Burleson             34 | SS : 108       6 : 114 | SS : 108       6 : 114 |  +0 |                       :                       | ****
 1B Jack Maloof               36 | CF :  99      -9 :  90 | CF :  99      -9 :  90 |  +0 |                       :                       | *
 1B John Young                36 | 1B : 113     -15 :  98 | 1B : 113     -15 :  98 |  +0 |                       :                       | **^
@@ -397,14 +402,14 @@ Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 SP Francisco Oliveras        23 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                          :                          | +++++
 SP Mark W. Davis             25 | SP :      74     :  74 | SP :      74     :  74 |  +0 |                          :                          | +++-
 MR Greg Booker               25 | MR :      55     :  55 | MR :      55     :  55 |  +0 |                          :                          | ++
-SP Andy Hawkins              26 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
 MR Rich Rodas                26 | MR :      47     :  47 | MR :      47     :  47 |  +0 |                          :                          | **
-SP Brent Gaff                27 | SP :      62     :  62 | SP :      62     :  62 |  +0 |                          :                          | *
+SP Andy Hawkins              26 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
 SP Bruce Hurst               27 | SP :      59     :  59 | SP :      59     :  59 |  +0 |                          :                          | *
+SP Brent Gaff                27 | SP :      62     :  62 | SP :      62     :  62 |  +0 |                          :                          | *
 SP Atlee Hammaker            28 | SP :      97     :  97 | SP :      97     :  97 |  +0 |                          :                          | **^
 SP Bob Welch                 29 | SP :      81     :  81 | SP :      81     :  81 |  +0 |                          :                          | **
-SP Ralph Botting             30 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                          :                          | *
 MR Bob Tufts                 30 | MR :      48     :  48 | MR :      48     :  48 |  +0 |                          :                          | *
+SP Ralph Botting             30 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                          :                          | *
 MR Dale Mohorcic             30 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                          :                          | *
 SP Bob Owchinko              31 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                          :                          | *
 SP Hal Dues                  31 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                          :                          | **
@@ -416,8 +421,8 @@ SP Dan Vossler               34 | SP :     108     : 108 | SP :     108     : 10
 SP Mike Bruhert              34 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                          :                          | *
 MR Paul Mitchell             36 | SP :      94     :  94 | SP :      94     :  94 |  +0 |                          :                          | *
 MR Lerrin LaGrow             37 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                          :                          | *^
-MR Bob Moose                 38 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
 SP Jerry Cram                38 | SP :     105     : 105 | SP :     105     : 105 |  +0 |                          :                          | *
+MR Bob Moose                 38 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
 SP Jim Bethke                39 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                          :                          | *
 
 Drafted Players
@@ -646,225 +651,142 @@ Strikeouts      |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 --- Drafted ---
 
 --- Remaining ---
-SP Curt Schilling            19| SP :      78       1     :  79 | SP :     111      28     : 139 |   6 | 145 |          |               | $230.6k:$314.1k | p1190 | No Team              | ++++-
-CL Jeff Shaw                 19| MR :      60      -7     :  53 | SP :     104      21     : 125 |   6 | 131 |          |               |        :        | p1193 | No Team              | ++++-
-MR Kevin Brown               20| SP :      71      -6     :  65 | SP :     101      18     : 119 |   6 | 125 |          |               |        :        |  p244 | *CEI* No Team        | +++-
-SS Gary Sheffield            17| SS :  85       0 -22     :  63 | SS : 107       0   9     : 116 |   6 | 122 | -2115--- |               |        :        | p1194 | No Team              | ++++
-RF Tuffy Rhodes              17| RF :  81      -7 -15     :  59 | RF : 109      -7  13     : 115 |   6 | 121 | -2---526 |               |        :        | p1165 | No Team              | ++++
-3B Leo Gomez                 19| 3B :  85      -1 -10     :  74 | 3B : 104      -1  12     : 115 |   6 | 121 | -316---- |               |        :        |  p546 | No Team              | ++++
- C Todd Zeile                20|  C :  83       1  -3     :  81 |  C :  98       1  11     : 110 |   6 | 116 | 51------ |               |        :        | p1275 | No Team              | +++
-2B Geronimo Pena             18| 2B :  81       3 -10     :  75 | 2B :  94       3   6     : 103 |   6 | 109 | -27615-- |               |        :        | p1122 | No Team              | +++-
- C Chris Hoiles              20|  C :  86     -11 -12     :  64 |  C : 105     -11   7     : 101 |   6 | 107 | 2411-1-1 |               |        :        |  p693 | No Team              | ++++
-LF Greg Vaughn               20| LF :  86     -10 -11     :  64 | LF : 104     -10   6     : 100 |   6 | 106 | -1---4-1 |               |        :        | p1244 | No Team              | +++-
-SP John Smoltz               18| SP :      68      -9     :  58 | SP :      91       8     :  99 |   6 | 105 |          |               |        :        | p1216 | No Team              | ++++
-3B Sean Berry                19| 3B :  78       3 -13     :  68 | 3B :  92       3   4     :  99 |   6 | 105 | -3271--- |               |        :        |  p138 | No Team              | +++-
-CF Junior Felix              18| CF :  80       1  -9     :  72 | CF :  92       1   4     :  97 |   6 | 103 | -2---676 |               |        :        |  p496 | No Team              | +++-
-1B Paul Sorrento             20| LF :  86     -14 -15     :  56 | LF : 106     -14   4     :  96 |   6 | 102 | -4---212 |               |        :        | p1219 | No Team              | +++-
-LF Darryl Hamilton           21| CF :  80       1 -10     :  71 | CF :  91       1   2     :  94 |   6 | 100 | -2---776 |               |        :        |  p619 | No Team              | +++
-MR Matt Turner               18| MR :      59      -7     :  51 | SP :      88       5     :  93 |   6 |  99 |          |               |        :        | p1242 | No Team              | ++++
-MR Alan Mills                19| MR :      48     -17     :  30 | SP :      88       5     :  93 |   6 |  99 |          |               |        :        | p1068 | No Team              | +++-
-CF Moises Alou               19| CF :  69      -6 -28     :  35 | CF :  97      -6   1     :  92 |   6 |  98 | -1---444 |               |        :        |   p29 | No Team              | +++-
-SP Masumi Kuwata             17| SP :      59     -18     :  41 | SP :      87       4     :  91 |   6 |  97 |          |               |        :        |  p809 | No Team              | ++++
-LF Trent Hubbard             21| CF :  85       1  -5     :  81 | CF :  89       1   0     :  90 |   6 |  96 | -2---776 |               |        :        |  p796 | No Team              | +++
-CF Jerome Walton             20| CF :  80      -1 -11     :  68 | CF :  90      -1   0     :  89 |   6 |  95 | -2---666 |               |        :        | p1254 | No Team              | +++
-LF Sammy Sosa                17| LF :  79     -12 -20     :  47 | LF : 100     -12   0     :  88 |   6 |  94 | -1---3-- |               |        :        | p1220 | No Team              | ++++
-LF Troy Neel                 20| LF :  85     -19 -21     :  45 | 1B : 106     -17  -1     :  88 |   6 |  94 | -2------ |               |        :        | p1100 | No Team              | +++-
-LF Juan Gonzalez             16| LF :  66     -10 -31     :  26 | LF :  97     -10   0     :  87 |   6 |  93 | -1---5-- |               |        :        |  p559 | No Team              | +++-
-MR Mel Rojas                 19| MR :      57      -9     :  48 | MR :      83       4     :  87 |   6 |  93 |          |               |        :        | p1178 | No Team              | ++++
-MR Jim Austin                22| MR :      60      -7     :  53 | SP :      85       2     :  87 |   6 |  93 |          |               |        :        |   p58 | No Team              | +++-
-2B Lance Blankenship         22| 2B :  82       0 -12     :  70 | 2B :  89       0  -2     :  87 |   6 |  93 | -2651555 |               |        :        |  p165 | No Team              | ++-
-MR Xavier Hernandez          20| MR :      57      -9     :  48 | MR :      81       3     :  84 |   6 |  90 |          |               |        :        |  p657 | No Team              | ++++
-MR Kevin Campbell            21| MR :      57      -9     :  48 | SP :      83       0     :  84 |   6 |  90 |          |               |        :        |  p284 | No Team              | ++++
-MR Mike Fetters              21| MR :      57      -9     :  48 | SP :      83       0     :  84 |   6 |  90 |          |               |        :        |  p501 | No Team              | ++++
-MR Kip Gross                 21| SP :      67     -10     :  58 | SP :      83       0     :  84 |   6 |  90 |          |               |        :        |  p600 | No Team              | +++
-SS Mike Bordick              20| 2B :  75      -3 -21     :  51 | SS :  88       2  -7     :  83 |   6 |  89 | -3555--- |               |        :        |  p202 | No Team              | ++-
-2B Jeff Reboulet             21| 2B :  80       4 -10     :  74 | 2B :  83       4  -4     :  83 |   6 |  89 | -3866666 |               |        :        | p1157 | No Team              | ++
-2B Carlos Baerga             17| 2B :  68       2 -23     :  47 | 2B :  84       2  -5     :  82 |   6 |  88 | -2716--- |               |        :        |   p66 | No Team              | ++-
- C Tom Lampkin               21|  C :  82       1  -4     :  79 |  C :  84       1  -3     :  82 |   6 |  88 | 52---313 |               |        :        |  p813 | *CEI* No Team        | ++
-MR Doug Brocail              18| MR :      60      -7     :  53 | MR :      80       1     :  81 |   6 |  87 |          |               |        :        |  p229 | No Team              | +++-
- C Todd Pratt                18|  C :  79      -5 -13     :  61 |  C :  89      -5  -4     :  81 |   6 |  87 | 41------ |               |        :        | p1151 | No Team              | ++-
-2B Steve Scarsone            19| 2B :  79       4 -11     :  72 | 2B :  82       4  -5     :  81 |   6 |  87 | -38761-1 |               |        :        | p1187 | No Team              | ++
-MR Dave Veres                19| MR :      57      -9     :  48 | MR :      80       1     :  81 |   6 |  87 |          |               |        :        | p1246 | No Team              | ++++
-LF Bo Jackson                23| CF :  86      -4  -8     :  74 | CF :  89      -4  -4     :  81 |   6 |  87 | -2---655 |               |        :        |  p798 | *CEI* No Team        | ++-
-RF Bernie f Williams         17| RF :  78     -14 -25     :  39 | RF :  98     -14  -5     :  80 |   6 |  86 | -1---1-3 |               |        :        | p1269 | No Team              | +++
-RF Mike Simms                19| RF :  91     -12 -10     :  69 | RF :  96     -12  -5     :  79 |   6 |  85 | -1---3-4 |               |        :        | p1201 | No Team              | +++-
-3B Scott Leius               20| 3B :  78       4 -12     :  70 | 3B :  81       4  -6     :  79 |   6 |  85 | -3787665 |               |        :        |  p826 | No Team              | ++
-2B Keith Lockhart            21| 2B :  79      -5 -20     :  55 | 2B :  90      -5  -6     :  79 |   6 |  85 | -254---2 |               |        :        |  p865 | No Team              | ++-
-CF Eric Fox                  22| CF :  71       4 -15     :  60 | CF :  80       4  -5     :  79 |   6 |  85 | -2---787 |               |        :        |  p528 | No Team              | ++
-MR Rich Delucia              21| MR :      49     -16     :  34 | SP :      80      -2     :  78 |   6 |  84 |          |               |        :        |  p432 | No Team              | +++-
-CL Roberto Hernandez         21| MR :      57      -9     :  48 | MR :      78       0     :  78 |   6 |  84 |          |               |        :        |  p654 | No Team              | ++++
-SP Rick Reed                 21| SP :      78       1     :  78 | SP :      78      -5     :  73 |   6 |  84 |          |               | $230.6k:$314.1k | p1162 | No Team              | +++-
-MR Colby Ward                22| MR :      61      -6     :  55 | SP :      80      -2     :  78 |   6 |  84 |          |               |        :        | p1255 | No Team              | +++-
-SP Greg Swindell             21| SP :      60     -17     :  43 | SP :      80      -3     :  77 |   6 |  83 |          |               |        :        | p1228 | No Team              | +++-
-CL Tom Gordon                18| MR :      51     -14     :  37 | SP :      80      -3     :  76 |   6 |  82 |          |               |        :        |  p570 | No Team              | ++++
-CF Brian Mcrae               18| CF :  81       0  -9     :  72 | CF :  82       0  -7     :  76 |   6 |  82 | -2---666 |               |        :        | p1044 | No Team              | ++
-MR Stan Belinda              19| MR :      51     -14     :  37 | MR :      77      -1     :  76 |   6 |  82 |          |               |        :        |  p109 | No Team              | ++++
-MR Willie Blair              20| MR :      52     -13     :  38 | SP :      80      -3     :  76 |   6 |  82 |          |               |        :        |  p140 | No Team              | +++
-3B Scott Cooper              18| 3B :  78       3 -13     :  68 | 3B :  80       3  -8     :  75 |   6 |  81 | -3271--- |               |        :        |  p370 | *CEI* No Team        | ++
-RF Mark Whiten               19| RF :  86     -12 -16     :  58 | RF :  94     -12  -7     :  75 |   6 |  81 | -2---223 |               |        :        | p1263 | No Team              | +++
-LF Ced Landrum               22| CF :  78      -6 -18     :  54 | CF :  88      -6  -7     :  75 |   6 |  81 | -1---544 |               |        :        |  p818 | No Team              | ++
-LF Harvey Pulliam            18| CF :  69       1 -21     :  49 | CF :  81       1  -8     :  74 |   6 |  80 | -2---776 |               |        :        | p1152 | No Team              | ++-
-3B Jeff King                 21| 3B :  79       0 -15     :  64 | 3B :  83       0  -8     :  74 |   6 |  80 | -3561--4 |               |        :        |  p802 | No Team              | ++
- C Jorge Brito               19|  C :  66       1 -20     :  47 |  C :  79       1  -8     :  72 |   6 |  78 | 51------ |               |        :        |  p217 | No Team              | ++
- C John Ramos                20|  C :  64       1 -22     :  43 |  C :  79       1  -8     :  72 |   6 |  78 | 51------ |               |        :        | p1154 | No Team              | ++
-1B Kevin Maas                21| 1B :  87     -16 -20     :  51 | 1B :  97     -16  -9     :  72 |   6 |  78 | -3------ |               |        :        |  p875 | No Team              | ++-
-SP Kevin Tapani              21| SP :      74      -3     :  71 | SP :      77      -6     :  72 |   6 |  78 |          |               |        :        | p1237 | No Team              | +++-
-MR Jeff Tabaka               22| MR :      51     -14     :  37 | SP :      78      -5     :  72 |   6 |  78 |          |               |        :        | p1233 | No Team              | ++++
-MR Jason Grimsley            18| MR :      56     -10     :  46 | SP :      77      -6     :  71 |   6 |  77 |          |               |        :        |  p594 | No Team              | +++-
-1B Domingo Martinez          18| 1B :  80     -16 -26     :  38 | 1B :  96     -16  -9     :  71 |   6 |  77 | -3-1---- |               |        :        |  p964 | No Team              | +++
-MR Scott Service             18| MR :      48     -16     :  32 | SP :      77      -6     :  71 |   6 |  77 |          |               |        :        | p1191 | No Team              | +++
-1B Lee Stevens               18| LF :  77     -15 -25     :  37 | LF :  94     -15  -9     :  71 |   6 |  77 | -411-212 |               |        :        | p1224 | No Team              | +++
-LF Greg Briley               20| CF :  83      -4 -11     :  68 | CF :  84      -4  -9     :  71 |   6 |  77 | -2---655 |               |        :        |  p212 | No Team              | ++
- C Joe Girardi               21|  C :  76      -5 -16     :  55 |  C :  84      -5  -9     :  71 |   6 |  77 | 41------ |               |        :        |  p534 | No Team              | ++
-CF Chuck Carr                18| CF :  77      -1 -14     :  63 | CF :  80      -1 -10     :  70 |   6 |  76 | -2---666 |               |        :        |  p335 | No Team              | +-
-RF Turner Ward               20| CF :  83      -3 -11     :  69 | CF :  82      -3 -11     :  68 |   6 |  75 | -2---556 |               |        :        | p1258 | No Team              | ++
-RF Warren Newson             21| LF :  87     -15 -15     :  57 | LF :  93     -15 -10     :  69 |   6 |  75 | -1---212 |               |        :        | p1104 | No Team              | ++-
-SS Rey Sanchez               18| 2B :  72      -3 -25     :  43 | SS :  81       2 -15     :  68 |   6 |  74 | -2555--- |               |        :        | p1182 | No Team              | ++
-LF Al l Martin               18| LF :  69     -13 -31     :  25 | LF :  91     -13 -10     :  68 |   6 |  74 | -1---312 |               |        :        |  p962 | No Team              | ++-
-SP Erik Hanson               20| SP :      61     -17     :  44 | SP :      75      -7     :  68 |   6 |  74 |          |               |        :        |  p628 | No Team              | +++-
-2B Luis Alicea               20| 2B :  65     -10 -38     :  17 | 2B :  89     -10 -12     :  67 |   6 |  73 | -13----- |               |        :        |   p24 | No Team              | ++-
-CL Dana Ridenour             20| SP :      71      -6     :  65 | SP :      75      -8     :  67 |   6 |  73 |          |               |        :        | p1414 | No Team              | +++-
-LF Lou Frazier               21| CF :  81      -5 -14     :  62 | CF :  83      -5 -11     :  67 |   6 |  73 | -2---654 |               |        :        |  p531 | No Team              | ++
-MR Ron Rightnowar            21| MR :      59      -7     :  51 | SP :      75      -8     :  67 |   6 |  73 |          |               |        :        | p1171 | No Team              | +++
-2B Andy Stankiewicz          21| 2B :  80       0 -14     :  67 | 2B :  79       0 -12     :  67 |   6 |  73 | -2655--- |               |        :        | p1221 | No Team              | +-
-LF Dave Hansen               17| LF :  76      -9 -20     :  47 | LF :  86      -9 -11     :  66 |   6 |  72 | -2-1-5-- |               |        :        |  p625 | No Team              | ++
-1B Kazuhiro Kiyohara         18| 1B :  78     -15 -28     :  35 | 1B :  93     -15 -12     :  66 |   6 |  72 | -4------ |               |        :        | p1332 | No Team              | ++
- C Tony Eusebio              18|  C :  80     -11 -18     :  52 |  C :  87     -11 -11     :  65 |   6 |  71 | 21------ |               |        :        |  p491 | No Team              | ++-
-MR Josias Manzanillo         18| MR :      42     -22     :  21 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        |  p954 | No Team              | +++
-MR Rafael Valdez             18| MR :      42     -22     :  19 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        | p1243 | No Team              | +++
-MR Darrin Chapin             19| MR :      57      -9     :  48 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        |  p351 | No Team              | +++
-MR Jeff Bronkey              20| MR :      57      -9     :  48 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        |  p232 | No Team              | +++
-MR Mike Butcher              20| MR :      57      -9     :  48 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        |  p283 | No Team              | +++
-MR Rusty Richards            21| MR :      57      -9     :  48 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        | p1169 | No Team              | +++
-MR Mark Grater               22| MR :      54     -11     :  43 | SP :      74      -9     :  65 |   6 |  71 |          |               |        :        |  p585 | No Team              | +++
-LF Henry l Rodriguez         18| LF :  80     -13 -20     :  47 | LF :  89     -13 -12     :  64 |   6 |  70 | -2---3-2 |               |        :        | p1173 | No Team              | ++-
-MR Archie Corbin             18| MR :      50     -15     :  35 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |  p385 | No Team              | ++-
-3B Juan Guerrero             18| 3B :  64       0 -30     :  34 | 3B :  77       0 -14     :  63 |   6 |  69 | -32654-1 |               |        :        |  p601 | No Team              | +-
-MR Dean Wilkins              19| MR :      56     -10     :  46 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        | p1266 | No Team              | +++
-MR Carlos c Maldonado        19| MR :      56     -10     :  46 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |  p909 | No Team              | +++
-3B Mike Blowers              20| 3B :  78      -5 -21     :  52 | 3B :  82      -5 -14     :  63 |   6 |  69 | -215-414 |               |        :        |  p192 | No Team              | ++
-MR John Barfield             21| MR :      61      -6     :  55 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |   p93 | No Team              | +++
-MR Jim Bruske                21| MR :      56     -10     :  46 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |  p269 | No Team              | +++
-MR Darren Hall               21| MR :      57      -9     :  48 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |  p605 | No Team              | +++
-MR Tim Layana                21| MR :      50     -15     :  35 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        |  p823 | No Team              | +++
-MR Brad Moore                21| MR :      59      -7     :  51 | SP :      73     -10     :  63 |   6 |  69 |          |               |        :        | p1085 | No Team              | +++
- C Jim Mcnamara              20|  C :  65       1 -21     :  45 |  C :  74       1 -13     :  62 |   6 |  68 | 51------ |               |        :        | p1034 | *CEI* No Team        | +
-1B Hal Morris                20| 1B :  76     -15 -30     :  31 | 1B :  91     -15 -14     :  62 |   6 |  68 | -411---- |               |        :        | p1087 | No Team              | ++-
-3B Gary c Cooper             21| 3B :  78      -1 -17     :  60 | 3B :  78      -1 -14     :  62 |   6 |  68 | -216---- |               |        :        |  p367 | No Team              | +-
-MR Chris Bushing             18| MR :      50     -15     :  35 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p280 | No Team              | +++
-MR Willie e Smith            18| MR :      39     -25     :  14 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        | p1215 | No Team              | +++
-MR Brian Drahman             19| MR :      57      -9     :  48 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p464 | No Team              | +++
-MR Matt Maysey               19| MR :      50     -15     :  35 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p990 | No Team              | +++
-MR Mike c Walker             19| MR :      62      -4     :  58 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        | p1251 | No Team              | +++
-MR Wayne Rosenthal           20| MR :      57      -9     :  48 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        | p1180 | No Team              | +++
-MR Gordon Dillard            21| MR :      56     -10     :  46 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p463 | No Team              | +++
-MR Gene Harris               21| MR :      56     -10     :  46 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p642 | No Team              | +++
-MR Tim Fortugno              23| MR :      58      -8     :  50 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        |  p523 | No Team              | +++
-MR Brian Meyer               23| MR :      57      -9     :  48 | SP :      72     -11     :  61 |   6 |  67 |          |               |        :        | p1062 | No Team              | +++
-2B Scott Hemond              20| 2B :  73      -5 -25     :  43 | 2B :  80      -5 -16     :  60 |   6 |  66 | -2543414 |               |        :        |  p646 | No Team              | ++
-SS Matt d Williams           20| 1B :  66     -17 -42     :   7 | 1B :  92     -17 -15     :  60 |   6 |  66 | -2--1--- |               |        :        | p1270 | No Team              | +++-
-MR Vince Horsman             18| MR :      55     -10     :  45 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        |  p737 | No Team              | +++
-MR Dennis Moeller            18| MR :      47     -18     :  29 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        | p1073 | No Team              | +++
-MR Yorkis Perez              18| MR :      50     -15     :  35 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        | p1141 | No Team              | +++
-MR Candy Sierra              18| MR :      55     -10     :  45 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        | p1197 | No Team              | +++
-MR Mike Dyer                 19| MR :      62      -4     :  58 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        |  p480 | No Team              | ++-
-MR Chris Howard              20| MR :      58      -8     :  50 | SP :      71     -12     :  59 |   6 |  65 |          |               |        :        |  p758 | No Team              | +++
- C Jerry Goff                21|  C :  77      -5 -15     :  57 |  C :  78      -5 -15     :  59 |   6 |  65 | 41------ |               |        :        |  p542 | No Team              | +-
-SP Andy Ashby                18| SP :      60     -18     :  42 | SP :      70     -12     :  58 |   6 |  64 |          |               |        :        |   p48 | No Team              | +++-
-MR Miguel Garcia             18| MR :      56     -10     :  46 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        |  p532 | No Team              | +++
-MR Chuck Mcelroy             18| MR :      51     -14     :  37 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        | p1020 | No Team              | +++
-MR Mike Munoz                20| MR :      56     -10     :  46 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        | p1097 | No Team              | +++
-SS Bien Figueroa             21| 2B :  65      -4 -33     :  28 | SS :  77       1 -20     :  58 |   6 |  64 | -2515--- |               |        :        |  p511 | No Team              | +-
-LF Thomas Howard             21| LF :  78     -12 -21     :  45 | LF :  85     -12 -15     :  58 |   6 |  64 | -2---422 |               |        :        |  p777 | No Team              | ++
-MR Jim Pena                  21| MR :      56     -10     :  46 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        | p1124 | No Team              | +++
-MR Mike Perez                21| MR :      56     -10     :  46 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        | p1126 | No Team              | +++
-2B Luis Sojo                 21| 2B :  74      -8 -28     :  38 | 2B :  83      -8 -16     :  58 |   6 |  64 | -34211-- |               |        :        | p1217 | No Team              | ++
-MR Kevin Wickander           21| MR :      56     -10     :  46 | SP :      70     -13     :  58 |   6 |  64 |          |               |        :        | p1264 | No Team              | +++
-MR Scott Ruskin              22| MR :      62      -4     :  58 | MR :      67      -9     :  58 |   6 |  64 |          |               |        :        | p1181 | No Team              | +++
-LF Lonnie Maclin             18| LF :  76     -10 -21     :  44 | LF :  83     -10 -15     :  57 |   6 |  63 | -1---4-1 |               |        :        |  p884 | No Team              | ++
-2B Craig Grebeck             21| 2B :  80     -13 -27     :  40 | 2B :  87     -13 -17     :  57 |   6 |  63 | -2221--- |               |        :        |  p586 | No Team              | ++
-MR Chris Hammond             20| MR :      61      -5     :  56 | SP :      66     -16     :  50 |   6 |  62 |          |               |        :        |  p622 | No Team              | +++
-MR Doug Linton               20| MR :      53     -13     :  40 | SP :      69     -14     :  56 |   6 |  62 |          |               |        :        |  p835 | No Team              | +++
- C Kirt Manwaring            20|  C :  66       1 -20     :  47 |  C :  71       1 -16     :  56 |   6 |  62 | 51------ |               |        :        |  p942 | No Team              | +
-MR Mike a Walker             20| MR :      49     -16     :  34 | SP :      69     -14     :  56 |   6 |  62 |          |               |        :        | p1253 | No Team              | ++-
-MR Jim Czajkowski            22| MR :      50     -15     :  35 | SP :      69     -14     :  56 |   6 |  62 |          |               |        :        |  p420 | No Team              | ++-
- C Carlos a Hernandez        18|  C :  72      -5 -20     :  47 |  C :  76      -5 -17     :  55 |   6 |  61 | 41------ |               |        :        |  p650 | No Team              | +-
-MR Joe Skalski               21| MR :      61      -6     :  55 | SP :      68     -15     :  54 |   6 |  61 |          |               |        :        | p1202 | No Team              | ++-
-RF Matias Carrillo           22| CF :  71      -8 -27     :  36 | CF :  80      -8 -17     :  55 |   6 |  61 | -2---445 |               |        :        |  p337 | No Team              | ++
-SP Shawn Boskie              18| SP :      56     -22     :  34 | SP :      68     -14     :  54 |   6 |  60 |          |               |        :        |  p210 | No Team              | +++
-CF Jarvis Brown              18| CF :  72      -3 -22     :  47 | CF :  75      -3 -18     :  54 |   6 |  60 | -2---555 |               |        :        |  p239 | No Team              | +
-MR Bruce Egloff              20| MR :      54     -11     :  43 | SP :      68     -15     :  54 |   6 |  60 |          |               |        :        |  p489 | No Team              | +++
-MR Bob w Malloy              21| MR :      48     -16     :  32 | SP :      68     -15     :  54 |   6 |  60 |          |               |        :        |  p912 | No Team              | +++
- C Rick Wilkins              18|  C :  79     -11 -19     :  50 |  C :  81     -11 -17     :  53 |   6 |  59 | 23------ |               |        :        | p1267 | No Team              | ++
-3B Dean Palmer               17| 1B :  70     -18 -38     :  14 | 3B :  88     -16 -20     :  52 |   6 |  58 | -1-1---- |               |        :        | p1118 | No Team              | ++
-MR Paul Abbott               18| MR :      50     -15     :  35 | SP :      67     -15     :  52 |   6 |  58 |          |               |        :        |   p18 | No Team              | +++
-SP Omar Olivares             18| SP :      64     -13     :  52 | SP :      66     -16     :  50 |   6 |  58 |          |               |        :        | p1108 | No Team              | ++-
-MR Chuck Malone              20| MR :      54     -11     :  43 | SP :      67     -15     :  52 |   6 |  58 |          |               |        :        |  p914 | No Team              | ++-
-MR Pat Rice                  22| MR :      51     -14     :  37 | SP :      67     -15     :  52 |   6 |  58 |          |               |        :        | p1167 | No Team              | ++-
-MR Tommy Greene              18| MR :      50     -15     :  35 | SP :      66     -16     :  50 |   6 |  56 |          |               |        :        |  p588 | No Team              | +++
-MR Randy Nosek               19| MR :      57      -9     :  48 | SP :      66     -16     :  50 |   6 |  56 |          |               |        :        | p1105 | No Team              | ++-
-MR Larry Carter              20| MR :      50     -15     :  35 | SP :      66     -16     :  50 |   6 |  56 |          |               |        :        |  p343 | No Team              | ++-
-CF Wayne Housie              20| CF :  68      -9 -32     :  27 | CF :  79      -9 -20     :  50 |   6 |  56 | -1---333 |               |        :        |  p740 | No Team              | ++
-MR Steve Cummings            21| MR :      57      -9     :  48 | SP :      66     -16     :  50 |   6 |  56 |          |               |        :        |  p415 | No Team              | ++-
-SP Greg Hibbard              21| SP :      58     -20     :  38 | SP :      66     -16     :  50 |   6 |  56 |          |               |        :        |  p659 | No Team              | +++
-SP Scott Kamieniecki         21| SP :      63     -14     :  50 | SP :      64     -18     :  46 |   6 |  56 |          |               |        :        |  p799 | No Team              | ++-
-MR Bryan Hickerson           22| MR :      58      -8     :  50 | SP :      66     -17     :  48 |   6 |  56 |          |               |        :        |  p676 | No Team              | +++
-SP Jim Bullinger             20| SP :      63     -14     :  49 | SP :      64     -19     :  46 |   6 |  55 |          |               |        :        |  p272 | No Team              | ++-
-RF Eric Anthony              18| LF :  72     -15 -30     :  27 | LF :  83     -15 -20     :  48 |   6 |  54 | -2---212 |               |        :        |   p45 | No Team              | ++
-SS David Howard              18| 2B :  66      -8 -35     :  23 | 2B :  77      -8 -22     :  48 |   6 |  54 | -3444222 |               |        :        |  p772 | No Team              | +
-MR Brad Brink                21| MR :      56     -10     :  46 | SP :      66     -17     :  48 |   6 |  54 |          |               |        :        |  p213 | No Team              | ++-
-MR Keith Brown               21| MR :      50     -15     :  35 | SP :      66     -17     :  48 |   6 |  54 |          |               |        :        |  p255 | No Team              | ++-
-3B Hensley Meulens           18| LF :  73     -15 -29     :  29 | LF :  82     -15 -20     :  47 |   6 |  53 | -1-1-2-2 |               |        :        | p1061 | No Team              | ++
- C Kelly Mann                18|  C :  61       1 -25     :  37 |  C :  66       1 -21     :  46 |   6 |  52 | 51------ |               |        :        |  p932 | No Team              | +
-1B Jim Tatum                 18| 3B :  66     -13 -41     :  12 | 3B :  82     -13 -22     :  46 |   6 |  52 | -412-1-1 |               |        :        | p1240 | No Team              | ++
-MR Kevin d Brown             19| MR :      56     -10     :  46 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p258 | No Team              | ++-
-1B George Canale             20| 3B :  74     -13 -33     :  28 | 3B :  82     -13 -22     :  46 |   6 |  52 | -412---- |               |        :        |  p304 | No Team              | ++
-MR Blaine Beatty             21| MR :      55     -10     :  45 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |   p99 | No Team              | ++-
-LF Mark Leonard              21| LF :  74     -13 -26     :  35 | LF :  80     -13 -21     :  46 |   6 |  52 | -1---3-2 |               |        :        |  p827 | *CEI* No Team        | +-
-SP Mike Loynd                21| SP :      60     -17     :  43 | SP :      64     -19     :  46 |   6 |  52 |          |               |        :        |  p874 | No Team              | ++-
-MR Steve Rosenberg           21| MR :      56     -10     :  46 | SP :      64     -19     :  44 |   6 |  52 |          |               |        :        | p1179 | No Team              | ++-
-3B Ed Whited                 21| 3B :  66      -1 -29     :  35 | 3B :  70      -1 -22     :  46 |   6 |  52 | -216---- |               |        :        | p1262 | No Team              | +
-MR Russ Swan                 22| MR :      56     -10     :  46 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        | p1227 | No Team              | ++-
-2B Greg a Smith              18| 2B :  67      -1 -28     :  38 | 2B :  69      -1 -23     :  45 |   6 |  51 | -2615--- |               |        :        | p1208 | No Team              | +
-MR Rich Scheid               20| MR :      50     -15     :  35 | SP :      64     -19     :  44 |   6 |  50 |          |               |        :        | p1188 | No Team              | ++-
-CF Bill Bean                 21| LF :  78     -15 -24     :  40 | LF :  80     -15 -22     :  43 |   6 |  49 | -1---212 |               |        :        |   p96 | No Team              | +-
-SP Clint Zavaras             19| MR :      48     -16     :  32 | SP :      62     -21     :  42 |   6 |  48 |          |               |        :        | p1274 | No Team              | +++
- C Matt Merullo              20|  C :  67     -11 -31     :  26 |  C :  75     -11 -23     :  41 |   6 |  47 | 2411-1-1 |               |        :        | p1055 | No Team              | +
-2B Tommy Hinzo               21| 2B :  69     -10 -34     :  25 | 2B :  76     -10 -25     :  41 |   6 |  47 | -13----- |               |        :        |  p684 | *CEI* No Team        | +
-RF Dann Howitt               21| LF :  73     -16 -30     :  28 | LF :  80     -16 -23     :  41 |   6 |  47 | -311-212 |               |        :        |  p784 | No Team              | +-
-SP Brian Dubois              20| SP :      59     -19     :  40 | SP :      60     -23     :  36 |   6 |  46 |          |               |        :        |  p478 | No Team              | ++-
-SP Paul Mcclellan            19| SP :      57     -20     :  37 | SP :      58     -25     :  34 |   6 |  43 |          |               |        :        | p1013 | No Team              | ++-
-SP Roger Pavlik              18| SP :      56     -22     :  34 | SP :      60     -23     :  36 |   6 |  42 |          |               |        :        | p1121 | No Team              | +++
-1B Jim Bowie                 20| 1B :  71     -17 -37     :  17 | 1B :  80     -17 -27     :  36 |   6 |  42 | -2------ |               |        :        |  p211 | No Team              | ++
-3B Craig Colbert             20| 3B :  65      -5 -34     :  26 | 3B :  68      -5 -28     :  35 |   6 |  41 | -215---- |               |        :        |  p364 | No Team              | +
-LF Jeff Banister             21| CF :  61       0 -29     :  32 | CF :  62       0 -27     :  35 |   6 |  41 | -2---766 |               |        :        |   p77 | No Team              | +
-LF Terry Mcdaniel            19| CF :  69      -8 -29     :  32 | CF :  69      -8 -28     :  33 |   6 |  39 | -2---544 |               |        :        | p1018 | No Team              | +
- C Carlos f Diaz             21|  C :  63      -5 -29     :  29 |  C :  65      -5 -28     :  33 |   6 |  39 | 41------ |               |        :        |  p458 | No Team              | +
-MR Steve Adkins              21| MR :      46     -19     :  27 | MR :      47     -27     :  20 |   6 |  33 |          |               |        :        |   p20 | No Team              | +-
-LF Tim Mcintosh              20| LF :  65     -17 -39     :   8 | LF :  74     -17 -31     :  26 |   6 |  32 | -2---1-1 |               |        :        | p1031 | No Team              | +
-2B Dave Rohde                21| 2B :  67     -14 -40     :  13 | 2B :  71     -14 -34     :  24 |   6 |  30 | -2221--- |               |        :        | p1175 | No Team              | +
-2B Jeff Richardson           20| 2B :  63     -15 -45     :   3 | 2B :  71     -15 -35     :  22 |   6 |  28 | -2111--- |               |        :        | p1168 | No Team              | +
-3B Tommy Shields             21| 3B :  65      -9 -39     :  17 | 3B :  66      -9 -35     :  22 |   6 |  28 | -213-1-- |               |        :        | p1195 | No Team              | +
-SS Esteban Beltre            18| DH :  66     -19 -41     :   6 | 1B :  72     -18 -35     :  19 |   6 |  25 | -1------ |               |        :        |  p120 | No Team              | +
-RF Mark a Davis              21| LF :  68     -16 -35     :  17 | LF :  68     -16 -36     :  17 |   6 |  23 | -1---2-2 |               |        :        |  p427 | No Team              | +
+SP John Smoltz               18| SP :      57     -20     :  37 | SP :     126      43  11 : 180 |   6 | 186 |          |               |        :        | p1216 | No Team              | +++++
+SP Kevin Brown               20| SP :      57     -20     :  37 | SP :     125      42  10 : 177 |   6 | 183 |          |               |        :        |  p244 | *CEI* No Team        | +++++
+SP Curt Schilling            19| MR :      42     -22     :  19 | SP :     114      31     : 145 |   6 | 151 |          |               |        :        | p1190 | No Team              | +++++
+CF Bernie F. Williams        17| CF :  78      -3 -16     :  59 | CF : 118      -3  25     : 140 |   6 | 146 | -2---655 |               |        :        | p1269 | No Team              | +++++
+RF Sammy Sosa                17| RF :  85      -9 -13     :  62 | CF : 123      -9  25     : 139 |   6 | 145 | -1---435 |               |        :        | p1220 | No Team              | +++++
+RF Gary Sheffield            17| 3B :  86      -5 -13     :  68 | 3B : 119      -5  23     : 137 |   6 | 143 | -2153414 |               |        :        | p1194 | No Team              | +++++
+MR Stan Belinda              19| MR :      42     -22     :  19 | MR :     108      26   1 : 135 |   6 | 141 |          |               |        :        |  p109 | No Team              | +++++
+LF Moises Alou               19| CF :  77      -8 -21     :  48 | CF : 119      -8  22     : 133 |   6 | 139 | -2---444 |               |        :        |   p29 | No Team              | +++++
+1B Troy Neel                 20| LF :  65     -10 -32     :  24 | LF : 116     -10  19     : 125 |   6 | 131 | -3---5-- |               |        :        | p1100 | No Team              | ++++-
+3B Jeff King                 21| 2B :  69       0 -25     :  44 | 2B : 108       0  17     : 124 |   6 | 130 | -66611-- |               |        :        |  p802 | No Team              | ++++
+3B Matt D. Williams          20| 3B :  80       0 -14     :  65 | 3B : 107       0  15     : 122 |   6 | 128 | -3265--- |               |        :        | p1270 | No Team              | +++++
+3B Todd Zeile                20|  C :  70      -5 -22     :  43 |  C : 109      -5  16     : 121 |   6 | 127 | 4515---- |               |        :        | p1275 | No Team              | ++++
+1B Kazuhiro Kiyohara         18| 1B :  95     -12  -8     :  75 | 1B : 117     -12  15     : 120 |   6 | 126 | -7-2---- |               |        :        | p1332 | No Team              | +++++
+CF Darryl Hamilton           21| CF :  76      -3 -17     :  55 | CF : 107      -3  15     : 118 |   6 | 124 | -2---656 |               |        :        |  p619 | No Team              | ++++
+LF Greg Vaughn               20| LF :  72      -6 -21     :  44 | LF : 108      -6  14     : 116 |   6 | 122 | -2---623 |               |        :        | p1244 | No Team              | +++++
+SP Masumi Kuwata             17| SP :      58     -19     :  39 | SP :      99      16     : 115 |   6 | 121 |          |               |        :        |  p809 | No Team              | +++++
+ C Rick Wilkins              18|  C :  65       5 -17     :  54 |  C :  96       5  14     : 115 |   6 | 121 | 68221212 |               |        :        | p1267 | No Team              | +++-
+1B Jim Tatum                 18|  C :  60      17 -10     :  67 |  C :  84      17  13     : 114 |   6 | 120 | 9413-612 |               |        :        | p1240 | No Team              | ++
+3B Dean Palmer               17| LF :  70     -12 -29     :  29 | 3B : 111      -9  10     : 112 |   6 | 118 | -3-3-3-- |               |        :        | p1118 | No Team              | ++++
+RF Juan Gonzalez             16| LF :  68      -9 -28     :  31 | CF : 107      -7  10     : 110 |   6 | 116 | -2---544 |               |        :        |  p559 | No Team              | +++++
+ C Joe Girardi               21|  C :  64       9 -14     :  59 |  C :  90       9  11     : 110 |   6 | 116 | 71------ |               |        :        |  p534 | No Team              | +++
+1B Paul Sorrento             20| RF :  68      -8 -30     :  30 | RF : 107      -8  10     : 109 |   6 | 115 | -3---315 |               |        :        | p1219 | No Team              | ++++
+RF Mark Whiten               19| CF :  68       0 -22     :  46 | CF :  98       0   9     : 107 |   6 | 113 | -2---666 |               |        :        | p1263 | No Team              | +++-
+CF Brian McRae               18| CF :  69      -3 -25     :  41 | CF : 101      -3   8     : 106 |   6 | 112 | -2---353 |               |        :        | p1044 | No Team              | ++++
+ C Chris Hoiles              20|  C :  68      -8 -28     :  32 |  C : 105      -8   9     : 105 |   6 | 111 | 342111-1 |               |        :        |  p693 | No Team              | ++++
+ C Tony Eusebio              18|  C :  60       9 -18     :  51 |  C :  87       9   8     : 104 |   6 | 110 | 71------ |               |        :        |  p491 | No Team              | ++-
+ C Todd Pratt                18|  C :  60       7 -21     :  46 |  C :  89       7   8     : 104 |   6 | 110 | 66221211 |               |        :        | p1151 | No Team              | +++
+LF Al Martin                 18| RF :  68      -7 -28     :  33 | RF : 103      -7   7     : 103 |   6 | 109 | -2---446 |               |        :        |  p962 | No Team              | ++++
+3B Sean Berry                19| 3B :  73      -5 -26     :  42 | 3B : 101      -5   5     : 101 |   6 | 107 | -415---- |               |        :        |  p138 | No Team              | ++++
+SS Mike Bordick              20| 2B :  66       1 -27     :  40 | SS :  92       7   2     : 101 |   6 | 107 | -3777--- |               |        :        |  p202 | No Team              | +++-
+SP Kevin Tapani              21| MR :      38     -25     :  13 | SP :      92       9     : 101 |   6 | 107 |          |               |        :        | p1237 | No Team              | ++++-
+2B Carlos Baerga             17| 2B :  73      -2 -22     :  49 | 2B :  97      -2   4     : 100 |   6 | 106 | -2651--- |               |        :        |   p66 | No Team              | ++++
+2B Steve Scarsone            19| SS :  63      12 -32     :  42 | SS :  87      12   1     :  99 |   6 | 105 | -8748212 |               |        :        | p1187 | No Team              | ++-
+ C Carlos A. Hernandez       18|  C :  64       9 -14     :  59 |  C :  84       9   5     :  98 |   6 | 104 | 71------ |               |        :        |  p650 | No Team              | ++-
+ C Tom Lampkin               21|  C :  66       3 -18     :  51 |  C :  89       3   4     :  97 |   6 | 103 | 62---412 |               |        :        |  p813 | *CEI* No Team        | +++
+2B Geronimo Pena             18| 2B :  68      -1 -26     :  41 | 2B :  94      -1   2     :  95 |   6 | 101 | -261---- |               |        :        | p1122 | No Team              | +++-
+1B Lee Stevens               18| LF :  67      -7 -27     :  33 | LF :  97      -7   2     :  93 |   6 |  99 | -6---624 |               |        :        | p1224 | No Team              | +++-
+3B Scott Leius               20| SS :  64       7 -36     :  36 | SS :  88       7  -2     :  93 |   6 |  99 | -7467--- |               |        :        |  p826 | No Team              | ++-
+SP Rick Reed                 21| MR :      39     -25     :  14 | SP :      88       5     :  93 |   6 |  99 |          |               |        :        | p1162 | No Team              | +++++
+CL Jeff Shaw                 19| MR :      42     -22     :  19 | MR :      86       7     :  92 |   6 |  98 |          |               |        :        | p1193 | No Team              | ++++
+CF Chuck Carr                18| CF :  66       0 -24     :  42 | CF :  90       0   1     :  91 |   6 |  97 | -2---362 |               |        :        |  p335 | No Team              | +++
+RF Warren Newson             21| RF :  61      -8 -36     :  17 | RF :  97      -8   0     :  89 |   6 |  95 | -1---316 |               |        :        | p1104 | No Team              | +++-
+LF Bo Jackson                23| LF :  79      -9 -18     :  52 | LF :  98      -9   1     :  89 |   6 |  95 | -1---534 |               |        :        |  p798 | *CEI* No Team        | +++-
+1B Hal Morris                20| LF :  73     -13 -27     :  33 | LF : 101     -13   0     :  88 |   6 |  94 | -3---3-1 |               |        :        | p1087 | No Team              | ++++
+RF Turner Ward               20| CF :  64       0 -26     :  38 | CF :  88       0  -1     :  88 |   6 |  94 | -2---666 |               |        :        | p1258 | No Team              | ++-
+SP Kevin Campbell            21| MR :      43     -21     :  22 | SP :      85       2     :  87 |   6 |  93 |          |               |        :        |  p284 | No Team              | +++-
+2B Luis Alicea               20| 2B :  66      -1 -29     :  36 | 2B :  90      -1  -2     :  86 |   6 |  92 | -264---- |               |        :        |   p24 | No Team              | +++
+2B Craig Grebeck             21| 3B :  63       0 -31     :  31 | 3B :  89       0  -3     :  86 |   6 |  92 | -2565--- |               |        :        |  p586 | No Team              | +++
+2B Jeff Reboulet             21| 2B :  61       1 -32     :  29 | SS :  85       7  -6     :  86 |   6 |  92 | -4776213 |               |        :        | p1157 | No Team              | ++
+SP Tommy Greene              18| MR :      42     -22     :  19 | SP :      83       0     :  83 |   6 |  89 |          |               |        :        |  p588 | No Team              | ++++
+CF Jerome Walton             20| CF :  66      -4 -28     :  34 | CF :  90      -4  -3     :  83 |   6 |  89 | -3---657 |               |        :        | p1254 | No Team              | ++-
+CF Karl Rhodes               17| LF :  68      -9 -28     :  31 | LF :  94      -9  -3     :  82 |   6 |  88 | -1---535 |               |        :        | p1165 | No Team              | +++
+RF Junior Felix              18| CF :  68      -8 -31     :  29 | CF :  94      -8  -4     :  82 |   6 |  88 | -1---245 |               |        :        |  p496 | No Team              | +++
+SP Andy Ashby                18| MR :      38     -25     :  13 | SP :      82      -1     :  81 |   6 |  87 |          |               |        :        |   p48 | No Team              | +++-
+MR Vince Horsman             18| MR :      43     -21     :  22 | MR :      80       1     :  81 |   6 |  87 |          |               |        :        |  p737 | No Team              | +++-
+LF Henry L. Rodriguez        18| LF :  62     -12 -38     :  12 | LF :  97     -12  -3     :  81 |   6 |  87 | -6---3-3 |               |        :        | p1173 | No Team              | +++-
+LF Greg Briley               20| 2B :  67       0 -27     :  40 | 2B :  86       0  -5     :  81 |   6 |  87 | -2621333 |               |        :        |  p212 | No Team              | ++
+SP Greg Hibbard              21| MR :      38     -25     :  13 | SP :      82      -1     :  81 |   6 |  87 |          |               |        :        |  p659 | No Team              | ++++
+LF Thomas Howard             21| CF :  66       1 -23     :  44 | CF :  84       1  -4     :  81 |   6 |  87 | -2---774 |               |        :        |  p777 | No Team              | ++
+SP Erik Hanson               20| MR :      38     -25     :  13 | SP :      81      -2     :  80 |   6 |  86 |          |               |        :        |  p628 | No Team              | ++++
+3B Scott Cooper              18| 3B :  61      -5 -38     :  18 | 3B :  90      -5  -6     :  79 |   6 |  85 | -615---- |               |        :        |  p370 | *CEI* No Team        | ++-
+SS Rey Sanchez               18| 3B :  64       4 -26     :  42 | 3B :  81       4  -6     :  79 |   6 |  85 | -3586--- |               |        :        | p1182 | No Team              | ++
+MR Mike Perez                21| MR :      48     -16     :  32 | MR :      79       1     :  79 |   6 |  85 |          |               |        :        | p1126 | No Team              | ++++
+2B Lance Blankenship         22| 2B :  65       0 -29     :  36 | 2B :  85       0  -6     :  79 |   6 |  85 | -2661656 |               |        :        |  p165 | No Team              | ++
+ C Kirt Manwaring            20|  C :  71      -3 -19     :  50 |  C :  85      -3  -5     :  77 |   6 |  83 | 41------ |               |        :        |  p942 | No Team              | ++
+1B Kevin Maas                21| 1B :  65     -14 -39     :  12 | 1B :  97     -14  -6     :  77 |   6 |  83 | -5------ |               |        :        |  p875 | No Team              | +++
+2B Andy Stankiewicz          21| 3B :  61       0 -33     :  28 | SS :  81       6 -10     :  77 |   6 |  83 | -2566--- |               |        :        | p1221 | No Team              | ++
+2B Luis Sojo                 21| 3B :  61       0 -33     :  27 | 3B :  84       0  -8     :  76 |   6 |  82 | -45645-1 |               |        :        | p1217 | No Team              | ++
+LF Lou Frazier               21| CF :  63       0 -27     :  35 | CF :  82       0  -7     :  75 |   6 |  81 | -2---562 |               |        :        |  p531 | No Team              | +-
+SP Tom Gordon                18| MR :      48     -16     :  32 | SP :      79      -4     :  74 |   6 |  80 |          |               |        :        |  p570 | No Team              | ++++
+RF Mike Simms                19| LF :  65      -8 -30     :  28 | LF :  88      -8  -7     :  73 |   6 |  79 | -3---613 |               |        :        | p1201 | No Team              | ++-
+3B Mike Blowers              20| LF :  67     -11 -31     :  24 | 3B :  91      -9  -9     :  73 |   6 |  79 | -3-3-4-- |               |        :        |  p192 | No Team              | +++
+SS David Howard              18| CF :  61       4 -26     :  39 | CF :  77       4  -8     :  72 |   6 |  78 | -8777486 |               |        :        |  p772 | No Team              | +-
+CF Bill Bean                 21| CF :  63       1 -27     :  37 | CF :  80       1  -9     :  72 |   6 |  78 | -2---476 |               |        :        |   p96 | No Team              | ++
+3B Leo Gomez                 19| 3B :  65      -8 -37     :  20 | 3B :  89      -8 -10     :  71 |   6 |  77 | -714-212 |               |        :        |  p546 | No Team              | +++
+SP John Barfield             21| MR :      38     -25     :  13 | SP :      77      -6     :  71 |   6 |  77 |          |               |        :        |   p93 | No Team              | +++
+MR Yorkis Perez              18| MR :      38     -25     :  13 | MR :      73      -5     :  68 |   6 |  74 |          |               |        :        | p1141 | No Team              | +++-
+MR Dave Veres                19| MR :      32     -31     :   1 | MR :      73      -5     :  68 |   6 |  74 |          |               |        :        | p1246 | No Team              | ++++
+CL Roberto Hernandez         21| MR :      42     -22     :  19 | MR :      73      -5     :  68 |   6 |  74 |          |               |        :        |  p654 | No Team              | ++++
+LF Trent Hubbard             21| LF :  61     -10 -36     :  16 | CF :  87      -8 -11     :  68 |   6 |  74 | -2---545 |               |        :        |  p796 | No Team              | ++
+SP Mike Dyer                 19| MR :      39     -25     :  14 | SP :      75      -8     :  67 |   6 |  73 |          |               |        :        |  p480 | No Team              | +++
+ C Jerry Goff                21|  C :  62      -3 -29     :  30 |  C :  81      -3 -10     :  67 |   6 |  73 | 41------ |               |        :        |  p542 | No Team              | ++
+SP Greg Swindell             21| MR :      42     -22     :  19 | SP :      75      -8     :  67 |   6 |  73 |          |               |        :        | p1228 | No Team              | ++++
+SS Esteban Beltre            18| 2B :  64      -2 -31     :  31 | 2B :  80      -2 -13     :  66 |   6 |  72 | -2645--- |               |        :        |  p120 | No Team              | ++
+MR Chuck McElroy             18| MR :      38     -25     :  13 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        | p1020 | No Team              | +++
+MR Mel Rojas                 19| MR :      42     -22     :  19 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        | p1178 | No Team              | +++-
+MR Mike Butcher              20| MR :      38     -25     :  13 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        |  p283 | No Team              | +++
+MR Xavier Hernandez          20| MR :      42     -22     :  19 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        |  p657 | No Team              | +++-
+MR Mike Fetters              21| MR :      42     -22     :  19 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        |  p501 | No Team              | +++-
+MR Jeff Tabaka               22| MR :      38     -25     :  13 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        | p1233 | No Team              | +++
+3B Dave Hansen               17| 3B :  63      -9 -40     :  14 | 3B :  86      -9 -14     :  63 |   6 |  69 | -613---- |               |        :        |  p625 | No Team              | ++
+2B Keith Lockhart            21| 2B :  61      -9 -41     :  11 | 2B :  84      -9 -16     :  60 |   6 |  66 | -233---- |               |        :        |  p865 | No Team              | ++
+SP Omar Olivares             18| MR :      38     -25     :  13 | SP :      69     -14     :  55 |   6 |  61 |          |               |        :        | p1108 | No Team              | +++
+MR Scott Ruskin              22| MR :      39     -25     :  14 | MR :      66     -11     :  55 |   6 |  61 |          |               |        :        | p1181 | No Team              | +++
+SP Roger Pavlik              18| MR :      35     -28     :   6 | SP :      68     -14     :  54 |   6 |  60 |          |               |        :        | p1121 | No Team              | +++
+LF Harvey Pulliam            18| LF :  65     -15 -37     :  13 | LF :  85     -15 -18     :  53 |   6 |  59 | -1---2-2 |               |        :        | p1152 | No Team              | ++-
+SP Scott Kamieniecki         21| MR :      24     -37     : -13 | SP :      67     -15     :  52 |   6 |  58 |          |               |        :        |  p799 | No Team              | ++-
+SP Jim Bullinger             20| MR :      24     -37     : -13 | SP :      67     -16     :  51 |   6 |  57 |          |               |        :        |  p272 | No Team              | ++-
+RF Eric Anthony              18| LF :  63     -13 -37     :  13 | LF :  82     -13 -19     :  50 |   6 |  56 | -3---313 |               |        :        |   p45 | No Team              | ++
+SP Willie Blair              20| MR :      35     -28     :   8 | SP :      66     -17     :  49 |   6 |  55 |          |               |        :        |  p140 | No Team              | +++
+ C Matt Merullo              20|  C :  63     -15 -39     :   9 | 1B :  83     -14 -20     :  49 |   6 |  55 | 15------ |               |        :        | p1055 | No Team              | ++
+SP Paul Abbott               18| MR :      35     -28     :   8 | SP :      65     -17     :  48 |   6 |  54 |          |               |        :        |   p18 | No Team              | +++
+MR Archie Corbin             18| MR :      39     -25     :  14 | MR :      61     -14     :  47 |   6 |  53 |          |               |        :        |  p385 | No Team              | ++-
+SP Doug Brocail              18| MR :      24     -37     : -13 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p229 | No Team              | +++
+SP Jason Grimsley            18| MR :      35     -28     :   6 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p594 | No Team              | ++-
+SP Mike C. Walker            19| MR :      35     -28     :   6 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        | p1251 | No Team              | ++-
+SP Chris Hammond             20| MR :      38     -25     :  13 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p622 | No Team              | +++
+SP Keith Brown               21| MR :      48     -16     :  32 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p255 | No Team              | ++-
+SP Kip Gross                 21| MR :      35     -28     :   6 | SP :      65     -18     :  46 |   6 |  52 |          |               |        :        |  p600 | No Team              | ++-
+MR Mike Munoz                20| MR :      35     -28     :   6 | MR :      60     -16     :  44 |   6 |  50 |          |               |        :        | p1097 | No Team              | ++-
+MR Darren Hall               21| MR :      35     -28     :   6 | MR :      60     -16     :  44 |   6 |  50 |          |               |        :        |  p605 | No Team              | ++-
+MR Gene Harris               21| MR :      35     -28     :   6 | MR :      60     -16     :  44 |   6 |  50 |          |               |        :        |  p642 | No Team              | ++-
+MR Alan Mills                19| MR :      35     -28     :   8 | MR :      59     -17     :  42 |   6 |  48 |          |               |        :        | p1068 | No Team              | +++
+SP Rich DeLucia              21| MR :      35     -28     :   8 | SP :      62     -21     :  41 |   6 |  47 |          |               |        :        |  p432 | No Team              | +++
+MR Josias Manzanillo         18| MR :      39     -25     :  14 | MR :      57     -18     :  39 |   6 |  45 |          |               |        :        |  p954 | No Team              | +++-
+SP Russ Swan                 22| MR :      24     -37     : -13 | SP :      61     -22     :  39 |   6 |  45 |          |               |        :        | p1227 | No Team              | ++
+MR Kevin Wickander           21| MR :      35     -28     :   6 | MR :      54     -21     :  33 |   6 |  39 |          |               |        :        | p1264 | No Team              | ++
+MR Willie E. Smith           18| MR :      24     -37     : -13 | MR :      51     -23     :  28 |   6 |  34 |          |               |        :        | p1215 | No Team              | +++
+MR Scott Service             18| MR :      24     -37     : -13 | MR :      51     -23     :  28 |   6 |  34 |          |               |        :        | p1191 | No Team              | +++
+SP Doug Linton               20| MR :      24     -37     : -13 | MR :      50     -24     :  26 |   6 |  32 |          |               |        :        |  p835 | No Team              | ++-
+SP Bryan Hickerson           22| MR :      35     -28     :   8 | MR :      50     -24     :  26 |   6 |  32 |          |               |        :        |  p676 | No Team              | ++-
+SP Shawn Boskie              18| MR :      35     -28     :   8 | SP :      49     -34     :  14 |   6 |  20 |          |               |        :        |  p210 | No Team              | ++-
 
-1E | 118 (115-139) | 124 (121-145) 113/136 |   6/  6 || 117 (104-189) | 123 (110-195) 112/136 |  30/ 30
-1M | 100 ( 99-110) | 106 (105-116)  97/117 |   6/  6 || 102 ( 98-112) | 108 (104-118)  98/119 |  30/ 30
-1L |  93 ( 90- 97) |  99 ( 96-103)  90/109 |   8/  8 ||  93 ( 85- 98) |  99 ( 91-104)  90/109 |  40/ 40
-2E |  87 ( 84- 89) |  93 ( 90- 95)  85/103 |  10/ 10 ||  84 ( 76- 93) |  90 ( 82- 99)  82/ 99 |  50/ 50
-2L |  81 ( 81- 84) |  87 ( 87- 90)  79/ 96 |  10/ 10 ||  80 ( 45- 84) |  86 ( 51- 90)  78/ 95 |  50/ 50
+1E | 108 ( 76-139) | 114 ( 82-145) 103/125 |   6/  6 || 117 ( 76-189) | 123 ( 82-195) 111/135 |  30/ 30
+1M |  91 ( 74-110) |  97 ( 80-116)  88/107 |   6/  6 || 101 ( 74-112) | 107 ( 80-118)  97/118 |  30/ 30
+1L |  87 ( 66-103) |  93 ( 72-109)  85/103 |   8/  8 ||  91 ( 66-103) |  97 ( 72-109)  89/107 |  40/ 40
+2E |  80 ( 52-125) |  86 ( 58-131)  78/ 94 |  10/ 10 ||  84 ( 52-125) |  90 ( 58-131)  82/ 99 |  50/ 50
+2L |  75 ( 58- 89) |  81 ( 64- 95)  74/ 89 |  10/ 10 ||  78 ( 45- 89) |  84 ( 51- 95)  76/ 93 |  50/ 50
 
- 1 |  99 ( 90-139) | 105 ( 96-145)  96/116 |  20/ 20 ||  99 ( 85-189) | 105 ( 91-195)  96/116 | 100/100
- 2 |  84 ( 81- 89) |  90 ( 87- 95)  82/ 99 |  20/ 20 ||  82 ( 45- 93) |  88 ( 51- 99)  80/ 96 | 100/100
- 3 |  76 ( 72- 80) |  83 ( 78- 86)  75/ 91 |  20/ 20 ||  70 ( 32- 80) |  76 ( 38- 86)  69/ 84 | 100/100
- 4 |  70 ( 67- 72) |  76 ( 73- 78)  69/ 84 |  20/ 20 ||  60 ( 34- 72) |  66 ( 40- 78)  60/ 73 | 100/100
- 5 |  65 ( 63- 67) |  71 ( 69- 73)  65/ 78 |  20/ 20 ||  50 ( 25- 67) |  56 ( 31- 73)  51/ 62 |  81/ 81
- 6 |  61 ( 59- 63) |  67 ( 65- 69)  61/ 74 |  20/ 20 ||  61 ( 12- 72) |  67 ( 18- 78)  61/ 73 |  32/ 32
- 7 |  58 ( 56- 59) |  64 ( 62- 65)  58/ 70 |  20/ 20 ||  58 ( 56- 59) |  64 ( 62- 65)  58/ 70 |  20/ 20
- 8 |  52 ( 50- 56) |  58 ( 56- 62)  53/ 64 |  20/ 20 ||  52 ( 50- 56) |  58 ( 56- 62)  53/ 64 |  20/ 20
- 9 |  46 ( 44- 50) |  52 ( 51- 56)  48/ 58 |  20/ 20 ||  46 ( 44- 50) |  52 ( 51- 56)  48/ 58 |  20/ 20
-10 |  35 ( 19- 44) |  41 ( 25- 50)  38/ 46 |  20/ 20 ||  35 ( 19- 44) |  41 ( 25- 50)  38/ 46 |  20/ 20
-11 |  17 ( 17- 17) |  23 ( 23- 23)  21/ 26 |   1/  1 ||  17 ( 17- 17) |  23 ( 23- 23)  21/ 26 |   1/  1
+ 1 |  92 ( 66-139) |  98 ( 72-145)  89/107 |  20/ 20 ||  99 ( 66-189) | 105 ( 72-195)  95/115 | 100/100
+ 2 |  80 ( 52-125) |  86 ( 58-131)  78/ 94 |  20/ 20 ||  81 ( 45-125) |  87 ( 51-131)  79/ 96 | 100/100
+ 3 |  70 ( 50-115) |  76 ( 56-121)  69/ 83 |  20/ 20 ||  69 ( 50-115) |  75 ( 56-121)  68/ 82 | 100/100
+ 4 |  69 ( 50- 87) |  75 ( 56- 93)  69/ 83 |  20/ 20 ||  59 ( 34- 87) |  65 ( 40- 93)  59/ 72 | 100/100
+ 5 |  58 ( 36- 84) |  64 ( 42- 90)  58/ 71 |  20/ 20 ||  48 ( 25- 84) |  56 ( 31- 90)  51/ 61 |  81/ 81
+ 6 |  61 ( 19- 93) |  67 ( 25- 99)  61/ 74 |  20/ 20 ||  48 ( 12- 93) |  55 ( 18- 99)  50/ 60 |  32/ 32
+ 7 |  55 ( 54- 56) |  61 ( 60- 62)  55/ 67 |   2/  2 ||  55 ( 54- 56) |  61 ( 60- 62)  55/ 67 |   2/  2
 
 CF Lynn, F         33|  11,590,000  11,590,000
 SS Smalley III, R  33|   7,180,000            
@@ -924,7 +846,7 @@ MR Al Hrabosky               36| SP :     110      33     : 144 |    :          
  C Ron Hodges                36|  C :  96      17  26     : 139 |    :                     :   0 | -12 | 127 | 9312---- |               |  $5.99M: $8.17M | p1102 | No Team              | **
 LF Tony Scott                34| CF :  97       5  12     : 114 |    :                     :   0 |  -2 | 112 | -2---887 |               |  $2.77M: $3.77M | p1161 | No Team              | **
 2B John Castino              31| 3B : 100       0   6     : 106 |    :                     :   0 |   2 | 108 | -3565--- |               |  $1.38M: $1.88M |   p95 | No Team              | **^
-RF Dave Winfield             34| RF : 100      -3   8     : 105 |    :                     :   0 |  -2 | 103 | -2---758 |               |  $1.84M: $2.51M | p1515 | No Team              | ***
+1B Lee Mazzilli              30| LF : 104     -14   3     :  93 |    :                     :   0 |   3 |  96 | -312-323 |               | $691.7k:$942.2k | p2895 | No Team              | **
 1B Mike Hargrove             36| LF : 114     -16  11     : 108 |    :                     :   0 | -12 |  96 | -4---1-- |               |  $2.54M: $3.45M | p1008 | No Team              | **^
 
 --- Free Agents ---
@@ -1547,7 +1469,6 @@ LF Jerald Clark              22| CF :  74      -6 -23     :  45 | CF :  88      
 LF Vince Coleman             24| LF :  81     -12 -18     :  51 | LF :  92     -12  -8     :  73 |   6 |  79 | -2---413 |               |        :        |  p179 | California Angels    | +++
  C Mike Bishop               27|  C :  84      -5  -8     :  71 |    :                     :   0 |   6 |  77 | 41------ |               |        :        |   p80 | California Angels    | *
 SP Jaime Cocanower           28| SP :      74      -3     :  71 |    :                     :   0 |   5 |  76 |          |               |        :        |  p499 | California Angels    | *
-SS Pat Keedy                 28| SS :  76      13 -18     :  71 |    :                     :   0 |   5 |  76 | -4578316 |               |        :        |  p903 | California Angels    | *
 SP Juan Berenguer            31| SP :      76      -1     :  74 |    :                     :   0 |   2 |  76 |          |      $2.07Mx2 |        :        |   p71 | California Angels    | **
 SP Tim Conroy                25| SP :      71      -6     :  65 | SP :      76      -7     :  69 |   6 |  75 |          |               |        :        |  p535 | California Angels    | ++-
 CF Glenn Wilson              27| CF :  79       0 -11     :  68 |    :                     :   0 |   6 |  74 | -6221466 |               |        :        | p1795 | California Angels    | *
@@ -1563,6 +1484,7 @@ SP Craig Mitchell            31| SP :      71      -6     :  65 |    :          
 RF Darrin Jackson            22| CF :  66      -3 -28     :  35 | CF :  78      -3 -15     :  60 |   6 |  66 | -2---555 |               |        :        |  p624 | California Angels    | ++
 LF Ray Cosey                 29| LF :  89     -14 -13     :  62 |    :                     :   0 |   4 |  66 | -2---222 |               |        :        |  p230 | California Angels    | *
 1B Joe Orsulak               23| LF :  74     -14 -27     :  34 | RF :  87     -13 -15     :  59 |   6 |  65 | -3---323 |               |        :        | p1081 | California Angels    | ++
+CF Willie McGee              27| LF :  88     -15 -14     :  59 |    :                     :   0 |   6 |  65 | -1---212 |               |        :        |  p878 | California Angels    | *
 
 --- Minnesota Twins ---
 SP Jay Franklin              32| SP :     182     104  66 : 352 |    :                     :   0 |   1 | 353 |          |        $11Mx4 | $39.19M:$53.39M |  p756 | Minnesota Twins      | ****
@@ -1654,7 +1576,6 @@ RF Glenallen Hill            20| CF :  69      -5 -26     :  38 | CF :  94      
 MR Charlie Kerfeld           22| MR :      52     -13     :  38 | MR :      84       5     :  89 |   6 |  95 |          |               |        :        |  p618 | Texas Rangers        | +++-
 MR Jeff Lahti                29| MR :      80      10     :  90 |    :                     :   0 |   4 |  94 |          |       $300k r |  $2.31M: $3.14M | p1587 | Texas Rangers        | ***^
 CF Gerald Young              21| CF :  68       0 -22     :  46 | CF :  88       0  -1     :  87 |   6 |  93 | -2---665 |               |        :        | p1004 | Texas Rangers        | ++-
-MR Mark Ballinger            37| MR :      92      21     : 113 |    :                     :   0 | -20 |  93 |          |  F   $6.22M   |  $4.84M:  $6.6M |  p195 | Texas Rangers        | ***
 SP Ralph Citarella           27| SP :      81       4     :  85 |    :                     :   0 |   6 |  91 |          |       $350k a | $922.2k: $1.26M |  p145 | Texas Rangers        | *^
 SP Floyd Youmans             21| SP :      66     -11     :  56 | SP :      83       0     :  84 |   6 |  90 |          |   5           |        :        |  p998 | Texas Rangers        | +++-
 MR Ed Vande Berg             27| MR :      76       7     :  84 |    :                     :   0 |   6 |  90 |          |               |  $1.61M:  $2.2M | p1788 | Texas Rangers        | **
@@ -1665,8 +1586,9 @@ MR Rick Camp                 32| SP :      82       5     :  87 |    :          
 RF Buck Showalter            29| RF :  92      -6  -3     :  83 |    :                     :   0 |   4 |  87 | -2---337 |  F    $350k   |        :        | p1656 | Texas Rangers        | *^
 MR Kevin Stanfield           30| MR :      74       6     :  80 |    :                     :   0 |   3 |  83 |          |      $1.34M a |  $1.38M: $1.88M | p1268 | Texas Rangers        | ****
 SP Dennis Blair              31| SP :      78       1     :  79 |    :                     :   0 |   2 |  81 |          |               | $230.6k:$314.1k |   p76 | Texas Rangers        | *
-SP Donnie Moore              31| SP :      76      -1     :  74 |    :                     :   0 |   2 |  76 |          |  F      $3M   |        :        | p1399 | Texas Rangers        | *
+SP Donnie Moore              31| SP :      76      -1     :  74 |    :                     :   0 |   2 |  76 |          |         $1Mx3 |        :        | p1399 | Texas Rangers        | *
 MR Chuck Crim                24| MR :      50     -15     :  35 | MR :      72      -5     :  66 |   6 |  72 |          |               |        :        |  p200 | Texas Rangers        | +++
+CF Jerry Turner              32| LF :  91     -12  -8     :  71 |    :                     :   0 |   1 |  72 | -1---413 |               |        :        | p1458 | Texas Rangers        | **
 
 --- Chicago (N) Cubs ---
 SP Roger Clemens             23| SP :     111      34     : 145 | SP :     165      82  50 : 297 |   6 | 303 |          |   1   $300k r |  $7.84M:$10.68M |  p259 | *CEI* Chicago (N)... | +++++
@@ -1702,6 +1624,7 @@ MR Bill Earley               30| MR :      81      12     :  93 |    :          
 CF Oddibe McDowell           23| CF :  83      -6 -13     :  64 | CF :  95      -6   0     :  89 |   6 |  95 | -212-645 |               |        :        |  p782 | Chicago (N) Cubs     | +++
 SP Zane Smith                25| SP :      65     -12     :  53 | SP :      86       3     :  89 |   6 |  95 |          |               |        :        | p1046 | Chicago (N) Cubs     | +++
 LF Mike Huff                 22| CF :  67      -4 -27     :  36 | CF :  92      -4  -1     :  87 |   6 |  93 | -2---655 |               |        :        |  p357 | Chicago (N) Cubs     | +++
+MR Mark Ballinger            37| MR :      92      21     : 113 |    :                     :   0 | -20 |  93 |          |  F   $6.22M   |  $4.84M:  $6.6M |  p195 | No Team              | ***
  C Nelson Santovenia         24|  C :  74       1 -12     :  63 |  C :  85       1  -2     :  84 |   6 |  90 | 5321-1-1 |               |        :        | p1029 | Chicago (N) Cubs     | +++
 SP Luis Aquino               21| SP :      62     -15     :  47 | SP :      83       0     :  83 |   6 |  89 |          |               |        :        |   p42 | Chicago (N) Cubs     | +++-
 SP Marty Clary               23| SP :      58     -19     :  39 | SP :      83       0     :  83 |   6 |  89 |          |               |        :        |  p221 | Chicago (N) Cubs     | +++-
@@ -1718,7 +1641,6 @@ SS Walt Weiss                22| 2B :  79      -8 -23     :  48 | 2B :  91      
 CF Rolando Roomes            23| CF :  76       0 -14     :  62 | CF :  82       0  -7     :  75 |   6 |  81 | -221-766 |               |        :        | p1420 | Chicago (N) Cubs     | +-
 3B Mark Funderburk           28| LF :  93     -11  -5     :  76 |    :                     :   0 |   5 |  81 | -6221413 |       $350k a |        :        |  p330 | Chicago (N) Cubs     | **
 CF Tracy Jones               24| LF :  79      -9 -17     :  52 | CF :  88      -8  -9     :  71 |   6 |  77 | -2---545 |               |        :        |  p514 | Chicago (N) Cubs     | ++-
-3B Scott Fletcher            27| 2B :  91      -8 -11     :  71 |    :                     :   0 |   6 |  77 | -2441--- |               |        :        |  p445 | Chicago (N) Cubs     | *
 
 --- New York (N) Mets ---
 SP Rich Gossage              34| SP :     193     116  77 : 386 |    :                     :   0 |  -2 | 384 |          |        $12Mx2 |  $44.5M:$60.62M |  p851 | New York (N) Mets    | ****
@@ -1733,7 +1655,7 @@ LF Gary Matthews Sr.         35| LF : 124     -10  27   4 : 145 |    :          
 MR John Tudor                31| SP :     102      25     : 127 |    :                     :   0 |   2 | 129 |          |  F  $457.1k   |  $5.76M: $7.85M | p1342 | New York (N) Mets    | **^
 MR Dan Spillner              34| SP :     103      26     : 128 |    :                     :   0 |  -2 | 126 |          |  F   $5.62M   |  $5.99M: $8.17M | p1272 | New York (N) Mets    | ****
 3B Bobby L. Brown            31| 3B : 103       4  13     : 120 |    :                     :   0 |   2 | 122 | -3381767 |         $5Mx2 |     $3M: $4.08M |  p279 | New York (N) Mets    | ***
-SS Robin Yount               30| SS : 100      11   4     : 116 |    :                     :   0 |   3 | 119 | -3228223 |      $3.41Mx2 | $922.2k: $1.26M | p1518 | New York (N) Mets    | ***
+SS Robin Yount               30| SS : 100      13   6     : 118 |    :                     :   0 |   3 | 121 | -3338223 |      $3.41Mx2 |  $1.38M: $1.88M | p1518 | New York (N) Mets    | ***^
 3B John Wockenfuss           36|  C :  94      13  19     : 126 |    :                     :   0 | -12 | 114 | 8412-3-4 |  F    $600k   |  $4.38M: $5.97M | p1053 | New York (N) Mets    | **
 CF Gil Kubski                31| CF :  91       6   7     : 104 |    :                     :   0 |   2 | 106 | -322-587 |               |  $1.61M:  $2.2M |  p540 | New York (N) Mets    | **
 RF Larry Herndon             32| CF : 100      -3   6     : 103 |    :                     :   0 |   1 | 104 | -2---556 |       $7.5Mx2 |  $1.38M: $1.88M |  p888 | New York (N) Mets    | **^
@@ -1754,7 +1676,7 @@ SS Eric Yelding              20| CF :  74      -1 -18     :  55 | CF :  86      
 CF Danny Heep                28| CF :  78       6  -6     :  78 |    :                     :   0 |   5 |  83 | -312-686 |               |        :        | p1199 | New York (N) Mets    | *
 3B Chris W. Smith            28| LF :  87      -5  -5     :  78 |    :                     :   0 |   5 |  83 | -4251726 |               |        :        | p1700 | New York (N) Mets    | *^
 2B Jerry Remy                33| 2B :  94      -5  -5     :  83 |    :                     :   0 |   0 |  83 | -2521--- |  F    $500k   |        :        | p1339 | New York (N) Mets    | **
-RF Benny Distefano           24| LF :  87     -13 -13     :  60 | LF :  94     -13  -7     :  74 |   6 |  80 | -3---312 |   1           |        :        |  p303 | New York (N) Mets    | +++
+RF Benny Distefano           24| LF :  87     -13 -13     :  60 | LF :  94     -13  -7     :  74 |   6 |  80 | -3---312 |   1           |        :        |  p303 | New York (N) Mets    | +++-
 MR Gene Nelson               25| MR :      60      -7     :  53 | MR :      74      -3     :  71 |   6 |  77 |          |   5           |        :        | p1292 | New York (N) Mets    | +++-
 1B Pat Putnam                32| LF :  88      -7  -6     :  75 |    :                     :   0 |   1 |  76 | -6---622 |               |        :        | p1066 | New York (N) Mets    | *
 MR Dave Tobik                32| MR :      65      -2     :  63 |    :                     :   0 |   1 |  64 |          |               |        :        | p1553 | New York (N) Mets    | **^
@@ -2031,12 +1953,13 @@ CL Dave S. Smith             31| MR :     138      61  32 : 230 |    :          
 SP Scott Garrelts            24| SP :      88      11     :  98 | SP :     141      58  26 : 225 |   6 | 231 |          | I 3           |  $2.54M: $3.45M |  p596 | Los Angeles Dodgers  | +++++
 SP Bill Wilkinson            21| SP :      71      -6     :  65 | SP :     132      49  17 : 198 |   6 | 204 |          |   5           |        :        |  p969 | Los Angeles Dodgers  | +++++
 SP Jimmy Jones               21| SP :      56     -21     :  35 | SP :     121      38   6 : 165 |   6 | 171 |          |   4           |        :        |  p508 | Los Angeles Dodgers  | +++++
-CL Tim Crews                 24| MR :      73       4     :  77 | MR :     118      34   9 : 161 |   6 | 167 |          |   6           | $922.2k: $1.26M |  p311 | Los Angeles Dodgers  | +++++
+CL Tim Crews                 24| MR :      73       4     :  77 | MR :     118      34   9 : 161 |   6 | 167 |          |   7           | $922.2k: $1.26M |  p311 | Los Angeles Dodgers  | +++++
 2B Ron Gant                  20| 2B :  81      -6 -19     :  56 | 2B : 123      -6  26   4 : 147 |   6 | 153 | -241-312 |   2           |        :        |  p362 | Los Angeles Dodgers  | +++++
-CL John Wetteland            19| MR :      43     -21     :  22 | MR :     109      27   2 : 137 |   6 | 143 |          |   7           |        :        | p1134 | Los Angeles Dodgers  | +++++
+CL John Wetteland            19| MR :      43     -21     :  22 | MR :     109      27   2 : 137 |   6 | 143 |          |   8           |        :        | p1134 | Los Angeles Dodgers  | +++++
 RF Darryl Strawberry         23| LF : 111     -14  10     : 107 | RF : 121     -13  19     : 127 |   6 | 133 | -3221323 |   1           |  $2.31M: $3.14M | p1779 | Los Angeles Dodgers  | +++++
 MR Rod Scurry                29| MR :      99      27     : 126 |    :                     :   0 |   4 | 130 |          |       $300k a |  $6.22M: $8.48M | p1324 | Los Angeles Dodgers  | ****
 SP John Stuper               28| SP :      98      21     : 119 |    :                     :   0 |   5 | 124 |          |       $300k r |  $4.84M:  $6.6M | p1705 | Los Angeles Dodgers  | ***
+SP Mike Hartley              24| SP :      58     -19     :  39 | SP :      90       8     :  98 |   6 | 104 |          |   6           |        :        |  p429 | Los Angeles Dodgers  | ++++-
 1B Todd Benzinger            22| LF :  78      -9 -18     :  50 | LF : 100      -9   3     :  94 |   6 | 100 | -2---515 |   9           |        :        |   p74 | Los Angeles Dodgers  | ++++
 LF Steve Stroughter          33| LF :  97      -3   7     : 100 |    :                     :   0 |   0 | 100 | -2---833 |       $300k a |  $1.61M:  $2.2M | p1362 | Los Angeles Dodgers  | **^
 SP Adrian Devine             34| SP :      90      13     : 102 |    :                     :   0 |  -2 | 100 |          |      $4.42Mx2 |     $3M: $4.08M |  p524 | Los Angeles Dodgers  | *
@@ -2052,7 +1975,6 @@ SS Jeff Kunkel               23| 3B :  76       2 -16     :  62 | 3B :  86      
 2B Jody Reed                 23| 2B :  75       0 -19     :  56 | 2B :  88       0  -3     :  85 |   6 |  91 | -2624--- |               |        :        |  p957 | Los Angeles Dodgers  | +++
 3B Larry Parrish             32| 3B : 100      -9  -3     :  89 |    :                     :   0 |   1 |  90 | -513-313 |  F   $2.14M   |        :        | p1418 | Los Angeles Dodgers  | **
 SP Dave Ford                 29| SP :      81       4     :  85 |    :                     :   0 |   4 |  89 |          |               | $922.2k: $1.26M |  p366 | Los Angeles Dodgers  | *
-SP Mike Hartley              24| SP :      58     -19     :  39 | SP :      82      -1     :  81 |   6 |  87 |          |   8           |        :        |  p429 | Los Angeles Dodgers  | ++++
 RF Terry Francona            26| RF :  90      -7  -7     :  76 | RF :  92      -7  -4     :  80 |   6 |  86 | -4---416 |       $300k r |        :        |  p548 | Los Angeles Dodgers  | *
 MR Steve Rogers              36| SP :      87      10     :  97 |    :                     :   0 | -12 |  85 |          |  F      $3M   |  $2.31M: $3.14M | p1347 | Los Angeles Dodgers  | **^
  C Bill Schroeder            27|  C :  92     -11  -6     :  76 |    :                     :   0 |   6 |  82 | 21------ |               |        :        | p1733 | Los Angeles Dodgers  | **
@@ -2186,30 +2108,30 @@ LF Stan Jefferson            23| CF :  68      -4 -26     :  38 | CF :  82      
 
 American League
 East ----------------+
-New York (A) Yankees |  97.3  97.1  94.3 | 105.0 111.8 115.4 |  88- 74 0.542 |   0-  0 0.500 |  88- 74 0.543 ( 7) 
-Cleveland Indians    | 111.1 111.2 120.9 |  94.9  92.6  86.9 |  85- 77 0.525 |   0-  0 0.500 |  85- 77 0.525 ( 8) 
-Boston Red Sox       | 100.6 103.2 103.7 |  97.7  95.3  92.9 |  78- 84 0.481 |   0-  0 0.500 |  78- 84 0.481 (11) 
-Detroit Tigers       | 102.2 102.1 104.2 |  94.7  95.8  90.3 |  76- 86 0.470 |   0-  0 0.500 |  76- 86 0.469 (12) 
-Baltimore Orioles    |  96.8  96.9  93.7 |  90.9  90.3  80.3 |  59-103 0.361 |   0-  0 0.500 |  59-103 0.364 (16) 
+New York (A) Yankees |  97.3  97.1  94.3 | 104.9 111.8 115.4 |  88- 74 0.542 |   0-  0 0.500 |  88- 74 0.543 ( 7) 
+Cleveland Indians    | 111.1 111.2 120.9 |  94.8  92.6  86.8 |  85- 77 0.524 |   0-  0 0.500 |  85- 77 0.525 ( 8) 
+Boston Red Sox       | 100.6 103.2 103.7 |  97.7  95.3  92.8 |  78- 84 0.481 |   0-  0 0.500 |  78- 84 0.481 (11) 
+Detroit Tigers       | 102.2 102.1 104.3 |  94.6  95.8  90.2 |  76- 86 0.470 |   0-  0 0.500 |  76- 86 0.469 (12) 
+Baltimore Orioles    |  96.9  96.9  93.7 |  90.9  90.2  80.2 |  58-104 0.361 |   0-  0 0.500 |  58-104 0.358 (16) 
 West ----------------+
-Texas Rangers        | 101.1  99.5 100.7 | 119.0 120.7 135.0 | 105- 57 0.649 |   0-  0 0.500 | 105- 57 0.648 ( 2) 
-Minnesota Twins      |  99.6 100.5 100.2 | 110.3 109.6 118.9 |  95- 67 0.587 |   0-  0 0.500 |  95- 67 0.586 ( 6) 
-Oakland Athletics    |  92.6  92.0  84.0 | 112.7 113.1 123.9 |  84- 78 0.520 |   0-  0 0.500 |  84- 78 0.519 ( 9) 
-Chicago (A) White... |  92.6  92.4  84.5 |  90.0  87.2  75.7 |  47-115 0.290 |   0-  0 0.500 |  47-115 0.290 (19) 
-California Angels    |  95.2  94.8  89.8 |  82.1  80.4  59.4 |  36-126 0.222 |   0-  0 0.500 |  36-126 0.222 (20) 
+Texas Rangers        | 101.1  99.5 100.7 | 117.9 119.2 133.0 | 104- 58 0.642 |   0-  0 0.500 | 104- 58 0.642 ( 2) 
+Minnesota Twins      |  99.7 100.5 100.2 | 110.3 109.6 118.8 |  95- 67 0.586 |   0-  0 0.500 |  95- 67 0.586 ( 6) 
+Oakland Athletics    |  92.7  92.0  84.0 | 112.6 113.1 123.9 |  84- 78 0.520 |   0-  0 0.500 |  84- 78 0.519 ( 9) 
+Chicago (A) White... |  92.7  92.4  84.5 |  90.0  87.2  75.6 |  47-115 0.290 |   0-  0 0.500 |  47-115 0.290 (19) 
+California Angels    |  94.7  94.8  89.3 |  82.0  80.3  59.4 |  36-126 0.219 |   0-  0 0.500 |  36-126 0.222 (20) 
 
 National League
 East ----------------+
-New York (N) Mets    | 108.7 111.4 118.8 | 114.6 116.0 127.8 | 113- 49 0.697 |   0-  0 0.500 | 113- 49 0.698 ( 1) 
-Philadelphia Phil... | 112.8 112.6 123.7 | 104.5 104.2 108.5 | 104- 58 0.643 |   0-  0 0.500 | 104- 58 0.642 ( 3) 
+New York (N) Mets    | 108.9 111.6 119.1 | 114.5 116.0 127.8 | 113- 49 0.698 |   0-  0 0.500 | 113- 49 0.698 ( 1) 
+Philadelphia Phil... | 112.9 112.6 123.7 | 104.4 104.2 108.4 | 104- 58 0.643 |   0-  0 0.500 | 104- 58 0.642 ( 3) 
 Pittsburgh Pirates   | 104.8 104.7 109.3 |  98.4  96.5  94.8 |  84- 78 0.518 |   0-  0 0.500 |  84- 78 0.519 (10) 
-Chicago (N) Cubs     |  94.9  94.7  89.3 |  96.4  99.4  95.9 |  69- 93 0.423 |   0-  0 0.500 |  69- 93 0.426 (13) 
-St. Louis Cardinals  |  94.8  95.7  90.3 |  95.4  95.1  90.2 |  65- 97 0.399 |   0-  0 0.500 |  65- 97 0.401 (15) 
+Chicago (N) Cubs     |  94.8  94.7  89.2 |  98.5 101.0  99.5 |  71- 91 0.441 |   0-  0 0.500 |  71- 91 0.438 (13) 
+St. Louis Cardinals  |  94.8  95.7  90.3 |  95.3  95.1  90.1 |  65- 97 0.399 |   0-  0 0.500 |  65- 97 0.401 (15) 
 West ----------------+
-Atlanta Braves       | 101.6 101.4 103.0 | 110.0 112.1 120.6 |  98- 64 0.607 |   0-  0 0.500 |  98- 64 0.605 ( 4) 
-Cincinnati Reds      | 104.4 104.0 108.2 | 104.5 107.0 111.0 |  96- 66 0.591 |   0-  0 0.500 |  96- 66 0.593 ( 5) 
-San Francisco Giants | 104.1 102.6 106.7 |  93.0  88.4  80.0 |  68- 94 0.421 |   0-  0 0.500 |  68- 94 0.420 (14) 
-Los Angeles Dodgers  |  87.6  86.9  73.1 |  98.7  99.0  97.7 |  55-107 0.338 |   0-  0 0.500 |  55-107 0.340 (17) 
+Atlanta Braves       | 101.7 101.4 103.0 | 110.0 112.1 120.5 |  98- 64 0.607 |   0-  0 0.500 |  98- 64 0.605 ( 4) 
+Cincinnati Reds      | 104.4 104.0 108.2 | 104.4 107.0 110.9 |  96- 66 0.590 |   0-  0 0.500 |  96- 66 0.593 ( 5) 
+San Francisco Giants | 104.2 102.6 106.7 |  92.9  88.4  79.9 |  68- 94 0.421 |   0-  0 0.500 |  68- 94 0.420 (14) 
+Los Angeles Dodgers  |  87.6  86.9  73.1 |  98.7  99.0  97.6 |  55-107 0.337 |   0-  0 0.500 |  55-107 0.340 (17) 
 Houston Astros       |  97.0  96.1  93.0 |  87.3  85.6  71.1 |  49-113 0.304 |   0-  0 0.500 |  49-113 0.302 (18) 
                      |              98.6 |              94.3 |
 
