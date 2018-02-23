@@ -103,7 +103,7 @@ Feature Mask: [False False False  True False False False False]
 -- Walks
 Selected: RandomForest
 Scores: [(0.27292841244284854, RandomForest(...)), (0.26655201085892394, Isotonic(...))]
-Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}
+Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}
 Feature Scores: [  0.   1.   1.  11.  99.   5.   9.   7.]
 Feature Mask: [False False False  True  True False False False]
 Feature Importances: [ 0.052  0.948]
@@ -189,8 +189,8 @@ MR Heaverlo, D     F   ML 35 | 10.9  2.8  1.6  0.1 |  94  40 | 112  11 | -  ||  
 SP Dues, H         F  AAA 31 | 10.3  3.9  4.1  0.5 |  82 164 |  92 131 |  - ||  88 |
 SP Jeffcoat, M        AAA 26 | 10.9  5.0  1.7  0.7 |  89     |  89     |  - ||  88 |
 SP Welch, B           AAA 29 | 10.6  4.3  2.4  1.2 |  78     |  85     | ++ ||  83 |
-SP Bruhert, M         AAA 35 | 12.5  3.9  1.3  0.4 |  74     |  82     | -  ||  80 |
 MR Earley, B           ML 30 |  9.9  6.3  4.5  0.4 |  92  79 |  92  65 |    ||  80 |
+SP Bruhert, M         AAA 35 | 12.5  3.9  1.3  0.4 |  74     |  82     | -  ||  80 |
 SP W. Davis, M      6 AAA 25 | 10.3  5.8  4.3  1.3 |  77     |  74     | ++ ||  73 |
 SP Owchinko, B         AA 31 | 11.2  4.1  2.4  1.2 |  74     |  75     |  - ||  73 |
 SP LaGrow, L       F  AAA 38 | 11.6  4.1  2.2  0.8 |  64  95 |  81 243 |    ||  72 |
@@ -277,13 +277,13 @@ BP Ability: 121
 
 vs RHP
  C| Wynegar, B      (D)                 | C| ( 1) Sundberg, J    
-1B| Young, J        (D) Maloof, J       |1B| ( 1) Smalley III, R 
+1B| Ochiai, H       (D)                 |1B| ( 1) Young, J       
 2B| DeJohn, M       (D)                 |2B| ( 1) Smalley III, R 
-3B| Ochiai, H       (D) Harrah, T       |3B| ( 1) Smalley III, R 
+3B| Phillips, T     (D)                 |3B| ( 1) Smalley III, R 
 SS| Burleson, R     (D)                 |SS| ( 1) Smalley III, R 
-LF| Phillips, T     (D) Collins, D      |LF| ( 1) Collins, D     
-CF| Scott, T        (D)                 |CF| ( 1) Roenicke, G    
-RF| Lynn, F         (D)                 |RF| ( 1) Roenicke, G    
+LF| Scott, T        (D)                 |LF| ( 1) Collins, D     
+CF| Roenicke, G     (D) Collins, D      |CF| ( 1) Collins, D     
+RF| Lynn, F         (D)                 |RF| ( 1) Maloof, J      
 
 vs RHP+DH
  C| Wynegar, B      (D)                 | C| ( 1) Sundberg, J    
@@ -318,19 +318,19 @@ RF| Lynn, F         (D)                 |RF| ( 1) Scott, T
 DH| Smalley III, R  (D)                 |DH| ( 1) Wynegar, B     
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 1B L Young, J         DH L Young, J         3B R Harrah, T        3B R Harrah, T       
-2. 3B R Ochiai, H        1B R Ochiai, H        1B R Ochiai, H        1B R Ochiai, H       
+1.  C S Wynegar, B       DH L Young, J         3B R Harrah, T        3B R Harrah, T       
+2. 1B R Ochiai, H        1B R Ochiai, H        1B R Ochiai, H        1B R Ochiai, H       
 3. RF L Lynn, F          RF L Lynn, F          RF L Lynn, F          RF L Lynn, F         
-4. LF S Phillips, T      3B S Phillips, T      LF S Phillips, T      LF S Phillips, T     
+4. 3B S Phillips, T      3B S Phillips, T      LF S Phillips, T      LF S Phillips, T     
 5. SS R Burleson, R      SS R Burleson, R      SS R Burleson, R      SS R Burleson, R     
-6.  C S Wynegar, B        C S Wynegar, B       CF R Roenicke, G      CF R Roenicke, G     
+6. CF R Roenicke, G       C S Wynegar, B       CF R Roenicke, G      CF R Roenicke, G     
 7. 2B S DeJohn, M        CF R Roenicke, G       C R Sundberg, J      DH S Smalley III, R  
-8. CF S Scott, T         2B S DeJohn, M        2B S DeJohn, M         C R Sundberg, J     
+8. LF S Scott, T         2B S DeJohn, M        2B S DeJohn, M         C R Sundberg, J     
 9.  P                    LF S Scott, T          P                    2B S DeJohn, M       
 
 --- Bunt for Hit ---
 
---- Stealing @ 66.1 ---
+--- Stealing @ 66.0 ---
  C Jim Sundberg              35|  C :  98      11  15     : 125 |    :                     :   0 |  -6 | 119 | 81------ |      $4.38Mx3 |  $3.12M: $4.66M | p1502 | Cleveland Indians    | **^
 LF Dave Collins              33| CF :  95       6   9     : 110 |    :                     :   0 |   0 | 110 | -4---886 |  F    $576k   |  $1.87M:  $2.8M |  p488 | Cleveland Indians    | **
 1B Jack Maloof               36| CF : 100      -8   0     :  92 |    :                     :   0 | -12 |  80 | -5---435 |       $980kx2 |        :        | p1394 | Cleveland Indians    | *
@@ -360,8 +360,8 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 3B Tony Phillips             27 | SS : 112       6 : 118 | SS : 112      11 : 123 |  +5 |                       :                       | ****
 SS Rick Burleson             35 | SS : 110       6 : 116 | SS : 109      12 : 121 |  +4 |    -10                :    -10                | ****
 SS Keith A. Miller           23 | CF :  74       0 :  74 | CF :  78       0 :  78 |  +4 | +10      +10          : +10+10                | +++-
-CF Mark T. McLemore          21 | RF :  85     -14 :  71 | RF :  88     -14 :  74 |  +3 |                       : +10                   | +++
 RF Felix Jose                21 | CF :  74       2 :  76 | CF :  77       2 :  79 |  +3 |                       : +10+10                | ++++
+CF Mark T. McLemore          21 | RF :  85     -14 :  71 | RF :  88     -14 :  74 |  +3 |                       : +10                   | +++
 1B Jack Maloof               36 | CF :  97      -8 :  89 | CF : 100      -8 :  92 |  +3 |             +10       :             +10       | *
  C Tom Pagnozzi              23 |  C :  73       6 :  79 |  C :  75       6 :  81 |  +2 |                +10    : +10            +10    | +++
 1B Dave Anderson             25 | SS :  89       2 :  91 | SS :  91       2 :  93 |  +2 |             +10       :             +10       | +++-
@@ -383,12 +383,12 @@ LF Bobby V. Mitchell         31 | CF :  83       6 :  89 | CF :  83       6 :  8
 1B Hiromitsu Ochiai          32 | 3B : 126      -9 : 117 | 3B : 126      -9 : 117 |  +0 |                       :    +10                | ****
 3B Juan Bernhardt            32 | 3B : 104      -8 :  96 | 3B : 104      -8 :  96 |  +0 |                       :                       | **^
 LF Al Woods                  32 | LF : 100      -8 :  92 | LF : 100      -8 :  92 |  +0 |                +10    :                       | **
-LF Dave Collins              33 | CF :  95       6 : 101 | CF :  95       6 : 101 |  +0 |                       :                       | **
 CF Glenn Burke               33 | CF :  93      -8 :  85 | CF :  93      -8 :  85 |  +0 |                       :                       | *
 SS Roy Smalley III           33 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |                       :                       | **^
+LF Dave Collins              33 | CF :  95       6 : 101 | CF :  95       6 : 101 |  +0 |                       :                       | **
 2B Mark DeJohn               32 | SS : 102       7 : 109 | SS : 100       7 : 107 |  -2 |                       :             -10       | **
-1B John Young                37 | 1B : 114     -15 :  99 | 1B : 109     -15 :  94 |  -5 |    -10   -10-10+10    :    -10   -10-10       | **^
 SS Toby Harrah               37 | SS : 110       6 : 116 | SS : 105       6 : 111 |  -5 |    -10-19-10          : -10-10-19-10          | **^
+1B John Young                37 | 1B : 114     -15 :  99 | 1B : 109     -15 :  94 |  -5 |    -10   -10-10+10    :    -10   -10-10       | **^
 3B Ken Oberkfell             30 | 3B :  86      -4 :  82 | 3B :  80      -4 :  76 |  -6 | -10                   : -10                   | *
  C Mackey Sasser             23 |  C :  77      10 :  87 |  C :  77      -7 :  70 | -17 |                       :                +10    | ++
 
@@ -402,9 +402,9 @@ MR Rich Rodas                26 | MR :      48     :  48 | MR :      48     :  4
 SP Brent Gaff                27 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
 SP Bruce Hurst               28 | SP :      61     :  61 | SP :      61     :  61 |  +0 |       -10                :                          | *
 MR Dale Mohorcic             30 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                -10       :                -10       | *
+SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
 SP Billy L. Smith            31 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                          :                          | *
 SP Hal Dues                  31 | SP :      88     :  88 | SP :      88     :  88 |  +0 |             -10          :                          | **
-SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
 MR Dave Schuler              32 | SP :      48     :  48 | SP :      48     :  48 |  +0 |                          :                -10       | *
 MR Larry Andersen            33 | MR :      93     :  93 | MR :      93     :  93 |  +0 |                          :                          | ****
 SP John Denny                33 | SP :     119     : 119 | SP :     119     : 119 |  +0 | -10                      : -10                      | ***
@@ -648,7 +648,7 @@ Strikeouts      |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 
 1E | 104 ( 77-120) | 110 ( 83-126) 100/121 |   6/  6 || 115 ( 77-181) | 121 ( 83-187) 110/133 |  30/ 30
 1M |  89 ( 58-100) |  95 ( 64-106)  86/104 |   6/  6 ||  99 ( 58-107) | 105 ( 64-113)  96/116 |  30/ 30
-1L |  80 ( 73-110) |  86 ( 79-116)  78/ 95 |   8/  8 ||  91 ( 73-110) |  97 ( 79-116)  88/106 |  40/ 40
+1L |  80 ( 73-110) |  86 ( 79-116)  78/ 95 |   8/  8 ||  90 ( 60-110) |  96 ( 66-116)  88/106 |  40/ 40
 2E |  82 ( 50-125) |  88 ( 56-131)  80/ 97 |  10/ 10 ||  84 ( 50-125) |  90 ( 56-131)  82/ 99 |  50/ 50
 2L |  77 ( 60-140) |  83 ( 66-146)  75/ 91 |  10/ 10 ||  77 ( 44-140) |  83 ( 50-146)  76/ 91 |  50/ 50
 
@@ -657,7 +657,7 @@ Strikeouts      |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
  3 |  75 ( 54-106) |  81 ( 60-112)  74/ 89 |  20/ 20 ||  69 ( 34-106) |  75 ( 40-112)  68/ 83 | 100/100
  4 |  68 ( 53- 84) |  74 ( 59- 90)  67/ 81 |  20/ 20 ||  58 ( 41- 84) |  64 ( 47- 90)  58/ 70 | 100/100
  5 |  56 ( 38- 82) |  62 ( 44- 88)  57/ 69 |  20/ 20 ||  51 ( 25- 82) |  57 ( 31- 88)  51/ 62 |  81/ 81
- 6 |  58 ( 21- 85) |  64 ( 27- 91)  58/ 70 |  20/ 20 ||  51 ( 12- 85) |  57 ( 18- 91)  52/ 62 |  32/ 32
+ 6 |  58 ( 21- 85) |  64 ( 27- 91)  58/ 70 |  20/ 20 ||  50 ( 12- 85) |  56 ( 18- 91)  51/ 61 |  32/ 32
  7 |  63 ( 56- 69) |  69 ( 62- 75)  62/ 76 |   2/  2 ||  63 ( 56- 69) |  69 ( 62- 75)  62/ 76 |   2/  2
 
 CF Lynn, F         34|  11,590,000  11,590,000
@@ -885,9 +885,9 @@ DESIGNATED_HITTER
  5 | Young, J         109 -19  90 | Lynn, F          110 -19  91 | Smalley III, R   110 -19  91
  6 | Burleson, R      109 -19  90 | Roenicke, G      109 -19  90 | Burleson, R      109 -19  90
  7 | Wynegar, B       106 -19  87 | Sundberg, J      107 -19  88 | Wynegar, B       107 -19  88
- 8 | Harrah, T        105 -19  86 | Smalley III, R   105 -19  86 | Roenicke, G      104 -19  85
- 9 | Roenicke, G      104 -19  85 | Bernhardt, J     104 -19  85 | Bernhardt, J     104 -19  85
-10 | Bernhardt, J     104 -19  85 | Wynegar, B       103 -19  84 | Harrah, T        103 -19  84
+ 8 | Harrah, T        105 -19  86 | Smalley III, R   105 -19  86 | Bernhardt, J     104 -19  85
+ 9 | Bernhardt, J     104 -19  85 | Bernhardt, J     104 -19  85 | Roenicke, G      104 -19  85
+10 | Roenicke, G      104 -19  85 | Wynegar, B       103 -19  84 | Harrah, T        103 -19  84
 
 --- Trade Values ---
 SP John Denny                33| SP :     119      36  11 : 166 |    :                     :   0 |   0 | 166 |          |      $4.04Mx2 |  $9.78M:$14.61M |  p471 | Cleveland Indians    | ***
@@ -1725,7 +1725,7 @@ SP Don Aase                  31| SP :      82      -1     :  81 |    :          
 3B Kim Andrew                32| 2B :  88      -3  -4     :  82 |    :                     :   0 |   1 |  83 | -3532--- |       $300k a |        :        |   p23 | St. Louis Cardinals  | *
 SP Rod Nichols               21| MR :      45     -23     :  22 | SP :      81      -5     :  76 |   6 |  82 |          |               |        :        |  p680 | St. Louis Cardinals  | +++-
 LF Pete Stanicek             23| 2B :  73     -10 -26     :  38 | LF :  92      -9  -7     :  76 |   6 |  82 | -23--524 |               |        :        |  p991 | St. Louis Cardinals  | ++-
-3B Leo Gomez                 20| 3B :  66      -8 -37     :  21 | 3B :  91      -8  -9     :  74 |   6 |  80 | -714-212 |               |        :        |  p546 | St. Louis Cardinals  | +++
+3B Leo Gomez                 20| 3B :  66      -8 -38     :  21 | 3B :  91      -8  -9     :  74 |   6 |  80 | -714-212 |               |        :        |  p546 | St. Louis Cardinals  | +++
 SP Ed Lynch                  30| SP :      80      -3     :  77 |    :                     :   0 |   3 |  80 |          |       $300k r |        :        |  p801 | St. Louis Cardinals  | **^
 MR Dave Veres                19| MR :      34     -33     :   1 | MR :      76      -4     :  72 |   6 |  78 |          |               |        :        | p1246 | St. Louis Cardinals  | ++++
 CL Mike Schooler             23| MR :      59     -11     :  48 | MR :      76      -4     :  72 |   6 |  78 |          |               |        :        |  p947 | St. Louis Cardinals  | ++++
@@ -2003,7 +2003,7 @@ American League
 East ----------------+
 Cleveland Indians    | 111.4 110.8 120.9 | 103.0 102.1 105.1 | 100- 62 0.617 |  56- 32 0.636 | 102- 60 0.630 ( 3) 
 Boston Red Sox       |  99.5 101.0 100.5 |  98.9  95.7  94.5 |  77- 85 0.474 |  53- 35 0.602 |  88- 74 0.543 ( 7) 
-New York (A) Yankees |  95.8  95.8  91.4 | 106.8 111.6 117.1 |  86- 76 0.534 |  46- 42 0.523 |  85- 77 0.525 ( 9) 
+New York (A) Yankees |  95.8  95.8  91.4 | 106.8 111.6 117.1 |  86- 76 0.534 |  46- 42 0.523 |  85- 77 0.525 ( 8) 
 Detroit Tigers       | 102.0 102.5 104.4 |  94.2  95.1  89.1 |  75- 87 0.464 |  49- 39 0.557 |  83- 79 0.512 (10) 
 Baltimore Orioles    |  96.2  95.6  91.6 |  94.2  91.9  85.4 |  62-100 0.380 |  29- 59 0.330 |  57-105 0.352 (19) 
 West ----------------+
@@ -2021,7 +2021,7 @@ Pittsburgh Pirates   | 104.2 104.5 108.5 |  98.6  96.0  94.5 |  83- 79 0.512 |  
 Chicago (N) Cubs     |  97.8  97.9  95.7 |  99.7 100.9 100.6 |  78- 84 0.481 |  45- 43 0.511 |  81- 81 0.500 (12) 
 St. Louis Cardinals  |  95.4  95.6  90.9 |  92.4  92.7  84.6 |  60-102 0.372 |  31- 57 0.352 |  59-103 0.364 (18) 
 West ----------------+
-Cincinnati Reds      | 103.0 103.0 105.9 | 100.1 102.4 102.5 |  88- 74 0.541 |  45- 43 0.511 |  85- 77 0.525 ( 8) 
+Cincinnati Reds      | 103.0 103.0 105.9 | 100.1 102.4 102.5 |  88- 74 0.541 |  45- 43 0.511 |  85- 77 0.525 ( 9) 
 Atlanta Braves       | 100.3 100.4 100.7 | 109.0 108.7 116.9 |  94- 68 0.581 |  38- 50 0.432 |  81- 81 0.500 (11) 
 San Francisco Giants | 103.2 102.6 105.7 |  88.2  87.9  74.8 |  62-100 0.385 |  47- 41 0.534 |  75- 87 0.463 (13) 
 Los Angeles Dodgers  |  89.2  88.7  76.8 |  96.5  98.3  94.8 |  56-106 0.347 |  37- 51 0.420 |  63- 99 0.389 (16) 
