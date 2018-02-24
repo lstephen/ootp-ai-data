@@ -103,7 +103,7 @@ Feature Mask: [False False False  True False False False False]
 -- Walks
 Selected: RandomForest
 Scores: [(0.27292841244284854, RandomForest(...)), (0.26655201085892394, Isotonic(...))]
-Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}
+Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}
 Feature Scores: [  0.   1.   1.  11.  99.   5.   9.   7.]
 Feature Mask: [False False False  True  True False False False]
 Feature Importances: [ 0.052  0.948]
@@ -240,8 +240,8 @@ Balance:39/30 = 1.300 (ideal: 1.273)
 
  AAA -> AA   SS Rene Gonzales
  AAA -> A     C Mackey Sasser
-  AA -> AAA  CF Rudy Law
   AA -> AAA  LF Bobby V. Mitchell
+  AA -> AAA  CF Rudy Law
    A -> AAA   C Tom Pagnozzi
    A -> AA   SS Keith A. Miller
    A -> DL   SP Brent Gaff
@@ -380,15 +380,15 @@ CF Rudy Law                  29 | CF :  92      -3 :  89 | CF :  92      -3 :  8
 RF Rick Lisi                 30 | RF : 101      -6 :  95 | RF : 101      -6 :  95 |  +0 |                       :                       | **
 LF Bobby V. Mitchell         31 | CF :  83       6 :  89 | CF :  83       6 :  89 |  +0 | -10                   :                       | *
 2B Jack Perconte             31 | SS :  95       8 : 103 | SS :  95       8 : 103 |  +0 |                +10    :                +10    | **^
-LF Al Woods                  32 | LF : 100      -8 :  92 | LF : 100      -8 :  92 |  +0 |                +10    :                       | **
 3B Juan Bernhardt            32 | 3B : 104      -8 :  96 | 3B : 104      -8 :  96 |  +0 |                       :                       | **^
 1B Hiromitsu Ochiai          32 | 3B : 126      -9 : 117 | 3B : 126      -9 : 117 |  +0 |                       :    +10                | ****
+LF Al Woods                  32 | LF : 100      -8 :  92 | LF : 100      -8 :  92 |  +0 |                +10    :                       | **
+SS Roy Smalley III           33 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |                       :                       | **^
 CF Glenn Burke               33 | CF :  93      -8 :  85 | CF :  93      -8 :  85 |  +0 |                       :                       | *
 LF Dave Collins              33 | CF :  95       6 : 101 | CF :  95       6 : 101 |  +0 |                       :                       | **
-SS Roy Smalley III           33 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |                       :                       | **^
 2B Mark DeJohn               32 | SS : 102       7 : 109 | SS : 100       7 : 107 |  -2 |                       :             -10       | **
-1B John Young                37 | 1B : 114     -15 :  99 | 1B : 109     -15 :  94 |  -5 |    -10   -10-10+10    :    -10   -10-10       | **^
 SS Toby Harrah               37 | SS : 110       6 : 116 | SS : 105       6 : 111 |  -5 |    -10-19-10          : -10-10-19-10          | **^
+1B John Young                37 | 1B : 114     -15 :  99 | 1B : 109     -15 :  94 |  -5 |    -10   -10-10+10    :    -10   -10-10       | **^
 3B Ken Oberkfell             30 | 3B :  86      -4 :  82 | 3B :  80      -4 :  76 |  -6 | -10                   : -10                   | *
  C Mackey Sasser             23 |  C :  77      10 :  87 |  C :  77      -7 :  70 | -17 |                       :                +10    | ++
 
@@ -402,9 +402,9 @@ MR Rich Rodas                26 | MR :      48     :  48 | MR :      48     :  4
 SP Brent Gaff                27 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
 SP Bruce Hurst               28 | SP :      61     :  61 | SP :      61     :  61 |  +0 |       -10                :                          | *
 MR Dale Mohorcic             30 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                -10       :                -10       | *
-SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
-SP Billy L. Smith            31 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                          :                          | *
 SP Hal Dues                  31 | SP :      88     :  88 | SP :      88     :  88 |  +0 |             -10          :                          | **
+SP Billy L. Smith            31 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                          :                          | *
+SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
 MR Dave Schuler              32 | SP :      48     :  48 | SP :      48     :  48 |  +0 |                          :                -10       | *
 MR Larry Andersen            33 | MR :      93     :  93 | MR :      93     :  93 |  +0 |                          :                          | ****
 SP John Denny                33 | SP :     119     : 119 | SP :     119     : 119 |  +0 | -10                      : -10                      | ***
@@ -1725,7 +1725,7 @@ SP Don Aase                  31| SP :      82      -1     :  81 |    :          
 3B Kim Andrew                32| 2B :  88      -3  -4     :  82 |    :                     :   0 |   1 |  83 | -3532--- |       $300k a |        :        |   p23 | St. Louis Cardinals  | *
 SP Rod Nichols               21| MR :      45     -23     :  22 | SP :      81      -5     :  76 |   6 |  82 |          |               |        :        |  p680 | St. Louis Cardinals  | +++-
 LF Pete Stanicek             23| 2B :  73     -10 -26     :  38 | LF :  92      -9  -7     :  76 |   6 |  82 | -23--524 |               |        :        |  p991 | St. Louis Cardinals  | ++-
-3B Leo Gomez                 20| 3B :  66      -8 -38     :  21 | 3B :  91      -8  -9     :  74 |   6 |  80 | -714-212 |               |        :        |  p546 | St. Louis Cardinals  | +++
+3B Leo Gomez                 20| 3B :  66      -8 -37     :  21 | 3B :  91      -8  -9     :  74 |   6 |  80 | -714-212 |               |        :        |  p546 | St. Louis Cardinals  | +++
 SP Ed Lynch                  30| SP :      80      -3     :  77 |    :                     :   0 |   3 |  80 |          |       $300k r |        :        |  p801 | St. Louis Cardinals  | **^
 MR Dave Veres                19| MR :      34     -33     :   1 | MR :      76      -4     :  72 |   6 |  78 |          |               |        :        | p1246 | St. Louis Cardinals  | ++++
 CL Mike Schooler             23| MR :      59     -11     :  48 | MR :      76      -4     :  72 |   6 |  78 |          |               |        :        |  p947 | St. Louis Cardinals  | ++++
