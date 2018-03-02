@@ -37,11 +37,11 @@ Selected: RandomForestScores: [(-0.0010998005582261901, RandomForest(...)), (-0.
 -- Triples
 Selected: IsotonicScores: [(-0.0010678816756341709, RandomForest(...)), (-0.0084327240474897005, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 2.  2.  2.  0.  4.  0.  1.]Feature Mask: [False False False False  True False False]
 -- HomeRuns
-Selected: RandomForestScores: [(0.26244047087306061, RandomForest(...)), (0.26055686478385537, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [  49.   45.    3.  174.   35.   56.    3.]Feature Mask: [False False False  True False  True False]Feature Importances: [ 0.968  0.032]
+Selected: RandomForestScores: [(0.26244047087306061, RandomForest(...)), (0.26055686478385537, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [  49.   45.    3.  174.   35.   56.    3.]Feature Mask: [False False False  True False  True False]Feature Importances: [ 0.968  0.032]
 -- Walks
 Selected: IsotonicScores: [(0.18656395737625794, RandomForest(...)), (0.13533916412215422, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  28.   23.    0.   26.  143.   25.    0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.15404071639954642, RandomForest(...)), (0.074008359554335712, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [  44.   18.    0.   17.   24.  135.    0.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.066  0.934]
+Selected: RandomForestScores: [(0.15404071639954642, RandomForest(...)), (0.074008359554335712, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [  44.   18.    0.   17.   24.  135.    0.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.066  0.934]
 
            Hits | 0.082
         Doubles | 0.031
@@ -56,7 +56,7 @@ Selected: RandomForestScores: [(0.29984538551701451, RandomForest(...)), (0.2815
 -- HomeRuns
 Selected: IsotonicScores: [(0.13974439513611103, RandomForest(...)), (0.14499731628997092, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   0.   5.  68.   1.   0.   0.   0.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.34591317258389759, RandomForest(...)), (0.32848642423931435, Isotonic(...))]Best Parameters: {'regressor__max_depth': 22, 'selection__k': 2, 'regressor__n_estimators': 89}Feature Scores: [   2.    3.   26.    2.  179.    3.    1.    4.]Feature Mask: [False False  True False  True False False False]Feature Importances: [ 0.094  0.906]
+Selected: RandomForestScores: [(0.34591317258389759, RandomForest(...)), (0.32848642423931435, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 89, 'selection__k': 2, 'regressor__max_depth': 22}Feature Scores: [   2.    3.   26.    2.  179.    3.    1.    4.]Feature Mask: [False False  True False  True False False False]Feature Importances: [ 0.094  0.906]
 -- Ks
 Selected: IsotonicScores: [(0.27877778250696539, RandomForest(...)), (0.25505142524322433, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  6.  33.  13.   4.   2.  96.   1.   1.]Feature Mask: [False False False False False  True False False]
 
@@ -159,8 +159,8 @@ MR Steinbach, J        ML 24 | 11.8  6.2  2.5  1.7 |  76  61 |  80 122 |  + ||  
 MR Peach, C           AAA 34 | 11.3  6.3  3.9  2.2 |  66  39 |  75  74 |    ||  63 |
 SP Astudillo, G       AAA 31 | 15.9  5.7  3.0  0.8 |  38     |  75     |  + ||  61 |
 MR Smathers, J        AAA 28 | 12.8  5.4  3.9  1.8 |  66     |  66     |    ||  57 |
-MR Hall, A             AA 30 | 11.8  4.7  6.1  2.1 |  53     |  67     |  + ||  54 |
 SP Loaiza, D          AAA 30 | 12.4  4.6  6.9  2.1 |  51     |  61     | -+ ||  54 |
+MR Hall, A             AA 30 | 11.8  4.7  6.1  2.1 |  53     |  67     |  + ||  54 |
 SP Ferrero, R          AA 32 | 13.9  6.0  7.6  1.0 |  51     |  53     |  + ||  52 |
 SP Johnson, S          AA 26 | 14.2  6.7  6.0  2.2 |  42     |  56     | +  ||  51 |
 SP Kissel, N            A 24 | 15.8  5.1  6.0  2.0 |  48     |  48     |  + ||  47 |
@@ -214,18 +214,18 @@ SP
 Clayton Hankins
 George Guerrero
 James Osteen
-Keenan Stmartin
+Rene Winland
 
 LR
 Gabriel Whisman
 
 MR
-John Steinbach
 David Mercier
+Keenan Stmartin
 
 SU
 Reggie Delay
-Rene Winland
+John Steinbach
 
 CL
 Cory Bryson
@@ -251,14 +251,14 @@ RF| Gonzalez, J     (D) Younger, L      |RF| ( 1) Headen, R
 
 vs RHP+DH
  C| Ketcham, J      (D)                 | C| ( 1) Cheney, A      
-1B| Gonzalez, J     (D) Foxx, B         |1B| ( 1) Cheney, A      
-2B| Tookes, D       (D) Mistretta, J    |2B| ( 1) Foxx, B        
-3B| Bernabe, R      (D) Foxx, B         |3B| ( 1) Foxx, B        
+1B| Balan, M        (D)                 |1B| ( 1) Headen, R      
+2B| Tookes, D       (D) Mistretta, J    |2B| ( 1) Mistretta, J   
+3B| Foxx, B         (D)                 |3B| ( 1) Cheney, A      
 SS| Surrett, H      (D) Mistretta, J    |SS| ( 1) Mistretta, J   
 LF| Olson, S        (D)                 |LF| ( 1) Torres, A      
 CF| Charlie, B      (D)                 |CF| ( 1) Torres, A      
-RF| Headen, R       (D) Younger, L      |RF| ( 1) Torres, A      
-DH| Balan, M        (D)                 |DH| ( 1) Cheney, A      
+RF| Gonzalez, J     (D) Younger, L      |RF| ( 1) Headen, R      
+DH| Bernabe, R      (D)                 |DH| ( 1) Headen, R      
 
 vs LHP
  C| Ketcham, J      (D)                 | C| ( 1) Cheney, A      
@@ -282,20 +282,20 @@ RF| Headen, R       (D) Younger, L      |RF| ( 1) Torres, A
 DH| Balan, M        (D)                 |DH| ( 1) Cheney, A      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 1B S Balan, M         DH S Balan, M         1B S Balan, M         DH S Balan, M        
-2. 3B R Bernabe, R       3B R Bernabe, R       3B R Bernabe, R       3B R Bernabe, R      
+1. 1B S Balan, M         1B S Balan, M         1B S Balan, M         DH S Balan, M        
+2. 3B R Bernabe, R       DH R Bernabe, R       3B R Bernabe, R       3B R Bernabe, R      
 3. 2B R Tookes, D        2B R Tookes, D        2B R Tookes, D        2B R Tookes, D       
-4. RF L Gonzalez, J      1B L Gonzalez, J      LF R Olson, S         LF R Olson, S        
+4. RF L Gonzalez, J      RF L Gonzalez, J      LF R Olson, S         LF R Olson, S        
 5. LF R Olson, S         LF R Olson, S         RF L Gonzalez, J      1B L Gonzalez, J     
 6.  C R Ketcham, J        C R Ketcham, J        C R Ketcham, J        C R Ketcham, J      
-7. SS R Surrett, H       RF R Headen, R        SS R Surrett, H       RF R Headen, R       
-8. CF R Charlie, B       SS R Surrett, H       CF R Charlie, B       SS R Surrett, H      
-9.  P                    CF R Charlie, B        P                    CF R Charlie, B      
+7. SS R Surrett, H       SS R Surrett, H       SS R Surrett, H       RF R Headen, R       
+8. CF R Charlie, B       CF R Charlie, B       CF R Charlie, B       SS R Surrett, H      
+9.  P                    3B S Foxx, B           P                    CF R Charlie, B      
 
 --- Bunt for Hit ---
 CF Bill Charlie              30| CF :  98       8  16   4 : 126 |    :                     :   0 |   3 | 129 | -2---888 |       $300k a |  $4.05M: $4.57M |  p218 | Detroit Tigers       | **^
 
---- Stealing @ 69.4 ---
+--- Stealing @ 69.2 ---
 CF Bill Charlie              30| CF :  98       8  16   4 : 126 |    :                     :   0 |   3 | 129 | -2---888 |       $300k a |  $4.05M: $4.57M |  p218 | Detroit Tigers       | **^
 
 --- Release ---
@@ -347,15 +347,15 @@ SS Hector Grillo             24 | SS :  77       3 :  80 | SS :  77       3 :  8
  C Robert Makowski           26 |  C :  78       3 :  81 |  C :  78       3 :  81 |  +0 |                       :                       | *
 3B Juan Fernandez            27 | SS :  86       3 :  89 | SS :  86       3 :  89 |  +0 |    +10                :                       | *
  C Hector Perdomo            28 |  C :  87      -8 :  79 |  C :  87      -8 :  79 |  +0 |                       :                       | *
-3B Brian Fletcher            29 | 3B :  78       1 :  79 | 3B :  78       1 :  79 |  +0 |                       :    +10                | *
-2B Victor Pasillas           29 | 2B :  93      -2 :  91 | 2B :  93      -2 :  91 |  +0 |                       :                       | *
 SS David Dieguez             29 | 2B :  91     -15 :  76 | 2B :  91     -15 :  76 |  +0 |                +10    :          +10   +10    | *
+2B Victor Pasillas           29 | 2B :  93      -2 :  91 | 2B :  93      -2 :  91 |  +0 |                       :                       | *
+3B Brian Fletcher            29 | 3B :  78       1 :  79 | 3B :  78       1 :  79 |  +0 |                       :    +10                | *
 CF Bill Charlie              30 | CF :  98       8 : 106 | CF :  98       8 : 106 |  +0 |    +10+10             :       +10             | **^
 RF Stanley Olson             30 | LF : 110      -2 : 108 | LF : 110      -2 : 108 |  +0 |                   +20 :                   +20 | ****
 2B Paul Parnell              31 | 2B :  94       1 :  95 | 2B :  94       1 :  95 |  +0 |           +9          :           +9          | *^
  C Abel Mendez               32 |  C :  91      -6 :  85 |  C :  91      -6 :  85 |  +0 |                       :                       | **
-2B Kenneth Gentner           33 | 2B :  89     -10 :  79 | 2B :  89     -10 :  79 |  +0 |             +10       :             +10       | *
 3B Bill Foxx                 33 | 3B :  96       2 :  98 | 3B :  96       2 :  98 |  +0 |                       :             -10       | *^
+2B Kenneth Gentner           33 | 2B :  89     -10 :  79 | 2B :  89     -10 :  79 |  +0 |             +10       :             +10       | *
  C Andrew Cheney             34 |  C : 103      13 : 116 |  C : 103      13 : 116 |  +0 |                       :                       | **
 RF Richard Headen            36 | RF : 104     -11 :  93 | RF : 104     -11 :  93 |  +0 |                +10    :                +10    | **
 LF Jimmy Mckernan            32 | RF :  91     -10 :  81 | RF :  90     -10 :  80 |  -1 |          +10-10       :                       | *
@@ -2647,9 +2647,9 @@ RF Howard Crawford           23| CF :  70      -1 -21     :  48 | CF :  80      
 
 American League
 East Division -------+
-New York (A) Yankees | 103.0 103.8 106.7 | 112.2 110.5 121.4 | 102- 60 0.627 |  99- 63 0.611 |  99- 63 0.611 ( 7) 
+New York (A) Yankees | 103.0 103.8 106.7 | 112.2 110.5 121.4 | 102- 60 0.627 |  99- 63 0.611 |  99- 63 0.611 ( 5) 
 Tampa Bay Devil Rays |  93.5  93.6  86.6 |  97.6  96.4  93.8 |  64- 98 0.398 |  82- 80 0.506 |  82- 80 0.506 (16) 
-Toronto Blue Jays    |  95.4  96.2  91.4 |  87.4  87.8  74.1 |  51-111 0.314 |  75- 87 0.463 |  75- 87 0.463 (18) 
+Toronto Blue Jays    |  95.4  96.2  91.4 |  87.4  87.8  74.1 |  51-111 0.314 |  75- 87 0.463 |  75- 87 0.463 (20) 
 Baltimore Orioles    |  94.8  94.9  89.4 |  95.4  94.9  90.1 |  64- 98 0.393 |  73- 89 0.451 |  73- 89 0.451 (22) 
 Boston Red Sox       |  89.1  87.9  75.7 | 104.0 112.1 114.7 |  70- 92 0.430 |  71- 91 0.438 |  71- 91 0.438 (24) 
 Central Division ----+
@@ -2660,31 +2660,31 @@ Chicago (A) White... |  94.9  93.8  88.3 |  91.9  92.1  83.5 |  57-105 0.352 |  
 Minnesota Twins      |  99.3 101.1 100.4 |  73.6  74.0  43.7 |  26-136 0.161 |  51-111 0.315 |  51-111 0.315 (30) 
 Mexico City Gold Sox |  91.6  89.2  79.7 |  84.3  80.2  61.1 |  31-131 0.192 |  48-114 0.296 |  48-114 0.296 (31) 
 West Division -------+
-Colorado Rockies     | 100.7 100.8 101.5 | 117.6 118.2 132.1 | 104- 58 0.643 | 102- 60 0.630 | 102- 60 0.630 ( 3) 
+Colorado Rockies     | 100.7 100.8 101.5 | 117.6 118.2 132.1 | 104- 58 0.643 | 102- 60 0.630 | 102- 60 0.630 ( 4) 
 Oakland Athletics    | 106.3 107.3 113.0 | 109.3 109.0 117.5 | 103- 59 0.638 |  99- 63 0.611 |  99- 63 0.611 ( 6) 
-Texas Rangers        | 104.0 104.6 108.4 | 108.3 106.7 114.5 |  98- 64 0.606 |  93- 69 0.574 |  93- 69 0.574 (11) 
 Seattle Mariners     | 106.8 106.8 113.1 | 106.2 104.9 110.8 |  99- 63 0.611 |  93- 69 0.574 |  93- 69 0.574 (12) 
+Texas Rangers        | 104.0 104.6 108.4 | 108.3 106.7 114.5 |  98- 64 0.606 |  93- 69 0.574 |  93- 69 0.574 (11) 
 Anaheim Angels       |  98.6  98.3  96.9 |  98.6  94.6  92.9 |  73- 89 0.448 |  66- 96 0.407 |  66- 96 0.407 (27) 
 
 National League
 East Division -------+
 Philadelphia Phil... | 103.7 103.8 107.4 | 127.3 131.5 148.1 | 116- 46 0.717 | 106- 56 0.654 | 106- 56 0.654 ( 1) 
-Washington Nationals | 103.7 105.6 109.0 | 106.4 102.7 109.0 |  95- 67 0.585 |  99- 63 0.611 |  99- 63 0.611 ( 5) 
+Washington Nationals | 103.7 105.6 109.0 | 106.4 102.7 109.0 |  95- 67 0.585 |  99- 63 0.611 |  99- 63 0.611 ( 7) 
 Atlanta Braves       | 103.1 103.7 106.7 | 120.9 120.2 136.4 | 110- 52 0.679 |  94- 68 0.580 |  94- 68 0.580 (10) 
 New York (N) Mets    |  94.8  94.4  88.9 |  88.2  87.3  74.0 |  49-113 0.302 |  60-102 0.370 |  60-102 0.370 (28) 
 Florida Marlins      | 103.9 104.2 107.9 |  70.5  75.0  42.9 |  29-133 0.176 |  59-103 0.364 |  59-103 0.364 (29) 
 Central Division ----+
-St. Louis Cardinals  | 104.4 104.7 108.9 | 129.6 136.8 152.3 | 119- 43 0.733 | 102- 60 0.630 | 102- 60 0.630 ( 4) 
+St. Louis Cardinals  | 104.4 104.7 108.9 | 129.6 136.8 152.3 | 119- 43 0.733 | 102- 60 0.630 | 102- 60 0.630 ( 3) 
 Milwaukee Brewers    |  99.7  98.2  97.9 | 112.8 117.0 126.8 |  98- 64 0.606 |  96- 66 0.593 |  96- 66 0.593 ( 9) 
-Cincinnati Reds      | 104.0 103.9 107.8 |  98.2  95.5  93.5 |  82- 80 0.504 |  92- 70 0.568 |  92- 70 0.568 (13) 
+Cincinnati Reds      | 104.0 103.9 107.8 |  98.2  95.5  93.5 |  82- 80 0.504 |  92- 70 0.568 |  92- 70 0.568 (14) 
 Chicago (N) Cubs     |  95.8  96.8  92.5 |  88.1  90.1  77.3 |  55-107 0.338 |  71- 91 0.438 |  71- 91 0.438 (23) 
 Houston Astros       | 102.1 103.0 105.0 |  92.7  91.7  83.7 |  71- 91 0.436 |  70- 92 0.432 |  70- 92 0.432 (25) 
 Pittsburgh Pirates   | 102.0 101.2 103.2 |  95.8  93.7  89.1 |  74- 88 0.458 |  69- 93 0.426 |  69- 93 0.426 (26) 
 West Division -------+
 Arizona Diamondbacks | 101.5 101.9 103.4 | 103.1  99.3 102.5 |  86- 76 0.529 |  97- 65 0.599 |  97- 65 0.599 ( 8) 
-Los Angeles Dodgers  | 103.9 104.9 108.6 | 114.0 111.8 124.2 | 105- 57 0.645 |  92- 70 0.568 |  92- 70 0.568 (14) 
+Los Angeles Dodgers  | 103.9 104.9 108.6 | 114.0 111.8 124.2 | 105- 57 0.645 |  92- 70 0.568 |  92- 70 0.568 (13) 
 Portland Beavers     |  97.1  96.5  93.4 | 111.9 110.2 120.9 |  91- 71 0.561 |  85- 77 0.525 |  85- 77 0.525 (15) 
-San Francisco Giants |  99.2  96.9  96.0 |  94.3  95.2  89.3 |  69- 93 0.424 |  75- 87 0.463 |  75- 87 0.463 (20) 
+San Francisco Giants |  99.2  96.9  96.0 |  94.3  95.2  89.3 |  69- 93 0.424 |  75- 87 0.463 |  75- 87 0.463 (18) 
 San Diego Padres     |  98.1  98.8  96.8 |  79.0  77.7  53.1 |  34-128 0.209 |  42-120 0.259 |  42-120 0.259 (32) 
                      |              99.5 |              92.6 |
 
