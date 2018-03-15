@@ -50,15 +50,15 @@ Selected: IsotonicScores: [(0.0078581816315158592, RandomForest(...)), (-0.11731
              Ks | 0.054
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.074664412447304776, RandomForest(...)), (0.061374683594648004, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 28, 'selection__k': 5, 'regressor__max_depth': 6}Feature Scores: [ 23.  45.   0.   1.  23.  13.   1.   0.]Feature Mask: [ True  True False  True  True  True False False]Feature Importances: [ 0.107  0.432  0.237  0.158  0.066]
+Selected: RandomForestScores: [(0.074664412447304776, RandomForest(...)), (0.061374683594648004, Isotonic(...))]Best Parameters: {'regressor__max_depth': 6, 'regressor__n_estimators': 28, 'selection__k': 5}Feature Scores: [ 23.  45.   0.   1.  23.  13.   1.   0.]Feature Mask: [ True  True False  True  True  True False False]Feature Importances: [ 0.107  0.432  0.237  0.158  0.066]
 -- Doubles
-Selected: RandomForestScores: [(0.12730899188899636, RandomForest(...)), (0.10396037862103365, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 4, 'regressor__max_depth': 18}Feature Scores: [  0.   0.  30.   1.   1.   0.   1.   1.]Feature Mask: [False False  True False False False  True False]Feature Importances: [ 0.893  0.107]
+Selected: RandomForestScores: [(0.12730899188899636, RandomForest(...)), (0.10396037862103365, Isotonic(...))]Best Parameters: {'regressor__max_depth': 18, 'regressor__n_estimators': 4, 'selection__k': 2}Feature Scores: [  0.   0.  30.   1.   1.   0.   1.   1.]Feature Mask: [False False  True False False False  True False]Feature Importances: [ 0.893  0.107]
 -- HomeRuns
-Selected: RandomForestScores: [(0.13243482431675202, RandomForest(...)), (0.090686377679592353, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 15.   6.   0.  28.   2.   5.   1.   0.]Feature Mask: [ True False False  True False False False False]Feature Importances: [ 0.083  0.917]
+Selected: RandomForestScores: [(0.13243482431675202, RandomForest(...)), (0.090686377679592353, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [ 15.   6.   0.  28.   2.   5.   1.   0.]Feature Mask: [ True False False  True False False False False]Feature Importances: [ 0.083  0.917]
 -- Walks
 Selected: IsotonicScores: [(0.23850595555624068, RandomForest(...)), (0.24168663451958042, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   7.   17.    9.    8.  129.    2.    9.    9.]Feature Mask: [False False False False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.27858293271497853, RandomForest(...)), (0.23362606108880699, Isotonic(...))]Best Parameters: {'regressor__max_depth': 26, 'selection__k': 3, 'regressor__n_estimators': 44}Feature Scores: [  47.   95.    7.    1.    6.  129.    4.    4.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [ 0.181  0.058  0.76 ]
+Selected: RandomForestScores: [(0.27858293271497853, RandomForest(...)), (0.23362606108880699, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 44, 'regressor__max_depth': 26}Feature Scores: [  47.   95.    7.    1.    6.  129.    4.    4.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [ 0.181  0.058  0.76 ]
 
 Hitting Features
              Average |  -   103   +  |   5  15  25  35  45  55  65  75  85  95
@@ -363,8 +363,8 @@ MR Bertram Kelley            24 | MR :      25     :  25 | MR :      28     :  2
 MR Willie Smith              34 | MR :      73     :  73 | MR :      75     :  75 |  +3 |                -10       :                -10       | ****^
 MR Lonnie Prue               24 | MR :      27     :  27 | MR :      29     :  29 |  +2 |    +10         +10       :       +10                | ++
 SP Aurelio Jimenez           31 | SP :      35     :  35 | SP :      36     :  36 |  +1 |    +10+10                :                +10       | *
-MR William Patterson         28 | MR :      43     :  43 | MR :      44     :  44 |  +1 |                +10       :                +10       | *
 MR Claude Batson             28 | MR :      49     :  49 | MR :      50     :  50 |  +1 | -10-10                   : -10                      | **
+MR William Patterson         28 | MR :      43     :  43 | MR :      44     :  44 |  +1 |                +10       :                +10       | *
 MR Richard Linton            25 | MR :      13     :  13 | MR :      14     :  14 |  +1 |       +10                :       +10                | +
 MR William Houston           26 | MR :      29     :  29 | MR :      30     :  30 |  +1 |     +9   +20             :    +10   +20             | *
 SP Anthony Evans             22 | SP :      15     :  15 | SP :      15     :  15 |  +0 |             +10          :             +10          | ++
@@ -778,8 +778,8 @@ SHORTSTOP
  6 | Alcala, S        103 -13  90 | Alcala, S        103 -13  90 | Alcala, S        103 -13  90
  7 | Montelongo, G     73  16  89 | Loesch, C        106 -17  89 | Montelongo, G     73  16  89
  8 | Cross, J          74  12  86 | Montelongo, G     73  16  89 | Cross, J          74  12  86
- 9 | Kovacs, A         83  -1  82 | Marshall, M      107 -21  86 | Kovacs, A         83  -1  82
-10 | Loesch, C         99 -17  82 | Cross, J          74  12  86 | Macias, W        102 -21  81
+ 9 | Loesch, C         99 -17  82 | Marshall, M      107 -21  86 | Kovacs, A         83  -1  82
+10 | Kovacs, A         83  -1  82 | Cross, J          74  12  86 | Macias, W        102 -21  81
 
 LEFT_FIELD
  1 | Leak, K          122  -9 113 | Leak, K          122  -9 113 | Leak, K          122  -9 113
@@ -2267,31 +2267,31 @@ Capital City Goof... |  98.8  98.2  97.0 |  87.3  87.7  73.7 |  55-107 0.338 |  
 Poynter -------------+
 Halifax Highlanders  | 100.5  99.2  99.6 | 101.9 101.8 103.7 |  84- 78 0.516 |  98- 64 0.605 |  98- 64 0.605 ( 1) 
 New Jersey Mundys    | 106.9 107.0 113.4 |  97.1  97.3  94.2 |  86- 76 0.533 |  90- 72 0.556 |  90- 72 0.556 ( 7) 
-Plum Grove Fire Ants |  96.2  95.4  91.4 | 106.6 105.7 112.0 |  83- 79 0.512 |  79- 83 0.488 |  79- 83 0.488 (16) 
+Plum Grove Fire Ants |  96.2  95.4  91.4 | 106.6 105.7 112.0 |  83- 79 0.512 |  79- 83 0.488 |  79- 83 0.488 (14) 
 Ashburn Aardvarks    | 105.5 107.2 112.3 |  90.8  91.2  81.3 |  74- 88 0.454 |  78- 84 0.481 |  78- 84 0.481 (17) 
 Gofannon ------------+
 Troy Haymakers       |  97.6  97.0  94.6 | 103.2  97.1 100.2 |  77- 85 0.473 |  92- 70 0.568 |  92- 70 0.568 ( 5) 
 Malibu Rum Runners   |  99.3  98.3  97.6 | 110.1 113.6 121.7 |  95- 67 0.585 |  87- 75 0.537 |  87- 75 0.537 (11) 
-Bay City Bluebirds   |  97.7  98.3  96.0 |  98.8  97.9  96.6 |  75- 87 0.462 |  75- 87 0.463 |  75- 87 0.463 (19) 
+Bay City Bluebirds   |  97.7  98.3  96.0 |  98.8  97.9  96.6 |  75- 87 0.462 |  75- 87 0.463 |  75- 87 0.463 (20) 
 Pontiac Firebirds    | 102.9 104.9 107.5 |  89.2  88.7  76.7 |  66- 96 0.405 |  72- 90 0.444 |  72- 90 0.444 (21) 
 
 UBA
 Fowler --------------+
-Wisconsin Cheetahs   | 105.8 109.6 114.5 | 104.6 103.5 108.0 |  98- 64 0.605 |  95- 67 0.586 |  95- 67 0.586 ( 3) 
+Wisconsin Cheetahs   | 105.8 109.6 114.5 | 104.6 103.5 108.0 |  98- 64 0.605 |  95- 67 0.586 |  95- 67 0.586 ( 2) 
 Minnesota Axmen      |  99.1  98.3  97.3 | 107.1 110.0 116.0 |  91- 71 0.560 |  88- 74 0.543 |  88- 74 0.543 ( 8) 
 Lynchburg Distillers |  97.5  98.5  96.0 | 101.0 102.3 103.3 |  80- 82 0.495 |  79- 83 0.488 |  79- 83 0.488 (15) 
 Northeastern Blac... |  95.2  96.0  91.0 | 102.2  99.5 101.7 |  75- 87 0.461 |  58-104 0.358 |  58-104 0.358 (26) 
 McCarthey -----------+
-Boston (UBA) Pilg... | 100.4 100.9 101.3 | 113.3 111.0 122.9 |  98- 64 0.608 |  95- 67 0.586 |  95- 67 0.586 ( 2) 
+Boston (UBA) Pilg... | 100.4 100.9 101.3 | 113.3 111.0 122.9 |  98- 64 0.608 |  95- 67 0.586 |  95- 67 0.586 ( 3) 
 Toledo Mudhens       | 103.3 102.6 105.8 |  99.0 101.8 100.8 |  86- 76 0.532 |  88- 74 0.543 |  88- 74 0.543 ( 9) 
 Penn Quakers         |  96.6  98.9  95.5 | 103.6 108.5 111.5 |  86- 76 0.531 |  83- 79 0.512 |  83- 79 0.512 (13) 
-Longport Bluefish    |  97.4  97.3  94.7 |  96.6  98.8  95.4 |  73- 89 0.450 |  79- 83 0.488 |  79- 83 0.488 (14) 
+Longport Bluefish    |  97.4  97.3  94.7 |  96.6  98.8  95.4 |  73- 89 0.450 |  79- 83 0.488 |  79- 83 0.488 (16) 
 Manchester Red De... | 100.9 102.3 103.2 |  96.3  95.7  91.8 |  77- 85 0.473 |  59-103 0.364 |  59-103 0.364 (25) 
 Rutherford ----------+
 Pittsburgh Beacons   | 107.8 106.9 114.2 | 106.0 105.1 110.8 | 100- 62 0.616 |  93- 69 0.574 |  93- 69 0.574 ( 4) 
 West Texas Tumble... |  98.3  96.3  94.5 | 110.6 111.4 120.6 |  92- 70 0.565 |  91- 71 0.562 |  91- 71 0.562 ( 6) 
 Coney Island Cycl... |  94.0  93.5  87.1 | 111.6 110.7 121.0 |  85- 77 0.527 |  85- 77 0.525 |  85- 77 0.525 (12) 
-Diablo Autarchs      |  95.9  94.3  89.8 |  93.7  91.9  85.0 |  60-102 0.368 |  75- 87 0.463 |  75- 87 0.463 (20) 
+Diablo Autarchs      |  95.9  94.3  89.8 |  93.7  91.9  85.0 |  60-102 0.368 |  75- 87 0.463 |  75- 87 0.463 (19) 
 Columbus Cows        |  99.9  99.6  99.4 |  94.4  93.0  86.9 |  69- 93 0.428 |  66- 96 0.407 |  66- 96 0.407 (24) 
                      |             101.1 |              87.1 |
 
