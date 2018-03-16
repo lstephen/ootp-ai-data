@@ -50,13 +50,13 @@ Selected: IsotonicScores: [(0.38515571924327441, RandomForest(...)), (0.37202139
              Ks | 0.045
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.060111105810453126, RandomForest(...)), (0.043218946598766683, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 10.  29.   8.  12.   2.   0.   0.   1.]Feature Mask: [False  True False  True False False False False]Feature Importances: [ 0.857  0.143]
+Selected: RandomForestScores: [(0.060111105810453126, RandomForest(...)), (0.043218946598766683, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [ 10.  29.   8.  12.   2.   0.   0.   1.]Feature Mask: [False  True False  True False False False False]Feature Importances: [ 0.857  0.143]
 -- Doubles
 Selected: IsotonicScores: [(0.10802253008060336, RandomForest(...)), (0.10295509779424301, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  2.   5.  43.   2.   3.   2.   4.  11.]Feature Mask: [False False  True False False False False False]
 -- HomeRuns
 Selected: IsotonicScores: [(0.099168019296590179, RandomForest(...)), (0.24345980553683652, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   0.    0.    5.  175.    7.    7.    0.    1.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.26558857912831052, RandomForest(...)), (0.2580191410108767, Isotonic(...))]Best Parameters: {'regressor__max_depth': 18, 'selection__k': 2, 'regressor__n_estimators': 4}Feature Scores: [   0.    1.    2.   10.  103.    6.   10.   10.]Feature Mask: [False False False  True  True False False False]Feature Importances: [ 0.116  0.884]
+Selected: RandomForestScores: [(0.26558857912831052, RandomForest(...)), (0.2580191410108767, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 4, 'regressor__max_depth': 18}Feature Scores: [   0.    1.    2.   10.  103.    6.   10.   10.]Feature Mask: [False False False  True  True False False False]Feature Importances: [ 0.116  0.884]
 -- Ks
 Selected: IsotonicScores: [(0.23481109814036527, RandomForest(...)), (0.21026937273998247, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   2.    4.    0.   17.   14.  137.    0.    2.]Feature Mask: [False False False False False  True False False]
 
@@ -307,8 +307,8 @@ CF Mark T. McLemore          22 | RF :  85     -15 :  70 | RF :  87     -15 :  7
 RF Rich Amaral               24 | SS :  73       6 :  79 | SS :  75       6 :  81 |  +2 | +10            +10    : +10         +10+10    | +-
 1B Jack Maloof               36 | CF :  98      -9 :  89 | CF : 100      -9 :  91 |  +2 |             +10       :             +10       | *
 3B Jeff Hamilton             22 | 3B :  71      -5 :  66 | 3B :  72      -4 :  68 |  +2 | +10                   :    +10                | ++
-1B Dave Anderson             26 | SS :  89       1 :  90 | SS :  90       1 :  91 |  +1 |             +10+10    :             +10+10    | *
 3B Ernie Riles               26 | 2B :  77      -5 :  72 | 2B :  78      -5 :  73 |  +1 |                +10    :             +10+10    | *
+1B Dave Anderson             26 | SS :  89       1 :  90 | SS :  90       1 :  91 |  +1 |             +10+10    :             +10+10    | *
 SS Rene Gonzales             26 | SS :  86       1 :  87 | SS :  87       1 :  88 |  +1 |                       :          +10   +10    | *^
  C Jamie Nelson              27 |  C :  87       6 :  93 |  C :  88       6 :  94 |  +1 |          +10   +20    :          +10   +20    | *
 1B Hiromitsu Ochiai          32 | 3B : 127     -10 : 117 | 3B : 128     -10 : 118 |  +1 |                       :    +10                | ****
@@ -338,15 +338,15 @@ SP Mark W. Davis             26 | SP :      71     :  71 | SP :      73     :  7
 SP Dan Vossler               34 | SP :     105     : 105 | SP :     106     : 106 |  +1 | +10                      : +10            +10       | ***
 SP Francisco Oliveras        23 | SP :      43     :  43 | SP :      43     :  43 |  +0 | +10      +10             : +10                      | +++++
 MR Greg Booker               26 | MR :      51     :  51 | MR :      51     :  51 |  +0 | -20   -10                : -20-10                   | *
-SP Bruce Hurst               28 | SP :      64     :  64 | SP :      64     :  64 |  +0 |       -10   +10          :                          | *
 SP Brent Gaff                28 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
+SP Bruce Hurst               28 | SP :      64     :  64 | SP :      64     :  64 |  +0 |       -10   +10          :                          | *
 MR Dale Mohorcic             30 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                -10       :                -10       | *
 SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
-SP Billy L. Smith            32 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
 SP Hal Dues                  32 | SP :      75     :  75 | SP :      75     :  75 |  +0 |                          :                          | **
+SP Billy L. Smith            32 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
+MR Dave Schuler              33 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                -10       :                -10       | *
 MR Larry Andersen            33 | MR :      95     :  95 | MR :      95     :  95 |  +0 |                          :                          | ****
 SP John Denny                33 | SP :     119     : 119 | SP :     119     : 119 |  +0 | -10                      : -10                      | ***
-MR Dave Schuler              33 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                -10       :                -10       | *
 MR Rich Rodas                26 | MR :      48     :  48 | MR :      47     :  47 |  -1 |    -10+10                :                          | *^
 SP Bob Welch                 29 | SP :      85     :  85 | SP :      84     :  84 |  -1 |       -10                :                          | **
 MR Bob Tufts                 30 | MR :      48     :  48 | MR :      45     :  45 |  -3 |    -10                   :                          | *
