@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(0.10845255535912834, RandomForest(...)), (0.10169927
 -- HomeRuns
 Selected: IsotonicScores: [(0.098466583428161614, RandomForest(...)), (0.24345980553683652, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   0.    0.    5.  175.    7.    7.    0.    1.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.26558857912831052, RandomForest(...)), (0.2580191410108767, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 4, 'selection__k': 2, 'regressor__max_depth': 18}Feature Scores: [   0.    1.    2.   10.  103.    5.   10.   10.]Feature Mask: [False False False  True  True False False False]Feature Importances: [ 0.116  0.884]
+Selected: RandomForestScores: [(0.26558857912831052, RandomForest(...)), (0.2580191410108767, Isotonic(...))]Best Parameters: {'regressor__max_depth': 18, 'selection__k': 2, 'regressor__n_estimators': 4}Feature Scores: [   0.    1.    2.   10.  103.    5.   10.   10.]Feature Mask: [False False False  True  True False False False]Feature Importances: [ 0.116  0.884]
 -- Ks
 Selected: IsotonicScores: [(0.22178253134618583, RandomForest(...)), (0.19071905565197236, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   2.    4.    0.   17.   14.  134.    0.    2.]Feature Mask: [False False False False False  True False False]
 
@@ -195,15 +195,15 @@ Paul Mitchell
 Atlee Hammaker
 
 LR
-Jim Bethke
+Bob Moose
 
 MR
-Jerry Cram
-Bob Moose
+Dave Heaverlo
+Jim Bethke
 
 SU
 Larry Andersen
-Dave Heaverlo
+Jerry Cram
 
 CL
 Bob Watkins
@@ -211,7 +211,7 @@ Bob Watkins
 NONE
 
 
-BP Ability: 117
+BP Ability: 119
 
 --- Slow Hook ---
 John Denny
@@ -312,8 +312,8 @@ CF Mark T. McLemore          22 | RF :  85     -15 :  70 | RF :  87     -15 :  7
 RF Rich Amaral               24 | SS :  73       6 :  79 | SS :  75       6 :  81 |  +2 | +10            +10    : +10         +10+10    | +-
 1B Jack Maloof               37 | CF :  98      -9 :  89 | CF : 100      -9 :  91 |  +2 |             +10       :             +10       | *
 SS Rene Gonzales             26 | SS :  86       1 :  87 | SS :  87       1 :  88 |  +1 |                +10    :          +10   +10    | *^
-1B Dave Anderson             26 | SS :  89       1 :  90 | SS :  90       1 :  91 |  +1 |             +10+10    :             +10+10    | *
 3B Ernie Riles               26 | 2B :  77      -5 :  72 | 2B :  78      -5 :  73 |  +1 |             +10+10    :             +10+10    | *
+1B Dave Anderson             26 | SS :  89       1 :  90 | SS :  90       1 :  91 |  +1 |             +10+10    :             +10+10    | *
  C Jamie Nelson              27 |  C :  87       6 :  93 |  C :  88       6 :  94 |  +1 |          +10   +20    :          +10   +20    | *
 1B Hiromitsu Ochiai          32 | 3B : 127     -10 : 117 | 3B : 128     -10 : 118 |  +1 |                       :    +10                | ****
 LF Jeff McKnight             23 | SS :  71       5 :  76 | SS :  71       5 :  76 |  +0 |                       :                       | ++
@@ -321,11 +321,11 @@ CF George D. Wright          27 | CF :  87      -9 :  78 | CF :  87      -9 :  7
 CF Rudy Law                  30 | CF :  92      -3 :  89 | CF :  92      -3 :  89 |  +0 |       -20             :       -20             | **
 LF Bobby V. Mitchell         31 | CF :  83       6 :  89 | CF :  83       6 :  89 |  +0 |                       :                       | *
 2B Jack Perconte             32 | SS :  95       7 : 102 | SS :  95       7 : 102 |  +0 |                +10    :                +10    | **^
-2B Mark DeJohn               33 | SS : 102       7 : 109 | SS : 102       7 : 109 |  +0 |                       :                       | **
 CF Glenn Burke               33 | CF :  93      -9 :  84 | CF :  93      -9 :  84 |  +0 |                       :                       | *
+2B Mark DeJohn               33 | SS : 102       7 : 109 | SS : 102       7 : 109 |  +0 |                       :                       | **
+SS Roy Smalley III           34 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |    -10                :                       | **^
 LF Dave Collins              34 | CF :  94       5 :  99 | CF :  94       5 :  99 |  +0 |                       :                       | **
 RF Fred Lynn                 34 | CF : 113       2 : 115 | CF : 113       2 : 115 |  +0 |                       :          -10          | ****
-SS Roy Smalley III           34 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |    -10                :                       | **^
 2B Mike Sharperson           25 | SS :  88       6 :  94 | SS :  87       6 :  93 |  -1 |          -10   +10    :    +10   -10   +10    | ++-
 RF Rick Lisi                 30 | RF : 100      -7 :  93 | RF : 101      -9 :  92 |  -2 | +10                   :                       | **
 LF Al Woods                  33 | LF : 100      -8 :  92 | LF :  97      -8 :  89 |  -3 |                       :             -10       | **
@@ -341,8 +341,8 @@ SP Atlee Hammaker            28 | SP :     100     : 100 | SP :     102     : 10
 SP Mark W. Davis             26 | SP :      71     :  71 | SP :      73     :  73 |  +2 | +10                      : +10         +10          | *
 SP Francisco Oliveras        23 | SP :      43     :  43 | SP :      43     :  43 |  +0 | +10      +10             : +10                      | +++++
 MR Greg Booker               26 | MR :      51     :  51 | MR :      51     :  51 |  +0 | -20   -10                : -20-10                   | *
-SP Bruce Hurst               28 | SP :      64     :  64 | SP :      64     :  64 |  +0 |       -10   +10          :                          | *
 SP Brent Gaff                28 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
+SP Bruce Hurst               28 | SP :      64     :  64 | SP :      64     :  64 |  +0 |       -10   +10          :                          | *
 MR Dale Mohorcic             30 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                -10       :                -10       | *
 SP Bob Owchinko              31 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                          | *
 SP Hal Dues                  32 | SP :      75     :  75 | SP :      75     :  75 |  +0 |                          :                          | **
@@ -596,7 +596,7 @@ Strikeouts      |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 
  1 |  86 ( 49-115) |  92 ( 55-121)  83/101 |  20/ 20 ||  99 ( 49-168) | 105 ( 55-174)  96/116 | 100/100
  2 |  82 ( 56-124) |  88 ( 62-130)  80/ 97 |  20/ 20 ||  81 ( 48-124) |  87 ( 54-130)  79/ 96 | 100/100
- 3 |  70 ( 51-107) |  76 ( 57-113)  69/ 84 |  20/ 20 ||  68 ( 40-107) |  74 ( 46-113)  67/ 81 | 100/100
+ 3 |  70 ( 51-107) |  76 ( 57-113)  69/ 84 |  20/ 20 ||  68 ( 42-107) |  74 ( 48-113)  67/ 81 | 100/100
  4 |  68 ( 51-137) |  74 ( 57-143)  68/ 82 |  20/ 20 ||  57 ( 30-137) |  63 ( 36-143)  57/ 69 | 100/100
  5 |  57 ( 37- 79) |  63 ( 43- 85)  57/ 69 |  20/ 20 ||  49 ( 24- 79) |  55 ( 30- 85)  50/ 61 |  81/ 81
  6 |  59 ( 20- 92) |  65 ( 26- 98)  59/ 71 |  20/ 20 ||  52 ( 14- 92) |  58 ( 20- 98)  53/ 64 |  32/ 32
