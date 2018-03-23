@@ -50,11 +50,11 @@ Selected: IsotonicScores: [(0.12722438739651368, RandomForest(...)), (-0.0141257
              Ks | 0.058
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.11899661431434987, RandomForest(...)), (0.070015086957643469, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 2, 'regressor__max_depth': 49}Feature Scores: [ 21.  41.   0.   1.  21.  11.   1.   0.]Feature Mask: [ True  True False False  True False False False]Feature Importances: [ 0.315  0.548  0.136]
+Selected: RandomForestScores: [(0.11899661431434987, RandomForest(...)), (0.070015086957643469, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 3}Feature Scores: [ 21.  41.   0.   1.  21.  11.   1.   0.]Feature Mask: [ True  True False False  True False False False]Feature Importances: [ 0.315  0.548  0.136]
 -- Doubles
-Selected: RandomForestScores: [(0.12308776148652127, RandomForest(...)), (0.087420360022698484, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 4, 'regressor__max_depth': 18}Feature Scores: [  0.   0.  24.   1.   1.   0.   1.   1.]Feature Mask: [False False  True False False False False  True]Feature Importances: [ 0.883  0.117]
+Selected: RandomForestScores: [(0.12308776148652127, RandomForest(...)), (0.087420360022698484, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 18, 'regressor__n_estimators': 4}Feature Scores: [  0.   0.  24.   1.   1.   0.   1.   1.]Feature Mask: [False False  True False False False False  True]Feature Importances: [ 0.883  0.117]
 -- HomeRuns
-Selected: RandomForestScores: [(0.10446712657457065, RandomForest(...)), (0.028320241605484891, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 3}Feature Scores: [ 14.   5.   0.  24.   1.   4.   1.   0.]Feature Mask: [ True  True False  True False False False False]Feature Importances: [ 0.139  0.098  0.763]
+Selected: RandomForestScores: [(0.10446712657457065, RandomForest(...)), (0.028320241605484891, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'selection__k': 3, 'regressor__max_depth': 49}Feature Scores: [ 14.   5.   0.  24.   1.   4.   1.   0.]Feature Mask: [ True  True False  True False False False False]Feature Importances: [ 0.139  0.098  0.763]
 -- Walks
 Selected: IsotonicScores: [(0.22194054776573677, RandomForest(...)), (0.23143752089358649, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   6.   15.    9.    7.  121.    2.    9.    8.]Feature Mask: [False False False False  True False False False]
 -- Ks
@@ -91,8 +91,8 @@ CF Wheelock, C     26| .225/.294/.367  91     | .215/.286/.358  89     | -2---37
 C  Urbano, A       27| .260/.300/.344  90     | .260/.300/.344  90     | 41------   3 | -- ||  93 || ML      |
 3B Jimenez, O      31| .240/.338/.344  97     | .240/.338/.344  97     | -233----  -5 | +  ||  92 || ML      |
 SS Montelongo, G   22| .207/.250/.270  74     | .207/.250/.270  74     | -3828---  15 |  - ||  89 || ML    2 |
-2B Hanrahan, C     27| .215/.286/.276  81     | .215/.286/.276  81     | -3851115   8 |  + ||  89 || ML      |
 C  Cisneros, R     33| .220/.272/.324  83     | .224/.276/.328  84     | 51------   5 | -+ ||  89 || AAA  F  |
+2B Hanrahan, C     27| .215/.286/.276  81     | .215/.286/.276  81     | -3851115   8 |  + ||  89 || ML      |
 SS Cross, J        21| .218/.248/.279  74     | .218/.248/.280  74     | -3876---  11 |  + ||  85 || ML    T |
 C  Carroll, S      27| .210/.263/.289  78     | .210/.263/.289  78     | 51------   5 | ++ ||  83 || AA      |
 CF Riney, S        25| .222/.281/.297  82     | .222/.281/.297  82     | -2---552   0 | +- ||  82 || ML    3 |
@@ -135,14 +135,14 @@ SP Jimenez, A         AAA 32 | 13.0  3.8 10.5  1.0 |  28     |  55     |  - |  4
 SP Hornick, W          AA 34 | 12.6  3.5 10.4  1.0 |  30     |  52     | ++ |  45/ 39 ||  45 ||
 MR Torre, D           AAA 22 | 15.4  3.7  5.0  1.7 |  47     |  47     |    |  23/ 41 ||  41 ||
 MR Gunderson, E        AA 32 | 15.3  3.5  8.5  0.9 |  77     |  35     |    |  28/ 36 ||  36 ||
-MR Houston, W          AA 26 | 16.7  3.6  7.7  1.1 |  41     |  41     |  - |  27/ 35 ||  35 ||
 MR Prue, L              A 24 | 15.3  3.5  8.5  1.6 |  72     |  33     |  - |  26/ 35 ||  35 ||
+MR Houston, W          AA 26 | 16.7  3.6  7.7  1.1 |  41     |  41     |  - |  27/ 35 ||  35 ||
 MR Kelley, B           AA 25 | 16.9  3.6  8.1  1.2 |  34     |  39     |  - |  18/ 32 ||  32 ||
 SP Basabe, A            A 25 | 23.9  5.1 22.6  2.5 |  18     |  17     | ++ |  17/ 15 ||  17 ||
 SP Evans, A             A 23 | 23.9  5.1 22.6  2.7 |  17     |  17     |    |  16/ 15 ||  16 ||
 SP Clark, R             A 21 | 23.9  5.1 22.6  2.7 |  17     |  17     |  + |  16/ 15 ||  16 ||
-MR Linton, R           AA 25 | 23.9  5.1 22.6  2.7 |  17     |  17     |  - |  11/ 15 ||  15 ||
 MR Cochran, H           A 19 | 23.9  5.1 22.6  2.7 |  17     |  17     |  + |  13/ 15 ||  15 ||
+MR Linton, R           AA 25 | 23.9  5.1 22.6  2.7 |  17     |  17     |  - |  11/ 15 ||  15 ||
 
  (25) ML               | (13) AAA              | (11) AA               | (11) A                | ( 0) DL               |
  SP Brockman, J     32 | SP Hill, D         29 | SP Hornick, W      34 | SP Basabe, A       25 |                       |
@@ -173,24 +173,24 @@ MR Cochran, H           A 19 | 23.9  5.1 22.6  2.7 |  17     |  17     |  + |  1
 Total:60 (target 70-75)
 Balance:33/27 = 1.222 (ideal: 1.273)
 
+ AAA -> ML   RF Angel Avalos
+ AAA -> ML   3B Jack Cross
+ AAA -> ML    C Alfonso Urbano
+ AAA -> ML   CF Steve Riney
+ AAA -> ML   SS Gary Montelongo
  AAA -> ML   MR Claude Batson
  AAA -> ML   MR Steven Estrada
- AAA -> ML    C Alfonso Urbano
- AAA -> ML   3B Jack Cross
- AAA -> ML   RF Angel Avalos
- AAA -> ML   SS Gary Montelongo
- AAA -> ML   CF Steve Riney
-  AA -> AAA   C Robert Cisneros
-  AA -> AAA  MR William Patterson
-  AA -> AAA  1B Bernardo Pelayo
-  AA -> AAA  1B Billy Wallace
   AA -> AAA  CF Jose Villas
+  AA -> AAA  MR William Patterson
+  AA -> AAA  1B Billy Wallace
+  AA -> AAA   C Robert Cisneros
+  AA -> AAA  1B Bernardo Pelayo
   AA -> A    SP Andres Basabe
-   A -> AAA  SS Arthur Kovacs
    A -> AAA  MR Mark Knop
    A -> AAA  MR Dave Torre
-   A -> AA   MR Bertram Kelley
+   A -> AAA  SS Arthur Kovacs
    A -> AA   3B Shelby Inman
+   A -> AA   MR Bertram Kelley
 
 SP
 Mickey Tussler
@@ -292,7 +292,7 @@ CF Steve Riney               25| CF :  82       0   2     :  85 | CF :  92      
 --- Release ---
 
 --- Sign ---
-3B Ryoh Mukai                28| SS : 102     45574 45596 45576 : 136848 |    :                     :   0 |   5 | 136853 | -TTTT--- |               | $210.72M:        | p1946 | No Team              | **
+SS John Cadena               28| SS : 111      16  47  27 : 201 |    :                     :   0 |   5 | 206 | -3338--- |               |  $7.14M: $9.66M |  p604 | No Team              | **^
 
  C:  89  96
 1B:  70 108
@@ -312,33 +312,33 @@ Hitters
 Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 SS Arthur Kovacs             19 | SS :  82      -2 :  80 | SS :  82      -2 :  80 |  +0 |                       :                       | ++++
  C George Ingram             20 |  C :  55       8 :  63 |  C :  55       8 :  63 |  +0 |                       :                       | +++-
-3B Jack Cross                21 | SS :  74      11 :  85 | SS :  74      11 :  85 |  +0 |                       :                       | ++-
 CF Jason Ide                 21 | CF :  75      -1 :  74 | CF :  75      -1 :  74 |  +0 |                       :                       | +++
  C Vincent Wiggin            21 |  C :  68       3 :  71 |  C :  68       3 :  71 |  +0 |                       :                       | ++
+3B Jack Cross                21 | SS :  74      11 :  85 | SS :  74      11 :  85 |  +0 |                       :                       | ++-
 LF Bernardo Sol              21 | CF :  71       2 :  73 | CF :  71       2 :  73 |  +0 |                       :                       | ++
 SS Gary Montelongo           22 | SS :  74      15 :  89 | SS :  74      15 :  89 |  +0 |                       :                       | ++++
-SS Abel Pelaez               23 | SS :  71       5 :  76 | SS :  71       5 :  76 |  +0 |                       :                       | +-
 3B Stephen Fort              23 | 3B :  79      -5 :  74 | 3B :  79      -5 :  74 |  +0 |                       :                       | +++
+SS Abel Pelaez               23 | SS :  71       5 :  76 | SS :  71       5 :  76 |  +0 |                       :                       | +-
 RF Clair Boner               24 | LF :  73      -8 :  65 | LF :  73      -8 :  65 |  +0 |                       :                       | ++
-1B Bernardo Pelayo           25 | 1B :  81     -12 :  69 | 1B :  81     -12 :  69 |  +0 |                       :                       | ++-
-1B Billy Wallace             25 | RF :  75     -10 :  65 | RF :  75     -10 :  65 |  +0 |                       :                       | ++
 CF Jose Villas               25 | CF :  76       4 :  80 | CF :  76       4 :  80 |  +0 |                       :                       | ++
-CF Steve Riney               25 | CF :  82       0 :  82 | CF :  82       0 :  82 |  +0 |                       :                       | +++-
+1B Billy Wallace             25 | RF :  75     -10 :  65 | RF :  75     -10 :  65 |  +0 |                       :                       | ++
 3B Shelby Inman              25 | 3B :  75      -4 :  71 | 3B :  75      -4 :  71 |  +0 |                       :                       | ++-
-SS Christopher Saez          26 | SS :  81      16 :  97 | SS :  81      16 :  97 |  +0 |                       :                       | *^
+1B Bernardo Pelayo           25 | 1B :  81     -12 :  69 | 1B :  81     -12 :  69 |  +0 |                       :                       | ++-
+CF Steve Riney               25 | CF :  82       0 :  82 | CF :  82       0 :  82 |  +0 |                       :                       | +++-
 CF Curtis Wheelock           26 | CF :  89       5 :  94 | CF :  89       5 :  94 |  +0 |                       :                       | *
- C Steven Culp               27 |  C :  93       3 :  96 |  C :  93       3 :  96 |  +0 |                       :                       | *^
-CF Juan Aguirre              27 | CF :  71      -4 :  67 | CF :  71      -4 :  67 |  +0 |                       :                       | *
-2B Charles Hanrahan          27 | 2B :  81       8 :  89 | 2B :  81       8 :  89 |  +0 |                       :                       | *
-3B Gary Spearman             27 | 3B :  76     -10 :  66 | 3B :  76     -10 :  66 |  +0 |                       :                       | *
-2B William Schwindt          27 | SS :  75      -3 :  72 | SS :  75      -3 :  72 |  +0 |                       :                       | *
+SS Christopher Saez          26 | SS :  81      16 :  97 | SS :  81      16 :  97 |  +0 |                       :                       | *^
  C Alfonso Urbano            27 |  C :  90       3 :  93 |  C :  90       3 :  93 |  +0 |                       :                       | *^
+3B Gary Spearman             27 | 3B :  76     -10 :  66 | 3B :  76     -10 :  66 |  +0 |                       :                       | *
+2B Charles Hanrahan          27 | 2B :  81       8 :  89 | 2B :  81       8 :  89 |  +0 |                       :                       | *
+CF Juan Aguirre              27 | CF :  71      -4 :  67 | CF :  71      -4 :  67 |  +0 |                       :                       | *
+2B William Schwindt          27 | SS :  75      -3 :  72 | SS :  75      -3 :  72 |  +0 |                       :                       | *
  C Scott Carroll             27 |  C :  78       5 :  83 |  C :  78       5 :  83 |  +0 |                       :                       | *
+ C Steven Culp               27 |  C :  93       3 :  96 |  C :  93       3 :  96 |  +0 |                       :                       | *^
  C Joe Neilsen               28 |  C :  76      -1 :  75 |  C :  76      -1 :  75 |  +0 |                       :                       | *
 CF Kelly Leak                29 | LF : 122     -10 : 112 | LF : 122     -10 : 112 |  +0 |                       :                       | ****
+3B Scott Wesson              30 | 3B : 102       0 : 102 | 3B : 102       0 : 102 |  +0 |                       :                       | **^
 3B Ronnie Daniell            30 | 2B :  73       0 :  73 | 2B :  73       0 :  73 |  +0 |                       :                       | *
 RF Angel Avalos              30 | RF :  90     -10 :  80 | RF :  90     -10 :  80 |  +0 |                       :                       | *
-3B Scott Wesson              30 | 3B : 102       0 : 102 | 3B : 102       0 : 102 |  +0 |                       :                       | **^
 3B Oswaldo Jimenez           31 | 3B :  97      -5 :  92 | 3B :  97      -5 :  92 |  +0 |                       :                       | *
  C Robert Cisneros           33 |  C :  84       5 :  89 |  C :  84       5 :  89 |  +0 |                       :                       | *
 RF Wilson Macias             34 | CF :  99       0 :  99 | CF :  99       0 :  99 |  +0 |                       :                       | **^
@@ -349,27 +349,27 @@ Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 MR Harold Cochran            19 | MR :      15     :  15 | MR :      15     :  15 |  +0 |                          :                          | ++
 SP Robert Clark              21 | SP :      16     :  16 | SP :      16     :  16 |  +0 |                          :                          | ++
 MR Dave Torre                22 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | ++-
-SP Anthony Evans             23 | SP :      16     :  16 | SP :      16     :  16 |  +0 |                          :                          | ++
 MR Mark Knop                 23 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                          :                          | +++-
+SP Anthony Evans             23 | SP :      16     :  16 | SP :      16     :  16 |  +0 |                          :                          | ++
 MR Lonnie Prue               24 | MR :      35     :  35 | MR :      35     :  35 |  +0 |                          :                          | ++
 MR Steven Estrada            24 | MR :      70     :  70 | MR :      70     :  70 |  +0 |                          :                          | +++-
+MR Richard Linton            25 | MR :      15     :  15 | MR :      15     :  15 |  +0 |                          :                          | +
 SP Andres Basabe             25 | SP :      17     :  17 | SP :      17     :  17 |  +0 |                          :                          | ++
 MR Bertram Kelley            25 | MR :      32     :  32 | MR :      32     :  32 |  +0 |                          :                          | ++
-MR Richard Linton            25 | MR :      15     :  15 | MR :      15     :  15 |  +0 |                          :                          | +
 MR William Houston           26 | MR :      35     :  35 | MR :      35     :  35 |  +0 |                          :                          | *
 MR Bernardo Paiva            27 | MR :      74     :  74 | MR :      74     :  74 |  +0 |                          :                          | ****^
-MR Claude Batson             28 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | **
-MR William Patterson         28 | MR :      63     :  63 | MR :      63     :  63 |  +0 |                          :                          | *
 MR William Canales           28 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                          :                          | *
+MR William Patterson         28 | MR :      63     :  63 | MR :      63     :  63 |  +0 |                          :                          | *
+MR Claude Batson             28 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | **
 SP Dennis Hill               29 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                          :                          | *
-SP Thomas North              32 | SP :     111     : 111 | SP :     111     : 111 |  +0 |                          :                          | ****
 SP Joseph Brockman           32 | SP :      98     :  98 | SP :      98     :  98 |  +0 |                          :                          | *
 SP Aurelio Jimenez           32 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                          :                          | *
 MR Ernie Gunderson           32 | MR :      36     :  36 | MR :      36     :  36 |  +0 |                          :                          | *
+SP Thomas North              32 | SP :     111     : 111 | SP :     111     : 111 |  +0 |                          :                          | ****
 MR Jason Bellantoni          33 | MR :      71     :  71 | MR :      71     :  71 |  +0 |                          :                          | ****^
+SP Christopher Schweitzer    34 | SP :     112     : 112 | SP :     112     : 112 |  +0 |                          :                          | *
 MR Florian Hernandez         34 | MR :      84     :  84 | MR :      84     :  84 |  +0 |                          :                          | **
 SP William Hornick           34 | SP :      45     :  45 | SP :      45     :  45 |  +0 |                          :                          | *
-SP Christopher Schweitzer    34 | SP :     112     : 112 | SP :     112     : 112 |  +0 |                          :                          | *
 SP Allen Lent                35 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | *
 SP Tyler George              35 | SP :     120     : 120 | SP :     120     : 120 |  +0 |                          :                          | **^
 SP Mickey Tussler            36 | SP :     122     : 122 | SP :     122     : 122 |  +0 |                          :                          | ****^
@@ -643,7 +643,7 @@ RF Robert Burling            18| RF :  49      -2 -18     :  29 | RF :  77      
  C Filiberto Dediego         18|  C :  48       5 -36     :  17 |  C :  76       5   0     :  81 |   6 |  87 | 51------ |               |        :        |  p448 | No Team              | +
 2B Isaias Trevino            18| 2B :  50       1 -22     :  29 | 2B :  76       1   4     :  81 |   6 |  87 | -3521--- |               |        :        |  p619 | No Team              | +
 LF James Morgan              20| RF :  60     -10 -16     :  34 | LF :  85      -8   4     :  81 |   6 |  87 | -1---4-3 |               |        :        |  p617 | No Team              | ++
-SP Sammy Bodeen              20| SP :      27     -28     :  -1 | SP :      72       9     :  80 |   6 |  86 |          |               |        :        | p1456 | No Team              | +++++
+SP Sammy Bodeen              20| SP :      27     -28     :  -1 | SP :      72       9     :  80 |   6 |  86 |          |               |        :        | p1456 | Northeastern Blac... | +++++
 LF James Winegar             21| RF :  60      -6 -12     :  42 | LF :  80      -3   4     :  80 |   6 |  86 | -2---615 |               |        :        | p1362 | No Team              | +-
 3B Kerry Abramson            19| 3B :  61      -4 -18     :  39 | 3B :  80      -4   3     :  79 |   6 |  85 | -214---- |               |        :        |  p251 | No Team              | +-
 1B Nicky Ashton              19| 1B :  69     -12 -13     :  44 | 1B :  87     -12   4     :  78 |   6 |  84 | -3------ |               |        :        | p1438 | No Team              | +++
@@ -768,14 +768,14 @@ MR Bernardo Paiva            27| MR :      74      10     :  84 |    :          
 MR Claude Batson             28| MR :      72       7     :  79 |    :                     :   0 |   5 |  84 |          |       $300k a | $675.7k:$913.4k |  p151 | West Texas Tumble... | **
 
 --- Top Targets ---
-3B Ryoh Mukai                28| SS : 102     45574 45596 45576 : 136848 |    :                     :   0 |   5 | 136853 | -TTTT--- |               | $210.72M:        | p1946 | No Team              | **
+SS John Cadena               28| SS : 111      16  47  27 : 201 |    :                     :   0 |   5 | 206 | -3338--- |               |  $7.14M: $9.66M |  p604 | No Team              | **^
 SP Thomas Prahl              30| SP :     126      71   4 : 201 |    :                     :   0 |   3 | 204 |          |               |  $7.24M: $9.79M |  p807 | No Team              | **^
 MR Benjamin Vivo             25| SP :      84      29     : 113 | SP :     120      56   5 : 182 |   6 | 188 |          |               |   $2.8M: $3.78M | p1723 | No Team              | ****^
+SS Johnny Keggs              27| SS : 104      15  39  19 : 177 |    :                     :   0 |   6 | 183 | -3778--- |               |   $5.6M: $7.57M | p1003 | No Team              | ***
 RF Bobby Rayburn             28| RF : 112      -7  39     : 144 |    :                     :   0 |   5 | 149 | -2---444 |               |  $3.76M: $5.09M |  p614 | No Team              | ****
  C Glen Quinn                27|  C : 109      -1  19  12 : 140 |    :                     :   0 |   6 | 146 | 41------ |               |  $3.09M: $4.18M | p1208 | No Team              | ***^
 
 --- Free Agents ---
-3B Ryoh Mukai                28| SS : 102     45574 45596 45576 : 136848 |    :                     :   0 |   5 | 136853 | -TTTT--- |               | $210.72M:        | p1946 | No Team              | **
 SS John Cadena               28| SS : 111      16  47  27 : 201 |    :                     :   0 |   5 | 206 | -3338--- |               |  $7.14M: $9.66M |  p604 | No Team              | **^
 SP Thomas Prahl              30| SP :     126      71   4 : 201 |    :                     :   0 |   3 | 204 |          |               |  $7.24M: $9.79M |  p807 | No Team              | **^
 MR Benjamin Vivo             25| SP :      84      29     : 113 | SP :     120      56   5 : 182 |   6 | 188 |          |               |   $2.8M: $3.78M | p1723 | No Team              | ****^
@@ -786,8 +786,7 @@ RF Bobby Rayburn             28| RF : 112      -7  39     : 144 |    :          
  C Glen Quinn                27|  C : 109      -1  19  12 : 140 |    :                     :   0 |   6 | 146 | 41------ |               |  $3.09M: $4.18M | p1208 | No Team              | ***^
 SP Vicente Lopez             32| SP :      99      44     : 144 |    :                     :   0 |   1 | 145 |          |               |  $4.25M: $5.74M | p1514 | No Team              | **^
 SP Scott Wiltshire           36| SP :     106      51     : 157 |    :                     :   0 | -12 | 145 |          |               |  $4.92M: $6.65M |  p363 | No Team              | ****^
-LF Stanley Carstens          33| RF : 113     -10  38     : 141 |    :                     :   0 |   0 | 141 | -2---323 |               |  $3.67M: $4.96M | p1767 | No Team              | ***
-MR Victor Knisely            33| MR :     103      34     : 137 |    :                     :   0 |   0 | 137 |          |               |  $3.28M: $4.44M |  p123 | No Team              | **^
+MR Victor Knisely            33| MR :     103      34     : 137 |    :                     :   0 |   0 | 137 |          |               |  $3.28M: $4.44M |  p123 | No Team              | ***
 RF Max DuBois                28| RF : 102      -4  32     : 130 |    :                     :   0 |   5 | 135 | -2---526 |               |  $3.09M: $4.18M | p1036 | No Team              | ***^
 RF Brett Ivery               30| RF : 102      -4  33     : 131 |    :                     :   0 |   3 | 134 | -2---626 |               |  $3.19M: $4.31M | p1226 | No Team              | **^
 2B Kerry Tucci               28| 2B : 105      -5  27     : 127 |    :                     :   0 |   5 | 132 | -23----- |               |  $2.61M: $3.52M |  p579 | No Team              | ***^
@@ -795,8 +794,6 @@ CL Thomas Jorge              27| SP :      88      33     : 121 |    :          
 LF Henry Dickison            30| RF :  96      -1  29     : 124 |    :                     :   0 |   3 | 127 | -2---737 |               |   $2.8M: $3.78M |  p707 | No Team              | **
 MR Sean Savino               30| SP :      89      34     : 124 |    :                     :   0 |   3 | 127 |          |               |  $3.28M: $4.44M |  p415 | No Team              | **^
 SP Shirley Espinosa          29| SP :      88      33     : 121 |    :                     :   0 |   4 | 125 |          |               |  $3.19M: $4.31M | p1725 | No Team              | ***^
-3B Vincent Green             31| 3B : 100      -2  24     : 123 |    :                     :   0 |   2 | 125 | -3-5---- |               |  $2.32M: $3.13M | p1743 | No Team              | **
-SP Franky Mosqueda           32| SP :      89      34     : 123 |    :                     :   0 |   1 | 124 |          |               |  $3.28M: $4.44M |  p182 | No Team              | ***
 SP Doug Rasmussen            31| SP :      88      33     : 121 |    :                     :   0 |   2 | 123 |          |               |  $3.19M: $4.31M | p1885 | No Team              | *
 SP Jeffrey Poon              35| SP :      92      37     : 129 |    :                     :   0 |  -6 | 123 |          |               |  $3.57M: $4.83M |  p327 | No Team              | ****
 3B Rodney Roy                34| 3B :  95       4  24     : 123 |    :                     :   0 |  -2 | 121 | -4464--- |               |  $2.32M: $3.13M |  p294 | No Team              | *^
@@ -809,7 +806,7 @@ CF Paul Stowell              36| RF :  99       0  33     : 132 |    :          
 CF Phil Giroux               34| CF :  95       4  19     : 119 |    :                     :   0 |  -2 | 117 | -2---374 |               |  $1.83M: $2.48M | p1781 | No Team              | *^
 3B Sherman Curci             30| 3B :  90       4  19     : 113 |    :                     :   0 |   3 | 116 | -2261--- |               |  $1.83M: $2.48M | p1883 | No Team              | *
 LF Jerry Johnson             30| RF :  97      -8  24     : 113 |    :                     :   0 |   3 | 116 | -2---414 |               |  $2.32M: $3.13M | p1342 | No Team              | **^
-CL Edward Fluker             33| MR :      92      25     : 116 |    :                     :   0 |   0 | 116 |          |               |  $2.41M: $3.26M | p1186 | No Team              | ****^
+CL Edward Fluker             33| MR :      92      25     : 116 |    :                     :   0 |   0 | 116 |          |               |  $2.41M: $3.26M | p1186 | No Team              | ****
 3B Hilario Gonzales          35| 3B : 103      -5  24     : 122 |    :                     :   0 |  -6 | 116 | -213---- |               |  $2.32M: $3.13M |  p626 | No Team              | **
 1B Boyd Summers              33| 1B : 103     -11  22     : 114 |    :                     :   0 |   0 | 114 | -4------ |               |  $2.12M: $2.87M | p1397 | No Team              | ***
 3B Salvador Alcala           32| 1B : 103     -13  20     : 110 |    :                     :   0 |   1 | 111 | -2-1---- |               |  $1.93M: $2.61M | p1184 | No Team              | *
@@ -825,6 +822,10 @@ CF Michael Jimenez           30| RF :  84      -1  17     : 100 |    :          
 SP George Popovich           35| SP :      82      27     : 109 |    :                     :   0 |  -6 | 103 |          |               |  $2.61M: $3.52M |  p221 | No Team              | ***
 SP Forrest Brewer            37| SP :      89      34     : 123 |    :                     :   0 | -20 | 103 |          |               |  $3.28M: $4.44M |  p349 | No Team              | **^
 LF Carl Weir                 29| RF :  95     -13  16     :  98 |    :                     :   0 |   4 | 102 | -1---2-1 |               |  $1.54M: $2.09M |   p70 | No Team              | *^
+ C Nick Charlton             34|  C :  97      -1   7   0 : 104 |    :                     :   0 |  -2 | 102 | 41------ |               | $772.2k: $1.04M | p1131 | No Team              | *^
+SP Johnathan Moon            35| SP :      80      26     : 106 |    :                     :   0 |  -6 | 100 |          |               |  $2.51M: $3.39M |  p645 | No Team              | **
+LF Higinio Vega              35| RF :  93      -8  20     : 105 |    :                     :   0 |  -6 |  99 | -2---514 |               |  $1.93M: $2.61M |  p892 | No Team              | *
+RF Forrest Holland           34| LF :  88      -1  13     : 100 |    :                     :   0 |  -2 |  98 | -2---735 |               |  $1.25M:  $1.7M |   p79 | No Team              | *
 
 CATCHER
  1 | Culp, S           93   3  96 | Culp, S           97   3 100 | Culp, S           93   3  96
@@ -1078,7 +1079,7 @@ SP Bill Barksdale            29| SP :      75      20     :  95 |    :          
 LF Brian Soloman             23| LF :  75      -4  -2     :  68 | LF :  86      -4   9     :  91 |   6 |  97 | -2---623 |               |        :        |  p791 | Capital City Goof... | ++
 1B Thomas Evans              31| 1B :  92     -11  11     :  92 |    :                     :   0 |   2 |  94 | -4------ |       $390kx2 |  $1.06M: $1.44M | p1566 | Capital City Goof... | *^
 MR Timothy Marr              33| MR :      79      13     :  92 |    :                     :   0 |   0 |  92 |          |       $300k a |  $1.25M:  $1.7M |  p956 | Capital City Goof... | **
-MR Max Ferran                29| MR :      76      11     :  87 |    :                     :   0 |   4 |  91 |          |       $300k r |  $1.06M: $1.44M | p1266 | Capital City Goof... | **
+MR Max Ferran                29| MR :      76      11     :  87 |    :                     :   0 |   4 |  91 |          |       $300k r |  $1.06M: $1.44M | p1266 | Capital City Goof... | **^
 1B Alfonso Yunque            30| RF :  87     -11  11     :  87 |    :                     :   0 |   3 |  90 | -3---1-2 |       $300k a |  $1.06M: $1.44M | p1142 | Capital City Goof... | *
 MR Quincy Richard            22| MR :      74       9     :  83 | MR :      67       0     :  67 |   6 |  89 |          |               | $868.8k: $1.17M |  p762 | Capital City Goof... | ++-
 1B Jason Moore               23| 1B :  75     -11  -5     :  59 | 1B :  87     -11   5     :  82 |   6 |  88 | -5------ |               |        :        |  p931 | Capital City Goof... | ++-
@@ -1131,7 +1132,7 @@ RF Alberto Prisco            24| RF :  74      -7   1     :  68 | RF :  86      
 RF Shon Ellard               20| RF :  53      -7 -19     :  27 | RF :  83      -7   7     :  84 |   6 |  90 | -2---224 |               |        :        |  p142 | Gashouse Goons       | +-
 RF Robin Preiss              25| RF :  74      -3   5     :  76 | RF :  80      -3   8     :  84 |   6 |  90 | -31--626 |               | $482.6k:$652.4k | p1766 | Gashouse Goons       | +
 1B Jesse Colwell             32| 1B :  92     -13   9     :  88 |    :                     :   0 |   1 |  89 | -2------ |       $350k a | $868.8k: $1.17M |   p61 | Gashouse Goons       | *
-MR Bill Campbell             35| MR :      80      15     :  95 |    :                     :   0 |  -6 |  89 |          |      $2.52Mx3 |  $1.45M: $1.96M | p1650 | Gashouse Goons       | ***
+MR Bill Campbell             35| MR :      80      15     :  95 |    :                     :   0 |  -6 |  89 |          |      $2.52Mx3 |  $1.45M: $1.96M | p1650 | Gashouse Goons       | ***^
 2B Michael Cassella          22| 2B :  54      -5 -24     :  25 | 2B :  82      -5   5     :  82 |   6 |  88 | -231---- |               |        :        | p1374 | Gashouse Goons       | ++
 SP Craig Nevitt              22| SP :      45     -10     :  35 | SP :      73      10     :  82 |   6 |  88 |          |   6           |        :        | p1213 | Gashouse Goons       | +++
 2B Rene Diez                 24| 2B :  72      -4  -5     :  64 | 2B :  80      -4   4     :  80 |   6 |  86 | -2412--- |               |        :        | p1006 | Gashouse Goons       | +
@@ -1182,7 +1183,7 @@ CF Adrian Mazur              25| RF :  76      -2   8     :  82 | CF :  83      
 CF Carlos Olivarria          28| CF :  84       6  10     : 100 |    :                     :   0 |   5 | 105 | -2---776 |               | $965.3k:  $1.3M |  p245 | Syracuse Orangemen   | *
 MR Tom Hammond               21| MR :      57      -5     :  52 | MR :      84      14     :  98 |   6 | 104 |          |   8           |        :        |  p337 | Syracuse Orangemen   | ++++
  C Orlando Gula              34|  C :  92       5   8   1 : 106 |    :                     :   0 |  -2 | 104 | 51------ |       $550kx3 | $868.8k: $1.17M | p1034 | Syracuse Orangemen   | **
-MR Cristobal Frese           27| MR :      81      16     :  97 |    :                     :   0 |   6 | 103 |          |       $300k r |  $1.54M: $2.09M |   p13 | Syracuse Orangemen   | **^
+MR Cristobal Frese           27| MR :      81      16     :  97 |    :                     :   0 |   6 | 103 |          |       $300k r |  $1.54M: $2.09M |   p13 | Syracuse Orangemen   | ***
 RF Francisco Velez           20| RF :  62      -3  -6     :  53 | RF :  85      -3  14     :  96 |   6 | 102 | -2---626 |   9           |        :        | p1345 | Syracuse Orangemen   | ++
  C James Turner              26|  C :  76       5  -8     :  73 |  C :  83       5   7     :  95 |   6 | 101 | 51------ |               |        :        |  p169 | Syracuse Orangemen   | *
 2B Bernardo Martin           20| 2B :  67      -9 -15     :  43 | 2B :  90      -9   9     :  90 |   6 |  96 | -221---- |               |        :        |   p68 | Syracuse Orangemen   | ++
@@ -1208,7 +1209,7 @@ CF Maurice Hubbert           32| RF :  83     -11   6     :  78 |    :          
 SP Richard Dimarco           26| SP :      99      44     : 144 | SP :     132      69  17 : 218 |   6 | 224 |          |      $5.26M a |  $4.25M: $5.74M | p1830 | Ashburn Aardvarks    | ****^
 CF Rosendo Daban             27| CF : 120      10  50  22 : 201 |    :                     :   0 |   6 | 207 | -2---383 |      $13.3Mx3 |  $6.95M:  $9.4M |  p143 | Ashburn Aardvarks    | ****
 SS Juan Chao                 31| SS : 120       4  44  25 : 193 |    :                     :   0 |   2 | 195 | -2615--- |      $8.65Mx3 |  $6.56M: $8.87M | p1785 | Ashburn Aardvarks    | ****^
-LF Will Fetty                30| RF : 122      -4  52   9 : 179 |    :                     :   0 |   3 | 182 | -2---546 |      $8.55Mx4 |  $5.89M: $7.96M | p1024 | Ashburn Aardvarks    | ***^
+LF Will Fetty                30| RF : 122      -4  52   9 : 179 |    :                     :   0 |   3 | 182 | -2---546 |      $8.55Mx4 |  $5.89M: $7.96M | p1024 | Ashburn Aardvarks    | ****
 CL Martin Llewellyn          25| MR :      87      21     : 108 | MR :     116      42   6 : 164 |   6 | 170 |          |      $3.66M a |  $2.03M: $2.74M | p1489 | Ashburn Aardvarks    | ****^
 3B Emil Abeilla              30| 3B : 114      -1  39   5 : 157 |    :                     :   0 |   3 | 160 | -215-214 |       $5.8Mx3 |  $4.25M: $5.74M |  p549 | Ashburn Aardvarks    | ***^
 SP Jeronimo Carrillo         25| SP :      92      37     : 129 | SP :     107      43     : 150 |   6 | 156 |          |   1   $300k r |  $3.57M: $4.83M | p1610 | Ashburn Aardvarks    | +++++
@@ -1325,9 +1326,9 @@ SS Eric Hockman              23| SS :  75      10   4     :  89 | SS :  84      
 RF Moises Mendoza            24| RF :  87      -5  17     :  99 | RF :  94      -5  21     : 110 |   6 | 116 | -2---325 |   7   $300k r |  $1.64M: $2.22M | p1467 | New Jersey Mundys    | +++-
 SP Ben Nevarez               32| SP :      84      29     : 113 |    :                     :   0 |   1 | 114 |          |  F    $350k   |   $2.8M: $3.78M |  p521 | New Jersey Mundys    | *
  C Hernan Espinel            29|  C :  79      19   9   2 : 108 |    :                     :   0 |   4 | 112 | 81------ |               |  $1.06M: $1.44M |   p74 | New Jersey Mundys    | *
-SP Roger Maddocks            30| SP :      82      27     : 109 |    :                     :   0 |   3 | 112 |          |  F   $2.95M   |  $2.61M: $3.52M | p1437 | New Jersey Mundys    | ***
 MR Baldo Peña                23| MR :      47     -14     :  32 | MR :      87      17     : 105 |   6 | 111 |          |   6           |        :        |  p748 | New Jersey Mundys    | +++++
 2B Paul Hux                  24| 2B :  77       1   5     :  83 | 2B :  88       1  16     : 105 |   6 | 111 | -3521--- |   9           | $482.6k:$652.4k | p1286 | New Jersey Mundys    | ++-
+SP Roger Maddocks            31| SP :      82      27     : 109 |    :                     :   0 |   2 | 111 |          |  F   $2.95M   |  $2.61M: $3.52M | p1437 | New Jersey Mundys    | ***
 SP Jeff Nord                 20| SP :      28     -27     :   1 | SP :      84      20     : 104 |   6 | 110 |          |   3           |        :        |  p727 | New Jersey Mundys    | ++++
 LF Stephen Tickle            27| LF :  90      -2  15     : 102 |    :                     :   0 |   6 | 108 | -2---753 |               |  $1.45M: $1.96M |  p432 | New Jersey Mundys    | *
 3B Del Gardner               26| 3B :  84      -1   9     :  91 | 3B :  88      -1  14     : 101 |   6 | 107 | -215---- |       $300k a | $868.8k: $1.17M |  p830 | New Jersey Mundys    | *
@@ -1374,8 +1375,8 @@ CF Harold Poss               20| CF :  70       5  -5     :  69 | CF :  94      
 LF Benjamin Corujo           26| RF :  91     -12  14     :  93 | RF : 102     -12  22     : 112 |   6 | 118 | -1---2-2 |       $300k a |  $1.35M: $1.83M |  p288 | Plum Grove Fire Ants | *
 RF Deangelo Cifuentes        27| RF :  89      -1  23     : 111 |    :                     :   0 |   6 | 117 | -2---227 |  F    $550k   |  $2.22M:    $3M | p1400 | Plum Grove Fire Ants | **
 MR Courtney Ching            27| MR :      86      19     : 105 |    :                     :   0 |   6 | 111 |          |       $300k r |  $1.83M: $2.48M |  p588 | Plum Grove Fire Ants | ***^
-SP Fred Stetler              31| SP :      81      26     : 107 |    :                     :   0 |   2 | 109 |          |     $592.8kx2 |  $2.51M: $3.39M | p1292 | Plum Grove Fire Ants | *^
 LF Ricky Cobble              32| LF :  92      -2  17     : 107 |    :                     :   0 |   1 | 108 | -2---723 |     $414.3k a |  $1.64M: $2.22M |  p769 | Plum Grove Fire Ants | *^
+SP Fred Stetler              32| SP :      81      26     : 107 |    :                     :   0 |   1 | 108 |          |     $592.8kx2 |  $2.51M: $3.39M | p1292 | Plum Grove Fire Ants | *^
 SP Francisco Verdugo         24| SP :      62       7     :  70 | SP :      80      16     :  96 |   6 | 102 |          |   7           | $675.7k:$913.4k | p1130 | Plum Grove Fire Ants | +++
 3B Michael Kittredge         21| 1B :  67     -14 -16     :  37 | 3B :  95     -12  10     :  94 |   6 | 100 | -2-1---- |   3           |        :        |  p375 | Plum Grove Fire Ants | +++-
 CL Max Rameriz               38| MR :      99      31     : 129 |    :                     :   0 | -30 |  99 |          |      $3.33Mx2 |  $2.99M: $4.05M |  p922 | Plum Grove Fire Ants | ****^
@@ -1383,7 +1384,7 @@ SP Carlos Partida            25| SP :      66      12     :  78 | SP :      77  
 CF John Lucero               19| RF :  65     -12 -12     :  41 | CF :  87      -5   6     :  89 |   6 |  95 | -1---442 |   8           |        :        | p1790 | Plum Grove Fire Ants | ++-
 LF Damon Leachman            22| RF :  72     -10  -4     :  58 | LF :  89      -8   8     :  89 |   6 |  95 | -1---3-2 |   T           |        :        | p1068 | Plum Grove Fire Ants | ++-
 2B Carl Nickens              21| 3B :  70       0  -5     :  65 | 3B :  81       0   8     :  88 |   6 |  94 | -2451--- |               |        :        |  p984 | Plum Grove Fire Ants | ++
-MR Richard Fults             31| MR :      78      13     :  91 |    :                     :   0 |   2 |  93 |          |      $1.07Mx3 |  $1.25M:  $1.7M | p1412 | Plum Grove Fire Ants | **^
+MR Richard Fults             31| MR :      78      13     :  91 |    :                     :   0 |   2 |  93 |          |      $1.07Mx3 |  $1.25M:  $1.7M | p1412 | Plum Grove Fire Ants | ***
 LF Florentino Arana          37| RF : 100     -11  24     : 113 |    :                     :   0 | -20 |  93 | -2---412 |      $3.01Mx2 |  $2.32M: $3.13M | p1696 | Plum Grove Fire Ants | **
 MR German Lerma              38| SP :      89      34     : 123 |    :                     :   0 | -30 |  93 |          |  F    $1.2M   |  $3.28M: $4.44M |  p644 | Plum Grove Fire Ants | **^
 SP Manny Marquez             19| SP :      28     -27     :   1 | SP :      75      12     :  86 |   6 |  92 |          |   2           |        :        |  p721 | Plum Grove Fire Ants | +++-
@@ -1446,7 +1447,7 @@ RF Alfred Sterner            24| RF :  72      -5   2     :  69 | RF :  82      
 3B Cosme Sala                22| 3B :  72       0  -3     :  69 | 3B :  79       0   6     :  84 |   6 |  90 | -225---- |               |        :        | p1435 | Bay City Bluebirds   | +
 RF Alberto Costa             28| RF :  84      -9   9     :  84 |    :                     :   0 |   5 |  89 | -212-313 |       $300k r | $868.8k: $1.17M | p1932 | Bay City Bluebirds   | *
 CF Clint Frantz              29| RF :  78      -4   8     :  82 |    :                     :   0 |   4 |  86 | -2---656 |       $300k a | $772.2k: $1.04M | p1287 | Bay City Bluebirds   | *
-MR Adolfo Baltasar           31| MR :      74      10     :  84 |    :                     :   0 |   2 |  86 |          |  F   $1.53M   | $965.3k:  $1.3M | p1715 | Bay City Bluebirds   | **^
+MR Adolfo Baltasar           31| MR :      74      10     :  84 |    :                     :   0 |   2 |  86 |          |  F   $1.53M   | $965.3k:  $1.3M | p1715 | Bay City Bluebirds   | ***
 2B Milton Sandy              26| 2B :  81     -11  -3     :  67 | 2B :  87     -11   3     :  79 |   6 |  85 | -2111--- |               |        :        |  p403 | Bay City Bluebirds   | *
 1B William Maag              23| 1B :  73      -8  -4     :  61 | 1B :  82      -8   3     :  78 |   6 |  84 | -7221211 |               |        :        |   p78 | Bay City Bluebirds   | +-
 3B Matthew Thorton           28| 3B :  77       0   2     :  79 |    :                     :   0 |   5 |  84 | -2251--- |               | $193.1k:  $261k |  p993 | Bay City Bluebirds   | *
@@ -1472,7 +1473,7 @@ SP Justin Smith              35| SP :     103      48     : 151 |    :          
 3B Otis Stewart              21| 3B :  78       3   7     :  87 | 3B : 102       3  32     : 137 |   6 | 143 | -216---- |   5           | $675.7k:$913.4k | p1008 | Malibu Rum Runners   | +++-
 RF Darryl Davis              30| RF : 106      -5  35     : 136 |    :                     :   0 |   3 | 139 | -2---315 |      $4.23Mx4 |  $3.38M: $4.57M | p1477 | Malibu Rum Runners   | ***^
 1B Parker Brock              26| 1B : 113     -14  30     : 129 | 1B : 114     -14  30     : 130 |   6 | 136 | -2------ |      $2.86M a |   $2.9M: $3.91M |  p391 | Malibu Rum Runners   | ***^
-MR William Green             28| MR :      99      31     : 131 |    :                     :   0 |   5 | 136 |          |       $300k r |  $2.99M: $4.05M | p1369 | Malibu Rum Runners   | ****
+MR William Green             28| MR :      99      31     : 131 |    :                     :   0 |   5 | 136 |          |       $300k r |  $2.99M: $4.05M | p1369 | Malibu Rum Runners   | ****^
 CF Tip Saturnino             30| RF : 106      -7  34     : 133 |    :                     :   0 |   3 | 136 | -2---554 |      $3.81M a |  $3.28M: $4.44M | p1944 | Malibu Rum Runners   | *^
 2B Stefan Gibson             25| 2B :  83       4  14     : 102 | 2B :  94       4  26     : 124 |   6 | 130 | -3721--- |   6           |  $1.35M: $1.83M | p1633 | Malibu Rum Runners   | +++-
 SS Bill Sande                23| SS :  85       4   9     :  98 | SS :  95       4  23     : 122 |   6 | 128 | -2115--- |       $300k a | $868.8k: $1.17M |  p492 | Malibu Rum Runners   | +++-
@@ -1497,7 +1498,7 @@ LF George Daban              26| RF :  81      -7   9     :  83 | RF :  86      
 1B Pedro Cid                 27| 1B :  92     -13  10     :  89 |    :                     :   0 |   6 |  95 | -311---- |               | $965.3k:  $1.3M |  p738 | Malibu Rum Runners   | *
 SP Fred Wint                 23| SP :      70      16     :  86 | SP :      68       5     :  73 |   6 |  92 |          |   1           |  $1.54M: $2.09M | p1914 | Malibu Rum Runners   | ++++-
 2B Clifton Ralston           22| 2B :  67      -4 -10     :  52 | 2B :  83      -4   6     :  85 |   6 |  91 | -241-1-3 |               |        :        |  p102 | Malibu Rum Runners   | ++
-MR Andy Bybee                35| SP :      76      21     :  97 |    :                     :   0 |  -6 |  91 |          |  F   $1.77M   |  $2.03M: $2.74M | p1156 | Malibu Rum Runners   | **^
+MR Andy Bybee                35| SP :      76      21     :  97 |    :                     :   0 |  -6 |  91 |          |  F   $1.77M   |  $2.03M: $2.74M | p1156 | Malibu Rum Runners   | ***
 3B Aurelio Jimenez           20| 3B :  63      -5 -17     :  41 | 3B :  83      -5   5     :  82 |   6 |  88 | -2-3---- |               |        :        |  p702 | Malibu Rum Runners   | +-
 SP Calvin McDonald           23| SP :      25     -30     :  -5 | SP :      71       8     :  79 |   6 |  85 |          |   2           |        :        |  p530 | Malibu Rum Runners   | ++++-
 MR Max Gonzalez              35| MR :      78      13     :  91 |    :                     :   0 |  -6 |  85 |          |  F  $661.2k   |  $1.25M:  $1.7M |  p331 | Malibu Rum Runners   | *^
@@ -1616,8 +1617,8 @@ SP Eric Owings               37| SP :      76      22     :  98 |    :          
 3B Nicholas Medrano          28| 2B :  75      -5  -3     :  68 |    :                     :   0 |   5 |  73 | -2421--- |               |        :        | p1761 | Troy Haymakers       | *
 SP Hernan Figuera            25| SP :      56       1     :  57 | SP :      63       0     :  62 |   6 |  68 |          |   5           |  $96.5k:$130.5k | p1434 | Troy Haymakers       | +++
 CF John Hackney              28| RF :  70      -6  -1     :  63 |    :                     :   0 |   5 |  68 | -2---245 |               |        :        | p1857 | Troy Haymakers       | *
-MR Raymond Colvin            24| MR :      48     -13     :  34 | MR :      62      -5     :  58 |   6 |  64 |          |               |        :        | p1401 | Troy Haymakers       | +++-
 SP Michael Thomas            20| SP :      33     -22     :  11 | SP :      60      -3     :  57 |   6 |  63 |          |   8           |        :        | p1471 | Troy Haymakers       | ++-
+2B Robert West               26| 2B :  71     -11 -13     :  47 | 2B :  75     -11  -8     :  56 |   6 |  62 | -21-1--- |               |        :        | p1318 | Troy Haymakers       | *
 
 --- Lynchburg Distillers ---
 3B Ryan Weaver               27| 3B : 119      -1  44  10 : 172 |    :                     :   0 |   6 | 178 | -315---- |      $3.83Mx4 |  $5.21M: $7.05M | p1534 | Lynchburg Distillers | ***
@@ -1642,7 +1643,7 @@ SP Jason Gagliardi           33| SP :      84      29     : 112 |    :          
  C Juan Rikard               20|  C :  54      -1 -36     :  17 |  C :  93      -1  12     : 104 |   6 | 110 | 41------ |   5           |        :        | p1647 | Lynchburg Distillers | +++-
 SS Russell Korhonen          22| 2B :  79      -1   5     :  82 | 2B :  89      -1  15     : 103 |   6 | 109 | -2511--- |               | $482.6k:$652.4k | p1272 | Lynchburg Distillers | ++
 MR John Miyamoto             24| MR :      85      19     : 103 | MR :      69       1     :  71 |   6 | 109 |          |               |  $1.83M: $2.48M |  p155 | Lynchburg Distillers | +++
-MR Chad Perkins              26| MR :      81      16     :  97 | MR :      85      15     : 100 |   6 | 106 |          |       $300k a |  $1.54M: $2.09M |  p144 | Lynchburg Distillers | ***
+MR Chad Perkins              26| MR :      81      16     :  97 | MR :      85      15     : 100 |   6 | 106 |          |       $300k a |  $1.54M: $2.09M |  p144 | Lynchburg Distillers | ***^
 3B Daniel Bosley             21| 3B :  75      -1   0     :  74 | 3B :  87      -1  13     :  99 |   6 | 105 | -215---- |               |        :        | p1233 | Lynchburg Distillers | ++-
 SP Hyman Dileo               21| SP :      51      -3     :  48 | SP :      81      18     :  99 |   6 | 105 |          |   6           |        :        |  p623 | Lynchburg Distillers | +++
 LF Silvano Carrion           22| RF :  70     -10  -6     :  54 | RF :  92     -10  13     :  95 |   6 | 101 | -2---312 |   8           |        :        | p1805 | Lynchburg Distillers | +++
@@ -1681,7 +1682,7 @@ SP Leonel Chadwick           23| SP :      88      33     : 121 | SP :     107  
 LF Blake Kyle                25| LF : 108      -8  26     : 126 | LF : 114      -8  33     : 139 |   6 | 145 | -1---3-- |     $464.3k a |  $2.51M: $3.39M | p1165 | Minnesota Axmen      | **
 LF Pedro Cerrano             26| RF : 102      -7  30     : 125 | RF : 109      -7  33     : 135 |   6 | 141 | -2---414 |       $300k a |   $2.9M: $3.91M | p1105 | Minnesota Axmen      | ***
 SP Claudio Tello             28| SP :      95      40     : 136 |    :                     :   0 |   5 | 141 |          |       $300k r |  $3.86M: $5.22M | p1800 | Minnesota Axmen      | **^
-SP George Westra             28| SP :      94      39     : 133 |    :                     :   0 |   5 | 138 |          |       $300k r |  $3.76M: $5.09M | p1532 | Minnesota Axmen      | **
+SP George Westra             29| SP :      94      39     : 133 |    :                     :   0 |   4 | 137 |          |       $300k r |  $3.76M: $5.09M | p1532 | Minnesota Axmen      | **
 1B Orlando Benitez           22| 1B :  80     -12  -2     :  66 | 1B : 108     -12  25     : 121 |   6 | 127 | -3------ |   2           |        :        | p1336 | Minnesota Axmen      | +++++
 CF Steven Atchley            24| LF :  92      -5  14     : 101 | LF : 102      -5  24     : 121 |   6 | 127 | -2---542 |   5           |  $1.35M: $1.83M | p1752 | Minnesota Axmen      | +++-
 SS Brandon Mauk              26| SS :  91       4  14     : 109 | SS :  95       4  23     : 121 |   6 | 127 | -2545--- |               |  $1.35M: $1.83M | p1853 | Minnesota Axmen      | *
@@ -1694,7 +1695,7 @@ CF Milton Legg               29| RF : 101     -13  23     : 111 |    :          
 SP Basilio Aguila            20| SP :      47      -8     :  38 | SP :      85      22     : 107 |   6 | 113 |          |   3           |        :        |  p574 | Minnesota Axmen      | ++++
 LF Robert Rea                21| LF :  75      -4  -2     :  69 | LF :  92      -4  16     : 104 |   6 | 110 | -2---633 |   4           |        :        | p1786 | Minnesota Axmen      | +++-
 SP Ryan Weiss                30| SP :      80      26     : 106 |    :                     :   0 |   3 | 109 |          |  F    $350k   |  $2.51M: $3.39M |  p536 | Minnesota Axmen      | *^
-MR Ben Briseno               29| MR :      83      17     : 100 |    :                     :   0 |   4 | 104 |          |               |  $1.64M: $2.22M | p1665 | Minnesota Axmen      | **^
+MR Ben Briseno               30| MR :      83      17     : 100 |    :                     :   0 |   3 | 103 |          |               |  $1.64M: $2.22M | p1665 | Minnesota Axmen      | **^
 2B Edward Walborn            32| 2B :  98     -10  15     : 102 |    :                     :   0 |   1 | 103 | -22-1--- |         $1Mx3 |  $1.45M: $1.96M |  p544 | Minnesota Axmen      | **
 1B Joe Gedeon                36| RF : 100     -11  23     : 112 |    :                     :   0 | -12 | 100 | -2---2-2 |  F    $9.5M   |  $2.22M:    $3M | p1569 | Minnesota Axmen      | **^
 SS George Green              23| SS :  66       4 -11     :  59 | SS :  81       4   9     :  93 |   6 |  99 | -2415--- |   6           |        :        |  p541 | Minnesota Axmen      | +++
@@ -1737,7 +1738,7 @@ MR Edwin Chamberlain         29| SP :      92      38     : 130 |    :          
 LF Marc Weaver               26| LF :  92      -1  18     : 110 | LF :  98      -1  25     : 122 |   6 | 128 | -3---734 |               |  $1.74M: $2.35M | p1298 | Northeastern Blac... | **
 MR Mason Hernandez           22| MR :      74      10     :  84 | MR :      96      25     : 121 |   6 | 127 |          |   6           | $965.3k:  $1.3M | p1430 | Northeastern Blac... | ++++-
 LF Frank Cushing             26| RF :  89      -5  18     : 102 | RF :  99      -5  25     : 119 |   6 | 125 | -241-445 |       $300k a |  $1.74M: $2.35M | p1694 | Northeastern Blac... | *
-MR Jacky Salazar             27| SP :      85      30     : 115 |    :                     :   0 |   6 | 121 |          |       $600k a |   $2.9M: $3.91M | p1677 | Northeastern Blac... | **^
+MR Jacky Salazar             27| SP :      85      30     : 115 |    :                     :   0 |   6 | 121 |          |       $600k a |   $2.9M: $3.91M | p1677 | Northeastern Blac... | ***
 SP John Camargo              20| SP :      17     -38     : -21 | SP :      87      24     : 111 |   6 | 117 |          |   2           |        :        | p1490 | Northeastern Blac... | +++++
 SP Kenneth Schoenberger      23| SP :      51      -4     :  46 | SP :      87      24     : 111 |   6 | 117 |          |   3           |        :        | p1822 | Northeastern Blac... | ++++
 SS Joseph Lindholm           24| SS :  75       4  -1     :  78 | SS :  86       4  14     : 104 |   6 | 110 | -2115--- |               |        :        | p1741 | Northeastern Blac... | ++-
@@ -1765,7 +1766,7 @@ CF Harold Chubb              21| CF :  52       1 -27     :  25 | CF :  77      
 MR Carl Pursley              24| MR :      61      -2     :  58 | MR :      74       5     :  79 |   6 |  85 |          |   9           |        :        |  p578 | Northeastern Blac... | ++++
 RF Wenceslao Martinez        34| RF :  87     -11  11     :  87 |    :                     :   0 |  -2 |  85 | -1---212 |  F    $798k   |  $1.06M: $1.44M |  p647 | Northeastern Blac... | *
 RF Jerry Henderson           32| RF :  84     -10   8     :  82 |    :                     :   0 |   1 |  83 | -312-2-3 |               | $772.2k: $1.04M | p1634 | Northeastern Blac... | *
-CL Jesse Cordes              31| MR :      72       7     :  79 |    :                     :   0 |   2 |  81 |          |  F   $1.61M   | $675.7k:$913.4k | p1052 | Northeastern Blac... | ***^
+CL Jesse Cordes              31| MR :      72       7     :  79 |    :                     :   0 |   2 |  81 |          |  F   $1.61M   | $675.7k:$913.4k | p1052 | Northeastern Blac... | ***
 CL Lee Benito                23| MR :      42     -18     :  24 | MR :      69       1     :  71 |   6 |  77 |          |               |        :        |  p320 | Northeastern Blac... | +++
 SP Eddie Hughs               31| SP :      64       9     :  73 |    :                     :   0 |   2 |  75 |          |               | $868.8k: $1.17M | p1507 | Northeastern Blac... | *
 MR Johnnie Brown             21| MR :      41     -19     :  21 | MR :      67      -1     :  66 |   6 |  72 |          |               |        :        | p1630 | Northeastern Blac... | ++-
@@ -1829,7 +1830,7 @@ MR Pedro Quintana            25| MR :      48     -13     :  34 | MR :      65  
 
 --- Boston (UBA) Pilgrims ---
 SP Eddie Everett             25| SP :     119      64     : 183 | SP :     123      60   8 : 191 |   6 | 197 |          |      $2.79M a |  $6.18M: $8.35M |  p773 | Boston (UBA) Pilg... | ***^
-3B Ramon Ortiz               26| 3B : 114       3  42   9 : 168 | 3B : 121       3  51  16 : 191 |   6 | 197 | -216---- |       $300k r |  $4.92M: $6.65M | p1111 | Boston (UBA) Pilg... | ***
+3B Ramon Ortiz               26| 3B : 114       3  42   9 : 168 | 3B : 121       3  51  16 : 191 |   6 | 197 | -216---- |       $300k r |  $4.92M: $6.65M | p1111 | Boston (UBA) Pilg... | ***^
  C Mickey McGrath            28|  C : 125      -3  33  26 : 181 |    :                     :   0 |   5 | 186 | 33------ |         $4Mx7 |   $5.7M:  $7.7M |  p927 | Boston (UBA) Pilg... | ***^
 SP William Carolan           33| SP :     114      59     : 173 |    :                     :   0 |   0 | 173 |          |         $6Mx2 |   $5.7M:  $7.7M |  p884 | Boston (UBA) Pilg... | ****
 MR Joey Turner               28| SP :     109      54     : 163 |    :                     :   0 |   5 | 168 |          |         $3Mx2 |  $5.21M: $7.05M |  p742 | Boston (UBA) Pilg... | ****^
@@ -1918,7 +1919,7 @@ RF Stephen Sweitzer          25| RF :  76     -11   0     :  65 | RF :  87     -
 RF Aaron Fenley              26| RF :  78     -10   2     :  70 | RF :  85     -10   6     :  81 |   6 |  87 | -221-212 |               | $193.1k:  $261k | p1492 | Longport Bluefish    | *
 SP Jack Marcano              33| SP :      71      16     :  87 |    :                     :   0 |   0 |  87 |          |               |  $1.54M: $2.09M |  p502 | Longport Bluefish    | *
 SP Christopher Keane         27| SP :      67      13     :  80 |    :                     :   0 |   6 |  86 |          |               |  $1.25M:  $1.7M |  p816 | Longport Bluefish    | *
-MR Pedro Barranco            21| MR :      44     -16     :  28 | MR :      73       4     :  77 |   6 |  83 |          |               |        :        | p1219 | Longport Bluefish    | +++-
+MR Pedro Barranco            22| MR :      44     -16     :  28 | MR :      73       4     :  77 |   6 |  83 |          |               |        :        | p1219 | Longport Bluefish    | +++-
  C Ediberto Adorno           20|  C :  65       0 -23     :  42 |  C :  77       0  -3     :  74 |   6 |  80 | 41------ |               |        :        |  p540 | Longport Bluefish    | +
 RF Markus Langham            20| RF :  52      -8 -22     :  22 | RF :  80      -8   3     :  74 |   6 |  80 | -2---323 |               |        :        | p1026 | Longport Bluefish    | +
 RF Sidney Sandlin            32| RF :  82     -10   7     :  79 |    :                     :   0 |   1 |  80 | -2---213 |               | $675.7k:$913.4k |  p268 | Longport Bluefish    | *
@@ -1937,11 +1938,11 @@ CF Alvin Aznar               24| RF : 102      -1  35     : 136 | CF : 124      
 SP Benny Orta                35| SP :     126      71   4 : 200 |    :                     :   0 |  -6 | 194 |          |      $4.19Mx3 |  $7.14M: $9.66M |  p883 | Manchester Red De... | ***
 3B Kyle Austin               23| 3B : 109      -1  34   1 : 143 | 3B : 122      -1  48  14 : 183 |   6 | 189 | -215---- |   2   $300k r |  $3.28M: $4.44M |  p279 | Manchester Red De... | +++++
 1B Lou Collins               30| 1B : 125     -11  44   6 : 165 |    :                     :   0 |   3 | 168 | -4------ |      $4.62Mx2 |  $4.92M: $6.65M |  p136 | Manchester Red De... | ****
-SP Douglas Wilson            25| SP :      77      22     : 100 | SP :     108      45     : 153 |   6 | 159 |          |   5           |  $2.12M: $2.87M | p1415 | Manchester Red De... | ++++-
 3B Andrew Seiter             28| 3B : 108       4  37   4 : 153 |    :                     :   0 |   5 | 158 | -2261--- |         $5Mx3 |  $3.96M: $5.35M | p1488 | Manchester Red De... | ***^
 LF Keith Cobos               32| RF : 110      -4  41     : 147 |    :                     :   0 |   1 | 148 | -2---546 |  F  $871.4k   |  $3.96M: $5.35M | p1840 | Manchester Red De... | **
 SP Brian Tso                 20| SP :      46      -9     :  37 | SP :     102      39     : 141 |   6 | 147 |          |   4           |        :        |  p159 | Manchester Red De... | +++++
 CL Duke Simpson              26| MR :      92      25     : 116 | MR :     106      34     : 140 |   6 | 146 |          |       $300k a |  $2.41M: $3.26M |  p643 | Manchester Red De... | *****
+SP Douglas Wilson            26| SP :      77      22     : 100 | SP :      94      31     : 125 |   6 | 131 |          |   5           |  $2.12M: $2.87M | p1415 | Manchester Red De... | *
 MR Gregorio Armas            21| SP :      60       5     :  66 | SP :      94      30     : 124 |   6 | 130 |          |   8           | $482.6k:$652.4k |  p423 | Manchester Red De... | ++++-
 SP Jamie Albertson           31| SP :      90      36     : 126 |    :                     :   0 |   2 | 128 |          |               |  $3.48M:  $4.7M |  p504 | Manchester Red De... | *
 CF William Conrad            22| CF :  73       1  -6     :  67 | CF :  97       1  22     : 119 |   6 | 125 | -2---353 |               |        :        |  p906 | Manchester Red De... | ++-
@@ -2012,14 +2013,14 @@ MR Andrew Schillinger        28| SP :      72      17     :  89 |    :          
 SP Charles Reynolds          23| SP :      69      14     :  84 | SP :      65       1     :  66 |   6 |  90 |          |   2           |  $1.35M: $1.83M |  p837 | Penn Quakers         | +++-
 CF Gary Brouillette          20| RF :  64      -7  -9     :  48 | RF :  83      -7   7     :  83 |   6 |  89 | -2---324 |               |        :        | p1080 | Penn Quakers         | ++
 MR Adam Harris               28| SP :      69      14     :  84 |    :                     :   0 |   5 |  89 |          |       $300k r |  $1.35M: $1.83M |  p280 | Penn Quakers         | **^
-SS John Loggins              24| SS :  75      -3  -8     :  64 | SS :  82      -3   3     :  82 |   6 |  88 | -2113--- |               |        :        | p1329 | Penn Quakers         | +-
+SS John Loggins              25| SS :  75      -3  -8     :  64 | SS :  81      -3   2     :  80 |   6 |  86 | -2113--- |               |        :        | p1329 | Penn Quakers         | +-
 RF Aron Fong                 22| RF :  63      -7 -10     :  46 | RF :  81      -7   5     :  79 |   6 |  85 | -2---314 |               |        :        | p1509 | Penn Quakers         | +-
 SP Randy Fleury              20| SP :      47      -8     :  39 | SP :      71       8     :  78 |   6 |  84 |          |   9           |        :        | p1032 | Penn Quakers         | ++-
 SP Colby Zamora              22| SP :      47      -8     :  39 | SP :      70       7     :  77 |   6 |  83 |          |   1           |        :        | p1157 | Penn Quakers         | +++++
 MR Timothy Douglas           23| MR :      59      -4     :  55 | MR :      73       4     :  77 |   6 |  83 |          |               |        :        | p1209 | Penn Quakers         | +++
  C Duncan Stang              22|  C :  67      -5 -26     :  36 |  C :  83      -5  -2     :  76 |   6 |  82 | 31------ |               |        :        |  p527 | Penn Quakers         | ++
 LF Kevin Burk                33| RF :  80      -7   7     :  80 |    :                     :   0 |   0 |  80 | -2---424 |               | $675.7k:$913.4k | p1140 | Penn Quakers         | *
-CF Horacio Velazquez         32| RF :  82     -10   6     :  78 |    :                     :   0 |   1 |  79 | -1---212 |       $350k a | $579.2k:$782.9k | p1478 | Penn Quakers         | *
+CF Horacio Velazquez         33| RF :  82     -10   6     :  78 |    :                     :   0 |   0 |  78 | -1---212 |       $350k a | $579.2k:$782.9k | p1478 | Penn Quakers         | *
 MR Bernard Gutierrez         21| MR :      44     -16     :  28 | MR :      69       1     :  71 |   6 |  77 |          |               |        :        | p1454 | Penn Quakers         | +++
  C Pedro Lizarraga           25|  C :  72      -3 -20     :  49 |  C :  79      -3  -5     :  71 |   6 |  77 | 31------ |               |        :        | p1243 | Penn Quakers         | +
 2B Chang Baynes              28| 2B :  80      -9  -2     :  68 |    :                     :   0 |   5 |  73 | -221---- |       $300k r |        :        |  p343 | Penn Quakers         | *
@@ -2096,7 +2097,7 @@ MR Michael Jones             26| MR :     101      33     : 134 | MR :     113  
 SP Guillermo Cruz            25| SP :     104      49     : 153 | SP :      93      30     : 123 |   6 | 159 |          |   9           |  $4.73M: $6.39M | p1255 | Columbus Cows        | +++
 SP Montgomery Brewster       30| SP :     103      48     : 151 |    :                     :   0 |   3 | 154 |          |  F   $1.56M   |  $4.63M: $6.26M |  p373 | Columbus Cows        | **^
 1B Harold Harris             20| 1B :  93     -12  11     :  92 | 1B : 118     -12  35     : 140 |   6 | 146 | -3------ |   3           |  $1.06M: $1.44M | p1277 | Columbus Cows        | +++++
-3B Santo Alvarado            32| SS : 108      -3  25   6 : 136 |    :                     :   0 |   1 | 137 | -2243--- |         $8Mx4 |   $2.9M: $3.91M | p1050 | Columbus Cows        | **^
+3B Santo Alvarado            32| SS : 108      -3  25   6 : 136 |    :                     :   0 |   1 | 137 | -2243--- |         $8Mx4 |   $2.9M: $3.91M | p1050 | Columbus Cows        | ***
 RF Jorge Bosquet             23| RF :  78      -5   8     :  81 | RF : 103      -5  29     : 128 |   6 | 134 | -2---425 |   5           | $772.2k: $1.04M | p1013 | Columbus Cows        | ++++
 3B Albert Valdez             25| 3B :  94      -5  15     : 105 | 3B : 104      -5  26     : 126 |   6 | 132 | -214---- |   6           |  $1.45M: $1.96M |  p260 | Columbus Cows        | +++-
 SP Jeffrey Denney            30| SP :      91      36     : 128 |    :                     :   0 |   3 | 131 |          |               |  $3.48M:  $4.7M | p1692 | Columbus Cows        | *
@@ -2110,8 +2111,8 @@ MR James Fillmore            23| MR :      74       9     :  83 | MR :      94  
 CF Shane Bosley              31| RF : 104     -11  28     : 121 |    :                     :   0 |   2 | 123 | -1---232 |         $3Mx2 |   $2.7M: $3.65M | p1265 | Columbus Cows        | **^
 MR Anatoli Smorin            19| MR :      28     -31     :  -3 | MR :      92      21     : 113 |   6 | 119 |          |   7           |        :        |   p86 | Columbus Cows        | +++++
 RF Thad Ketcham              30| RF :  96      -5  25     : 116 |    :                     :   0 |   3 | 119 | -1---215 |       $300k a |  $2.41M: $3.26M | p1911 | Columbus Cows        | **
-3B Tommy Skillings           19| 3B :  69      -1  -6     :  61 | 3B :  92      -1  18     : 109 |   6 | 115 | -215---- |               |        :        |  p553 | Columbus Cows        | +++
-MR Daniel Olivar             28| SP :      81      26     : 108 |    :                     :   0 |   5 | 113 |          |               |  $2.51M: $3.39M | p1536 | Columbus Cows        | **
+3B Tommy Skillings           19| 3B :  69      -1  -7     :  61 | 3B :  92      -1  18     : 109 |   6 | 115 | -215---- |               |        :        |  p553 | Columbus Cows        | +++
+MR Daniel Olivar             28| SP :      81      26     : 108 |    :                     :   0 |   5 | 113 |          |               |  $2.51M: $3.39M | p1536 | Columbus Cows        | **^
 3B Murray Krier              22| SS :  74       4  -2     :  75 | SS :  87       4  15     : 106 |   6 | 112 | -2455--- |               |        :        | p1367 | Columbus Cows        | ++
 2B Gabriel Vallo             30| 2B :  94      -4  17     : 106 |    :                     :   0 |   3 | 109 | -2423--- |       $300k r |  $1.64M: $2.22M |  p146 | Columbus Cows        | **
 1B Bruce Lindsey             32| 1B : 100     -12  18     : 106 |    :                     :   0 |   1 | 107 | -3------ |       $300k a |  $1.74M: $2.35M | p1555 | Columbus Cows        | *^
@@ -2135,7 +2136,7 @@ RF Shintaro Matsuo           19| RF :  64     -10 -12     :  42 | RF :  82     -
 SP David Fuentez             27| SP :      64       9     :  74 |    :                     :   0 |   6 |  80 |          |               | $868.8k: $1.17M |  p532 | Columbus Cows        | *
 RF Gerard Longshore          23| RF :  60      -9 -15     :  36 | RF :  79      -9   1     :  71 |   6 |  77 | -2---313 |               |        :        | p1305 | Columbus Cows        | +
 RF Sylvester Knight          26| RF :  75      -9   0     :  66 | RF :  79      -9   1     :  71 |   6 |  77 | -2---313 |               |        :        |  p281 | Columbus Cows        | *
-2B Lonnie Lis                33| 2B :  83      -9   1     :  75 |    :                     :   0 |   0 |  75 | -2221--- |               |  $96.5k:$130.5k | p1541 | Columbus Cows        | *
+2B Lonnie Lis                34| 2B :  83      -9   1     :  75 |    :                     :   0 |  -2 |  73 | -2221--- |               |  $96.5k:$130.5k | p1541 | Columbus Cows        | *
 2B Stephen Barnes            25| 2B :  65      -1  -9     :  56 | 2B :  69      -1  -4     :  64 |   6 |  70 | -255---- |               |        :        |  p410 | Columbus Cows        | +
 SS Owen Salamanca            24| 1B :  71     -14 -13     :  44 | 1B :  81     -14  -4     :  63 |   6 |  69 | -11----- |               |        :        | p1407 | Columbus Cows        | +-
 
@@ -2151,9 +2152,9 @@ CF John Baugh                33| RF : 107      -5  36     : 138 |    :          
 MR Michael Taylor            33| MR :     100      32     : 133 |    :                     :   0 |   0 | 133 |          |  F    $3.5M   |  $3.09M: $4.18M |  p413 | Coney Island Cycl... | ****^
 SS William Perras Jr.        24| 3B : 100     -11  15     : 104 | 3B : 110     -11  26     : 125 |   6 | 131 | -2-11--- |     $714.3k a |  $1.45M: $1.96M |  p388 | Coney Island Cycl... | **^
  C Clinton Lane              28|  C :  96       7  14   7 : 125 |    :                     :   0 |   5 | 130 | 61------ |       $515k a |  $2.12M: $2.87M | p1238 | Coney Island Cycl... | **^
-MR Constantino Quevedo       27| MR :      95      28     : 123 |    :                     :   0 |   6 | 129 |          |       $300k a |   $2.7M: $3.65M | p1204 | Coney Island Cycl... | ***^
+MR Constantino Quevedo       27| MR :      95      28     : 123 |    :                     :   0 |   6 | 129 |          |       $300k a |   $2.7M: $3.65M | p1204 | Coney Island Cycl... | ****
 CF Andreas Colin             32| RF :  98      -1  31     : 128 |    :                     :   0 |   1 | 129 | -2---377 |               |  $2.99M: $4.05M | p1769 | Coney Island Cycl... | *
-MR Donte Kleiber             31| MR :      93      25     : 118 |    :                     :   0 |   2 | 120 |          |       $2.5Mx3 |  $2.41M: $3.26M | p1587 | Coney Island Cycl... | ****^
+MR Donte Kleiber             31| MR :      93      25     : 118 |    :                     :   0 |   2 | 120 |          |       $2.5Mx3 |  $2.41M: $3.26M | p1587 | Coney Island Cycl... | *****
 1B Bobson Dugnutt            23| 1B :  75     -10  -5     :  61 | 1B : 102     -10  21     : 113 |   6 | 119 | -5------ |   3           |        :        |  p939 | Coney Island Cycl... | +++++
 SS Michael Nolan             25| 2B :  77      -2   3     :  78 | 2B :  93      -2  19     : 111 |   6 | 117 | -2543--- |   2           | $289.6k:$391.5k | p1176 | Coney Island Cycl... | +++++
 LF Alfonso Mejorado          32| RF : 104     -13  25     : 116 |    :                     :   0 |   1 | 117 | -1---2-1 |      $3.05Mx2 |  $2.41M: $3.26M | p1061 | Coney Island Cycl... | **^
@@ -2173,7 +2174,7 @@ MR Ruben Bigby               27| MR :      77      12     :  89 |    :          
 SP Anthony Saad              28| SP :      72      18     :  90 |    :                     :   0 |   5 |  95 |          |               |  $1.74M: $2.35M |  p602 | Coney Island Cycl... | *
 SP Randall Trimble           26| SP :      69      14     :  84 | SP :      76      12     :  88 |   6 |  94 |          |               |  $1.35M: $1.83M | p1417 | Coney Island Cycl... | *
 LF Carlos Meraz              31| RF :  87      -8  13     :  92 |    :                     :   0 |   2 |  94 | -1---313 |               |  $1.25M:  $1.7M | p1411 | Coney Island Cycl... | *
-MR Blas Porcaro              29| MR :      77      12     :  89 |    :                     :   0 |   4 |  93 |          |               |  $1.16M: $1.57M | p1343 | Coney Island Cycl... | **^
+MR Blas Porcaro              29| MR :      77      12     :  89 |    :                     :   0 |   4 |  93 |          |               |  $1.16M: $1.57M | p1343 | Coney Island Cycl... | ***
 2B Martin Costas             25| 2B :  74      -4  -3     :  67 | 2B :  83      -4   7     :  86 |   6 |  92 | -241---- |               |        :        |  p842 | Coney Island Cycl... | ++
 RF Fred Payson               25| RF :  77     -10   2     :  69 | RF :  87     -10   9     :  86 |   6 |  92 | -2---313 |               | $193.1k:  $261k | p1448 | Coney Island Cycl... | ++
 MR Ronald Ugarte             24| MR :      46     -15     :  31 | MR :      77       8     :  85 |   6 |  91 |          |               |        :        |  p877 | Coney Island Cycl... | +++-
@@ -2264,8 +2265,8 @@ CF Jamar Shay                23| CF :  73       9   2     :  85 | CF :  88      
 1B Deon Shuey                27| 1B : 106     -12  24     : 118 |    :                     :   0 |   6 | 124 | -3------ |  F   $3.64M   |  $2.32M: $3.13M | p1344 | Pittsburgh Beacons   | ****
 RF Daryl Dick                30| RF : 100      -7  28     : 121 |    :                     :   0 |   3 | 124 | -2---214 |               |   $2.7M: $3.65M |  p720 | Pittsburgh Beacons   | **
 MR Pedro Riojas              21| MR :      48     -13     :  36 | MR :      94      23     : 117 |   6 | 123 |          |   3           |        :        |  p667 | Pittsburgh Beacons   | +++++
-MR Kevin Stiver              23| MR :      71       7     :  78 | MR :      93      22     : 116 |   6 | 122 |          |      $1.03M a | $675.7k:$913.4k | p1201 | Pittsburgh Beacons   | ****^
-MR Ronald Najera             31| MR :      92      25     : 116 |    :                     :   0 |   2 | 118 |          |  F    $1.6M   |  $2.41M: $3.26M | p1482 | Pittsburgh Beacons   | ****
+CL Kevin Stiver              23| MR :      71       7     :  78 | MR :      93      22     : 116 |   6 | 122 |          |      $1.03M a | $675.7k:$913.4k | p1201 | Pittsburgh Beacons   | ****^
+MR Ronald Najera             31| MR :      92      25     : 116 |    :                     :   0 |   2 | 118 |          |  F    $1.6M   |  $2.41M: $3.26M | p1482 | Pittsburgh Beacons   | ****^
  C Spike Nolan               30|  C :  92       7  10   3 : 113 |    :                     :   0 |   3 | 116 | 62------ |  F    $730k   |  $1.35M: $1.83M |  p184 | Pittsburgh Beacons   | **^
 2B Dick Grafton              19| SS :  53      10 -17     :  46 | SS :  82      10  16     : 108 |   6 | 114 | -2546--- |               |        :        |  p237 | Pittsburgh Beacons   | +-
 MR Ariel Paiva               25| MR :      87      21     : 108 | MR :      74       6     :  80 |   6 | 114 |          |               |  $2.03M: $2.74M | p1328 | Pittsburgh Beacons   | +++
@@ -2352,35 +2353,35 @@ SP Robert Clark              21| SP :      16     -39     : -23 | SP :      52  
 FBA
 Pryor ---------------+
 Syracuse Orangemen   | 109.3 107.2 115.9 |  91.8  90.2  81.1 |  76- 86 0.469 |   0-  0 0.500 |  76- 86 0.469 (16) 
-Capital City Goof... |  98.6  99.7  98.3 |  95.8  94.5  90.0 |  71- 91 0.439 |   0-  0 0.500 |  71- 91 0.438 (19) 
-Boston (FBA) Ship... | 101.8 100.1 101.9 |  93.8  90.9  84.0 |  68- 94 0.423 |   0-  0 0.500 |  68- 94 0.420 (22) 
+Capital City Goof... |  98.6  99.7  98.3 |  95.8  94.5  90.0 |  71- 91 0.439 |   0-  0 0.500 |  71- 91 0.438 (20) 
+Boston (FBA) Ship... | 101.8 100.1 101.9 |  93.8  90.9  84.0 |  68- 94 0.423 |   0-  0 0.500 |  68- 94 0.420 (21) 
 Gashouse Goons       |  95.0  94.1  88.8 |  88.3  90.0  77.6 |  52-110 0.322 |   0-  0 0.500 |  52-110 0.321 (26) 
 Poynter -------------+
-Ashburn Aardvarks    | 106.3 108.5 114.0 |  94.0  93.1  86.7 |  80- 82 0.494 |   0-  0 0.500 |  80- 82 0.494 (11) 
-Halifax Highlanders  | 102.0 100.3 102.3 |  98.2  98.5  96.6 |  80- 82 0.495 |   0-  0 0.500 |  80- 82 0.494 (12) 
+Ashburn Aardvarks    | 106.3 108.5 114.0 |  94.0  93.1  86.7 |  80- 82 0.494 |   0-  0 0.500 |  80- 82 0.494 (12) 
+Halifax Highlanders  | 102.0 100.3 102.3 |  98.2  98.5  96.6 |  80- 82 0.495 |   0-  0 0.500 |  80- 82 0.494 (11) 
 Plum Grove Fire Ants |  95.4  95.7  91.0 | 101.8 100.8 102.7 |  75- 87 0.466 |   0-  0 0.500 |  75- 87 0.463 (17) 
-New Jersey Mundys    | 105.3 106.2 111.1 |  88.6  88.8  76.3 |  68- 94 0.418 |   0-  0 0.500 |  68- 94 0.420 (21) 
+New Jersey Mundys    | 105.3 106.2 111.1 |  88.6  88.8  76.3 |  68- 94 0.418 |   0-  0 0.500 |  68- 94 0.420 (22) 
 Gofannon ------------+
 Malibu Rum Runners   |  99.7  98.8  98.5 | 107.1 109.8 115.9 |  92- 70 0.566 |   0-  0 0.500 |  92- 70 0.568 ( 5) 
 Pontiac Firebirds    | 103.2 105.5 108.5 |  95.9  97.0  92.8 |  82- 80 0.503 |   0-  0 0.500 |  82- 80 0.506 (10) 
-Bay City Bluebirds   |  94.1  93.2  87.0 | 102.6 101.1 103.7 |  73- 89 0.448 |   0-  0 0.500 |  73- 89 0.451 (18) 
-Troy Haymakers       |  91.9  91.8  83.1 |  99.8  96.4  96.1 |  63- 99 0.389 |   0-  0 0.500 |  63- 99 0.389 (25) 
+Bay City Bluebirds   |  94.2  93.2  87.0 | 102.6 101.1 103.7 |  73- 89 0.448 |   0-  0 0.500 |  73- 89 0.451 (18) 
+Troy Haymakers       |  91.9  91.8  83.1 |  99.8  96.4  96.1 |  63- 99 0.389 |   0-  0 0.500 |  63- 99 0.389 (24) 
 
 UBA
 Fowler --------------+
 Wisconsin Cheetahs   | 107.1 110.8 116.7 | 106.6 106.1 112.3 | 102- 60 0.632 |   0-  0 0.500 | 102- 60 0.630 ( 2) 
 Minnesota Axmen      |  98.3  99.5  97.9 | 108.4 106.5 114.4 |  90- 72 0.556 |   0-  0 0.500 |  90- 72 0.556 ( 6) 
 Lynchburg Distillers |  96.9  98.6  95.5 |  98.7 103.6 102.2 |  79- 83 0.487 |   0-  0 0.500 |  79- 83 0.488 (13) 
-Northeastern Blac... |  95.6  95.8  91.2 |  94.6  93.1  87.2 |  63- 99 0.388 |   0-  0 0.500 |  63- 99 0.389 (24) 
+Northeastern Blac... |  95.6  95.8  91.3 |  94.6  93.1  87.2 |  63- 99 0.388 |   0-  0 0.500 |  63- 99 0.389 (25) 
 McCarthey -----------+
 Boston (UBA) Pilg... | 102.8 102.7 105.4 | 112.8 107.9 120.0 | 100- 62 0.615 |   0-  0 0.500 | 100- 62 0.617 ( 3) 
 Toledo Mudhens       | 105.8 104.2 109.9 | 102.9 105.3 107.9 |  95- 67 0.584 |   0-  0 0.500 |  95- 67 0.586 ( 4) 
-Penn Quakers         |  92.5  96.2  88.6 | 103.1 103.3 106.3 |  76- 86 0.470 |   0-  0 0.500 |  76- 86 0.469 (14) 
 Manchester Red De... |  99.0 100.2  99.2 |  96.7  98.5  95.2 |  76- 86 0.471 |   0-  0 0.500 |  76- 86 0.469 (15) 
-Longport Bluefish    |  96.7  95.5  92.0 |  97.3  99.3  96.6 |  71- 91 0.441 |   0-  0 0.500 |  71- 91 0.438 (20) 
+Penn Quakers         |  92.5  96.2  88.6 | 103.1 103.3 106.3 |  76- 86 0.470 |   0-  0 0.500 |  76- 86 0.469 (14) 
+Longport Bluefish    |  96.7  95.5  92.0 |  97.3  99.3  96.6 |  71- 91 0.441 |   0-  0 0.500 |  71- 91 0.438 (19) 
 Rutherford ----------+
 Pittsburgh Beacons   | 108.4 107.6 115.4 | 108.7 109.5 117.2 | 105- 57 0.647 |   0-  0 0.500 | 105- 57 0.648 ( 1) 
-West Texas Tumble... |  98.8  97.2  95.9 | 107.7 107.3 114.5 |  89- 73 0.547 |   0-  0 0.500 |  89- 73 0.549 ( 7) 
+West Texas Tumble... |  98.8  97.2  95.8 | 107.7 107.3 114.5 |  88- 74 0.546 |   0-  0 0.500 |  88- 74 0.543 ( 7) 
 Coney Island Cycl... |  95.6  94.4  89.7 | 110.2 110.9 119.8 |  87- 75 0.536 |   0-  0 0.500 |  87- 75 0.537 ( 8) 
 Columbus Cows        | 102.1 101.3 103.4 |  98.9 101.4 100.3 |  84- 78 0.518 |   0-  0 0.500 |  84- 78 0.519 ( 9) 
 Diablo Autarchs      |  97.5  94.9  92.1 |  95.6  96.0  91.5 |  67- 95 0.415 |   0-  0 0.500 |  67- 95 0.414 (23) 
@@ -2391,7 +2392,7 @@ Diablo Autarchs      |  97.5  94.9  92.1 |  95.6  96.0  91.5 |  67- 95 0.415 |  
 CF William Conrad            22| CF :  73       1  -6     :  67 | CF :  97       1  22     : 119 |   6 | 125 | -2---353 |               |        :        |  p906 | Manchester Red De... | ++-
 2B Larry Randles             24| 2B :  77       0   4     :  82 | 2B :  95       0  23     : 118 |   6 | 124 | -2521--- |               | $386.1k:  $522k |  p124 | Wisconsin Cheetahs   | ++-
  C Bill Link                 21|  C :  65      11 -13     :  62 |  C :  85      11  15     : 111 |   6 | 117 | 61------ |               |        :        | p1074 | Lynchburg Distillers | ++
-3B Tommy Skillings           19| 3B :  69      -1  -6     :  61 | 3B :  92      -1  18     : 109 |   6 | 115 | -215---- |               |        :        |  p553 | Columbus Cows        | +++
+3B Tommy Skillings           19| 3B :  69      -1  -7     :  61 | 3B :  92      -1  18     : 109 |   6 | 115 | -215---- |               |        :        |  p553 | Columbus Cows        | +++
 SS Robert Morgan             22| SS :  69       6  -6     :  69 | SS :  87       6  16     : 109 |   6 | 115 | -2225--- |               |        :        | p1174 | Lynchburg Distillers | ++
 SS George Robinson           25| SS :  80       6   5     :  91 | SS :  87       6  17     : 109 |   6 | 115 | -3225--- |               | $482.6k:$652.4k | p1360 | Diablo Autarchs      | ++
 2B Dick Grafton              19| SS :  53      10 -17     :  46 | SS :  82      10  16     : 108 |   6 | 114 | -2546--- |               |        :        |  p237 | Pittsburgh Beacons   | +-
@@ -2446,6 +2447,7 @@ SP Joey Martinez             26| SP :      98      43     : 142 | SP :      98  
 SP John Mills                26| SP :      95      41     : 136 | SP :      91      27     : 118 |   6 | 142 |          |               |  $3.96M: $5.35M |   p33 | Boston (UBA) Pilg... | *
 SS Clarence Murph            33| SS :  97       9  26   7 : 139 |    :                     :   0 |   0 | 139 | -2226--- |  F    $1.8M   |  $3.19M: $4.31M |  p559 | Diablo Autarchs      | **^
 MR Juan Vinyals              26| MR :      99      31     : 131 | MR :      82      13     :  95 |   6 | 137 |          |               |  $2.99M: $4.05M |  p661 | Lynchburg Distillers | *
+SP Douglas Wilson            26| SP :      77      22     : 100 | SP :      94      31     : 125 |   6 | 131 |          |   5           |  $2.12M: $2.87M | p1415 | Manchester Red De... | *
 SP Jeffrey Denney            30| SP :      91      36     : 128 |    :                     :   0 |   3 | 131 |          |               |  $3.48M:  $4.7M | p1692 | Columbus Cows        | *
 SP Alberto Deles             30| SP :      91      36     : 127 |    :                     :   0 |   3 | 130 |          |               |  $3.48M:  $4.7M | p1155 | Plum Grove Fire Ants | *
 CF Andreas Colin             32| RF :  98      -1  31     : 128 |    :                     :   0 |   1 | 129 | -2---377 |               |  $2.99M: $4.05M | p1769 | Coney Island Cycl... | *
@@ -2472,7 +2474,7 @@ SP Bill Oneal                26| SP :      81      26     : 108 | SP :      82  
 2B John Boll                 29| SS :  80      15  15     : 110 |    :                     :   0 |   4 | 114 | -3828--- |               |  $1.45M: $1.96M |  p682 | Syracuse Orangemen   | *
 RF Wilmer Bowen              26| RF :  93      -9  18     : 102 | RF :  97      -9  19     : 107 |   6 | 113 | -2---213 |               |  $1.74M: $2.35M | p1726 | Lynchburg Distillers | **
 3B Clement Ledger            28| 2B :  87       3  18     : 108 |    :                     :   0 |   5 | 113 | -2641--- |               |  $1.74M: $2.35M |  p878 | Longport Bluefish    | *
-MR Daniel Olivar             28| SP :      81      26     : 108 |    :                     :   0 |   5 | 113 |          |               |  $2.51M: $3.39M | p1536 | Columbus Cows        | **
+MR Daniel Olivar             28| SP :      81      26     : 108 |    :                     :   0 |   5 | 113 |          |               |  $2.51M: $3.39M | p1536 | Columbus Cows        | **^
  C Joseph Heatherly          31|  C :  96       3  10   3 : 111 |    :                     :   0 |   2 | 113 | 41------ |      $1.22Mx2 |  $1.25M:  $1.7M |  p228 | Capital City Goof... | **
 MR Jamar Villareal           28| MR :      87      20     : 107 |    :                     :   0 |   5 | 112 |          |               |  $1.93M: $2.61M | p1447 | Diablo Autarchs      | *
  C Hernan Espinel            29|  C :  79      19   9   2 : 108 |    :                     :   0 |   4 | 112 | 81------ |               |  $1.06M: $1.44M |   p74 | New Jersey Mundys    | *
@@ -2488,4 +2490,3 @@ RF Lorenzo Medina            27| RF :  88      -6  17     :  99 |    :          
 CF Carlos Olivarria          28| CF :  84       6  10     : 100 |    :                     :   0 |   5 | 105 | -2---776 |               | $965.3k:  $1.3M |  p245 | Syracuse Orangemen   | *
 LF Augustine Marzano         29| RF :  84      -1  18     : 101 |    :                     :   0 |   4 | 105 | -2111737 |               |  $1.74M: $2.35M |   p18 | Longport Bluefish    | *
 3B Emilio Gutierrez          26| 3B :  83      -4   4     :  83 | 3B :  90      -4  13     :  98 |   6 | 104 | -214---- |               | $386.1k:  $522k | p1466 | Gashouse Goons       | *
-MR Andrea Lawrence           26| MR :      67       4     :  71 | MR :      84      14     :  98 |   6 | 104 |          |       $300k r | $386.1k:  $522k |  p958 | Pittsburgh Beacons   | ***^
