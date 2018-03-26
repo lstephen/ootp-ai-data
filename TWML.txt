@@ -31,13 +31,13 @@ Pitching: 8354/10818 0.436/0.564
              Ks | 0.222
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.25547781305796113, RandomForest(...)), (0.25361105306913745, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 270.   98.  128.   82.  149.    9.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.974  0.026]
+Selected: RandomForestScores: [(0.25547781305796113, RandomForest(...)), (0.25361105306913745, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [ 270.   98.  128.   82.  149.    9.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.974  0.026]
 -- Doubles
-Selected: RandomForestScores: [(0.092945803173091313, RandomForest(...)), (0.079855215138885674, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 101.   86.   58.   40.   52.    6.]Feature Mask: [ True  True False False False False]Feature Importances: [ 0.136  0.864]
+Selected: RandomForestScores: [(0.092945803173091313, RandomForest(...)), (0.079855215138885674, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 101.   86.   58.   40.   52.    6.]Feature Mask: [ True  True False False False False]Feature Importances: [ 0.136  0.864]
 -- Triples
-Selected: RandomForestScores: [(-0.013982466703078641, RandomForest(...)), (-0.050426901681510573, Isotonic(...))]Best Parameters: {'regressor__max_depth': 11, 'selection__k': 4, 'regressor__n_estimators': 56}Feature Scores: [ 13.  13.   4.   4.   8.  20.]Feature Mask: [ True  True False False  True  True]Feature Importances: [ 0.209  0.2    0.169  0.422]
+Selected: RandomForestScores: [(-0.013982466703078641, RandomForest(...)), (-0.050426901681510573, Isotonic(...))]Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 56, 'regressor__max_depth': 11}Feature Scores: [ 13.  13.   4.   4.   8.  20.]Feature Mask: [ True  True False False  True  True]Feature Importances: [ 0.209  0.2    0.169  0.422]
 -- HomeRuns
-Selected: RandomForestScores: [(0.38093326899329688, RandomForest(...)), (0.3787060891519678, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 122.  106.  368.  218.   84.    6.]Feature Mask: [False False  True  True False False]Feature Importances: [ 0.985  0.015]
+Selected: RandomForestScores: [(0.38093326899329688, RandomForest(...)), (0.3787060891519678, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [ 122.  106.  368.  218.   84.    6.]Feature Mask: [False False  True  True False False]Feature Importances: [ 0.985  0.015]
 -- Walks
 Selected: IsotonicScores: [(0.13863169732449518, RandomForest(...)), (0.13879577716488692, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  40.   46.   71.  137.   24.    3.]Feature Mask: [False False False  True False False]
 -- Ks
@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(-0.025432852321423782, RandomForest(...)), (-0.02477
 -- HomeRuns
 Selected: IsotonicScores: [(0.1296371700827943, RandomForest(...)), (0.073689532509141939, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   1.  56.   2.   1.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.29278317958135064, RandomForest(...)), (0.29022559424117395, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [   0.  178.    2.    0.    0.]Feature Mask: [False  True  True False False]Feature Importances: [ 0.976  0.024]
+Selected: RandomForestScores: [(0.29278317958135064, RandomForest(...)), (0.29022559424117395, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [   0.  178.    2.    0.    0.]Feature Mask: [False  True  True False False]Feature Importances: [ 0.976  0.024]
 -- Ks
 Selected: IsotonicScores: [(0.4182912207011249, RandomForest(...)), (0.42089755161316306, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 311.    1.    2.   19.    6.]Feature Mask: [ True False False False False]
 
@@ -164,8 +164,8 @@ MR Ketcham, J      F   AA 33 | 11.8  5.3  6.8  2.2 |  47     |  59     |  + |  4
 SP Collins, B          AA 27 | 14.4  4.4  8.5  0.9 |  63     |  46     |  + |  46/ 42 ||  46 ||
 MR Camino, R           AA 28 | 12.5  7.4  8.8  1.7 |  69     |  49     |  + |  25/ 45 ||  45 ||
 SP Delgadillo, W       AA 30 | 12.5  7.0  8.8  2.5 |  58     |  46     |  + |  45/ 42 ||  45 ||
-SP Trevino, E           A 25 | 12.8  5.7  9.4  2.6 |  45     |  45     |  + |  44/ 39 ||  44 ||
 SP Olande, F           AA 31 | 13.3  4.9  8.4  2.8 |  56     |  43     | -- |  44/ 39 ||  44 ||
+SP Trevino, E           A 25 | 12.8  5.7  9.4  2.6 |  45     |  45     |  + |  44/ 39 ||  44 ||
 SP Kobalev, V           A 27 | 13.7  4.9  9.1  2.6 |  41     |  44     | -+ |  42/ 37 ||  42 ||
 SP Barrett, C           A 20 | 14.2  4.9  9.7  2.1 |  38     |  44     |  + |  40/ 37 ||  40 ||
 MR Mendoza, C           A 22 | 13.7  4.9  9.0  2.4 |  44     |  44     | -+ |  29/ 38 ||  38 ||
@@ -200,17 +200,17 @@ MR Duda, R              A 18 | 15.3  4.2  9.9  3.0 |  37     |  37     | -+ |  3
 Total:91 (target 70-75)
 Balance:51/40 = 1.275 (ideal: 1.273)
 
-  ML -> AAA   C Rene Creasy
   ML -> AAA   C Jerry French
+  ML -> AAA   C Rene Creasy
   ML -> AAA  SS Nolan Leventhal
   ML -> AA   1B Gerald Daniels
- AAA -> ML   SS Carmen Sumpter
  AAA -> ML    C Michael Dambrosio
- AAA -> ML   2B Douglas Perea
  AAA -> ML   2B Serafin Vela
+ AAA -> ML   2B Douglas Perea
+ AAA -> ML   SS Carmen Sumpter
  AAA -> A     C Amado Escandon
-  AA -> AAA  3B Modesto Nissen
   AA -> AAA  1B James Hamil
+  AA -> AAA  3B Modesto Nissen
    A -> AA   SP Bob Collins
    A -> AA   LF Jose Torres
   DL -> A    1B Harvey Kinnison
@@ -334,42 +334,42 @@ LF Jose Torres               25 | LF :  57     -12 :  45 | LF :  58     -12 :  4
 LF Mike Maroney              27 | CF :  86       1 :  87 | CF :  87       1 :  88 |  +1 |     +5             :     +5             | *
 SS Lance Barrenechea         33 | 3B : 114       2 : 116 | 3B : 115       2 : 117 |  +1 |           +5       :           +5       | ***
  C Anthony Gilson            20 |  C :  57       8 :  65 |  C :  57       8 :  65 |  +0 |                    :                    | ++++-
-RF Antonio Chapa             22 | LF :  59      -6 :  53 | LF :  59      -6 :  53 |  +0 |                    :                    | +-
 1B Harvey Kinnison           22 | 1B :  64     -14 :  50 | 1B :  64     -14 :  50 |  +0 |                    :                    | ++
-LF Duane Damian              22 | CF :  59      -1 :  58 | CF :  59      -1 :  58 |  +0 |              +5    :              +5    | +++
+RF Antonio Chapa             22 | LF :  59      -6 :  53 | LF :  59      -6 :  53 |  +0 |                    :                    | +-
 1B Jon Celentano             22 | 3B :  62      -1 :  61 | 3B :  62      -1 :  61 |  +0 |                    :                    | +++-
+LF Duane Damian              22 | CF :  59      -1 :  58 | CF :  59      -1 :  58 |  +0 |              +5    :              +5    | +++
 3B Eric Lerch                24 | SS :  91      12 : 103 | SS :  91      12 : 103 |  +0 |                    :              +5    | +++-
 3B Emilio Viader             24 | 3B :  69      -4 :  65 | 3B :  69      -4 :  65 |  +0 |                    :           +5       | +
 SS Thomas Barker             25 | SS :  62       5 :  67 | SS :  62       5 :  67 |  +0 |  +5    +5          :        +5          | +-
 CF Jeff Hocker               25 | CF : 130       1 : 131 | CF : 130       1 : 131 |  +0 |                    :                    | ***^
-LF Bobby Gill                26 | LF :  70     -13 :  57 | LF :  70     -13 :  57 |  +0 |              -5    :              -5    | *
 3B Hugh Riter                26 | 3B :  69      -2 :  67 | 3B :  69      -2 :  67 |  +0 |                    :                    | *
+LF Bobby Gill                26 | LF :  70     -13 :  57 | LF :  70     -13 :  57 |  +0 |              -5    :              -5    | *
 SS Aldo Espino               26 | SS :  75      13 :  88 | SS :  75      13 :  88 |  +0 |                    :                    | *^
 3B Modesto Nissen            27 | 3B :  80      -3 :  77 | 3B :  80      -3 :  77 |  +0 |        +5          :                    | *
 2B David Ashman              27 | 2B :  71      -6 :  65 | 2B :  71      -6 :  65 |  +0 |                    :                    | *
-2B Bill Journey              31 | 2B :  77      -4 :  73 | 2B :  77      -4 :  73 |  +0 |                    :                    | *
- C Rene Creasy               31 |  C :  82      12 :  94 |  C :  82      12 :  94 |  +0 |                    :                    | **
+ C Richard Diaz              31 |  C :  73      -1 :  72 |  C :  73      -1 :  72 |  +0 |                    :                    | *
 LF Karl Huckstep             31 | RF : 105      -6 :  99 | RF : 105      -6 :  99 |  +0 |                    :                    | **
 RF Amaury Rodriguez          31 | SS :  72       5 :  77 | SS :  72       5 :  77 |  +0 |                    :                    | *
- C Richard Diaz              31 |  C :  73      -1 :  72 |  C :  73      -1 :  72 |  +0 |                    :                    | *
-SS Carmen Sumpter            32 | SS :  94       4 :  98 | SS :  94       4 :  98 |  +0 |                    :                    | **
-2B Douglas Perea             32 | 2B :  82       2 :  84 | 2B :  82       2 :  84 |  +0 |                    :                    | *
-LF Tom Dyke                  32 | LF :  82      -8 :  74 | LF :  82      -8 :  74 |  +0 |                    :                    | *
+ C Rene Creasy               31 |  C :  82      12 :  94 |  C :  82      12 :  94 |  +0 |                    :                    | **
+2B Bill Journey              31 | 2B :  77      -4 :  73 | 2B :  77      -4 :  73 |  +0 |                    :                    | *
 LF Robert Woodley            32 | CF : 128       8 : 136 | CF : 128       8 : 136 |  +0 |                    :              -5    | ****
-1B Gerald Daniels            32 | 3B :  75      -1 :  74 | 3B :  75      -1 :  74 |  +0 |  +5          +5    :              +5    | *
+SS Carmen Sumpter            32 | SS :  94       4 :  98 | SS :  94       4 :  98 |  +0 |                    :                    | **
+LF Tom Dyke                  32 | LF :  82      -8 :  74 | LF :  82      -8 :  74 |  +0 |                    :                    | *
 CF Doyle Young               32 | CF : 122       7 : 129 | CF : 122       7 : 129 |  +0 |                    :                    | ***
-SS Derek Nazario Jr.         33 | SS :  79      14 :  93 | SS :  79      14 :  93 |  +0 |                    :                    | *
+1B Gerald Daniels            32 | 3B :  75      -1 :  74 | 3B :  75      -1 :  74 |  +0 |  +5          +5    :              +5    | *
+2B Douglas Perea             32 | 2B :  82       2 :  84 | 2B :  82       2 :  84 |  +0 |                    :                    | *
 SS Leon Hiser                33 | SS :  69       6 :  75 | SS :  69       6 :  75 |  +0 |                    :                    | *
-SS Nolan Leventhal           34 | 3B :  84       5 :  89 | 3B :  84       5 :  89 |  +0 |                    :                    | *
+SS Derek Nazario Jr.         33 | SS :  79      14 :  93 | SS :  79      14 :  93 |  +0 |                    :                    | *
  C Justin Nordin             34 |  C :  89      11 : 100 |  C :  89      11 : 100 |  +0 |     -5             :                    | *
+SS Nolan Leventhal           34 | 3B :  84       5 :  89 | 3B :  84       5 :  89 |  +0 |                    :                    | *
 CF Richard Pulliam           34 | SS :  67       8 :  75 | SS :  67       8 :  75 |  +0 |                    :                    | *
  C Jerry French              37 |  C :  98      -2 :  96 |  C :  98      -2 :  96 |  +0 |                    :                    | *^
 RF Bill Gildea               37 | CF :  94       2 :  96 | CF :  94       2 :  96 |  +0 |                    :                    | **^
 CF Ramon Iradier             22 | CF :  57     -10 :  47 | CF :  57     -11 :  46 |  -1 |              +5    :           +5 +5    | +-
 1B Dwayne Grimes             26 | 1B : 108     -16 :  92 | 1B : 108     -17 :  91 |  -1 |                    :                    | *^
  C Michael Dambrosio         24 |  C :  92      12 : 104 |  C :  91      12 : 103 |  -1 |              +5    :              +5    | *^
-1B James Hamil               33 | 3B :  87      -3 :  84 | 3B :  86      -3 :  83 |  -1 |              -5    :              -5    | *
 RF Bennett Griego            33 | 3B :  87      -7 :  80 | 3B :  86      -7 :  79 |  -1 |                    :        -5          | *^
+1B James Hamil               33 | 3B :  87      -3 :  84 | 3B :  86      -3 :  83 |  -1 |              -5    :              -5    | *
 3B Benny Otero               36 | 3B :  84      -9 :  75 | 3B :  72      -9 :  63 | -12 |  -5 -5-10    +5    :  -5   -15          | *
 
 Pitchers
@@ -379,24 +379,24 @@ MR Jose Martinez             28 | SP :      53     :  53 | SP :      54     :  5
 MR Luis Hernandez            23 | MR :      54     :  54 | MR :      55     :  55 |  +1 |        +5       :        +5       | +++-
 SP Brian Lopp                22 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | +
 MR Kenneth Swiger            24 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | ++
-MR Raimundo Lazo             24 | MR :      77     :  77 | MR :      77     :  77 |  +0 |  +5             :                 | **
-MR Scott Spafford            24 | SP :      53     :  53 | SP :      53     :  53 |  +0 |     +5          :  +5             | +++-
 SP Joshua Harris             24 | SP :      66     :  66 | SP :      66     :  66 |  +0 |  -5             :                 | *
-SP Emilio Trevino            25 | SP :      44     :  44 | SP :      44     :  44 |  +0 |     +5          :     +5          | +-
+MR Scott Spafford            24 | SP :      53     :  53 | SP :      53     :  53 |  +0 |     +5          :  +5             | +++-
+MR Raimundo Lazo             24 | MR :      77     :  77 | MR :      77     :  77 |  +0 |  +5             :                 | **
 MR Juan Briceno              25 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                 :                 | ++-
+SP Emilio Trevino            25 | SP :      44     :  44 | SP :      44     :  44 |  +0 |     +5          :     +5          | +-
 SP Loren Hayton              26 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *
-MR Johnathan Bottomley       27 | MR :      51     :  51 | MR :      51     :  51 |  +0 |                 :                 | *
-SP Bob Collins               27 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                 :                 | *
-SP Koji Ankuru               27 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                 :                 | *
-SP Oscar Ojeda               27 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | *
-SP Louie Albuerne            27 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                 :                 | **
 MR Kenneth Freeman           27 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                 :                 | *
+SP Oscar Ojeda               27 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | *
+MR Johnathan Bottomley       27 | MR :      51     :  51 | MR :      51     :  51 |  +0 |                 :                 | *
+SP Louie Albuerne            27 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                 :                 | **
+SP Bob Collins               27 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                 :                 | *
 SP Vasili Kobalev            27 | SP :      42     :  42 | SP :      42     :  42 |  +0 |                 :                 | *
+SP Koji Ankuru               27 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                 :                 | *
 MR Edward Loveday            27 | MR :      67     :  67 | MR :      67     :  67 |  +0 |  +5             :                 | *
-MR Reinaldo Camino           28 | MR :      45     :  45 | MR :      45     :  45 |  +0 |                 :                 | *
 MR Anton Corrado             28 | MR :      57     :  57 | MR :      57     :  57 |  +0 |                 :                 | **^
-MR Jose Varela               30 | MR :      58     :  58 | MR :      58     :  58 |  +0 |        -5       :  +5    -5       | *
+MR Reinaldo Camino           28 | MR :      45     :  45 | MR :      45     :  45 |  +0 |                 :                 | *
 SP Willie Delgadillo         30 | SP :      45     :  45 | SP :      45     :  45 |  +0 |        -5       :     -5 -5       | *
+MR Jose Varela               30 | MR :      58     :  58 | MR :      58     :  58 |  +0 |        -5       :  +5    -5       | *
 SP Fennis Olande             31 | SP :      44     :  44 | SP :      44     :  44 |  +0 |                 :                 | *
 MR Damien Thomas             31 | MR :      64     :  64 | MR :      64     :  64 |  +0 |                 :                 | *
 MR Paul Karp                 31 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                 :                 | *
@@ -712,7 +712,7 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
  4 |  78 ( 40-106) |  84 ( 46-112)  77/ 93 |  16/ 16 ||  74 ( 15-106) |  80 ( 21-112)  72/ 87 |  80/ 80
  5 |  62 ( 17- 96) |  68 ( 23-102)  62/ 75 |  16/ 16 ||  63 (-48- 96) |  69 (-42-102)  63/ 76 |  72/ 72
  6 |  53 ( 28- 68) |  59 ( 34- 74)  54/ 65 |  16/ 16 ||  53 (-38- 68) |  59 (-32- 74)  54/ 65 |  64/ 64
- 7 |  40 ( 29- 45) |  46 ( 35- 51)  42/ 50 |  16/ 16 ||  37 ( 26- 46) |  43 ( 32- 52)  39/ 48 |  64/ 64
+ 7 |  40 ( 29- 45) |  46 ( 35- 51)  42/ 50 |  16/ 16 ||  37 ( 26- 62) |  43 ( 32- 68)  39/ 48 |  64/ 64
  8 |  26 ( 15- 36) |  32 ( 21- 42)  29/ 35 |  16/ 16 ||  20 (-24- 36) |  26 (-18- 42)  24/ 29 |  64/ 64
 
 CF Young, D        32|  34,970,000  34,970,000
@@ -937,8 +937,8 @@ DESIGNATED_HITTER
  5 | Grimes, D        108 -19  89 | Grimes, D        108 -19  89 | Grimes, D        108 -19  89
  6 | Huckstep, K      105 -19  86 | Dambrosio, M      97 -19  78 | Huckstep, K      107 -19  88
  7 | French, J         98 -19  79 | Creasy, R         90 -19  71 | French, J        100 -19  81
- 8 | Sumpter, C        94 -19  75 | Daniels, G        90 -19  71 | Sumpter, C        95 -19  76
- 9 | Gildea, B         94 -19  75 | Huckstep, K       90 -19  71 | Gildea, B         95 -19  76
+ 8 | Sumpter, C        94 -19  75 | Huckstep, K       90 -19  71 | Sumpter, C        95 -19  76
+ 9 | Gildea, B         94 -19  75 | Daniels, G        90 -19  71 | Gildea, B         95 -19  76
 10 | Dambrosio, M      91 -19  72 | Hamil, J          89 -19  70 | Lerch, E          93 -19  74
 
 --- Trade Values ---
@@ -1104,7 +1104,7 @@ SP Kigorou Rkuemon           20| SP :      62      -2     :  60 | SP :      94  
 SP Jakurou Takeji            30| SP :      89      25   3 : 116 |    :                     :   0 |   3 | 119 |          |        $12Mx2 |  $6.94M: $7.71M | p1748 | Las Vegas Aces       | ***^
 SP Daniel Ellison            26| SP :      73       9     :  82 | SP :      91      18     : 110 |   6 | 116 |          |               |  $2.23M: $2.48M |  p550 | Las Vegas Aces       | *
 2B Robert Lewis              37| 2B : 108       2  26     : 136 |    :                     :   0 | -20 | 116 | -271---- |         $2Mx2 |  $6.45M: $7.16M | p1590 | Las Vegas Aces       | **^
-2B Jude Fyfe                 21| 2B :  61      -5 -29     :  28 | 2B : 101      -5  13     : 109 |   6 | 115 | -251---- |               |        :        | p1119 | Las Vegas Aces       | +++-
+2B Jude Fyfe                 21| 2B :  61      -5 -28     :  28 | 2B : 101      -5  13     : 109 |   6 | 115 | -251---- |               |        :        | p1119 | Las Vegas Aces       | +++-
 RF Jonathan Howard           21| RF :  97      -4  10     : 103 | RF : 100      -4  13     : 109 |   6 | 115 | -2---857 |               |  $2.48M: $2.75M |   p11 | Las Vegas Aces       | **^
 SP Daniel Jones              29| SP :      86      23   1 : 110 |    :                     :   0 |   4 | 114 |          |      $1.03M a |   $5.7M: $6.33M |  p572 | Las Vegas Aces       | **^
 MR Brandon Tapper            32| MR :      86      20   7 : 113 |    :                     :   0 |   1 | 114 |          |  F    $2.3M   |  $6.94M: $7.71M |  p841 | Las Vegas Aces       | **
@@ -1916,7 +1916,7 @@ SS Robert Upton              20| SS :  63       9 -21     :  51 | SS :  90      
 MR Michael Brook             21| MR :      60      -2     :  57 | MR :      93      17     : 110 |   6 | 116 |          |               |        :        |  p682 | Gotham 483s          | +++++
 3B Michael Stockstill        22| 2B :  68       4 -13     :  59 | SS :  91       8  11     : 110 |   6 | 116 | -3877--- |               |        :        |  p722 | Roswell 51s          | +++-
  C Nicholas Wells            25|  C :  82       5  -8     :  79 |  C :  94       5  10     : 110 |   6 | 116 | 61------ |               |        :        |  p601 | Arizona Desert Dogs  | +++
-2B Jude Fyfe                 21| 2B :  61      -5 -29     :  28 | 2B : 101      -5  13     : 109 |   6 | 115 | -251---- |               |        :        | p1119 | Las Vegas Aces       | +++-
+2B Jude Fyfe                 21| 2B :  61      -5 -28     :  28 | 2B : 101      -5  13     : 109 |   6 | 115 | -251---- |               |        :        | p1119 | Las Vegas Aces       | +++-
 RF Jonathan Howard           21| RF :  97      -4  10     : 103 | RF : 100      -4  13     : 109 |   6 | 115 | -2---857 |               |  $2.48M: $2.75M |   p11 | Las Vegas Aces       | **^
 MR Lorenzo Salazar           22| MR :      57      -4     :  53 | MR :      91      16     : 107 |   6 | 113 |          |               |        :        |  p195 | Gotham 483s          | +++-
 CF Stephen Quintal           20| CF :  60       3 -25     :  38 | CF :  92       3  10     : 105 |   6 | 111 | -2---377 |               |        :        | p1087 | Roswell 51s          | +++
