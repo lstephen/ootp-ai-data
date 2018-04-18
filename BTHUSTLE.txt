@@ -35,13 +35,13 @@ Selected: IsotonicScores: [(0.29670930560915793, RandomForest(...)), (0.29697346
 -- Doubles
 Selected: IsotonicScores: [(0.080188087785073844, RandomForest(...)), (0.056871149099356234, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 51.  53.  53.  37.  43.   5.]Feature Mask: [False  True False False False False]
 -- Triples
-Selected: RandomForestScores: [(0.0830252590149297, RandomForest(...)), (0.058089712784926105, Isotonic(...))]Best Parameters: {'regressor__max_depth': 4, 'selection__k': 5, 'regressor__n_estimators': 89}Feature Scores: [ 28.  54.  33.  27.  25.  46.]Feature Mask: [ True  True  True  True False  True]Feature Importances: [ 0.138  0.092  0.159  0.104  0.507]
+Selected: RandomForestScores: [(0.0830252590149297, RandomForest(...)), (0.058089712784926105, Isotonic(...))]Best Parameters: {'regressor__max_depth': 4, 'regressor__n_estimators': 89, 'selection__k': 5}Feature Scores: [ 28.  54.  33.  27.  25.  46.]Feature Mask: [ True  True  True  True False  True]Feature Importances: [ 0.138  0.092  0.159  0.104  0.507]
 -- HomeRuns
 Selected: IsotonicScores: [(0.22423271664591785, RandomForest(...)), (0.22441730994480205, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 29.  31.  54.  32.  33.  14.]Feature Mask: [False False  True False False False]
 -- Walks
 Selected: IsotonicScores: [(0.16635062537413273, RandomForest(...)), (0.16654943686668686, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  94.   67.  107.  168.   87.   16.]Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.11927925376432043, RandomForest(...)), (0.068899107409700774, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 27, 'regressor__max_depth': 1}Feature Scores: [ 126.   92.  121.  109.  159.   31.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
+Selected: RandomForestScores: [(0.11927925376432043, RandomForest(...)), (0.068899107409700774, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 27, 'regressor__max_depth': 1, 'selection__k': 2}Feature Scores: [ 126.   92.  121.  109.  159.   31.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
 
            Hits | 0.069
         Doubles | 0.033
@@ -52,13 +52,13 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: IsotonicScores: [(0.087500443433808875, RandomForest(...)), (0.077762056024467285, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 32.   1.   2.   1.   0.]Feature Mask: [ True False False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.021205695456425849, RandomForest(...)), (-0.02636949756655586, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 19, 'regressor__max_depth': 1, 'selection__k': 3}Feature Scores: [ 7.  0.  2.  1.  0.]Feature Mask: [ True False  True  True False]Feature Importances: [ 0.053  0.737  0.211]
+Selected: RandomForestScores: [(-0.021205695456425849, RandomForest(...)), (-0.02636949756655586, Isotonic(...))]Best Parameters: {'regressor__max_depth': 1, 'selection__k': 3, 'regressor__n_estimators': 19}Feature Scores: [ 7.  0.  2.  1.  0.]Feature Mask: [ True False  True  True False]Feature Importances: [ 0.053  0.737  0.211]
 -- HomeRuns
-Selected: RandomForestScores: [(0.072230749678206752, RandomForest(...)), (0.04570378240647973, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 1, 'regressor__max_depth': 33}Feature Scores: [  0.   0.  31.   1.   2.]Feature Mask: [False False  True False  True]Feature Importances: [ 0.835  0.165]
+Selected: RandomForestScores: [(0.072230749678206752, RandomForest(...)), (0.04570378240647973, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 1, 'regressor__max_depth': 33, 'selection__k': 2}Feature Scores: [  0.   0.  31.   1.   2.]Feature Mask: [False False  True False  True]Feature Importances: [ 0.835  0.165]
 -- Walks
 Selected: IsotonicScores: [(0.18258457660125374, RandomForest(...)), (0.16494920313996908, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.  96.   0.   5.   1.]Feature Mask: [False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.32651993396051715, RandomForest(...)), (0.31878921845928831, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'selection__k': 3, 'regressor__max_depth': 4}Feature Scores: [ 218.    4.    6.   13.    6.]Feature Mask: [ True False False  True  True]Feature Importances: [ 0.807  0.122  0.071]
+Selected: RandomForestScores: [(0.32651993396051715, RandomForest(...)), (0.31878921845928831, Isotonic(...))]Best Parameters: {'regressor__max_depth': 4, 'regressor__n_estimators': 2, 'selection__k': 3}Feature Scores: [ 218.    4.    6.   13.    6.]Feature Mask: [ True False False  True  True]Feature Importances: [ 0.807  0.122  0.071]
 
 Hitting Features
              Average |  -   102   +  |   5  15  25  35  45  55  65  75  85  95
@@ -206,8 +206,8 @@ Balance:50/40 = 1.250 (ideal: 1.273)
  AAA -> AA   RF Virgil Morfin
  AAA -> DL   2B Deivi Alvarez
   AA -> AAA  SS Leif Bulger
-  AA -> A    1B Robert Quarles
   AA -> A    SP Robert Burnell
+  AA -> A    1B Robert Quarles
   AA -> DL   3B James Williams
    A -> AA   MR Maurice Laughlin
   DL -> ML   1B Bill West
@@ -342,8 +342,8 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 2B Tony Diz                  22 | SS :  81       4 :  85 | SS :  87       7 :  94 |  +9 | +11 +6    +3 -1-10 :  +7 +6    +3 -1-10 | +++
 SS Alex Alfano               22 | SS :  69      -1 :  68 | SS :  77      -1 :  76 |  +8 | +15+12 +6 +3+17    :  +9+12 +6 +4+28    | +++-
 3B Seve Guadalupe            22 | 3B :  81      -2 :  79 | 3B :  87      -2 :  85 |  +6 |  +8 +2       +4    :  +9 +1       +4    | ++++
- C Luther Cutlip             24 |  C :  76       2 :  78 |  C :  82       2 :  84 |  +6 |  +7          -1    :  +7          -1    | +++
 3B Edward Washington         24 | 3B : 107      -9 :  98 | 3B : 113      -9 : 104 |  +6 | +14       -2 +2    :  +6       -3 +2    | ***
+ C Luther Cutlip             24 |  C :  76       2 :  78 |  C :  82       2 :  84 |  +6 |  +7          -1    :  +7          -1    | +++
 SS Sean Tracy                22 | SS :  85       1 :  86 | SS :  90       1 :  91 |  +5 |  +3 +4       +2    :  +5 +4       +2    | +++-
  C Manny Barcenas            26 |  C :  68      -1 :  67 |  C :  73      -1 :  72 |  +5 |  +1       +2 +1    :  +1       +2 +1    | *
 1B Robert Quarles            23 | 3B :  64      -8 :  56 | 3B :  68      -8 :  60 |  +4 |  +2 +6 +6 +4+15    :  +2 +6 +6 +4+16    | +++
@@ -355,19 +355,19 @@ CF David Martin              30 | CF : 120     -11 : 109 | CF : 122     -11 : 11
 SS Ernest Lee                24 | SS :  70       1 :  71 | SS :  71       1 :  72 |  +1 |     +2    +1       :     +2    +1       | ++
 SS Leif Bulger               27 | SS :  88       2 :  90 | SS :  89       2 :  91 |  +1 |  -1    +4 +1 -3    :  -2    +4 +1 -3    | **^
 RF Gregory Check             25 | SS :  83       1 :  84 | SS :  86      -2 :  84 |  +0 |  +3 +8+15 +2 -1    :  +3 +8+15 +2 -1    | ++-
-RF Ru-zuberuto Takamuku      23 | CF :  84      -5 :  79 | CF :  84      -5 :  79 |  +0 |  +1 +4       -3    :  +1 +4       -3    | +++-
 LF Christopher Cerrato       23 | CF :  88      -1 :  87 | CF :  88      -1 :  87 |  +0 |  +1 -2 +3          :  +1 -2 +3          | ++-
-2B Deivi Alvarez             24 | SS :  82       4 :  86 | SS :  82       4 :  86 |  +0 |     +2    +1 -1    :     +2    +1 -1    | ++-
+RF Ru-zuberuto Takamuku      23 | CF :  84      -5 :  79 | CF :  84      -5 :  79 |  +0 |  +1 +4       -3    :  +1 +4       -3    | +++-
  C Patricio Merino           24 |  C :  72       1 :  73 |  C :  72       1 :  73 |  +0 |     +2 +3 +2       :     +2 +3 +2       | ++
 2B Robert Harding            24 | SS :  48       9 :  57 | SS :  48       9 :  57 |  +0 |  +3 +7 +4 +3 +6    :  +4 +7 +4 +3 +6    | +-
+2B Deivi Alvarez             24 | SS :  82       4 :  86 | SS :  82       4 :  86 |  +0 |     +2    +1 -1    :     +2    +1 -1    | ++-
  C Bill Pauley               25 |  C :  72      11 :  83 |  C :  72      11 :  83 |  +0 |  -1 +2    -1       :  -1 +2    -1       | +-
 1B Tyler Hazel               27 | 3B :  93       0 :  93 | 3B :  93       0 :  93 |  +0 |        -3 +1 +1    :        -3 +1 +1    | **
-RF Virgil Morfin             27 | LF :  87      -8 :  79 | LF :  87      -8 :  79 |  +0 |              +1    :              +1    | *
 2B James Goodridge           27 | SS : 113       1 : 114 | SS : 113       1 : 114 |  +0 |     +2    +1       :     +2    +1       | ***^
+RF Virgil Morfin             27 | LF :  87      -8 :  79 | LF :  87      -8 :  79 |  +0 |              +1    :              +1    | *
  C Adam Fasching             30 |  C :  89      11 : 100 |  C :  89      11 : 100 |  +0 |                    :                    | *
 1B Harley Dyess              31 | SS : 100       3 : 103 | SS : 100       3 : 103 |  +0 |  -1 +2    -1 -3    :  -1 +1    -1 -3    | **^
-1B Bill West                 32 | CF : 104      -2 : 102 | CF : 104      -2 : 102 |  +0 |  -1                :  -2                | **
 SS James Nadler              32 | SS : 101      11 : 112 | SS : 101      11 : 112 |  +0 |        -3    +2    :        -4    +2    | **^
+1B Bill West                 32 | CF : 104      -2 : 102 | CF : 104      -2 : 102 |  +0 |  -1                :  -2                | **
 RF Weston Drysdale           35 | SS :  88       0 :  88 | SS :  88       0 :  88 |  +0 |                    :                    | *
 RF Lawrence Sauter           28 | CF :  96      -3 :  93 | CF :  95      -3 :  92 |  -1 |  -3 +2    +1 +2    :  -3 +2    +1 +2    | *
  C Arthur Orr                26 |  C : 103       5 : 108 |  C : 104       2 : 106 |  -2 |  -1                :  -1                | ***
@@ -672,29 +672,29 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 1E | 117 (108-122) | 123 (114-128) 112/136 |   5/  5 || 120 (-43-166) | 126 (-37-172) 114/138 |  25/ 25
 1M | 111 ( 87-121) | 117 ( 93-127) 106/128 |   5/  5 || 109 (-42-121) | 115 (-36-127) 104/126 |  25/ 25
 1L | 102 ( 99-105) | 108 (105-111)  98/119 |   6/  6 ||  99 ( 52-108) | 105 ( 58-114)  95/115 |  30/ 30
-2E |  97 ( 84-126) | 103 ( 90-132)  94/114 |   8/  8 ||  89 (  8-126) |  95 ( 14-132)  86/104 |  40/ 40
+2E |  97 ( 84-126) | 103 ( 90-132)  94/114 |   8/  8 ||  89 (-25-126) |  95 (-19-132)  86/104 |  40/ 40
 2L |  85 ( 47- 99) |  91 ( 53-105)  83/100 |   8/  8 ||  83 (-42- 99) |  89 (-36-105)  81/ 98 |  40/ 40
 
  1 | 107 ( 87-122) | 113 ( 93-128) 102/124 |  16/ 16 || 106 (-43-166) | 112 (-37-172) 102/123 |  80/ 80
  2 |  93 ( 47-126) |  99 ( 53-132)  90/109 |  16/ 16 ||  85 (-42-126) |  91 (-36-132)  83/101 |  80/ 80
  3 |  80 ( 30- 90) |  86 ( 36- 96)  78/ 94 |  16/ 16 ||  77 (-29- 90) |  83 (-23- 96)  75/ 91 |  80/ 80
  4 |  72 ( 38- 81) |  78 ( 44- 87)  71/ 85 |  16/ 16 ||  70 (-67- 81) |  76 (-55- 87)  69/ 84 |  80/ 80
- 5 |  64 ( 51- 80) |  70 ( 57- 86)  63/ 77 |  16/ 16 ||  65 ( 44- 80) |  71 ( 50- 86)  64/ 78 |  80/ 80
+ 5 |  64 ( 51- 80) |  70 ( 57- 86)  63/ 77 |  16/ 16 ||  65 (-36- 85) |  71 (-30- 91)  64/ 78 |  80/ 80
  6 |  59 ( 46- 62) |  65 ( 52- 68)  59/ 72 |  16/ 16 ||  60 (-56- 66) |  66 (-50- 72)  60/ 73 |  80/ 80
- 7 |  53 ( 26- 60) |  59 ( 32- 66)  54/ 65 |  16/ 16 ||  57 (  7- 86) |  63 ( 13- 92)  57/ 69 |  80/ 80
- 8 |  52 ( 22- 65) |  58 ( 28- 71)  53/ 64 |  16/ 16 ||  54 ( 22- 65) |  60 ( 28- 71)  55/ 66 |  80/ 80
- 9 |  49 ( 20- 86) |  55 ( 26- 92)  50/ 60 |  16/ 16 ||  51 (-67-129) |  57 (-55-135)  52/ 63 |  80/ 80
-10 |  45 ( 38- 76) |  51 ( 44- 82)  46/ 56 |  16/ 16 ||  48 (-46-110) |  54 (-40-116)  49/ 60 |  80/ 80
-11 |  41 ( 23- 90) |  47 ( 29- 96)  43/ 52 |  16/ 16 ||  44 (-66- 90) |  50 (-55- 96)  46/ 55 |  80/ 80
-12 |  39 ( 30- 56) |  45 ( 36- 62)  41/ 50 |  16/ 16 ||  41 (-66- 79) |  47 (-55- 85)  43/ 52 |  80/ 80
+ 7 |  53 ( 26- 60) |  59 ( 32- 66)  54/ 65 |  16/ 16 ||  57 (-60- 86) |  63 (-54- 92)  57/ 69 |  80/ 80
+ 8 |  52 ( 22- 65) |  58 ( 28- 71)  53/ 64 |  16/ 16 ||  53 ( 12- 65) |  59 ( 18- 71)  54/ 65 |  80/ 80
+ 9 |  49 ( 20- 86) |  55 ( 26- 92)  50/ 60 |  16/ 16 ||  51 (-67-129) |  57 (-55-135)  52/ 62 |  80/ 80
+10 |  45 ( 38- 76) |  51 ( 44- 82)  46/ 56 |  16/ 16 ||  48 (-46-110) |  54 (-40-116)  49/ 59 |  80/ 80
+11 |  41 ( 23- 90) |  47 ( 29- 96)  43/ 52 |  16/ 16 ||  44 (-66- 90) |  50 (-55- 96)  45/ 55 |  80/ 80
+12 |  39 ( 30- 56) |  45 ( 36- 62)  41/ 50 |  16/ 16 ||  41 (-66- 56) |  47 (-55- 62)  43/ 52 |  80/ 80
 13 |  36 ( 20- 80) |  42 ( 26- 86)  38/ 46 |  16/ 16 ||  39 (-67- 80) |  45 (-55- 86)  41/ 49 |  80/ 80
 14 |  33 ( 22- 38) |  39 ( 28- 44)  35/ 43 |  16/ 16 ||  36 (-64-115) |  42 (-55-121)  38/ 46 |  80/ 80
-15 |  31 (  9- 41) |  37 ( 15- 47)  34/ 41 |  16/ 16 ||  33 (-62- 96) |  39 (-55-102)  35/ 43 |  80/ 80
+15 |  31 (  9- 41) |  37 ( 15- 47)  34/ 41 |  16/ 16 ||  33 (-51- 96) |  39 (-45-102)  35/ 43 |  80/ 80
 16 |  28 ( 14- 61) |  34 ( 20- 67)  31/ 37 |  16/ 16 ||  30 (-67-120) |  36 (-55-126)  32/ 39 |  80/ 80
 17 |  24 (  1- 43) |  30 (  7- 49)  27/ 33 |  16/ 16 ||  25 (-62- 67) |  31 (-55- 73)  28/ 34 |  80/ 80
 18 |  20 (  9- 77) |  26 ( 15- 83)  24/ 29 |  16/ 16 ||  22 (-67- 88) |  28 (-55- 94)  25/ 30 |  80/ 80
-19 |  14 (  2- 74) |  20 (  8- 80)  18/ 22 |  16/ 16 ||  16 (-67- 74) |  22 (-55- 80)  20/ 24 |  80/ 80
-20 |   8 ( -7- 50) |  14 ( -1- 56)  13/ 16 |  16/ 16 ||   9 (-67- 90) |  15 (-55- 96)  14/ 17 |  80/ 80
+19 |  14 (  2- 74) |  20 (  8- 80)  18/ 22 |  16/ 16 ||  15 (-67- 74) |  21 (-55- 80)  20/ 24 |  80/ 80
+20 |   8 ( -7- 50) |  14 ( -1- 56)  13/ 16 |  16/ 16 ||   9 (-67- 90) |  15 (-55- 96)  13/ 16 |  80/ 80
 
 SS Nadler, J       32|  20,970,000            
 SP Cardoso, J      33|  18,000,000            
@@ -1880,7 +1880,7 @@ St. Louis (C) Car... | 104.1 104.3 108.2 |  98.8  98.6  97.4 |  85- 77 0.526 |  
 Colorado Rockies     | 100.9  99.3 100.2 |  96.5  93.9  90.0 |  73- 89 0.449 |  49- 45 0.521 |  80- 82 0.494 ( 8) 
 Philadelphia A's     |  98.7  99.3  98.0 |  96.3  92.5  88.3 |  69- 93 0.428 |  45- 49 0.479 |  74- 88 0.457 (11) 
 West ----------------+
-San Francisco Giants |  99.1  98.6  97.6 | 105.4 105.2 110.3 |  87- 75 0.537 |  57- 37 0.606 |  94- 68 0.580 ( 3) 
+San Francisco Giants |  99.1  98.6  97.6 | 105.4 105.2 110.3 |  87- 75 0.537 |  57- 37 0.606 |  94- 68 0.580 ( 2) 
 Atlanta Braves       |  98.2  97.9  96.1 |  97.9  97.8  95.6 |  74- 88 0.458 |  40- 54 0.426 |  71- 91 0.438 (14) 
 Montreal Expos       |  95.0  96.2  91.0 |  90.2  90.5  79.9 |  56-106 0.346 |  41- 53 0.436 |  65- 97 0.401 (15) 
 Detroit Tigers       |  94.6  95.4  89.8 |  90.5  87.8  76.9 |  52-110 0.323 |  40- 54 0.426 |  62-100 0.383 (16) 
@@ -1888,13 +1888,13 @@ Detroit Tigers       |  94.6  95.4  89.8 |  90.5  87.8  76.9 |  52-110 0.323 |  
 National League
 East ----------------+
 St. Louis (B) Browns | 104.9 105.4 110.0 | 115.8 115.5 128.6 | 108- 54 0.667 |  59- 35 0.628 | 104- 58 0.642 ( 1) 
-Cincinnati Reds      | 102.6 103.3 105.8 | 107.8 107.4 114.6 |  96- 66 0.595 |  54- 40 0.574 |  94- 68 0.580 ( 2) 
+Cincinnati Reds      | 102.6 103.3 105.8 | 107.8 107.4 114.6 |  96- 66 0.595 |  54- 40 0.574 |  94- 68 0.580 ( 3) 
 New York Mets        |  98.8  99.3  98.1 | 111.0 117.8 125.7 |  98- 64 0.603 |  47- 47 0.500 |  88- 74 0.543 ( 5) 
 Chicago Cubs         |  94.8  96.2  90.8 | 101.1 104.7 105.7 |  78- 84 0.479 |  43- 51 0.457 |  76- 86 0.469 ( 9) 
 West ----------------+
 Seattle Pilots       | 102.3 101.2 103.4 | 102.9 103.4 106.2 |  89- 73 0.547 |  49- 45 0.521 |  86- 76 0.531 ( 6) 
-Kansas City Royals   | 100.5 100.2 100.6 |  95.8  93.3  88.7 |  72- 90 0.443 |  44- 50 0.468 |  74- 88 0.457 (12) 
-Houston Astros       | 105.4 103.8 109.0 |  95.1  94.6  89.4 |  79- 83 0.487 |  41- 53 0.436 |  74- 88 0.457 (10) 
+Houston Astros       | 105.4 103.8 109.0 |  95.1  94.6  89.4 |  79- 83 0.487 |  41- 53 0.436 |  74- 88 0.457 (12) 
+Kansas City Royals   | 100.5 100.2 100.6 |  95.8  93.3  88.7 |  72- 90 0.443 |  44- 50 0.468 |  74- 88 0.457 (10) 
 Boston Red Sox       |  97.9  97.0  94.9 |  98.6 100.2  98.8 |  76- 86 0.468 |  39- 55 0.415 |  71- 91 0.438 (13) 
                      |              99.7 |              94.7 |
 
