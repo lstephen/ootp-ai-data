@@ -37,11 +37,11 @@ Selected: IsotonicScores: [(0.059625046143736683, RandomForest(...)), (0.0663632
 -- Triples
 Selected: IsotonicScores: [(0.04869008696348328, RandomForest(...)), (0.041032581896765584, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  2.   0.   8.   3.   0.   1.  26.]Feature Mask: [False False False False False False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.13879910762322686, RandomForest(...)), (0.13772462364649762, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [  1.  10.   1.  82.   3.   4.   0.]Feature Mask: [False  True False  True False False False]Feature Importances: [ 0.067  0.933]
+Selected: RandomForestScores: [(0.13879910762322686, RandomForest(...)), (0.13772462364649762, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [  1.  10.   1.  82.   3.   4.   0.]Feature Mask: [False  True False  True False False False]Feature Importances: [ 0.067  0.933]
 -- Walks
 Selected: IsotonicScores: [(0.16967261861866331, RandomForest(...)), (0.16937304400822525, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  0.   2.   2.   3.  83.   0.   0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.38779322678566958, RandomForest(...)), (0.35148154457127484, Isotonic(...))]Best Parameters: {'regressor__max_depth': 33, 'selection__k': 2, 'regressor__n_estimators': 1}Feature Scores: [  54.    0.    6.    2.    8.  267.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.074  0.926]
+Selected: RandomForestScores: [(0.38779322678566958, RandomForest(...)), (0.35148154457127484, Isotonic(...))]Best Parameters: {'regressor__max_depth': 33, 'regressor__n_estimators': 1, 'selection__k': 2}Feature Scores: [  54.    0.    6.    2.    8.  267.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.074  0.926]
 
            Hits | 0.064
         Doubles | 0.027
@@ -50,7 +50,7 @@ Selected: RandomForestScores: [(0.38779322678566958, RandomForest(...)), (0.3514
              Ks | 0.044
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.068460491191142725, RandomForest(...)), (0.065193115946413679, Isotonic(...))]Best Parameters: {'regressor__max_depth': 35, 'selection__k': 4, 'regressor__n_estimators': 33}Feature Scores: [  7.  30.   9.  16.   0.   5.   0.   0.]Feature Mask: [ True  True  True  True False False False False]Feature Importances: [ 0.208  0.434  0.211  0.147]
+Selected: RandomForestScores: [(0.068460491191142725, RandomForest(...)), (0.065193115946413679, Isotonic(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 35, 'regressor__n_estimators': 33}Feature Scores: [  7.  30.   9.  16.   0.   5.   0.   0.]Feature Mask: [ True  True  True  True False False False False]Feature Importances: [ 0.208  0.434  0.211  0.147]
 -- Doubles
 Selected: IsotonicScores: [(0.11360794856446639, RandomForest(...)), (0.095619018840413392, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  2.   4.  43.   2.   3.   0.   4.  14.]Feature Mask: [False False  True False False False False False]
 -- HomeRuns
@@ -185,8 +185,8 @@ Balance:38/30 = 1.267 (ideal: 1.273)
  AAA -> ML   MR Luis Aponte
  AAA -> AA   SP Zane Smith
  AAA -> AA   LF Bobby V. Mitchell
-  AA -> AAA  SP Bruce Hurst
   AA -> AAA  LF Keith A. Miller
+  AA -> AAA  SP Bruce Hurst
 
 SP
 John Denny
@@ -323,12 +323,12 @@ LF Tony Phillips             28 | SS : 112      11 : 123 | SS : 112      11 : 12
 CF Rudy Law                  31 | CF :  92      -3 :  89 | CF :  92      -3 :  89 |  +0 |    -10+10         -20 :       +10+10      -20 | **
 1B Hiromitsu Ochiai          33 | 3B : 124      -9 : 115 | 3B : 124      -9 : 115 |  +0 |          -10          :    -10                | ****
 2B Jack Perconte             33 | SS :  94       8 : 102 | SS :  94       8 : 102 |  +0 |                       :                       | **^
+LF Al Woods                  34 | LF :  97      -7 :  90 | LF :  97      -7 :  90 |  +0 |                       :                       | **
 SS Roy Smalley III           34 | SS : 109       0 : 109 | SS : 109       0 : 109 |  +0 |                       :                       | **^
 RF Glenn Burke               34 | CF :  93      -8 :  85 | CF :  93      -8 :  85 |  +0 |                       :           +9          | *
-LF Al Woods                  34 | LF :  97      -7 :  90 | LF :  97      -7 :  90 |  +0 |                       :                       | **
 RF Fred Lynn                 35 | CF : 113       3 : 116 | CF : 113       3 : 116 |  +0 |          -10          :                       | ***
-LF Tony Scott                36 | CF :  96       5 : 101 | CF :  96       5 : 101 |  +0 |                       :                       | *^
  C Jim Sundberg              36 |  C :  98      11 : 109 |  C :  98      11 : 109 |  +0 |                       :                       | **^
+LF Tony Scott                36 | CF :  96       5 : 101 | CF :  96       5 : 101 |  +0 |                       :                       | *^
 1B Jack Maloof               37 | CF :  99      -8 :  91 | CF :  96      -8 :  88 |  -3 | -10   -10             : -10-10-10 -9          | *
 LF Bobby V. Mitchell         32 | CF :  84       6 :  90 | CF :  84       2 :  86 |  -5 |                +10    :                +10    | *
 RF Rich Amaral               25 | SS :  76       6 :  82 | SS :  76       1 :  77 |  -6 |    +10                :                       | +
@@ -349,10 +349,10 @@ SP Bryan Hickerson           24 | SP :      43     :  43 | SP :      45     :  4
 SP John Denny                34 | SP :     117     : 117 | SP :     118     : 118 |  +1 | +10                      : +10                      | ***
 SP Mike Jeffcoat             28 | SP :      92     :  92 | SP :      93     :  93 |  +1 |          +10             :                          | *
 SP Francisco Oliveras        24 | SP :      43     :  43 | SP :      43     :  43 |  +0 |       +10                :             +10          | +++++
-MR Rich Rodas                27 | MR :      43     :  43 | MR :      43     :  43 |  +0 | -30-10                   : -30-20      -10          | *
 MR Greg Booker               27 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                          :                          | *
-SP Brent Gaff                29 | SP :      58     :  58 | SP :      58     :  58 |  +0 |                          :                          | *
+MR Rich Rodas                27 | MR :      43     :  43 | MR :      43     :  43 |  +0 | -30-10                   : -30-20      -10          | *
 SP Atlee Hammaker            29 | SP :     110     : 110 | SP :     110     : 110 |  +0 |    -10   +10             :                          | **^
+SP Brent Gaff                29 | SP :      58     :  58 | SP :      58     :  58 |  +0 |                          :                          | *
 SP Bob Welch                 30 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                          :                          | **
 MR Dale Mohorcic             31 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | *
 SP Billy L. Smith            33 | SP :      50     :  50 | SP :      50     :  50 |  +0 |                          :                          | *
@@ -594,7 +594,7 @@ Strikeouts      |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 1M |  92 ( 74-106) |  98 ( 80-113)  89/108 |   6/  6 || 108 ( 74-115) | 114 ( 80-121) 104/126 |  30/ 30
 1L |  74 ( 61-157) |  80 ( 67-163)  73/ 88 |   8/  8 ||  97 ( 61-157) | 103 ( 67-163)  93/113 |  40/ 40
 2E |  76 ( 48-110) |  83 ( 54-116)  75/ 91 |  10/ 10 ||  91 ( 48-110) |  97 ( 54-116)  88/107 |  50/ 50
-2L |  77 ( 66- 90) |  83 ( 72- 96)  75/ 91 |  10/ 10 ||  86 ( 59- 91) |  92 ( 65- 97)  83/101 |  50/ 50
+2L |  77 ( 66- 90) |  83 ( 72- 96)  75/ 91 |  10/ 10 ||  86 ( 66- 91) |  92 ( 72- 97)  83/101 |  50/ 50
 
  1 |  92 ( 61-157) |  98 ( 67-163)  89/108 |  20/ 20 || 107 ( 61-208) | 113 ( 67-214) 103/125 | 100/100
  2 |  77 ( 48-110) |  83 ( 54-116)  75/ 91 |  20/ 20 ||  87 ( 48-110) |  93 ( 54-116)  85/103 | 100/100
@@ -697,8 +697,8 @@ SP Charlie Leibrandt         31| SP :      78       0     :  77 |    :          
 CF Jessie Reid               25| RF :  79      -7 -11     :  61 | RF :  84      -7  -7     :  71 |   6 |  77 | -2---236 |               |        :        | p1296 | No Team              | +
 RF Ron Shepherd              26| CF :  78      -2 -14     :  62 | CF :  81      -2  -8     :  71 |   6 |  77 | -222-466 |               |        :        | p1736 | No Team              | *
 SP Ted Power                 32| SP :      77      -1     :  76 |    :                     :   0 |   1 |  77 |          |               |        :        |  p981 | No Team              | *
-MR Mike Walters              29| MR :      71       1     :  72 |    :                     :   0 |   4 |  76 |          |               | $215.3k:$190.4k | p1640 | No Team              | *
 2B Bill Almon                34| 2B :  92      -9  -5     :  78 |    :                     :   0 |  -2 |  76 | -23132-3 |               |        :        |    p2 | No Team              | **
+MR Mike Walters              30| MR :      71       1     :  72 |    :                     :   0 |   3 |  75 |          |               | $215.3k:$190.4k | p1640 | No Team              | *
 MR Steve Burke               32| MR :      72       1     :  73 |    :                     :   0 |   1 |  74 |          |               | $215.3k:$190.4k |  p328 | No Team              | **^
 3B Randy G. Johnson          31| 3B :  84      -5  -8     :  71 |    :                     :   0 |   2 |  73 | -255---- |               |        :        | p1533 | No Team              | *
 SS Wayne Krenchicki          33| SS :  77       7 -10     :  73 |    :                     :   0 |   0 |  73 | -5556--- |               |        :        |  p506 | No Team              | *
@@ -1106,11 +1106,11 @@ SP Bryn Smith                32| SP :     190     111  72 : 373 |    :          
 SP Len Barker                32| SP :     132      54  14 : 200 |    :                     :   0 |   1 | 201 |          |      $2.36Mx3 | $14.64M:$12.95M |  p126 | New York (A) Yankees | **^
 SP Dave Downs                35| SP :     134      56  16 : 205 |    :                     :   0 |  -6 | 199 |          |      $9.69Mx3 | $15.29M:$13.52M |  p568 | New York (A) Yankees | ***^
 SP Kevin Brown               22| SP :      72      -6     :  66 | SP :     121      40   5 : 166 |   6 | 172 |          |   1           |        :        |  p244 | New York (A) Yankees | +++++
-MR Billy Taylor              25| MR :      98      24     : 122 | MR :     112      30   2 : 144 |   6 | 150 |          |   9   $300k r |  $5.17M: $4.57M | p1782 | New York (A) Yankees | ++++-
 SP Mike Witt                 27| SP :     108      30     : 138 |    :                     :   0 |   6 | 144 |          |       $300k a |  $6.46M: $5.71M | p1761 | New York (A) Yankees | **^
+MR Billy Taylor              26| MR :      98      24     : 122 | MR :     107      26     : 133 |   6 | 139 |          |       $300k r |  $5.17M: $4.57M | p1782 | New York (A) Yankees | ****^
 SS Jose Valentin             18| SS :  78       6 -10     :  75 | SS : 103       6  20     : 130 |   6 | 136 | -2666652 |   2           |        :        | p1306 | New York (A) Yankees | ++++-
 1B Rafael Palmeiro           23| LF : 110     -10  21     : 121 | LF : 115     -10  24     : 129 |   6 | 135 | -51--512 |       $300k a |  $4.52M:    $4M |  p713 | New York (A) Yankees | +++++
-MR Gary Wayne                24| MR :      63      -6     :  57 | MR :      99      19     : 119 |   6 | 125 |          |       $300k r |        :        | p1080 | New York (A) Yankees | ++++-
+MR Gary Wayne                24| MR :      63      -6     :  57 | MR :      99      19     : 119 |   6 | 125 |          |   T   $300k r |        :        | p1080 | New York (A) Yankees | ++++-
 CL Bill Castro               35| MR :     103      28     : 131 |    :                     :   0 |  -6 | 125 |          |  F      $6M   |  $6.03M: $5.33M |  p404 | New York (A) Yankees | ***^
 3B Charlie Hayes             22| 3B :  79      -4 -12     :  63 | 3B : 106      -4  16     : 118 |   6 | 124 | -615---- |   3           |        :        |  p561 | New York (A) Yankees | ++++
 SP Bill Long                 27| SP :      98      20     : 118 |    :                     :   0 |   6 | 124 |          |       $350k a |  $4.31M: $3.81M |  p854 | New York (A) Yankees | **^
@@ -1135,7 +1135,7 @@ CF Wayne Gross               35| CF : 101      -8   3     :  96 |    :          
  C Milt May                  37|  C :  88      15   6     : 109 |    :                     :   0 | -20 |  89 | 8312-2-2 |       $500kx2 |  $1.29M: $1.14M | p1327 | New York (A) Yankees | *
 3B Rich Renteria             25| 3B :  80      -8 -15     :  56 | 3B :  91      -8  -3     :  80 |   6 |  86 | -2241--- |       $300k r |        :        | p1529 | New York (A) Yankees | ++-
 SS Bill Lyons                29| SS :  85       3  -6     :  82 |    :                     :   0 |   4 |  86 | -3635--- |       $300k r |        :        | p1129 | New York (A) Yankees | *
-SP Bob Milacki               23| SP :      62     -16     :  46 | SP :      80      -1     :  79 |   6 |  85 |          |   T           |        :        |  p672 | New York (A) Yankees | +++
+SP Bob Milacki               23| SP :      62     -16     :  46 | SP :      80      -1     :  79 |   6 |  85 |          |   9           |        :        |  p672 | New York (A) Yankees | +++
 SP Mike Proly                36| SP :      88      10     :  97 |    :                     :   0 | -12 |  85 |          |  F    $3.5M   |  $2.15M:  $1.9M | p1424 | New York (A) Yankees | *
 MR Mark Dewey                22| MR :      48     -19     :  28 | MR :      77       0     :  77 |   6 |  83 |          |               |        :        |  p463 | New York (A) Yankees | +++
 RF Bob Skube                 30| CF :  92      -8  -5     :  79 |    :                     :   0 |   3 |  82 | -321-244 |               |        :        | p1740 | New York (A) Yankees | *
@@ -1148,8 +1148,8 @@ MR Scott Ruskin              24| MR :      56     -12     :  44 | MR :      72  
 SS Jose Uribe                28| DH :  89     -19  -5     :  65 |    :                     :   0 |   5 |  70 | -2--1--- |       $300k r |        :        | p1710 | New York (A) Yankees | *^
 LF Bob Porter                28| LF :  86     -14  -8     :  64 |    :                     :   0 |   5 |  69 | -2---2-1 |               |        :        | p1683 | New York (A) Yankees | *
 SP Kevin Ritz                22| SP :      61     -18     :  43 | SP :      71     -10     :  62 |   6 |  68 |          |   8           |        :        |  p907 | New York (A) Yankees | +++
-LF Chris Bourjos             32| LF :  77      -6  -9     :  62 |    :                     :   0 |   1 |  63 | -2---623 |               |        :        |   p88 | New York (A) Yankees | *
 LF Javier Ortiz              24| LF :  78     -13 -15     :  50 | LF :  82     -13 -13     :  56 |   6 |  62 | -1---3-1 |               |        :        |  p743 | New York (A) Yankees | +-
+LF Chris Bourjos             33| LF :  77      -6  -9     :  62 |    :                     :   0 |   0 |  62 | -2---623 |               |        :        |   p88 | New York (A) Yankees | *
 SP Jack Lazorko              31| SP :      67     -11     :  57 |    :                     :   0 |   2 |  59 |          |               |        :        | p1636 | New York (A) Yankees | *
 SP Eric Show                 31| SP :      67     -11     :  56 |    :                     :   0 |   2 |  58 |          |               |        :        | p2915 | New York (A) Yankees | *
 
@@ -1174,7 +1174,7 @@ CF Karl Rhodes               19| LF :  78      -9 -10     :  59 | LF : 106      
  C Don Slaught               29|  C : 105       1   9     : 115 |    :                     :   0 |   4 | 119 | 51------ |      $1.42M a |  $1.94M: $1.71M | p1772 | Chicago (A) White... | **^
 CF Mike Greenwell            24| LF : 101     -12  10     :  99 | LF : 108     -12  15     : 111 |   6 | 117 | -1---423 |     $671.4k a |  $2.15M:  $1.9M |  p411 | Chicago (A) White... | **^
 MR Steve McCatty             33| SP :      97      19     : 116 |    :                     :   0 |   0 | 116 |          |      $2.21Mx2 |  $4.09M: $3.62M | p1177 | Chicago (A) White... | **^
-2B Bill Doran                29| 2B : 106      -8  10     : 109 |    :                     :   0 |   4 | 113 | -341-312 | I   $469.3k a |  $2.15M:  $1.9M |  p325 | Chicago (A) White... | **^
+2B Bill Doran                29| 2B : 106      -8  10     : 109 |    :                     :   0 |   4 | 113 | -341-312 |     $469.3k a |  $2.15M:  $1.9M |  p325 | Chicago (A) White... | **^
 3B Scott Leius               22| SS :  73       8 -14     :  67 | SS :  90       8   9     : 106 |   6 | 112 | -7467--- |               |        :        |  p826 | Chicago (A) White... | ++-
  C Danny Sheaffer            26| LF :  90      -6   4     :  88 |  C :  96       1   7     : 104 |   6 | 110 | 5514-623 |               | $861.2k:$761.5k | p1480 | Chicago (A) White... | *^
  C Mike Macfarlane           23|  C :  79       3 -15     :  68 |  C :  93       3   6     : 103 |   6 | 109 | 61------ |               |        :        |  p579 | Chicago (A) White... | +++-
@@ -1182,7 +1182,7 @@ SP Trevor Wilson             21| SP :      64     -14     :  51 | SP :      91  
 1B Carlos Quintana           22| 1B :  92     -13   0     :  80 | 1B : 104     -13  10     : 101 |   6 | 107 | -612---3 |               |        :        |  p861 | Chicago (A) White... | +++-
 SS Greg Gagne                25| SS :  93      -5  -6     :  82 | SS : 100      -5   6     : 101 |   6 | 107 | -2113--- |       $300k a |        :        |  p564 | Chicago (A) White... | +++
 SP Andy Ashby                20| SP :      55     -23     :  32 | SP :      90       9     :  99 |   6 | 105 |          |   T           |        :        |   p48 | Chicago (A) White... | ++++-
-2B Carlos Garcia             19| SS :  74       5 -15     :  65 | SS :  88       5   5     :  98 |   6 | 104 | -2566--- |               |        :        |  p560 | Chicago (A) White... | ++-
+2B Carlos Garcia             20| SS :  74       5 -15     :  65 | SS :  88       5   5     :  98 |   6 | 104 | -2566--- |               |        :        |  p560 | Chicago (A) White... | ++-
 3B Franklin Stubbs           26| 1B :  96     -15   2     :  83 | 1B : 103     -15   6     :  94 |   6 | 100 | -412-1-1 |       $300k r | $430.6k:$380.8k | p1088 | Chicago (A) White... | *^
 1B Lee Mazzilli              32| LF : 103     -14   9     :  99 |    :                     :   0 |   1 | 100 | -312-323 |         $5Mx3 |  $1.94M: $1.71M | p2895 | Chicago (A) White... | **
 SS Shawon Dunston            24| SS :  81       6  -7     :  80 | SS :  85       6   2     :  93 |   6 |  99 | -6566566 |       $750kx7 |        :        |  p323 | Chicago (A) White... | ++-
@@ -1215,7 +1215,7 @@ SP Moose Haas                31| SP :     120      42   2 : 164 |    :          
 SP Steve Trout               30| SP :     115      37     : 152 |    :                     :   0 |   3 | 155 |          |  F   $2.35M   |  $7.97M: $7.04M | p1337 | Oakland Athletics    | **^
 SP Doug Drabek               25| SP :      92      14     : 106 | SP :     114      33     : 147 |   6 | 153 |          |   4   $300k r |  $3.01M: $2.67M |  p309 | Oakland Athletics    | +++++
 MR Fernando Arroyo           35| SP :     113      35     : 148 |    :                     :   0 |  -6 | 142 |          |      $3.25Mx2 |  $7.54M: $6.66M |  p102 | *CEI* Oakland Ath... | ****
- C Joe Girardi               22|  C :  78       9 -10     :  77 |  C : 101       9  20     : 130 |   6 | 136 | 71------ |               |        :        |  p534 | Oakland Athletics    | +++-
+ C Joe Girardi               23|  C :  78       9 -10     :  77 |  C : 101       9  20     : 130 |   6 | 136 | 71------ |               |        :        |  p534 | Oakland Athletics    | +++-
 SP Tom Glavine               21| SP :      64     -14     :  50 | SP :     104      23     : 127 |   6 | 133 |          |   5   $300k r |        :        |  p533 | Oakland Athletics    | +++++
 1B Will Clark                23| 1B : 107     -13  15     : 109 | 1B : 115     -13  20     : 122 |   6 | 128 | -6------ |   3           |  $3.23M: $2.86M |  p150 | Oakland Athletics    | +++++
 3B Tatsunori Hara            29| 3B : 105      -1  17     : 122 |    :                     :   0 |   4 | 126 | -546-3-4 |       $1.8M a |  $3.66M: $3.24M | p1822 | Oakland Athletics    | **^
@@ -1279,8 +1279,8 @@ MR Rick A. Williams          30| SP :      97      19     : 116 |    :          
 3B Ron Coomer                20| 3B :  73      -8 -22     :  43 | 3B : 103      -8  10     : 105 |   6 | 111 | -414-2-4 |               |        :        |  p454 | California Angels    | +++-
 MR Bill Dawley               29| MR :      90      17     : 107 |    :                     :   0 |   4 | 111 |          |       $300k r |  $3.66M: $3.24M |  p168 | California Angels    | ***^
  C Sandy Alomar Jr.          21|  C :  77       3 -17     :  64 |  C :  92       3   5     : 101 |   6 | 107 | 61------ |               |        :        |    p1 | California Angels    | +++-
-1B Willie Aikens             32| LF : 106     -14  12     : 105 |    :                     :   0 |   1 | 106 | -3---213 |      $3.65M e |  $2.58M: $2.28M |   p32 | California Angels    | **
 CF Glenn Wilson              28| CF :  94       1   5     : 100 |    :                     :   0 |   5 | 105 | -6221466 |       $300k r |  $1.08M:$951.9k | p1795 | California Angels    | **^
+1B Willie Aikens             33| LF : 106     -14  12     : 105 |    :                     :   0 |   0 | 105 | -3---213 |      $3.65M e |  $2.58M: $2.28M |   p32 | California Angels    | **
 LF Steve Henderson           34| LF :  97      -4  14     : 107 |    :                     :   0 |  -2 | 105 | -2---823 |  F   $1000k   |  $3.01M: $2.67M |  p976 | California Angels    | **^
 2B Joey Cora                 22| 2B :  89      -9  -8     :  72 | 2B : 100      -9   5     :  96 |   6 | 102 | -2311--- |               |        :        |  p177 | California Angels    | +++-
 2B Harold Reynolds           26| 2B :  90      -3  -1     :  85 | 2B :  94      -3   5     :  95 |   6 | 101 | -2524--- | I     $300k a |        :        | p1543 | California Angels    | *^
@@ -1302,17 +1302,17 @@ MR Ken Ryan                  18| MR :      35     -31     :   4 | MR :      81  
 RF Jerald Clark              24| LF :  78      -8 -10     :  61 | LF :  88      -8  -2     :  79 |   6 |  85 | -4---546 |               |        :        |  p142 | California Angels    | ++-
 CF Alex Diaz                 19| LF :  75      -6 -11     :  58 | CF :  86      -3  -4     :  78 |   6 |  84 | -2---655 |               |        :        |  p464 | California Angels    | ++
 2B Greg Briley               22| 2B :  74      -3 -17     :  54 | 2B :  85      -3  -4     :  78 |   6 |  84 | -25241-1 |               |        :        |  p212 | California Angels    | ++
-2B Kiko Garcia               33| LF :  98     -16   2     :  84 |    :                     :   0 |   0 |  84 | -211-1-1 |  F   $1.09M   | $430.6k:$380.8k |  p837 | California Angels    | **
 LF Larry Sheets              27| LF :  94     -15  -1     :  77 |    :                     :   0 |   6 |  83 | -2---2-2 |       $300k r |        :        | p1697 | California Angels    | **
 SP Jaime Cocanower           30| SP :      79       1     :  80 |    :                     :   0 |   3 |  83 |          |               | $215.3k:$190.4k |  p499 | California Angels    | *
 SP Steve Busby               38| SP :      96      18     : 113 |    :                     :   0 | -30 |  83 |          |  F      $2M   |  $3.88M: $3.43M |  p290 | California Angels    | *
+2B Kiko Garcia               34| LF :  98     -16   2     :  84 |    :                     :   0 |  -2 |  82 | -211-1-1 |  F   $1.09M   | $430.6k:$380.8k |  p837 | California Angels    | **
 MR Tim Scott                 20| MR :      51     -16     :  35 | MR :      76      -1     :  75 |   6 |  81 |          |               |        :        |  p949 | California Angels    | ++-
 SP Mark Langston             27| SP :      77      -1     :  75 |    :                     :   0 |   6 |  81 |          |       $300k a |        :        |  p792 | California Angels    | *
 
 --- Minnesota Twins ---
 SP Jay Franklin              34| SP :     184     105  66 : 355 |    :                     :   0 |  -2 | 353 |          |        $11Mx3 | $36.82M:$32.56M |  p756 | Minnesota Twins      | ***^
 SP Joe Sambito               35| SP :     152      73  34 : 259 |    :                     :   0 |  -6 | 253 |          |      $7.37M e | $23.04M:$20.37M | p1493 | Minnesota Twins      | ***^
-SP John Sutton               34| SP :     137      59  19 : 215 |    :                     :   0 |  -2 | 213 |          |       $6.5Mx3 | $16.79M:$14.85M | p1560 | Minnesota Twins      | ***^
+SP John Sutton               34| SP :     137      59  19 : 215 |    :                     :   0 |  -2 | 213 |          | I     $6.5Mx3 | $16.79M:$14.85M | p1560 | Minnesota Twins      | ***^
 SP Cecilio Guante            27| SP :     130      52  12 : 193 |    :                     :   0 |   6 | 199 |          |      $3.06M a | $13.78M:$12.18M |  p641 | Minnesota Twins      | ***^
 SP Roger Mason               30| SP :     117      39     : 156 |    :                     :   0 |   3 | 159 |          |     $571.4k a |   $8.4M: $7.42M | p1183 | Minnesota Twins      | **^
 1B George Brett              34| 3B : 129      -8  34   6 : 161 |    :                     :   0 |  -2 | 159 | -514---- |  F  $13.54M   |  $8.61M: $7.62M |  p222 | Minnesota Twins      | ***^
@@ -1321,21 +1321,21 @@ SP Andy Rincon               28| SP :     106      28     : 134 |    :          
 CL Jesse Orosco              30| MR :     105      30     : 135 |    :                     :   0 |   3 | 138 |          |       $300k a |  $6.46M: $5.71M | p1676 | Minnesota Twins      | ****^
 RF Jack Clark                31| RF : 113      -5  24     : 132 |    :                     :   0 |   2 | 134 | -7---327 |      $4.94Mx2 |  $5.17M: $4.57M |  p379 | Minnesota Twins      | ***^
 2B Mike Gallego              26| 2B :  93       4   9     : 106 | SS : 100       7  18     : 125 |   6 | 131 | -3856--- |     $671.4k a |  $1.94M: $1.71M |  p460 | Minnesota Twins      | ***
-CL Victor Cruz               29| SP :     102      24     : 126 |    :                     :   0 |   4 | 130 |          | I     $300k r |  $5.17M: $4.57M |  p194 | Minnesota Twins      | ****^
+CL Victor Cruz               29| SP :     102      24     : 126 |    :                     :   0 |   4 | 130 |          | I     $300k r |  $5.17M: $4.57M |  p194 | Minnesota Twins      | ****
 SS Alan Trammell             29| SS : 101       7  14     : 122 |    :                     :   0 |   4 | 126 | -3226--- |         $4Mx2 |  $3.01M: $2.67M | p1326 | Minnesota Twins      | ***^
 LF Dean Palmer               18| LF :  79     -12 -13     :  54 | 3B : 109      -9  15     : 115 |   6 | 121 | -3-3-3-- |   2           |        :        | p1118 | Minnesota Twins      | ++++-
 RF Reggie L. Sanders         19| RF :  78      -3  -9     :  66 | RF : 103      -3  16     : 115 |   6 | 121 | -2---458 |   3           |        :        | p1243 | Minnesota Twins      | ++++
-LF Dan Pasqua                25| LF :  99      -9  11     : 101 | LF : 107      -9  17     : 115 |   6 | 121 | -2---514 |   5           |  $2.37M: $2.09M |  p925 | Minnesota Twins      | ++++
 SP John K. Davis             24| SP :      63     -15     :  48 | SP :      96      15     : 112 |   6 | 118 |          |   1           |        :        |  p282 | Minnesota Twins      | ++++-
- C Dan Walters               21|  C :  73       9 -15     :  67 |  C :  91       9  10     : 110 |   6 | 116 | 71------ |               |        :        | p1107 | Minnesota Twins      | +++
+LF Dan Pasqua                26| LF :  99      -9  11     : 101 | LF : 105      -9  15     : 111 |   6 | 117 | -2---514 |               |  $2.37M: $2.09M |  p925 | Minnesota Twins      | ****
+ C Dan Walters               21|  C :  73       9 -15     :  67 |  C :  91       9  10     : 110 |   6 | 116 | 71------ |   T           |        :        | p1107 | Minnesota Twins      | +++
 3B Tim Wallach               30| 3B : 104      -4  13     : 113 |    :                     :   0 |   3 | 116 | -515-1-2 |      $1.54M e |   $2.8M: $2.47M | p2910 | Minnesota Twins      | **^
 SP Frank Pastore             30| SP :      95      17     : 112 |    :                     :   0 |   3 | 115 |          |               |  $3.66M: $3.24M |  p892 | Minnesota Twins      | *
 CF Gary Pettis               29| CF :  93       6  10     : 109 |    :                     :   0 |   4 | 113 | -2---383 |               |  $2.15M:  $1.9M | p1513 | Minnesota Twins      | *^
 SS Jerry Manuel              33| SS : 102       1   9     : 112 |    :                     :   0 |   0 | 112 | -2225--- |  F   $2.75M   |  $1.94M: $1.71M | p1407 | Minnesota Twins      | **^
 MR Doug Corbett              34| MR :      93      20     : 114 |    :                     :   0 |  -2 | 112 |          |       $300k r |  $4.31M: $3.81M |  p521 | Minnesota Twins      | ***^
-CF Milt Cuyler               19| CF :  74       4 -12     :  66 | CF :  92       4   9     : 105 |   6 | 111 | -2---586 |   9           |        :        |  p458 | Minnesota Twins      | +++
-SS Darnell Coles             25| SS :  80       5  -9     :  76 | SS :  92       5   8     : 105 |   6 | 111 | -51563-3 |   8           |        :        |  p294 | Minnesota Twins      | +++
-2B Bobby Rose                20| 2B :  73      -5 -20     :  48 | 2B : 100      -5   9     : 104 |   6 | 110 | -252---- |   6           |        :        |  p915 | Minnesota Twins      | +++-
+CF Milt Cuyler               19| CF :  74       4 -12     :  66 | CF :  92       4   9     : 105 |   6 | 111 | -2---586 |   8           |        :        |  p458 | Minnesota Twins      | +++
+SS Darnell Coles             25| SS :  80       5  -9     :  76 | SS :  92       5   8     : 105 |   6 | 111 | -51563-3 |   7           |        :        |  p294 | Minnesota Twins      | +++
+2B Bobby Rose                20| 2B :  73      -5 -20     :  48 | 2B : 100      -5   9     : 104 |   6 | 110 | -252---- |   5           |        :        |  p915 | Minnesota Twins      | +++-
 1B Bill Spiers               21| SS :  73       6 -15     :  65 | SS :  90       6   7     : 104 |   6 | 110 | -4466446 |               |        :        | p1291 | Minnesota Twins      | ++-
 2B John Castino              32| 3B :  96       1   9     : 106 |    :                     :   0 |   1 | 107 | -3765--- |       $2.3Mx2 |  $1.94M: $1.71M |   p95 | Minnesota Twins      | **
  C Steve Christmas           29|  C :  94       6   3     : 102 |    :                     :   0 |   4 | 106 | 6321-1-1 |               | $645.9k:$571.1k |  p147 | Minnesota Twins      | *
@@ -1350,7 +1350,7 @@ CF Dave Winfield             36| RF :  99      -3  13     : 109 |    :          
 1B Billy Ripken              22| 2B :  76       1 -11     :  65 | SS :  85       2  -2     :  86 |   6 |  92 | -6645211 |               |        :        |  p791 | Minnesota Twins      | ++
 LF Gene Krug                 32| 3B : 100     -12   1     :  89 |    :                     :   0 |   1 |  90 | -212-1-1 |       $300k r | $215.3k:$190.4k |  p627 | Minnesota Twins      | **
 LF Mike Hargrove             37| 1B : 109     -15  15     : 109 |    :                     :   0 | -20 |  89 | -4---1-- |  F    $6.1M   |  $3.23M: $2.86M | p1008 | Minnesota Twins      | **
-SP Drew Hall                 24| SP :      73      -5     :  68 | SP :      82       1     :  82 |   6 |  88 |          |   7           |        :        |  p543 | Minnesota Twins      | +++-
+SP Drew Hall                 24| SP :      73      -5     :  68 | SP :      82       1     :  82 |   6 |  88 |          |   6           |        :        |  p543 | Minnesota Twins      | +++-
 1B Broderick Perkins         32| LF :  93     -10   4     :  87 |    :                     :   0 |   1 |  88 | -6---522 |               | $861.2k:$761.5k |  p937 | Minnesota Twins      | *^
 MR Vince Horsman             20| MR :      38     -28     :  10 | MR :      79       2     :  80 |   6 |  86 |          |               |        :        |  p737 | Minnesota Twins      | +++-
 LF Herb Washington           35| LF :  90      -4   6     :  92 |    :                     :   0 |  -6 |  86 | -212-736 |  F    $2.1M   |  $1.29M: $1.14M | p1570 | Minnesota Twins      | **
@@ -1472,7 +1472,7 @@ SP Tommy Boggs               31| SP :     129      51  11 : 191 |    :          
 MR Will McEnaney             35| SP :     129      51  11 : 191 |    :                     :   0 |  -6 | 185 |          |  F    $5.5M   | $13.35M: $11.8M | p1160 | New York (N) Mets    | ***^
 SP George Stablein           29| SP :     113      35     : 147 |    :                     :   0 |   4 | 151 |          |      $3.22M a |  $7.54M: $6.66M | p1701 | New York (N) Mets    | ***
 SP Larry Christenson         33| SP :     114      36     : 149 |    :                     :   0 |   0 | 149 |          |      $1.21Mx2 |  $7.75M: $6.85M |  p466 | New York (N) Mets    | **^
-SS Robin Yount               32| SS : 104      13  23     : 140 |    :                     :   0 |   1 | 141 | -3338223 |      $3.41M e |  $4.95M: $4.38M | p1518 | New York (N) Mets    | ***^
+SS Robin Yount               32| SS : 104      13  23     : 140 |    :                     :   0 |   1 | 141 | -3338223 |      $3.41M e |  $4.95M: $4.38M | p1518 | New York (N) Mets    | ****
  C Gary Carter               33|  C : 113       0  16     : 129 |    :                     :   0 |   0 | 129 | 5312-2-2 |      $6.08Mx2 |  $3.44M: $3.05M |  p403 | New York (N) Mets    | ***^
 3B Bobby L. Brown            33| 3B :  98       5  15     : 118 |    :                     :   0 |   0 | 118 | -3381767 |         $5M e |  $3.23M: $2.86M |  p279 | New York (N) Mets    | **
 LF Gary Matthews Sr.         37| LF : 117     -10  28   3 : 138 |    :                     :   0 | -20 | 118 | -312-522 |        $12M e |  $6.46M: $5.71M | p1083 | New York (N) Mets    | ***
@@ -1488,14 +1488,14 @@ LF Lyman Bostock             36| CF :  94       6  11     : 111 |    :          
 LF Scott Cooper              20| 3B :  75      -4 -17     :  54 | 3B :  93      -4   3     :  92 |   6 |  98 | -615-413 |   5           |        :        |  p370 | New York (N) Mets    | ++-
 2B Jorge Orta                36| 2B : 104      -5  11     : 110 |    :                     :   0 | -12 |  98 | -2541313 |  F      $5M   |  $2.37M: $2.09M | p1867 | New York (N) Mets    | ****
 CF Andre Dawson              33| CF :  96      -3   3     :  96 |    :                     :   0 |   0 |  96 | -2---355 |      $5.47Mx2 | $645.9k:$571.1k |  p234 | New York (N) Mets    | ***
-CF Reid Nichols              29| CF :  93      -3   1     :  91 |    :                     :   0 |   4 |  95 | -2211554 | I     $300k r | $215.3k:$190.4k |  p968 | New York (N) Mets    | **
+CF Reid Nichols              29| CF :  93      -3   1     :  91 |    :                     :   0 |   4 |  95 | -2211554 |       $300k r | $215.3k:$190.4k |  p968 | New York (N) Mets    | **
 MR Dan Spillner              35| SP :      90      12     : 101 |    :                     :   0 |  -6 |  95 |          |       $6.5Mx2 |  $2.58M: $2.28M | p1272 | New York (N) Mets    | ****
 1B Jack Voigt                21| LF :  72      -7 -15     :  50 | CF :  90      -4  -1     :  86 |   6 |  92 | -522-656 |   4           |        :        | p1315 | New York (N) Mets    | ++-
 SS Jay Loviglio              31| 2B :  85       3   0     :  88 |    :                     :   0 |   2 |  90 | -2766216 | I             |        :        |  p781 | New York (N) Mets    | *
 1B Greg Biagini              35| 3B :  99      -9   3     :  94 |    :                     :   0 |  -6 |  88 | -3-3-334 |         $8Mx2 | $645.9k:$571.1k | p2897 | New York (N) Mets    | **^
 RF Mickey Hatcher            32| LF :  88      -5   3     :  86 |    :                     :   0 |   1 |  87 | -4-4-737 |               | $645.9k:$571.1k |  p344 | New York (N) Mets    | *
 3B Scott Coolbaugh           21| 3B :  72       0 -15     :  56 | 3B :  83       0  -3     :  80 |   6 |  86 | -2261522 |   8           |        :        |  p427 | New York (N) Mets    | ++
-SP John Barfield             22| SP :      66     -12     :  55 | SP :      80      -1     :  80 |   6 |  86 |          |   1           |        :        |   p93 | New York (N) Mets    | +++-
+SP John Barfield             23| SP :      66     -12     :  55 | SP :      80      -1     :  80 |   6 |  86 |          |   1           |        :        |   p93 | New York (N) Mets    | +++-
 RF Dion James                24| RF :  74      -9 -18     :  47 | RF :  90      -9  -2     :  79 |   6 |  85 | -2---325 |   2           |        :        |  p655 | New York (N) Mets    | +++-
 MR Rick Honeycutt            33| SP :      81       3     :  84 |    :                     :   0 |   0 |  84 |          |       $300k a | $645.9k:$571.1k |  p400 | New York (N) Mets    | **^
 MR Gene Nelson               26| MR :      60      -9     :  51 | MR :      77       0     :  77 |   6 |  83 |          |               |        :        | p1292 | New York (N) Mets    | **^
@@ -1526,7 +1526,6 @@ MR Rick Camp                 34| SP :     110      32     : 143 |    :          
 MR Larry Demery              34| SP :     109      31     : 140 |    :                     :   0 |  -2 | 138 |          |      $8.19Mx3 |  $6.67M:  $5.9M |  p700 | *CEI* Philadelphi... | ****
 SS Ryne Sandberg             28| SS : 100      13  19     : 132 |    :                     :   0 |   5 | 137 | -36481-2 |       $300k r |  $4.09M: $3.62M | p1695 | Philadelphia Phil... | ***^
 3B Masayuki Kakefu           32| 3B : 111       0  24     : 135 |    :                     :   0 |   1 | 136 | -2361--1 |       $3.5Mx3 |  $5.17M: $4.57M | p1588 | Philadelphia Phil... | ***
- C Bill Bathe                26|  C :  90      13   6     : 109 |  C :  97      13  19     : 129 |   6 | 135 | 81------ |               |  $1.29M: $1.14M |   p56 | Philadelphia Phil... | *
 CF Alex Cole                 22| CF :  84       4  -1     :  87 | CF : 103       4  21     : 128 |   6 | 134 | -2---884 |   9           |        :        |  p153 | Philadelphia Phil... | ++++
 3B Glenn Davis               26| 3B : 110      -7  15     : 118 | 3B : 114      -7  21     : 128 |   6 | 134 | -514---- |       $300k r |  $3.23M: $2.86M |  p327 | Philadelphia Phil... | ***^
 LF Tim Raines Sr.            28| RF : 110      -4  22     : 128 |    :                     :   0 |   5 | 133 | -21--657 |       $2.5Mx5 |  $4.74M: $4.19M | p1133 | Philadelphia Phil... | **^
@@ -1538,11 +1537,12 @@ MR Steve Brown               30| SP :     102      24     : 125 |    :          
 SP Kurt Kepshire             28| SP :     100      22     : 122 |    :                     :   0 |   5 | 127 |          |       $300k a |  $4.74M: $4.19M |  p908 | Philadelphia Phil... | ***^
 2B Norberto Martin           20| 2B :  79      -1 -10     :  69 | 2B : 103      -1  16     : 119 |   6 | 125 | -2644412 |               |        :        |  p595 | Philadelphia Phil... | +++-
 CF Al Martin                 19| RF :  76      -6 -14     :  56 | CF : 106      -4  16     : 118 |   6 | 124 | -2---556 |   7           |        :        |  p962 | Philadelphia Phil... | ++++
-LF Jerry Royster             34| SS : 104       6  16     : 126 |    :                     :   0 |  -2 | 124 | -3666714 |         $2Mx2 |  $3.44M: $3.05M | p1348 | Philadelphia Phil... | **^
 3B Jose Oquendo              24| LF :  93      -3  10     : 100 | SS : 101       0  12     : 114 |   6 | 120 | -7555866 |               |  $2.15M:  $1.9M |  p830 | Philadelphia Phil... | +++-
+LF Jerry Royster             35| SS : 104       6  16     : 126 |    :                     :   0 |  -6 | 120 | -3666714 |         $2Mx2 |  $3.44M: $3.05M | p1348 | Philadelphia Phil... | **^
 2B Jeff Treadway             24| 2B :  88       3   3     :  94 | 2B :  95       3  12     : 111 |   6 | 117 | -2751--- |               | $645.9k:$571.1k | p1063 | Philadelphia Phil... | +++-
 1B Gary Gaetti               29| 3B :  96       4  13     : 113 |    :                     :   0 |   4 | 117 | -8281--- |               |   $2.8M: $2.47M |  p469 | Philadelphia Phil... | **^
 1B Cecil Fielder             24| 1B :  97     -12   6     :  91 | 1B : 107     -12  14     : 109 |   6 | 115 | -7------ |   3   $300k r |  $1.29M: $1.14M |  p353 | Philadelphia Phil... | +++++
+ C Bill Bathe                27|  C :  90      13   6     : 109 |    :                     :   0 |   6 | 115 | 81------ |               |  $1.29M: $1.14M |   p56 | Philadelphia Phil... | *
 3B Brian Dorsett             26|  C :  83       9  -5     :  87 |  C :  89       9   8     : 106 |   6 | 112 | 72241--- |               |        :        |  p305 | Philadelphia Phil... | *
 3B Dale Murphy               31| CF :  98       1   9     : 108 |    :                     :   0 |   2 | 110 | 3512-575 |         $5Mx3 |  $1.94M: $1.71M | p1521 | Philadelphia Phil... | **
 SP Allan Anderson            23| SP :      54     -24     :  30 | SP :      92      11     : 103 |   6 | 109 |          |   1           |        :        |   p39 | Philadelphia Phil... | +++++
@@ -1550,7 +1550,6 @@ RF Tony Armas Sr.            34| RF : 100      -3  14     : 111 |    :          
  C Scott Bradley             27|  C :  92       7   2     : 101 |    :                     :   0 |   6 | 107 | 6212---- |       $300k r | $430.6k:$380.8k |  p118 | Philadelphia Phil... | **
 SP Butch Henry               19| MR :      36     -29     :   7 | SP :      89       8     :  97 |   6 | 103 |          |   8           |        :        |  p740 | Philadelphia Phil... | ++++
 CF Joe Wallis                35| CF :  92       7  10     : 109 |    :                     :   0 |  -6 | 103 | -3---599 |       $1.1Mx2 |  $2.15M:  $1.9M | p1512 | Philadelphia Phil... | **
-CL Jeff Terpko               36| MR :      94      21     : 115 |    :                     :   0 | -12 | 103 |          |       $3.8Mx2 |  $4.52M:    $4M | p1972 | Philadelphia Phil... | ****^
 MR Todd Worrell              28| MR :      85      13     :  97 |    :                     :   0 |   5 | 102 |          |       $300k r |   $2.8M: $2.47M | p1256 | Philadelphia Phil... | ***
 SP Oil Can Boyd              28| SP :      87       9     :  96 |    :                     :   0 |   5 | 101 |          |               |  $1.94M: $1.71M |  p128 | Philadelphia Phil... | *
 MR Freddie Martinez          30| SP :      88      10     :  98 |    :                     :   0 |   3 | 101 |          |               |  $2.15M:  $1.9M |  p862 | Philadelphia Phil... | **^
@@ -1559,6 +1558,7 @@ RF Chito Martinez            21| RF :  76     -10 -18     :  48 | RF :  99     -
 3B Dave Baker                30| 3B :  87       3   3     :  93 |    :                     :   0 |   3 |  96 | -217---- |               | $645.9k:$571.1k |  p148 | Philadelphia Phil... | *
 SP Jose J. Bautista          23| MR :      57     -11     :  46 | SP :      85       4     :  89 |   6 |  95 |          |   T           |        :        |   p70 | Philadelphia Phil... | ++++
 RF Terry Harper              32| LF :  90      -3   7     :  94 |    :                     :   0 |   1 |  95 | -221-846 |               |  $1.51M: $1.33M |  p955 | Philadelphia Phil... | *
+CL Jeff Terpko               37| MR :      94      21     : 115 |    :                     :   0 | -20 |  95 |          |       $3.8Mx2 |  $4.52M:    $4M | p1972 | Philadelphia Phil... | ****^
 SP Jeff Ballard              24| MR :      41     -25     :  15 | SP :      85       4     :  88 |   6 |  94 |          |               |        :        |   p40 | Philadelphia Phil... | +++
 1B Steve Balboni             30| 1B :  97     -13   4     :  88 |    :                     :   0 |   3 |  91 | -5---222 |       $300k a | $861.2k:$761.5k |  p171 | Philadelphia Phil... | **
 1B Brook Jacoby              27| 3B :  92      -8  -3     :  81 |    :                     :   0 |   6 |  87 | -514-1-- |               |        :        |  p816 | Philadelphia Phil... | *
@@ -1600,10 +1600,10 @@ SP Jose Melendez             22| MR :      39     -27     :  12 | SP :      89  
 SP Lee Tunnell               26| SP :      72      -6     :  66 | SP :      89       7     :  96 |   6 | 102 |          |               |        :        | p1674 | Pittsburgh Pirates   | *
 SS Alfredo Griffin           30| SS :  96       1   3     :  99 |    :                     :   0 |   3 | 102 | -2115--- |       $1.5Mx3 | $645.9k:$571.1k |  p336 | Pittsburgh Pirates   | **^
 1B Jeff Reboulet             23| SS :  72       7 -15     :  64 | SS :  85       7   3     :  95 |   6 | 101 | -4776213 |               |        :        | p1157 | Pittsburgh Pirates   | ++
-RF Kevin McReynolds          27| CF :  90       2   3     :  95 |    :                     :   0 |   6 | 101 | -212-675 |               | $645.9k:$571.1k |  p877 | Pittsburgh Pirates   | *
 LF Willie Wilson             32| LF :  98      -8  10     : 100 |    :                     :   0 |   1 | 101 | -2---544 |         $5Mx2 |  $2.15M:  $1.9M | p1578 | Pittsburgh Pirates   | **
 SP Brian Bohanon             19| MR :      40     -26     :  14 | SP :      88       6     :  94 |   6 | 100 |          |               |        :        |  p238 | Pittsburgh Pirates   | ++++-
 2B Jeff Gardner              23| 2B :  74      -3 -17     :  54 | 2B :  93      -3   4     :  94 |   6 | 100 | -2544--- |               |        :        |  p503 | Pittsburgh Pirates   | +++
+RF Kevin McReynolds          28| CF :  90       2   3     :  95 |    :                     :   0 |   5 | 100 | -212-675 |               | $645.9k:$571.1k |  p877 | Pittsburgh Pirates   | *
 CF Lloyd Moseby              27| RF :  95      -7   5     :  93 |    :                     :   0 |   6 |  99 | -2---456 |               |  $1.08M:$951.9k | p1671 | Pittsburgh Pirates   | *
  C Jack Fimple               28|  C : 100      -6  -3     :  91 |    :                     :   0 |   5 |  96 | 31------ |       $300k a |        :        |  p493 | Pittsburgh Pirates   | **
 CL Roberto Hernandez         22| MR :      60      -9     :  51 | MR :      82       5     :  87 |   6 |  93 |          |               |        :        |  p654 | Pittsburgh Pirates   | ++++
@@ -1687,7 +1687,7 @@ SP Colin Ward                26| SP :      73      -5     :  68 | SP :      91  
 SP Rick A. Anderson          30| SP :      91      12     : 103 |    :                     :   0 |   3 | 106 |          |       $300k r |  $2.58M: $2.28M |   p90 | Cincinnati Reds      | *
 3B Steve Sax                 27| 2B :  97      -4   6     :  99 |    :                     :   0 |   6 | 105 | -2544412 |       $300k a |  $1.29M: $1.14M | p1730 | Cincinnati Reds      | **
 CF Ruppert Jones             32| CF :  99      -2   7     : 104 |    :                     :   0 |   1 | 105 | -2---666 |       $300k r |  $1.51M: $1.33M | p1054 | Cincinnati Reds      | **
-CF Thomas Howard             22| CF :  75       1 -13     :  63 | CF :  91       1   6     :  98 |   6 | 104 | -2---774 | I             |        :        |  p777 | Cincinnati Reds      | +++
+CF Thomas Howard             22| CF :  75       1 -13     :  63 | CF :  91       1   6     :  98 |   6 | 104 | -2---774 |               |        :        |  p777 | Cincinnati Reds      | +++
 3B German Rivera             27| 3B : 101      -9   5     :  97 |    :                     :   0 |   6 | 103 | -2-3---- |               |  $1.08M:$951.9k | p1662 | Cincinnati Reds      | *^
  C Ron Karkovice             24|  C :  76       7 -14     :  69 |  C :  86       7   3     :  96 |   6 | 102 | 61------ |               |        :        |  p617 | Cincinnati Reds      | +++
 LF Bob Brower                27| RF :  95      -7   4     :  92 |    :                     :   0 |   6 |  98 | -1---226 |               | $861.2k:$761.5k |  p133 | Cincinnati Reds      | *^
@@ -1736,7 +1736,7 @@ RF Mark Whiten               20| CF :  76       1 -13     :  64 | CF :  98      
 MR Rick Baldwin              34| SP :      97      19     : 116 |    :                     :   0 |  -2 | 114 |          |  F    $930k   |  $4.09M: $3.62M |  p186 | Houston Astros       | **
 2B Robby Thompson            25| 2B :  87      -4  -5     :  79 | 2B : 100      -4  11     : 107 |   6 | 113 | -2514--- |       $300k r |        :        |  p928 | Houston Astros       | +++-
 MR Tom M. McCarthy           26| MR :      79       7     :  86 | MR :      91      12     : 103 |   6 | 109 |          |       $300k r |  $1.51M: $1.33M | p1213 | Houston Astros       | ***
-LF Glenn Braggs              24| RF :  91     -10  -3     :  78 | RF : 103     -10   9     : 102 |   6 | 108 | -1---3-4 |       $300k r |        :        |   p86 | Houston Astros       | +++-
+LF Glenn Braggs              25| RF :  91     -10  -3     :  78 | RF : 102     -10   8     : 100 |   6 | 106 | -1---3-4 |       $300k r |        :        |   p86 | Houston Astros       | +++-
 RF Ralph Bryant              26| RF :  94      -7   3     :  90 | CF :  98      -5   7     : 100 |   6 | 106 | -222-456 |       $300k r | $645.9k:$571.1k |  p130 | Houston Astros       | **^
  C Todd Hundley              18| LF :  75     -14 -19     :  42 |  C : 101      -7   4     :  98 |   6 | 104 | 31---2-- |               |        :        | p2923 | Houston Astros       | ++++
 SP David Wells               24| SP :      59     -19     :  40 | SP :      89       8     :  97 |   6 | 103 |          |               |        :        | p1205 | Houston Astros       | +++-
@@ -1934,12 +1934,12 @@ East ----------------+
 Detroit Tigers       | 100.4 100.2 100.6 | 100.1 105.8 105.6 |  86- 76 0.530 | 100- 62 0.617 | 100- 62 0.617 ( 4) 
 Cleveland Indians    | 109.9 110.1 118.9 |  94.6  93.4  87.6 |  84- 78 0.520 |  95- 67 0.586 |  95- 67 0.586 ( 6) 
 Boston Red Sox       |  97.9  99.4  97.3 | 103.4 101.8 105.1 |  83- 79 0.512 |  84- 78 0.519 |  84- 78 0.519 ( 9) 
-New York (A) Yankees |  92.8  92.7  85.0 | 112.6 114.8 125.1 |  86- 76 0.531 |  76- 86 0.469 |  76- 86 0.469 (12) 
+New York (A) Yankees |  92.8  92.7  85.0 | 112.6 114.8 125.1 |  86- 76 0.531 |  76- 86 0.469 |  76- 86 0.469 (11) 
 Baltimore Orioles    |  98.8  97.5  96.2 |  92.4  91.7  83.4 |  63- 99 0.392 |  55-107 0.340 |  55-107 0.340 (19) 
 West ----------------+
 Minnesota Twins      | 102.6 101.9 104.5 | 114.0 115.5 126.9 | 103- 59 0.637 | 100- 62 0.617 | 100- 62 0.617 ( 3) 
 Texas Rangers        | 100.1 101.4 101.5 | 118.8 121.6 135.4 | 106- 56 0.654 |  92- 70 0.568 |  92- 70 0.568 ( 7) 
-Chicago (A) White... |  99.0  98.7  97.7 |  92.0  88.2  78.9 |  60-102 0.373 |  76- 86 0.469 |  76- 86 0.469 (13) 
+Chicago (A) White... |  99.0  98.7  97.7 |  92.0  88.2  78.9 |  60-102 0.373 |  76- 86 0.469 |  76- 86 0.469 (12) 
 California Angels    |  96.5  96.5  92.9 | 100.6 101.9 102.4 |  77- 85 0.475 |  74- 88 0.457 |  74- 88 0.457 (15) 
 Oakland Athletics    |  92.9  92.3  84.6 | 106.3 103.8 109.9 |  75- 87 0.464 |  58-104 0.358 |  58-104 0.358 (18) 
 
@@ -1952,14 +1952,14 @@ Pittsburgh Pirates   | 104.5 104.5 108.8 | 103.1 101.1 104.2 |  91- 71 0.562 |  
 St. Louis Cardinals  |  96.6  96.1  92.5 |  86.5  82.8  66.6 |  45-117 0.275 |  32-130 0.198 |  32-130 0.198 (20) 
 West ----------------+
 San Francisco Giants | 103.7 103.3 107.0 |  84.1  84.5  66.7 |  55-107 0.338 |  82- 80 0.506 |  82- 80 0.506 (10) 
-Los Angeles Dodgers  |  90.3  90.2  79.6 |  93.7  93.9  87.3 |  53-109 0.326 |  76- 86 0.469 |  76- 86 0.469 (11) 
+Los Angeles Dodgers  |  90.3  90.2  79.6 |  93.7  93.9  87.3 |  53-109 0.326 |  76- 86 0.469 |  76- 86 0.469 (13) 
 Atlanta Braves       | 101.1 100.8 102.0 | 100.7 100.2 100.8 |  83- 79 0.514 |  74- 88 0.457 |  74- 88 0.457 (14) 
 Cincinnati Reds      | 101.2 101.3 102.5 | 102.7 107.0 109.2 |  90- 72 0.556 |  69- 93 0.426 |  69- 93 0.426 (16) 
 Houston Astros       |  96.3  96.4  92.5 |  88.8  90.6  78.6 |  56-106 0.346 |  61-101 0.377 |  61-101 0.377 (17) 
                      |              99.8 |             103.0 |
 
 --- Non Top prospects ---
- C Joe Girardi               22|  C :  78       9 -10     :  77 |  C : 101       9  20     : 130 |   6 | 136 | 71------ |               |        :        |  p534 | Oakland Athletics    | +++-
+ C Joe Girardi               23|  C :  78       9 -10     :  77 |  C : 101       9  20     : 130 |   6 | 136 | 71------ |               |        :        |  p534 | Oakland Athletics    | +++-
 MR Tony Ferreira             25| MR :      73       2     :  75 | MR :     105      24     : 129 |   6 | 135 |          |               | $430.6k:$380.8k |  p433 | Chicago (A) White... | +++++
  C Rick Wilkins              20|  C :  73      11 -13     :  72 |  C :  96      11  17     : 125 |   6 | 131 | 88221212 |               |        :        | p1267 | Philadelphia Phil... | +++-
 CL Jeff Montgomery           25| MR :      99      25     : 123 | MR :     101      21     : 122 |   6 | 129 |          |               |  $5.38M: $4.76M |  p685 | Pittsburgh Pirates   | ++++-
@@ -1977,7 +1977,6 @@ SP Tom Gordon                19| MR :      55     -13     :  43 | SP :      96  
 1B Jim Tatum                 20|  C :  71      17  -9     :  79 |  C :  84      17  11     : 112 |   6 | 118 | 9413-612 |               |        :        | p1240 | St. Louis Cardinals  | ++
 2B Jeff Treadway             24| 2B :  88       3   3     :  94 | 2B :  95       3  12     : 111 |   6 | 117 | -2751--- |               | $645.9k:$571.1k | p1063 | Philadelphia Phil... | +++-
 RF Mark Whiten               20| CF :  76       1 -13     :  64 | CF :  98       1  12     : 110 |   6 | 116 | -2---666 |               |        :        | p1263 | Houston Astros       | +++-
- C Dan Walters               21|  C :  73       9 -15     :  67 |  C :  91       9  10     : 110 |   6 | 116 | 71------ |               |        :        | p1107 | Minnesota Twins      | +++
 SS Jose Vizcaino             19| SS :  73       7 -14     :  66 | SS :  92       7  10     : 109 |   6 | 115 | -6556--- |               |        :        | p1313 | Pittsburgh Pirates   | +++
 LF Lou Frazier               22| CF :  74       0 -15     :  59 | CF :  97       0  11     : 108 |   6 | 114 | -2---562 |               |        :        |  p531 | Oakland Athletics    | ++-
 2B Torey Lovullo             22| 3B :  72       1 -15     :  58 | 3B :  96       1  11     : 108 |   6 | 114 | -46621-1 |               |        :        |  p984 | Baltimore Orioles    | +++-
@@ -2007,8 +2006,9 @@ MR Julio Machado             21| MR :      37     -28     :   9 | MR :      89  
 LF Shawn Abner               21| CF :  77       2 -11     :  68 | CF :  91       2   6     :  99 |   6 | 105 | -2---776 |               |        :        |    p5 | *CEI* Oakland Ath... | +++
 3B Craig Worthington         22| 3B :  76      -4 -15     :  57 | 3B :  96      -4   7     :  99 |   6 | 105 | -615-211 |               |        :        | p1140 | Atlanta Braves       | +++
  C Todd Hundley              18| LF :  75     -14 -19     :  42 |  C : 101      -7   4     :  98 |   6 | 104 | 31---2-- |               |        :        | p2923 | Houston Astros       | ++++
-2B Carlos Garcia             19| SS :  74       5 -15     :  65 | SS :  88       5   5     :  98 |   6 | 104 | -2566--- |               |        :        |  p560 | Chicago (A) White... | ++-
  C Carlos A. Hernandez       20|  C :  73       9 -15     :  67 |  C :  85       9   4     :  98 |   6 | 104 | 71------ |               |        :        |  p650 | Los Angeles Dodgers  | ++-
+2B Carlos Garcia             20| SS :  74       5 -15     :  65 | SS :  88       5   5     :  98 |   6 | 104 | -2566--- |               |        :        |  p560 | Chicago (A) White... | ++-
+CF Thomas Howard             22| CF :  75       1 -13     :  63 | CF :  91       1   6     :  98 |   6 | 104 | -2---774 |               |        :        |  p777 | Cincinnati Reds      | +++
 
 --- ML non-prospects ---
 SP Orel Hershiser            29| SP :     132      54  14 : 199 |    :                     :   0 |   4 | 203 |          |       $300k r | $14.42M:$12.76M |  p691 | Oakland Athletics    | **
@@ -2016,7 +2016,6 @@ SP Tom Candiotti             30| SP :     130      52  12 : 194 |    :          
 SP Mike Moore                27| SP :     110      32     : 142 |    :                     :   0 |   6 | 148 |          |               |  $6.89M: $6.09M |  p943 | St. Louis Cardinals  | **^
 SP Brian Holton              27| SP :     109      31     : 139 |    :                     :   0 |   6 | 145 |          |               |  $6.67M:  $5.9M | p2916 | Pittsburgh Pirates   | **
 SP Mike Witt                 27| SP :     108      30     : 138 |    :                     :   0 |   6 | 144 |          |       $300k a |  $6.46M: $5.71M | p1761 | New York (A) Yankees | **^
- C Bill Bathe                26|  C :  90      13   6     : 109 |  C :  97      13  19     : 129 |   6 | 135 | 81------ |               |  $1.29M: $1.14M |   p56 | Philadelphia Phil... | *
 SP Hal Dues                  33| SP :     106      28     : 134 |    :                     :   0 |   0 | 134 |          |               |  $6.03M: $5.33M |  p720 | Baltimore Orioles    | **
 MR Steve Brown               30| SP :     102      24     : 125 |    :                     :   0 |   3 | 128 |          |               |  $5.17M: $4.57M |  p361 | Philadelphia Phil... | ***
 RF Jack Howell               26| 3B :  98      -1  10     : 107 | 3B : 104      -1  17     : 120 |   6 | 126 | -666-413 |               |  $2.15M:  $1.9M |  p494 | Baltimore Orioles    | **
@@ -2031,10 +2030,12 @@ SP Zane Smith                26| SP :      71      -7     :  64 | SP :      97  
 MR Rick A. Williams          30| SP :      97      19     : 116 |    :                     :   0 |   3 | 119 |          |               |  $4.09M: $3.62M | p1658 | California Angels    | ***
  C Barry Foote               35|  C :  96      15  14     : 125 |    :                     :   0 |  -6 | 119 | 82------ |      $2.93Mx3 |  $3.01M: $2.67M |  p649 | Cleveland Indians    | **
 SP Rick Ownbey               29| SP :      96      18     : 114 |    :                     :   0 |   4 | 118 |          |               |  $3.88M: $3.43M | p1410 | New York (A) Yankees | *
+LF Dan Pasqua                26| LF :  99      -9  11     : 101 | LF : 105      -9  15     : 111 |   6 | 117 | -2---514 |               |  $2.37M: $2.09M |  p925 | Minnesota Twins      | ****
 1B Mike Sharperson           26| SS :  88       6   0     :  94 | SS :  94       6  11     : 111 |   6 | 117 | -6656--- |               |        :        | p1476 | Cleveland Indians    | *
 SP Mike Bielecki             28| SP :      95      17     : 112 |    :                     :   0 |   5 | 117 |          |               |  $3.66M: $3.24M |   p49 | St. Louis Cardinals  | **^
 1B Gary Gaetti               29| 3B :  96       4  13     : 113 |    :                     :   0 |   4 | 117 | -8281--- |               |   $2.8M: $2.47M |  p469 | Philadelphia Phil... | **^
 3B Wayne Tolleson            31| SS :  92      12  10     : 114 |    :                     :   0 |   2 | 116 | -3468--- |               |  $2.15M:  $1.9M | p1707 | San Francisco Giants | *
+ C Bill Bathe                27|  C :  90      13   6     : 109 |    :                     :   0 |   6 | 115 | 81------ |               |  $1.29M: $1.14M |   p56 | Philadelphia Phil... | *
 SP Frank Pastore             30| SP :      95      17     : 112 |    :                     :   0 |   3 | 115 |          |               |  $3.66M: $3.24M |  p892 | Minnesota Twins      | *
 CF Gary Pettis               29| CF :  93       6  10     : 109 |    :                     :   0 |   4 | 113 | -2---383 |               |  $2.15M:  $1.9M | p1513 | Minnesota Twins      | *^
 SP Mike Smithson             32| SP :      95      17     : 112 |    :                     :   0 |   1 | 113 |          |               |  $3.66M: $3.24M | p1210 | *CEI* New York (A... | *^
@@ -2059,5 +2060,4 @@ LF Mark Bradley              30| CF :  92       2   5     :  99 |    :          
 MR Roy Lee Jackson           33| SP :      90      12     : 102 |    :                     :   0 |   0 | 102 |          |               |  $2.58M: $2.28M |  p497 | Atlanta Braves       | **^
 MR Jeff D. Robinson          26| SP :      79       0     :  79 | SP :      88       7     :  95 |   6 | 101 |          |               |        :        |  p800 | Baltimore Orioles    | **^
 CF Mike Kingery              26| CF :  79       7  -4     :  82 | CF :  84       7   4     :  95 |   6 | 101 | -3221486 |               |        :        | p1000 | New York (N) Mets    | *
-RF Kevin McReynolds          27| CF :  90       2   3     :  95 |    :                     :   0 |   6 | 101 | -212-675 |               | $645.9k:$571.1k |  p877 | Pittsburgh Pirates   | *
 SP Oil Can Boyd              28| SP :      87       9     :  96 |    :                     :   0 |   5 | 101 |          |               |  $1.94M: $1.71M |  p128 | Philadelphia Phil... | *
