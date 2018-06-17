@@ -35,7 +35,7 @@ Selected: IsotonicScores: [(0.16310950184907524, RandomForest(...)), (0.21510059
 -- Doubles
 Selected: IsotonicScores: [(0.12253961661546502, RandomForest(...)), (0.12418380323569245, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 28.  69.   3.  12.   0.  21.   0.]Feature Mask: [False  True False False False False False]
 -- Triples
-Selected: RandomForestScores: [(0.00012907487815320509, RandomForest(...)), (-0.0019409046181792695, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 57, 'selection__k': 2, 'regressor__max_depth': 28}Feature Scores: [  6.   1.   0.   0.   2.   3.  10.]Feature Mask: [ True False False False False False  True]Feature Importances: [ 0.381  0.619]
+Selected: RandomForestScores: [(0.00012907487815320509, RandomForest(...)), (-0.0019409046181792695, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 57, 'regressor__max_depth': 28}Feature Scores: [  6.   1.   0.   0.   2.   3.  10.]Feature Mask: [ True False False False False False  True]Feature Importances: [ 0.381  0.619]
 -- HomeRuns
 Selected: IsotonicScores: [(0.21787099078781988, RandomForest(...)), (0.22841524010179623, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  23.    5.    0.  104.    6.   11.    3.]Feature Mask: [False False False  True False False False]
 -- Walks
@@ -91,8 +91,8 @@ CF Macias, W       34| .258/.293/.374  92  94 | .289/.322/.405 100 101 | -1---23
 C  Urbano, A       27| .258/.293/.341  88 102 | .261/.303/.344  91  95 | 41------   2 | -- ||  92 || ML      |
 3B Jimenez, O      31| .234/.332/.340  96  93 | .234/.332/.340  96  91 | -233----  -6 | +  ||  90 || ML      |
 SS Montelongo, G   23| .205/.250/.271  74  71 | .205/.250/.271  74 117 | -3828---  15 |  - ||  89 || ML    2 |
-C  Cisneros, R     33| .213/.266/.318  82     | .218/.270/.327  83     | 51------   5 | -+ ||  88 || AAA  F  |
 2B Hanrahan, C     28| .212/.284/.270  80  75 | .212/.284/.270  80  85 | -3851115   8 |  + ||  88 || ML      |
+C  Cisneros, R     33| .213/.266/.318  82     | .218/.270/.327  83     | 51------   5 | -+ ||  88 || AAA  F  |
 SS Hulett, G       23| .205/.250/.292  76     | .205/.250/.292  76     | -3327---  11 |  + ||  87 || AAA     |
 SS Cross, J        22| .214/.250/.292  76 102 | .214/.250/.292  76  89 | -3876---  10 |  + ||  86 || ML    8 |
 CF Riney, S        26| .225/.297/.304  86  66 | .225/.297/.304  86  62 | -2---552   0 | +- ||  86 || ML      |
@@ -137,8 +137,8 @@ MR Canales, W         AAA 29 | 13.8  5.4  4.5  1.6 |  78     |  49     |  - |  1
 SP Hill, D            AAA 30 | 13.4  3.4  8.4  0.5 |  50     |  50     |  + |  47/ 43 ||  47 ||
 MR Torre, D           AAA 23 | 15.0  3.6  3.8  1.6 |  46     |  53     |    |  34/ 44 ||  44 ||
 SP Jimenez, A         AAA 32 | 14.1  3.9  8.6  1.9 |  34     |  46     |  - |  42/ 36 ||  42 ||
-MR Patterson, W        AA 29 | 15.5  4.8  5.1  2.5 |  36     |  44     |  + |  11/ 36 ||  36 ||
 MR Houston, W         AAA 27 | 16.7  3.6  7.7  0.6 |  35     |  45     |  - |  28/ 36 ||  36 ||
+MR Patterson, W        AA 29 | 15.5  4.8  5.1  2.5 |  36     |  44     |  + |  11/ 36 ||  36 ||
 MR Prue, L              A 25 | 16.1  3.6  8.0  1.8 |  61     |  33     |  - |  19/ 33 ||  33 ||
 MR Gunderson, E        AA 32 | 17.3  3.7  8.9  0.6 |  43     |  35     |    |  24/ 32 ||  32 ||
 MR Kelley, B            A 25 | 16.9  3.7  9.2  1.1 |  33     |  36     |  - |  17/ 30 ||  30 ||
@@ -182,16 +182,16 @@ Balance:38/27 = 1.407 (ideal: 1.273)
   ML -> DL   SP Christopher Schweitzer
  AAA -> ML   1B Bernardo Pelayo
  AAA -> ML   MR Mark Knop
- AAA -> AA   MR William Patterson
  AAA -> AA   1B Billy Wallace
+ AAA -> AA   MR William Patterson
  AAA -> A    SS Arthur Kovacs
+  AA -> AAA  2B William Schwindt
   AA -> AAA  RF Clair Boner
   AA -> AAA  MR William Houston
-  AA -> AAA  2B William Schwindt
   AA -> A    MR Bertram Kelley
    A -> AAA  SS Galen Hulett
-   A -> AA   MR Richard Linton
    A -> AA   CF Jason Ide
+   A -> AA   MR Richard Linton
 
 SP
 Tyler George
@@ -1539,7 +1539,7 @@ RF Arnoldo Salinas           28| RF :  74      -8   0     :  66 |    :          
 SP Dave Quirk                26| SP :      55       8     :  64 | SP :      56      -3     :  54 |   6 |  70 |          |               | $725.3k:  $847k | p1148 | Lynchburg Distillers | *
 RF Roger Metz                34| RF :  78      -9   2     :  71 |    :                     :   0 |  -2 |  69 | -2---313 |               | $181.3k:$211.8k |  p244 | Lynchburg Distillers | *
 SS Lazaro Cabrera            19| 1B :  52     -13 -31     :   8 | 1B :  79     -13  -4     :  61 |   6 |  67 | -2111--- |               |        :        | p1551 | Lynchburg Distillers | +-
-1B Wilson Corrales           25| 1B :  63     -12 -18     :  32 | 1B :  78     -12  -4     :  61 |   6 |  67 | -3------ |               |        :        |  p386 | Lynchburg Distillers | ++
+1B Wilson Corrales           25| 1B :  63     -12 -19     :  32 | 1B :  78     -12  -4     :  61 |   6 |  67 | -3------ |               |        :        |  p386 | Lynchburg Distillers | ++
 RF Fermin Cruz               25| RF :  59     -10 -18     :  31 | RF :  75     -10  -4     :  61 |   6 |  67 | 1212-213 |               |        :        | p1705 | Lynchburg Distillers | +
 1B Fernando Vallejo          30| 1B :  77     -13  -5     :  58 |    :                     :   0 |   3 |  61 | -2------ |               |        :        |   p81 | Lynchburg Distillers | *
 1B Jeronimo Fernandez        27| 1B :  74     -14  -9     :  52 |    :                     :   0 |   6 |  58 | -2------ |               |        :        | p1577 | Lynchburg Distillers | *
