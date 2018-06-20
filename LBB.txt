@@ -31,9 +31,9 @@ Pitching: 9192/10352 0.470/0.530
              Ks | 0.100
 Features: Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.031154222650992065, RandomForest(...)), (0.016654125248884984, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 33, 'selection__k': 3, 'regressor__max_depth': 41}Feature Scores: [ 46.   0.   0.   1.   0.   8.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.734  0.173  0.093]
+Selected: RandomForestScores: [(0.031154222650992065, RandomForest(...)), (0.016654125248884984, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 33, 'regressor__max_depth': 41, 'selection__k': 3}Feature Scores: [ 46.   0.   0.   1.   0.   8.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.734  0.173  0.093]
 -- Doubles
-Selected: RandomForestScores: [(0.057117469302687129, RandomForest(...)), (0.055379545279872988, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 97, 'regressor__max_depth': 32, 'selection__k': 2}Feature Scores: [  1.  28.   0.   8.   5.   2.   0.]Feature Mask: [False  True False  True False False False]Feature Importances: [ 0.807  0.193]
+Selected: RandomForestScores: [(0.057117469302687129, RandomForest(...)), (0.055379545279872988, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'regressor__n_estimators': 97, 'selection__k': 2}Feature Scores: [  1.  28.   0.   8.   5.   2.   0.]Feature Mask: [False  True False  True False False False]Feature Importances: [ 0.807  0.193]
 -- Triples
 Selected: IsotonicScores: [(0.054115969717740277, RandomForest(...)), (0.049215087410877989, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  1.   0.   7.   3.   0.   1.  32.]Feature Mask: [False False False False False False  True]
 -- HomeRuns
@@ -50,13 +50,13 @@ Selected: RandomForestScores: [(0.34462503498001623, RandomForest(...)), (0.3374
              Ks | 0.046
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.072466491153500276, RandomForest(...)), (0.059621140629386504, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [  6.  24.   5.  17.   0.   4.   0.   0.]Feature Mask: [False  True False  True False False False False]Feature Importances: [ 0.83  0.17]
+Selected: RandomForestScores: [(0.072466491153500276, RandomForest(...)), (0.059621140629386504, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [  6.  24.   5.  17.   0.   4.   0.   0.]Feature Mask: [False  True False  True False False False False]Feature Importances: [ 0.83  0.17]
 -- Doubles
 Selected: IsotonicScores: [(0.13004700213867246, RandomForest(...)), (0.088915128679036462, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  1.   3.  46.   0.   3.   0.   3.  11.]Feature Mask: [False False  True False False False False False]
 -- HomeRuns
 Selected: IsotonicScores: [(0.12971248702913554, RandomForest(...)), (0.20516192106856587, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   0.    1.    6.  150.    3.   16.    0.    1.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.22392316216797484, RandomForest(...)), (0.19677586408163036, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 9, 'regressor__max_depth': 14}Feature Scores: [   0.    2.    4.    5.  132.    1.    9.   12.]Feature Mask: [False False False False  True False  True  True]Feature Importances: [ 0.816  0.109  0.075]
+Selected: RandomForestScores: [(0.22392316216797484, RandomForest(...)), (0.19677586408163036, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 9, 'regressor__max_depth': 14, 'selection__k': 3}Feature Scores: [   0.    2.    4.    5.  132.    1.    9.   12.]Feature Mask: [False False False False  True False  True  True]Feature Importances: [ 0.816  0.109  0.075]
 -- Ks
 Selected: IsotonicScores: [(0.21932702859350459, RandomForest(...)), (0.16430337545732873, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  4.   7.   1.  16.  13.  92.   0.   0.]Feature Mask: [False False False False False  True False False]
 
@@ -190,10 +190,10 @@ Balance:42/31 = 1.355 (ideal: 1.273)
  AAA -> AA   MR Greg Booker
  AAA -> AA   CF George D. Wright
  AAA -> A    3B Travis Fryman
-  AA -> AAA  LF Keith A. Miller
   AA -> AAA   C Jamie Nelson
   AA -> AAA  2B Ernie Riles
   AA -> AAA  MR Bob Tufts
+  AA -> AAA  LF Keith A. Miller
    A -> AA   SS Jeff Hamilton
 
 SP
@@ -322,23 +322,23 @@ CF Mark T. McLemore          23 | RF :  91     -15 :  76 | RF :  92     -15 :  7
 LF Ruben Amaro Jr.           23 | CF :  71      -5 :  66 | CF :  71      -5 :  66 |  +0 |    +10                :    +10                | ++-
 SS Jeff Hamilton             24 | SS :  75      -4 :  71 | SS :  75      -4 :  71 |  +0 |    +10                :                       | ++
  C Tom Pagnozzi              25 |  C :  72       4 :  76 |  C :  72       4 :  76 |  +0 |                       :                       | ++-
-1B Mike Sharperson           26 | SS :  84       5 :  89 | SS :  84       5 :  89 |  +0 |                +10    :                       | *
 RF Rich Amaral               26 | SS :  73      -1 :  72 | SS :  73      -1 :  72 |  +0 |                       :                       | *
+1B Mike Sharperson           26 | SS :  84       5 :  89 | SS :  84       5 :  89 |  +0 |                +10    :                       | *
  C John Mizerock             27 |  C :  85       2 :  87 |  C :  85       2 :  87 |  +0 |                       :                       | *
  C Jamie Nelson              28 |  C :  93       6 :  99 |  C :  93       6 :  99 |  +0 | -10                   :                       | *
-CF George D. Wright          29 | CF :  91      -9 :  82 | CF :  91      -9 :  82 |  +0 |                       :                       | *
 LF Tony Phillips             29 | SS : 111      10 : 121 | SS : 111      10 : 121 |  +0 |                       :                       | ****
+CF George D. Wright          29 | CF :  91      -9 :  82 | CF :  91      -9 :  82 |  +0 |                       :                       | *
 CF Rudy Law                  31 | CF :  96      -4 :  92 | CF :  96      -4 :  92 |  +0 |       +10             :       +10             | **
+CF Bobby V. Mitchell         33 | CF :  80       1 :  81 | CF :  80       1 :  81 |  +0 |                       :                       | *
 2B Jack Perconte             33 | SS :  97       6 : 103 | SS :  97       6 : 103 |  +0 |    +10                :                       | **^
 CF Gary Roenicke             33 | CF : 109      -4 : 105 | CF : 109      -4 : 105 |  +0 |                       :                       | **^
-CF Bobby V. Mitchell         33 | CF :  80       1 :  81 | CF :  80       1 :  81 |  +0 |                       :                       | *
+2B Mark DeJohn               34 | SS :  98       6 : 104 | SS :  98       6 : 104 |  +0 |                       :                       | **^
 1B Hiromitsu Ochiai          34 | 3B : 122     -10 : 112 | 3B : 122     -10 : 112 |  +0 |                       :                       | ****
 LF Al Woods                  34 | LF :  98      -9 :  89 | LF :  98      -9 :  89 |  +0 |                       :                       | **
-2B Mark DeJohn               34 | SS :  98       6 : 104 | SS :  98       6 : 104 |  +0 |                       :                       | **^
 SS Roy Smalley III           35 | SS : 108      -1 : 107 | SS : 108      -1 : 107 |  +0 |                       :                       | **^
-LF Tony Scott                36 | CF :  93       4 :  97 | CF :  93       4 :  97 |  +0 |                       :                       | *^
 RF Fred Lynn                 36 | CF : 116       2 : 118 | CF : 116       2 : 118 |  +0 |                       :                       | ***
  C Jim Sundberg              36 |  C : 102      10 : 112 |  C : 102      10 : 112 |  +0 |                       :                       | **^
+LF Tony Scott                36 | CF :  93       4 :  97 | CF :  93       4 :  97 |  +0 |                       :                       | *^
  C Butch Wynegar             32 |  C : 107      10 : 117 |  C : 106      10 : 116 |  -1 |             -10   -20 :                   -20 | ***
 RF Steve Pegues              19 | LF :  73      -8 :  65 | LF :  73     -10 :  63 |  -3 |    +10                :                       | ++
 3B Jeff McKnight             25 | SS :  70       4 :  74 | SS :  72      -1 :  71 |  -4 |          +10   +10    :          +10   +10    | ++
@@ -353,21 +353,21 @@ SP John Denny                35 | SP :     122     : 122 | SP :     124     : 12
 SP Bryan Hickerson           24 | SP :      46     :  46 | SP :      47     :  47 |  +1 |             +10+10       :                          | +++-
 MR Rod Beck                  19 | MR :      39     :  39 | MR :      39     :  39 |  +0 |    +10                   :                          | ++++-
 MR Steve Olin                22 | MR :      47     :  47 | MR :      47     :  47 |  +0 |                          :                          | ++++-
-MR Darren Hall               23 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                +10       :                +10       | ++-
 SP Dennis Springer           23 | SP :      34     :  34 | SP :      34     :  34 |  +0 |                +10       :                +10       | +++
-SP Zane Smith                27 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                          :                          | *
-MR Greg Booker               27 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | *
+MR Darren Hall               23 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                +10       :                +10       | ++-
 SP Mark W. Davis             27 | SP :      65     :  65 | SP :      65     :  65 |  +0 |                          :                          | *
+MR Greg Booker               27 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | *
+SP Zane Smith                27 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                          :                          | *
 MR Rich Rodas                28 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                          :    +10                   | *
 SP Mike Jeffcoat             28 | SP :      94     :  94 | SP :      94     :  94 |  +0 |                          :                          | *
 SP Brent Gaff                29 | SP :      59     :  59 | SP :      59     :  59 |  +0 |                          :                          | *
+SP Bruce Hurst               30 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                          :                          | *
 SP Howard Bailey             30 | SP :      91     :  91 | SP :      91     :  91 |  +0 |                          :                          | *
 SP Atlee Hammaker            30 | SP :     105     : 105 | SP :     105     : 105 |  +0 |    +10                   :                          | **^
-SP Bruce Hurst               30 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                          :                          | *
 SP Bob Welch                 31 | SP :      83     :  83 | SP :      83     :  83 |  +0 |                          :                          | **
+MR Bob Tufts                 32 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                          :                          | *
 MR Bill Earley               32 | MR :      70     :  70 | MR :      70     :  70 |  +0 |                          :                          | ***^
 MR Dale Mohorcic             32 | MR :      69     :  69 | MR :      69     :  69 |  +0 |                          :                          | *
-MR Bob Tufts                 32 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                          :                          | *
 SP Billy L. Smith            33 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                -10       :                          | *
 SP Bob Owchinko              33 | SP :      77     :  77 | SP :      75     :  75 |  -2 | +10      -10             : +10                      | *^
 SP Paul Mitchell             38 | SP :      88     :  88 | SP :      86     :  86 |  -2 |          -10             :             -10-10       | *
@@ -739,8 +739,8 @@ CATCHER
  4 | Nelson, J         93   6  99 | Nelson, J         93   6  99 | Nelson, J         93   6  99
  5 | Mizerock, J       85   2  87 | Ochiai, H        124 -36  88 | Mizerock, J       85   2  87
  6 | Ochiai, H        122 -36  86 | Mizerock, J       85   2  87 | Ochiai, H        121 -36  85
- 7 | Ausmus, B         74   8  82 | Ausmus, B         74   8  82 | Ausmus, B         74   8  82
- 8 | Spehr, T          76   6  82 | Spehr, T          76   6  82 | Lynn, F          118 -36  82
+ 7 | Ausmus, B         74   8  82 | Ausmus, B         74   8  82 | Lynn, F          118 -36  82
+ 8 | Spehr, T          76   6  82 | Spehr, T          76   6  82 | Ausmus, B         74   8  82
  9 | Lynn, F          116 -36  80 | Brenly, B         78   2  80 | Spehr, T          76   6  82
 10 | Brenly, B         75   2  77 | Pagnozzi, T       72   4  76 | Pagnozzi, T       72   4  76
 
@@ -1969,8 +1969,8 @@ Chicago (A) White... |  98.6  98.7  97.2 |  92.0  88.2  78.8 |  60-102 0.370 |  
 National League
 East ----------------+
 Chicago (N) Cubs     | 101.9 102.8 104.6 | 115.9 115.3 128.6 | 104- 58 0.644 |  21-  8 0.724 | 107- 55 0.660 ( 2) 
-New York (N) Mets    | 105.4 106.3 111.3 | 104.7 103.8 108.4 |  96- 66 0.593 |  18- 11 0.621 |  97- 65 0.599 ( 4) 
-Philadelphia Phil... | 112.8 111.5 122.9 | 100.9 100.0 100.9 |  98- 64 0.606 |  16- 13 0.552 |  97- 65 0.599 ( 5) 
+New York (N) Mets    | 105.4 106.3 111.3 | 104.7 103.8 108.4 |  96- 66 0.593 |  18- 11 0.621 |  97- 65 0.599 ( 5) 
+Philadelphia Phil... | 112.8 111.5 122.9 | 100.9 100.0 100.9 |  98- 64 0.606 |  16- 13 0.552 |  97- 65 0.599 ( 4) 
 Pittsburgh Pirates   | 103.8 104.8 108.3 | 101.7 101.4 103.1 |  90- 72 0.555 |  16- 13 0.552 |  90- 72 0.556 ( 9) 
 St. Louis Cardinals  |  96.7  96.6  93.1 |  87.8  85.0  70.8 |  49-113 0.303 |  10- 19 0.345 |  50-112 0.309 (18) 
 West ----------------+
