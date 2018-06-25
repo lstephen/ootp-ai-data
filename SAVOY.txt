@@ -35,7 +35,7 @@ Selected: IsotonicScores: [(0.16219337376422771, RandomForest(...)), (0.21510059
 -- Doubles
 Selected: IsotonicScores: [(0.12279264968093835, RandomForest(...)), (0.12418380323569245, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 28.  69.   3.  12.   0.  20.   0.]Feature Mask: [False  True False False False False False]
 -- Triples
-Selected: RandomForestScores: [(0.00012907487815320509, RandomForest(...)), (-0.0019409046181792695, Isotonic(...))]Best Parameters: {'regressor__max_depth': 28, 'selection__k': 2, 'regressor__n_estimators': 57}Feature Scores: [  6.   1.   0.   0.   2.   3.  10.]Feature Mask: [ True False False False False False  True]Feature Importances: [ 0.381  0.619]
+Selected: RandomForestScores: [(0.00012907487815320509, RandomForest(...)), (-0.0019409046181792695, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 57, 'regressor__max_depth': 28, 'selection__k': 2}Feature Scores: [  6.   1.   0.   0.   2.   3.  10.]Feature Mask: [ True False False False False False  True]Feature Importances: [ 0.381  0.619]
 -- HomeRuns
 Selected: IsotonicScores: [(0.21488078654747847, RandomForest(...)), (0.22841524010179623, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  23.    5.    0.  104.    6.   11.    3.]Feature Mask: [False False False  True False False False]
 -- Walks
@@ -50,7 +50,7 @@ Selected: IsotonicScores: [(0.15135506001864754, RandomForest(...)), (0.00477050
              Ks | 0.056
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.11827699603930659, RandomForest(...)), (0.063001600304759278, Isotonic(...))]Best Parameters: {'regressor__max_depth': 49, 'regressor__n_estimators': 2, 'selection__k': 2}Feature Scores: [ 22.  44.   0.   1.  23.  12.   1.   0.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.729  0.271]
+Selected: RandomForestScores: [(0.11827699603930659, RandomForest(...)), (0.063001600304759278, Isotonic(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 2, 'regressor__n_estimators': 2}Feature Scores: [ 22.  44.   0.   1.  23.  12.   1.   0.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.729  0.271]
 -- Doubles
 Selected: IsotonicScores: [(0.12858520994266157, RandomForest(...)), (0.1006283563306087, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   0.  27.   1.   1.   0.   1.   1.]Feature Mask: [False False  True False False False False False]
 -- HomeRuns
@@ -137,8 +137,8 @@ MR Canales, W         AAA 29 | 13.8  5.4  4.5  1.6 |  78     |  49     |  - |  1
 SP Hill, D            AAA 30 | 13.4  3.4  8.4  0.5 |  50     |  50     |  + |  47/ 43 ||  47 ||
 SP Jimenez, A         AAA 32 | 13.4  3.9  8.4  1.9 |  43     |  46     |  - |  45/ 39 ||  45 ||
 MR Torre, D           AAA 23 | 15.0  3.6  3.8  1.6 |  46     |  53     |    |  34/ 44 ||  44 ||
-MR Houston, W         AAA 27 | 16.7  3.6  7.7  0.6 |  35     |  45     |  - |  28/ 36 ||  36 ||
 MR Patterson, W        AA 29 | 15.5  4.8  5.1  2.5 |  36     |  44     |  + |  11/ 36 ||  36 ||
+MR Houston, W         AAA 27 | 16.7  3.6  7.7  0.6 |  35     |  45     |  - |  28/ 36 ||  36 ||
 MR Prue, L              A 25 | 16.1  3.6  8.0  1.8 |  61     |  33     |  - |  19/ 33 ||  33 ||
 MR Gunderson, E        AA 32 | 17.3  3.7  8.9  0.6 |  43     |  35     |    |  24/ 32 ||  32 ||
 MR Kelley, B            A 25 | 16.9  3.7  9.2  1.1 |  33     |  36     |  - |  17/ 30 ||  30 ||
@@ -180,8 +180,8 @@ Balance:38/27 = 1.407 (ideal: 1.273)
 
   ML -> AAA  MR Claude Batson
   ML -> DL   SP Christopher Schweitzer
- AAA -> ML    C Robert Cisneros
  AAA -> ML   MR Mark Knop
+ AAA -> ML    C Robert Cisneros
  AAA -> AA   1B Billy Wallace
  AAA -> AA   3B Stephen Fort
  AAA -> AA   MR William Patterson
@@ -190,8 +190,8 @@ Balance:38/27 = 1.407 (ideal: 1.273)
   AA -> AAA  RF Clair Boner
   AA -> AAA  MR William Houston
   AA -> A    MR Bertram Kelley
-   A -> AAA   C Rey Pape
    A -> AAA  SS Galen Hulett
+   A -> AAA   C Rey Pape
    A -> AA   MR Richard Linton
 
 SP
@@ -315,10 +315,10 @@ RF Clair Boner               25 | LF :  73      -8 :  65 | LF :  77      -8 :  6
 SS Christopher Saez          27 | SS :  80      16 :  96 | SS :  84      16 : 100 |  +4 |             +10+10    :             +20+10    | *^
 CF Jason Ide                 22 | CF :  74      -1 :  73 | CF :  77      -1 :  76 |  +3 | +10+10   +10          : +10+10                | +++
 3B Shelby Inman              25 | 3B :  74      -4 :  70 | 3B :  77      -4 :  73 |  +3 | +10                   : +10                   | +++-
-LF Bernardo Sol              22 | CF :  72       2 :  74 | CF :  74       2 :  76 |  +2 |          +10   +10    :          +10   +10    | ++
 1B Billy Wallace             25 | RF :  73     -10 :  63 | RF :  75     -10 :  65 |  +2 |                       : +10                   | ++
-3B Jack Cross                22 | SS :  75      11 :  86 | SS :  76      11 :  87 |  +1 |    +10         +10    :    +10                | ++-
+LF Bernardo Sol              22 | CF :  72       2 :  74 | CF :  74       2 :  76 |  +2 |          +10   +10    :          +10   +10    | ++
  C Vincent Wiggin            22 |  C :  69       3 :  72 |  C :  70       3 :  73 |  +1 | +10         +10+10    :                +10    | ++
+3B Jack Cross                22 | SS :  75      11 :  86 | SS :  76      11 :  87 |  +1 |    +10         +10    :    +10                | ++-
 1B Bernardo Pelayo           26 | 1B :  80     -12 :  68 | 1B :  81     -12 :  69 |  +1 | +10                   :          +10          | *
 3B Oswaldo Jimenez           31 | 3B :  95      -5 :  90 | 3B :  96      -5 :  91 |  +1 |    +10                :    +10                | *
 3B Ronnie Daniell            30 | 2B :  73       0 :  73 | 2B :  74       0 :  74 |  +1 | +10                   :                       | *
@@ -326,8 +326,8 @@ CF Juan Aguirre              28 | CF :  71      -4 :  67 | CF :  71      -4 :  6
 SS Arthur Kovacs             20 | SS :  81      -2 :  79 | SS :  81      -2 :  79 |  +0 |                       :                       | ++++
 SS Gary Montelongo           23 | SS :  74      15 :  89 | SS :  74      15 :  89 |  +0 |                       :                       | ++++
 CF Jose Villas               26 | CF :  75       4 :  79 | CF :  75       4 :  79 |  +0 |                       :                       | **
-CF Curtis Wheelock           27 | CF :  88       5 :  93 | CF :  88       5 :  93 |  +0 |                       :                       | *
 2B William Schwindt          27 | SS :  75      -3 :  72 | SS :  75      -3 :  72 |  +0 |                       :                       | *
+CF Curtis Wheelock           27 | CF :  88       5 :  93 | CF :  88       5 :  93 |  +0 |                       :                       | *
 2B Charles Hanrahan          28 | 2B :  80       8 :  88 | 2B :  80       8 :  88 |  +0 |                       :                       | *
  C Joe Neilsen               29 |  C :  75      -1 :  74 |  C :  75      -1 :  74 |  +0 |                       :                       | *
 CF Kelly Leak                30 | LF : 122     -10 : 112 | LF : 122     -10 : 112 |  +0 |                       :                       | ***^
@@ -360,8 +360,8 @@ MR Mark Knop                 23 | MR :      56     :  56 | SP :      57     :  5
 MR Harold Cochran            20 | MR :      14     :  14 | MR :      14     :  14 |  +0 |                          :                          | +
 MR Richard Linton            26 | MR :      14     :  14 | MR :      14     :  14 |  +0 |                          :                          | *
 MR Bernardo Paiva            28 | MR :      88     :  88 | MR :      88     :  88 |  +0 |                       +1 :                       +1 | ****^
-MR William Canales           29 | MR :      48     :  48 | MR :      48     :  48 |  +0 | -10            -10       : -10                      | *
 MR Claude Batson             29 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                          :                          | **
+MR William Canales           29 | MR :      48     :  48 | MR :      48     :  48 |  +0 | -10            -10       : -10                      | *
 MR William Patterson         29 | MR :      36     :  36 | MR :      36     :  36 |  +0 |                          :                          | *
 SP Dennis Hill               30 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                          :                          | *
 MR Jason Bellantoni          33 | MR :      83     :  83 | MR :      83     :  83 |  +0 | +10            +10       : +10            +10       | ****^
@@ -700,8 +700,8 @@ CATCHER
  3 | Leak, K          122 -31  91 | Urbano, A         88   3  91 | Leak, K          122 -31  91
  4 | Cisneros, R       83   5  88 | Cisneros, R       82   5  87 | Cisneros, R       83   5  88
  5 | Raimondi, E      112 -31  81 | Pape, R           74   7  81 | Raimondi, E      112 -31  81
- 6 | Pape, R           73   7  80 | Carroll, S        75   5  80 | Carroll, S        75   5  80
- 7 | Carroll, S        75   5  80 | Raimondi, E      111 -31  80 | Pape, R           72   7  79
+ 6 | Pape, R           73   7  80 | Raimondi, E      111 -31  80 | Carroll, S        75   5  80
+ 7 | Carroll, S        75   5  80 | Carroll, S        75   5  80 | Pape, R           72   7  79
  8 | Ingram, G         67   8  75 | Wiggin, V         73   3  76 | Ingram, G         67   8  75
  9 | Neilsen, J        75  -1  74 | Ingram, G         67   8  75 | Neilsen, J        75  -1  74
 10 | Wiggin, V         70   3  73 | Neilsen, J        76  -1  75 | Wesson, S        103 -31  72
@@ -1539,7 +1539,7 @@ RF Arnoldo Salinas           28| RF :  74      -8   0     :  66 |    :          
 SP Dave Quirk                26| SP :      55       8     :  64 | SP :      56      -2     :  54 |   6 |  70 |          |               |   $720k:$842.7k | p1148 | Lynchburg Distillers | *
 RF Roger Metz                34| RF :  78      -9   2     :  71 |    :                     :   0 |  -2 |  69 | -2---313 |               |   $180k:$210.7k |  p244 | Lynchburg Distillers | *
 SS Lazaro Cabrera            19| 1B :  52     -13 -31     :   8 | 1B :  79     -13  -4     :  62 |   6 |  68 | -2111--- |               |        :        | p1551 | Lynchburg Distillers | +-
-1B Wilson Corrales           25| 1B :  63     -12 -18     :  32 | 1B :  78     -12  -4     :  62 |   6 |  68 | -3------ |               |        :        |  p386 | Lynchburg Distillers | ++
+1B Wilson Corrales           25| 1B :  63     -12 -19     :  32 | 1B :  78     -12  -4     :  62 |   6 |  68 | -3------ |               |        :        |  p386 | Lynchburg Distillers | ++
 RF Fermin Cruz               25| RF :  59     -10 -18     :  31 | RF :  75     -10  -4     :  61 |   6 |  67 | 1212-213 |               |        :        | p1705 | Lynchburg Distillers | +
 1B Fernando Vallejo          30| 1B :  77     -13  -5     :  58 |    :                     :   0 |   3 |  61 | -2------ |               |        :        |   p81 | Lynchburg Distillers | *
 1B Jeronimo Fernandez        27| 1B :  74     -13  -9     :  52 |    :                     :   0 |   6 |  58 | -2------ |               |        :        | p1577 | Lynchburg Distillers | *
@@ -1681,7 +1681,7 @@ MR Jerome Purkey             26| MR :      70      16     :  86 | MR :      82  
 RF Bill Woodland             28| RF :  91      -8  17     : 100 |    :                     :   0 |   5 | 105 | -1---214 |       $350k a |  $1.53M: $1.79M | p1716 | Wisconsin Cheetahs   | **
  C Bruce Schwenk             22|  C :  76       3  -9     :  69 |  C :  86       3   9     :  98 |   6 | 104 | 41------ |               |        :        |  p153 | Wisconsin Cheetahs   | ++
 CF David Galey               26| CF :  74       5   0     :  79 | CF :  80       5  10     :  95 |   6 | 101 | -2---773 |               |        :        |  p995 | Wisconsin Cheetahs   | *
-SS Osvaldo Parisi            25| 2B :  72       3   2     :  77 | SS :  75       9   6     :  90 |   6 |  96 | -2656--- |               |   $180k:$210.7k |   p34 | Wisconsin Cheetahs   | +
+SS Osvaldo Parisi            25| 2B :  72       3   1     :  77 | SS :  75       9   6     :  90 |   6 |  96 | -2656--- |               |    $90k:$105.3k |   p34 | Wisconsin Cheetahs   | +
 MR Christopher Blankenship   19| MR :      42      -8     :  34 | MR :      76      13     :  89 |   6 |  95 |          |               |        :        |  p543 | Wisconsin Cheetahs   | +++
 MR Jeremy Forgey             22| SP :      62      15     :  77 | SP :      74      15     :  89 |   6 |  95 |          |               |  $1.35M: $1.58M |  p214 | Wisconsin Cheetahs   | +++
 SS Joseph Gullickson         33| 2B :  85      -1  10     :  94 |    :                     :   0 |   0 |  94 | -2511--- |       $1.5Mx2 |   $900k: $1.05M |  p974 | Wisconsin Cheetahs   | *^
@@ -2243,11 +2243,11 @@ Bay City Bluebirds   |  97.0  96.1  92.9 |  98.7  96.4  94.9 |  71- 91 0.438 |  
 UBA
 Fowler --------------+
 Wisconsin Cheetahs   | 106.5 109.2 114.9 | 104.4 103.0 107.2 |  98- 64 0.603 |  97- 66 0.595 |  96- 66 0.593 ( 4) 
-Minnesota Axmen      |  95.0  95.3  90.0 | 111.4 107.9 118.5 |  86- 76 0.532 |  96- 67 0.589 |  95- 67 0.586 ( 6) 
+Minnesota Axmen      |  95.0  95.3  90.0 | 111.4 107.9 118.5 |  86- 76 0.532 |  96- 67 0.589 |  95- 67 0.586 ( 5) 
 Lynchburg Distillers |  94.6  96.5  91.1 |  99.3 102.1 101.3 |  74- 88 0.460 |  57-105 0.352 |  57-105 0.352 (24) 
 Northeastern Blac... |  94.4  95.8  90.0 |  92.7  90.4  82.2 |  57-105 0.354 |  50-112 0.309 |  50-112 0.309 (26) 
 McCarthey -----------+
-Toledo Mudhens       | 106.3 104.8 110.8 | 102.1 105.2 107.1 |  95- 67 0.585 |  95- 67 0.586 |  95- 67 0.586 ( 5) 
+Toledo Mudhens       | 106.3 104.8 110.8 | 102.1 105.2 107.1 |  95- 67 0.585 |  95- 67 0.586 |  95- 67 0.586 ( 6) 
 Penn Quakers         |  98.6 101.6 100.2 | 103.5 107.3 110.2 |  89- 73 0.549 |  93- 69 0.574 |  93- 69 0.574 ( 7) 
 Boston (UBA) Pilg... | 103.4 103.2 106.4 | 115.3 115.9 128.5 | 106- 56 0.651 |  92- 70 0.568 |  92- 70 0.568 ( 8) 
 Longport Bluefish    |  95.3  94.2  89.1 |  97.5  98.6  96.1 |  69- 93 0.423 |  76- 86 0.469 |  76- 86 0.469 (18) 
