@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.29622356472020356, RandomForest(...)), (0.29831561
 -- Walks
 Selected: IsotonicScores: [(0.12636873190277378, RandomForest(...)), (0.12871907889213749, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  71.   56.   83.  136.   65.   12.]Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.12448679483342277, RandomForest(...)), (0.087239337160765373, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 27, 'regressor__max_depth': 1}Feature Scores: [ 121.   76.  109.   94.  152.   25.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
+Selected: RandomForestScores: [(0.12448679483342277, RandomForest(...)), (0.087239337160765373, Isotonic(...))]Best Parameters: {'regressor__max_depth': 1, 'regressor__n_estimators': 27, 'selection__k': 2}Feature Scores: [ 121.   76.  109.   94.  152.   25.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
 
            Hits | 0.068
         Doubles | 0.035
@@ -50,15 +50,15 @@ Selected: RandomForestScores: [(0.12448679483342277, RandomForest(...)), (0.0872
              Ks | 0.059
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.080851616124036019, RandomForest(...)), (0.04591102958693364, Isotonic(...))]Best Parameters: {'regressor__max_depth': 14, 'selection__k': 3, 'regressor__n_estimators': 9}Feature Scores: [ 24.   1.   3.   0.   0.]Feature Mask: [ True  True  True False False]Feature Importances: [ 0.548  0.22   0.233]
+Selected: RandomForestScores: [(0.080851616124036019, RandomForest(...)), (0.04591102958693364, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 9, 'regressor__max_depth': 14, 'selection__k': 3}Feature Scores: [ 24.   1.   3.   0.   0.]Feature Mask: [ True  True  True False False]Feature Importances: [ 0.548  0.22   0.233]
 -- Doubles
-Selected: RandomForestScores: [(-0.010002847035577335, RandomForest(...)), (-0.021134668039213527, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 4, 'regressor__n_estimators': 2}Feature Scores: [ 7.  0.  1.  1.  0.]Feature Mask: [ True False  True  True False]Feature Importances: [ 0.303  0.339  0.358]
+Selected: RandomForestScores: [(-0.010002847035577335, RandomForest(...)), (-0.021134668039213527, Isotonic(...))]Best Parameters: {'regressor__max_depth': 4, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [ 7.  0.  1.  1.  0.]Feature Mask: [ True False  True  True False]Feature Importances: [ 0.303  0.339  0.358]
 -- HomeRuns
 Selected: IsotonicScores: [(0.075226975005372676, RandomForest(...)), (0.069011540548355302, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   0.  34.   1.   1.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.15018403986760565, RandomForest(...)), (0.1273756837065779, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 72, 'selection__k': 4, 'regressor__max_depth': 6}Feature Scores: [  0.  47.   0.   2.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.129  0.668  0.109  0.094]
+Selected: RandomForestScores: [(0.15018403986760565, RandomForest(...)), (0.1273756837065779, Isotonic(...))]Best Parameters: {'regressor__max_depth': 6, 'selection__k': 4, 'regressor__n_estimators': 72}Feature Scores: [  0.  47.   0.   2.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.129  0.668  0.109  0.094]
 -- Ks
-Selected: RandomForestScores: [(0.32806089074172701, RandomForest(...)), (0.29113062869248946, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 163.    4.    2.   14.    5.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.938  0.062]
+Selected: RandomForestScores: [(0.32806089074172701, RandomForest(...)), (0.29113062869248946, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 163.    4.    2.   14.    5.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.938  0.062]
 
 Hitting Features
              Average |  -   101   +  |   5  15  25  35  45  55  65  75  85  95
@@ -141,8 +141,8 @@ MR Diep, R           +   ML 28 |  8.3  7.4  1.5  0.5 | 115 243 | 119  79 |  + | 
 SP Medina, B             ML 26 |  8.6  6.9  2.3  0.7 |  90  83 | 104 106 |  + | 101/ 87 || 101 ||
 SP Pietrzak, Z       +   ML 29 |  8.6  7.0  2.6  0.5 | 102 120 | 100  76 |  + | 100/ 87 || 100 ||
 SP Garrett, L        +   ML 28 |  8.8  6.9  2.5  0.5 | 105 236 |  94 112 |  + |  93/ 83 ||  93 ||
-SP Stegman, B        +   ML 29 |  9.0  8.3  2.7  1.0 |  98 111 |  88  74 | -+ |  90/ 78 ||  90 ||
 SP Aldana, K      I  +~  DL 26 |  9.2  7.0  2.1  1.0 |  66  20 |  98  86 | +  |  90/ 79 ||  90 ||
+SP Stegman, B        +   ML 29 |  9.0  8.3  2.7  1.0 |  98 111 |  88  74 | -+ |  90/ 78 ||  90 ||
 SP Dickerson, D      +~ AAA 29 |  9.6  7.0  2.2  0.8 |  86 111 |  89 152 | -  |  87/ 76 ||  87 ||
 SP Clothier, A     F +   ML 32 | 10.0  6.6  2.0  0.8 |  91  73 |  83  86 |  + |  85/ 74 ||  85 ||
 SP Kerner, B         +~ AAA 26 |  9.0  6.8  2.7  1.1 |  75  50 |  91 127 | +- |  85/ 75 ||  85 ||
@@ -218,15 +218,15 @@ Balance:58/47 = 1.234 (ideal: 1.273)
   ML -> AAA  SP Peter Blind
   ML -> AAA  LF Carlos Basora
  AAA -> ML    C Israel Gonsalves
- AAA -> AA    C Benjamin Rosato
- AAA -> AA   3B James Williams
- AAA -> AA   MR Gerardo Cortada
- AAA -> AA    C Teijirou Eizan
  AAA -> AA   MR Frederick Mattern
-  AA -> AAA  MR Steven Cuyler
+ AAA -> AA    C Benjamin Rosato
+ AAA -> AA    C Teijirou Eizan
+ AAA -> AA   MR Gerardo Cortada
+ AAA -> AA   3B James Williams
   AA -> AAA  RF Oscar Irving
-  AA -> A    2B Mauro Fernandez
+  AA -> AAA  MR Steven Cuyler
   AA -> A    CF Alberto Sala
+  AA -> A    2B Mauro Fernandez
    A -> AAA  CF Richard Williams
    A -> DL    C Patrick Kitts
   DL -> ML   SP Zachary Pietrzak
@@ -367,11 +367,11 @@ RF Gregory Check             26 | SS :  92      -1 :  91 | SS :  95      -1 :  9
 SS Tony Diz                  23 | SS :  87       8 :  95 | SS :  89       8 :  97 |  +2 |     +3    +1 +1    :     +4    +1 +1    | +++
 1B Bill West                 33 | CF : 102      -1 : 101 | CF : 104      -1 : 103 |  +2 |  -1 +2       +2    :  -1 +2       +2    | *^
  C Israel Gonsalves          22 |  C :  99       1 : 100 |  C : 100       1 : 101 |  +1 |     +4    +2 +3    :     +3    +2 +3    | +++++
-SS Sean Tracy                23 | SS :  91       2 :  93 | SS :  92       2 :  94 |  +1 |  +2    +3    -1    :  +3    +3    -1    | +++-
  C Nicholas Au               23 |  C :  58      13 :  71 |  C :  59      13 :  72 |  +1 |  +1          +3    :  +1          +3    | ++
+SS Sean Tracy                23 | SS :  91       2 :  93 | SS :  92       2 :  94 |  +1 |  +2    +3    -1    :  +3    +3    -1    | +++-
  C Alex Benero               24 |  C :  83     -13 :  70 |  C :  84     -13 :  71 |  +1 |  +2    +4          :  +1    +4          | +++
-3B James Williams            25 | SS :  82      10 :  92 | SS :  83      10 :  93 |  +1 |  +2 +2    +1 +1    :  +2 +2    +1 +1    | ++-
  C Bill Pauley               25 |  C :  76      12 :  88 |  C :  77      12 :  89 |  +1 |           +2       :           +2       | +-
+3B James Williams            25 | SS :  82      10 :  92 | SS :  83      10 :  93 |  +1 |  +2 +2    +1 +1    :  +2 +2    +1 +1    | ++-
  C Kelly Shepler             19 |  C :  43       3 :  46 |  C :  43       3 :  46 |  +0 |              +3    :              +3    | +
 2B Marcelo Olivera           22 | 2B :  64     -11 :  53 | 2B :  64     -11 :  53 |  +0 |        +3          :  +1    +3          | +-
 3B Alex Alfano               23 | SS :  80       0 :  80 | SS :  80       0 :  80 |  +0 |  +1 +1 +3 +1 +3    :  +1 +2 +3 +1 +3    | +++-
@@ -411,8 +411,8 @@ MR Maurice Laughlin          22 | MR :      32     :  32 | MR :      32     :  3
 SP Justo Lazpita             25 | SP :      36     :  36 | SP :      36     :  36 |  +0 |  +1 +4          :  +1 +4          | ++
 SP Chris Addy                26 | SP :      49     :  49 | SP :      49     :  49 |  +0 |                 :                 | *
 SP Benito Medina             26 | SP :     101     : 101 | SP :     101     : 101 |  +0 |                 :                 | **
-MR Ronald Diep               28 | MR :     102     : 102 | MR :     102     : 102 |  +0 |                 :                 | ***^
 MR Brent Krone               28 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | *
+MR Ronald Diep               28 | MR :     102     : 102 | MR :     102     : 102 |  +0 |                 :                 | ***^
 SP Brian Stegman             29 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                 :                 | **^
 MR Nickolas Orduna           35 | MR :      74     :  74 | MR :      74     :  74 |  +0 |                 :                 | *^
 SP Michael Bergmann          25 | SP :      73     :  73 | SP :      72     :  72 |  -1 |        +3       :        +4       | +++++
@@ -698,28 +698,28 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 95              |              54  28  67  79  80  84  88  88  86  85  86  87  88  85  84  84  83  83  83                                     |
 
 1E | 125 (114-135) | 131 (120-141) 119/144 |   5/  5 || 122 ( 46-173) | 128 ( 52-179) 116/140 |  25/ 25
-1M | 109 ( 72-117) | 115 ( 78-123) 105/126 |   5/  5 || 106 ( 25-118) | 112 ( 31-124) 101/123 |  25/ 25
-1L | 104 (103-115) | 110 (109-121) 100/121 |   6/  6 ||  96 (  4-115) | 102 ( 10-121)  92/112 |  30/ 30
-2E |  95 ( 74-103) | 101 ( 80-109)  92/112 |   8/  8 ||  88 ( 17-103) |  94 ( 23-109)  86/103 |  40/ 40
+1M | 109 ( 72-117) | 115 ( 78-123) 105/126 |   5/  5 || 106 ( 72-118) | 112 ( 78-124) 101/123 |  25/ 25
+1L | 104 (103-115) | 110 (109-121) 100/121 |   6/  6 ||  96 (  4-115) | 102 ( 10-121)  93/113 |  30/ 30
+2E |  95 ( 74-103) | 101 ( 80-109)  92/112 |   8/  8 ||  88 ( 54-103) |  94 ( 60-109)  86/103 |  40/ 40
 2L |  94 ( 91- 98) | 100 ( 97-104)  91/110 |   8/  8 ||  83 (-42- 98) |  89 (-36-104)  81/ 98 |  40/ 40
 
  1 | 111 ( 72-135) | 117 ( 78-141) 107/129 |  16/ 16 || 105 (  4-173) | 111 ( 10-179) 101/122 |  80/ 80
  2 |  94 ( 74-103) | 100 ( 80-109)  91/110 |  16/ 16 ||  86 (-42-103) |  92 (-36-109)  83/101 |  80/ 80
- 3 |  84 ( 64- 90) |  90 ( 70- 96)  81/ 98 |  16/ 16 ||  77 (-48- 90) |  83 (-42- 96)  76/ 92 |  80/ 80
- 4 |  76 ( 64- 80) |  82 ( 70- 86)  74/ 90 |  16/ 16 ||  70 (-58-103) |  76 (-52-109)  69/ 84 |  80/ 80
+ 3 |  84 ( 64- 90) |  90 ( 70- 96)  81/ 98 |  16/ 16 ||  78 (-48- 90) |  84 (-42- 96)  76/ 92 |  80/ 80
+ 4 |  76 ( 64- 80) |  82 ( 70- 86)  74/ 90 |  16/ 16 ||  70 (-58-103) |  76 (-52-109)  70/ 84 |  80/ 80
  5 |  70 ( 62- 92) |  76 ( 68- 98)  69/ 84 |  16/ 16 ||  66 (-61-116) |  72 (-55-122)  65/ 79 |  80/ 80
- 6 |  64 ( 25- 75) |  70 ( 31- 81)  63/ 77 |  16/ 16 ||  61 (-58-106) |  67 (-52-112)  61/ 73 |  80/ 80
+ 6 |  64 ( 25- 75) |  70 ( 31- 81)  63/ 77 |  16/ 16 ||  61 (-58-106) |  67 (-52-112)  61/ 74 |  80/ 80
  7 |  60 ( 56- 61) |  66 ( 62- 67)  60/ 72 |  16/ 16 ||  58 (-48-174) |  64 (-42-180)  58/ 70 |  80/ 80
- 8 |  57 ( 51- 70) |  63 ( 57- 76)  58/ 70 |  16/ 16 ||  54 (-66-104) |  60 (-59-110)  54/ 66 |  80/ 80
- 9 |  52 ( 17- 58) |  58 ( 23- 64)  53/ 64 |  16/ 16 ||  49 (-67- 58) |  55 (-59- 64)  50/ 61 |  80/ 80
-10 |  49 ( 38- 59) |  55 ( 44- 65)  50/ 60 |  16/ 16 ||  47 (-65- 72) |  53 (-58- 78)  48/ 58 |  80/ 80
-11 |  44 ( 35- 61) |  50 ( 41- 67)  46/ 55 |  16/ 16 ||  43 (-63- 95) |  49 (-57-101)  44/ 54 |  80/ 80
-12 |  39 ( 16- 62) |  45 ( 22- 68)  41/ 50 |  16/ 16 ||  39 (-67- 76) |  45 (-58- 82)  41/ 49 |  80/ 80
+ 8 |  57 ( 51- 70) |  63 ( 57- 76)  58/ 70 |  16/ 16 ||  55 (-66-118) |  61 (-59-124)  55/ 67 |  80/ 80
+ 9 |  52 ( 17- 58) |  58 ( 23- 64)  53/ 64 |  16/ 16 ||  51 (-67-119) |  57 (-59-125)  51/ 62 |  80/ 80
+10 |  49 ( 38- 59) |  55 ( 44- 65)  50/ 60 |  16/ 16 ||  47 (-65- 72) |  53 (-58- 78)  48/ 59 |  80/ 80
+11 |  44 ( 35- 61) |  50 ( 41- 67)  46/ 55 |  16/ 16 ||  43 (-63- 95) |  49 (-57-101)  45/ 54 |  80/ 80
+12 |  39 ( 16- 62) |  45 ( 22- 68)  41/ 50 |  16/ 16 ||  39 (-62- 62) |  45 (-56- 68)  41/ 49 |  80/ 80
 13 |  38 ( 20- 80) |  44 ( 26- 86)  40/ 48 |  16/ 16 ||  36 (-70- 95) |  42 (-59-101)  38/ 46 |  80/ 80
-14 |  33 ( 28- 54) |  39 ( 34- 60)  35/ 43 |  16/ 16 ||  32 (-64-113) |  38 (-58-119)  35/ 42 |  80/ 80
-15 |  25 ( 20- 68) |  31 ( 26- 74)  28/ 34 |  16/ 16 ||  27 ( 16- 86) |  33 ( 22- 92)  30/ 36 |  80/ 80
-16 |  20 ( 18- 59) |  26 ( 24- 65)  24/ 28 |  16/ 16 ||  23 (-70- 88) |  29 (-59- 94)  26/ 32 |  80/ 80
-17 |  17 (  9- 50) |  23 ( 15- 56)  21/ 25 |  16/ 16 ||  20 (-70- 68) |  26 (-59- 74)  24/ 28 |  80/ 80
+14 |  33 ( 28- 54) |  39 ( 34- 60)  35/ 43 |  16/ 16 ||  33 (-64-113) |  39 (-58-119)  35/ 43 |  80/ 80
+15 |  25 ( 20- 68) |  31 ( 26- 74)  28/ 34 |  16/ 16 ||  27 (-39- 89) |  33 (-33- 95)  30/ 36 |  80/ 80
+16 |  20 ( 18- 59) |  26 ( 24- 65)  24/ 28 |  16/ 16 ||  23 (-70- 98) |  29 (-59-104)  26/ 32 |  80/ 80
+17 |  17 (  9- 50) |  23 ( 15- 56)  21/ 25 |  16/ 16 ||  20 (-70- 59) |  26 (-59- 65)  24/ 28 |  80/ 80
 18 |  13 ( 10- 58) |  19 ( 16- 64)  18/ 21 |  16/ 16 ||  17 (-70- 58) |  23 (-59- 64)  21/ 25 |  80/ 80
 19 |   9 (  5- 31) |  15 ( 11- 37)  13/ 16 |  16/ 16 ||  12 ( -4- 59) |  18 (  2- 65)  16/ 20 |  80/ 80
 20 |  20 ( -6- 55) |  26 (  1- 61)  24/ 28 |  16/ 16 ||   9 (-70- 55) |  15 (-59- 61)  13/ 16 |  80/ 80
@@ -828,7 +828,7 @@ SP Brian Simmons             24| SP :      68     -17     :  51 | SP :      88  
 CF Nelson Eslick             26| CF :  88      -2  -5     :  80 | CF :  90      -2  -2     :  86 |   6 |  92 | -2---878 |               |        :        | p1330 | No Team              | *
 RF John Wasserman            26| CF :  88      -4  -6     :  78 | CF :  90      -4  -3     :  84 |   6 |  90 | -2111878 |               |        :        | p2093 | No Team              | *
 CF Eric White                28| RF :  93      -9   0     :  84 |    :                     :   0 |   5 |  89 | -6---658 |               |        :        | p1691 | No Team              | *
-2B Amadeo Hidalgo            26| 2B :  79       0 -12     :  67 | 2B :  86       0  -3     :  82 |   6 |  88 | -282---- |               |        :        | p1178 | No Team              | *
+2B Amadeo Hidalgo            26| 2B :  79       0 -11     :  67 | 2B :  86       0  -3     :  82 |   6 |  88 | -282---- |               |        :        | p1178 | No Team              | *
  C Patricio Merino           25|  C :  73       2 -26     :  49 |  C :  86       2  -7     :  81 |   6 |  87 | 64------ |               |        :        | p1302 | No Team              | ++
 RF Calvin Shuff              30| RF :  94     -16  -6     :  72 |    :                     :   0 |   3 |  75 | -1---434 |               |        :        | p1404 | No Team              | *
 
@@ -846,7 +846,7 @@ SS William Scates            25| SS :  75       2 -22     :  55 | SS :  87      
 RF John Wasserman            26| CF :  88      -4  -6     :  78 | CF :  90      -4  -3     :  84 |   6 |  90 | -2111878 |               |        :        | p2093 | No Team              | *
 2B Troy Madewell             24| SS :  59       6 -34     :  31 | SS :  82       6  -5     :  83 |   6 |  89 | -3777--- |               |        :        | p1934 | No Team              | +-
 CF Eric White                28| RF :  93      -9   0     :  84 |    :                     :   0 |   5 |  89 | -6---658 |               |        :        | p1691 | No Team              | *
-2B Amadeo Hidalgo            26| 2B :  79       0 -12     :  67 | 2B :  86       0  -3     :  82 |   6 |  88 | -282---- |               |        :        | p1178 | No Team              | *
+2B Amadeo Hidalgo            26| 2B :  79       0 -11     :  67 | 2B :  86       0  -3     :  82 |   6 |  88 | -282---- |               |        :        | p1178 | No Team              | *
  C Lewis Summers             23|  C :  59       4 -39     :  24 |  C :  84       4  -7     :  81 |   6 |  87 | 71------ |               |        :        |  p159 | No Team              | ++
 2B Omar Reyes                24| 3B :  71      -3 -20     :  48 | 3B :  87      -3  -4     :  81 |   6 |  87 | -3773--- |               |        :        | p1076 | No Team              | ++
 3B Francisco Gato            25| 2B :  74       3 -13     :  63 | 2B :  82       3  -4     :  81 |   6 |  87 | -3993226 |               |        :        |  p501 | No Team              | ++
@@ -1110,7 +1110,7 @@ DH Manuel Rodarte            30|  C : 108       3  10     : 121 |    :          
 MR Asdrubal Perez            25| MR :      93      15     : 108 | MR :      98      14     : 112 |   6 | 118 |          |         $500k r |  $8.27M: $9.57M |  p570 | Brooklyn Dodgers     | +++++
 SP Celso Gurrola             19| MR :      40     -31     :   9 | SP :      98      12     : 110 |   6 | 116 |          |   3             |        :        |  p562 | Brooklyn Dodgers     | +++++
 LF Geraldo Alcover           24| CF : 100      -2   8     : 106 | CF : 101      -2  10     : 110 |   6 | 116 | -2---878 |   6+    $500k r |  $4.41M:  $5.1M |   p88 | Brooklyn Dodgers     | +++++
-2B Eijirou Benkei            32| 2B : 106      -4  11     : 113 |    :                     :   0 |   1 | 114 | -271---- |  F     $12.5M   |  $6.06M: $7.02M | p2033 | Brooklyn Dodgers     | ***
+2B Eijirou Benkei            32| 2B : 106      -4  12     : 113 |    :                     :   0 |   1 | 114 | -271---- |  F     $12.5M   |  $6.62M: $7.65M | p2033 | Brooklyn Dodgers     | ***
  C Bill Pence                31|  C :  99       7   5     : 111 |    :                     :   0 |   2 | 113 | 86------ |  F      $1.4M   |  $2.76M: $3.19M |  p777 | Brooklyn Dodgers     | ***
 2B Steven Mora               32| 3B : 101      -1  11     : 111 |    :                     :   0 |   1 | 112 | -8886--- |    +    $2.6Mx2 |  $6.06M: $7.02M | p1068 | Brooklyn Dodgers     | **
 RF Bobby Mullins             29| RF : 102      -8   9     : 103 |    :                     :   0 |   4 | 107 | -2---868 |       $635.7k a |  $4.96M: $5.74M | p1928 | Brooklyn Dodgers     | **^
@@ -1278,7 +1278,7 @@ CF Douglas Riley             24| CF :  92       1   3     :  96 | CF :  97      
  C Salomon Zambrano          22|  C :  84       6 -11     :  79 |  C :  93       6   4     : 103 |   6 | 109 | 71------ |                 |        :        | p1540 | St. Louis (C) Car... | +++
 SS Cordell Tenorio           23| 2B :  81      -7 -17     :  57 | 2B : 103      -7   7     : 102 |   6 | 108 | -2614--- |   9             |        :        |  p887 | St. Louis (C) Car... | ++++-
  C Tim Langlinais            23|  C :  65       8 -29     :  44 |  C :  89       8   2     :  99 |   6 | 105 | 83252--- | I               |        :        | p1219 | St. Louis (C) Car... | ++-
-2B George Pendergrass        25| 2B :  84       2  -5     :  81 | SS :  92       4   3     :  99 |   6 | 105 | -4987--- |                 |        :        | p2120 | St. Louis (C) Car... | +++-
+2B George Pendergrass        25| 2B :  84       2  -4     :  81 | SS :  92       4   3     :  99 |   6 | 105 | -4987--- |                 |        :        | p2120 | St. Louis (C) Car... | +++-
 SS Henry Fuster              22| 3B :  86       1  -2     :  85 | 3B :  92       1   5     :  98 |   6 | 104 | -9886--- |                 |        :        | p1293 | St. Louis (C) Car... | +++-
 2B Russell Polen             17| SS :  49       1 -49     :   2 | SS :  94       1   2     :  97 |   6 | 103 | -3736--- |                 |        :        | p2209 | St. Louis (C) Car... | +++-
 RF George Levy               26| RF :  94      -5   5     :  94 | RF :  96      -5   5     :  96 |   6 | 102 | -3---94T |         $500k r |  $2.76M: $3.19M | p1098 | St. Louis (C) Car... | **^
@@ -1657,7 +1657,7 @@ CF Gene Watson               21| RF :  53      -8 -39     :   6 | CF :  89      
 MR James Colon               29| MR :      78       2     :  80 |    :                     :   0 |   4 |  84 |          |    +    $500k a |   $1.1M: $1.28M | p1604 | New York Mets        | *^
 CF Rigo Fano                 31| CF :  90      -4  -5     :  81 |    :                     :   0 |   2 |  83 | -2---778 |         $550k a |        :        | p1593 | New York Mets        | *^
 SP Stephan Yong              21| MR :      33     -37     :  -4 | SP :      80      -6     :  74 |   6 |  80 |          |                 |        :        |  p357 | New York Mets        | +++-
-2B Samuel Gregg              17| 2B :  45       1 -45     :   1 | 2B :  80       1  -8     :  72 |   6 |  78 | -3821--- |                 |        :        | p1267 | New York Mets        | ++
+2B Samuel Gregg              17| 2B :  45       1 -44     :   1 | 2B :  80       1  -8     :  72 |   6 |  78 | -3821--- |                 |        :        | p1267 | New York Mets        | ++
 1B Mike Hiett                28| 1B :  94     -17  -4     :  73 |    :                     :   0 |   5 |  78 | -7---3-1 |    +    $500k r |        :        | p1835 | New York Mets        | *^
  C Michael Calaway           24|  C :  75      -4 -30     :  41 |  C :  86      -4 -12     :  70 |   6 |  76 | 53------ |                 |        :        |  p768 | New York Mets        | ++
 LF John Williams             24| RF :  78      -7 -14     :  56 | RF :  85      -7  -9     :  69 |   6 |  75 | -2---838 |                 |        :        | p1834 | New York Mets        | ++-
@@ -1988,7 +1988,7 @@ SS Rocky Schroeder           25| SS :  85       6  -8     :  83 | SS :  91      
 3B Jason Mora                18| SS :  49       9 -41     :  17 | SS :  87       9   3     :  99 |   6 | 105 | -3868--- |                 |        :        |  p666 | Chicago Cubs         | +-
  C Andrew Rosenthal          21|  C :  83      -3 -21     :  58 |  C : 100      -3   2     :  99 |   6 | 105 | 5------- |                 |        :        |  p573 | Colorado Rockies     | ++++
  C Tim Langlinais            23|  C :  65       8 -29     :  44 |  C :  89       8   2     :  99 |   6 | 105 | 83252--- | I               |        :        | p1219 | St. Louis (C) Car... | ++-
-2B George Pendergrass        25| 2B :  84       2  -5     :  81 | SS :  92       4   3     :  99 |   6 | 105 | -4987--- |                 |        :        | p2120 | St. Louis (C) Car... | +++-
+2B George Pendergrass        25| 2B :  84       2  -4     :  81 | SS :  92       4   3     :  99 |   6 | 105 | -4987--- |                 |        :        | p2120 | St. Louis (C) Car... | +++-
 3B Wade Singh                21| 3B :  80      -5 -13     :  62 | 3B :  98      -5   5     :  98 |   6 | 104 | -7362--- |                 |        :        | p1396 | St. Louis (B) Browns | +++
 CF Wendell Tiggs             21| CF :  78       1 -12     :  67 | CF :  93       1   5     :  98 |   6 | 104 | -2---389 |                 |        :        |  p832 | New York Mets        | ++++
 SS Henry Fuster              22| 3B :  86       1  -2     :  85 | 3B :  92       1   5     :  98 |   6 | 104 | -9886--- |                 |        :        | p1293 | St. Louis (C) Car... | +++-
