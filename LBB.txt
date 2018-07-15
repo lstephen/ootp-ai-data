@@ -31,7 +31,7 @@ Pitching: 10523/12020 0.467/0.533
              Ks | 0.099
 Features: Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.028932529901022613, RandomForest(...)), (0.028206003721234607, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'selection__k': 3, 'regressor__max_depth': 49}Feature Scores: [ 48.   1.   0.   2.   0.   9.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.663  0.234  0.104]
+Selected: RandomForestScores: [(0.028932529901022613, RandomForest(...)), (0.028206003721234607, Isotonic(...))]Best Parameters: {'regressor__max_depth': 49, 'regressor__n_estimators': 2, 'selection__k': 3}Feature Scores: [ 48.   1.   0.   2.   0.   9.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.663  0.234  0.104]
 -- Doubles
 Selected: IsotonicScores: [(0.064505877022063299, RandomForest(...)), (0.069658811026297715, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  1.  35.   0.  13.   6.   2.   1.]Feature Mask: [False  True False False False False False]
 -- Triples
@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.17060150502529589, RandomForest(...)), (0.16533717
 -- Walks
 Selected: IsotonicScores: [(0.17993851313999557, RandomForest(...)), (0.19973344293376574, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   0.    6.    4.    8.  137.    0.    0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.35970811538569486, RandomForest(...)), (0.33691098647259743, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 32, 'regressor__n_estimators': 96}Feature Scores: [  50.    0.    6.    2.    7.  250.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
+Selected: RandomForestScores: [(0.35970811538569486, RandomForest(...)), (0.33691098647259743, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'selection__k': 2, 'regressor__n_estimators': 96}Feature Scores: [  50.    0.    6.    2.    7.  250.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
 
            Hits | 0.069
         Doubles | 0.033
@@ -151,9 +151,9 @@ SP L. Smith, B         AA 33 | 10.4  2.4  1.6  4.7 |  57     |  59     | -  |  5
 SP Hawkins, A          AA 28 | 13.3  3.5  4.9  1.3 |  46     |  57     |    |  54/ 47 ||  54 ||
 MR Olin, S          8   A 22 | 12.0  2.6  4.7  1.3 |  52     |  65     |    |  40/ 53 ||  53 ||
 SP Oliveras, F      1   A 25 | 11.1  3.3  3.9  4.4 |  48     |  52     |    |  51/ 44 ||  51 ||
+MR Rodas, R            AA 28 | 11.3  4.1  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 SP Springer, D          A 23 | 12.0  2.6  4.7  5.3 |  38     |  45     |  - |  43/ 37 ||  43 ||
 MR Hall, D              A 24 | 12.7  5.7  6.6  1.6 |  50     |  50     | -  |  14/ 43 ||  43 ||
-MR Rodas, R            AA 28 | 11.3  4.1  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 MR Beck, R          T   A 20 | 11.7  2.6  4.2  4.2 |  48     |  48     | ++ |  23/ 42 ||  42 ||
 SP Bones, R             A 19 | 14.1  2.9  6.9  5.8 |  34     |  34     |    |  33/ 29 ||  33 ||
 
@@ -325,8 +325,8 @@ CF George D. Wright          29 | CF :  91      -9 :  82 | CF :  91      -9 :  8
 CF Rudy Law                  31 | CF :  89      -3 :  86 | CF :  89      -3 :  86 |  +0 |       +20             :       +20             | **
 CF Gary Roenicke             33 | CF : 107      -4 : 103 | CF : 107      -4 : 103 |  +0 |    +10                :    +10                | **^
 2B Jack Perconte             33 | SS :  90       7 :  97 | SS :  90       7 :  97 |  +0 |    +10                :                       | **^
-SS Roy Smalley III           35 | SS : 111       0 : 111 | SS : 111       0 : 111 |  +0 |                       :                       | **^
 LF Al Woods                  35 | LF :  97      -8 :  89 | LF :  97      -8 :  89 |  +0 |                       :                       | **
+SS Roy Smalley III           35 | SS : 111       0 : 111 | SS : 111       0 : 111 |  +0 |                       :                       | **^
 LF Tony Scott                36 | CF :  91       5 :  96 | CF :  91       5 :  96 |  +0 |                       :                       | **
 SS Rene Gonzales             27 | SS :  86       1 :  87 | SS :  85       1 :  86 |  -1 |                       :          +10   +10    | **
 RF Steve Pegues              20 | LF :  73      -7 :  66 | LF :  74     -10 :  64 |  -2 |    +10   +10   +10    :    +10         +10    | ++
@@ -360,8 +360,8 @@ MR Greg Booker               28 | MR :      57     :  57 | MR :      57     :  5
 SP Bruce Hurst               30 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                          | *
 SP Howard Bailey             31 | SP :      93     :  93 | SP :      93     :  93 |  +0 | -10                      : -10-10                   | *
 MR Dale Mohorcic             32 | MR :      74     :  74 | MR :      74     :  74 |  +0 |                          :                          | *
-SP Bob Owchinko              33 | SP :      82     :  82 | SP :      82     :  82 |  +0 | +10                      : +10                      | *^
 SP Billy L. Smith            33 | SP :      55     :  55 | SP :      55     :  55 |  +0 | -10-10         -10       : -10            -10       | *
+SP Bob Owchinko              33 | SP :      82     :  82 | SP :      82     :  82 |  +0 | +10                      : +10                      | *^
 SP John Denny                35 | SP :     121     : 121 | SP :     121     : 121 |  +0 |                -10       :                          | ***
 SP Mike Jeffcoat             29 | SP :      96     :  96 | SP :      95     :  95 |  -1 |       -10                :                          | *
 MR Bob Tufts                 32 | MR :      61     :  61 | MR :      55     :  55 |  -5 |          +10             :    -10                   | *
@@ -833,10 +833,10 @@ DESIGNATED_HITTER
  4 | Smalley III, R   111 -19  92 | Roenicke, G      105 -19  86 | Smalley III, R   112 -19  93
  5 | Roenicke, G      107 -19  88 | Anderson, D      100 -19  81 | Roenicke, G      108 -19  89
  6 | Wynegar, B        99 -19  80 | Wynegar, B        99 -19  80 | Wynegar, B       100 -19  81
- 7 | Cromartie, W      97 -19  78 | DeJohn, M         97 -19  78 | Cromartie, W      98 -19  79
- 8 | Sundberg, J       97 -19  78 | Woods, A          97 -19  78 | Sundberg, J       98 -19  79
- 9 | Anderson, D       97 -19  78 | Henderson, S      96 -19  77 | Woods, A          97 -19  78
-10 | Woods, A          97 -19  78 | Sundberg, J       94 -19  75 | Henderson, S      96 -19  77
+ 7 | Woods, A          97 -19  78 | Woods, A          97 -19  78 | Cromartie, W      98 -19  79
+ 8 | Cromartie, W      97 -19  78 | DeJohn, M         97 -19  78 | Sundberg, J       98 -19  79
+ 9 | Sundberg, J       97 -19  78 | Henderson, S      96 -19  77 | Woods, A          97 -19  78
+10 | Anderson, D       97 -19  78 | A. Miller, K      94 -19  75 | Henderson, S      96 -19  77
 
 --- Trade Values ---
 LF Tony Phillips             29| SS : 123      10  36  23 : 193 |    :                     :   0 |   4 | 197 | -2557445 |     $11.83Mx4 | $13.24M:$17.84M | p1682 | Cleveland Indians    | ****^
