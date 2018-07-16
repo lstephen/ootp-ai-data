@@ -31,7 +31,7 @@ Pitching: 10523/12020 0.467/0.533
              Ks | 0.099
 Features: Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.028932529901022613, RandomForest(...)), (0.028206003721234607, Isotonic(...))]Best Parameters: {'regressor__max_depth': 49, 'regressor__n_estimators': 2, 'selection__k': 3}Feature Scores: [ 48.   1.   0.   2.   0.   9.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.663  0.234  0.104]
+Selected: RandomForestScores: [(0.028932529901022613, RandomForest(...)), (0.028206003721234607, Isotonic(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [ 48.   1.   0.   2.   0.   9.   0.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.663  0.234  0.104]
 -- Doubles
 Selected: IsotonicScores: [(0.064505877022063299, RandomForest(...)), (0.069658811026297715, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  1.  35.   0.  13.   6.   2.   1.]Feature Mask: [False  True False False False False False]
 -- Triples
@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.17060150502529589, RandomForest(...)), (0.16533717
 -- Walks
 Selected: IsotonicScores: [(0.17993851313999557, RandomForest(...)), (0.19973344293376574, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   0.    6.    4.    8.  137.    0.    0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.35970811538569486, RandomForest(...)), (0.33691098647259743, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'selection__k': 2, 'regressor__n_estimators': 96}Feature Scores: [  50.    0.    6.    2.    7.  250.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
+Selected: RandomForestScores: [(0.35970811538569486, RandomForest(...)), (0.33691098647259743, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'regressor__n_estimators': 96, 'selection__k': 2}Feature Scores: [  50.    0.    6.    2.    7.  250.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
 
            Hits | 0.069
         Doubles | 0.033
@@ -151,9 +151,9 @@ SP L. Smith, B         AA 33 | 10.4  2.4  1.6  4.7 |  57     |  59     | -  |  5
 SP Hawkins, A          AA 28 | 13.3  3.5  4.9  1.3 |  46     |  57     |    |  54/ 47 ||  54 ||
 MR Olin, S          8   A 22 | 12.0  2.6  4.7  1.3 |  52     |  65     |    |  40/ 53 ||  53 ||
 SP Oliveras, F      1   A 25 | 11.1  3.3  3.9  4.4 |  48     |  52     |    |  51/ 44 ||  51 ||
-MR Rodas, R            AA 28 | 11.3  4.1  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 SP Springer, D          A 23 | 12.0  2.6  4.7  5.3 |  38     |  45     |  - |  43/ 37 ||  43 ||
 MR Hall, D              A 24 | 12.7  5.7  6.6  1.6 |  50     |  50     | -  |  14/ 43 ||  43 ||
+MR Rodas, R            AA 28 | 11.3  4.1  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 MR Beck, R          T   A 20 | 11.7  2.6  4.2  4.2 |  48     |  48     | ++ |  23/ 42 ||  42 ||
 SP Bones, R             A 19 | 14.1  2.9  6.9  5.8 |  34     |  34     |    |  33/ 29 ||  33 ||
 
@@ -186,8 +186,8 @@ SP Bones, R             A 19 | 14.1  2.9  6.9  5.8 |  34     |  34     |    |  3
 Total:73 (target 70-75)
 Balance:41/32 = 1.281 (ideal: 1.273)
 
- AAA -> AA   MR Sammy Stewart
  AAA -> AA   2B Ernie Riles
+ AAA -> AA   MR Sammy Stewart
  AAA -> A    RF Felix Jose
    A -> AAA  CF Mark T. McLemore
 
@@ -323,8 +323,8 @@ RF Rich Amaral               26 | SS :  78       0 :  78 | SS :  78       0 :  7
  C John Mizerock             27 |  C :  83       3 :  86 |  C :  83       3 :  86 |  +0 | -10                   :                       | *
 CF George D. Wright          29 | CF :  91      -9 :  82 | CF :  91      -9 :  82 |  +0 |                       :                       | *
 CF Rudy Law                  31 | CF :  89      -3 :  86 | CF :  89      -3 :  86 |  +0 |       +20             :       +20             | **
-CF Gary Roenicke             33 | CF : 107      -4 : 103 | CF : 107      -4 : 103 |  +0 |    +10                :    +10                | **^
 2B Jack Perconte             33 | SS :  90       7 :  97 | SS :  90       7 :  97 |  +0 |    +10                :                       | **^
+CF Gary Roenicke             33 | CF : 107      -4 : 103 | CF : 107      -4 : 103 |  +0 |    +10                :    +10                | **^
 LF Al Woods                  35 | LF :  97      -8 :  89 | LF :  97      -8 :  89 |  +0 |                       :                       | **
 SS Roy Smalley III           35 | SS : 111       0 : 111 | SS : 111       0 : 111 |  +0 |                       :                       | **^
 LF Tony Scott                36 | CF :  91       5 :  96 | CF :  91       5 :  96 |  +0 |                       :                       | **
@@ -352,10 +352,10 @@ SP Bob Welch                 31 | SP :      85     :  85 | SP :      86     :  8
 MR Rich Rodas                28 | MR :      42     :  42 | MR :      43     :  43 |  +1 |                          :    +10                   | *
 MR Rod Beck                  20 | MR :      42     :  42 | MR :      42     :  42 |  +0 |    +10                   :                          | ++++-
 MR Steve Olin                22 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | ++++-
-SP Bryan Hickerson           24 | SP :      58     :  58 | SP :      58     :  58 |  +0 |             +10+10       :                          | +++-
 MR Darren Hall               24 | MR :      43     :  43 | MR :      43     :  43 |  +0 |    +10         +10       :                +10       | ++-
-SP Zane Smith                27 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                +10       | *
+SP Bryan Hickerson           24 | SP :      58     :  58 | SP :      58     :  58 |  +0 |             +10+10       :                          | +++-
 SP Mark W. Davis             27 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                          :                          | *
+SP Zane Smith                27 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                +10       | *
 MR Greg Booker               28 | MR :      57     :  57 | MR :      57     :  57 |  +0 |                          :                          | *
 SP Bruce Hurst               30 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                          | *
 SP Howard Bailey             31 | SP :      93     :  93 | SP :      93     :  93 |  +0 | -10                      : -10-10                   | *
@@ -833,10 +833,10 @@ DESIGNATED_HITTER
  4 | Smalley III, R   111 -19  92 | Roenicke, G      105 -19  86 | Smalley III, R   112 -19  93
  5 | Roenicke, G      107 -19  88 | Anderson, D      100 -19  81 | Roenicke, G      108 -19  89
  6 | Wynegar, B        99 -19  80 | Wynegar, B        99 -19  80 | Wynegar, B       100 -19  81
- 7 | Woods, A          97 -19  78 | Woods, A          97 -19  78 | Cromartie, W      98 -19  79
- 8 | Cromartie, W      97 -19  78 | DeJohn, M         97 -19  78 | Sundberg, J       98 -19  79
- 9 | Sundberg, J       97 -19  78 | Henderson, S      96 -19  77 | Woods, A          97 -19  78
-10 | Anderson, D       97 -19  78 | A. Miller, K      94 -19  75 | Henderson, S      96 -19  77
+ 7 | Cromartie, W      97 -19  78 | DeJohn, M         97 -19  78 | Cromartie, W      98 -19  79
+ 8 | Sundberg, J       97 -19  78 | Woods, A          97 -19  78 | Sundberg, J       98 -19  79
+ 9 | Anderson, D       97 -19  78 | Henderson, S      96 -19  77 | Woods, A          97 -19  78
+10 | Woods, A          97 -19  78 | Sundberg, J       94 -19  75 | Henderson, S      96 -19  77
 
 --- Trade Values ---
 LF Tony Phillips             29| SS : 123      10  36  23 : 193 |    :                     :   0 |   4 | 197 | -2557445 |     $11.83Mx4 | $13.24M:$17.84M | p1682 | Cleveland Indians    | ****^
@@ -1515,7 +1515,7 @@ CF Reid Nichols              30| CF :  94      -4  -2     :  89 |    :          
 1B Jack Voigt                22| RF :  75      -8 -18     :  49 | CF :  89      -5  -5     :  80 |   6 |  86 | -522-656 |   4           |        :        | p1315 | New York (N) Mets    | ++-
 2B Jay Loviglio              32| SS :  80      10  -6     :  84 |    :                     :   0 |   1 |  85 | -2867616 |       $300k r |        :        |  p781 | New York (N) Mets    | *^
 DH Andre Dawson              34| CF :  93      -4  -3     :  86 |    :                     :   0 |  -2 |  84 | -2---355 |  F   $5.47M   |        :        |  p234 | New York (N) Mets    | ***^
-RF Mickey Hatcher            33| 3B :  87      -5   1     :  83 |    :                     :   0 |   0 |  83 | -4251738 |               | $224.4k:$302.4k |  p344 | New York (N) Mets    | *^
+RF Mickey Hatcher            33| 3B :  87      -5   0     :  83 |    :                     :   0 |   0 |  83 | -4251738 |               |        :        |  p344 | New York (N) Mets    | *^
 1B Greg Biagini              36| 3B :  97      -9   6     :  94 |    :                     :   0 | -12 |  82 | -3-3-334 |         $8M e |  $1.35M: $1.81M | p2897 | New York (N) Mets    | **^
 CL Tom Johnson               37| MR :      87      12     :  99 |    :                     :   0 | -20 |  79 |          |  F      $5M   |  $2.69M: $3.63M | p1023 | New York (N) Mets    | ***
 3B Manny Trillo              37| 2B :  98      -5   6     :  99 |    :                     :   0 | -20 |  79 | -3541333 |               |  $1.35M: $1.81M | p1977 | New York (N) Mets    | *
@@ -1657,7 +1657,7 @@ CL Jeff Shaw                 22| MR :      62     -10     :  53 | MR :      93  
 SP Norm Charlton             25| SP :      77      -5     :  72 | SP :      93      10     : 103 |   6 | 109 |          |   8   $300k r |        :        |  p316 | St. Louis Cardinals  | ++++-
 LF John Elway                28| 3B : 105     -12  11     : 103 |    :                     :   0 |   5 | 108 | -212-444 |       $300k r |  $2.47M: $3.33M | p1817 | St. Louis Cardinals  | **
 1B Hal Morris                23| 1B :  81     -17 -16     :  48 | 1B : 109     -17   9     : 101 |   6 | 107 | -2---1-- |               |        :        | p1087 | St. Louis Cardinals  | +++-
-3B Bobby Bonilla             25| 3B :  95      -6   8     :  97 | 3B :  98      -6   9     : 101 |   6 | 107 | -615-3-3 |               |   $1.8M: $2.42M |   p85 | St. Louis Cardinals  | +++-
+3B Bobby Bonilla             25| 3B :  95      -6   7     :  97 | 3B :  98      -6   9     : 101 |   6 | 107 | -615-3-3 |               |  $1.57M: $2.12M |   p85 | St. Louis Cardinals  | +++-
 LF Luis E. Gonzalez          20| RF :  81     -10 -14     :  57 | LF : 101      -8   5     :  98 |   6 | 104 | -2---625 |               |        :        |  p518 | St. Louis Cardinals  | ++++
 SP Mike Bielecki             29| SP :      91       9     : 100 |    :                     :   0 |   4 | 104 |          |       $300k r |  $2.02M: $2.72M |   p49 | St. Louis Cardinals  | **^
 SP Pete Harnisch             21| SP :      67     -14     :  53 | SP :      90       7     :  97 |   6 | 103 |          |               |        :        |  p687 | St. Louis Cardinals  | ++++
@@ -1672,7 +1672,7 @@ LF Albert Belle              21| RF :  89     -11  -7     :  72 | RF :  99     -
 3B Leo Gomez                 22| 3B :  77      -8 -13     :  56 | 3B :  93      -8   1     :  86 |   6 |  92 | -714-212 |               |        :        |  p546 | St. Louis Cardinals  | +++
 SP Joe Magrane               24| SP :      71     -11     :  60 | SP :      85       1     :  86 |   6 |  92 |          |   9           |        :        |  p581 | St. Louis Cardinals  | ++++-
 RF Carmelo Castillo          30| CF :  87       4  -2     :  89 |    :                     :   0 |   3 |  92 | -2---687 |       $350k a |        :        |  p444 | St. Louis Cardinals  | *
-3B Dave Hollins              22| 3B :  80     -10 -11     :  59 | 3B :  94     -10   1     :  85 |   6 |  91 | -3-3---- |               |        :        |  p770 | St. Louis Cardinals  | ++-
+3B Dave Hollins              22| 3B :  80     -10 -12     :  59 | 3B :  94     -10   1     :  85 |   6 |  91 | -3-3---- |               |        :        |  p770 | St. Louis Cardinals  | ++-
 MR Hector Carrasco           18| MR :      40     -29     :  11 | MR :      81       1     :  83 |   6 |  89 |          |               |        :        |  p218 | St. Louis Cardinals  | +++-
 SP Don Aase                  33| SP :      85       3     :  88 |    :                     :   0 |   0 |  88 |          |       $350k a | $673.1k:$907.3k |   p43 | St. Louis Cardinals  | *^
 LF Archi Cianfrocco          21| 2B :  77      -5 -14     :  57 | 2B :  88      -5  -3     :  80 |   6 |  86 | -4543415 |               |        :        |  p409 | St. Louis Cardinals  | ++-
@@ -1705,7 +1705,7 @@ CF Ruppert Jones             33| CF : 101      -3   6     : 104 |    :          
 SP John Habyan               24| MR :      59     -13     :  46 | SP :      90       6     :  96 |   6 | 102 |          |   1           |        :        |  p382 | Cincinnati Reds      | +++++
  C Tony Eusebio              21|  C :  77       9 -13     :  73 |  C :  85       9   1     :  95 |   6 | 101 | 71------ |               |        :        |  p491 | Cincinnati Reds      | ++
 LF Bob Brower                28| RF :  98      -8   5     :  95 |    :                     :   0 |   5 | 100 | -1---226 |               |  $1.12M: $1.51M |  p133 | Cincinnati Reds      | **
-1B Matt Franco               18| 3B :  74      -2  -9     :  63 | 3B :  89      -2   4     :  91 |   6 |  97 | -416-3-- |               |        :        |  p475 | Cincinnati Reds      | ++-
+1B Matt Franco               18| 3B :  74      -2 -10     :  63 | 3B :  89      -2   4     :  91 |   6 |  97 | -416-3-- |               |        :        |  p475 | Cincinnati Reds      | ++-
  C Tom Prince                23|  C :  74       3 -22     :  55 |  C :  89       3   0     :  91 |   6 |  97 | 61------ |               |        :        |  p939 | Cincinnati Reds      | +-
 DH Ellis Valentine           34| 3B : 104     -14   8     :  99 |    :                     :   0 |  -2 |  97 | -322-213 |  F    $5.5M   |   $1.8M: $2.42M | p1510 | Cincinnati Reds      | ****
  C Andy Allanson             26|  C :  86      -9 -21     :  56 |  C : 100      -9  -1     :  90 |   6 |  96 | 31------ |               |        :        |   p16 | Cincinnati Reds      | *
@@ -2024,7 +2024,7 @@ SS Pat Listach               20| 2B :  78       0  -8     :  70 | 2B :  94      
 1B Hal Morris                23| 1B :  81     -17 -16     :  48 | 1B : 109     -17   9     : 101 |   6 | 107 | -2---1-- |               |        :        | p1087 | St. Louis Cardinals  | +++-
 3B Craig Worthington         23| 3B :  78      -5  -8     :  65 | 3B :  97      -5   9     : 101 |   6 | 107 | -615-211 |               |        :        | p1140 | Atlanta Braves       | +++
  C Mike Macfarlane           24|  C :  80       3 -16     :  67 |  C :  94       3   5     : 101 |   6 | 107 | 62---212 |               |        :        |  p579 | Chicago (A) White... | +++-
-3B Bobby Bonilla             25| 3B :  95      -6   8     :  97 | 3B :  98      -6   9     : 101 |   6 | 107 | -615-3-3 |               |   $1.8M: $2.42M |   p85 | St. Louis Cardinals  | +++-
+3B Bobby Bonilla             25| 3B :  95      -6   7     :  97 | 3B :  98      -6   9     : 101 |   6 | 107 | -615-3-3 |               |  $1.57M: $2.12M |   p85 | St. Louis Cardinals  | +++-
 CF Karl Rhodes               19| RF :  81      -9 -13     :  58 | RF : 102      -9   7     : 100 |   6 | 106 | -1---535 |               |        :        | p1165 | Chicago (A) White... | ++++
 3B Scott Livingstone         23| 3B :  75      -9 -16     :  50 | 3B : 101      -9   8     : 100 |   6 | 106 | -514---- |               |        :        |  p898 | Boston Red Sox       | +++
 2B Torey Lovullo             23| 3B :  77       0  -5     :  72 | 3B :  92       0   8     : 100 |   6 | 106 | -46621-1 |               |        :        |  p984 | Baltimore Orioles    | +++-
