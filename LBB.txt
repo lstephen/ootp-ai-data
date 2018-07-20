@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.17294499851034092, RandomForest(...)), (0.16506627
 -- Walks
 Selected: IsotonicScores: [(0.19340574491878326, RandomForest(...)), (0.20173229377679314, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   0.    6.    3.    8.  138.    0.    0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.36366922474581909, RandomForest(...)), (0.34162183223919151, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'selection__k': 2, 'regressor__n_estimators': 97}Feature Scores: [  50.    0.    6.    2.    7.  251.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
+Selected: RandomForestScores: [(0.36366922474581909, RandomForest(...)), (0.34162183223919151, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 97, 'regressor__max_depth': 32}Feature Scores: [  50.    0.    6.    2.    7.  251.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
 
            Hits | 0.069
         Doubles | 0.033
@@ -58,7 +58,7 @@ Selected: IsotonicScores: [(0.14850196656506531, RandomForest(...)), (0.20378347
 -- Walks
 Selected: IsotonicScores: [(0.17727734204921156, RandomForest(...)), (0.15288841684408513, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   0.    2.    5.    4.  143.    2.    8.   10.]Feature Mask: [False False False False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.26119789040326508, RandomForest(...)), (0.22853096907452566, Isotonic(...))]Best Parameters: {'regressor__max_depth': 19, 'selection__k': 4, 'regressor__n_estimators': 90}Feature Scores: [   7.    9.    2.   20.   16.  119.    0.    0.]Feature Mask: [False  True False  True  True  True False False]Feature Importances: [ 0.121  0.101  0.083  0.696]
+Selected: RandomForestScores: [(0.26119789040326508, RandomForest(...)), (0.22853096907452566, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 90, 'regressor__max_depth': 19, 'selection__k': 4}Feature Scores: [   7.    9.    2.   20.   16.  119.    0.    0.]Feature Mask: [False  True False  True  True  True False False]Feature Importances: [ 0.121  0.101  0.083  0.696]
 
 Hitting Features
              Average |  -   102   +  |   5  15  25  35  45  55  65  75  85  95
@@ -148,13 +148,13 @@ SP Hickerson, B     6   A 24 | 11.8  4.0  4.2  1.5 |  62     |  62     |    |  5
 MR Booker, G           AA 28 | 11.8  3.0  4.2  1.3 |  66     |  66     |  - |  52/ 57 ||  57 ||
 MR Tufts, B            AA 32 | 12.2  4.9  3.2  1.4 |  78     |  60     |  - |  42/ 55 ||  55 ||
 SP Hawkins, A          AA 28 | 13.2  4.0  4.9  1.3 |  46     |  58     |    |  54/ 47 ||  54 ||
-MR Olin, S          8   A 22 | 12.0  3.1  4.7  1.3 |  52     |  64     |    |  40/ 53 ||  53 ||
 SP L. Smith, B         AA 33 | 10.8  2.4  1.6  4.8 |  57     |  57     | -  |  53/ 49 ||  53 ||
+MR Olin, S          8   A 22 | 12.0  3.1  4.7  1.3 |  52     |  64     |    |  40/ 53 ||  53 ||
 SP Oliveras, F      1   A 25 | 11.1  3.1  3.9  4.4 |  48     |  52     |    |  51/ 44 ||  51 ||
 SP Mitchell, P     F   AA 38 | 17.0  4.0  2.9  0.7 |  44  21 |  49  26 |  - |  48/ 42 ||  48 ||
+MR Rodas, R            AA 28 | 11.3  3.6  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 SP Springer, D          A 23 | 12.0  3.1  4.7  5.3 |  37     |  45     |  - |  43/ 37 ||  43 ||
 MR Hall, D              A 24 | 12.7  4.8  6.6  1.6 |  50     |  50     | -  |  14/ 43 ||  43 ||
-MR Rodas, R            AA 28 | 11.3  3.6  4.1  4.4 |  46     |  51     |  - |  14/ 43 ||  43 ||
 MR Beck, R          T   A 20 | 11.8  2.9  4.2  4.2 |  48     |  48     | ++ |  23/ 42 ||  42 ||
 SP Bones, R             A 19 | 14.1  3.5  6.9  5.8 |  34     |  34     |    |  33/ 29 ||  33 ||
 
@@ -191,8 +191,8 @@ Balance:41/33 = 1.242 (ideal: 1.273)
   ML -> DL   LF Tony Phillips
  AAA -> ML   SS Rene Gonzales
  AAA -> ML   SP Jeff Holly
- AAA -> AA   RF Felix Jose
  AAA -> AA   MR Sammy Stewart
+ AAA -> AA   RF Felix Jose
    A -> AAA  CF Mark T. McLemore
 
 SP
@@ -327,11 +327,11 @@ RF Rich Amaral               26 | SS :  76       0 :  76 | SS :  76       0 :  7
  C Jamie Nelson              28 |  C :  89       6 :  95 |  C :  89       6 :  95 |  +0 | -10      +10          :          +10          | *^
 CF George D. Wright          29 | CF :  87      -9 :  78 | CF :  87      -9 :  78 |  +0 |                       :                       | *
 CF Rudy Law                  31 | CF :  91      -3 :  88 | CF :  91      -3 :  88 |  +0 |       +20             :       +20             | **
-CF Gary Roenicke             33 | CF : 107      -4 : 103 | CF : 107      -4 : 103 |  +0 |    +10                :    +10                | **^
 2B Jack Perconte             33 | SS :  92       7 :  99 | SS :  92       7 :  99 |  +0 |    +10                :                       | **^
 LF Bobby V. Mitchell         33 | CF :  83       1 :  84 | CF :  83       1 :  84 |  +0 |                +10    :                +10    | *
-SS Roy Smalley III           35 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **^
+CF Gary Roenicke             33 | CF : 107      -4 : 103 | CF : 107      -4 : 103 |  +0 |    +10                :    +10                | **^
 LF Al Woods                  35 | LF :  97      -8 :  89 | LF :  97      -8 :  89 |  +0 |                       :                       | **
+SS Roy Smalley III           35 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **^
 LF Tony Scott                36 | CF :  94       5 :  99 | CF :  94       5 :  99 |  +0 |                       :                       | **
  C Jim Sundberg              37 |  C :  98      11 : 109 |  C :  97      11 : 108 |  -1 | -10-10-10             :    -10-10             | **^
 RF Steve Pegues              20 | LF :  70      -7 :  63 | LF :  71     -10 :  61 |  -2 |    +10   +10   +10    :    +10         +10    | ++
@@ -357,8 +357,8 @@ MR Rod Beck                  20 | MR :      42     :  42 | MR :      42     :  4
 MR Steve Olin                22 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | ++++-
 MR Darren Hall               24 | MR :      43     :  43 | MR :      43     :  43 |  +0 |    +10         +10       :                +10       | ++-
 SP Bryan Hickerson           24 | SP :      58     :  58 | SP :      58     :  58 |  +0 |             +10+10       :                          | +++-
-SP Mark W. Davis             27 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                          :                          | *
 SP Zane Smith                27 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                          :                +10       | *
+SP Mark W. Davis             27 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                          :                          | *
 MR Greg Booker               28 | MR :      57     :  57 | MR :      57     :  57 |  +0 |                          :                          | *
 SP Mike Jeffcoat             29 | SP :      95     :  95 | SP :      95     :  95 |  +0 |       -10                :                          | *
 SP Bruce Hurst               30 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                          | *
@@ -840,8 +840,8 @@ DESIGNATED_HITTER
  5 | Roenicke, G      107 -19  88 | Smalley III, R   106 -19  87 | Roenicke, G      107 -19  88
  6 | Cromartie, W     105 -19  86 | Wynegar, B       102 -19  83 | Cromartie, W     106 -19  87
  7 | Wynegar, B       102 -19  83 | DeJohn, M        101 -19  82 | Wynegar, B       102 -19  83
- 8 | Woods, A          97 -19  78 | Cromartie, W     101 -19  82 | Woods, A          97 -19  78
- 9 | Sundberg, J       97 -19  78 | Sundberg, J      101 -19  82 | Sundberg, J       96 -19  77
+ 8 | Sundberg, J       97 -19  78 | Cromartie, W     101 -19  82 | Woods, A          97 -19  78
+ 9 | Woods, A          97 -19  78 | Sundberg, J      101 -19  82 | Sundberg, J       96 -19  77
 10 | DeJohn, M         96 -19  77 | Anderson, D       99 -19  80 | Scott, T          96 -19  77
 
 --- Trade Values ---
@@ -1146,7 +1146,7 @@ RF Roberto Kelly             23| RF :  92      -6   1     :  87 | RF : 105      
  C Dave Nilsson              18| 1B :  77     -14 -17     :  46 |  C : 109      -7   9     : 110 |   6 | 116 | 35---3-4 |   2           |        :        | p1073 | New York (A) Yankees | +++++
 1B Sean Berry                22| 3B :  82      -5  -7     :  69 | 3B : 103      -5  12     : 110 |   6 | 116 | -415---- |   5           |        :        |  p138 | New York (A) Yankees | ++++
 LF Mike Young                28| LF : 108      -8  11     : 111 |    :                     :   0 |   5 | 116 | -1---615 |  F    $1.7M   |  $2.53M: $3.57M | p1800 | New York (A) Yankees | **^
-SS Jose Valentin             18| 3B :  79      -1  -5     :  73 | SS :  95       6   8     : 109 |   6 | 115 | -2666652 |   6           |        :        | p1306 | New York (A) Yankees | +++-
+SS Jose Valentin             18| 3B :  79      -1  -6     :  73 | SS :  95       6   8     : 109 |   6 | 115 | -2666652 |   6           |        :        | p1306 | New York (A) Yankees | +++-
 2B Bob Meacham               27| 3B :  93       3  12     : 107 |    :                     :   0 |   6 | 113 | -2674--- |  F  $442.9k   |  $2.76M:  $3.9M |  p906 | New York (A) Yankees | **^
 SP Mike Smithson             33| SP :      99      13     : 112 |    :                     :   0 |   0 | 112 |          |               |  $2.99M: $4.22M | p1210 | *CEI* New York (A... | *
 RF Warren Newson             24| RF :  83     -11 -13     :  59 | RF : 105     -11   9     : 103 |   6 | 109 | -1---2-4 |   4           |        :        | p1104 | New York (A) Yankees | ++++
@@ -1178,7 +1178,7 @@ CF Gary Ward                 34| RF :  91     -13  -7     :  71 |    :          
 SP Kevin Ritz                23| MR :      45     -25     :  20 | SP :      73     -13     :  61 |   6 |  67 |          |   9           |        :        |  p907 | New York (A) Yankees | +++
 SS Jose Uribe                29| 1B :  89     -18  -8     :  63 |    :                     :   0 |   4 |  67 | -2--1--- |       $300k r |        :        | p1710 | New York (A) Yankees | *^
 MR Mark Dewey                23| MR :      45     -25     :  20 | MR :      69     -10     :  60 |   6 |  66 |          |               |        :        |  p463 | New York (A) Yankees | +++
-3B Leon Lee                  35| 3B :  92     -15  -6     :  71 |    :                     :   0 |  -6 |  65 | -212---- |  F      $5M   |        :        | p1393 | New York (A) Yankees | *^
+3B Leon Lee                  35| 3B :  92     -15  -7     :  71 |    :                     :   0 |  -6 |  65 | -212---- |  F      $5M   |        :        | p1393 | New York (A) Yankees | *^
 
 --- Chicago (A) White Sox ---
 SP Randy D. Johnson          24| SP :     101      15     : 116 | SP :     143      57  25 : 224 |   6 | 230 |          |   1   $300k r |  $3.45M: $4.87M |  p439 | Chicago (A) White... | +++++
@@ -1349,7 +1349,7 @@ RF Reggie L. Sanders         20| RF :  79      -4 -10     :  65 | RF : 112      
 SP Roger Mason               30| SP :     108      22     : 130 |    :                     :   0 |   3 | 133 |          |      $1.45M a |  $5.07M: $7.15M | p1183 | Minnesota Twins      | **^
 CL Jesse Orosco              31| MR :     103      25     : 128 |    :                     :   0 |   2 | 130 |          |      $2.29M a |  $5.76M: $8.12M | p1676 | Minnesota Twins      | ****^
 RF Jack Clark                32| RF : 113      -6  22     : 129 |    :                     :   0 |   1 | 130 | -7---327 |  F   $4.94M   |  $5.07M: $7.15M |  p379 | Minnesota Twins      | ***^
-1B Bill Spiers               22| 3B :  74      -1 -10     :  63 | SS : 100       6  13     : 119 |   6 | 125 | -4466446 |   8           |        :        | p1291 | Minnesota Twins      | +++
+1B Bill Spiers               22| 3B :  74      -1 -11     :  63 | SS : 100       6  13     : 119 |   6 | 125 | -4466446 |   8           |        :        | p1291 | Minnesota Twins      | +++
 MR Jack Morris               33| SP :     105      19     : 124 |    :                     :   0 |   0 | 124 |          |  F    $960k   |  $4.38M: $6.17M |  p726 | Minnesota Twins      | ****
 3B Tim Wallach               31| 3B : 107      -5  18     : 120 |    :                     :   0 |   2 | 122 | -515-1-2 |      $1.69Mx3 |  $4.15M: $5.85M | p2910 | Minnesota Twins      | ***
 LF Dean Palmer               19| 3B :  80     -10 -14     :  57 | 3B : 109     -10  14     : 113 |   6 | 119 | -3-3-3-- |   2           |        :        | p1118 | Minnesota Twins      | ++++-
@@ -1859,7 +1859,7 @@ RF Dave Henderson            30| CF : 112      -5  18     : 125 |    :          
 1B Mark Grace                24| 1B : 104     -14  11     : 101 | 1B : 114     -14  17     : 118 |   6 | 124 | -611---- |   1   $300k r |  $2.53M: $3.57M |  p289 | Atlanta Braves       | +++++
 SP Dave Righetti             29| SP :     103      17     : 120 |    :                     :   0 |   4 | 124 |          |      $3.16Mx4 |  $3.92M: $5.52M | p1302 | Atlanta Braves       | **^
 LF Jose Canseco              24| 3B : 103     -13   6     :  97 | 3B : 112     -13  14     : 114 |   6 | 120 | -212-2-2 |   3   $300k r |  $1.38M: $1.95M |  p167 | Atlanta Braves       | +++++
-SS Mike Benjamin             22| 3B :  76       0  -7     :  69 | SS :  95       7   9     : 111 |   6 | 117 | -7777211 |               |        :        |  p217 | Atlanta Braves       | +++-
+SS Mike Benjamin             22| 3B :  76       0  -8     :  69 | SS :  95       7   9     : 111 |   6 | 117 | -7777211 |               |        :        |  p217 | Atlanta Braves       | +++-
 MR Dave Dravecky             32| SP :     101      15     : 116 |    :                     :   0 |   1 | 117 |          |      $2.42Mx2 |  $3.45M: $4.87M |  p714 | *CEI* Atlanta Braves | ****
 SP Tim Wakefield             22| MR :      42     -28     :  13 | SP :      98      12     : 110 |   6 | 116 |          |   5           |        :        | p1339 | Atlanta Braves       | ++++-
 SP Ron Darling               27| SP :      98      12     : 110 |    :                     :   0 |   6 | 116 |          |     $471.4k a |  $2.76M:  $3.9M |  p317 | Atlanta Braves       | **
@@ -1968,7 +1968,7 @@ Minnesota Twins      | 102.9 102.7 105.5 | 112.3 112.4 123.0 | 102- 60 0.628 |  
 Texas Rangers        | 101.0 102.2 103.1 | 118.1 122.4 135.3 | 107- 55 0.660 |  62- 54 0.534 |  92- 70 0.568 ( 7) 
 California Angels    |  96.3  96.0  92.1 |  96.8  97.8  94.6 |  70- 92 0.431 |  62- 54 0.534 |  82- 80 0.506 (10) 
 Chicago (A) White... |  98.2  98.2  96.3 |  94.7  91.3  85.3 |  65- 97 0.403 |  62- 54 0.534 |  81- 81 0.500 (11) 
-Oakland Athletics    |  95.3  94.4  89.4 | 101.2 102.0 103.2 |  74- 88 0.460 |  38- 78 0.328 |  59-103 0.364 (17) 
+Oakland Athletics    |  95.3  94.4  89.4 | 101.2 102.0 103.2 |  74- 88 0.460 |  38- 78 0.328 |  59-103 0.364 (18) 
 
 National League
 East ----------------+
@@ -1982,7 +1982,7 @@ San Francisco Giants | 102.3 102.0 104.3 |  83.7  82.8  64.1 |  50-112 0.309 |  
 Cincinnati Reds      | 101.0 100.8 101.8 |  90.7  95.4  86.0 |  70- 92 0.434 |  51- 65 0.440 |  71- 91 0.438 (13) 
 Los Angeles Dodgers  |  90.9  90.8  81.0 | 103.3 107.0 109.8 |  72- 90 0.441 |  43- 73 0.371 |  63- 99 0.389 (15) 
 Houston Astros       |  94.1  94.7  88.6 |  88.7  88.9  76.5 |  51-111 0.315 |  45- 71 0.388 |  59-103 0.364 (16) 
-Atlanta Braves       |  96.2  95.4  91.4 |  96.8  96.8  93.6 |  68- 94 0.422 |  40- 76 0.345 |  59-103 0.364 (18) 
+Atlanta Braves       |  96.2  95.4  91.4 |  96.8  96.8  93.6 |  68- 94 0.422 |  40- 76 0.345 |  59-103 0.364 (17) 
                      |              98.2 |             100.3 |
 
 --- Non Top prospects ---
@@ -1998,7 +1998,7 @@ SP Todd Burns                25| SP :      82      -4     :  77 | SP :     103  
 2B Bret Barberie             20| 3B :  74      -2 -12     :  61 | 3B : 102      -2  15     : 115 |   6 | 121 | -2663--- |               |        :        |  p124 | Pittsburgh Pirates   | +++-
 CF Al Martin                 20| CF :  76      -4 -17     :  55 | CF : 105      -4  13     : 114 |   6 | 120 | -2---556 |               |        :        |  p962 | Philadelphia Phil... | ++++
 2B Pat F. Kelly              20| 3B :  74      -5 -15     :  53 | 3B : 104      -5  13     : 112 |   6 | 118 | -255---- |               |        :        |  p818 | Chicago (A) White... | ++++
-SS Mike Benjamin             22| 3B :  76       0  -7     :  69 | SS :  95       7   9     : 111 |   6 | 117 | -7777211 |               |        :        |  p217 | Atlanta Braves       | +++-
+SS Mike Benjamin             22| 3B :  76       0  -8     :  69 | SS :  95       7   9     : 111 |   6 | 117 | -7777211 |               |        :        |  p217 | Atlanta Braves       | +++-
 MR Mike Timlin               22| MR :      55     -16     :  39 | MR :      97      14     : 111 |   6 | 117 |          |               |        :        | p1305 | St. Louis Cardinals  | ++++-
 SS Omar Vizquel              21| SS :  82       7 -10     :  79 | SS :  94       7   9     : 110 |   6 | 116 | -3337--- |               |        :        | p1076 | Boston Red Sox       | +++-
 2B Jeff Treadway             25| 2B :  88       3   3     :  94 | SS :  95       6   8     : 109 |   6 | 115 | -2856--- |               | $690.9k:$974.5k | p1063 | Philadelphia Phil... | +++-
