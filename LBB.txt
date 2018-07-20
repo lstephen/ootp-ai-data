@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.16329435877008236, RandomForest(...)), (0.15670846
 -- Walks
 Selected: IsotonicScores: [(0.18935106478754457, RandomForest(...)), (0.20442922051975942, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   0.    7.    3.    9.  141.    0.    0.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.36215145665981452, RandomForest(...)), (0.33792377421915248, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 32, 'regressor__n_estimators': 96}Feature Scores: [  50.    0.    6.    2.    6.  254.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
+Selected: RandomForestScores: [(0.36215145665981452, RandomForest(...)), (0.33792377421915248, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'regressor__n_estimators': 96, 'selection__k': 2}Feature Scores: [  50.    0.    6.    2.    6.  254.    3.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.049  0.951]
 
            Hits | 0.069
         Doubles | 0.033
@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(0.12772737471638221, RandomForest(...)), (0.07834259
 -- HomeRuns
 Selected: IsotonicScores: [(0.14295297325768108, RandomForest(...)), (0.20542346264475433, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [   0.    2.   10.  117.    2.    9.    0.    1.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.18381062994761768, RandomForest(...)), (0.14393442195133743, Isotonic(...))]Best Parameters: {'regressor__max_depth': 28, 'regressor__n_estimators': 57, 'selection__k': 2}Feature Scores: [   0.    2.    5.    4.  146.    3.    7.    9.]Feature Mask: [False False False False  True False False  True]Feature Importances: [ 0.91  0.09]
+Selected: RandomForestScores: [(0.18381062994761768, RandomForest(...)), (0.14393442195133743, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 28, 'regressor__n_estimators': 57}Feature Scores: [   0.    2.    5.    4.  146.    3.    7.    9.]Feature Mask: [False False False False  True False False  True]Feature Importances: [ 0.91  0.09]
 -- Ks
 Selected: IsotonicScores: [(0.24839478920770239, RandomForest(...)), (0.22160036229281813, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   7.    9.    2.   22.   16.  112.    0.    0.]Feature Mask: [False False False False False  True False False]
 
@@ -146,8 +146,8 @@ MR Mohorcic, D        AAA 32 | 11.0  2.4  2.2  1.2 |  79 329 |  80  83 | -  |  5
 SP W. Davis, M        AAA 27 | 10.7  6.5  5.5  1.3 |  70     |  69     | ++ |  67/ 60 ||  67 ||
 MR Tufts, B            AA 32 | 12.3  5.9  3.3  1.3 |  79     |  60     |  - |  42/ 55 ||  55 ||
 SP Hawkins, A         AAA 28 | 13.3  3.4  5.0  1.4 |  51     |  55     |    |  54/ 47 ||  54 ||
-SP Hickerson, B     6   A 24 | 12.3  4.8  5.5  1.4 |  58     |  56     |    |  52/ 48 ||  52 ||
 SP L. Smith, B         AA 33 | 10.8  2.4  1.8  4.8 |  56     |  56     | -  |  52/ 48 ||  52 ||
+SP Hickerson, B     6   A 24 | 12.3  4.8  5.5  1.4 |  58     |  56     |    |  52/ 48 ||  52 ||
 SP Oliveras, F      1  AA 25 | 11.1  3.2  4.0  4.2 |  51     |  51     |    |  51/ 44 ||  51 ||
 MR Booker, G           AA 28 | 12.2  2.7  5.5  1.3 |  58     |  58     |  - |  45/ 50 ||  50 ||
 SP Mitchell, P     F   AA 39 | 16.8  3.5  2.6  0.7 |  43  21 |  51  26 |  - |  49/ 42 ||  49 ||
@@ -192,18 +192,18 @@ SP Bones, R             A 19 | 13.9  2.9  6.5  5.7 |  35     |  35     |    |  3
 Total:74 (target 70-75)
 Balance:41/33 = 1.242 (ideal: 1.273)
 
- AAA -> ML   LF Al Woods
  AAA -> ML   RF Keith A. Miller
- AAA -> ML   MR Bill Earley
  AAA -> ML   SP Bob Owchinko
+ AAA -> ML   LF Al Woods
+ AAA -> ML   MR Bill Earley
  AAA -> ML   SP Bob Welch
- AAA -> AA    C Jamie Nelson
  AAA -> AA   2B Ernie Riles
+ AAA -> AA    C Jamie Nelson
   AA -> AAA  MR Sammy Stewart
-  AA -> AAA   C John Mizerock
   AA -> AAA  SP Andy Hawkins
   AA -> AAA  RF Felix Jose
   AA -> AAA  LF Bobby V. Mitchell
+  AA -> AAA   C John Mizerock
    A -> AA   SP Francisco Oliveras
 
 SP
@@ -243,13 +243,13 @@ Atlee Hammaker
 
 vs RHP
  C| Wynegar, B      (D)                 | C| ( 1) Sundberg, J    
-1B| Roenicke, G     (D) Anderson, D     |1B| ( 1) Woods, A       
+1B| Ochiai, H       (D)                 |1B| ( 1) Woods, A       
 2B| DeJohn, M       (D)                 |2B| ( 1) Perconte, J    
-3B| Ochiai, H       (D) Anderson, D     |3B| ( 1) Anderson, D    
+3B| Anderson, D     (D)                 |3B| ( 1) Gonzales, R    
 SS| Smalley III, R  (D) Randolph, W     |SS| ( 1) Perconte, J    
-LF| Cromartie, W    (D) Henderson, S    |LF| ( 1) Henderson, S   
-CF| Scott, T        (D)                 |CF| ( 1) A. Miller, K   
-RF| Lynn, F         (D)                 |RF| ( 1) Woods, A       
+LF| Cromartie, W    (D) Scott, T        |LF| ( 1) Scott, T       
+CF| Roenicke, G     (D) Scott, T        |CF| ( 1) Scott, T       
+RF| Lynn, F         (D)                 |RF| ( 1) Scott, T       
 
 vs RHP+DH
  C| Wynegar, B      (D)                 | C| ( 1) Sundberg, J    
@@ -285,18 +285,18 @@ DH| Smalley III, R  (D)                 |DH| ( 1) Sundberg, J
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. SS S Smalley III, R   SS S Smalley III, R   SS S Smalley III, R   DH S Smalley III, R  
-2. 3B R Ochiai, H        1B R Ochiai, H        RF L Lynn, F          RF L Lynn, F         
+2. 1B R Ochiai, H        1B R Ochiai, H        RF L Lynn, F          RF L Lynn, F         
 3. LF L Cromartie, W     LF L Cromartie, W     LF L Cromartie, W     LF L Cromartie, W    
 4. RF L Lynn, F          RF L Lynn, F          1B R Ochiai, H        1B R Ochiai, H       
-5. 1B R Roenicke, G      DH R Roenicke, G      CF R Roenicke, G      CF R Roenicke, G     
+5. CF R Roenicke, G      DH R Roenicke, G      CF R Roenicke, G      CF R Roenicke, G     
 6.  C S Wynegar, B        C S Wynegar, B        C S Wynegar, B        C S Wynegar, B      
 7. 2B S DeJohn, M        2B S DeJohn, M        2B S DeJohn, M        2B S DeJohn, M       
-8. CF S Scott, T         3B R Anderson, D      3B R Anderson, D      3B R Anderson, D     
+8. 3B R Anderson, D      3B R Anderson, D      3B R Anderson, D      3B R Anderson, D     
 9.  P                    CF S Scott, T          P                    SS R Randolph, W     
 
 --- Bunt for Hit ---
 
---- Stealing @ 65.8 ---
+--- Stealing @ 65.9 ---
 RF Keith A. Miller           25| CF :  90      -1   2     :  91 | CF : 104      -1  17     : 120 |   6 | 126 | -2325565 |   4           | $435.5k:$464.1k |  p843 | Cleveland Indians    | ++++-
 LF Warren Cromartie          34| RF : 106      -6  18     : 118 |    :                     :   0 |  -2 | 116 | -3324727 |      $4.68Mx3 |  $3.92M: $4.18M |  p450 | Cleveland Indians    | **^
 1B Dave Anderson             28| 3B :  95       0   8     : 103 |    :                     :   0 |   5 | 108 | -43651-1 |       $300k r |  $1.74M: $1.86M |   p38 | Cleveland Indians    | **
@@ -345,13 +345,13 @@ RF Rich Amaral               26 | SS :  76       0 :  76 | SS :  76       0 :  7
 CF George D. Wright          29 | CF :  87      -9 :  78 | CF :  87      -9 :  78 |  +0 |                       :                       | *
 CF Rudy Law                  31 | CF :  91      -3 :  88 | CF :  91      -3 :  88 |  +0 |    +10+20+10          :       +20             | **
 LF Bobby V. Mitchell         33 | CF :  84       1 :  85 | CF :  84       1 :  85 |  +0 |                +10    :                +10    | *
+1B Hiromitsu Ochiai          34 | 3B : 127     -10 : 117 | 3B : 127     -10 : 117 |  +0 |                       :    +10                | ****
 2B Jack Perconte             34 | SS :  92       7 :  99 | SS :  92       7 :  99 |  +0 |    +10                :                       | **^
 2B Mark DeJohn               34 | SS : 100       7 : 107 | SS : 100       7 : 107 |  +0 |                       :                       | **^
-1B Hiromitsu Ochiai          34 | 3B : 127     -10 : 117 | 3B : 127     -10 : 117 |  +0 |                       :    +10                | ****
-SS Roy Smalley III           35 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **^
 LF Al Woods                  35 | LF :  96      -8 :  88 | LF :  96      -8 :  88 |  +0 |                       :                       | **
-LF Tony Scott                36 | CF :  95       5 : 100 | CF :  95       5 : 100 |  +0 |                       :                       | *^
+SS Roy Smalley III           35 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **^
 RF Fred Lynn                 36 | CF : 110       2 : 112 | CF : 110       2 : 112 |  +0 |                       :    -10                | ***
+LF Tony Scott                36 | CF :  95       5 : 100 | CF :  95       5 : 100 |  +0 |                       :                       | *^
  C Jim Sundberg              37 |  C :  97      11 : 108 |  C :  96      11 : 107 |  -1 | -10-10-10             :    -10-10             | **^
 RF Steve Pegues              20 | LF :  70      -7 :  63 | LF :  71     -10 :  61 |  -2 |    +10   +10   +10    :    +10         +10    | ++
  C Butch Wynegar             32 |  C : 105      11 : 116 |  C : 103      11 : 114 |  -2 |    -10   -10-10   -20 :          -10-10   -20 | **^
@@ -373,8 +373,8 @@ SP Atlee Hammaker            30 | SP :     103     : 103 | SP :     104     : 10
 MR Rich Rodas                28 | MR :      38     :  38 | MR :      39     :  39 |  +1 | +10+10-10                : +10+10                   | *
 MR Rod Beck                  20 | MR :      37     :  37 | MR :      37     :  37 |  +0 |    +10                   :                          | ++++-
 MR Steve Olin                22 | MR :      47     :  47 | MR :      47     :  47 |  +0 |                          :                          | ++++-
-SP Bryan Hickerson           24 | SP :      52     :  52 | SP :      52     :  52 |  +0 |             +10+10       :                          | +++-
 MR Darren Hall               24 | MR :      44     :  44 | MR :      44     :  44 |  +0 |    +10         +10       :                +10       | ++-
+SP Bryan Hickerson           24 | SP :      52     :  52 | SP :      52     :  52 |  +0 |             +10+10       :                          | +++-
 SP Mark W. Davis             27 | SP :      67     :  67 | SP :      67     :  67 |  +0 |                          :                          | *
 SP Zane Smith                27 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                +10       | *
 MR Greg Booker               28 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                          :                          | *
@@ -1996,8 +1996,8 @@ West ----------------+
 San Francisco Giants | 102.8 101.7 104.4 |  82.8  81.8  62.0 |  48-114 0.295 |  65- 65 0.500 |  74- 88 0.457 (12) 
 Cincinnati Reds      | 100.4 100.0 100.4 |  91.8  97.2  89.0 |  72- 90 0.444 |  56- 74 0.431 |  70- 92 0.432 (13) 
 Houston Astros       |  94.9  95.2  89.8 |  88.9  89.8  77.8 |  53-109 0.328 |  52- 78 0.400 |  63- 99 0.389 (15) 
-Los Angeles Dodgers  |  90.9  90.8  81.0 | 102.4 105.1 107.3 |  70- 92 0.430 |  48- 82 0.369 |  62-100 0.383 (16) 
 Atlanta Braves       |  95.7  94.5  89.9 |  96.1  95.8  91.8 |  66- 96 0.405 |  49- 81 0.377 |  62-100 0.383 (17) 
+Los Angeles Dodgers  |  90.9  90.8  81.0 | 102.4 105.1 107.3 |  70- 92 0.430 |  48- 82 0.369 |  62-100 0.383 (16) 
                      |              98.3 |              99.9 |
 
 --- Non Top prospects ---
