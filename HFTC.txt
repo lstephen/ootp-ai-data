@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(0.35087249800942893, RandomForest(...)), (0.35520470
 -- HomeRuns
 Selected: IsotonicScores: [(0.19347497247739875, RandomForest(...)), (0.21727458690161325, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  7.   5.   2.  89.   0.   1.   0.   0.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.31428107315179571, RandomForest(...)), (0.31116688139762116, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [   1.    1.   25.    2.  155.    1.    0.    4.]Feature Mask: [False False  True False  True False False False]Feature Importances: [ 0.056  0.944]
+Selected: RandomForestScores: [(0.31428107315179571, RandomForest(...)), (0.31116688139762116, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [   1.    1.   25.    2.  155.    1.    0.    4.]Feature Mask: [False False  True False  True False False False]Feature Importances: [ 0.056  0.944]
 -- Ks
 Selected: IsotonicScores: [(0.32945834585116968, RandomForest(...)), (0.31453055073497149, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  15.   47.   17.    5.    1.  100.    0.    0.]Feature Mask: [False False False False False  True False False]
 
@@ -146,8 +146,8 @@ SP Kissel, N        9  ML 25 | 12.5  5.3  4.0  1.9 |  70     |  70     |  + |  6
 MR Rash, G         F  AAA 34 | 12.5  5.3  4.0  1.9 |  70     |  71     | ++ |  35/ 61 ||  61 ||
 MR Smathers, J        AAA 30 | 12.5  5.3  4.0  1.9 |  70     |  70     |    |  19/ 61 ||  61 ||
 SP Johnson, S         AAA 27 | 13.5  6.4  4.6  2.1 |  44     |  70     | +  |  60/ 54 ||  60 ||
-SP Loaiza, D          AAA 32 | 12.3  4.7  6.8  2.2 |  54     |  65     | -+ |  59/ 54 ||  59 ||
 MR Hall, A             AA 32 | 11.9  5.5  5.8  2.1 |  59     |  71     |  + |  53/ 59 ||  59 ||
+SP Loaiza, D          AAA 32 | 12.3  4.7  6.8  2.2 |  54     |  65     | -+ |  59/ 54 ||  59 ||
 SP Villani, M         AAA 27 | 14.8  4.4  5.0  1.7 |  27     |  73     |  + |  55/ 49 ||  55 ||
 SP Peralvo, J          AA 27 | 16.1  6.5  7.2  1.5 |  81     |  41     |  + |  44/ 41 ||  44 ||
 SP Reinhardt, J         A 25 | 17.7  3.9  5.2  2.6 |  29     |  51     | -+ |  44/ 38 ||  44 ||
@@ -189,16 +189,16 @@ Total:75 (target 70-75)
 Balance:48/27 = 1.778 (ideal: 1.273)
 
   ML -> AAA  SS Roger Plascencia
-  ML -> DL    C Jarrett Ketcham
   ML -> DL   SP Scott Petrovich
+  ML -> DL    C Jarrett Ketcham
+ AAA -> ML   SP Nathaniel Kissel
  AAA -> ML    C Alexander Hogsett
  AAA -> ML   RF George Cook
- AAA -> ML   SP Nathaniel Kissel
- AAA -> AA   3B Brian Fletcher
  AAA -> AA   MR Adolfo Hall
+ AAA -> AA   3B Brian Fletcher
  AAA -> A    3B Pedro Enciso
-  AA -> AAA  SP Samuel Johnson
   AA -> AAA   C Dudley Givens
+  AA -> AAA  SP Samuel Johnson
   AA -> AAA  SS David Dieguez
    A -> AA   SS Hector Grillo
 
@@ -317,45 +317,45 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 SS Hector Grillo             25 | SS :  76      -5 :  71 | SS :  81      -5 :  76 |  +5 |                       : +10                   | +
 CF Ryan Malley               26 | CF :  82       8 :  90 | CF :  85       8 :  93 |  +3 |                       : +10                   | **
 2B Calvin Prim               27 | 2B :  73     -11 :  62 | 2B :  76     -11 :  65 |  +3 |             +10       :             +10       | *
-LF Danny Dock                25 | LF :  72      -9 :  63 | LF :  73      -9 :  64 |  +1 | +10                   :                       | +
 3B Harris Surrett            25 | SS : 103      -5 :  98 | SS : 104      -5 :  99 |  +1 |    +10                :    +10                | **^
+LF Danny Dock                25 | LF :  72      -9 :  63 | LF :  73      -9 :  64 |  +1 | +10                   :                       | +
 RF Alejo Torres              26 | CF :  99       1 : 100 | CF : 100       1 : 101 |  +1 |    -10   +10          :    -10   +10          | **^
 SS Fausto Castillo           29 | SS :  83      13 :  96 | SS :  84      13 :  97 |  +1 | +10                   :                       | *
 2B Michael Smith             19 | 2B :  53      -2 :  51 | 2B :  53      -2 :  51 |  +0 |                       :                       | ++
  C Martin Moncayo            20 |  C :  69      16 :  85 |  C :  69      16 :  85 |  +0 |                       :                       | +
 2B Albert Ocasio             21 | SS :  70       2 :  72 | SS :  70       2 :  72 |  +0 |                       :                       | ++
-3B Orestes Marmolejo         22 | SS :  81       8 :  89 | SS :  81       8 :  89 |  +0 |                       :                       | ++-
 3B Javier Preciado           22 | SS :  74       7 :  81 | SS :  74       7 :  81 |  +0 |                       :                       | +++-
 2B Michael Cromartie         22 | SS :  71      12 :  83 | SS :  71      12 :  83 |  +0 |                       :                       | ++
+3B Orestes Marmolejo         22 | SS :  81       8 :  89 | SS :  81       8 :  89 |  +0 |                       :                       | ++-
 CF Angelo Cabrales           23 | CF :  91      -6 :  85 | CF :  91      -6 :  85 |  +0 |                +10    :                +10    | +++
 2B James Brooks              23 | 2B :  79       1 :  80 | 2B :  79       1 :  80 |  +0 |                       :                       | ++
+2B Ramiro Covarrubias        24 | 2B :  68       1 :  69 | 2B :  68       1 :  69 |  +0 |                       :                       | +-
 1B Dennis Balbuena           24 | 1B :  53     -16 :  37 | 1B :  53     -16 :  37 |  +0 |                       :                       | +-
  C Raul Bengoa               24 |  C :  76       8 :  84 |  C :  76       8 :  84 |  +0 |                       :                       | ++
-2B Ramiro Covarrubias        24 | 2B :  68       1 :  69 | 2B :  68       1 :  69 |  +0 |                       :                       | +-
 RF Mikel Spillman            24 | RF :  77     -10 :  67 | RF :  77     -10 :  67 |  +0 |                       :    +10                | ++
 3B Pedro Enciso              24 | SS :  72      12 :  84 | SS :  72      12 :  84 |  +0 |                       :                       | ++-
- C Dudley Givens             26 |  C :  86       2 :  88 |  C :  86       2 :  88 |  +0 |                       :                       | *
 2B Joel Sancho               26 | 2B :  77      -4 :  73 | 2B :  77      -4 :  73 |  +0 |                       :                       | *
+ C Dudley Givens             26 |  C :  86       2 :  88 |  C :  86       2 :  88 |  +0 |                       :                       | *
  C Joseph Higuchi            27 |  C :  47       8 :  55 |  C :  47       8 :  55 |  +0 |                       :                       | *
  C Robert Makowski           27 |  C :  78       2 :  80 |  C :  78       2 :  80 |  +0 |                       :                       | *
  C John Crosby               27 |  C :  88       2 :  90 |  C :  88       2 :  90 |  +0 |                       :    -10                | *
  C Michael Mielke            27 |  C :  84       2 :  86 |  C :  84       2 :  86 |  +0 |                       :                       | *
  C Hernando Valido           28 |  C :  72       2 :  74 |  C :  72       2 :  74 |  +0 |                       :                       | *
-3B Juan Fernandez            29 | SS :  85       2 :  87 | SS :  85       2 :  87 |  +0 |                       :                       | *
  C Hector Perdomo            29 |  C :  86      -9 :  77 |  C :  86      -9 :  77 |  +0 |                       :                       | *
-SS David Dieguez             30 | 2B :  90     -16 :  74 | 2B :  90     -16 :  74 |  +0 |                       :                       | *
+3B Juan Fernandez            29 | SS :  85       2 :  87 | SS :  85       2 :  87 |  +0 |                       :                       | *
 SS James Mistretta           30 | SS :  87       7 :  94 | SS :  87       7 :  94 |  +0 |                       :                       | *
  C Rupert Rivera             30 |  C :  76       2 :  78 |  C :  76       2 :  78 |  +0 |                       :                       | *
-3B Brian Fletcher            31 | 3B :  77       0 :  77 | 3B :  77       0 :  77 |  +0 |                       :                       | *
-CF Bill Charlie              31 | CF :  97       7 : 104 | CF :  97       7 : 104 |  +0 |                       :                       | **^
+SS David Dieguez             30 | 2B :  90     -16 :  74 | 2B :  90     -16 :  74 |  +0 |                       :                       | *
 2B Victor Pasillas           31 | 2B :  92      -3 :  89 | 2B :  92      -3 :  89 |  +0 |                       :                       | *
- C Alexander Hogsett         31 |  C :  98       2 : 100 |  C :  98       2 : 100 |  +0 |                       :                       | **^
+3B Brian Fletcher            31 | 3B :  77       0 :  77 | 3B :  77       0 :  77 |  +0 |                       :                       | *
 2B Santiago Sotelo           31 | SS :  74       2 :  76 | SS :  74       2 :  76 |  +0 |                       :                       | *
-3B Bill Foxx                 34 | 3B :  95       5 : 100 | 3B :  95       5 : 100 |  +0 |                       :                       | **
+ C Alexander Hogsett         31 |  C :  98       2 : 100 |  C :  98       2 : 100 |  +0 |                       :                       | **^
+CF Bill Charlie              31 | CF :  97       7 : 104 | CF :  97       7 : 104 |  +0 |                       :                       | **^
 RF George Cook               34 | RF :  94     -13 :  81 | RF :  94     -13 :  81 |  +0 |                       :                       | *
+3B Bill Foxx                 34 | 3B :  95       5 : 100 | 3B :  95       5 : 100 |  +0 |                       :                       | **
+ C Jarrett Ketcham           35 |  C : 102      14 : 116 |  C : 102      14 : 116 |  +0 |    -10                :                       | **
  C Andrew Cheney             35 |  C : 103      12 : 115 |  C : 103      12 : 115 |  +0 |                       :                       | **
 1B Jeronimo Gonzalez         35 | RF : 115     -14 : 101 | RF : 115     -14 : 101 |  +0 |                       :                       | **^
- C Jarrett Ketcham           35 |  C : 102      14 : 116 |  C : 102      14 : 116 |  +0 |    -10                :                       | **
 2B Lance Cobb                36 | 2B : 108       0 : 108 | 2B : 108       0 : 108 |  +0 |                       :                       | **^
 1B Adelardo Lopez            22 | 1B :  90     -11 :  79 | 1B :  89     -11 :  78 |  -1 | -10                   :                       | ++-
 SS Roger Plascencia          34 | SS :  93       2 :  95 | SS :  91       2 :  93 |  -2 | -10                   :                       | *^
@@ -371,12 +371,12 @@ SP John Miles                20 | SP :      28     :  28 | SP :      30     :  3
 SP Michael Villani           27 | SP :      54     :  54 | SP :      55     :  55 |  +2 |          +10   +10       :    +10   +10             | *
 MR Adolfo Hall               32 | MR :      58     :  58 | MR :      59     :  59 |  +1 |             +10          :                          | *
 MR Ronald Kidd               22 | MR :      22     :  22 | MR :      22     :  22 |  +0 |                       -1 :                       -1 | +
-MR Teruo Toyokuni            24 | MR :      26     :  26 | MR :      26     :  26 |  +0 |                +10       :                +10       | +
 MR Ulises Regalado           24 | SP :      25     :  25 | SP :      25     :  25 |  +0 |       +10      +10       :       +10      +10       | ++
+MR Teruo Toyokuni            24 | MR :      26     :  26 | MR :      26     :  26 |  +0 |                +10       :                +10       | +
 SP Jerry Reinhardt           25 | SP :      44     :  44 | SP :      44     :  44 |  +0 |             +10          :       +10                | +-
 MR John Steinbach            26 | MR :      74     :  74 | MR :      74     :  74 |  +0 |                          :                          | *
-MR Markus Pifer              27 | MR :      33     :  33 | MR :      33     :  33 |  +0 |                          :                          | *
 MR Jose Peralvo              27 | SP :      44     :  44 | SP :      44     :  44 |  +0 |                          :                          | *
+MR Markus Pifer              27 | MR :      33     :  33 | MR :      33     :  33 |  +0 |                          :                          | *
 MR Joseph Smathers           30 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                          :                          | *
 MR Jose Rojas                30 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | *
 SP Gabriel Whisman           30 | SP :      82     :  82 | SP :      82     :  82 |  +0 |                          :                          | *
@@ -385,8 +385,8 @@ SP Narciso Fuensanta         32 | SP :      78     :  78 | SP :      78     :  7
 SP Scott Petrovich           33 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                          :                          | **
 SP Abraham Urias             33 | SP :      36     :  36 | SP :      36     :  36 |  +0 |                          :                          | *
 SP Jeffrey Buskirk           34 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                          :                          | *
-MR Les Lyons                 36 | MR :     211     : 211 | MR :     211     : 211 |  +0 |                          :                          | *****
 SP Rene Winland              36 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                          :                          | *
+MR Les Lyons                 36 | MR :     211     : 211 | MR :     211     : 211 |  +0 |                          :                          | *****
 SP Clayton Hankins           40 | SP :     168     : 168 | SP :     168     : 168 |  +0 |                          :                          | *****
 MR George Rash               34 | MR :      65     :  65 | MR :      61     :  61 |  -3 | -10-10                   : -10-10   -10             | *
 SP James Osteen              37 | SP :      89     :  89 | SP :      83     :  83 |  -6 | -10-10   -10   +10       : -10   -10                | *
@@ -838,17 +838,17 @@ SP Jason Forbush             24| MR :      22     -34     : -11 | SP :      55  
 MR Alejandro Flores          24| MR :      23     -33     : -10 | MR :      49     -20     :  30 |   6 |  36 |          |               |        :        | p1482 | No Team              | ++
 
 1E | 163 (151-265) | 169 (157-271) 154/186 |  10/ 10 || 166 (143-345) | 172 (149-351) 156/189 |  50/ 50
-1M | 141 (134-147) | 147 (140-153) 133/161 |  10/ 10 || 138 (128-163) | 144 (134-169) 131/158 |  50/ 50
-1L | 125 (115-132) | 131 (121-138) 119/144 |  12/ 12 || 123 (115-135) | 129 (121-141) 118/142 |  60/ 60
-2E | 109 (105-115) | 115 (111-121) 104/126 |  16/ 16 || 112 (105-120) | 118 (111-126) 107/129 |  80/ 80
-2L | 100 ( 98-103) | 106 (104-109)  97/117 |  16/ 16 || 103 ( 98-109) | 109 (104-115)  99/120 |  80/ 80
+1M | 141 (134-147) | 147 (140-153) 133/161 |  10/ 10 || 137 ( 87-163) | 143 ( 93-169) 130/158 |  50/ 50
+1L | 125 (115-132) | 131 (121-138) 119/144 |  12/ 12 || 123 ( 69-135) | 129 ( 75-141) 118/142 |  60/ 60
+2E | 109 (105-115) | 115 (111-121) 104/126 |  16/ 16 || 111 ( 43-120) | 117 ( 49-126) 107/129 |  80/ 80
+2L | 100 ( 98-103) | 106 (104-109)  97/117 |  16/ 16 || 103 ( 66-109) | 109 ( 72-115)  99/120 |  80/ 80
 
- 1 | 140 (115-265) | 146 (121-271) 133/161 |  32/ 32 || 137 (115-345) | 143 (121-351) 130/157 | 160/160
- 2 | 104 ( 98-115) | 110 (104-121) 100/121 |  32/ 32 || 107 ( 98-120) | 113 (104-126) 103/124 | 160/160
- 3 |  95 ( 87-116) | 101 ( 93-122)  92/111 |  32/ 32 ||  93 ( 83-133) |  99 ( 89-139)  90/109 | 160/160
- 4 |  83 ( 78- 89) |  89 ( 84- 95)  81/ 98 |  32/ 32 ||  81 ( 73- 89) |  87 ( 79- 95)  79/ 96 | 160/160
- 5 |  73 ( 69- 78) |  79 ( 75- 84)  72/ 87 |  32/ 32 ||  72 ( 64-121) |  78 ( 70-127)  71/ 86 | 160/160
- 6 |  64 ( 38- 78) |  70 ( 44- 84)  64/ 77 |  32/ 32 ||  59 ( 36-100) |  65 ( 42-106)  59/ 71 | 160/160
+ 1 | 140 (115-265) | 146 (121-271) 133/161 |  32/ 32 || 136 ( 69-345) | 142 ( 75-351) 129/157 | 160/160
+ 2 | 104 ( 98-115) | 110 (104-121) 100/121 |  32/ 32 || 107 ( 43-120) | 113 ( 49-126) 103/124 | 160/160
+ 3 |  95 ( 87-116) | 101 ( 93-122)  92/111 |  32/ 32 ||  93 ( 76-116) |  99 ( 82-122)  90/109 | 160/160
+ 4 |  83 ( 78- 89) |  89 ( 84- 95)  81/ 98 |  32/ 32 ||  81 ( 59- 89) |  87 ( 65- 95)  79/ 96 | 160/160
+ 5 |  73 ( 69- 78) |  79 ( 75- 84)  72/ 87 |  32/ 32 ||  72 ( 28- 86) |  78 ( 34- 92)  71/ 86 | 160/160
+ 6 |  64 ( 38- 78) |  70 ( 44- 84)  64/ 77 |  32/ 32 ||  58 ( 36- 89) |  64 ( 42- 95)  58/ 71 | 160/160
 
 MR Lyons, L        36|  13,670,000            
 SP Hankins, C      40|  10,020,000            
@@ -995,8 +995,8 @@ SECOND_BASE
  1 | Cobb, L          108   0 108 | Cobb, L          110   0 110 | Cobb, L          108   0 108
  2 | Gonzalez, J      115 -14 101 | Bernabe, R       118 -17 101 | Gonzalez, J      118 -14 104
  3 | Bernabe, R       115 -17  98 | Mistretta, J      92   1  93 | Bernabe, R       114 -17  97
- 4 | Foxx, B           95  -4  91 | Foxx, B           95  -4  91 | Foxx, B           95  -4  91
- 5 | Castillo, F       84   6  90 | Gonzalez, J      105 -14  91 | Pasillas, V       93  -3  90
+ 4 | Foxx, B           95  -4  91 | Gonzalez, J      105 -14  91 | Foxx, B           95  -4  91
+ 5 | Castillo, F       84   6  90 | Foxx, B           95  -4  91 | Pasillas, V       93  -3  90
  6 | Gomez, L         111 -22  89 | Ketcham, J       112 -22  90 | Castillo, F       84   6  90
  7 | Pasillas, V       92  -3  89 | Castillo, F       84   6  90 | Gomez, L         111 -22  89
  8 | Surrett, H       104 -15  89 | Gomez, L         111 -22  89 | Surrett, H       104 -15  89
@@ -2841,13 +2841,13 @@ Anaheim Angels       |  99.5  98.7  98.1 |  97.8  91.9  89.0 |  70- 92 0.433 |  
 
 National League
 East Division -------+
-Philadelphia Phil... | 104.9 104.9 109.5 | 121.8 126.6 140.9 | 114- 48 0.704 |  19-  7 0.731 | 115- 47 0.710 ( 1) 
+Philadelphia Phil... | 104.9 104.9 109.5 | 121.8 126.6 140.9 | 114- 48 0.704 |  19-  7 0.731 | 115- 47 0.710 ( 2) 
 Atlanta Braves       | 101.1 101.6 102.7 | 124.0 123.8 141.3 | 110- 52 0.678 |  13- 12 0.520 | 106- 56 0.654 ( 5) 
 Washington Nationals | 103.2 103.4 106.5 | 107.1 105.0 111.9 |  95- 67 0.587 |  15- 11 0.577 |  95- 67 0.586 ( 9) 
 New York (N) Mets    |  92.3  92.5  84.3 |  94.3  93.5  87.4 |  57-105 0.352 |   8- 17 0.320 |  56-106 0.346 (27) 
 Florida Marlins      | 102.7 102.4 105.1 |  67.0  71.0  35.0 |  19-143 0.119 |   9- 15 0.375 |  25-137 0.154 (32) 
 Central Division ----+
-St. Louis Cardinals  | 104.1 105.0 108.9 | 123.7 135.7 147.1 | 117- 45 0.719 |  15-  8 0.652 | 115- 47 0.710 ( 2) 
+St. Louis Cardinals  | 104.1 105.0 108.9 | 123.7 135.7 147.1 | 117- 45 0.719 |  15-  8 0.652 | 115- 47 0.710 ( 1) 
 Cincinnati Reds      | 107.8 106.8 114.0 | 104.2 104.3 108.3 |  98- 64 0.604 |  15-  9 0.625 |  98- 64 0.605 ( 8) 
 Houston Astros       | 101.1 103.3 104.3 |  95.3  96.0  91.2 |  77- 85 0.475 |  11- 12 0.478 |  77- 85 0.475 (17) 
 Milwaukee Brewers    |  93.8  95.4  89.0 |  95.7  98.6  94.3 |  67- 95 0.413 |  12- 12 0.500 |  69- 93 0.426 (20) 
