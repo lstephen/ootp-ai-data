@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.16037368279507502, RandomForest(...)), (0.15782388
 -- Walks
 Selected: IsotonicScores: [(0.22098962722592394, RandomForest(...)), (0.20913262536595145, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [   0.    5.    5.    5.  110.    0.    1.]Feature Mask: [False False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.38496543437782726, RandomForest(...)), (0.37682216421675746, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 16, 'selection__k': 2, 'regressor__max_depth': 11}Feature Scores: [  26.    2.    7.    5.    0.  287.    6.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.054  0.946]
+Selected: RandomForestScores: [(0.38496543437782726, RandomForest(...)), (0.37682216421675746, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 16, 'regressor__max_depth': 11}Feature Scores: [  26.    2.    7.    5.    0.  287.    6.]Feature Mask: [ True False False False False  True False]Feature Importances: [ 0.054  0.946]
 
            Hits | 0.085
         Doubles | 0.035
@@ -50,7 +50,7 @@ Selected: RandomForestScores: [(0.38496543437782726, RandomForest(...)), (0.3768
              Ks | 0.052
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.065063118181411972, RandomForest(...)), (0.056856663080848358, Isotonic(...))]Best Parameters: {'regressor__max_depth': 15, 'regressor__n_estimators': 45, 'selection__k': 2}Feature Scores: [  8.  18.   1.   3.   0.   5.   0.   0.]Feature Mask: [ True  True False False False False False False]Feature Importances: [ 0.364  0.636]
+Selected: RandomForestScores: [(0.065063118181411972, RandomForest(...)), (0.056856663080848358, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 15, 'regressor__n_estimators': 45}Feature Scores: [  8.  18.   1.   3.   0.   5.   0.   0.]Feature Mask: [ True  True False False False False False False]Feature Importances: [ 0.364  0.636]
 -- Doubles
 Selected: IsotonicScores: [(0.11908231294463956, RandomForest(...)), (0.093994130575363391, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  4.   6.  43.   1.   1.   2.   0.   7.]Feature Mask: [False False  True False False False False False]
 -- HomeRuns
@@ -186,14 +186,14 @@ SP Bones, R             A 20 | 14.4  3.0  7.6  6.0 |  30     |  34     |    |  3
 Total:73 (target 70-75)
 Balance:44/29 = 1.517 (ideal: 1.273)
 
-  ML -> AAA  2B Pepe Mangual
   ML -> AAA  SP Atlee Hammaker
+  ML -> AAA  2B Pepe Mangual
  AAA -> ML   RF Keith A. Miller
  AAA -> ML   MR Dale Mohorcic
  AAA -> AA   LF Ken Oberkfell
  AAA -> A     C Tim Spehr
-  AA -> AAA  CF Mark T. McLemore
   AA -> AAA  SS Rene Gonzales
+  AA -> AAA  CF Mark T. McLemore
    A -> AA   2B Greg Litton
 
 SP
@@ -313,34 +313,34 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 RF Keith A. Miller           25 | CF :  94       0 :  94 | CF : 105       0 : 105 | +11 | +10+10                : +10         +10       | ++++-
 SS Jeff Hamilton             25 | SS :  76      -3 :  73 | SS :  77      -3 :  74 |  +1 |                       :    +10                | ++
 LF Steve Pegues              20 | LF :  74      -9 :  65 | LF :  74      -9 :  65 |  +0 |                       :                       | ++
-3B Dave Hansen               20 | 3B :  74      -8 :  66 | 3B :  74      -8 :  66 |  +0 |                       :                       | +++
 3B Travis Fryman             20 | SS :  79       7 :  86 | SS :  79       7 :  86 |  +0 |                       :                       | +++-
+3B Dave Hansen               20 | 3B :  74      -8 :  66 | 3B :  74      -8 :  66 |  +0 |                       :                       | +++
  C Brad Ausmus               20 |  C :  75       9 :  84 |  C :  75       9 :  84 |  +0 |                       :                       | +++
  C Tim Spehr                 22 |  C :  76       7 :  83 |  C :  76       7 :  83 |  +0 |                       :                       | ++
 3B Tim Naehring              22 | SS :  92       1 :  93 | SS :  92       1 :  93 |  +0 |                       :                       | +++++
-1B Troy Neel                 23 | LF :  83     -10 :  73 | LF :  83     -10 :  73 |  +0 |                       :                       | ++++-
 LF Felix Jose                23 | CF :  89       1 :  90 | CF :  89       1 :  90 |  +0 |                       :                       | ++++
+1B Troy Neel                 23 | LF :  83     -10 :  73 | LF :  83     -10 :  73 |  +0 |                       :                       | ++++-
 2B Greg Litton               24 | 3B :  75      -8 :  67 | 3B :  75      -8 :  67 |  +0 |                       :                       | ++
-RF Dave Martinez             24 | CF :  75      -3 :  72 | CF :  75      -3 :  72 |  +0 |                       :                       | +-
-LF Ruben Amaro Jr.           24 | CF :  75      -4 :  71 | CF :  75      -4 :  71 |  +0 |                       :             +10       | ++-
 CF Mark T. McLemore          24 | RF :  93     -14 :  79 | RF :  93     -14 :  79 |  +0 |    +10                :                       | +++
+LF Ruben Amaro Jr.           24 | CF :  75      -4 :  71 | CF :  75      -4 :  71 |  +0 |                       :             +10       | ++-
+RF Dave Martinez             24 | CF :  75      -3 :  72 | CF :  75      -3 :  72 |  +0 |                       :                       | +-
 3B Jeff McKnight             26 | SS :  75       0 :  75 | SS :  75       0 :  75 |  +0 |             +10       :             +10       | *
  C Tom Pagnozzi              26 |  C :  77       0 :  77 |  C :  77       0 :  77 |  +0 |    -10      -10       :                       | *
-RF Rich Amaral               27 | SS :  76       0 :  76 | SS :  76       0 :  76 |  +0 |                       :                       | *
 1B Mike Sharperson           27 | SS :  90       6 :  96 | SS :  90       6 :  96 |  +0 |                       :                       | *
+RF Rich Amaral               27 | SS :  76       0 :  76 | SS :  76       0 :  76 |  +0 |                       :                       | *
 2B Ernie Riles               28 | 2B :  85      -4 :  81 | 2B :  85      -4 :  81 |  +0 |                       :                       | *
-SS Rene Gonzales             28 | SS :  89       2 :  91 | SS :  89       2 :  91 |  +0 |                       :                       | **
 1B Dave Anderson             28 | SS :  94       2 :  96 | SS :  94       2 :  96 |  +0 |                       :                       | *^
+SS Rene Gonzales             28 | SS :  89       2 :  91 | SS :  89       2 :  91 |  +0 |                       :                       | **
  C Jamie Nelson              29 |  C :  89       7 :  96 |  C :  89       7 :  96 |  +0 |                       :                       | *^
 CF George D. Wright          30 | CF :  87      -8 :  79 | CF :  87      -8 :  79 |  +0 |                +10    :                +10    | *
 LF Tony Phillips             30 | SS : 125      11 : 136 | SS : 125      11 : 136 |  +0 |                       :                       | ****^
 CF Rudy Law                  32 | CF :  91      -3 :  88 | CF :  91      -3 :  88 |  +0 |                       :                       | **
  C Butch Wynegar             33 |  C : 102      11 : 113 |  C : 102      11 : 113 |  +0 |                       :                       | **^
-SS Willie Randolph           34 | SS :  88      12 : 100 | SS :  88      12 : 100 |  +0 |                       :                       | **
 CF Gary Roenicke             34 | CF : 108      -3 : 105 | CF : 108      -3 : 105 |  +0 |                       :                       | **^
+SS Willie Randolph           34 | SS :  88      12 : 100 | SS :  88      12 : 100 |  +0 |                       :                       | **
 2B Mark DeJohn               35 | SS : 102       7 : 109 | SS : 102       7 : 109 |  +0 |             +10       :                       | **^
-LF Warren Cromartie          35 | SS : 106      -4 : 102 | SS : 106      -4 : 102 |  +0 |                       :                       | **^
 1B Hiromitsu Ochiai          35 | 3B : 126      -9 : 117 | 3B : 126      -9 : 117 |  +0 | +10                   :                       | ***^
+LF Warren Cromartie          35 | SS : 106      -4 : 102 | SS : 106      -4 : 102 |  +0 |                       :                       | **^
 SS Roy Smalley III           36 | SS : 107       0 : 107 | SS : 107       0 : 107 |  +0 |                       :                       | **^
 LF Tony Scott                37 | CF :  95       5 : 100 | CF :  95       5 : 100 |  +0 |       -10             :       -10             | *^
 RF Fred Lynn                 37 | CF : 111       3 : 114 | CF : 110       3 : 113 |  -1 |    -10   -10          :          -10-10       | ***
@@ -357,15 +357,15 @@ SP Brent Gaff                30 | SP :      80     :  80 | SP :      81     :  8
 SP Bryan Hickerson           25 | SP :      62     :  62 | SP :      63     :  63 |  +1 |                          :       +10                | +++
 MR Rod Beck                  20 | MR :      43     :  43 | MR :      43     :  43 |  +0 |                          :    +10                   | ++++-
 MR Steve Olin                23 | MR :      49     :  49 | MR :      49     :  49 |  +0 |    +10                   :                          | ++++-
-MR Darren Hall               24 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                          :                          | ++-
 SP Dennis Springer           24 | SP :      44     :  44 | SP :      44     :  44 |  +0 |                          :                          | +++
-MR Greg Booker               28 | MR :      61     :  61 | MR :      61     :  61 |  +0 |          +10             :          +10             | *
+MR Darren Hall               24 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                          :                          | ++-
 SP Zane Smith                28 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
+MR Greg Booker               28 | MR :      61     :  61 | MR :      61     :  61 |  +0 |          +10             :          +10             | *
 SP Mark W. Davis             28 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                          :                          | *
-SP Mike Jeffcoat             29 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                          :                          | *
 MR Rich Rodas                29 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                +10       | *
-SP Bruce Hurst               31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
+SP Mike Jeffcoat             29 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                          :                          | *
 SP Howard Bailey             31 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                          :                          | *
+SP Bruce Hurst               31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
 SP Mike LaCoss               32 | SP :      99     :  99 | SP :      99     :  99 |  +0 |                          :                          | **
 SP Bob Welch                 32 | SP :      94     :  94 | SP :      94     :  94 |  +0 |                          :                          | **
 MR Dale Mohorcic             33 | MR :      81     :  81 | MR :      81     :  81 |  +0 |                          :                          | *
@@ -373,8 +373,8 @@ MR Bill Earley               33 | MR :      66     :  66 | MR :      66     :  6
 MR Bob Tufts                 33 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                          :                          | *
 SP Bob Owchinko              34 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | **
 MR Danny Boone               35 | MR :      78     :  78 | MR :      78     :  78 |  +0 |                          :                          | *^
-CL Larry Andersen            35 | MR :     102     : 102 | MR :     102     : 102 |  +0 |                          :                          | ****
 SP Rick Baldwin              35 | SP :      91     :  91 | SP :      91     :  91 |  +0 |                          :                          | *
+CL Larry Andersen            35 | MR :     102     : 102 | MR :     102     : 102 |  +0 |                          :                          | ****
 SP John Verhoeven            36 | SP :     104     : 104 | SP :     104     : 104 |  +0 |                          :                          | **
 SP John Denny                36 | SP :     127     : 127 | SP :     127     : 127 |  +0 |                          :                          | ***^
 SP Atlee Hammaker            31 | SP :      99     :  99 | SP :      88     :  88 | -11 | -10-10                   : -10-10                   | *
@@ -1979,8 +1979,8 @@ St. Louis Cardinals  |  96.7  96.4  92.9 |  94.1  91.0  84.3 |  62-100 0.380 |  
 New York (N) Mets    |  95.4  96.2  91.4 |  83.6  80.8  61.3 |  39-123 0.239 |  10- 11 0.476 |  44-118 0.272 (19) 
 West ----------------+
 Los Angeles Dodgers  |  92.7  92.2  84.4 | 110.9 110.4 120.1 |  82- 80 0.507 |  11- 10 0.524 |  82- 80 0.506 ( 8) 
-San Francisco Giants | 105.1 103.6 108.5 |  92.8  90.6  82.5 |  72- 90 0.445 |  12-  9 0.571 |  75- 87 0.463 (11) 
-Cincinnati Reds      | 100.3  99.3  99.6 |  94.3  97.5  91.8 |  74- 88 0.455 |  11- 10 0.524 |  75- 87 0.463 (12) 
+San Francisco Giants | 105.1 103.6 108.5 |  92.8  90.6  82.5 |  72- 90 0.445 |  12-  9 0.571 |  75- 87 0.463 (12) 
+Cincinnati Reds      | 100.3  99.3  99.6 |  94.3  97.5  91.8 |  74- 88 0.455 |  11- 10 0.524 |  75- 87 0.463 (11) 
 Atlanta Braves       |  96.0  95.2  90.9 | 102.4 101.2 103.6 |  76- 86 0.470 |   8- 13 0.381 |  74- 88 0.457 (14) 
 Houston Astros       |  94.7  95.8  90.4 |  86.8  87.5  73.0 |  49-113 0.304 |   6- 15 0.286 |  49-113 0.302 (18) 
                      |              99.1 |             101.9 |
