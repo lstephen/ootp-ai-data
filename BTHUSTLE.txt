@@ -33,7 +33,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: IsotonicScores: [(0.30670689581269944, RandomForest(...)), (0.31914750324315139, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 364.  193.  225.  192.  258.   33.]Feature Mask: [ True False False False False False]
 -- Doubles
-Selected: RandomForestScores: [(0.091884008872418654, RandomForest(...)), (0.077679317713314197, Isotonic(...))]Best Parameters: {'regressor__max_depth': 2, 'selection__k': 5, 'regressor__n_estimators': 84}Feature Scores: [ 51.  46.  49.  34.  42.   6.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [ 0.276  0.489  0.115  0.11   0.011]
+Selected: RandomForestScores: [(0.091884008872418654, RandomForest(...)), (0.077679317713314197, Isotonic(...))]Best Parameters: {'selection__k': 5, 'regressor__max_depth': 2, 'regressor__n_estimators': 84}Feature Scores: [ 51.  46.  49.  34.  42.   6.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [ 0.276  0.489  0.115  0.11   0.011]
 -- Triples
 Selected: IsotonicScores: [(0.056463014533922405, RandomForest(...)), (0.040227699067852764, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 39.  79.  50.  44.  39.  80.]Feature Mask: [False False False False False  True]
 -- HomeRuns
@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.2666282551171974, RandomForest(...)), (0.268372992
 -- Walks
 Selected: IsotonicScores: [(0.10896363222364173, RandomForest(...)), (0.11329553695751375, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 45.  29.  44.  69.  43.   6.]Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.12375041655457919, RandomForest(...)), (0.098666454716951499, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 27, 'regressor__max_depth': 1, 'selection__k': 2}Feature Scores: [ 129.   78.  111.   95.  160.   25.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
+Selected: RandomForestScores: [(0.12375041655457919, RandomForest(...)), (0.098666454716951499, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 27, 'regressor__max_depth': 1}Feature Scores: [ 129.   78.  111.   95.  160.   25.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.  1.]
 
            Hits | 0.072
         Doubles | 0.034
@@ -50,15 +50,15 @@ Selected: RandomForestScores: [(0.12375041655457919, RandomForest(...)), (0.0986
              Ks | 0.058
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.041734833307453721, RandomForest(...)), (0.034339524679406708, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 24.   1.   4.   0.   0.]Feature Mask: [ True False  True False False]Feature Importances: [ 0.684  0.316]
+Selected: RandomForestScores: [(0.041734833307453721, RandomForest(...)), (0.034339524679406708, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 24.   1.   4.   0.   0.]Feature Mask: [ True False  True False False]Feature Importances: [ 0.684  0.316]
 -- Doubles
 Selected: IsotonicScores: [(-0.013358016228031122, RandomForest(...)), (-0.010226691225383631, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 10.   0.   2.   3.   0.]Feature Mask: [ True False False False False]
 -- HomeRuns
 Selected: IsotonicScores: [(0.099920128079069248, RandomForest(...)), (0.082362688602629228, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   0.  38.   1.   1.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.12940223343775001, RandomForest(...)), (0.11264308916684258, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 32, 'regressor__n_estimators': 4}Feature Scores: [  0.  52.   0.   3.   0.]Feature Mask: [ True  True False  True False]Feature Importances: [ 0.241  0.635  0.123]
+Selected: RandomForestScores: [(0.12940223343775001, RandomForest(...)), (0.11264308916684258, Isotonic(...))]Best Parameters: {'regressor__max_depth': 32, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [  0.  52.   0.   3.   0.]Feature Mask: [ True  True False  True False]Feature Importances: [ 0.241  0.635  0.123]
 -- Ks
-Selected: RandomForestScores: [(0.31927864059744848, RandomForest(...)), (0.29861220884924528, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [ 177.    2.    5.   11.    3.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.962  0.038]
+Selected: RandomForestScores: [(0.31927864059744848, RandomForest(...)), (0.29861220884924528, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 177.    2.    5.   11.    3.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.962  0.038]
 
 Hitting Features
              Average |  -    99   +  |   5  15  25  35  45  55  65  75  85  95
@@ -143,16 +143,16 @@ MR Diep, R           +   ML 29 |  8.4  7.1  1.2  0.4 | 108 169 | 129 198 |  + | 
 SP Cobbins, G        +   ML 30 |  8.9  7.0  1.3  0.9 |  97 111 | 104  93 |  + | 103/ 89 || 103 ||
 SP Macias, R             ML 28 |  8.2  9.8  2.1  1.0 | 105 111 | 101  92 |  - | 102/ 88 || 102 ||
 SP Pietrzak, Z     F +   ML 30 |  9.3  6.7  2.2  0.5 | 100 167 |  99 125 |  + |  99/ 86 ||  99 ||
-SP Bergmann, M           ML 26 |  9.4  6.1  1.1  0.9 |  96 146 |  98  33 | ++ |  98/ 85 ||  98 ||
+SP Bergmann, M          AAA 26 |  9.4  6.1  1.1  0.9 |  96 146 |  98  33 | ++ |  98/ 85 ||  98 ||
 SP Medina, B         +   ML 27 |  9.3  7.1  2.6  0.5 |  85  67 |  99 108 |  + |  96/ 83 ||  96 ||
 MR Reinoso, J            ML 34 |  9.2  6.5  1.9  0.5 | 101 211 | 103  66 | ++ |  81/ 89 ||  89 ||
-SP Dickerson, D      +~ AAA 30 |  9.6  6.5  1.9  1.0 |  86     |  90     | -  |  88/ 77 ||  88 ||
 SP Rubio, J        F +   ML 34 |  9.6  6.1  1.4  0.9 |  90  24 |  95  85 | -+ |  88/ 81 ||  88 ||
+SP Dickerson, D      +~ AAA 30 |  9.6  6.5  1.9  1.0 |  86     |  90     | -  |  88/ 77 ||  88 ||
 SP Woodward, A       +~ AAA 31 |  9.4  8.7  1.4  1.5 | 106  70 |  81  46 | -+ |  84/ 74 ||  84 ||
 SP Garrett, L        +   ML 29 |  9.7  7.1  3.5  0.5 |  93  56 |  83  78 |  + |  83/ 74 ||  83 ||
 MR Bowman, W         +   ML 31 |  9.5  6.1  1.3  1.0 |  84  72 |  97  83 |  + |  74/ 81 ||  81 ||
 SP Kerner, B       F +~ AAA 27 |  9.5  7.1  2.9  1.0 |  75     |  84     | +- |  80/ 71 ||  80 ||
-MR Loya, R           +~ AAA 31 |  8.6  9.3  1.1  1.8 |  68  93 |  96  45 |  + |  71/ 78 ||  78 ||
+MR Loya, R           +~  ML 31 |  8.6  9.3  1.1  1.8 |  68  93 |  96  45 |  + |  71/ 78 ||  78 ||
 MR Calderon, J     F +  AAA 31 |  9.9  6.5  2.4  1.0 |  83     |  83     |  - |  22/ 72 ||  72 ||
 SP Aldana, K         +~ AAA 27 | 10.3  7.0  2.6  1.6 |  73     |  70     | +  |  70/ 61 ||  70 ||
 SP Oropesa, H       1   AAA 20 | 10.7  5.3  3.5  1.2 |  65     |  69     | ++ |  66/ 59 ||  66 ||
@@ -181,16 +181,16 @@ MR Robledo, A             A 21 | 14.6  4.9  4.9  2.2 |  43     |  42     |  + | 
 MR Bell, J                A 21 | 14.3  4.8  4.9  2.4 |  42     |  41     | ++ |  11/ 35 ||  35 ||
 
  (25) ML               | (26) AAA              | (25) AA               | (24) A                | ( 0) DL               |
- SP Bergmann, M     26 | SP Aldana, K       27 | SP Burnell, R      23 | SP Gay, S          18 |                       |
- SP Cardoso, J      35 | SP Carvajal, H     25 | SP Cashion, R      25 | SP Gilpin, D       17 |                       |
- SP Cobbins, G      30 | SP Oropesa, H      20 | SP Caudillo, O     21 | SP Martinez, M     18 |                       |
- SP Garrett, L      29 | SP Woodward, A     31 | SP Kennell, J      23 | SP McMillin, W     21 |                       |
- SP Macias, R       28 | MR Calderon, J     31 | MR Cancio, F       21 | SP Silvia, T       20 |                       |
- SP Medina, B       27 | MR Dickerson, D    30 | MR Jimenez, G      21 | SP Stegner, J      18 |                       |
- SP Pietrzak, Z     30 | MR Elizondo, D     23 | MR Lucero, A       22 | MR Bell, J         21 |                       |
- SP Rubio, J        34 | MR Kerner, B       27 | MR Nicholson, C    22 | MR Robledo, A      21 |                       |
- MR Bowman, W       31 | MR Laughlin, M     23 | MR Philson, L      22 | MR Shuler, S       19 |                       |
- MR Diep, R         29 | MR Loya, R         31 | MR Taylor, R       22 |  C Kitts, P        20 |                       |
+ SP Cardoso, J      35 | SP Aldana, K       27 | SP Burnell, R      23 | SP Gay, S          18 |                       |
+ SP Cobbins, G      30 | SP Bergmann, M     26 | SP Cashion, R      25 | SP Gilpin, D       17 |                       |
+ SP Garrett, L      29 | SP Carvajal, H     25 | SP Caudillo, O     21 | SP Martinez, M     18 |                       |
+ SP Macias, R       28 | SP Oropesa, H      20 | SP Kennell, J      23 | SP McMillin, W     21 |                       |
+ SP Medina, B       27 | SP Woodward, A     31 | MR Cancio, F       21 | SP Silvia, T       20 |                       |
+ SP Pietrzak, Z     30 | MR Calderon, J     31 | MR Jimenez, G      21 | SP Stegner, J      18 |                       |
+ SP Rubio, J        34 | MR Dickerson, D    30 | MR Lucero, A       22 | MR Bell, J         21 |                       |
+ MR Bowman, W       31 | MR Elizondo, D     23 | MR Nicholson, C    22 | MR Robledo, A      21 |                       |
+ MR Diep, R         29 | MR Kerner, B       27 | MR Philson, L      22 | MR Shuler, S       19 |                       |
+ MR Loya, R         31 | MR Laughlin, M     23 | MR Taylor, R       22 |  C Kitts, P        20 |                       |
  MR Reinoso, J      34 |  C Eizan, T        25 |  C Benero, A       25 |  C Moreno, D       18 |                       |
   C Au, N           24 |  C Loranger, D     32 |  C Brighton, T     25 | 2B Arnau, D        22 |                       |
   C Blakes, D       32 | 1B Flores, R       29 |  C Cutlip, L       26 | 2B Raglin, H       19 |                       |
@@ -210,16 +210,16 @@ MR Bell, J                A 21 | 14.3  4.8  4.9  2.4 |  42     |  41     | ++ | 
 Total:100 (target 70-75)
 Balance:60/40 = 1.500 (ideal: 1.273)
 
+  ML -> AAA  SP Michael Bergmann
   ML -> AAA  1B Richard Flores
-  ML -> AAA  MR Ryan Loya
  AAA -> ML   1B Estanis Aguilar
- AAA -> AA   CF Paul Deck
  AAA -> AA   SP Roger Cashion
  AAA -> AA   SS James Williams
-  AA -> AAA  MR Daniel Elizondo
-  AA -> AAA  3B Alex Alfano
-  AA -> AAA  1B John Larsen
+ AAA -> AA   CF Paul Deck
   AA -> AAA  LF Rodolfo Tabares
+  AA -> AAA  1B John Larsen
+  AA -> AAA  3B Alex Alfano
+  AA -> AAA  MR Daniel Elizondo
    A -> AA   RF Jayson Kennell
   DL -> ML   SP Juan Cardoso
 
@@ -227,27 +227,27 @@ SP
 Gary Cobbins
 Roman Macias
 Zachary Pietrzak
-Michael Bergmann
+Ronald Diep
 Benito Medina
 
 LR
 Juan Cardoso
 
 MR
-Wallace Bowman
+Ryan Loya
 Lenny Garrett
 
 SU
-Jeronimo Reinoso
 Jorge Rubio
+Wallace Bowman
 
 CL
-Ronald Diep
+Jeronimo Reinoso
 
 NONE
 
 
-BP Ability: 121
+BP Ability: 110
 
 --- Slow Hook ---
 
@@ -369,18 +369,18 @@ RF Oscar Irving              26 | RF :  87     -14 :  73 | RF :  90     -14 :  7
 2B James Goodridge           29 | SS : 112       1 : 113 | SS : 113       1 : 114 |  +1 |           +1       :           +4       | ****
  C Donald Blakes             32 |  C : 111      13 : 124 |  C : 112      13 : 125 |  +1 |  -2    +7 +4 -1    :  -2 +5 +7 +3 -1    | ***
 3B Seve Guadalupe            24 | 3B :  91      -1 :  90 | 3B :  91      -1 :  90 |  +0 |  -1 -2       -6    :  -2 -2       -6    | +++-
- C Nicholas Au               24 |  C :  65      12 :  77 |  C :  65      12 :  77 |  +0 |     +2 +3 +1       :     +2 +3 +1       | ++
 SS Sean Tracy                24 | SS :  95       2 :  97 | SS :  95       2 :  97 |  +0 |  -1    +3 -1       :  -1    +3 -1       | ++++
- C Teijirou Eizan            25 |  C :  89       7 :  96 |  C :  89       7 :  96 |  +0 |  -2 +2       -1    :  -2 +2       -1    | +++
+ C Nicholas Au               24 |  C :  65      12 :  77 |  C :  65      12 :  77 |  +0 |     +2 +3 +1       :     +2 +3 +1       | ++
  C Alex Benero               25 |  C :  85     -13 :  72 |  C :  85     -13 :  72 |  +0 |  -3 -6 +6 -2 -1    :  -2 -6 +6 -2 -1    | +++
 RF Eric Witherspoon          25 | SS :  82       6 :  88 | SS :  82       6 :  88 |  +0 |           -1       :           -1       | ++
-SS James Williams            26 | SS :  84      10 :  94 | SS :  84      10 :  94 |  +0 |  +5 +2       -1    :  +3 +2       -1    | *
+ C Teijirou Eizan            25 |  C :  89       7 :  96 |  C :  89       7 :  96 |  +0 |  -2 +2       -1    :  -2 +2       -1    | +++
  C Luther Cutlip             26 |  C :  81       2 :  83 |  C :  81       2 :  83 |  +0 |     +4 +3 +1 -1    :     +3 +3 +1 -1    | *
+SS James Williams            26 | SS :  84      10 :  94 | SS :  84      10 :  94 |  +0 |  +5 +2       -1    :  +3 +2       -1    | *
 2B Cipri Basora              27 | 2B :  86       1 :  87 | 2B :  86       1 :  87 |  +0 |  +1 +4             :  +1 +4             | *
 RF Gregory Arrington         31 | RF :  99     -11 :  88 | RF :  99     -11 :  88 |  +0 |  -3                :  -3                | **^
 SS Philip Stokley            32 | SS :  89      10 :  99 | SS :  89      10 :  99 |  +0 |     -2       -1    :     -2       -1    | **
-1B Estanis Aguilar           34 | 2B : 105      -7 :  98 | 2B : 105      -7 :  98 |  +0 |                    :                    | *^
 1B Bill West                 34 | CF : 101      -4 :  97 | CF : 101      -4 :  97 |  +0 |  +1    +2          :  +2    +2          | *^
+1B Estanis Aguilar           34 | 2B : 105      -7 :  98 | 2B : 105      -7 :  98 |  +0 |                    :                    | *^
 RF Ru-zuberuto Takamuku      25 | CF :  87      -5 :  82 | CF :  87      -5 :  82 |  +0 |  +2 +2    +1 +1    :  +4 +2    +1 +1    | ++++
 RF Calvin Jarnagin           29 | CF :  90      -2 :  88 | CF :  90      -3 :  87 |  +0 |     -6    -1 -1    :  -1 -6    -1 -1    | *
 2B Lucio Quijano             30 | CF :  98       3 : 101 | CF :  97       3 : 100 |  -1 |  -3    +2    +3    :  -3    +2    +3    | **
@@ -409,8 +409,8 @@ SP Hank Carvajal             25 | SP :      63     :  63 | SP :      63     :  6
 SP Lenny Garrett             29 | SP :      83     :  83 | SP :      83     :  83 |  +0 |                 :                 | ***
 MR Ronald Diep               29 | MR :     108     : 108 | MR :     108     : 108 |  +0 |                 :                 | ****
 MR Daniel Dickerson          30 | SP :      88     :  88 | SP :      88     :  88 |  +0 |        +2       :        +2       | **^
-MR Wallace Bowman            31 | MR :      81     :  81 | MR :      81     :  81 |  +0 |  -1    +2       :  -1    +2       | ***
 MR Ryan Loya                 31 | MR :      78     :  78 | MR :      78     :  78 |  +0 |                 :                 | *
+MR Wallace Bowman            31 | MR :      81     :  81 | MR :      81     :  81 |  +0 |  -1    +2       :  -1    +2       | ***
 MR Gabriel Jimenez           21 | MR :      41     :  41 | MR :      40     :  40 |  -1 |    +14 -4       :    +13 -4       | +
 SP Kenneth Aldana            27 | SP :      72     :  72 | SP :      70     :  70 |  -2 |  +2 -1          :  +1 -1          | *
 SP Zachary Pietrzak          30 | SP :     101     : 101 | SP :      99     :  99 |  -2 |  -2 +1 +2       :  -3 +2 +3       | *^
@@ -423,12 +423,12 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 3B Joe Baltimore             21 | SS :  72       4 :  76 | SS :  78       4 :  82 |  +6 |  +3 +3    +1 +3    :  +1 +3    +1 +3    | +-
 3B Kevin Derrick             22 | 3B :  54      -9 :  45 | 3B :  59      -9 :  50 |  +5 |  +3+11 +9 +1+15    :  +3+11 +9 +1+16    | +
 CF Mohammad Conlan           21 | CF :  61      -2 :  59 | CF :  63      -2 :  61 |  +2 |  +7+22 +7 +6+33    :  +7+23 +7 +6+19    | +++-
-LF James Latorre             18 | CF :  49      -8 :  41 | CF :  50      -8 :  42 |  +1 |  +1 +8    +1 +8    :  +1 +8    +2 +7    | +++
 SS Michael Herron            18 | SS :  43      -3 :  40 | SS :  44      -3 :  41 |  +1 |  +1 +2      +24    :  +1 +2      +26    | ++
+LF James Latorre             18 | CF :  49      -8 :  41 | CF :  50      -8 :  42 |  +1 |  +1 +8    +1 +8    :  +1 +8    +2 +7    | +++
 SS Jason Kulp                17 | SS :  69       7 :  76 | SS :  69       7 :  76 |  +0 |  +1 +4       +5    :  +1 +4       +5    | +++++
+SS Joseph Chappelle          18 | SS :  52      13 :  65 | SS :  52      13 :  65 |  +0 |        +3    +8    :        +3    +7    | +++
 SS Balta Veloz               18 | SS :  56      -5 :  51 | SS :  56      -5 :  51 |  +0 |        +3    +3    :        +3    +4    | ++
  C Dalcio Moreno             18 |  C :  39       9 :  48 |  C :  39       9 :  48 |  +0 |  +1 +2       +2    :  +1 +1       +3    | +
-SS Joseph Chappelle          18 | SS :  52      13 :  65 | SS :  52      13 :  65 |  +0 |        +3    +8    :        +3    +7    | +++
 
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
@@ -711,32 +711,32 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 85              |          54  48  49  57  64  72  74  75  76  75  80  81  78  79  76  78  75  77  75  79  78  78                             |
 95              |              59  46  66  79  80  84  86  87  86  86  88  88  89  85  84  84  83  83  83                                     |
 
-1E | 126 (101-158) | 132 (107-164) 120/145 |   5/  5 || 119 (101-158) | 125 (107-164) 114/138 |  25/ 25
-1M | 121 ( 68-123) | 127 ( 74-129) 116/140 |   5/  5 || 109 ( 68-123) | 115 ( 74-129) 105/127 |  25/ 25
-1L | 109 ( 90-115) | 115 ( 96-121) 105/127 |   6/  6 ||  99 ( 87-115) | 105 ( 93-121)  96/116 |  30/ 30
-2E |  93 ( 87-100) |  99 ( 93-106)  90/109 |   8/  8 ||  91 ( 40-100) |  97 ( 46-106)  88/106 |  40/ 40
-2L |  92 ( 85- 98) |  98 ( 91-104)  89/107 |   8/  8 ||  85 (-41- 98) |  91 (-35-104)  83/101 |  40/ 40
+1E | 126 (101-158) | 132 (107-164) 120/145 |   5/  5 || 119 (-29-158) | 125 (-23-164) 114/138 |  25/ 25
+1M | 121 ( 68-123) | 127 ( 74-129) 116/140 |   5/  5 || 108 ( 68-123) | 114 ( 74-129) 103/125 |  25/ 25
+1L | 109 ( 90-115) | 115 ( 96-121) 105/127 |   6/  6 ||  97 (  6-115) | 103 ( 12-121)  94/113 |  30/ 30
+2E |  93 ( 87-100) |  99 ( 93-106)  90/109 |   8/  8 ||  91 ( 48-100) |  97 ( 54-106)  88/106 |  40/ 40
+2L |  92 ( 85- 98) |  98 ( 91-104)  89/107 |   8/  8 ||  85 (-41- 98) |  91 (-35-104)  83/100 |  40/ 40
 
- 1 | 115 ( 68-158) | 121 ( 74-164) 110/134 |  16/ 16 || 108 ( 68-158) | 114 ( 74-164) 103/125 |  80/ 80
+ 1 | 115 ( 68-158) | 121 ( 74-164) 110/134 |  16/ 16 || 106 (-29-158) | 112 (-23-164) 102/123 |  80/ 80
  2 |  92 ( 85-100) |  98 ( 91-106)  89/107 |  16/ 16 ||  88 (-41-100) |  94 (-35-106)  85/103 |  80/ 80
- 3 |  86 ( 73- 92) |  92 ( 79- 98)  83/101 |  16/ 16 ||  79 ( 26- 92) |  85 ( 32- 98)  77/ 93 |  80/ 80
- 4 |  80 ( 70- 85) |  86 ( 76- 91)  78/ 95 |  16/ 16 ||  72 (-71- 92) |  78 (-61- 98)  71/ 85 |  80/ 80
- 5 |  74 ( 51- 92) |  80 ( 57- 98)  73/ 88 |  16/ 16 ||  67 (-27-107) |  73 (-21-113)  66/ 80 |  80/ 80
- 6 |  70 ( 58- 72) |  76 ( 64- 78)  69/ 84 |  16/ 16 ||  63 (-57-102) |  69 (-49-108)  63/ 76 |  80/ 80
- 7 |  66 ( 42- 89) |  72 ( 48- 95)  65/ 79 |  16/ 16 ||  59 (-61-113) |  65 (-55-119)  59/ 72 |  80/ 80
- 8 |  63 ( 47- 67) |  69 ( 53- 73)  63/ 76 |  16/ 16 ||  57 (  2-136) |  63 (  8-142)  57/ 69 |  80/ 80
- 9 |  60 ( 49- 62) |  66 ( 55- 68)  60/ 72 |  16/ 16 ||  52 (-64-111) |  58 (-58-117)  53/ 64 |  80/ 80
-10 |  58 ( 45- 71) |  64 ( 51- 77)  58/ 71 |  16/ 16 ||  50 (-69-103) |  56 (-61-109)  51/ 62 |  80/ 80
-11 |  53 ( 44- 64) |  59 ( 50- 70)  53/ 65 |  16/ 16 ||  47 (-68- 71) |  53 (-61- 77)  48/ 58 |  80/ 80
-12 |  48 ( 44- 71) |  54 ( 50- 77)  49/ 59 |  16/ 16 ||  44 (-69-119) |  50 (-61-125)  45/ 55 |  80/ 80
-13 |  44 ( 43- 47) |  50 ( 49- 53)  45/ 55 |  16/ 16 ||  41 (-69-111) |  47 (-61-117)  43/ 52 |  80/ 80
-14 |  42 ( 39- 74) |  48 ( 45- 80)  44/ 53 |  16/ 16 ||  39 (-54- 74) |  45 (-48- 80)  41/ 49 |  80/ 80
-15 |  38 ( 29- 66) |  44 ( 35- 72)  40/ 49 |  16/ 16 ||  36 (-66- 94) |  42 (-59-100)  38/ 46 |  80/ 80
+ 3 |  86 ( 73- 92) |  92 ( 79- 98)  83/101 |  16/ 16 ||  78 ( 35- 92) |  84 ( 41- 98)  77/ 93 |  80/ 80
+ 4 |  80 ( 70- 85) |  86 ( 76- 91)  78/ 95 |  16/ 16 ||  71 (-71- 92) |  77 (-61- 98)  70/ 85 |  80/ 80
+ 5 |  74 ( 51- 92) |  80 ( 57- 98)  73/ 88 |  16/ 16 ||  66 (-27-107) |  72 (-21-113)  66/ 80 |  80/ 80
+ 6 |  70 ( 58- 72) |  76 ( 64- 78)  69/ 84 |  16/ 16 ||  63 (-57- 99) |  69 (-49-105)  63/ 76 |  80/ 80
+ 7 |  66 ( 42- 89) |  72 ( 48- 95)  65/ 79 |  16/ 16 ||  60 (-50-113) |  66 (-44-119)  60/ 72 |  80/ 80
+ 8 |  63 ( 47- 67) |  69 ( 53- 73)  63/ 76 |  16/ 16 ||  56 (-71-136) |  62 (-61-142)  56/ 68 |  80/ 80
+ 9 |  60 ( 49- 62) |  66 ( 55- 68)  60/ 72 |  16/ 16 ||  52 (-65-111) |  58 (-59-117)  53/ 64 |  80/ 80
+10 |  58 ( 45- 71) |  64 ( 51- 77)  58/ 71 |  16/ 16 ||  50 (-64- 79) |  56 (-56- 85)  51/ 62 |  80/ 80
+11 |  53 ( 44- 64) |  59 ( 50- 70)  53/ 65 |  16/ 16 ||  47 (-58- 71) |  53 (-52- 77)  48/ 58 |  80/ 80
+12 |  48 ( 44- 71) |  54 ( 50- 77)  49/ 59 |  16/ 16 ||  44 (-49-119) |  50 (-43-125)  45/ 55 |  80/ 80
+13 |  44 ( 43- 47) |  50 ( 49- 53)  45/ 55 |  16/ 16 ||  41 (-63-111) |  47 (-57-117)  43/ 52 |  80/ 80
+14 |  42 ( 39- 74) |  48 ( 45- 80)  44/ 53 |  16/ 16 ||  39 (-71- 74) |  45 (-61- 80)  41/ 49 |  80/ 80
+15 |  38 ( 29- 66) |  44 ( 35- 72)  40/ 49 |  16/ 16 ||  36 (-71- 69) |  42 (-61- 75)  38/ 46 |  80/ 80
 16 |  36 ( 29- 64) |  42 ( 35- 70)  38/ 46 |  16/ 16 ||  33 (-71-129) |  39 (-61-135)  35/ 43 |  80/ 80
-17 |  32 ( 22- 57) |  38 ( 28- 63)  35/ 42 |  16/ 16 ||  31 (-71- 77) |  37 (-61- 83)  33/ 40 |  80/ 80
-18 |  31 ( 24- 68) |  37 ( 30- 74)  33/ 40 |  16/ 16 ||  28 (-71- 69) |  34 (-61- 75)  31/ 37 |  80/ 80
-19 |  28 ( 23- 67) |  34 ( 29- 73)  31/ 37 |  16/ 16 ||  24 (-64- 89) |  30 (-56- 95)  27/ 32 |  80/ 80
-20 |  30 ( 15- 49) |  36 ( 21- 55)  33/ 40 |  16/ 16 ||  19 (-71- 73) |  25 (-61- 79)  22/ 27 |  80/ 80
+17 |  32 ( 22- 57) |  38 ( 28- 63)  35/ 42 |  16/ 16 ||  30 (-71- 75) |  36 (-61- 81)  33/ 40 |  80/ 80
+18 |  31 ( 24- 68) |  37 ( 30- 74)  33/ 40 |  16/ 16 ||  28 (-35- 77) |  34 (-29- 83)  31/ 37 |  80/ 80
+19 |  28 ( 23- 67) |  34 ( 29- 73)  31/ 37 |  16/ 16 ||  23 (-64- 89) |  29 (-56- 95)  27/ 32 |  80/ 80
+20 |  30 ( 15- 49) |  36 ( 21- 55)  33/ 40 |  16/ 16 ||  18 (-71- 73) |  24 (-61- 79)  22/ 26 |  80/ 80
 
 SP Macias, R       28|  28,040,000  28,040,000
 SS Goodridge, J    29|  17,000,000  17,000,000
@@ -935,8 +935,8 @@ SHORTSTOP
  5 | Stokley, P        89  10  99 | Morales, N        94   4  98 | Stokley, P        90  10 100
  6 | Tracy, S          95   2  97 | Williams, J       87  10  97 | Tracy, S          97   2  99
  7 | Morales, N        92   4  96 | Stokley, P        86  10  96 | Morales, N        92   4  96
- 8 | Williams, J       84  10  94 | Reger, W         107 -13  94 | Reger, W         107 -13  94
- 9 | Reger, W         107 -13  94 | Dickerson, M     111 -17  94 | Williams, J       83  10  93
+ 8 | Williams, J       84  10  94 | Dickerson, M     111 -17  94 | Reger, W         107 -13  94
+ 9 | Reger, W         107 -13  94 | Reger, W         107 -13  94 | Williams, J       83  10  93
 10 | Diz, T            88   5  93 | Alfano, A         94  -1  93 | Diz, T            88   5  93
 
 LEFT_FIELD
@@ -978,14 +978,14 @@ RIGHT_FIELD
 DESIGNATED_HITTER
  1 | Washington, E    122 -25  97 | Goodridge, J     126 -25 101 | Washington, E    124 -25  99
  2 | Goodridge, J     113 -25  88 | Blakes, D        113 -25  88 | Blakes, D        111 -25  86
- 3 | Blakes, D        112 -25  87 | Washington, E    111 -25  86 | Goodridge, J     111 -25  86
- 4 | Reger, W         107 -25  82 | Dickerson, M     111 -25  86 | Reger, W         107 -25  82
+ 3 | Blakes, D        112 -25  87 | Dickerson, M     111 -25  86 | Goodridge, J     111 -25  86
+ 4 | Reger, W         107 -25  82 | Washington, E    111 -25  86 | Reger, W         107 -25  82
  5 | Scott, I         106 -25  81 | Scott, I         108 -25  83 | Scott, I         106 -25  81
  6 | Aguilar, E       105 -25  80 | Reger, W         107 -25  82 | Aguilar, E       105 -25  80
  7 | Flores, R        104 -25  79 | Aguilar, E       105 -25  80 | Flores, R        104 -25  79
- 8 | Dickerson, M     104 -25  79 | Orr, A           102 -25  77 | Orr, A           103 -25  78
- 9 | Orr, A           103 -25  78 | Ocerin, F        102 -25  77 | Dickerson, M     103 -25  78
-10 | West, B          101 -25  76 | Flores, R        102 -25  77 | West, B          102 -25  77
+ 8 | Dickerson, M     104 -25  79 | Flores, R        102 -25  77 | Dickerson, M     103 -25  78
+ 9 | Orr, A           103 -25  78 | Orr, A           102 -25  77 | Orr, A           103 -25  78
+10 | West, B          101 -25  76 | Ocerin, F        102 -25  77 | West, B          102 -25  77
 
 --- Trade Values ---
  C Donald Blakes             32|  C : 112      13  28  19 : 171 |    :                     :   0 |   1 | 172 | 92-1---- |  F    $13.18M   | $21.69M:$24.94M |  p540 | Houston Astros       | ***
@@ -1932,7 +1932,7 @@ Colorado Rockies     |  97.5  97.0  94.4 |  94.9  94.7  89.3 |  67- 95 0.416 |  
 West ----------------+
 San Francisco Giants | 100.5  99.7 100.2 |  99.7 102.2 101.9 |  83- 79 0.510 |  45- 31 0.592 |  89- 73 0.549 ( 4) 
 Atlanta Braves       | 100.2  99.7  99.9 |  94.2  95.2  89.1 |  72- 90 0.442 |  41- 35 0.539 |  79- 83 0.488 (10) 
-Detroit Tigers       |  98.2  99.9  98.1 |  92.5  90.4  82.1 |  64- 98 0.393 |  37- 39 0.487 |  71- 91 0.438 (14) 
+Detroit Tigers       |  98.2  99.9  98.1 |  92.5  90.4  82.1 |  64- 98 0.393 |  37- 39 0.487 |  71- 91 0.438 (15) 
 Montreal Expos       |  92.4  91.9  83.7 |  81.2  80.7  59.1 |  32-130 0.197 |  26- 50 0.342 |  43-119 0.265 (16) 
 
 National League
@@ -1940,7 +1940,7 @@ East ----------------+
 St. Louis (B) Browns | 102.6 104.0 106.4 | 111.2 113.7 123.0 | 102- 60 0.631 |  55- 21 0.724 | 109- 53 0.673 ( 1) 
 Cincinnati Reds      | 106.6 108.4 114.3 | 105.3 106.8 111.6 | 100- 62 0.619 |  41- 35 0.539 |  94- 68 0.580 ( 2) 
 Chicago Cubs         |  99.1  99.0  98.1 | 102.8 103.1 105.8 |  84- 78 0.519 |  32- 44 0.421 |  77- 85 0.475 (11) 
-New York Mets        |  96.2  95.7  91.8 | 102.4 106.8 108.8 |  81- 81 0.499 |  28- 48 0.368 |  71- 91 0.438 (15) 
+New York Mets        |  96.2  95.7  91.8 | 102.4 106.8 108.8 |  81- 81 0.499 |  28- 48 0.368 |  71- 91 0.438 (14) 
 West ----------------+
 Houston Astros       | 106.6 106.5 112.6 | 102.2 100.3 102.5 |  93- 69 0.571 |  41- 35 0.539 |  90- 72 0.556 ( 3) 
 Boston Red Sox       | 102.1 100.5 102.7 | 102.5 102.8 105.3 |  87- 75 0.539 |  36- 40 0.474 |  82- 80 0.506 ( 8) 
