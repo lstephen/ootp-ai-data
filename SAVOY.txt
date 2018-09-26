@@ -37,7 +37,7 @@ Selected: IsotonicScores: [(0.12637006848735119, RandomForest(...)), (0.13438957
 -- Triples
 Selected: IsotonicScores: [(0.020010784168698392, RandomForest(...)), (0.030008360936765139, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  6.   1.   1.   2.   2.   3.  11.]Feature Mask: [False False False False False False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.20577110888614694, RandomForest(...)), (0.19574342696811411, Isotonic(...))]Best Parameters: {'regressor__max_depth': 9, 'selection__k': 3, 'regressor__n_estimators': 79}Feature Scores: [ 23.   6.   1.  95.   7.  10.   5.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.114  0.797  0.09 ]
+Selected: RandomForestScores: [(0.20577110888614694, RandomForest(...)), (0.19574342696811411, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 79, 'selection__k': 3, 'regressor__max_depth': 9}Feature Scores: [ 23.   6.   1.  95.   7.  10.   5.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.114  0.797  0.09 ]
 -- Walks
 Selected: IsotonicScores: [(0.28968446055375413, RandomForest(...)), (0.30176687162263666, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  26.    0.    1.   27.  236.   14.    2.]Feature Mask: [False False False False  True False False]
 -- Ks
@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(0.10609847767580161, RandomForest(...)), (0.12053582
 -- HomeRuns
 Selected: IsotonicScores: [(0.112923722406162, RandomForest(...)), (0.10208802824321117, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 13.   4.   0.  28.   2.   4.   2.   0.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.28906368866682769, RandomForest(...)), (0.27108513996193589, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 2}Feature Scores: [   5.   14.   11.    6.  121.    2.    7.   10.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.198  0.802]
+Selected: RandomForestScores: [(0.28906368866682769, RandomForest(...)), (0.27108513996193589, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 49, 'regressor__n_estimators': 2}Feature Scores: [   5.   14.   11.    6.  121.    2.    7.   10.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.198  0.802]
 -- Ks
 Selected: IsotonicScores: [(0.28554788933319591, RandomForest(...)), (0.27444117051397193, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  62.   97.    7.    1.    5.  141.    1.    4.]Feature Mask: [False False False False False  True False False]
 
@@ -182,21 +182,21 @@ MR Cochran, H           A 21 | 14.2  3.2  5.5  2.5 |  43     |  43     |  + |  2
 Total:69 (target 70-75)
 Balance:39/30 = 1.300 (ideal: 1.273)
 
+  ML -> AAA  MR Juan Fontanals
   ML -> AAA  CF Jose Villas
   ML -> AAA  MR Mark Knop
-  ML -> AAA  MR Juan Fontanals
+ AAA -> ML   MR William Houston
  AAA -> ML   MR Claude Batson
  AAA -> ML   SS Gary Montelongo
- AAA -> ML   MR William Houston
- AAA -> AA   1B Billy Wallace
- AAA -> AA   CF Juan Aguirre
  AAA -> AA    C Scott Carroll
+ AAA -> AA   CF Juan Aguirre
+ AAA -> AA   1B Billy Wallace
  AAA -> A    LF Bernardo Sol
   AA -> AAA  SS Galen Hulett
   AA -> A    SP Anthony Evans
   AA -> A    2B Michael Marsh
-   A -> AAA  2B Telmo Freire
    A -> AAA  3B Abel Pelaez
+   A -> AAA  2B Telmo Freire
    A -> AA   MR Dave Torre
 
 SP
@@ -333,8 +333,8 @@ RF Robert Burling            20 | RF :  64      -5 :  59 | RF :  64      -5 :  5
 LF Bernardo Sol              23 | CF :  71       2 :  73 | CF :  71       2 :  73 |  +0 |                       :                       | ++
 SS Galen Hulett              24 | SS :  74      11 :  85 | SS :  74      11 :  85 |  +0 |                +19    :                +19    | ++
 3B Stephen Fort              25 | 3B :  81     -11 :  70 | 3B :  81     -11 :  70 |  +0 |    +10                :                       | ++-
-RF Clair Boner               26 | LF :  76      -8 :  68 | LF :  76      -8 :  68 |  +0 |          +10   +29    :          +10   +29    | *
 1B Billy Wallace             26 | RF :  77     -10 :  67 | RF :  77     -10 :  67 |  +0 |                       :                       | *
+RF Clair Boner               26 | LF :  76      -8 :  68 | LF :  76      -8 :  68 |  +0 |          +10   +29    :          +10   +29    | *
 SS Christopher Saez          28 | SS :  84      16 : 100 | SS :  84      16 : 100 |  +0 |                       :                       | *^
 3B Gary Spearman             28 | 3B :  72     -10 :  62 | 3B :  72     -10 :  62 |  +0 |                   -20 :                   -20 | *
  C Alfonso Urbano            28 |  C :  91       3 :  94 |  C :  91       3 :  94 |  +0 |             +10+10    :                       | *^
@@ -359,14 +359,14 @@ MR William Houston           28 | MR :      58     :  58 | MR :      59     :  5
 MR Harold Cochran            21 | MR :      37     :  37 | MR :      37     :  37 |  +0 |       +10 +9          -1 :       +20 +9          -1 | +
 SP Anthony Evans             24 | SP :      45     :  45 | SP :      45     :  45 |  +0 |     +9         +10       :                +10       | +-
 MR Dave Torre                24 | MR :      49     :  49 | MR :      49     :  49 |  +0 |                -10       :                -10       | +-
-MR Lonnie Prue               26 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                          | *
 MR Bertram Kelley            26 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                          :                -10       | *
+MR Lonnie Prue               26 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                          | *
 SP Andres Basabe             27 | SP :      50     :  50 | SP :      50     :  50 |  +0 |             +10          :                          | *
 MR Richard Linton            27 | MR :      39     :  39 | MR :      39     :  39 |  +0 |           +9             :           +9             | *
 MR Bernardo Paiva            29 | MR :      99     :  99 | MR :      99     :  99 |  +0 |                       -1 :                       -1 | ****^
+MR William Canales           30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                -10    +1 :                       +1 | *
 MR Claude Batson             30 | MR :      61     :  61 | MR :      61     :  61 |  +0 | -20-10                   : -20                      | *^
 MR William Patterson         30 | MR :      43     :  43 | MR :      43     :  43 |  +0 |                          :                          | *
-MR William Canales           30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                -10    +1 :                       +1 | *
 MR Florian Hernandez         35 | MR :      74     :  74 | MR :      74     :  74 |  +0 |                          :                          | **
 SP Allen Lent                37 | SP :      73     :  73 | SP :      73     :  73 |  +0 | -20                      : -20      -10   -10       | *
 MR Ernie Gunderson           33 | MR :      48     :  48 | MR :      46     :  46 |  -2 |    -10                -2 :                       -2 | *
@@ -1170,7 +1170,7 @@ RF Floyd Finley              20| CF :  66       4 -14     :  56 | CF :  81      
 1B Manuel Ortiz              25| 1B :  79     -12  -5     :  62 | 1B :  94     -12   9     :  91 |   6 |  97 | -411---- |   1           |        :        |  p516 | Halifax Highlanders  | ++++
 2B Eli Rivera                25| 2B :  76      -5  -6     :  65 | 2B :  88      -5   7     :  90 |   6 |  96 | -23----- |   6   $300k r |        :        | p1145 | Halifax Highlanders  | +++
 CL David Miller              33| MR :      79      16     :  94 |    :                     :   0 |   0 |  94 |          |      $3.82Mx2 |   $2.5M: $2.79M |  p513 | Halifax Highlanders  | ****^
-2B Alex Valderrama           20| 2B :  53      -3 -27     :  22 | 2B :  83      -3   4     :  83 |   6 |  89 | -241---- |               |        :        |  p485 | Halifax Highlanders  | ++
+2B Alex Valderrama           20| 2B :  53      -3 -28     :  22 | 2B :  83      -3   4     :  83 |   6 |  89 | -241---- |               |        :        |  p485 | Halifax Highlanders  | ++
 CF Timothy Dunkle            34| RF :  93     -11   9     :  91 |    :                     :   0 |  -2 |  89 | -2---222 |      $1.93M   |  $1.41M: $1.57M | p1039 | Halifax Highlanders  | *
 3B Alfonso Vaca              23| 3B :  69      -1  -9     :  59 | 3B :  79      -1   2     :  80 |   6 |  86 | -255---- |               |        :        |  p261 | Halifax Highlanders  | +-
  C Dwight Petrucci           33|  C :  77       7   1     :  85 |    :                     :   0 |   0 |  85 | 61------ | I             | $156.4k:$174.3k | p1897 | Halifax Highlanders  | *
@@ -1366,7 +1366,7 @@ SP Samuel Mattern            37| SP :     108      47     : 155 |    :          
 SS Mark Villalvazo           21| SS :  77      -3 -12     :  62 | SS : 107      -3  24   1 : 128 |   6 | 134 | -21-3--- |   3           |        :        |  p583 | Malibu Rum Runners   | ++++
 MR Weldon Barroso            27| MR :      97      31     : 128 |    :                     :   0 |   6 | 134 |          |       $300k a |  $4.85M:  $5.4M | p1756 | Malibu Rum Runners   | ****^
 LF Tip Saturnino             31| CF : 107       1  23   1 : 132 |    :                     :   0 |   2 | 134 | -2---554 |      $3.81M a |  $3.75M: $4.18M | p1944 | Malibu Rum Runners   | **
-2B Stefan Gibson             26| 2B :  95       5  23     : 122 | 2B :  96       5  25     : 125 |   6 | 131 | -3721--- |       $300k r |   $3.6M: $4.01M | p1633 | Malibu Rum Runners   | *^
+2B Stefan Gibson             26| 2B :  95       5  22     : 122 | 2B :  96       5  25     : 125 |   6 | 131 | -3721--- |       $300k r |  $3.44M: $3.84M | p1633 | Malibu Rum Runners   | *^
 RF Darryl Davis              32| RF : 107     -10  23     : 120 |    :                     :   0 |   1 | 121 | -1---2-3 | I    $4.23Mx3 |   $3.6M: $4.01M | p1477 | Malibu Rum Runners   | ***
 CL Jared Sowder              34| MR :      94      29     : 123 |    :                     :   0 |  -2 | 121 |          |      $3.85M e |  $4.54M: $5.06M |  p116 | Malibu Rum Runners   | ****^
  C Ronald Smalley            22|  C :  78       5   0     :  83 |  C :  89       5  15     : 109 |   6 | 115 | 51------ |   8           |        :        | p1832 | Malibu Rum Runners   | ++-
@@ -1385,7 +1385,7 @@ LF Ward Maul                 22| RF :  63     -12 -23     :  28 | LF :  92     -
 1B Pedro Cid                 29| 1B :  93     -13   7     :  88 |    :                     :   0 |   4 |  92 | -311---- |       $300k a |   $1.1M: $1.22M |  p738 | Malibu Rum Runners   | *
 2B Ira Vreeland              23| 1B :  74     -13 -12     :  48 | 2B :  92     -12   4     :  85 |   6 |  91 | -21----- |   7           |        :        | p1460 | Malibu Rum Runners   | +++
 SP Calvin McDonald           25| SP :      70       9     :  79 | SP :      76       8     :  84 |   6 |  90 |          |   4   $300k r |  $1.41M: $1.57M |  p530 | Malibu Rum Runners   | +++-
-2B Richard Adams             22| 2B :  66      -3 -14     :  48 | 2B :  83      -3   4     :  83 |   6 |  89 | -241---- |               |        :        | p1685 | Malibu Rum Runners   | ++
+2B Richard Adams             22| 2B :  66      -3 -15     :  48 | 2B :  83      -3   4     :  83 |   6 |  89 | -241---- |               |        :        | p1685 | Malibu Rum Runners   | ++
 2B Angelo Planas             28| 2B :  82      -3   2     :  81 |    :                     :   0 |   5 |  86 | -2411--- |               | $312.9k:$348.7k |  p827 | Malibu Rum Runners   | *
 MR John Watchman             34| MR :      75      13     :  88 |    :                     :   0 |  -2 |  86 |          |      $1.53M e |  $2.03M: $2.27M |  p336 | Malibu Rum Runners   | ***^
 1B Erik Sherman              23| 1B :  68     -14 -19     :  36 | 1B :  90     -14   3     :  79 |   6 |  85 | -2------ |   9           |        :        |  p379 | Malibu Rum Runners   | ++-
@@ -2240,34 +2240,34 @@ SP Dennis Hill               30| SP :      61       0     :  61 |    :          
 FBA
 Pryor ---------------+
 Syracuse Orangemen   | 104.0 104.2 108.0 |  97.7  96.5  94.1 |  82- 80 0.508 |  79- 53 0.598 |  94- 68 0.580 ( 5) 
-Boston (FBA) Ship... | 101.8 101.2 103.0 |  92.2  91.3  82.8 |  68- 94 0.421 |  76- 56 0.576 |  89- 73 0.549 ( 7) 
-Gashouse Goons       | 100.0 100.1 100.1 |  99.0  97.9  96.9 |  78- 84 0.484 |  61- 71 0.462 |  76- 86 0.469 (14) 
+Boston (FBA) Ship... | 101.8 101.2 103.0 |  92.2  91.3  82.8 |  68- 94 0.421 |  76- 56 0.576 |  89- 73 0.549 ( 8) 
+Gashouse Goons       | 100.0 100.1 100.1 |  99.0  97.9  96.9 |  78- 84 0.484 |  61- 71 0.462 |  76- 86 0.469 (15) 
 Capital City Goof... |  95.9  97.1  92.9 |  94.4  94.3  88.4 |  65- 97 0.402 |  57- 75 0.432 |  69- 93 0.426 (22) 
 Poynter -------------+
-Ashburn Aardvarks    | 102.8 104.2 106.9 | 100.4  97.3  97.6 |  84- 78 0.521 |  73- 59 0.553 |  89- 73 0.549 ( 9) 
+Ashburn Aardvarks    | 102.8 104.2 106.9 | 100.4  97.3  97.6 |  84- 78 0.521 |  73- 59 0.553 |  89- 73 0.549 ( 7) 
 New Jersey Mundys    | 103.0 103.2 106.1 |  95.5  94.8  90.0 |  77- 85 0.477 |  70- 62 0.530 |  84- 78 0.519 (11) 
-Halifax Highlanders  |  99.8  99.3  99.1 |  94.4  96.2  90.5 |  72- 90 0.445 |  63- 69 0.477 |  76- 86 0.469 (15) 
+Halifax Highlanders  |  99.8  99.3  99.1 |  94.4  96.2  90.5 |  72- 90 0.445 |  63- 69 0.477 |  76- 86 0.469 (14) 
 Plum Grove Fire Ants | 100.8  99.9 100.6 |  95.4  93.3  88.3 |  71- 91 0.441 |  62- 70 0.470 |  75- 87 0.463 (16) 
 Gofannon ------------+
 Malibu Rum Runners   | 100.5 100.9 101.4 | 108.8 110.6 118.3 |  96- 66 0.590 |  77- 55 0.583 |  95- 67 0.586 ( 4) 
-Pontiac Firebirds    | 103.8 103.7 107.4 |  92.2  92.1  83.7 |  72- 90 0.447 |  59- 73 0.447 |  72- 90 0.444 (18) 
 Bay City Bluebirds   |  96.9  95.7  92.4 |  91.8  91.9  83.1 |  60-102 0.371 |  61- 71 0.462 |  72- 90 0.444 (19) 
+Pontiac Firebirds    | 103.8 103.7 107.4 |  92.2  92.1  83.7 |  72- 90 0.447 |  59- 73 0.447 |  72- 90 0.444 (18) 
 Troy Haymakers       |  91.9  90.8  82.0 | 107.4 105.2 112.3 |  74- 88 0.459 |  54- 78 0.409 |  68- 94 0.420 (23) 
 
 UBA
 Fowler --------------+
-Wisconsin Cheetahs   | 108.4 110.7 118.0 | 103.4 106.2 109.2 | 101- 61 0.624 |  83- 49 0.629 | 102- 60 0.630 ( 2) 
+Wisconsin Cheetahs   | 108.4 110.7 118.0 | 103.4 106.2 109.2 | 101- 61 0.624 |  83- 49 0.629 | 102- 60 0.630 ( 3) 
 Lynchburg Distillers |  95.4  96.7  92.0 |  95.1  94.4  89.2 |  65- 97 0.403 |  66- 66 0.500 |  78- 84 0.481 (13) 
 Minnesota Axmen      |  93.2  93.5  86.3 | 110.6 110.6 120.0 |  84- 78 0.517 |  57- 75 0.432 |  73- 89 0.451 (17) 
 Northeastern Blac... |  95.7  98.5  94.2 |  96.8  91.4  87.5 |  66- 96 0.405 |  46- 86 0.348 |  58-104 0.358 (26) 
 McCarthey -----------+
 Penn Quakers         |  98.3 101.2  99.5 | 106.3 112.5 117.3 |  93- 69 0.577 |  92- 40 0.697 | 109- 53 0.673 ( 1) 
 Boston (UBA) Pilg... | 103.4 103.3 106.6 | 112.5 114.6 124.9 | 104- 58 0.639 |  72- 60 0.545 |  91- 71 0.562 ( 6) 
-Toledo Mudhens       | 106.3 103.8 109.9 | 101.2 106.3 107.1 |  94- 68 0.581 |  72- 60 0.545 |  89- 73 0.549 ( 8) 
+Toledo Mudhens       | 106.3 103.8 109.9 | 101.2 106.3 107.1 |  94- 68 0.581 |  72- 60 0.545 |  89- 73 0.549 ( 9) 
 Longport Bluefish    |  96.2  94.4  90.3 | 102.0 102.8 104.8 |  77- 85 0.472 |  70- 62 0.530 |  84- 78 0.519 (12) 
 Manchester Red De... | 101.3 103.6 104.8 |  87.4  89.0  75.5 |  62-100 0.385 |  51- 81 0.386 |  63- 99 0.389 (24) 
 Rutherford ----------+
-Pittsburgh Beacons   | 107.3 106.3 113.2 | 117.3 116.5 130.7 | 111- 51 0.687 |  81- 51 0.614 | 102- 60 0.630 ( 3) 
+Pittsburgh Beacons   | 107.3 106.3 113.2 | 117.3 116.5 130.7 | 111- 51 0.687 |  81- 51 0.614 | 102- 60 0.630 ( 2) 
 Columbus Cows        | 103.0 101.7 104.7 |  99.1  98.9  98.0 |  83- 79 0.513 |  72- 60 0.545 |  87- 75 0.537 (10) 
 West Texas Tumble... |  93.9  91.9  85.1 |  96.5  96.8  93.2 |  63- 99 0.386 |  59- 73 0.447 |  71- 91 0.438 (20) 
 Coney Island Cycl... |  98.6  97.3  95.8 | 108.7 108.9 116.7 |  90- 72 0.556 |  53- 79 0.402 |  70- 92 0.432 (21) 
