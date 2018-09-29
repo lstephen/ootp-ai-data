@@ -52,11 +52,11 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: IsotonicScores: [(0.036658047450906693, RandomForest(...)), (0.0090088411694387496, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 21.   1.   4.   0.   0.]Feature Mask: [ True False False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.012723065081535498, RandomForest(...)), (-0.014775691672719046, Isotonic(...))]Best Parameters: {'regressor__max_depth': 2, 'regressor__n_estimators': 64, 'selection__k': 5}Feature Scores: [ 13.   0.   2.   4.   1.]Feature Mask: [ True  True  True  True  True]Feature Importances: [ 0.207  0.232  0.236  0.234  0.091]
+Selected: RandomForestScores: [(-0.012723065081535498, RandomForest(...)), (-0.014775691672719046, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 64, 'regressor__max_depth': 2, 'selection__k': 5}Feature Scores: [ 13.   0.   2.   4.   1.]Feature Mask: [ True  True  True  True  True]Feature Importances: [ 0.207  0.232  0.236  0.234  0.091]
 -- HomeRuns
 Selected: IsotonicScores: [(0.092398867660164405, RandomForest(...)), (0.085623586417333211, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  1.   0.  39.   1.   1.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.12445213604683709, RandomForest(...)), (0.11720018235682998, Isotonic(...))]Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 3, 'regressor__max_depth': 13}Feature Scores: [  0.  53.   0.   4.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.146  0.64   0.174  0.04 ]
+Selected: RandomForestScores: [(0.12445213604683709, RandomForest(...)), (0.11720018235682998, Isotonic(...))]Best Parameters: {'regressor__max_depth': 13, 'selection__k': 4, 'regressor__n_estimators': 3}Feature Scores: [  0.  53.   0.   4.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.146  0.64   0.174  0.04 ]
 -- Ks
 Selected: IsotonicScores: [(0.32897062864391191, RandomForest(...)), (0.30947281763148399, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 176.    2.    5.   10.    3.]Feature Mask: [ True False False False False]
 
@@ -211,17 +211,17 @@ Balance:57/41 = 1.390 (ideal: 1.273)
  AAA -> AA   SP Hank Carvajal
  AAA -> AA   SS James Williams
  AAA -> DL   SP Herman Oropesa
-  AA -> AAA  MR Daniel Elizondo
-  AA -> AAA   C Taylor Brighton
   AA -> AAA  SP Robert Burnell
+  AA -> AAA   C Taylor Brighton
+  AA -> AAA  MR Daniel Elizondo
   AA -> A    MR Freddy Cancio
    A -> AA   SP Wilber McMillin
 
 SP
-Roman Macias
 Michael Bergmann
-Gary Cobbins
+Roman Macias
 Zachary Pietrzak
+Gary Cobbins
 Benito Medina
 
 LR
@@ -360,8 +360,8 @@ RF Calvin Jarnagin           29 | CF :  91      -2 :  89 | CF :  93      -3 :  9
 SS James Williams            26 | SS :  83      10 :  93 | SS :  84      10 :  94 |  +1 |  +5 +4       -2    :  +3 +4       -2    | *
  C Donald Blakes             32 |  C : 109      13 : 122 |  C : 110      13 : 123 |  +1 |  -4 -2 +7 +3 -3    :  -4 +3 +7 +2 -3    | ***^
 2B Hollis Raglin             19 | 3B :  82      -4 :  78 | 3B :  85      -6 :  79 |  +1 |  +3 +2    +2 +6    :  +2 +2    +2 +6    | ++++
-3B Seve Guadalupe            24 | 3B :  92      -1 :  91 | 3B :  92      -1 :  91 |  +0 |  -1 -4       -6    :  -2 -4       -6    | +++-
 3B Alex Alfano               24 | SS :  92      -1 :  91 | SS :  92      -1 :  91 |  +0 |  -1   +12 +5 +1    :  -1   +12 +4 +1    | +++++
+3B Seve Guadalupe            24 | 3B :  92      -1 :  91 | 3B :  92      -1 :  91 |  +0 |  -1 -4       -6    :  -2 -4       -6    | +++-
  C Nicholas Au               24 |  C :  71      12 :  83 |  C :  71      12 :  83 |  +0 |     +2 +3 +2       :     +2 +3 +2       | ++
 3B Eric Witherspoon          25 | SS :  82       6 :  88 | SS :  82       6 :  88 |  +0 |  -1          +1    :  -1          +1    | ++-
 RF Oscar Irving              26 | RF :  88     -14 :  74 | RF :  88     -14 :  74 |  +0 |  +2          +1    :  +2          +1    | *
@@ -393,10 +393,10 @@ MR Gabriel Jimenez           21 | MR :      41     :  41 | MR :      41     :  4
 SP Robert Burnell            23 | SP :      65     :  65 | SP :      65     :  65 |  +0 |  -1             :  -1             | +++
 SP Hank Carvajal             25 | SP :      63     :  63 | SP :      63     :  63 |  +0 |  +3 +1          :  +3 +1          | ++-
 MR Ronald Diep               29 | MR :     101     : 101 | MR :     101     : 101 |  +0 |                 :                 | ****
-MR Daniel Dickerson          30 | SP :      88     :  88 | SP :      88     :  88 |  +0 |        +2       :        +2       | ***
 SP Zachary Pietrzak          30 | SP :      95     :  95 | SP :      95     :  95 |  +0 |  -2 +1 +2       :  -3 +2 +3       | **^
-MR Ryan Loya                 31 | MR :      87     :  87 | MR :      87     :  87 |  +0 |  -1             :                 | *
+MR Daniel Dickerson          30 | SP :      88     :  88 | SP :      88     :  88 |  +0 |        +2       :        +2       | ***
 MR Wallace Bowman            31 | MR :      83     :  83 | MR :      83     :  83 |  +0 |  -1    +2       :  -1    +2       | ***
+MR Ryan Loya                 31 | MR :      87     :  87 | MR :      87     :  87 |  +0 |  -1             :                 | *
 MR Adan Lucero               22 | MR :      45     :  45 | MR :      44     :  44 |  -1 |  +5 -1          :  +5 -1          | ++++
 SP Benito Medina             27 | SP :      94     :  94 | SP :      93     :  93 |  -1 |        +6       :        +5       | **^
 SP Lenny Garrett             29 | SP :      86     :  86 | SP :      82     :  82 |  -4 |     +1          :     +1          | **
@@ -422,8 +422,8 @@ Stuff, Control, Movement, Groundball Pct., Endurance
 MR Raymond Taylor            22 | MR :      34     :  34 | MR :      38     :  38 |  +4 |  +6 +9+24       :  +7 +9+24       | ++++-
 SP Joseph Stegner            19 | SP :      40     :  40 | SP :      44     :  44 |  +4 |  +4 +1+11       :  +5 +1+11       | +++
 SP Oscar Caudillo            21 | SP :      38     :  38 | SP :      42     :  42 |  +4 |  +2 -1 +3       :  +2 -1 +3       | +-
-SP Steven Gay                18 | SP :      37     :  37 | SP :      37     :  37 |  +0 | +15 +8+19       : +14 +8+19       | ++
 SP David Gilpin              18 | SP :      39     :  39 | SP :      39     :  39 |  +0 |  -1 +1          :     +1 +1       | ++-
+SP Steven Gay                18 | SP :      37     :  37 | SP :      37     :  37 |  +0 | +15 +8+19       : +14 +8+19       | ++
 MR Stew Shuler               19 | MR :      36     :  36 | MR :      36     :  36 |  +0 |  -2 +1 +5       :  -1 +1 +6       | +-
 SP Wilber McMillin           22 | SP :      39     :  39 | SP :      39     :  39 |  +0 |        +2       :        +2       | ++
 MR Lee Philson               22 | MR :      36     :  36 | MR :      36     :  36 |  +0 |  +2 +2 +5       :  +1 +2          | +++++
@@ -871,8 +871,8 @@ CATCHER
  4 | Scott, I         106  -8  98 | Scott, I         106  -8  98 | Loranger, D       88  10  98
  5 | Eizan, T          88   7  95 | Brighton, T       89   6  95 | Eizan, T          88   7  95
  6 | Brighton, T       86   6  92 | Eizan, T          87   7  94 | Brighton, T       86   6  92
- 7 | Washington, E    121 -35  86 | Au, N             80  12  92 | Washington, E    123 -35  88
- 8 | Au, N             71  12  83 | Kitts, P          84   8  92 | Cutlip, L         80   2  82
+ 7 | Washington, E    121 -35  86 | Kitts, P          84   8  92 | Washington, E    123 -35  88
+ 8 | Au, N             71  12  83 | Au, N             80  12  92 | Cutlip, L         80   2  82
  9 | Cutlip, L         80   2  82 | Goodridge, J     125 -35  90 | Au, N             70  12  82
 10 | Kitts, P          74   8  82 | Cutlip, L         81   2  83 | Kitts, P          72   8  80
 
@@ -1095,7 +1095,7 @@ LF Arturo Rivas              25| LF :  91      -8   0     :  83 | LF :  93      
 MR Elmer Pettigrew           28| MR :      81       4     :  86 |    :                     :   0 |   5 |  91 |          |       $811.4k a |  $2.02M:  $2.2M |  p317 | Brooklyn Dodgers     | ***^
  C Fede Calleja              20|  C :  79       5 -15     :  68 |  C :  84       5  -4     :  84 |   6 |  90 | 73242--- |                 |        :        | p1971 | Brooklyn Dodgers     | +++
 MR Dale Phillips             28| SP :      85       0     :  85 |    :                     :   0 |   5 |  90 |          |    +    $550k a |        :        |  p910 | Brooklyn Dodgers     | *^
-1B Larry Sanders             28| 2B :  97     -10  -3     :  85 |    :                     :   0 |   5 |  90 | -651---- |         $550k a |        :        |  p740 | Brooklyn Dodgers     | *^
+1B Larry Sanders             28| 2B :  97     -10  -2     :  85 |    :                     :   0 |   5 |  90 | -651---- |         $550k a |        :        |  p740 | Brooklyn Dodgers     | *^
 LF Glenn Chancey             24| LF :  98     -18  -3     :  77 | LF : 101     -18  -2     :  82 |   6 |  88 | -2---312 |   3     $500k r |        :        | p2115 | Brooklyn Dodgers     | +++++
  C James Howell              32|  C :  86       5  -8     :  84 |    :                     :   0 |   1 |  85 | 71------ |  F +      $1M   |        :        | p1120 | Brooklyn Dodgers     | *
 MR Leigh Gil                 36| SP :      90       5     :  94 |    :                     :   0 | -12 |  82 |          |        $6.55Mx2 |  $2.53M: $2.75M |  p873 | Brooklyn Dodgers     | ***
@@ -1398,7 +1398,7 @@ SS Henry Fuster              23| 2B :  84      -2  -7     :  75 | 3B :  93      
 SS Gary Mass                 34| CF :  98      -2   6     : 102 |    :                     :   0 |  -2 | 100 | -8776686 |  F +      $2M   |  $3.03M: $3.29M | p1052 | Montreal Expos       | **^
 SS Merlin Sandoval           23| SS :  72       6 -22     :  56 | SS :  87       6   0     :  93 |   6 |  99 | -3338--- |                 |        :        |  p333 | Montreal Expos       | ++-
 LF Sherman Trejo             22| CF :  81      -6 -15     :  60 | CF :  96      -6   2     :  92 |   6 |  98 | -2---666 | I               |        :        | p1931 | Montreal Expos       | ++++
-2B Maels Aguilar             23| 2B :  92      -7  -5     :  81 | 2B :  97      -7   2     :  92 |   6 |  98 | -261---- |                 |        :        | p2232 | Montreal Expos       | ++++
+2B Maels Aguilar             23| 2B :  92      -7  -4     :  81 | 2B :  97      -7   2     :  92 |   6 |  98 | -261---- |                 |        :        | p2232 | Montreal Expos       | ++++
 3B Asa Kelemen               31| 3B :  97      -1   0     :  96 |    :                     :   0 |   2 |  98 | -9585415 |  F +    $500k   |        :        |  p941 | Montreal Expos       | *
 2B Daryl Swiger              24| 2B :  93      -8  -4     :  81 | 2B :  97      -8   1     :  91 |   6 |  97 | -261---- |                 |        :        | p1561 | Montreal Expos       | ++++-
 RF Lawrence Sauter           30| CF :  92       0   1     :  93 |    :                     :   0 |   3 |  96 | -2---888 |    +      $1Mx2 | $505.5k:$549.1k | p1696 | Montreal Expos       | *
@@ -1445,7 +1445,7 @@ CF Sabas Delapena            25| LF : 115     -13  19   3 : 125 | LF : 115     -
 SP Adrian Bengoa             26| SP :     100      15   2 : 117 | SP :     102      16     : 118 |   6 | 124 |          |        $2.66M a |  $8.59M: $9.33M |  p392 | San Francisco Giants | ***
 SP James Carter              24| SP :     100      15   2 : 117 | SP :      99      13     : 113 |   6 | 123 |          |         $500k a |  $8.59M: $9.33M |   p45 | San Francisco Giants | **^
 1B Bobby Rollins             28| LF : 118     -19  17   1 : 117 |    :                     :   0 |   5 | 122 | -4---3-1 |        $3.63M a |  $8.59M: $9.33M | p1804 | San Francisco Giants | ***^
-3B Lance Thomas              22| 3B : 105     -10  -1     :  95 | 3B : 111     -10  10     : 112 |   6 | 118 | -6252--- |   1     $500k r |        :        | p1613 | San Francisco Giants | +++++
+3B Lance Thomas              22| 3B : 105     -10   0     :  95 | 3B : 111     -10  10     : 112 |   6 | 118 | -6252--- |   1     $500k r |        :        | p1613 | San Francisco Giants | +++++
 MR Ricky Flores              27| MR :      95      16     : 112 |    :                     :   0 |   6 | 118 |          |       $811.4k a |  $8.09M: $8.79M |  p225 | San Francisco Giants | *^
 RF Robin Bandy               27| RF : 107     -11  14     : 110 |    :                     :   0 |   6 | 116 | -2---357 |        $2.31M a |  $7.08M: $7.69M |  p407 | San Francisco Giants | ***
 SS Bradly Doty               31| 2B : 103      -2  12     : 113 |    :                     :   0 |   2 | 115 | -3876--- |  F      $3.5M   |  $6.07M: $6.59M |  p476 | San Francisco Giants | ***
@@ -1463,7 +1463,7 @@ SP Jason Billie              34| SP :      90       5     :  96 |    :          
 SS Louis Lozada              33| SS :  95       0  -4     :  91 |    :                     :   0 |   0 |  91 | -3646--- |  F      $1.5M   |        :        |  p418 | San Francisco Giants | **^
 LF Gary Ishmael              20| LF :  57     -11 -37     :  10 | LF :  95     -11   0     :  84 |   6 |  90 | -2---722 |                 |        :        | p1597 | San Francisco Giants | +++
 3B Bryan Tipps               20| 3B :  62      -7 -41     :  15 | 3B :  94      -7  -4     :  84 |   6 |  90 | -3363--- |                 |        :        |   p87 | San Francisco Giants | ++
-2B Luis Alvarado             21| 2B :  66      -4 -28     :  35 | 2B :  89      -4  -3     :  82 |   6 |  88 | -2721--- |                 |        :        |  p128 | San Francisco Giants | +++-
+2B Luis Alvarado             21| 2B :  66      -4 -27     :  35 | 2B :  89      -4  -3     :  82 |   6 |  88 | -2721--- |                 |        :        |  p128 | San Francisco Giants | +++-
 3B Raul Rivera               30| 2B : 102     -15  -2     :  85 |    :                     :   0 |   3 |  88 | -334-3-- |  F     $2.25M   |        :        |  p997 | San Francisco Giants | **^
 MR William Ponder            31| SP :      85       0     :  85 |    :                     :   0 |   2 |  87 |          |    +    $550k a |        :        | p1306 | San Francisco Giants | *^
  C Joseph Parman             30|  C :  93      -3  -9     :  81 |    :                     :   0 |   3 |  84 | 53---3-3 |    +            |        :        | p1231 | San Francisco Giants | *
@@ -1582,7 +1582,7 @@ RF Joseph Southerland        19| RF :  44     -11 -50     : -17 | RF :  87     -
 CF Jonathan Quijada          20| CF :  55      -6 -41     :   8 | CF :  84      -6 -11     :  67 |   6 |  73 | -2---262 | I               |        :        | p1661 | Cincinnati Reds      | ++
 MR Samuel Brown              22| MR :      67      -7     :  60 | MR :      73      -7     :  65 |   6 |  71 |          |                 |        :        | p1757 | Cincinnati Reds      | +++++
  C Tony Knox                 24|  C :  75      -6 -30     :  38 |  C :  85      -6 -14     :  65 |   6 |  71 | 51------ |                 |        :        |  p330 | Cincinnati Reds      | ++
-3B Richard Brooks            20| 3B :  50      -7 -53     :  -9 | 3B :  84      -7 -14     :  64 |   6 |  70 | -3363--- |                 |        :        | p1917 | Cincinnati Reds      | ++
+3B Richard Brooks            20| 3B :  50      -7 -52     :  -9 | 3B :  84      -7 -14     :  64 |   6 |  70 | -3363--- |                 |        :        | p1917 | Cincinnati Reds      | ++
 SP Peter Maya                20| MR :      38     -33     :   5 | SP :      75     -11     :  64 |   6 |  70 |          |                 |        :        |  p702 | Cincinnati Reds      | +++
 MR Bernard Loera             21| MR :      42     -30     :  12 | MR :      72      -8     :  64 |   6 |  70 |          |                 |        :        | p1047 | Cincinnati Reds      | +++++
 2B Kevin Duran               21| 2B :  56     -14 -48     :  -6 | 2B :  88     -14 -14     :  60 |   6 |  66 | -23----- |                 |        :        |  p674 | Cincinnati Reds      | ++
@@ -1737,7 +1737,7 @@ LF Alberto Vivar             27| LF :  93      -8   2     :  87 |    :          
 SP Howard Powell             24| SP :      68     -17     :  51 | SP :      86       0     :  85 |   6 |  91 |          |   3             |        :        |  p537 | Boston Red Sox       | +++++
 2B Bryan Athey               19| 2B :  68      -5 -27     :  36 | 2B :  91      -5  -2     :  84 |   6 |  90 | -3625--- |                 |        :        | p1017 | Boston Red Sox       | +++-
  C Kendry Olivarez           21|  C :  69      -3 -33     :  34 |  C :  91      -3  -5     :  84 |   6 |  90 | 56---1-1 |                 |        :        |   p44 | Boston Red Sox       | ++-
-2B Hipolito Hurtado          24| 3B :  87      -3 -12     :  73 | 3B :  90      -3  -4     :  84 |   6 |  90 | -4573--- |                 |        :        |  p673 | Boston Red Sox       | +++
+2B Hipolito Hurtado          24| 3B :  87      -3 -11     :  73 | 3B :  90      -3  -4     :  84 |   6 |  90 | -4573--- |                 |        :        |  p673 | Boston Red Sox       | +++
  C Arthur Minnick            19|  C :  60       4 -35     :  29 |  C :  84       4  -5     :  83 |   6 |  89 | 73352--- |                 |        :        |  p614 | Boston Red Sox       | +-
 RF Irving Murguia            24| CF :  78      -2 -15     :  61 | CF :  88      -2  -3     :  83 |   6 |  89 | -2---878 |   T             |        :        | p1264 | Boston Red Sox       | +++++
 SP Reinaldo Heredia          27| SP :      84      -1     :  83 |    :                     :   0 |   6 |  89 |          |     ~     $5M r |        :        | p1872 | Boston Red Sox       | *^
@@ -1910,7 +1910,7 @@ American League
 East ----------------+
 St. Louis (C) Car... | 103.8 103.1 106.9 | 100.5  99.0  99.4 |  86- 76 0.530 |  72- 55 0.567 |  91- 71 0.562 ( 4) 
 Brooklyn Dodgers     |  98.1  99.7  97.8 | 103.2 104.2 107.2 |  85- 77 0.524 |  65- 62 0.512 |  83- 79 0.512 ( 7) 
-Philadelphia A's     |  98.9  96.9  95.7 | 101.5  98.3  99.8 |  77- 85 0.477 |  64- 63 0.504 |  81- 81 0.500 ( 8) 
+Philadelphia A's     |  98.9  96.9  95.7 | 101.5  98.3  99.8 |  77- 85 0.477 |  64- 63 0.504 |  81- 81 0.500 ( 9) 
 Colorado Rockies     |  98.1  97.8  95.8 |  95.9  94.3  89.9 |  69- 93 0.425 |  57- 70 0.449 |  72- 90 0.444 (13) 
 West ----------------+
 San Francisco Giants |  99.6  99.4  99.0 | 101.8 103.9 105.6 |  85- 77 0.522 |  77- 50 0.606 |  95- 67 0.586 ( 2) 
@@ -1926,7 +1926,7 @@ Chicago Cubs         |  98.1  97.4  95.4 | 103.2 106.1 108.9 |  84- 78 0.519 |  
 New York Mets        |  96.9  96.8  93.6 |  99.2 102.2 101.4 |  77- 85 0.474 |  49- 78 0.386 |  66- 96 0.407 (15) 
 West ----------------+
 Houston Astros       | 106.7 106.0 112.4 | 105.8 103.0 108.7 |  97- 65 0.599 |  66- 61 0.520 |  87- 75 0.537 ( 5) 
-Kansas City Royals   |  99.6  98.8  98.5 |  97.1  94.8  91.6 |  73- 89 0.449 |  65- 62 0.512 |  81- 81 0.500 ( 9) 
+Kansas City Royals   |  99.6  98.8  98.5 |  97.1  94.8  91.6 |  73- 89 0.449 |  65- 62 0.512 |  81- 81 0.500 ( 8) 
 Boston Red Sox       | 101.2 100.1 101.3 | 106.4 106.6 112.5 |  92- 70 0.565 |  57- 70 0.449 |  77- 85 0.475 (10) 
 Seattle Pilots       | 100.6 100.1 100.7 | 104.4 101.9 106.3 |  87- 75 0.534 |  57- 70 0.449 |  76- 86 0.469 (11) 
                      |             100.8 |              89.1 |
@@ -1976,7 +1976,7 @@ CF Alan Prout                21| RF :  85      -6  -4     :  75 | CF :  95      
 SS Merlin Sandoval           23| SS :  72       6 -22     :  56 | SS :  87       6   0     :  93 |   6 |  99 | -3338--- |                 |        :        |  p333 | Montreal Expos       | ++-
 RF Andres Aguilar            22| RF :  93     -17  -6     :  70 | RF : 105     -17   4     :  92 |   6 |  98 | -2---324 |                 |        :        |  p607 | Philadelphia A's     | ++++
 LF Sherman Trejo             22| CF :  81      -6 -15     :  60 | CF :  96      -6   2     :  92 |   6 |  98 | -2---666 | I               |        :        | p1931 | Montreal Expos       | ++++
-2B Maels Aguilar             23| 2B :  92      -7  -5     :  81 | 2B :  97      -7   2     :  92 |   6 |  98 | -261---- |                 |        :        | p2232 | Montreal Expos       | ++++
+2B Maels Aguilar             23| 2B :  92      -7  -4     :  81 | 2B :  97      -7   2     :  92 |   6 |  98 | -261---- |                 |        :        | p2232 | Montreal Expos       | ++++
 LF Rodolfo Tabares           23| LF :  91      -7   1     :  84 | LF :  96      -7   4     :  92 |   6 |  98 | -2---939 |                 | $505.5k:$549.1k |  p818 | Philadelphia A's     | ++++
  C Jeffrey Watlington        23|  C :  94      -3  -8     :  84 |  C :  95      -3  -1     :  92 |   6 |  98 | 55------ |                 |        :        | p1999 | St. Louis (B) Browns | +++
  C Avelino Herrera           24|  C :  91      -1  -8     :  82 |  C :  93      -1   0     :  92 |   6 |  98 | 61------ |                 |        :        | p1235 | Boston Red Sox       | +++-
