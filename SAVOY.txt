@@ -37,7 +37,7 @@ Selected: IsotonicScores: [(0.1190061041898854, RandomForest(...)), (0.130182132
 -- Triples
 Selected: IsotonicScores: [(0.018247060241358099, RandomForest(...)), (0.027372491462511712, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  6.   1.   1.   1.   2.   3.  10.]Feature Mask: [False False False False False False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.20192929075492952, RandomForest(...)), (0.19788872637843921, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 79, 'regressor__max_depth': 9, 'selection__k': 3}Feature Scores: [ 23.   7.   1.  95.   7.  10.   5.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.107  0.8    0.093]
+Selected: RandomForestScores: [(0.20192929075492952, RandomForest(...)), (0.19788872637843921, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 79, 'selection__k': 3, 'regressor__max_depth': 9}Feature Scores: [ 23.   7.   1.  95.   7.  10.   5.]Feature Mask: [ True False False  True False  True False]Feature Importances: [ 0.107  0.8    0.093]
 -- Walks
 Selected: IsotonicScores: [(0.29505774346451935, RandomForest(...)), (0.30338998338924222, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  26.    0.    1.   27.  237.   14.    3.]Feature Mask: [False False False False  True False False]
 -- Ks
@@ -56,7 +56,7 @@ Selected: IsotonicScores: [(0.10486722803460798, RandomForest(...)), (0.11953447
 -- HomeRuns
 Selected: IsotonicScores: [(0.13563953385297808, RandomForest(...)), (0.10330246776084073, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 12.   4.   0.  27.   2.   4.   2.   0.]Feature Mask: [False False False  True False False False False]
 -- Walks
-Selected: RandomForestScores: [(0.29240800908988435, RandomForest(...)), (0.27724071182765531, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 49, 'regressor__n_estimators': 2}Feature Scores: [   5.   14.   11.    6.  124.    2.    7.    9.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.187  0.813]
+Selected: RandomForestScores: [(0.29240800908988435, RandomForest(...)), (0.27724071182765531, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 2}Feature Scores: [   5.   14.   11.    6.  124.    2.    7.    9.]Feature Mask: [False  True False False  True False False False]Feature Importances: [ 0.187  0.813]
 -- Ks
 Selected: IsotonicScores: [(0.2764605845728641, RandomForest(...)), (0.28108350371041785, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [  63.   97.    7.    1.    6.  142.    1.    4.]Feature Mask: [False False False False False  True False False]
 
@@ -130,9 +130,9 @@ SP Magdaleno, G        ML 28 | 11.2  3.8  2.0  0.8 |  59  55 |  90 100 |  + |  7
 MR Hernandez, F    F   ML 36 | 11.0  4.7  2.9  0.6 |  77  54 |  86 129 | ++ |  55/ 72 ||  72 ||
 SP Lent, A         F   ML 37 | 10.8  4.2  3.0  1.4 |  88 173 |  69  85 |    |  72/ 63 ||  72 ||
 SP George, T           ML 36 | 11.0  5.2  5.1  0.5 |  65  66 |  80 139 |    |  71/ 66 ||  71 ||
+MR Estrada, S          ML 26 | 11.0  2.8  2.8  1.4 |  72  46 |  72  90 |  + |  35/ 62 ||  62 ||
 SP Hill, D            AAA 31 | 12.0  3.0  5.7  0.4 |  64     |  64     |  + |  62/ 55 ||  62 ||
 SP Hardage, R         AAA 33 | 12.0  4.4  5.7  0.8 |  64     |  64     |  + |  62/ 55 ||  62 ||
-MR Estrada, S          ML 26 | 11.0  2.8  2.8  1.4 |  72  46 |  72  90 |  + |  35/ 62 ||  62 ||
 MR Batson, C           ML 30 | 11.5  4.5  4.8  0.4 | 101     |  64     |  + |  47/ 61 ||  61 ||
 MR Knop, M          5 AAA 24 | 12.4  6.0  3.3  1.0 | 105 109 |  61  65 |  + |  60/ 59 ||  60 ||
 SP Jimenez, A         AAA 33 | 11.8  3.3  5.0  1.7 |  54     |  59     |  - |  58/ 50 ||  58 ||
@@ -141,11 +141,11 @@ MR Canales, W         AAA 30 | 11.5  5.2  4.8  1.5 |  82  57 |  59  24 |  - |  3
 MR Torre, D            AA 24 | 13.4  2.9  3.0  1.5 |  46     |  64     |    |  39/ 51 ||  51 ||
 MR Kelley, B           AA 26 | 12.5  3.0  5.5  0.9 |  46     |  60     |  - |  15/ 49 ||  49 ||
 MR Fontanals, J    F   AA 38 | 13.8  3.1  5.7  0.3 |  57  46 |  57  38 |  + |  28/ 49 ||  49 ||
-SP Basabe, A          AAA 27 | 14.0  3.2  5.7  1.7 |  59     |  46     | ++ |  48/ 42 ||  48 ||
 MR Peña, A              A 24 | 12.5  3.3  5.5  1.2 |  44     |  60     | ++ |  27/ 48 ||  48 ||
+SP Basabe, A          AAA 27 | 14.0  3.2  5.7  1.7 |  59     |  46     | ++ |  48/ 42 ||  48 ||
 MR Gunderson, E        AA 33 | 14.2  3.2  5.7  0.5 |  53     |  51     |    |  14/ 45 ||  45 ||
-MR Patterson, W        AA 30 | 12.4  4.4  5.5  2.0 |  44     |  54     |  + |  14/ 44 ||  44 ||
 SP Clark, R             A 23 | 14.6  3.3  5.8  1.1 |  49     |  46     |  + |  44/ 41 ||  44 ||
+MR Patterson, W        AA 30 | 12.4  4.4  5.5  2.0 |  44     |  54     |  + |  14/ 44 ||  44 ||
 SP Cybulski Jr., C  8   A 21 | 14.6  3.6  5.8  2.5 |  43     |  43     |  + |  43/ 37 ||  43 ||
 SP Berrios, G           A 19 | 14.6  3.2  5.8  1.8 |  46     |  46     |  + |  43/ 40 ||  43 ||
 SP Evans, A             A 24 | 14.5  3.5  5.8  1.8 |  47     |  46     |    |  43/ 40 ||  43 ||
@@ -185,23 +185,23 @@ Balance:39/30 = 1.300 (ideal: 1.273)
   ML -> AAA  MR Mark Knop
   ML -> AAA  CF Jose Villas
   ML -> AA   MR Juan Fontanals
+ AAA -> ML   3B Shelby Inman
  AAA -> ML   MR Claude Batson
  AAA -> ML   SS Gary Montelongo
- AAA -> ML   3B Shelby Inman
  AAA -> AA   CF Juan Aguirre
- AAA -> AA   1B Billy Wallace
  AAA -> AA    C Scott Carroll
- AAA -> A    CF Jason Ide
+ AAA -> AA   1B Billy Wallace
  AAA -> A    LF Bernardo Sol
  AAA -> A     C Rey Pape
+ AAA -> A    CF Jason Ide
   AA -> AAA  SS Galen Hulett
-  AA -> AAA  3B Ronnie Daniell
   AA -> AAA  3B Stephen Fort
+  AA -> AAA  3B Ronnie Daniell
   AA -> A    SP Anthony Evans
-   A -> AAA   C George Ingram
    A -> AAA  2B Telmo Freire
-   A -> AA   3B Abel Pelaez
+   A -> AAA   C George Ingram
    A -> AA   MR Dave Torre
+   A -> AA   3B Abel Pelaez
 
 SP
 Mickey Tussler
@@ -333,8 +333,8 @@ CF Jason Ide                 23 | CF :  77       0 :  77 | CF :  78       0 :  7
 2B Michael Marsh             25 | 2B :  69      -9 :  60 | 2B :  70      -9 :  61 |  +1 |    +10 -9             :    +10 -9             | +
 1B Bernardo Pelayo           27 | 1B :  82     -12 :  70 | 1B :  83     -12 :  71 |  +1 |                   +20 :                   +20 | *
  C Alfonso Urbano            28 |  C :  90       3 :  93 |  C :  91       3 :  94 |  +1 |             +10+10    :                       | *^
-CF Juan Aguirre              29 | CF :  68      -4 :  64 | CF :  69      -4 :  65 |  +1 | +10                   :                       | *
  C Scott Carroll             29 |  C :  72       5 :  77 |  C :  73       5 :  78 |  +1 |             +10       :             +10       | *
+CF Juan Aguirre              29 | CF :  68      -4 :  64 | CF :  69      -4 :  65 |  +1 | +10                   :                       | *
 RF Robert Burling            20 | RF :  64      -5 :  59 | RF :  64      -5 :  59 |  +0 |                +10    :                +10    | ++
 SS Galen Hulett              24 | SS :  73      11 :  84 | SS :  73      11 :  84 |  +0 |                +19    :                +19    | ++
 3B Stephen Fort              25 | 3B :  82     -11 :  71 | 3B :  82     -11 :  71 |  +0 |    +10                :                       | ++-
@@ -359,15 +359,15 @@ SP Robert Clark              23 | SP :      41     :  41 | SP :      44     :  4
 MR Richard Linton            27 | MR :      37     :  37 | MR :      40     :  40 |  +3 |          +19             :     +9   +19             | *
 MR William Patterson         30 | MR :      42     :  42 | MR :      44     :  44 |  +2 |                          :          +10             | *
 MR Harold Cochran            21 | MR :      35     :  35 | MR :      36     :  36 |  +1 |       +10 +9             :       +20 +9             | +
-SP Anthony Evans             24 | SP :      43     :  43 | SP :      43     :  43 |  +0 |     +9         +10       :                +10       | +-
 MR Dave Torre                24 | MR :      51     :  51 | MR :      51     :  51 |  +0 |                -10       :                -10       | +-
-MR Lonnie Prue               26 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | *
+SP Anthony Evans             24 | SP :      43     :  43 | SP :      43     :  43 |  +0 |     +9         +10       :                +10       | +-
 MR Bertram Kelley            26 | MR :      49     :  49 | MR :      49     :  49 |  +0 |                          :                -10       | *
+MR Lonnie Prue               26 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | *
 SP Andres Basabe             27 | SP :      48     :  48 | SP :      48     :  48 |  +0 |             +10          :                          | *
 MR William Houston           28 | MR :      56     :  56 | MR :      56     :  56 |  +0 |                          :                          | *
 MR Bernardo Paiva            29 | MR :      97     :  97 | MR :      97     :  97 |  +0 |                       -1 :                       -1 | ****^
-MR William Canales           30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                -10    +1 :                       +1 | *
 MR Claude Batson             30 | MR :      61     :  61 | MR :      61     :  61 |  +0 | -20-10                   : -20                      | *^
+MR William Canales           30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                -10    +1 :                       +1 | *
 SP Joseph Brockman           34 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                -10       :                          | *
 MR Florian Hernandez         36 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | **
 SP Allen Lent                37 | SP :      73     :  73 | SP :      72     :  72 |  -1 | -20      -10             : -20      -10   -10       | *
@@ -748,8 +748,8 @@ THIRD_BASE
  6 | Inman, S          91  -9  82 | Inman, S          91  -9  82 | Inman, S          91  -9  82
  7 | Hanrahan, C       78   1  79 | Hanrahan, C       78   1  79 | Hanrahan, C       78   1  79
  8 | Saez, C           84  -7  77 | Avalos, A         97 -18  79 | Saez, C           84  -7  77
- 9 | Jackson, L        91 -18  73 | Saez, C           84  -7  77 | Jackson, L        93 -18  75
-10 | Urbano, A         91 -18  73 | Pelayo, B         89 -14  75 | Urbano, A         91 -18  73
+ 9 | Urbano, A         91 -18  73 | Saez, C           84  -7  77 | Jackson, L        93 -18  75
+10 | Jackson, L        91 -18  73 | Pelayo, B         89 -14  75 | Urbano, A         91 -18  73
 
 SHORTSTOP
  1 | Saez, C           84  16 100 | Saez, C           84  16 100 | Saez, C           84  16 100
@@ -804,8 +804,8 @@ DESIGNATED_HITTER
  2 | Wesson, S        105 -15  90 | Wesson, S        106 -15  91 | Wesson, S        106 -15  91
  3 | Tremane, D        99 -15  84 | Tremane, D        99 -15  84 | Tremane, D        99 -15  84
  4 | Jimenez, O        93 -15  78 | Avalos, A         97 -15  82 | Jackson, L        93 -15  78
- 5 | Jackson, L        91 -15  76 | Wheelock, C       93 -15  78 | Jimenez, O        93 -15  78
- 6 | Urbano, A         91 -15  76 | Culp, S           93 -15  78 | Urbano, A         91 -15  76
+ 5 | Urbano, A         91 -15  76 | Wheelock, C       93 -15  78 | Jimenez, O        93 -15  78
+ 6 | Jackson, L        91 -15  76 | Culp, S           93 -15  78 | Urbano, A         91 -15  76
  7 | Inman, S          91 -15  76 | Jimenez, O        93 -15  78 | Inman, S          91 -15  76
  8 | Riney, S          91 -15  76 | Urbano, A         91 -15  76 | Riney, S          91 -15  76
  9 | Culp, S           90 -15  75 | Inman, S          91 -15  76 | Culp, S           90 -15  75
@@ -2244,14 +2244,14 @@ Gashouse Goons       |  99.7  99.7  99.4 | 101.2  99.9 101.1 |  81- 81 0.503 |  
 Capital City Goof... |  96.4  97.4  93.7 |  95.1  95.0  89.9 |  67- 95 0.415 |  68- 94 0.420 |  68- 94 0.420 (20) 
 Poynter -------------+
 Ashburn Aardvarks    | 103.6 105.1 108.4 | 100.7  97.5  98.1 |  86- 76 0.531 |  89- 73 0.549 |  89- 73 0.549 ( 8) 
-New Jersey Mundys    | 102.9 103.0 105.8 |  96.4  96.4  92.7 |  79- 83 0.490 |  88- 74 0.543 |  88- 74 0.543 ( 9) 
+New Jersey Mundys    | 102.9 103.0 105.8 |  96.4  96.4  92.7 |  79- 83 0.490 |  88- 74 0.543 |  88- 74 0.543 (10) 
 Halifax Highlanders  |  99.2  97.9  97.0 |  93.2  93.5  86.3 |  67- 95 0.412 |  78- 84 0.481 |  78- 84 0.481 (14) 
 Plum Grove Fire Ants | 101.3 100.4 101.8 |  94.6  93.2  87.4 |  72- 90 0.442 |  75- 87 0.463 |  75- 87 0.463 (17) 
 Gofannon ------------+
 Malibu Rum Runners   | 100.1 101.0 101.1 | 106.0 108.8 114.0 |  92- 70 0.570 |  93- 69 0.574 |  93- 69 0.574 ( 6) 
-Pontiac Firebirds    | 103.0 103.1 106.0 |  91.6  90.5  81.3 |  69- 93 0.426 |  76- 86 0.469 |  76- 86 0.469 (16) 
-Bay City Bluebirds   |  97.4  96.6  93.8 |  92.8  93.2  85.6 |  63- 99 0.392 |  76- 86 0.469 |  76- 86 0.469 (15) 
-Troy Haymakers       |  92.1  90.9  82.1 | 108.0 106.5 114.0 |  76- 86 0.467 |  68- 94 0.420 |  68- 94 0.420 (21) 
+Pontiac Firebirds    | 103.0 103.1 106.0 |  91.6  90.5  81.3 |  69- 93 0.426 |  76- 86 0.469 |  76- 86 0.469 (15) 
+Bay City Bluebirds   |  97.4  96.6  93.8 |  92.8  93.2  85.6 |  63- 99 0.392 |  76- 86 0.469 |  76- 86 0.469 (16) 
+Troy Haymakers       |  92.1  90.9  82.1 | 108.0 106.5 114.0 |  76- 86 0.467 |  68- 94 0.420 |  68- 94 0.420 (22) 
 
 UBA
 Fowler --------------+
@@ -2262,14 +2262,14 @@ Northeastern Blac... |  95.3  97.6  92.8 |  96.2  92.9  88.6 |  65- 97 0.404 |  
 McCarthey -----------+
 Penn Quakers         |  98.4 101.0  99.3 | 106.5 112.9 117.8 |  94- 68 0.578 | 109- 53 0.673 | 109- 53 0.673 ( 1) 
 Toledo Mudhens       | 105.3 103.4 108.5 | 102.5 106.9 108.9 |  94- 68 0.583 |  89- 73 0.549 |  89- 73 0.549 ( 7) 
-Boston (UBA) Pilg... | 103.2 103.4 106.5 | 110.8 111.1 120.6 | 101- 61 0.622 |  88- 74 0.543 |  88- 74 0.543 (10) 
+Boston (UBA) Pilg... | 103.2 103.4 106.5 | 110.8 111.1 120.6 | 101- 61 0.622 |  88- 74 0.543 |  88- 74 0.543 ( 9) 
 Longport Bluefish    |  96.4  94.5  90.6 | 103.1 103.8 106.8 |  78- 84 0.483 |  87- 75 0.537 |  87- 75 0.537 (12) 
 Manchester Red De... | 102.0 104.5 106.3 |  87.0  88.3  74.2 |  62-100 0.384 |  62-100 0.383 |  62-100 0.383 (25) 
 Rutherford ----------+
 Pittsburgh Beacons   | 107.1 105.8 112.6 | 117.8 116.2 131.0 | 111- 51 0.685 | 100- 62 0.617 | 100- 62 0.617 ( 3) 
 Columbus Cows        | 102.9 101.5 104.4 |  99.5 100.2  99.7 |  84- 78 0.520 |  87- 75 0.537 |  87- 75 0.537 (11) 
 West Texas Tumble... |  94.1  92.4  86.0 |  94.5  95.8  90.1 |  61-101 0.375 |  72- 90 0.444 |  72- 90 0.444 (18) 
-Coney Island Cycl... |  97.7  96.2  93.8 | 108.2 108.3 115.7 |  88- 74 0.541 |  68- 94 0.420 |  68- 94 0.420 (22) 
+Coney Island Cycl... |  97.7  96.2  93.8 | 108.2 108.3 115.7 |  88- 74 0.541 |  68- 94 0.420 |  68- 94 0.420 (21) 
 Diablo Autarchs      |  99.1  98.3  97.4 |  94.2  90.5  83.8 |  65- 97 0.400 |  65- 97 0.401 |  65- 97 0.401 (23) 
                      |             101.8 |              86.2 |
 
