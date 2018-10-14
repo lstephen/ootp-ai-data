@@ -50,15 +50,15 @@ Selected: IsotonicScores: [(0.13851760709105757, RandomForest(...)), (0.12214715
              Ks | 0.060
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.058027574387581514, RandomForest(...)), (0.02861834739527765, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 51, 'selection__k': 4, 'regressor__max_depth': 3}Feature Scores: [ 25.   4.   2.   0.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.485  0.246  0.191  0.078]
+Selected: RandomForestScores: [(0.058027574387581514, RandomForest(...)), (0.02861834739527765, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 4, 'regressor__n_estimators': 51}Feature Scores: [ 25.   4.   2.   0.   0.]Feature Mask: [ True  True  True  True False]Feature Importances: [ 0.485  0.246  0.191  0.078]
 -- Doubles
 Selected: IsotonicScores: [(-0.015356923514490473, RandomForest(...)), (-0.014725541033821657, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 10.   0.   1.   3.   1.]Feature Mask: [ True False False False False]
 -- HomeRuns
 Selected: IsotonicScores: [(0.096694880308585487, RandomForest(...)), (0.084959213270684633, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  1.   0.  39.   1.   1.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.11087080913065088, RandomForest(...)), (0.1069813808528582, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 98, 'regressor__max_depth': 5}Feature Scores: [  0.  49.   0.   4.   0.]Feature Mask: [ True  True False  True False]Feature Importances: [ 0.126  0.743  0.131]
+Selected: RandomForestScores: [(0.11087080913065088, RandomForest(...)), (0.1069813808528582, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 98, 'selection__k': 3, 'regressor__max_depth': 5}Feature Scores: [  0.  49.   0.   4.   0.]Feature Mask: [ True  True False  True False]Feature Importances: [ 0.126  0.743  0.131]
 -- Ks
-Selected: RandomForestScores: [(0.28098556261684238, RandomForest(...)), (0.26786596282301395, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [ 154.    1.    3.    9.    2.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.958  0.042]
+Selected: RandomForestScores: [(0.28098556261684238, RandomForest(...)), (0.26786596282301395, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 154.    1.    3.    9.    2.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.958  0.042]
 
 Hitting Features
              Average |  -    99   +  |   5  15  25  35  45  55  65  75  85  95
@@ -151,8 +151,8 @@ SP Woodward, A       +~ AAA 31 | 10.0  8.9  1.3  1.6 |  90  59 |  78  49 | -+ | 
 MR Bowman, W         +   ML 31 |  9.7  6.3  1.4  1.0 |  80  62 |  93  91 |  + |  71/ 78 ||  78 ||
 MR Smith, C        F  ~  ML 33 |  9.7  7.8  2.1  0.9 |  84  41 |  88  74 |  + |  24/ 75 ||  75 ||
 SP Avendaño, F       +~ AAA 28 |  9.3 10.0  3.0  1.6 |  79  27 |  73  47 |  + |  73/ 64 ||  73 ||
-SP Oropesa, H     I 4    DL 20 | 10.3  5.2  3.1  1.2 |  70     |  74     | ++ |  71/ 63 ||  71 ||
 SP Rubio, J        F +   ML 35 | 11.2  6.4  1.3  1.1 |  74  26 |  77  95 | -+ |  71/ 66 ||  71 ||
+SP Oropesa, H     I 4    DL 20 | 10.3  5.2  3.1  1.2 |  70     |  74     | ++ |  71/ 63 ||  71 ||
 MR Loya, R           +~  ML 31 | 10.1  8.4  1.3  1.8 |  73  95 |  78  62 |  + |  60/ 67 ||  67 ||
 SP Aldana, K         +~ AAA 27 | 10.1  7.2  3.2  1.6 |  70     |  68     | +  |  67/ 59 ||  67 ||
 MR Calderon, J     F +~ AAA 31 | 10.0  6.1  2.5  1.3 |  77     |  77     |  - |  21/ 67 ||  67 ||
@@ -360,11 +360,11 @@ CF Virgil Bednar             25 | CF :  71      -6 :  65 | CF :  73      -6 :  6
 2B Mauro Fernandez           25 | SS :  60       1 :  61 | SS :  61       1 :  62 |  +1 |  +4 +8    +3 +1    :  +5 +8    +3 +1    | +-
 2B James Goodridge           29 | SS : 111       1 : 112 | 2B : 114      -1 : 113 |  +1 |        -2 +1 +2    :        -2 +6 +2    | ***^
 3B Seve Guadalupe            24 | 3B :  91      -1 :  90 | 3B :  91      -1 :  90 |  +0 |  -1 -2       -6    :  -2 -2       -6    | +++-
- C Nicholas Au               25 |  C :  72      12 :  84 |  C :  72      12 :  84 |  +0 |  +1 +4 +6 +2 -1    :  +1 +4 +6 +2 -1    | ++
  C Teijirou Eizan            25 |  C :  90       7 :  97 |  C :  90       7 :  97 |  +0 |  -1 +4       +1    :  -1 +4       +1    | +++
-SS James Williams            26 | SS :  82      10 :  92 | SS :  82      10 :  92 |  +0 |  +5 +4 +3    -1    :  +3 +4 +3    -1    | *
+ C Nicholas Au               25 |  C :  72      12 :  84 |  C :  72      12 :  84 |  +0 |  +1 +4 +6 +2 -1    :  +1 +4 +6 +2 -1    | ++
 3B Eric Witherspoon          26 | SS :  82       6 :  88 | SS :  82       6 :  88 |  +0 |  -1    +3    +4    :  -1    +3    +4    | *
  C Alex Benero               26 |  C :  83     -13 :  70 |  C :  83     -13 :  70 |  +0 |  -2 -6 +6 -2 -1    :  -2 -6 +6 -2 -1    | *
+SS James Williams            26 | SS :  82      10 :  92 | SS :  82      10 :  92 |  +0 |  +5 +4 +3    -1    :  +3 +4 +3    -1    | *
 RF Oscar Irving              27 | RF :  90     -14 :  76 | RF :  90     -14 :  76 |  +0 |  +1    +4    +1    :  +1    +3    +1    | *
 2B Cipri Basora              28 | 2B :  85       1 :  86 | 2B :  85       1 :  86 |  +0 |  +1 +4       -1    :  +1 +4       -1    | *
  C Arthur Orr                29 |  C : 102       2 : 104 |  C : 102       2 : 104 |  +0 |  +2       +2       :  +2       +2       | **
@@ -424,8 +424,8 @@ MR Raymond Taylor            22 | MR :      38     :  38 | MR :      42     :  4
 SP Joseph Stegner            19 | SP :      44     :  44 | SP :      47     :  47 |  +3 |  +5 +1+16       :  +6 +1+16       | ++-
 SP Wilber McMillin           22 | SP :      45     :  45 | SP :      46     :  46 |  +1 |  +1    +2    +1 :  +1    +2    +1 | ++
 MR Freddy Cancio             21 | MR :      40     :  40 | MR :      41     :  41 |  +1 |  +2 +3 +7       :  +3 +4 +7       | +++-
-SP David Gilpin              18 | SP :      43     :  43 | SP :      43     :  43 |  +0 |  -1 +3          :     +3 +6       | ++-
 SP Steven Gay                18 | SP :      42     :  42 | SP :      42     :  42 |  +0 | +17 +9+21       : +16 +9+21       | ++
+SP David Gilpin              18 | SP :      43     :  43 | SP :      43     :  43 |  +0 |  -1 +3          :     +3 +6       | ++-
 MR Stew Shuler               19 | MR :      41     :  41 | MR :      41     :  41 |  +0 |  -3 +1 +5       :  -3 +1 +6       | +
 SP Oscar Caudillo            21 | SP :      42     :  42 | SP :      42     :  42 |  +0 |  +2 -1 +3       :  +2 -1 +3       | +-
 MR Lee Philson               22 | MR :      42     :  42 | MR :      42     :  42 |  +0 |  +2 +2 +5       :  +1 +2          | +++++
@@ -1917,7 +1917,7 @@ East ----------------+
 St. Louis (C) Car... | 103.8 102.7 106.4 | 100.8  99.2 100.1 |  86- 76 0.531 |  94- 68 0.580 |  94- 68 0.580 ( 3) 
 Brooklyn Dodgers     |  97.6  99.6  97.1 | 103.2 103.6 106.7 |  84- 78 0.518 |  84- 78 0.519 |  84- 78 0.519 ( 7) 
 Philadelphia A's     |  97.6  97.4  95.0 |  94.5  91.4  85.3 |  64- 98 0.396 |  77- 85 0.475 |  77- 85 0.475 (10) 
-Colorado Rockies     |  95.8  95.6  91.2 |  93.9  92.7  86.1 |  62-100 0.381 |  73- 89 0.451 |  73- 89 0.451 (13) 
+Colorado Rockies     |  95.8  95.6  91.2 |  93.9  92.7  86.1 |  62-100 0.381 |  73- 89 0.451 |  73- 89 0.451 (12) 
 West ----------------+
 San Francisco Giants |  99.6  99.2  98.8 | 102.3 106.6 108.4 |  87- 75 0.534 |  98- 64 0.605 |  98- 64 0.605 ( 2) 
 Detroit Tigers       |  98.8  99.8  98.6 |  97.2  95.5  92.5 |  73- 89 0.454 |  86- 76 0.531 |  86- 76 0.531 ( 5) 
@@ -1934,7 +1934,7 @@ West ----------------+
 Kansas City Royals   |  98.9  98.3  97.2 | 101.5  98.2  99.7 |  78- 84 0.484 |  82- 80 0.506 |  82- 80 0.506 ( 8) 
 Houston Astros       | 106.7 106.2 112.5 | 105.7 103.3 108.9 |  97- 65 0.600 |  80- 82 0.494 |  80- 82 0.494 ( 9) 
 Seattle Mariners     | 100.2  99.3  99.6 | 103.9 103.6 107.4 |  86- 76 0.534 |  76- 86 0.469 |  76- 86 0.469 (11) 
-Boston Red Sox       | 101.9 100.2 102.1 | 102.1 103.0 105.0 |  87- 75 0.535 |  73- 89 0.451 |  73- 89 0.451 (12) 
+Boston Red Sox       | 101.9 100.2 102.1 | 102.1 103.0 105.0 |  87- 75 0.535 |  73- 89 0.451 |  73- 89 0.451 (13) 
                      |             100.8 |              88.8 |
 
 --- Non Top prospects ---
