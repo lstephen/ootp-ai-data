@@ -41,7 +41,7 @@ Selected: IsotonicScores: [(0.27240302042090264, RandomForest(...)), (0.29001322
 -- Walks
 Selected: IsotonicScores: [(0.1034891016659228, RandomForest(...)), (0.10941140856770067, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 45.  33.  41.  74.  39.   4.]Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.18020520143260008, RandomForest(...)), (0.16940605965045177, Isotonic(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 45, 'regressor__max_depth': 15}Feature Scores: [ 151.   92.  125.  105.  177.   17.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.09  0.91]
+Selected: RandomForestScores: [(0.18020520143260008, RandomForest(...)), (0.16940605965045177, Isotonic(...))]Best Parameters: {'regressor__max_depth': 15, 'selection__k': 2, 'regressor__n_estimators': 45}Feature Scores: [ 151.   92.  125.  105.  177.   17.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.09  0.91]
 
            Hits | 0.070
         Doubles | 0.032
@@ -58,7 +58,7 @@ Selected: IsotonicScores: [(0.10764653916695954, RandomForest(...)), (0.08561800
 -- Walks
 Selected: IsotonicScores: [(0.10366139593789574, RandomForest(...)), (0.10910054426985984, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  1.  42.   0.   3.   0.]Feature Mask: [False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.28189625939542218, RandomForest(...)), (0.25596263126731966, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 54, 'selection__k': 2, 'regressor__max_depth': 4}Feature Scores: [ 134.    0.    2.    9.    2.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.915  0.085]
+Selected: RandomForestScores: [(0.28189625939542218, RandomForest(...)), (0.25596263126731966, Isotonic(...))]Best Parameters: {'regressor__max_depth': 4, 'selection__k': 2, 'regressor__n_estimators': 54}Feature Scores: [ 134.    0.    2.    9.    2.]Feature Mask: [ True False False  True False]Feature Importances: [ 0.915  0.085]
 
 Hitting Features
              Average |  -    99   +  |   5  15  25  35  45  55  65  75  85  95
@@ -137,12 +137,12 @@ SP Dickerson, D      +   ML 30 |  9.6  6.1  2.3  0.9 |  87     |  88     | -  | 
 SP Bergmann, M       +   ML 26 | 10.1  6.6  1.6  0.9 |  83     |  87     | ++ |  86/ 74 ||  86 ||
 SP Kerner, B         +   ML 28 |  9.5  6.9  2.9  0.5 |  84     |  92     | +- |  84/ 78 ||  84 ||
 SP Fansler, P        +   ML 27 | 10.1  6.5  1.6  1.1 |  79     |  85     | -+ |  83/ 73 ||  83 ||
+MR Reinoso, J           AAA 34 | 10.1  6.4  1.8  0.5 |  90     |  93     | ++ |  73/ 80 ||  80 ||
 SP Woodward, A       +~ AAA 31 |  9.8  8.9  1.5  1.6 |  88     |  79     | -+ |  80/ 70 ||  80 ||
-MR Reinoso, J            ML 34 | 10.1  6.4  1.8  0.5 |  90     |  93     | ++ |  73/ 80 ||  80 ||
-SP Avendaño, F       +~ AAA 29 |  9.0  9.7  2.5  1.6 |  82     |  80     |  + |  79/ 69 ||  79 ||
 MR Bowman, W         +   ML 31 |  9.7  6.1  1.2  1.1 |  80     |  94     |  + |  71/ 79 ||  79 ||
+SP Avendaño, F       +~ AAA 29 |  9.0  9.7  2.5  1.6 |  82     |  80     |  + |  79/ 69 ||  79 ||
 SP Oropesa, H     I      DL 20 | 10.5  5.1  3.0  1.2 |  69     |  73     | ++ |  70/ 62 ||  70 ||
-MR Loya, R         F +~ AAA 32 |  9.7  8.3  1.3  1.8 |  77     |  80     |  + |  63/ 69 ||  69 ||
+MR Loya, R         F +~  ML 32 |  9.7  8.3  1.3  1.8 |  77     |  80     |  + |  63/ 69 ||  69 ||
 SP Aldana, K         +~ AAA 27 | 10.2  7.4  4.0  1.7 |  61     |  66     | +  |  64/ 56 ||  64 ||
 SP Cashion, R           AAA 25 | 10.6  5.3  2.9  2.1 |  58     |  66     |    |  63/ 55 ||  63 ||
 SP Carvajal, H     F    AAA 25 | 11.6  5.8  5.3  1.3 |  51     |  57     |  - |  56/ 48 ||  56 ||
@@ -176,9 +176,9 @@ SP Gay, S                 A 18 | 15.2  4.6  7.2  2.6 |  35     |  36     |  + | 
  SP Medina, B       28 | MR Avendaño, F     29 | MR Nicholson, C    22 | SP Stegner, J      19 |                       |
  MR Bowman, W       31 | MR Elizondo, D     23 | MR Philson, L      22 | MR Cancio, F       21 |                       |
  MR Dickerson, D    30 | MR Laughlin, M     24 | MR Robledo, A      21 | MR Shuler, S       19 |                       |
- MR Diep, R         30 | MR Loya, R         32 | MR Taylor, R       22 |  C Kitts, P        21 |                       |
+ MR Diep, R         30 | MR Reinoso, J      34 | MR Taylor, R       22 |  C Kitts, P        21 |                       |
  MR Kerner, B       28 |  C Loranger, D     32 |  C Basinger, D     29 |  C Moreno, D       19 |                       |
- MR Reinoso, J      34 |  C Searles, J      33 |  C Eizan, T        25 | 2B Raglin, H       19 |                       |
+ MR Loya, R         32 |  C Searles, J      33 |  C Eizan, T        25 | 2B Raglin, H       19 |                       |
   C Au, N           25 | 1B Larsen, J       26 | 1B Baltimore, J    22 | 3B Nourse, J       19 |                       |
   C Blakes, D       32 | 2B Diz, T          25 | 1B Quarles, R      25 | SS Chappelle, J    19 |                       |
  1B Flores, R       30 | 3B Alfano, A       25 | 2B Arnau, D        23 | SS Herron, M       18 |                       |
@@ -196,18 +196,19 @@ SP Gay, S                 A 18 | 15.2  4.6  7.2  2.6 |  35     |  36     |  + | 
 Total:87 (target 70-75)
 Balance:49/38 = 1.289 (ideal: 1.273)
 
- AAA -> AA   LF Paul Deck
+  ML -> AAA  MR Jeronimo Reinoso
  AAA -> AA    C Teijirou Eizan
-  AA -> AAA  SS James Williams
-  AA -> AAA  SP Roger Cashion
+ AAA -> AA   LF Paul Deck
   AA -> AAA  SP Robert Burnell
+  AA -> AAA  SP Roger Cashion
+  AA -> AAA  SS James Williams
    A -> AAA  3B John Rogers
-   A -> AA   MR Amadeo Robledo
    A -> AA   MR Gabriel Jimenez
-   A -> AA   2B Dave Arnau
    A -> AA   1B Joe Baltimore
+   A -> AA   MR Amadeo Robledo
+   A -> AA   2B Dave Arnau
+  DL -> ML   MR Ryan Loya
   DL -> AAA   C John Searles
-  DL -> AAA  MR Ryan Loya
   DL -> AAA  CF Benjamin Delrio
   DL -> AA    C Donald Basinger
 
@@ -222,12 +223,12 @@ LR
 Paul Fansler
 
 MR
-Bill Kerner
 Michael Bergmann
+Ryan Loya
 
 SU
-Jeronimo Reinoso
 Wallace Bowman
+Bill Kerner
 
 CL
 Ronald Diep
@@ -235,16 +236,16 @@ Ronald Diep
 NONE
 
 
-BP Ability: 114
+BP Ability: 112
 
 --- Slow Hook ---
 
 vs RHP
  C| Blakes, D       (D)                 | C| ( 1) Au, N          
-1B| Washington, E   (D) West, B         |1B| ( 1) Tepper, J      
-2B| Goodridge, J    (D)                 |2B| ( 1) Flores, R      
-3B| Nadler, J       (D)                 |3B| ( 1) Flores, R      
-SS| Ocerin, F       (D)                 |SS| ( 1) Flores, R      
+1B| Tepper, J       (D) West, B         |1B| ( 1) Flores, R      
+2B| Goodridge, J    (D)                 |2B| ( 1) Ocerin, F      
+3B| Washington, E   (D) Flores, R       |3B| ( 1) Flores, R      
+SS| Nadler, J       (D)                 |SS| ( 1) Ocerin, F      
 LF| Reger, W        (D)                 |LF| ( 1) West, B        
 CF| Stec, H         (D)                 |CF| ( 1) West, B        
 RF| Scott, I        (D)                 |RF| ( 1) Arrington, G   
@@ -282,19 +283,19 @@ RF| Scott, I        (D)                 |RF| ( 1) Arrington, G
 DH| Tepper, J       (D)                 |DH| ( 1) Flores, R      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. LF R Reger, W         2B R Goodridge, J     2B R Goodridge, J     2B R Goodridge, J    
-2. 2B R Goodridge, J     RF R Scott, I         RF R Scott, I         RF R Scott, I        
-3. RF R Scott, I         DH R Tepper, J        1B R Tepper, J        DH R Tepper, J       
-4. 1B L Washington, E    1B L Washington, E    3B L Washington, E    1B L Washington, E   
+1. 2B R Goodridge, J     2B R Goodridge, J     2B R Goodridge, J     2B R Goodridge, J    
+2. RF R Scott, I         RF R Scott, I         RF R Scott, I         RF R Scott, I        
+3. 1B R Tepper, J        DH R Tepper, J        1B R Tepper, J        DH R Tepper, J       
+4. 3B L Washington, E    1B L Washington, E    3B L Washington, E    1B L Washington, E   
 5.  C R Blakes, D         C R Blakes, D         C R Blakes, D         C R Blakes, D       
-6. SS R Ocerin, F        LF R Reger, W         LF R Reger, W         LF R Reger, W        
-7. 3B L Nadler, J        SS R Ocerin, F        SS L Nadler, J        SS R Ocerin, F       
+6. LF R Reger, W         LF R Reger, W         LF R Reger, W         LF R Reger, W        
+7. SS L Nadler, J        SS R Ocerin, F        SS L Nadler, J        SS R Ocerin, F       
 8. CF L Stec, H          3B L Nadler, J        CF L Stec, H          3B L Nadler, J       
 9.  P                    CF L Stec, H           P                    CF L Stec, H         
 
 --- Bunt for Hit ---
 
---- Stealing @ 68.2 ---
+--- Stealing @ 68.4 ---
 CF Hershel Stec              32| CF : 100       2  15     : 117 |    :                     :   0 |   1 | 118 | -341-899 |  F +      $4M   |  $6.39M: $9.59M |  p969 | Houston Astros       | **^
 1B William Reger             31| CF : 105      -4  14     : 115 |    :                     :   0 |   2 | 117 | -6333776 |    +   $10.2Mx2 |  $5.96M: $8.95M | p1360 | Houston Astros       | **^
 
@@ -337,7 +338,7 @@ RF Jayson Kennell            22| RF :  78     -10 -12     :  56 | RF : 114     -
 3B James Nourse              19| SS :  77       6 -11     :  72 | SS : 101       6  19     : 126 |   6 | 132 | -3778--- |   5             |        :        |  p701 | Houston Astros       | ++++-
 SS Jason Kulp                18| SS :  70       4 -20     :  54 | SS : 100       4  16     : 120 |   6 | 126 | -3637--- |   1             |        :        | p1507 | Houston Astros       | +++++
 SS Joseph Chappelle          19| SS :  54      13 -28     :  39 | SS :  87      13  11     : 110 |   6 | 116 | -4449--- |                 |        :        |  p377 | Houston Astros       | +++
-3B John Rogers               21| 2B :  84       0  -4     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
+3B John Rogers               21| 2B :  84       0  -3     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
  C Teijirou Eizan            25|  C :  89       7   0     :  96 |  C :  93       7  10     : 110 |   6 | 116 | 86------ |                 |        :        | p1706 | Houston Astros       | +++
 3B Alex Alfano               25| SS :  95      -1   0     :  94 | SS :  99      -1  10     : 108 |   6 | 114 | -33661-3 |   3             |        :        | p1532 | Houston Astros       | ++++-
  C Nicholas Au               25|  C :  71      12 -13     :  70 |  C :  85      12   8     : 104 |   6 | 110 | 91------ |    +    $500k a |        :        | p1916 | Houston Astros       | ++
@@ -419,46 +420,46 @@ Hitters
 Contact, Gap, Power, Eye, Avoid K's, Running Speed
 SS Michael Herron            18 | SS :  44      -4 :  40 | SS :  44      -4 :  40 |  +0 |                    :                    | ++
 SS Jason Kulp                18 | SS :  70       4 :  74 | SS :  70       4 :  74 |  +0 |                    :                    | +++++
-SS Balta Veloz               19 | SS :  57      -3 :  54 | SS :  57      -3 :  54 |  +0 |                    :                    | ++
- C Dalcio Moreno             19 |  C :  41       9 :  50 |  C :  41       9 :  50 |  +0 |                    :                    | +
-2B Hollis Raglin             19 | 3B :  85      -9 :  76 | 3B :  85      -9 :  76 |  +0 |     +2             :     +2             | ++++
 3B James Nourse              19 | SS :  77       6 :  83 | SS :  77       6 :  83 |  +0 |  +2 +2       +1    :  +1 +2       +1    | ++++-
 SS Joseph Chappelle          19 | SS :  54      13 :  67 | SS :  54      13 :  67 |  +0 |                    :                    | +++
+ C Dalcio Moreno             19 |  C :  41       9 :  50 |  C :  41       9 :  50 |  +0 |                    :                    | +
 LF James Latorre             19 | CF :  53      -8 :  45 | CF :  53      -8 :  45 |  +0 |                    :                    | +++
+2B Hollis Raglin             19 | 3B :  85      -9 :  76 | 3B :  85      -9 :  76 |  +0 |     +2             :     +2             | ++++
+SS Balta Veloz               19 | SS :  57      -3 :  54 | SS :  57      -3 :  54 |  +0 |                    :                    | ++
  C Patrick Kitts             21 |  C :  73       8 :  81 |  C :  73       8 :  81 |  +0 |                    :                    | +++
 3B John Rogers               21 | 3B :  84       2 :  86 | 3B :  84       2 :  86 |  +0 |                    :                    | ++++-
-1B Joe Baltimore             22 | SS :  75       4 :  79 | SS :  75       4 :  79 |  +0 |  -1                :                    | +
 LF Justin Diller             22 | CF :  50      -1 :  49 | CF :  50      -1 :  49 |  +0 |     +1             :     +2             | +-
 CF Mohammad Conlan           22 | CF :  74      -2 :  72 | CF :  74      -2 :  72 |  +0 |                    :                    | +++-
+1B Joe Baltimore             22 | SS :  75       4 :  79 | SS :  75       4 :  79 |  +0 |  -1                :                    | +
 RF Jayson Kennell            22 | RF :  78     -10 :  68 | RF :  78     -10 :  68 |  +0 |                    :                    | +++++
 2B Dave Arnau                23 | 2B :  74      -5 :  69 | 2B :  74      -5 :  69 |  +0 |                    :                    | +++
 3B Kevin Derrick             23 | 3B :  58      -9 :  49 | 3B :  58      -9 :  49 |  +0 |                    :                    | +
 LF Paul Deck                 24 | CF :  81      -6 :  75 | CF :  81      -6 :  75 |  +0 |                    :                    | +++
 3B Seve Guadalupe            24 | 3B :  90      -1 :  89 | 3B :  90      -1 :  89 |  +0 |                    :                    | +++-
 SS Claud Dykes               24 | SS :  58      11 :  69 | SS :  58      11 :  69 |  +0 |              +1    :              +1    | ++
- C Nicholas Au               25 |  C :  71      12 :  83 |  C :  71      12 :  83 |  +0 |                    :                    | ++
 CF Virgil Bednar             25 | CF :  71      -6 :  65 | CF :  71      -6 :  65 |  +0 |                    :                    | ++-
 1B Robert Quarles            25 | 3B :  77      -7 :  70 | 3B :  77      -7 :  70 |  +0 |                    :                    | ++++
-CF Richard Williams          25 | CF :  85       0 :  85 | CF :  85       0 :  85 |  +0 |                    :                    | ++
+ C Nicholas Au               25 |  C :  71      12 :  83 |  C :  71      12 :  83 |  +0 |                    :                    | ++
 3B Alex Alfano               25 | SS :  95      -1 :  94 | SS :  95      -1 :  94 |  +0 |                    :                    | ++++-
- C Teijirou Eizan            25 |  C :  89       7 :  96 |  C :  89       7 :  96 |  +0 |                    :                    | +++
 2B Tony Diz                  25 | SS :  89       5 :  94 | SS :  89       5 :  94 |  +0 |                    :                    | ++-
+CF Richard Williams          25 | CF :  85       0 :  85 | CF :  85       0 :  85 |  +0 |                    :                    | ++
+ C Teijirou Eizan            25 |  C :  89       7 :  96 |  C :  89       7 :  96 |  +0 |                    :                    | +++
+2B Mauro Fernandez           26 | SS :  58       1 :  59 | SS :  58       1 :  59 |  +0 |                    :                    | *
+RF Ru-zuberuto Takamuku      26 | CF :  91      -5 :  86 | CF :  91      -5 :  86 |  +0 |                    :                    | **
 CF Alberto Sala              26 | CF :  64      -6 :  58 | CF :  64      -6 :  58 |  +0 |                    :                    | *
 1B John Larsen               26 | 3B :  92       1 :  93 | 3B :  92       1 :  93 |  +0 |                    :                    | *
 SS James Williams            26 | SS :  80      10 :  90 | SS :  80      10 :  90 |  +0 |                    :                    | *
-2B Mauro Fernandez           26 | SS :  58       1 :  59 | SS :  58       1 :  59 |  +0 |                    :                    | *
-RF Ru-zuberuto Takamuku      26 | CF :  91      -5 :  86 | CF :  91      -5 :  86 |  +0 |                    :                    | **
 3B Edward Washington         27 | SS : 119      -4 : 115 | SS : 119      -4 : 115 |  +0 |                    :                    | ***
 RF Oscar Irving              27 | RF :  89     -14 :  75 | RF :  89     -14 :  75 |  +0 |                    :                    | *
 1B Justin Tepper             28 | 3B : 110     -12 :  98 | 3B : 110     -12 :  98 |  +0 |                    :                    | **^
-1B Richard Flores            30 | SS : 101       5 : 106 | SS : 101       5 : 106 |  +0 |                    :                    | **^
 RF Calvin Jarnagin           30 | CF :  90      -3 :  87 | CF :  90      -3 :  87 |  +0 |                    :                    | *
-SS Fausto Ocerin             30 | SS : 101       8 : 109 | SS : 101       8 : 109 |  +0 |                    :                    | **^
 2B James Goodridge           30 | 2B : 114      -1 : 113 | 2B : 114      -1 : 113 |  +0 |                    :                    | ***^
+1B Richard Flores            30 | SS : 101       5 : 106 | SS : 101       5 : 106 |  +0 |                    :                    | **^
+SS Fausto Ocerin             30 | SS : 101       8 : 109 | SS : 101       8 : 109 |  +0 |                    :                    | **^
 1B William Reger             31 | CF : 105      -4 : 101 | CF : 105      -4 : 101 |  +0 |                    :                    | **^
+ C Donald Blakes             32 |  C : 114      12 : 126 |  C : 114      12 : 126 |  +0 |                    :                    | ***^
  C Danial Loranger           32 |  C :  87      10 :  97 |  C :  87      10 :  97 |  +0 |                    :                    | *
 RF Gregory Arrington         32 | RF :  98     -11 :  87 | RF :  98     -11 :  87 |  +0 |                    :                    | **
- C Donald Blakes             32 |  C : 114      12 : 126 |  C : 114      12 : 126 |  +0 |                    :                    | ***^
 CF Issac Scott               33 | CF : 106       1 : 107 | CF : 106       1 : 107 |  +0 |                    :                    | ***
 SS James Nadler              35 | SS : 101      11 : 112 | SS : 101      11 : 112 |  +0 |                    :                    | **^
 1B Bill West                 35 | CF :  93      -4 :  89 | CF :  93      -4 :  89 |  +0 |                    :                    | *
@@ -466,40 +467,40 @@ SS James Nadler              35 | SS : 101      11 : 112 | SS : 101      11 : 11
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
 MR Amadeo Robledo            21 | MR :      37     :  37 | MR :      41     :  41 |  +3 |  +1-12-26       :  +2-13-26       | +
-SP David Gilpin              18 | SP :      35     :  35 | SP :      35     :  35 |  +0 |                 :                 | ++-
 SP Steven Gay                18 | SP :      34     :  34 | SP :      34     :  34 |  +0 |                 :                 | ++
+SP David Gilpin              18 | SP :      35     :  35 | SP :      35     :  35 |  +0 |                 :                 | ++-
+SP Magglio Martinez          19 | SP :      39     :  39 | SP :      39     :  39 |  +0 |                 :                 | +++-
 SP Joseph Stegner            19 | SP :      37     :  37 | SP :      37     :  37 |  +0 |                 :                 | ++-
 MR Stew Shuler               19 | MR :      35     :  35 | MR :      35     :  35 |  +0 |                 :                 | +
-SP Magglio Martinez          19 | SP :      39     :  39 | SP :      39     :  39 |  +0 |                 :                 | +++-
 SP Herman Oropesa            20 | SP :      70     :  70 | SP :      70     :  70 |  +0 |                 :                 | +++-
 SP Tommy Silvia              20 | SP :      36     :  36 | SP :      36     :  36 |  +0 |                 :                 | +++
 MR Freddy Cancio             21 | MR :      37     :  37 | MR :      37     :  37 |  +0 |                 :                 | +++-
 SP Oscar Caudillo            21 | SP :      39     :  39 | SP :      39     :  39 |  +0 |                 :                 | +-
 MR Christopher Nicholson     22 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                 :                 | ++
-MR Lee Philson               22 | MR :      36     :  36 | MR :      36     :  36 |  +0 |                 :                 | ++++-
-MR Gabriel Jimenez           22 | MR :      35     :  35 | MR :      35     :  35 |  +0 |                 :                 | +
-SP Wilber McMillin           22 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                 :                 | ++
-MR James Bell                22 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                 :                 | ++-
 MR Raymond Taylor            22 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                 :                 | ++++-
+SP Wilber McMillin           22 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                 :                 | ++
+MR Lee Philson               22 | MR :      36     :  36 | MR :      36     :  36 |  +0 |                 :                 | ++++-
+MR James Bell                22 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                 :                 | ++-
+MR Gabriel Jimenez           22 | MR :      35     :  35 | MR :      35     :  35 |  +0 |                 :                 | +
 SP Robert Burnell            23 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                 :                 | +++
 MR Adan Lucero               23 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                 :                 | ++++
 MR Daniel Elizondo           23 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                 :                 | +++++
-SP Jeffrey Kennell           24 | SP :      42     :  42 | SP :      42     :  42 |  +0 |                 :                 | ++-
 MR Maurice Laughlin          24 | MR :      51     :  51 | MR :      51     :  51 |  +0 |                 :                 | +++-
-SP Roger Cashion             25 | SP :      63     :  63 | SP :      63     :  63 |  +0 |                 :                 | +++
+SP Jeffrey Kennell           24 | SP :      42     :  42 | SP :      42     :  42 |  +0 |                 :                 | ++-
 SP Hank Carvajal             25 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                 :                 | ++-
+SP Roger Cashion             25 | SP :      63     :  63 | SP :      63     :  63 |  +0 |                 :                 | +++
 SP Michael Bergmann          26 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                 :                 | **^
 SP Kenneth Aldana            27 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | *
 SP Benito Medina             28 | SP :      98     :  98 | SP :      98     :  98 |  +0 |                 :                 | **^
 MR Bill Kerner               28 | SP :      84     :  84 | SP :      84     :  84 |  +0 |                 :                 | ***^
 MR Fausto Avendaño           29 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                 :                 | *
 SP Roman Macias              29 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                 :                 | **^
+MR Daniel Dickerson          30 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | **^
 MR Ronald Diep               30 | MR :     100     : 100 | MR :     100     : 100 |  +0 |                 :                 | ****^
 SP Lenny Garrett             30 | SP :      90     :  90 | SP :      90     :  90 |  +0 |                 :                 | **
-MR Daniel Dickerson          30 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | **^
-MR Wallace Bowman            31 | MR :      79     :  79 | MR :      79     :  79 |  +0 |                 :                 | ***
-SP Aaron Woodward            31 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | *
 SP Gary Cobbins              31 | SP :      92     :  92 | SP :      92     :  92 |  +0 |                 :                 | **^
+SP Aaron Woodward            31 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | *
+MR Wallace Bowman            31 | MR :      79     :  79 | MR :      79     :  79 |  +0 |                 :                 | ***
 MR Ryan Loya                 32 | MR :      69     :  69 | MR :      69     :  69 |  +0 |                 :                 | *
 MR Jeronimo Reinoso          34 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | **^
 
@@ -858,12 +859,12 @@ CF Carlo Albuerne            18| CF :  42      -2 -48     :  -8 | CF :  83      
 SP Willie Gilchrist          21| MR :      44     -22     :  22 | SP :      79      -3     :  76 |   6 |  82 |          |               |        :        | p1969 | No Team              | +++++
 CF Jeffery Cuyler            20| CF :  83      -9 -13     :  61 | CF :  89      -9  -5     :  75 |   6 |  81 | -2---252 |               |        :        | p1184 | No Team              | ++-
 SP Sam Hancock               22| MR :      40     -26     :  14 | SP :      78      -3     :  75 |   6 |  81 |          |               |        :        | p1316 | No Team              | ++++
-3B Ronald Belmont            18| 2B :  44      -5 -49     : -10 | 2B :  85      -5  -5     :  74 |   6 |  80 | -3672--- |               |        :        |   p94 | No Team              | +-
+3B Ronald Belmont            18| 2B :  44      -5 -48     : -10 | 2B :  85      -5  -5     :  74 |   6 |  80 | -3672--- |               |        :        |   p94 | No Team              | +-
 SP James Ellenberger         20| MR :      39     -27     :  12 | SP :      78      -4     :  74 |   6 |  80 |          |               |        :        | p1040 | No Team              | +++++
 2B Lewis Thomas              20| 2B :  71     -16 -32     :  24 | 2B :  95     -16  -6     :  74 |   6 |  80 | -231---- |               |        :        |  p150 | No Team              | +++
 SP Alan Watkin               20| MR :      39     -27     :  12 | SP :      78      -4     :  74 |   6 |  80 |          |               |        :        |  p560 | No Team              | ++++
 SS Kareem Gurrola            21| SS :  59      -2 -37     :  20 | SS :  83      -2  -7     :  74 |   6 |  80 | -3336--- |               |        :        | p1805 | No Team              | ++
-2B Miguel Ahumada            23| 2B :  75       3 -10     :  68 | 2B :  77       3  -5     :  74 |   6 |  80 | -4983--- |               |        :        | p2106 | No Team              | ++
+2B Miguel Ahumada            23| 2B :  75       3  -9     :  68 | 2B :  77       3  -5     :  74 |   6 |  80 | -4983--- |               |        :        | p2106 | No Team              | ++
 SS Ulysses Davis             20| SS :  56      -6 -45     :   5 | SS :  87      -6  -8     :  73 |   6 |  79 | -3445--- |               |        :        | p1541 | No Team              | ++
 SP Walter Pineda             22| MR :      42     -25     :  17 | SP :      77      -4     :  73 |   6 |  79 |          |               |        :        |  p827 | No Team              | ++++
 CF Milton Lydon              23| CF :  49      -3 -41     :   5 | CF :  82      -3  -6     :  73 |   6 |  79 | -2---877 |               |        :        |  p911 | No Team              | ++-
@@ -1114,32 +1115,32 @@ SP Robert McCollum           18| MR :      31     -34     :  -3 | SP :      48  
 SP Ernesto Caceres           19| MR :      31     -34     :  -3 | SP :      45     -37     :   8 |   6 |  14 |          |               |        :        | p2116 | No Team              | ++
 LF Shawn Muldowney           22| LF :  33     -15 -62     : -44 |    :  52     -15 -44     :  -8 |   6 |  -2 | -2---523 |               |        :        |  p524 | No Team              | +
 
-1E | 117 (114-121) | 123 (120-127) 112/136 |   5/  5 || 121 ( 49-159) | 127 ( 55-165) 115/140 |  25/ 25
-1M | 109 (108-113) | 115 (114-119) 104/126 |   5/  5 || 109 ( 96-120) | 115 (102-126) 104/126 |  25/ 25
-1L | 100 ( 97-103) | 106 (103-109)  97/117 |   6/  6 || 100 (-47-106) | 106 (-41-112)  96/117 |  30/ 30
-2E |  93 ( 90- 97) |  99 ( 96-103)  90/109 |   8/  8 ||  93 (-26-100) |  99 (-20-106)  90/109 |  40/ 40
+1E | 117 (114-121) | 123 (120-127) 112/136 |   5/  5 || 121 ( 30-159) | 127 ( 36-165) 115/140 |  25/ 25
+1M | 109 (108-113) | 115 (114-119) 104/126 |   5/  5 || 108 (-26-120) | 114 (-20-126) 104/126 |  25/ 25
+1L | 100 ( 97-103) | 106 (103-109)  97/117 |   6/  6 ||  98 (-47-106) | 104 (-41-112)  95/114 |  30/ 30
+2E |  93 ( 90- 97) |  99 ( 96-103)  90/109 |   8/  8 ||  92 (-26-100) |  98 (-20-106)  89/108 |  40/ 40
 2L |  88 ( 86- 90) |  94 ( 92- 96)  86/104 |   8/  8 ||  87 (-53- 94) |  93 (-47-100)  84/102 |  40/ 40
 
- 1 | 108 ( 97-121) | 114 (103-127) 104/126 |  16/ 16 || 105 (-47-159) | 111 (-41-165) 101/122 |  80/ 80
+ 1 | 108 ( 97-121) | 114 (103-127) 104/126 |  16/ 16 || 104 (-47-159) | 110 (-41-165) 100/121 |  80/ 80
  2 |  90 ( 86- 97) |  96 ( 92-103)  88/106 |  16/ 16 ||  89 (-53-100) |  95 (-47-106)  86/104 |  80/ 80
  3 |  83 ( 81- 86) |  89 ( 87- 92)  81/ 98 |  16/ 16 ||  82 (-44- 90) |  88 (-36- 96)  80/ 96 |  80/ 80
- 4 |  78 ( 75- 81) |  84 ( 81- 87)  77/ 93 |  16/ 16 ||  76 (-54- 84) |  82 (-48- 90)  75/ 91 |  80/ 80
+ 4 |  78 ( 75- 81) |  84 ( 81- 87)  77/ 93 |  16/ 16 ||  76 (-42- 83) |  82 (-36- 89)  75/ 90 |  80/ 80
  5 |  73 ( 71- 75) |  79 ( 77- 81)  72/ 87 |  16/ 16 ||  71 (-58- 80) |  77 (-52- 86)  70/ 85 |  80/ 80
- 6 |  69 ( 68- 70) |  75 ( 74- 76)  68/ 82 |  16/ 16 ||  68 (-56- 87) |  74 (-50- 93)  67/ 81 |  80/ 80
+ 6 |  69 ( 68- 70) |  75 ( 74- 76)  68/ 82 |  16/ 16 ||  68 (-56- 83) |  74 (-50- 89)  67/ 81 |  80/ 80
  7 |  65 ( 64- 68) |  71 ( 70- 74)  65/ 79 |  16/ 16 ||  64 (-29-108) |  70 (-23-114)  64/ 77 |  80/ 80
- 8 |  63 ( 61- 64) |  69 ( 67- 70)  63/ 76 |  16/ 16 ||  62 (-52-102) |  68 (-46-108)  62/ 75 |  80/ 80
- 9 |  60 ( 59- 61) |  66 ( 65- 67)  60/ 73 |  16/ 16 ||  60 (-52- 67) |  66 (-44- 73)  60/ 72 |  80/ 80
-10 |  57 ( 56- 59) |  63 ( 62- 65)  58/ 70 |  16/ 16 ||  56 (-62- 81) |  62 (-55- 87)  57/ 69 |  80/ 80
-11 |  55 ( 54- 56) |  61 ( 60- 62)  56/ 67 |  16/ 16 ||  53 (-52- 60) |  59 (-45- 66)  54/ 65 |  80/ 80
-12 |  53 ( 52- 54) |  59 ( 58- 60)  54/ 65 |  16/ 16 ||  50 (-58-113) |  56 (-52-119)  51/ 62 |  80/ 80
-13 |  50 ( 48- 52) |  56 ( 54- 58)  51/ 61 |  16/ 16 ||  47 (-66- 73) |  53 (-55- 79)  48/ 58 |  80/ 80
-14 |  47 ( 43- 48) |  53 ( 49- 54)  48/ 58 |  16/ 16 ||  42 (-65- 85) |  48 (-55- 91)  44/ 53 |  80/ 80
-15 |  43 ( 41- 43) |  49 ( 47- 49)  45/ 54 |  16/ 16 ||  41 ( 14- 71) |  47 ( 20- 77)  42/ 51 |  80/ 80
-16 |  40 ( 39- 41) |  46 ( 45- 47)  42/ 51 |  16/ 16 ||  39 (-66- 76) |  45 (-55- 82)  41/ 49 |  80/ 80
-17 |  38 ( 37- 39) |  44 ( 43- 45)  40/ 49 |  16/ 16 ||  36 (-66-129) |  42 (-55-135)  38/ 46 |  80/ 80
-18 |  34 ( 32- 37) |  40 ( 38- 43)  37/ 44 |  16/ 16 ||  32 (-54- 68) |  38 (-48- 74)  35/ 42 |  80/ 80
+ 8 |  63 ( 61- 64) |  69 ( 67- 70)  63/ 76 |  16/ 16 ||  61 (-45- 68) |  67 (-39- 74)  61/ 74 |  80/ 80
+ 9 |  60 ( 59- 61) |  66 ( 65- 67)  60/ 73 |  16/ 16 ||  60 (-52- 65) |  66 (-44- 71)  60/ 72 |  80/ 80
+10 |  57 ( 56- 59) |  63 ( 62- 65)  58/ 70 |  16/ 16 ||  55 (-34- 81) |  61 (-26- 87)  55/ 67 |  80/ 80
+11 |  55 ( 54- 56) |  61 ( 60- 62)  56/ 67 |  16/ 16 ||  52 (-52- 60) |  58 (-45- 66)  53/ 64 |  80/ 80
+12 |  53 ( 52- 54) |  59 ( 58- 60)  54/ 65 |  16/ 16 ||  50 (-58- 84) |  56 (-52- 90)  51/ 61 |  80/ 80
+13 |  50 ( 48- 52) |  56 ( 54- 58)  51/ 61 |  16/ 16 ||  47 (-64- 73) |  53 (-55- 79)  48/ 58 |  80/ 80
+14 |  47 ( 43- 48) |  53 ( 49- 54)  48/ 58 |  16/ 16 ||  42 (-65- 73) |  48 (-55- 79)  44/ 53 |  80/ 80
+15 |  43 ( 41- 43) |  49 ( 47- 49)  45/ 54 |  16/ 16 ||  41 (-66- 71) |  47 (-55- 77)  43/ 52 |  80/ 80
+16 |  40 ( 39- 41) |  46 ( 45- 47)  42/ 51 |  16/ 16 ||  39 ( 26- 76) |  45 ( 32- 82)  41/ 49 |  80/ 80
+17 |  38 ( 37- 39) |  44 ( 43- 45)  40/ 49 |  16/ 16 ||  35 (-66- 72) |  41 (-55- 78)  38/ 46 |  80/ 80
+18 |  34 ( 32- 37) |  40 ( 38- 43)  37/ 44 |  16/ 16 ||  32 (-54- 66) |  38 (-48- 72)  35/ 42 |  80/ 80
 19 |  29 ( 26- 31) |  35 ( 32- 37)  32/ 38 |  16/ 16 ||  27 (-66- 73) |  33 (-55- 79)  30/ 37 |  80/ 80
-20 |  20 ( -8- 25) |  26 ( -2- 31)  23/ 28 |  16/ 16 ||  15 (-66- 58) |  21 (-55- 64)  19/ 24 |  80/ 80
+20 |  20 ( -8- 25) |  26 ( -2- 31)  23/ 28 |  16/ 16 ||  15 (-26- 58) |  21 (-17- 64)  19/ 24 |  80/ 80
 
 SP Macias, R       29|  28,040,000  28,040,000
 2B Goodridge, J    30|  17,000,000  17,000,000
@@ -1401,7 +1402,7 @@ SS James Nadler              35| SS : 101      11  18     : 130 |    :          
 CF Hershel Stec              32| CF : 100       2  15     : 117 |    :                     :   0 |   1 | 118 | -341-899 |  F +      $4M   |  $6.39M: $9.59M |  p969 | Houston Astros       | **^
 1B William Reger             31| CF : 105      -4  14     : 115 |    :                     :   0 |   2 | 117 | -6333776 |    +   $10.2Mx2 |  $5.96M: $8.95M | p1360 | Houston Astros       | **^
 SS Joseph Chappelle          19| SS :  54      13 -28     :  39 | SS :  87      13  11     : 110 |   6 | 116 | -4449--- |                 |        :        |  p377 | Houston Astros       | +++
-3B John Rogers               21| 2B :  84       0  -4     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
+3B John Rogers               21| 2B :  84       0  -3     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
  C Teijirou Eizan            25|  C :  89       7   0     :  96 |  C :  93       7  10     : 110 |   6 | 116 | 86------ |                 |        :        | p1706 | Houston Astros       | +++
 3B Alex Alfano               25| SS :  95      -1   0     :  94 | SS :  99      -1  10     : 108 |   6 | 114 | -33661-3 |   3             |        :        | p1532 | Houston Astros       | ++++-
  C Nicholas Au               25|  C :  71      12 -13     :  70 |  C :  85      12   8     : 104 |   6 | 110 | 91------ |    +    $500k a |        :        | p1916 | Houston Astros       | ++
@@ -1552,7 +1553,7 @@ MR Kevin Crooms              32| MR :      81      10     :  91 |    :          
  C Juan Abad                 34|  C :  98      -4  -2     :  92 |    :                     :   0 |  -2 |  90 | 5------- |          $15M a |        :        | p2197 | Colorado Rockies     | *
 RF Tyler Fabiano             19| RF :  83     -12  -9     :  62 | RF :  94     -12   1     :  83 |   6 |  89 | -2---336 |   8             |        :        | p1254 | Colorado Rockies     | ++++-
  C Andrew Rosenthal          22|  C :  88      -7 -15     :  66 |  C :  93      -7  -3     :  83 |   6 |  89 | 4------- |                 |        :        |  p573 | Colorado Rockies     | +++
-2B Allen Murchison           30| 2B :  93      -6  -1     :  86 |    :                     :   0 |   3 |  89 | -2665--- |  F        $6M   |        :        | p1887 | Colorado Rockies     | **
+2B Allen Murchison           30| 2B :  93      -6   0     :  86 |    :                     :   0 |   3 |  89 | -2665--- |  F        $6M   |        :        | p1887 | Colorado Rockies     | **
 1B Derrick Hymel             23| 1B :  96     -19   0     :  77 | 1B : 100     -19   1     :  82 |   6 |  88 | -513-1-1 |   7     $500k r |        :        | p1292 | Colorado Rockies     | +++++
 1B Mark Lavergne             24| DH :  96     -25   1     :  72 | 1B : 103     -22   1     :  82 |   6 |  88 | -2------ |    +    $500k a |   $426k:  $639k | p1422 | Colorado Rockies     | **^
 SP Leon Candelas             25| SP :      72      -8     :  64 | SP :      82       0     :  82 |   6 |  88 |          |   T             |        :        |  p352 | Colorado Rockies     | ++++-
@@ -1586,7 +1587,7 @@ SS John Clark                23| SS :  96       2   3     : 101 | SS : 110      
 3B Jose Almendarez           26| SS : 102      -4   3     : 101 | SS : 108      -4  15     : 119 |   6 | 125 | -3365--- |         $500k r |  $1.28M: $1.92M |  p956 | Philadelphia A's     | **^
  C Casimiro Rivero           30|  C : 111      -2  13     : 122 |    :                     :   0 |   3 | 125 | 65252414 |  F     $14.5M   |  $5.54M: $8.31M |  p822 | Philadelphia A's     | ***
 SP Herman Llanes             26| SP :      95      15     : 110 | SP :      98      16     : 115 |   6 | 121 |          |         $500k r |  $6.39M: $9.59M |  p692 | Philadelphia A's     | **
-2B James Gallucci            29| 2B : 101       1  14     : 116 |    :                     :   0 |   4 | 120 | -4883--- |  F +    $900k   |  $5.96M: $8.95M |  p467 | Philadelphia A's     | **
+2B James Gallucci            29| 2B : 101       1  15     : 116 |    :                     :   0 |   4 | 120 | -4883--- |  F +    $900k   |  $6.39M: $9.59M |  p467 | Philadelphia A's     | **
 SS Marcelo Amato             32| 3B : 111      -5  13     : 119 |    :                     :   0 |   1 | 120 | -7474--- |          $14Mx2 |  $5.54M: $8.31M |  p590 | Philadelphia A's     | ***^
 SP Jackie Mangum             25| SP :      89       8     :  97 | SP :      96      15     : 111 |   6 | 117 |          |         $500k a |  $3.41M: $5.11M |  p282 | Philadelphia A's     | ***
 SS John Delaney              22| SS :  99      -3   2     :  97 | SS : 100      -3   8     : 105 |   6 | 111 | -3345--- |   4             | $852.1k: $1.28M | p1592 | Philadelphia A's     | +++++
@@ -1850,7 +1851,7 @@ SP Adrian Bengoa             26| SP :     101      21   3 : 125 | SP :      99  
 RF Robin Bandy               27| RF : 109     -11  19     : 117 |    :                     :   0 |   6 | 123 | -2---357 |        $2.31M a |  $8.09M:$12.14M |  p407 | San Francisco Giants | ***
 SP James Carter              24| SP :      95      15     : 110 | SP :      96      15     : 111 |   6 | 117 |          |        $1.93M a |  $6.39M: $9.59M |   p45 | San Francisco Giants | ***
 SS Bradly Doty               32| 2B : 103      -2  14     : 115 |    :                     :   0 |   1 | 116 | -3876--- |           $6Mx2 |  $5.96M: $8.95M |  p476 | San Francisco Giants | **^
-3B Lance Thomas              23| 3B :  98     -10  -5     :  84 | 3B : 107     -10   9     : 107 |   6 | 113 | -6252--- |   1     $500k r |        :        | p1613 | San Francisco Giants | +++++
+3B Lance Thomas              23| 3B :  98     -10  -4     :  84 | 3B : 107     -10   9     : 107 |   6 | 113 | -6252--- |   1     $500k r |        :        | p1613 | San Francisco Giants | +++++
  C Ricardo Ortiz             21|  C :  75       5 -16     :  64 |  C :  92       5   8     : 105 |   6 | 111 | 71------ |                 |        :        |  p182 | San Francisco Giants | +++
 SS Danilo Bassals            24| SS :  88       7   0     :  95 | SS :  90       7   8     : 105 |   6 | 111 | -3978--- |                 |        :        |  p801 | San Francisco Giants | +++
 2B Martin Devitt             30| 2B : 104      -7  10     : 107 |    :                     :   0 |   3 | 110 | -3672--- |           $2Mx2 |  $4.26M: $6.39M |  p445 | San Francisco Giants | **
@@ -1866,7 +1867,7 @@ LF Henry Smith               21| RF :  84      -8  -3     :  73 | RF :  91      
 3B Bryan Tipps               21| 3B :  60      -7 -40     :  14 | 3B :  92      -7  -3     :  83 |   6 |  89 | -3363--- |                 |        :        |   p87 | San Francisco Giants | ++
 MR Bill Prestridge           27| MR :      77       6     :  83 |    :                     :   0 |   6 |  89 |          |    +    $500k a |  $2.56M: $3.83M |   p39 | San Francisco Giants | ***
 SS Louis Lozada              34| SS :  92       0  -2     :  90 |    :                     :   0 |  -2 |  88 | -3646--- |  F      $1.2M   |        :        |  p418 | San Francisco Giants | **
-2B Lamar Vando               21| 2B :  85      -7 -10     :  68 | 2B :  90      -7  -2     :  80 |   6 |  86 | -3654--- |                 |        :        | p1320 | San Francisco Giants | ++-
+2B Lamar Vando               21| 2B :  85      -7  -9     :  68 | 2B :  90      -7  -2     :  80 |   6 |  86 | -3654--- |                 |        :        | p1320 | San Francisco Giants | ++-
 SS Flavio Hernandez          28| 2B :  97     -13  -3     :  81 |    :                     :   0 |   5 |  86 | -5432--- |    +    $500k a |        :        |  p432 | San Francisco Giants | *^
 MR William Ponder            31| SP :      82       2     :  84 |    :                     :   0 |   2 |  86 |          |    +    $550k a | $852.1k: $1.28M | p1306 | San Francisco Giants | **^
 2B Luis Alvarado             22| 2B :  66      -4 -25     :  37 | 2B :  86      -4  -3     :  79 |   6 |  85 | -2721--- |                 |        :        |  p128 | San Francisco Giants | +++-
@@ -1980,13 +1981,13 @@ MR Samuel Brown              22| MR :      68      -1     :  67 | MR :      67  
 CF Jonathan Quijada          21| CF :  54      -6 -39     :   8 | CF :  81      -6 -10     :  65 |   6 |  71 | -2---262 |                 |        :        | p1661 | Cincinnati Reds      | +
 SP Benito Diaz               25| SP :      68     -12     :  56 | SP :      73      -9     :  64 |   6 |  70 |          |   T     $500k r |        :        | p2144 | Cincinnati Reds      | ++++-
 SP Peter Maya                20| MR :      36     -29     :   7 | SP :      72     -10     :  62 |   6 |  68 |          |                 |        :        |  p702 | Cincinnati Reds      | +++
-2B Adan Lerma                21| 2B :  75     -10 -23     :  42 | 2B :  83     -10 -12     :  60 |   6 |  66 | -2513--- | I               |        :        |  p613 | Cincinnati Reds      | +
+2B Adan Lerma                21| 2B :  75     -10 -22     :  42 | 2B :  83     -10 -12     :  60 |   6 |  66 | -2513--- | I               |        :        |  p613 | Cincinnati Reds      | +
 MR Bernard Loera             22| MR :      48     -19     :  30 | MR :      67      -8     :  60 |   6 |  66 |          |                 |        :        | p1047 | Cincinnati Reds      | ++++-
  C Tony Knox                 24|  C :  70      -6 -32     :  31 |  C :  81      -6 -15     :  60 |   6 |  66 | 51------ |                 |        :        |  p330 | Cincinnati Reds      | ++
 SP Jacinto Valtierra         24| MR :      36     -29     :   7 | SP :      71     -11     :  60 |   6 |  66 |          |                 |        :        | p2046 | Cincinnati Reds      | ++++-
 2B Kevin Duran               21| 2B :  54     -14 -47     :  -8 | 2B :  86     -14 -13     :  58 |   6 |  64 | -23----- |                 |        :        |  p674 | Cincinnati Reds      | ++
  C Steven Stringer           24|  C :  73      -1 -24     :  48 |  C :  75      -1 -16     :  58 |   6 |  64 | 61---3-1 |                 |        :        | p1056 | Cincinnati Reds      | +
-3B Richard Brooks            20| 3B :  53      -7 -47     :   0 | 3B :  79      -7 -16     :  57 |   6 |  63 | -3363--- |                 |        :        | p1917 | Cincinnati Reds      | ++
+3B Richard Brooks            20| 3B :  53      -7 -46     :   0 | 3B :  79      -7 -16     :  57 |   6 |  63 | -3363--- |                 |        :        | p1917 | Cincinnati Reds      | ++
 1B David Navarro             21| 1B :  77     -21 -21     :  35 | 1B :  89     -21 -12     :  55 |   6 |  61 | -3------ |                 |        :        |  p596 | Cincinnati Reds      | +++
 MR Oscar Ranger              21| MR :      45     -22     :  23 | MR :      65     -10     :  55 |   6 |  61 |          |                 |        :        | p1091 | Cincinnati Reds      | +++-
 SP Rojya Denbe               24| SP :      64     -16     :  48 | SP :      68     -14     :  54 |   6 |  60 |          |                 |        :        |   p55 | Cincinnati Reds      | ++++
@@ -2128,7 +2129,7 @@ SP Sidney Ortego             26| SP :      85       5     :  90 | SP :      86  
 LF Alberto Vivar             27| LF :  93      -8   5     :  89 |    :                     :   0 |   6 |  95 | -2---867 |         $500k r |  $2.13M:  $3.2M | p2081 | Boston Red Sox       | **^
 2B Bryan Athey               19| 2B :  67      -5 -25     :  36 | 2B :  92      -5   2     :  88 |   6 |  94 | -3625--- |                 |        :        | p1017 | Boston Red Sox       | +++-
 MR Glen Nicastro             22| MR :      42     -25     :  17 | MR :      82       5     :  87 |   6 |  93 |          |                 |        :        |  p710 | Boston Red Sox       | +++++
-3B Hipolito Hurtado          25| 3B :  88      -3  -8     :  78 | 3B :  90      -3  -1     :  87 |   6 |  93 | -4573--- |         $500k r |        :        |  p673 | Boston Red Sox       | +++
+3B Hipolito Hurtado          25| 3B :  88      -3  -7     :  78 | 3B :  90      -3  -1     :  87 |   6 |  93 | -4573--- |         $500k r |        :        |  p673 | Boston Red Sox       | +++
 MR Nicholas Diez             26| SP :      79      -2     :  77 | SP :      84       2     :  86 |   6 |  92 |          |         $500k r |        :        | p1924 | Boston Red Sox       | **^
  C Kendry Olivarez           22|  C :  69      -3 -30     :  36 |  C :  90      -3  -2     :  85 |   6 |  91 | 56---1-1 |                 |        :        |   p44 | Boston Red Sox       | ++-
  C Yagorou Okitsugu          25|  C :  72       1 -23     :  50 |  C :  86       1  -2     :  85 |   6 |  91 | 61------ |                 |        :        |  p807 | Boston Red Sox       | ++
@@ -2166,7 +2167,7 @@ SS James Nadler              35| SS : 101      11  18     : 130 |    :          
 CF Hershel Stec              32| CF : 100       2  15     : 117 |    :                     :   0 |   1 | 118 | -341-899 |  F +      $4M   |  $6.39M: $9.59M |  p969 | Houston Astros       | **^
 1B William Reger             31| CF : 105      -4  14     : 115 |    :                     :   0 |   2 | 117 | -6333776 |    +   $10.2Mx2 |  $5.96M: $8.95M | p1360 | Houston Astros       | **^
 SS Joseph Chappelle          19| SS :  54      13 -28     :  39 | SS :  87      13  11     : 110 |   6 | 116 | -4449--- |                 |        :        |  p377 | Houston Astros       | +++
-3B John Rogers               21| 2B :  84       0  -4     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
+3B John Rogers               21| 2B :  84       0  -3     :  80 | 3B :  97       2  11     : 110 |   6 | 116 | -3893--- |   4             |        :        | p1013 | Houston Astros       | ++++-
  C Teijirou Eizan            25|  C :  89       7   0     :  96 |  C :  93       7  10     : 110 |   6 | 116 | 86------ |                 |        :        | p1706 | Houston Astros       | +++
 3B Alex Alfano               25| SS :  95      -1   0     :  94 | SS :  99      -1  10     : 108 |   6 | 114 | -33661-3 |   3             |        :        | p1532 | Houston Astros       | ++++-
  C Nicholas Au               25|  C :  71      12 -13     :  70 |  C :  85      12   8     : 104 |   6 | 110 | 91------ |    +    $500k a |        :        | p1916 | Houston Astros       | ++
@@ -2310,15 +2311,15 @@ MR Bill Torian               26| MR :      67      -2     :  65 | MR :      74  
 
 American League
 East ----------------+
-St. Louis (C) Car... | 104.5 103.2 107.6 |  97.1  97.1  94.1 |  82- 80 0.506 |   0-  0 0.500 |  82- 80 0.506 ( 8) 
-Brooklyn Dodgers     |  94.4  98.5  92.9 | 102.3 101.9 104.2 |  78- 84 0.484 |   0-  0 0.500 |  78- 84 0.481 ( 9) 
-Philadelphia A's     |  99.2  97.4  96.6 |  98.6  96.0  94.4 |  74- 88 0.454 |   0-  0 0.500 |  74- 88 0.457 (12) 
+St. Louis (C) Car... | 104.5 103.1 107.6 |  97.1  97.1  94.1 |  82- 80 0.506 |   0-  0 0.500 |  82- 80 0.506 ( 8) 
+Brooklyn Dodgers     |  94.4  98.5  92.8 | 102.3 101.9 104.2 |  78- 84 0.483 |   0-  0 0.500 |  78- 84 0.481 ( 9) 
+Philadelphia A's     |  99.2  97.4  96.5 |  98.6  96.0  94.4 |  74- 88 0.454 |   0-  0 0.500 |  74- 88 0.457 (12) 
 Colorado Rockies     |  95.6  95.5  91.0 |  95.9  96.0  91.7 |  67- 95 0.411 |   0-  0 0.500 |  67- 95 0.414 (14) 
 West ----------------+
 San Francisco Giants | 103.0 102.9 105.8 | 102.5 103.8 106.2 |  90- 72 0.558 |   0-  0 0.500 |  90- 72 0.556 ( 4) 
-Detroit Tigers       | 100.3 100.1 100.4 |  97.5  97.7  95.2 |  77- 85 0.478 |   0-  0 0.500 |  77- 85 0.475 (11) 
+Detroit Tigers       | 100.3 100.1 100.4 |  97.5  97.7  95.2 |  77- 85 0.478 |   0-  0 0.500 |  77- 85 0.475 (10) 
 Atlanta Braves       | 102.2 102.1 104.3 |  92.6  93.7  86.0 |  72- 90 0.446 |   0-  0 0.500 |  72- 90 0.444 (13) 
-Montreal Expos       |  97.8  96.4  94.1 |  94.0  93.4  87.0 |  65- 97 0.401 |   0-  0 0.500 |  65- 97 0.401 (16) 
+Montreal Expos       |  97.8  96.4  94.0 |  94.0  93.4  87.0 |  65- 97 0.401 |   0-  0 0.500 |  65- 97 0.401 (16) 
 
 National League
 East ----------------+
@@ -2329,8 +2330,8 @@ New York Mets        |  94.1  95.1  89.0 |  97.0  96.6  93.5 |  66- 96 0.409 |  
 West ----------------+
 Houston Astros       | 107.8 107.7 114.9 | 102.1 100.8 102.9 |  94- 68 0.583 |   0-  0 0.500 |  94- 68 0.580 ( 1) 
 Seattle Mariners     | 103.0 101.1 104.0 | 102.3 102.6 104.8 |  88- 74 0.543 |   0-  0 0.500 |  88- 74 0.543 ( 5) 
-Boston Red Sox       | 100.1  98.3  98.3 | 102.9 104.3 107.0 |  85- 77 0.525 |   0-  0 0.500 |  85- 77 0.525 ( 6) 
-Kansas City Royals   |  99.5  98.7  98.2 | 100.1  97.3  97.3 |  77- 85 0.477 |   0-  0 0.500 |  77- 85 0.475 (10) 
+Boston Red Sox       | 100.1  98.4  98.5 | 102.9 104.3 107.0 |  85- 77 0.526 |   0-  0 0.500 |  85- 77 0.525 ( 6) 
+Kansas City Royals   |  99.5  98.7  98.2 | 100.1  97.3  97.3 |  77- 85 0.477 |   0-  0 0.500 |  77- 85 0.475 (11) 
                      |              99.3 |              86.6 |
 
 --- Non Top prospects ---
