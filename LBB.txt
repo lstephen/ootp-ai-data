@@ -52,7 +52,7 @@ Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., End
 -- Hits
 Selected: IsotonicScores: [(0.072416297322215509, RandomForest(...)), (0.086430904191360194, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  9.  14.   4.   4.   0.   6.   0.   1.]Feature Mask: [False  True False False False False False False]
 -- Doubles
-Selected: RandomForestScores: [(0.16902613728052326, RandomForest(...)), (0.16091821881673427, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [  1.   2.  42.   7.   2.   1.   1.   6.]Feature Mask: [False False  True  True False False False False]Feature Importances: [ 0.931  0.069]
+Selected: RandomForestScores: [(0.16902613728052326, RandomForest(...)), (0.16091821881673427, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [  1.   2.  42.   7.   2.   1.   1.   6.]Feature Mask: [False False  True  True False False False False]Feature Importances: [ 0.931  0.069]
 -- HomeRuns
 Selected: IsotonicScores: [(0.15044124034271422, RandomForest(...)), (0.17182259041022399, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  4.   3.   4.  70.   0.   3.   0.   0.]Feature Mask: [False False False  True False False False False]
 -- Walks
@@ -182,16 +182,16 @@ Balance:38/28 = 1.357 (ideal: 1.273)
   ML -> AAA  LF Steve Henderson
   ML -> AAA  SS Willie Randolph
   ML -> AAA  CF Pepe Mangual
- AAA -> ML   2B Glenn Hubbard
- AAA -> ML   SP Mike LaCoss
- AAA -> ML   LF Felix Jose
- AAA -> ML    C Jamie Nelson
- AAA -> ML   SP Bob Owchinko
  AAA -> ML   3B Tim Naehring
+ AAA -> ML   SP Bob Owchinko
+ AAA -> ML   SP Mike LaCoss
+ AAA -> ML   2B Glenn Hubbard
+ AAA -> ML    C Jamie Nelson
+ AAA -> ML   LF Felix Jose
  AAA -> AA   2B Rene Gonzales
-  AA -> AAA  SP Bryan Hickerson
   AA -> AAA  SP Mark W. Davis
   AA -> AAA  CF George D. Wright
+  AA -> AAA  SP Bryan Hickerson
    A -> AA   LF Ruben Amaro Jr.
    A -> AA   MR Darren Hall
   DL -> ML   SP John Denny
@@ -313,70 +313,70 @@ CF Manny Martinez            19 | CF :  82      -4 :  78 | CF :  82      -4 :  7
 SS Ricky Gutierrez           19 | SS :  82      13 :  95 | SS :  82      13 :  95 |  +0 |                       :                       | ++++-
  C Brad Ausmus               20 |  C :  82       9 :  91 |  C :  82       9 :  91 |  +0 |                       :                       | +++
 3B Travis Fryman             20 | SS :  84       7 :  91 | SS :  84       7 :  91 |  +0 |                       :                       | +++-
-1B Dave Hansen               21 | 3B :  84      -8 :  76 | 3B :  84      -8 :  76 |  +0 |                       :                       | +++-
 3B Clay Bellinger            21 | SS :  83       8 :  91 | SS :  83       8 :  91 |  +0 |                       :                       | +++
 RF Dan Peltier               21 | RF :  81     -13 :  68 | RF :  81     -13 :  68 |  +0 |                       :                       | ++-
+1B Dave Hansen               21 | 3B :  84      -8 :  76 | 3B :  84      -8 :  76 |  +0 |                       :                       | +++-
 3B Tim Naehring              22 | SS : 101       2 : 103 | SS : 101       2 : 103 |  +0 |                       :                       | +++++
  C Tim Spehr                 23 |  C :  83       1 :  84 |  C :  83       1 :  84 |  +0 |                       :                       | ++-
 LF Felix Jose                24 | CF :  95       2 :  97 | CF :  95       2 :  97 |  +0 |                       :                       | ++++
-LF Ruben Amaro Jr.           24 | CF :  83      -4 :  79 | CF :  83      -4 :  79 |  +0 |                       :                       | ++-
 1B Troy Neel                 24 | LF :  94      -9 :  85 | LF :  94      -9 :  85 |  +0 |                       :                       | ++++-
-CF Mark T. McLemore          25 | RF :  99     -14 :  85 | RF :  99     -14 :  85 |  +0 |                       :                       | ++-
-RF Dave Martinez             25 | CF :  83      -2 :  81 | CF :  83      -2 :  81 |  +0 | -10                   : -10                   | +
+LF Ruben Amaro Jr.           24 | CF :  83      -4 :  79 | CF :  83      -4 :  79 |  +0 |                       :                       | ++-
 SS Jeff Hamilton             25 | SS :  84      -3 :  81 | SS :  84      -3 :  81 |  +0 |                       :                       | ++
-RF Keith A. Miller           26 | CF : 110       5 : 115 | CF : 110       5 : 115 |  +0 |                       :                       | **^
+RF Dave Martinez             25 | CF :  83      -2 :  81 | CF :  83      -2 :  81 |  +0 | -10                   : -10                   | +
+CF Mark T. McLemore          25 | RF :  99     -14 :  85 | RF :  99     -14 :  85 |  +0 |                       :                       | ++-
 3B Jeff McKnight             26 | SS :  82       0 :  82 | SS :  82       0 :  82 |  +0 |                       :                       | *
+RF Keith A. Miller           26 | CF : 110       5 : 115 | CF : 110       5 : 115 |  +0 |                       :                       | **^
  C Tom Pagnozzi              27 |  C :  83       0 :  83 |  C :  83       0 :  83 |  +0 |                       :                       | *
 1B Mike Sharperson           28 | SS :  96       6 : 102 | SS :  96       6 : 102 |  +0 |                       :                       | *
-2B Rene Gonzales             29 | SS :  90       2 :  92 | SS :  90       2 :  92 |  +0 |                       :                       | *^
  C John Mizerock             29 |  C :  96      -2 :  94 |  C :  96      -2 :  94 |  +0 |                       :                       | *
 1B Dave Anderson             29 | SS :  97       2 :  99 | SS :  97       2 :  99 |  +0 |                       :                       | *
+2B Rene Gonzales             29 | SS :  90       2 :  92 | SS :  90       2 :  92 |  +0 |                       :                       | *^
 2B Ernie Riles               29 | 3B :  92      -8 :  84 | 3B :  92      -8 :  84 |  +0 |                       :                       | *
- C Jamie Nelson              30 |  C :  92       7 :  99 |  C :  92       7 :  99 |  +0 |                       :                       | *
 LF Tony Phillips             30 | SS : 122      11 : 133 | SS : 122      11 : 133 |  +0 |                       :                       | ****
+ C Jamie Nelson              30 |  C :  92       7 :  99 |  C :  92       7 :  99 |  +0 |                       :                       | *
 CF George D. Wright          31 | CF :  93      -8 :  85 | CF :  93      -8 :  85 |  +0 |                       :                       | *
 2B Glenn Hubbard             32 | 2B : 106      -4 : 102 | 2B : 106      -4 : 102 |  +0 |                       :                       | **^
- C Butch Wynegar             33 |  C : 106      12 : 118 |  C : 106      12 : 118 |  +0 |                       :                       | **^
 1B Ken Oberkfell             33 | 3B :  94      -4 :  90 | 3B :  94      -4 :  90 |  +0 |                       :                       | *
+ C Butch Wynegar             33 |  C : 106      12 : 118 |  C : 106      12 : 118 |  +0 |                       :                       | **^
 LF Gary Roenicke             35 | CF : 104      -3 : 101 | CF : 104      -3 : 101 |  +0 |                       :                       | **
 SS Willie Randolph           35 | SS :  95       7 : 102 | SS :  95       7 : 102 |  +0 |                       :                       | **
-LF Warren Cromartie          36 | SS : 101      -3 :  98 | SS : 101      -3 :  98 |  +0 |                       :                       | **^
 1B Hiromitsu Ochiai          36 | 3B : 124      -9 : 115 | 3B : 124      -9 : 115 |  +0 |                       :                       | ***^
 2B Mark DeJohn               36 | SS : 108       7 : 115 | SS : 108       7 : 115 |  +0 |                       :                       | **^
-RF Fred Lynn                 37 | CF :  91       3 :  94 | CF :  91       3 :  94 |  +0 |                       :                       | *
+LF Warren Cromartie          36 | SS : 101      -3 :  98 | SS : 101      -3 :  98 |  +0 |                       :                       | **^
+3B Roy Smalley III           37 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **
 LF Steve Henderson           37 | LF :  95     -12 :  83 | LF :  95     -12 :  83 |  +0 |                       :                       | *^
 CF Pepe Mangual              37 | CF :  91       2 :  93 | CF :  91       2 :  93 |  +0 |                       :                       | *
-3B Roy Smalley III           37 | SS : 108       0 : 108 | SS : 108       0 : 108 |  +0 |                       :                       | **
+RF Fred Lynn                 37 | CF :  91       3 :  94 | CF :  91       3 :  94 |  +0 |                       :                       | *
 
 Pitchers
 Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
-MR Mark Wohlers              20 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                          :                          | +++++
 SP Ricky Bones               20 | SP :      44     :  44 | SP :      44     :  44 |  +0 |                          :                          | ++
+MR Mark Wohlers              20 | MR :      38     :  38 | MR :      38     :  38 |  +0 |                          :                          | +++++
 MR Rod Beck                  21 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                          :                          | +++++
-SP Dennis Springer           24 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | ++-
 MR Steve Olin                24 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                          :    +10                   | ++++-
+SP Dennis Springer           24 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | ++-
 MR Darren Hall               25 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | ++-
 SP Bryan Hickerson           26 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                          :                          | *
 SP Francisco Oliveras        27 | SP :      97     :  97 | SP :      97     :  97 |  +0 |                          :                          | **
 SP Mark W. Davis             29 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
 MR Greg Booker               29 | MR :      59     :  59 | MR :      59     :  59 |  +0 |                          :                          | *
 SP Zane Smith                29 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                          :                          | *
-SP Mike Jeffcoat             30 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                          :                          | *^
-SP Andy Hawkins              30 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
 MR Rich Rodas                30 | MR :      48     :  48 | MR :      48     :  48 |  +0 |                          :                          | *
+SP Andy Hawkins              30 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                          :                          | *
+SP Mike Jeffcoat             30 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                          :                          | *^
 SP Brent Gaff                31 | SP :      74     :  74 | SP :      74     :  74 |  +0 |                          :                          | *
 SP Bruce Hurst               31 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                          :                          | *
-SP Atlee Hammaker            32 | SP :      91     :  91 | SP :      91     :  91 |  +0 |                          :                          | *
 SP Howard Bailey             32 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                          :                          | *
+SP Atlee Hammaker            32 | SP :      91     :  91 | SP :      91     :  91 |  +0 |                          :                          | *
 SP Bob Welch                 33 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                          :                          | **
-SP Scott Sanderson           33 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                          :                          | *
 SP Mike LaCoss               33 | SP :      89     :  89 | SP :      89     :  89 |  +0 |                          :                          | *^
+SP Scott Sanderson           33 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                          :                          | *
 MR Dale Mohorcic             34 | MR :      75     :  75 | MR :      75     :  75 |  +0 |                          :                          | *
 MR Bob Tufts                 34 | MR :      54     :  54 | MR :      54     :  54 |  +0 |                          :                          | *
 SP Bob Owchinko              35 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | **
-MR Danny Boone               36 | MR :      81     :  81 | MR :      81     :  81 |  +0 |                          :                          | *^
-SP Rick Baldwin              36 | SP :     101     : 101 | SP :     101     : 101 |  +0 |                          :                          | *^
 CL Larry Andersen            36 | MR :     106     : 106 | MR :     106     : 106 |  +0 |                          :                          | ****
+SP Rick Baldwin              36 | SP :     101     : 101 | SP :     101     : 101 |  +0 |                          :                          | *^
+MR Danny Boone               36 | MR :      81     :  81 | MR :      81     :  81 |  +0 |                          :                          | *^
 SP John Denny                37 | SP :     124     : 124 | SP :     124     : 124 |  +0 |                          :                          | ***^
 
 Drafted Players
@@ -1149,7 +1149,7 @@ CF Jim Edmonds               19| CF :  85       7  -2     :  91 | CF : 116      
 SP John Smiley               24| SP :     104      25     : 129 | SP :     121      38   1 : 159 |   6 | 165 |          |   1           |  $6.68M: $6.47M | p1010 | Baltimore Orioles    | +++++
 SP Tom Candiotti             32| SP :     120      41     : 161 |    :                     :   0 |   1 | 162 |          |      $2.11M a | $10.96M:$10.61M |  p277 | Baltimore Orioles    | ***
 CF Steve Finley              24| CF :  97       7  10     : 115 | CF : 110       7  26   1 : 145 |   6 | 151 | -3---598 |   5   $300k r |  $2.67M: $2.59M |  p545 | Baltimore Orioles    | +++++
-2B Roberto Alomar            21| 2B : 102       4  13     : 120 | 2B : 113       4  27     : 144 |   6 | 150 | -3821--- |   3           |  $3.47M: $3.36M |    p7 | Baltimore Orioles    | +++++
+2B Roberto Alomar            21| 2B : 102       4  14     : 120 | 2B : 113       4  27     : 144 |   6 | 150 | -3821--- |   3           |  $3.74M: $3.62M |    p7 | Baltimore Orioles    | +++++
 SP Tommy Greene              22| SP :      48     -31     :  17 | SP :     104      20     : 124 |   6 | 130 |          |   6           |        :        |  p588 | Baltimore Orioles    | +++++
 MR Rick Aguilera             28| SP :     101      22     : 123 |    :                     :   0 |   5 | 128 |          |       $300k a |  $5.88M: $5.69M |    p8 | Baltimore Orioles    | ***^
 1B Carlos Delgado            17| 1B :  85     -13 -11     :  61 | LF : 115     -12  16     : 119 |   6 | 125 | -5---3-1 |   2           |        :        |  p359 | Baltimore Orioles    | +++++
@@ -1490,7 +1490,7 @@ SS Rafael Bournigal          23| SS :  83       8 -11     :  80 | SS :  87      
 1B Greg Walker               30| 1B : 103     -13   8     :  98 |    :                     :   0 |   3 | 101 | -6------ |      $4.75Mx2 |  $2.14M: $2.07M | p1713 | Oakland Athletics    | ***
 RF George Hinshaw            30| 3B :  96      -2   3     :  97 |    :                     :   0 |   3 | 100 | -3351656 |               | $801.7k:$776.3k |  p769 | Oakland Athletics    | *^
  C Gary Carter               35|  C : 100       0   6     : 106 |    :                     :   0 |  -6 | 100 | 5312-2-2 |       $5.9Mx3 |   $1.6M: $1.55M |  p403 | Oakland Athletics    | ***^
-2B Geronimo Pena             22| 2B :  85      -5 -13     :  68 | 2B :  96      -5   1     :  92 |   6 |  98 | -251---- |               |        :        | p1122 | Oakland Athletics    | +++
+2B Geronimo Pena             22| 2B :  85      -5 -12     :  68 | 2B :  96      -5   1     :  92 |   6 |  98 | -251---- |               |        :        | p1122 | Oakland Athletics    | +++
 LF Orlando Merced            23| LF :  83      -5  -9     :  69 | LF :  95      -5   3     :  92 |   6 |  98 | -6---727 |               |        :        |  p637 | Oakland Athletics    | ++-
 SP Brian Allard              32| SP :      88       9     :  97 |    :                     :   0 |   1 |  98 |          |               |  $2.41M: $2.33M |   p35 | *CEI* Oakland Ath... | *
 RF Wes Chamberlain           23| LF :  86      -8  -8     :  70 | LF :  97      -8   2     :  91 |   6 |  97 | -2---525 |   9           |        :        |  p376 | Oakland Athletics    | +++-
@@ -1530,7 +1530,7 @@ MR Rick A. Williams          33| SP :     100      21     : 121 |    :          
 LF Troy O'Leary              20| LF :  86      -9  -9     :  68 | LF : 109      -9  13     : 113 |   6 | 119 | -1---545 |   9           |        :        | p1085 | California Angels    | ++++
 3B Wally Joyner              27| 3B : 108      -7  11     : 111 |    :                     :   0 |   6 | 117 | -614---- |     $828.6k a |  $2.94M: $2.85M |  p515 | California Angels    | **^
 RF Dave Gallagher            29| LF : 107      -8  13     : 112 |    :                     :   0 |   4 | 116 | -321-545 |               |  $3.47M: $3.36M |  p565 | California Angels    | **
-2B Joey Cora                 24| 2B :  97      -9  -5     :  84 | 2B : 107      -9   8     : 106 |   6 | 112 | -2311--- |               |        :        |  p177 | California Angels    | +++-
+2B Joey Cora                 24| 2B :  97      -9  -4     :  84 | 2B : 107      -9   8     : 106 |   6 | 112 | -2311--- |               |        :        |  p177 | California Angels    | +++-
 RF Ron Coomer                23| 3B :  88      -8 -10     :  71 | 3B : 103      -8   6     : 102 |   6 | 108 | -414-2-4 |               |        :        |  p454 | California Angels    | +++-
 SP Brian Kingman             35| SP :      96      17     : 113 |    :                     :   0 |  -6 | 107 |          | IF   $4.55M   |  $4.54M:  $4.4M |  p526 | California Angels    | **^
 MR Tom Tellmann              35| SP :      95      16     : 112 |    :                     :   0 |  -6 | 106 |          |  F    $4.6M   |  $4.28M: $4.14M | p1322 | California Angels    | ***^
@@ -2191,7 +2191,7 @@ Texas Rangers        |  99.3 100.2  99.5 | 117.8 120.7 133.9 | 104- 58 0.640 |  
 Minnesota Twins      | 106.0 107.3 112.7 | 108.5 110.4 117.7 | 103- 59 0.638 |   0-  0 0.500 | 103- 59 0.636 ( 3) 
 Oakland Athletics    |  98.4  97.6  96.0 | 104.7 104.3 108.9 |  85- 77 0.522 |   0-  0 0.500 |  85- 77 0.525 ( 7) 
 Chicago (A) White... |  99.9 100.0  99.9 | 102.5 100.6 103.1 |  83- 79 0.515 |   0-  0 0.500 |  83- 79 0.512 ( 8) 
-California Angels    |  97.2  97.4  94.5 | 102.1 101.6 103.7 |  79- 83 0.490 |   0-  0 0.500 |  79- 83 0.488 (12) 
+California Angels    |  97.2  97.4  94.5 | 102.1 101.6 103.7 |  79- 83 0.490 |   0-  0 0.500 |  79- 83 0.488 (13) 
 
 National League
 East ----------------+
@@ -2203,7 +2203,7 @@ New York (N) Mets    |  97.1  96.8  93.8 |  78.1  77.9  52.6 |  32-130 0.196 |  
 West ----------------+
 Los Angeles Dodgers  |  92.6  92.2  84.2 | 120.2 117.1 133.9 |  91- 71 0.560 |   0-  0 0.500 |  91- 71 0.562 ( 6) 
 Atlanta Braves       |  96.9  96.3  93.0 | 103.4 105.6 108.7 |  82- 80 0.506 |   0-  0 0.500 |  82- 80 0.506 (10) 
-Cincinnati Reds      | 101.7 100.3 102.0 |  95.3 100.3  95.6 |  79- 83 0.488 |   0-  0 0.500 |  79- 83 0.488 (13) 
+Cincinnati Reds      | 101.7 100.3 102.0 |  95.3 100.3  95.6 |  79- 83 0.488 |   0-  0 0.500 |  79- 83 0.488 (12) 
 San Francisco Giants | 105.4 105.0 110.1 |  86.0  84.3  68.2 |  58-104 0.361 |   0-  0 0.500 |  58-104 0.358 (16) 
 Houston Astros       |  93.9  94.5  88.0 |  89.7  91.0  80.0 |  54-108 0.331 |   0-  0 0.500 |  54-108 0.333 (17) 
                      |             101.1 |              99.8 |
@@ -2239,7 +2239,7 @@ SP Eric Hillman              23| SP :      47     -32     :  14 | SP :      95  
 3B Mike Bordick              24| SS :  84       8 -11     :  81 | SS :  93       8   6     : 107 |   6 | 113 | -3777--- |               |        :        |  p202 | Boston Red Sox       | +++
 3B Dave Hajek                22| 3B :  82       6  -3     :  85 | 3B :  92       6   9     : 106 |   6 | 112 | -3882--- |               |        :        |  p532 | Minnesota Twins      | +-
 1B Jim Tatum                 22|  C :  81      17   5     : 103 |  C :  81      17   8     : 106 |   6 | 112 | 9413-612 |               |  $1.34M: $1.29M | p1240 | St. Louis Cardinals  | +
-2B Joey Cora                 24| 2B :  97      -9  -5     :  84 | 2B : 107      -9   8     : 106 |   6 | 112 | -2311--- |               |        :        |  p177 | California Angels    | +++-
+2B Joey Cora                 24| 2B :  97      -9  -4     :  84 | 2B : 107      -9   8     : 106 |   6 | 112 | -2311--- |               |        :        |  p177 | California Angels    | +++-
  C Steve Decker              24|  C :  82       9  -2     :  89 |  C :  89       9   8     : 106 |   6 | 112 | 76221211 |               |        :        |  p319 | Baltimore Orioles    | ++
 RF Chito Martinez            24| RF :  93     -10  -6     :  77 | RF : 107     -10   9     : 106 |   6 | 112 | -1---1-4 |               |        :        |  p763 | Philadelphia Phil... | +++-
  C Darrin Fletcher           23|  C :  83      11   0     :  94 |  C :  87      11   7     : 105 |   6 | 111 | 73------ |               |        :        |  p554 | Detroit Tigers       | +++
