@@ -31,7 +31,7 @@ Pitching: 10586/12374 0.461/0.539
              Ks | 0.220
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.26574858915099103, RandomForest(...)), (0.26559510424026245, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [ 315.  121.  151.  109.  222.   14.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.979  0.021]
+Selected: RandomForestScores: [(0.26574858915099103, RandomForest(...)), (0.26559510424026245, Isotonic(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [ 315.  121.  151.  109.  222.   14.]Feature Mask: [ True False False False  True False]Feature Importances: [ 0.979  0.021]
 -- Doubles
 Selected: IsotonicScores: [(0.082666337510982693, RandomForest(...)), (0.063652859502579193, Isotonic(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [ 78.  69.  47.  37.  53.   6.]Feature Mask: [ True False False False False False]
 -- Triples
@@ -50,9 +50,9 @@ Selected: RandomForestScores: [(0.078478098969799737, RandomForest(...)), (0.046
              Ks | 0.051
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.11440724630544301, RandomForest(...)), (0.068914435870346666, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 40.  14.   0.   8.   0.]Feature Mask: [ True  True False False False]Feature Importances: [ 0.692  0.308]
+Selected: RandomForestScores: [(0.11440724630544301, RandomForest(...)), (0.068914435870346666, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 40.  14.   0.   8.   0.]Feature Mask: [ True  True False False False]Feature Importances: [ 0.692  0.308]
 -- Doubles
-Selected: RandomForestScores: [(-0.001545305889421036, RandomForest(...)), (-0.04231621433420759, Isotonic(...))]Best Parameters: {'regressor__n_estimators': 98, 'regressor__max_depth': 5, 'selection__k': 3}Feature Scores: [ 0.  0.  1.  4.  0.]Feature Mask: [False False  True  True  True]Feature Importances: [ 0.354  0.409  0.237]
+Selected: RandomForestScores: [(-0.001545305889421036, RandomForest(...)), (-0.04231621433420759, Isotonic(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 98, 'regressor__max_depth': 5}Feature Scores: [ 0.  0.  1.  4.  0.]Feature Mask: [False False  True  True  True]Feature Importances: [ 0.354  0.409  0.237]
 -- HomeRuns
 Selected: IsotonicScores: [(0.13672785697490245, RandomForest(...)), (0.11153883630043666, Isotonic(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [  0.   0.  67.   1.   1.]Feature Mask: [False False  True False False]
 -- Walks
@@ -145,15 +145,15 @@ SP Collins, B         AAA 28 | 11.0  4.1  5.8  1.4 |  76  51 |  70  40 |  + |  6
 MR Mokichi, K      F   ML 35 |  9.4  8.5  6.0  2.3 |  77  94 |  74 122 |  + |  49/ 65 ||  65 ||
 SP Cintron, F         AAA 24 | 10.8  4.8  6.2  1.8 |  65 400 |  68  41 | ++ |  65/ 58 ||  65 ||
 SP Ankuru, K          AAA 28 | 10.8  4.2  6.3  1.7 |  65     |  67     | -+ |  65/ 57 ||  65 ||
-MR Hernandez, L     T AAA 24 | 11.7  4.3  4.6  1.2 |  75 107 |  74  58 |  + |  58/ 64 ||  64 ||
 SP Ranson, J       F   AA 36 | 10.9  4.8  6.5  1.7 |  62  64 |  67  92 | -+ |  64/ 57 ||  64 ||
+MR Hernandez, L     T AAA 24 | 11.7  4.3  4.6  1.2 |  75 107 |  74  58 |  + |  58/ 64 ||  64 ||
 MR Swiger, K          AAA 25 | 10.0  7.1  5.4  2.0 |  65 999 |  74 174 |  + |  47/ 62 ||  62 ||
 SP Lopp, B              A 23 | 10.4  5.8  5.7  2.3 |  74  63 |  63  36 | ++ |  62/ 57 ||  62 ||
+SP Torres, J           AA 32 | 10.8  4.8  6.5  2.1 |  59     |  65     | ++ |  61/ 54 ||  61 ||
+SP Olande, F           AA 32 |  9.9  4.1  7.0  2.4 |  63     |  66     | -- |  61/ 56 ||  61 ||
 MR Corrado, A         AAA 29 | 11.0  4.9  7.2  0.5 |  76 999 |  70 219 |  + |  47/ 61 ||  61 ||
 MR Briceno, J         AAA 26 | 11.5  4.7  4.8  1.5 |  68     |  70     | +- |  34/ 61 ||  61 ||
 MR Bottomley, J       AAA 28 | 11.7  4.0  3.6  1.7 |  65 159 |  72  35 | -- |  34/ 61 ||  61 ||
-SP Torres, J           AA 32 | 10.8  4.8  6.5  2.1 |  59     |  65     | ++ |  61/ 54 ||  61 ||
-SP Olande, F           AA 32 |  9.9  4.1  7.0  2.4 |  63     |  66     | -- |  61/ 56 ||  61 ||
 SP Harris, J            A 25 | 10.6  5.5  6.2  2.4 |  61     |  63     | +  |  61/ 54 ||  61 ||
 MR Varela, J           AA 32 | 10.3  4.6  4.7  2.3 |  64     |  70     |  + |  45/ 60 ||  60 ||
 MR Martinez, J          A 29 | 10.7  6.4  5.1  1.9 |  71     |  67     |  - |  60/ 59 ||  60 ||
@@ -202,22 +202,22 @@ Balance:50/39 = 1.282 (ideal: 1.273)
   ML -> AAA  SS Francisco Monagas
  AAA -> ML   SP Louie Albuerne
  AAA -> ML   CF Wilfredo Franco
+ AAA -> AA   MR Jose Varela
  AAA -> AA   2B Derek Nazario Jr.
  AAA -> AA   SP John Ranson
- AAA -> AA   MR Jose Varela
   AA -> AAA  3B Modesto Nissen
-  AA -> A    SP Vasili Kobalev
   AA -> A    MR Jose Martinez
-   A -> AAA  MR Johnathan Bottomley
+  AA -> A    SP Vasili Kobalev
    A -> AAA  SP Fede Cintron
+   A -> AAA  MR Johnathan Bottomley
   DL -> AAA  2B Douglas Perea
 
 SP
 Scott Spafford
 Dino Bias
 Daniel Hovis
-Jim Senior
 Ronald Crary
+Jim Senior
 
 LR
 Louie Albuerne
@@ -342,9 +342,9 @@ CF Carl Holsinger            23 | CF :  65       1 :  66 | CF :  66       1 :  6
 3B Alberto Dasilva           20 | SS :  59       4 :  63 | SS :  59       4 :  63 |  +0 |        +5          :     +5 +5          | +
 3B Michael Sanchez           24 | 2B :  82      -1 :  81 | 2B :  82      -1 :  81 |  +0 |  +5       +5 +5    :           +5 +5    | +++
 CF Jeff Hocker               26 | CF : 126       0 : 126 | CF : 126       0 : 126 |  +0 |     -5             :                    | ***^
-LF Mike Maroney              28 | CF :  85       0 :  85 | CF :  85       0 :  85 |  +0 |                    :        -5          | **
-1B Dwayne Grimes             28 | 1B : 112     -18 :  94 | 1B : 112     -18 :  94 |  +0 |  +5 +5 +5 -5 +5    :                    | **^
 3B Modesto Nissen            28 | 3B :  81      -4 :  77 | 3B :  81      -4 :  77 |  +0 |     +5             :                    | *
+1B Dwayne Grimes             28 | 1B : 112     -18 :  94 | 1B : 112     -18 :  94 |  +0 |  +5 +5 +5 -5 +5    :                    | **^
+LF Mike Maroney              28 | CF :  85       0 :  85 | CF :  85       0 :  85 |  +0 |                    :        -5          | **
 CF Wilfredo Franco           29 | CF :  86       7 :  93 | CF :  86       7 :  93 |  +0 |                    :                    | **
 2B David Ashman              29 | 2B :  68      -7 :  61 | 2B :  68      -7 :  61 |  +0 |                    :                    | *
 2B Bill Journey              32 | 2B :  80      -8 :  72 | 2B :  80      -8 :  72 |  +0 |           -5       :        -5          | *
@@ -378,8 +378,8 @@ SP Fede Cintron              24 | SP :      64     :  64 | SP :      65     :  6
 MR Celestino Mendoza         23 | MR :      53     :  53 | MR :      54     :  54 |  +1 |  +5 +5 -5       :  +5    -5       | ++
 MR Anton Corrado             29 | MR :      61     :  61 | MR :      61     :  61 |  +1 |        +5       :                 | **
 MR Juan Briceno              26 | MR :      60     :  60 | MR :      61     :  61 |  +1 |  +5             :  +5             | *^
-SP Joshua Harris             25 | SP :      61     :  61 | SP :      61     :  61 |  +0 |  -5             :                 | *
 MR Raimundo Lazo             25 | MR :      82     :  82 | MR :      82     :  82 |  +0 |                 :                 | **
+SP Joshua Harris             25 | SP :      61     :  61 | SP :      61     :  61 |  +0 |  -5             :                 | *
 MR Kenneth Swiger            25 | MR :      62     :  62 | MR :      62     :  62 |  +0 |     -5          :                 | *
 SP Emilio Trevino            26 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                 :  +5             | *
 SP James Colligan            26 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | *
@@ -388,10 +388,10 @@ MR Kenneth Freeman           28 | MR :      70     :  70 | MR :      70     :  7
 SP Louie Albuerne            28 | SP :      70     :  70 | SP :      70     :  70 |  +0 |        +5       :                 | **
 SP Vasili Kobalev            29 | SP :      56     :  56 | SP :      56     :  56 |  +0 |        -5       :  -5    -5       | *
 SP Juan Torres               32 | SP :      61     :  61 | SP :      61     :  61 |  +0 |                 :                 | *
-MR Jose Varela               32 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                 :                 | *
 MR Paul Karp                 32 | MR :      52     :  52 | MR :      52     :  52 |  +0 |  -5 +5          :  -5             | *
-SP Ronald Crary              33 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                 :                 | *
+MR Jose Varela               32 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                 :                 | *
 MR Bob Drum                  33 | MR :      71     :  71 | MR :      71     :  71 |  +0 |                 :                 | *
+SP Ronald Crary              33 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                 :                 | *
 MR Kyoutarou Mokichi         35 | MR :      65     :  65 | MR :      65     :  65 |  +0 |  -5             :                 | *
 SP Bob Collins               28 | SP :      67     :  67 | SP :      66     :  66 |  -1 |  -5             :  -5             | *
 SP Koji Ankuru               28 | SP :      66     :  66 | SP :      65     :  65 |  -1 |     -5          :                 | *
@@ -1878,7 +1878,7 @@ SS Clemente Agosto           25| 2B :  64       0 -18     :  47 | 2B :  78      
 The Kid
 41 ------------------+
 San Francisco Hip... | 111.2 108.8 119.1 | 107.4 108.3 115.0 | 106- 56 0.652 |  70- 38 0.648 | 105- 57 0.648 ( 3) 
-Dakota Destroyers    |  98.4  97.3  95.7 |  98.2  98.7  96.9 |  75- 87 0.462 |  56- 52 0.519 |  81- 81 0.500 ( 9) 
+Dakota Destroyers    |  98.4  97.3  95.7 |  98.2  98.7  96.9 |  75- 87 0.462 |  56- 52 0.519 |  81- 81 0.500 ( 8) 
 Las Vegas Aces       | 101.0 103.0 104.0 |  94.6  92.5  86.5 |  72- 90 0.447 |  56- 52 0.519 |  80- 82 0.494 (10) 
 Long Beach Longsh... | 100.3 101.0 101.3 | 105.1 104.0 108.9 |  89- 73 0.549 |  46- 62 0.426 |  76- 86 0.469 (11) 
 9 -------------------+
@@ -1891,7 +1891,7 @@ Splendid Splinter
 66 ------------------+
 Portland Brewers     | 100.0  97.1  97.1 | 101.5 100.2 101.7 |  80- 82 0.494 |  64- 44 0.593 |  91- 71 0.562 ( 5) 
 Gotham 483s          |  98.5  99.2  97.7 | 106.7 110.3 116.0 |  91- 71 0.562 |  57- 51 0.528 |  87- 75 0.537 ( 7) 
-Springfield Senti... | 103.5 104.4 107.6 |  97.0  97.0  94.0 |  82- 80 0.506 |  54- 54 0.500 |  81- 81 0.500 ( 8) 
+Springfield Senti... | 103.5 104.4 107.6 |  97.0  97.0  94.0 |  82- 80 0.506 |  54- 54 0.500 |  81- 81 0.500 ( 9) 
 Philly Brawlers      |  85.1  86.0  69.6 |  83.3  81.5  62.0 |  25-137 0.157 |  24- 84 0.222 |  32-130 0.198 (16) 
 344 -----------------+
 Dublin Dal Cais D... | 104.2 104.4 108.3 | 114.2 120.8 130.7 | 108- 54 0.667 |  72- 36 0.667 | 108- 54 0.667 ( 1) 
