@@ -41,7 +41,7 @@ Selected: HuberScores: [(0.09058238913672252, RandomForest(...)), (0.00209549453
 -- Walks
 Selected: HuberScores: [(0.28408455524339854, RandomForest(...)), (0.2677706645613884, Isotonic(...)), (0.2901281511391555, Huber(...)), (0.2864580978882295, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [  0.  20.   6.   7. 192.   1.   0.]Coefficients: [0.02783593 0.11316844]Intercept: 0.010510349045253338Feature Mask: [False  True False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.39996969634148244, RandomForest(...)), (0.38517013879616907, Isotonic(...)), (0.3973101714175143, Huber(...)), (0.3906841431970216, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 49, 'regressor__n_estimators': 2}Feature Scores: [ 23.   2.   5.   5.   0. 314.   6.]Feature Mask: [ True False False False False  True False]Feature Importances: [0.055 0.945]
+Selected: RandomForestScores: [(0.39996969634148244, RandomForest(...)), (0.38517013879616907, Isotonic(...)), (0.3973101714175143, Huber(...)), (0.3906841431970216, Linear(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 2}Feature Scores: [ 23.   2.   5.   5.   0. 314.   6.]Feature Mask: [ True False False False False  True False]Feature Importances: [0.055 0.945]
 
            Hits | 0.077
         Doubles | 0.044
@@ -152,14 +152,14 @@ MR Mohorcic, D        AAA 34 | 10.7  3.1  1.5  1.6 |  81     |  85     | -  |  5
 SP W. Davis, M        AAA 29 | 10.4  6.6  5.2  1.3 |  77     |  72     | ++ |  71/ 63 ||  71 ||
 SP Hickerson, B       AAA 26 | 11.2  5.3  2.9  1.2 |  79     |  75     |    |  71/ 66 ||  71 ||
 SP Gaff, B             AA 31 | 11.9  3.3  4.7  0.7 |  70     |  71     |    |  68/ 61 ||  68 ||
-MR Tufts, B            AA 34 | 11.1  6.4  2.8  1.9 |  70     |  70     |  - |  46/ 61 ||  61 ||
 MR Beck, R          T AAA 22 | 10.6  4.4  3.6  2.0 |  67     |  70     | ++ |  19/ 61 ||  61 ||
+MR Tufts, B            AA 34 | 11.1  6.4  2.8  1.9 |  70     |  70     |  - |  46/ 61 ||  61 ||
 SP Hurst, B       I    AA 32 | 12.0  4.9  3.0  2.0 |  70     |  62     | ++ |  60/ 55 ||  60 ||
 MR Booker, G           AA 30 | 11.8  3.1  4.6  1.1 |  68     |  67     |  - |  53/ 59 ||  59 ||
 MR Olin, S              A 24 | 11.2  4.4  5.4  1.5 |  64     |  67     |    |  18/ 57 ||  57 ||
 SP Springer, D          A 25 | 11.7  4.1  4.3  2.4 |  58     |  58     |  - |  56/ 50 ||  56 ||
-MR Rodas, R            AA 30 | 10.9  6.5  4.5  2.3 |  63     |  63     |  - |  17/ 54 ||  54 ||
 MR Wickman, B           A 21 | 10.8  4.3  6.0  1.8 |  56     |  64     | ++ |  41/ 54 ||  54 ||
+MR Rodas, R            AA 30 | 10.9  6.5  4.5  2.3 |  63     |  63     |  - |  17/ 54 ||  54 ||
 SP Hawkins, A          AA 30 | 13.5  2.9  5.8  1.5 |  48     |  52     |    |  52/ 45 ||  52 ||
 MR Hall, D             AA 26 | 12.2  5.9  5.6  1.4 |  55     |  60     | -  |  16/ 51 ||  51 ||
 SP Bones, R         5   A 21 | 12.1  4.1  5.3  2.5 |  52     |  53     |    |  50/ 46 ||  50 ||
@@ -205,9 +205,9 @@ Balance:47/36 = 1.306 (ideal: 1.273)
 
   ML -> AAA  SP Mike LaCoss
  AAA -> ML   MR Danny Boone
- AAA -> AA   MR Bob Tufts
- AAA -> AA   SP Brent Gaff
  AAA -> AA   RF Ruben Amaro Jr.
+ AAA -> AA   SP Brent Gaff
+ AAA -> AA   MR Bob Tufts
   AA -> AAA  SP Mark W. Davis
   AA -> AAA  2B Ernie Riles
   AA -> A    SP Dennis Springer
@@ -346,16 +346,16 @@ SS Ricky Gutierrez           20 | SS :  68      12 :  80 | SS :  68      13 :  8
 LF Tony Phillips             31 | SS : 121      11 : 132 | SS : 121      11 : 132 |  +0 |                       :                       | ****
 3B Travis Fryman             21 | SS :  82       6 :  88 | SS :  82       6 :  88 |  +0 |                +10    :                +10    | +++++
 1B Dave Hansen               21 | 3B :  73      -8 :  65 | 3B :  73      -8 :  65 |  +0 | +10            +10    :                       | +++-
+RF Felix Jose                25 | CF :  88       1 :  89 | CF :  88       1 :  89 |  +0 |                +10    :                +10    | ++++
 1B Troy Neel                 25 | LF :  91     -10 :  81 | LF :  91     -10 :  81 |  +0 |                +10    :                +10    | +++++
 CF Mark T. McLemore          25 | RF :  93     -15 :  78 | RF :  93     -15 :  78 |  +0 |                       :                       | ++-
-RF Felix Jose                25 | CF :  88       1 :  89 | CF :  88       1 :  89 |  +0 |                +10    :                +10    | ++++
 SS Jeff Hamilton             26 | SS :  75      -3 :  72 | SS :  75      -3 :  72 |  +0 |    -10         +10    :                +10    | *
 3B Mike Sharperson           28 | SS :  88       6 :  94 | SS :  88       6 :  94 |  +0 |                       :                       | *
  C John Mizerock             29 |  C :  84      -3 :  81 |  C :  84      -3 :  81 |  +0 |                       :                       | *
 1B Dave Anderson             30 | SS :  93       2 :  95 | SS :  93       2 :  95 |  +0 |                       :                       | *
 2B Rene Gonzales             30 | SS :  85       2 :  87 | SS :  85       2 :  87 |  +0 |                       :                       | *^
-CF George D. Wright          31 | CF :  85      -8 :  77 | CF :  85      -8 :  77 |  +0 |                       :                       | *
  C Jamie Nelson              31 |  C :  85       7 :  92 |  C :  85       7 :  92 |  +0 |                       :                       | *^
+CF George D. Wright          31 | CF :  85      -8 :  77 | CF :  85      -8 :  77 |  +0 |                       :                       | *
  C Butch Wynegar             34 |  C : 102      11 : 113 |  C : 101      11 : 112 |  -1 |    -10   -10          :          -10          | **^
 1B Hiromitsu Ochiai          36 | 3B : 122      -9 : 113 | 3B : 121      -9 : 112 |  -1 |    -10   -10          :    -10                | ***
 LF Warren Cromartie          36 | SS : 103      -4 :  99 | SS : 101      -4 :  97 |  -2 | -10         -10       :             -10-10    | **
@@ -385,13 +385,13 @@ SP Dennis Springer           25 | SP :      54     :  54 | SP :      56     :  5
 MR Larry Andersen            37 | MR :     102     : 102 | MR :     104     : 104 |  +2 | -10            -20       : -10            -10       | ***^
 MR Darren Hall               26 | MR :      49     :  49 | MR :      51     :  51 |  +2 | +10   +10+20             : +10      +10             | *
 SP Ricky Bones               21 | SP :      49     :  49 | SP :      50     :  50 |  +1 |             +10+10       :       +10      +10       | ++++
-MR Greg Booker               30 | MR :      59     :  59 | MR :      59     :  59 |  +0 |                          :                          | *
-MR Rich Rodas                30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |       +10                :                          | *^
 SP Andy Hawkins              30 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                          :                          | *
+MR Rich Rodas                30 | MR :      54     :  54 | MR :      54     :  54 |  +0 |       +10                :                          | *^
+MR Greg Booker               30 | MR :      59     :  59 | MR :      59     :  59 |  +0 |                          :                          | *
 SP Howard Bailey             33 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                          :                          | *
-SP Mike LaCoss               34 | SP :      87     :  87 | SP :      87     :  87 |  +0 |       +10                :                          | *^
 MR Dale Mohorcic             34 | MR :      73     :  73 | MR :      73     :  73 |  +0 |                          :                          | *
 SP Scott Sanderson           34 | SP :      81     :  81 | SP :      81     :  81 |  +0 | -10                      : -10-10                   | *
+SP Mike LaCoss               34 | SP :      87     :  87 | SP :      87     :  87 |  +0 |       +10                :                          | *^
 SP Brent Gaff                31 | SP :      73     :  73 | SP :      68     :  68 |  -5 |                          :       +10   -10          | *
 MR Danny Boone               36 | MR :      80     :  80 | MR :      75     :  75 |  -5 | -10            -10       : -10   -10   -10-10       | *
 SP Bob Welch                 33 | SP :      90     :  90 | SP :      84     :  84 |  -6 |                          :             -10          | **
@@ -2026,11 +2026,11 @@ National League
 East ----------------+
 Chicago (N) Cubs     | 106.9 106.6 113.1 | 120.3 126.6 139.6 | 116- 46 0.714 | 109- 34 0.762 | 123- 39 0.759 ( 1) 
 Philadelphia Phil... | 105.6 104.3 109.7 | 104.1 103.2 107.1 |  94- 68 0.580 |  84- 59 0.587 |  95- 67 0.586 ( 3) 
-St. Louis Cardinals  | 101.4 101.4 102.8 | 112.0 113.4 123.5 | 100- 62 0.617 |  81- 62 0.566 |  93- 69 0.574 ( 4) 
+St. Louis Cardinals  | 101.4 101.4 102.8 | 112.0 113.4 123.5 | 100- 62 0.617 |  81- 62 0.566 |  93- 69 0.574 ( 5) 
 Pittsburgh Pirates   |  96.8  98.4  95.2 |  91.6  91.0  81.9 |  61-101 0.378 |  55- 88 0.385 |  62-100 0.383 (16) 
 New York (N) Mets    |  96.3  95.6  91.7 |  75.6  71.9  42.1 |  21-141 0.130 |  42-101 0.294 |  44-118 0.272 (19) 
 West ----------------+
-Los Angeles Dodgers  |  94.3  95.4  89.5 | 120.4 120.1 135.9 |  97- 65 0.597 |  82- 61 0.573 |  93- 69 0.574 ( 5) 
+Los Angeles Dodgers  |  94.3  95.4  89.5 | 120.4 120.1 135.9 |  97- 65 0.597 |  82- 61 0.573 |  93- 69 0.574 ( 4) 
 San Francisco Giants | 104.4 102.3 106.7 |  86.7  82.3  66.1 |  54-108 0.332 |  83- 60 0.580 |  89- 73 0.549 (10) 
 Cincinnati Reds      |  98.7  97.9  96.5 |  92.5  94.9  87.1 |  67- 95 0.414 |  65- 78 0.455 |  73- 89 0.451 (14) 
 Atlanta Braves       |  94.7  93.9  88.2 | 112.0 113.3 123.4 |  88- 74 0.542 |  61- 82 0.427 |  71- 91 0.438 (15) 
