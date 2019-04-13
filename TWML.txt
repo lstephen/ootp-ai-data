@@ -31,7 +31,7 @@ Pitching: 11373/12848 0.470/0.530
              Ks | 0.218
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.22967614200286954, RandomForest(...)), (0.22878746398291583, Isotonic(...)), (0.22092315549714547, Huber(...)), (0.2192186225461743, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 40, 'regressor__n_estimators': 4}Feature Scores: [249. 108. 128.  96. 181.  17.]Feature Mask: [ True False  True False  True False]Feature Importances: [0.84  0.106 0.055]
+Selected: RandomForestScores: [(0.22967614200286954, RandomForest(...)), (0.22878746398291583, Isotonic(...)), (0.22092315549714547, Huber(...)), (0.2192186225461743, Linear(...))]Best Parameters: {'regressor__max_depth': 40, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [249. 108. 128.  96. 181.  17.]Feature Mask: [ True False  True False  True False]Feature Importances: [0.84  0.106 0.055]
 -- Doubles
 Selected: HuberScores: [(0.07866293095021759, RandomForest(...)), (0.05730380425457008, Isotonic(...)), (0.08654887737708383, Huber(...)), (0.073292143542668, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [71. 72. 47. 36. 49.  7.]Coefficients: [ 0.0177055   0.03915296 -0.00803712]Intercept: 0.012270483026111048Feature Mask: [ True  True False False  True False]
 -- Triples
@@ -52,11 +52,11 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: LinearScores: [(0.11723758202137184, RandomForest(...)), (0.07796440785019483, Isotonic(...)), (0.13407257902965944, Huber(...)), (0.136225470247052, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [44. 12.  2.  6.  1.]Coefficients: [-0.00088137  0.00045696 -0.00034725 -0.00035733 -0.00197897]Intercept: 0.3255218134029945Feature Mask: [ True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(-0.013038074337552219, RandomForest(...)), (-0.027960253825923487, Isotonic(...)), (-0.03559846762416341, Huber(...)), (-0.026484644760860654, Linear(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [0. 0. 1. 4. 0.]Feature Mask: [False False  True  True False]Feature Importances: [0.379 0.621]
+Selected: RandomForestScores: [(-0.013038074337552219, RandomForest(...)), (-0.027960253825923487, Isotonic(...)), (-0.03559846762416341, Huber(...)), (-0.026484644760860654, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [0. 0. 1. 4. 0.]Feature Mask: [False False  True  True False]Feature Importances: [0.379 0.621]
 -- HomeRuns
 Selected: IsotonicScores: [(0.14944311408749666, RandomForest(...)), (0.14065020747166057, Isotonic(...)), (0.10803890337422657, Huber(...)), (0.1121062370742572, Linear(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 0.  0. 63.  1.  0.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.26325982275254767, RandomForest(...)), (0.22919614021159418, Isotonic(...)), (0.2520032576325962, Huber(...)), (0.25671809209908836, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [  1. 180.   0.   0.   0.]Feature Mask: [ True  True False False False]Feature Importances: [0.041 0.959]
+Selected: RandomForestScores: [(0.26325982275254767, RandomForest(...)), (0.22919614021159418, Isotonic(...)), (0.2520032576325962, Huber(...)), (0.25671809209908836, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [  1. 180.   0.   0.   0.]Feature Mask: [ True  True False False False]Feature Importances: [0.041 0.959]
 -- Ks
 Selected: HuberScores: [(0.48261303895661345, RandomForest(...)), (0.48507297384913795, Isotonic(...)), (0.4990426820745224, Huber(...)), (0.49302718739086604, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [417.   1.   8.  21.   1.]Coefficients: [ 0.18170091  0.02515689  0.00260694 -0.00244961  0.02033499]Intercept: 0.026138317326589795Feature Mask: [ True  True  True  True  True]
 
@@ -195,18 +195,18 @@ MR Henderson, J    F   AA 38 | 14.1  0.8  6.4  2.6 |  50     |  51     |  + |  4
 Total:86 (target 70-75)
 Balance:50/36 = 1.389 (ideal: 1.273)
 
-  ML -> AAA  SS Youji Benjiro
   ML -> AAA  MR Bob Drum
-  ML -> AAA  MR Luis Hernandez
   ML -> AAA  LF Karl Huckstep
- AAA -> ML   2B Douglas Perea
+  ML -> AAA  SS Youji Benjiro
+  ML -> AAA  MR Luis Hernandez
+ AAA -> ML   MR Kenneth Freeman
  AAA -> ML   LF Mike Maroney
  AAA -> ML   SP Bob Collins
- AAA -> ML   MR Kenneth Freeman
- AAA -> AA   2B Bill Journey
+ AAA -> ML   2B Douglas Perea
  AAA -> AA   SS Carmen Sumpter
-  AA -> AAA  LF Duane Damian
+ AAA -> AA   2B Bill Journey
   AA -> AAA  1B Jon Celentano
+  AA -> AAA  LF Duane Damian
 
 SP
 Daniel Hovis
@@ -323,22 +323,22 @@ CF Mark Edelman              21 | CF :  71      -7 :  64 | CF :  85      -7 :  7
 CF Ramon Iradier             24 | CF :  69     -10 :  59 | CF :  75     -10 :  65 |  +6 |  +5          -5    :  +5          -5    | +-
 3B Alberto Dasilva           21 | SS :  52       5 :  57 | SS :  58       5 :  63 |  +6 |        +5    +5    :  +5    +5 +5       | +
 CF Carl Holsinger            24 | CF :  63       2 :  65 | CF :  69       2 :  71 |  +6 |  +5    +5 +5       :  +5 +5 +5 +5       | +++
-1B Victor Lundin             27 | SS :  67      -3 :  64 | SS :  72      -3 :  69 |  +5 |     -5    +5 -5    :     -5    +5 -5    | *
 3B Eric Lerch                27 | SS : 102      11 : 113 | SS : 107      11 : 118 |  +5 |              +5    :     +5 +5    +5    | **^
+1B Victor Lundin             27 | SS :  67      -3 :  64 | SS :  72      -3 :  69 |  +5 |     -5    +5 -5    :     -5    +5 -5    | *
 LF Gordon Hoefer             20 | CF :  48      -1 :  47 | CF :  53      -1 :  52 |  +5 |  +5+10    +5+15    : +10 +5    +5+15    | +
 1B Jon Celentano             24 | 3B :  73      -2 :  71 | 3B :  77      -2 :  75 |  +4 |  +5                :                    | ++++-
 3B Modesto Nissen            29 | 3B :  78      -3 :  75 | 3B :  77       1 :  78 |  +3 |                    :  -5                | *
 SS Youji Benjiro             23 | SS :  78       9 :  87 | SS :  80       9 :  89 |  +2 |     +5 +5 +5       :     +5 +5 +5       | ++
 SS Davis Rolling             23 | SS :  57      -3 :  54 | SS :  59      -3 :  56 |  +2 | +15 +5 +5 +5       : +15 +5 +5 +5       | ++
  C Michael Dambrosio         26 |  C :  94      12 : 106 |  C :  96      12 : 108 |  +2 |                    :  -5          -5    | *
-LF Mike Maroney              29 | CF :  97       0 :  97 | CF :  99       0 :  99 |  +2 |       +10 +5       :        +5          | **
 3B Hugh Riter                29 | 3B :  62      -3 :  59 | 3B :  64      -3 :  61 |  +2 |     -5       +5    :     -5       +5    | *
+LF Mike Maroney              29 | CF :  97       0 :  97 | CF :  99       0 :  99 |  +2 |       +10 +5       :        +5          | **
 SS Lance Barrenechea         35 | 3B : 111       1 : 112 | 3B : 113       1 : 114 |  +2 |  -5          -5-10 :  -5 -5    -5 -5-10 | **^
  C Anthony Gilson            22 |  C :  73       8 :  81 |  C :  74       8 :  82 |  +1 |  +5+15 +5          :    +15 +5          | +++-
 1B Harvey Kinnison           24 | 1B :  62     -14 :  48 | 1B :  63     -14 :  49 |  +1 |          +10       :           +5       | ++
 3B Michael Sanchez           25 | 2B :  83       0 :  83 | 2B :  84       0 :  84 |  +1 |  -5      +10 +5    :        +5 +5 +5    | ++-
-CF Jeff Hocker               27 | CF : 116       1 : 117 | CF : 117       1 : 118 |  +1 |  -5 -5             :                    | ***^
 SS Thomas Barker             27 | SS :  56       4 :  60 | SS :  57       4 :  61 |  +1 |     -5    +5       :           +5       | *
+CF Jeff Hocker               27 | CF : 116       1 : 117 | CF : 117       1 : 118 |  +1 |  -5 -5             :                    | ***^
 1B Gerald Daniels            34 | 3B :  75      -1 :  74 | 3B :  76      -1 :  75 |  +1 |     -5             :        -5          | *^
 SS Francisco Monagas         37 | CF :  80       4 :  84 | CF :  81       4 :  85 |  +1 |       -10    -5    :  -5   -10    -5    | *
  C Amado Escandon            22 |  C :  74       4 :  78 |  C :  74       4 :  78 |  +0 |    +10    +5       :    +10             | +-
@@ -371,8 +371,8 @@ MR Luis Hernandez            25 | MR :      63     :  63 | MR :      65     :  6
 SP Koji Ankuru               29 | SP :      67     :  67 | SP :      68     :  68 |  +1 |     +5          :                 | *
 SP Emilio Trevino            27 | SP :      52     :  52 | SP :      53     :  53 |  +1 | +10 +5 -5       :  +5 +5 -5       | *
 SP Vasili Kobalev            30 | SP :      48     :  48 | SP :      49     :  49 |  +1 |                 :  +5             | *
-MR Raimundo Lazo             26 | MR :      84     :  84 | MR :      85     :  85 |  +1 |     -5          :     -5          | **
 MR Kenneth Swiger            26 | MR :      65     :  65 | MR :      66     :  66 |  +1 |        +5       :        +5       | **
+MR Raimundo Lazo             26 | MR :      84     :  84 | MR :      85     :  85 |  +1 |     -5          :     -5          | **
 SP Charles Barrett           22 | SP :      51     :  51 | SP :      51     :  51 |  +0 |     +5          :                 | ++
 MR Celestino Mendoza         24 | MR :      54     :  54 | MR :      54     :  54 |  +0 |        +5       :        +5       | ++
 SP Fede Cintron              25 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | +
@@ -642,11 +642,11 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 1E | 162 ( 91-201) | 168 ( 97-207) 152/184 |   5/  5 || 164 ( 91-209) | 170 ( 97-215) 154/187 |  25/ 25
 1M | 138 (116-157) | 144 (122-163) 131/159 |   5/  5 || 137 (113-157) | 143 (119-163) 130/157 |  25/ 25
 1L | 101 ( 81-177) | 107 ( 87-183)  97/118 |   6/  6 || 123 ( 81-177) | 129 ( 87-183) 117/142 |  30/ 30
-2E | 115 ( 88-118) | 121 ( 94-124) 110/133 |   8/  8 || 110 ( -3-118) | 116 (  3-124) 105/127 |  40/ 40
+2E | 115 ( 88-118) | 121 ( 94-124) 110/133 |   8/  8 || 110 ( 88-118) | 116 ( 94-124) 106/128 |  40/ 40
 2L | 105 ( 98-115) | 111 (104-121) 101/122 |   8/  8 || 101 ( 96-115) | 107 (102-121)  98/118 |  40/ 40
 
  1 | 131 ( 81-201) | 137 ( 87-207) 124/150 |  16/ 16 || 134 ( 81-209) | 140 ( 87-215) 128/154 |  80/ 80
- 2 | 110 ( 88-118) | 116 ( 94-124) 105/127 |  16/ 16 || 104 ( -3-118) | 110 (  3-124) 100/121 |  80/ 80
+ 2 | 110 ( 88-118) | 116 ( 94-124) 105/127 |  16/ 16 || 104 ( 88-118) | 110 ( 94-124) 100/121 |  80/ 80
  3 |  90 ( 84-137) |  96 ( 90-143)  88/106 |  16/ 16 ||  93 ( 84-137) |  99 ( 90-143)  90/108 |  80/ 80
  4 |  84 ( 60-110) |  90 ( 66-116)  82/ 99 |  16/ 16 ||  83 ( 60-110) |  89 ( 66-116)  81/ 98 |  80/ 80
  5 |  68 ( 46- 89) |  74 ( 52- 95)  68/ 82 |  16/ 16 ||  74 ( 46- 89) |  80 ( 52- 95)  72/ 88 |  80/ 80
@@ -1825,7 +1825,7 @@ Long Beach Longsh... |  99.0  98.5  97.4 |  94.3  92.2  85.9 |  67- 95 0.412 |  
 Rhode Island Rats    | 103.0 103.4 106.2 | 118.6 120.2 134.3 | 109- 53 0.671 |  81- 51 0.614 | 101- 61 0.623 ( 3) 
 Patrone Saints       |  97.2 100.0  97.1 | 103.5 105.7 108.9 |  86- 76 0.528 |  64- 68 0.485 |  80- 82 0.494 ( 9) 
 Roswell 51s          |  98.5  98.0  96.4 |  95.7  92.9  88.1 |  68- 94 0.419 |  66- 66 0.500 |  79- 83 0.488 (11) 
-Homestead Grays      |  94.7  96.4  91.0 |  95.0  92.2  86.6 |  62-100 0.383 |  57- 75 0.432 |  68- 94 0.420 (13) 
+Homestead Grays      |  94.7  96.4  91.0 |  95.0  92.2  86.6 |  62-100 0.383 |  57- 75 0.432 |  68- 94 0.420 (14) 
 
 Splendid Splinter
 66 ------------------+
@@ -1837,7 +1837,7 @@ Philly Brawlers      |  82.8  81.5  61.6 |  83.9  81.5  62.5 |  21-141 0.129 |  
 Dublin Dal Cais D... | 103.0 102.1 105.1 | 108.9 113.3 120.4 | 100- 62 0.615 |  92- 40 0.697 | 110- 52 0.679 ( 2) 
 Rapid City Outlaws   | 106.3 106.4 112.3 | 107.9 108.6 115.6 | 102- 60 0.628 |  66- 66 0.500 |  85- 77 0.525 ( 7) 
 Maryland Bandits     |  99.7  98.3  97.9 |  95.8  95.5  91.1 |  72- 90 0.443 |  59- 73 0.447 |  72- 90 0.444 (12) 
-Port Adelaide Mag... | 100.5 102.0 102.4 |  81.8  80.4  59.3 |  44-118 0.269 |  60- 72 0.455 |  68- 94 0.420 (14) 
+Port Adelaide Mag... | 100.5 102.0 102.4 |  81.8  80.4  59.3 |  44-118 0.269 |  60- 72 0.455 |  68- 94 0.420 (13) 
                      |             101.9 |              92.6 |
 
 --- Non Top prospects ---
