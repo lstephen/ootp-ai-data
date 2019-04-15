@@ -31,7 +31,7 @@ Pitching: 11373/12848 0.470/0.530
              Ks | 0.218
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.22967614200286954, RandomForest(...)), (0.22878746398291583, Isotonic(...)), (0.22092315549714547, Huber(...)), (0.2192186225461743, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 40, 'regressor__n_estimators': 4}Feature Scores: [249. 108. 128.  96. 181.  17.]Feature Mask: [ True False  True False  True False]Feature Importances: [0.84  0.106 0.055]
+Selected: RandomForestScores: [(0.22967614200286954, RandomForest(...)), (0.22878746398291583, Isotonic(...)), (0.22092315549714547, Huber(...)), (0.2192186225461743, Linear(...))]Best Parameters: {'regressor__max_depth': 40, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [249. 108. 128.  96. 181.  17.]Feature Mask: [ True False  True False  True False]Feature Importances: [0.84  0.106 0.055]
 -- Doubles
 Selected: HuberScores: [(0.07866293095021759, RandomForest(...)), (0.05730380425457008, Isotonic(...)), (0.08654887737708383, Huber(...)), (0.073292143542668, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [71. 72. 47. 36. 49.  7.]Coefficients: [ 0.0177055   0.03915296 -0.00803712]Intercept: 0.012270483026111048Feature Mask: [ True  True False False  True False]
 -- Triples
@@ -56,7 +56,7 @@ Selected: RandomForestScores: [(-0.013038074337552219, RandomForest(...)), (-0.0
 -- HomeRuns
 Selected: IsotonicScores: [(0.14944311408749666, RandomForest(...)), (0.14065020747166057, Isotonic(...)), (0.10803890337422657, Huber(...)), (0.1121062370742572, Linear(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 0.  0. 63.  1.  0.]Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(0.26325982275254767, RandomForest(...)), (0.22919614021159418, Isotonic(...)), (0.2520032576325962, Huber(...)), (0.25671809209908836, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [  1. 180.   0.   0.   0.]Feature Mask: [ True  True False False False]Feature Importances: [0.041 0.959]
+Selected: RandomForestScores: [(0.26325982275254767, RandomForest(...)), (0.22919614021159418, Isotonic(...)), (0.2520032576325962, Huber(...)), (0.25671809209908836, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [  1. 180.   0.   0.   0.]Feature Mask: [ True  True False False False]Feature Importances: [0.041 0.959]
 -- Ks
 Selected: HuberScores: [(0.48261303895661345, RandomForest(...)), (0.48507297384913795, Isotonic(...)), (0.4990426820745224, Huber(...)), (0.49302718739086604, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [417.   1.   8.  21.   1.]Coefficients: [ 0.18170091  0.02515689  0.00260694 -0.00244961  0.02033499]Intercept: 0.026138317326589795Feature Mask: [ True  True  True  True  True]
 
@@ -195,16 +195,16 @@ MR Henderson, J    F   AA 38 | 14.1  0.8  6.4  2.6 |  50     |  51     |  + |  4
 Total:86 (target 70-75)
 Balance:50/36 = 1.389 (ideal: 1.273)
 
-  ML -> AAA  LF Karl Huckstep
   ML -> AAA  MR Bob Drum
-  ML -> AAA  SS Youji Benjiro
+  ML -> AAA  LF Karl Huckstep
   ML -> AAA  MR Luis Hernandez
- AAA -> ML   MR Kenneth Freeman
- AAA -> ML   LF Mike Maroney
+  ML -> AAA  SS Youji Benjiro
  AAA -> ML   2B Douglas Perea
+ AAA -> ML   MR Kenneth Freeman
  AAA -> ML   SP Bob Collins
- AAA -> AA   2B Bill Journey
+ AAA -> ML   LF Mike Maroney
  AAA -> AA   SS Carmen Sumpter
+ AAA -> AA   2B Bill Journey
   AA -> AAA  1B Jon Celentano
   AA -> AAA  LF Duane Damian
 
@@ -323,22 +323,22 @@ CF Mark Edelman              21 | CF :  71      -7 :  64 | CF :  85      -7 :  7
 CF Ramon Iradier             24 | CF :  69     -10 :  59 | CF :  75     -10 :  65 |  +6 |  +5          -5    :  +5          -5    | +-
 3B Alberto Dasilva           21 | SS :  52       5 :  57 | SS :  58       5 :  63 |  +6 |        +5    +5    :  +5    +5 +5       | +
 CF Carl Holsinger            24 | CF :  63       2 :  65 | CF :  69       2 :  71 |  +6 |  +5    +5 +5       :  +5 +5 +5 +5       | +++
-1B Victor Lundin             27 | SS :  67      -3 :  64 | SS :  72      -3 :  69 |  +5 |     -5    +5 -5    :     -5    +5 -5    | *
 3B Eric Lerch                27 | SS : 102      11 : 113 | SS : 107      11 : 118 |  +5 |              +5    :     +5 +5    +5    | **^
+1B Victor Lundin             27 | SS :  67      -3 :  64 | SS :  72      -3 :  69 |  +5 |     -5    +5 -5    :     -5    +5 -5    | *
 LF Gordon Hoefer             20 | CF :  48      -1 :  47 | CF :  53      -1 :  52 |  +5 |  +5+10    +5+15    : +10 +5    +5+15    | +
 1B Jon Celentano             24 | 3B :  73      -2 :  71 | 3B :  77      -2 :  75 |  +4 |  +5                :                    | ++++-
 3B Modesto Nissen            29 | 3B :  78      -3 :  75 | 3B :  77       1 :  78 |  +3 |                    :  -5                | *
 SS Davis Rolling             23 | SS :  57      -3 :  54 | SS :  59      -3 :  56 |  +2 | +15 +5 +5 +5       : +15 +5 +5 +5       | ++
 SS Youji Benjiro             23 | SS :  78       9 :  87 | SS :  80       9 :  89 |  +2 |     +5 +5 +5       :     +5 +5 +5       | ++
  C Michael Dambrosio         26 |  C :  94      12 : 106 |  C :  96      12 : 108 |  +2 |                    :  -5          -5    | *
-LF Mike Maroney              29 | CF :  97       0 :  97 | CF :  99       0 :  99 |  +2 |       +10 +5       :        +5          | **
 3B Hugh Riter                29 | 3B :  62      -3 :  59 | 3B :  64      -3 :  61 |  +2 |     -5       +5    :     -5       +5    | *
+LF Mike Maroney              29 | CF :  97       0 :  97 | CF :  99       0 :  99 |  +2 |       +10 +5       :        +5          | **
 SS Lance Barrenechea         35 | 3B : 111       1 : 112 | 3B : 113       1 : 114 |  +2 |  -5          -5-10 :  -5 -5    -5 -5-10 | **^
  C Anthony Gilson            22 |  C :  73       8 :  81 |  C :  74       8 :  82 |  +1 |  +5+15 +5          :    +15 +5          | +++-
 1B Harvey Kinnison           24 | 1B :  62     -14 :  48 | 1B :  63     -14 :  49 |  +1 |          +10       :           +5       | ++
 3B Michael Sanchez           25 | 2B :  83       0 :  83 | 2B :  84       0 :  84 |  +1 |  -5      +10 +5    :        +5 +5 +5    | ++-
-SS Thomas Barker             27 | SS :  56       4 :  60 | SS :  57       4 :  61 |  +1 |     -5    +5       :           +5       | *
 CF Jeff Hocker               27 | CF : 116       1 : 117 | CF : 117       1 : 118 |  +1 |  -5 -5             :                    | ***^
+SS Thomas Barker             27 | SS :  56       4 :  60 | SS :  57       4 :  61 |  +1 |     -5    +5       :           +5       | *
 1B Gerald Daniels            34 | 3B :  75      -1 :  74 | 3B :  76      -1 :  75 |  +1 |     -5             :        -5          | *^
 SS Francisco Monagas         37 | CF :  80       4 :  84 | CF :  81       4 :  85 |  +1 |       -10    -5    :  -5   -10    -5    | *
  C Amado Escandon            22 |  C :  74       4 :  78 |  C :  74       4 :  78 |  +0 |    +10    +5       :    +10             | +-
@@ -380,8 +380,8 @@ SP Loren Hayton              28 | SP :      58     :  58 | SP :      58     :  5
 SP Oscar Ojeda               29 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                 :                 | *
 MR Anton Corrado             30 | MR :      62     :  62 | MR :      62     :  62 |  +0 |        +5       :                 | *
 SP Charles Romero            32 | SP :      57     :  57 | SP :      57     :  57 |  +0 |                 :                 | *
-SP Willie Delgadillo         33 | SP :      54     :  54 | SP :      54     :  54 |  +0 |     -5          :                 | *
 MR Jose Varela               33 | MR :      55     :  55 | MR :      55     :  55 |  +0 |                 :                 | *
+SP Willie Delgadillo         33 | SP :      54     :  54 | SP :      54     :  54 |  +0 |     -5          :                 | *
 SP Ronald Crary              34 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                 :     +5          | *
 MR Bob Drum                  34 | MR :      66     :  66 | MR :      65     :  65 |  -1 |  -5             :  -5             | *
 MR Kenneth Freeman           29 | MR :      67     :  67 | MR :      66     :  66 |  -1 |  -5             :        -5       | *
