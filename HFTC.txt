@@ -39,7 +39,7 @@ Selected: HuberScores: [(-0.0036615197170580074, RandomForest(...)), (-0.0134284
 -- HomeRuns
 Selected: HuberScores: [(0.14960470020814232, RandomForest(...)), (0.15105394927790572, Isotonic(...)), (0.16332133933012205, Huber(...)), (0.15130262881072656, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [ 34.  11.   1. 103.  20.  32.   0.]Coefficients: [0.00216734 0.05651123 0.00172861]Intercept: 0.0019055828799652483Feature Mask: [ True False False  True False  True False]
 -- Walks
-Selected: RandomForestScores: [(0.25543826367589306, RandomForest(...)), (0.23033423644307258, Isotonic(...)), (0.25479752957415847, Huber(...)), (0.24270512423958623, Linear(...))]Best Parameters: {'regressor__n_estimators': 16, 'selection__k': 2, 'regressor__max_depth': 11}Feature Scores: [ 48.  24.   4.  48. 231.  63.   2.]Feature Mask: [False False False False  True  True False]Feature Importances: [0.916 0.084]
+Selected: RandomForestScores: [(0.25543826367589306, RandomForest(...)), (0.23033423644307258, Isotonic(...)), (0.25479752957415847, Huber(...)), (0.24270512423958623, Linear(...))]Best Parameters: {'regressor__max_depth': 11, 'selection__k': 2, 'regressor__n_estimators': 16}Feature Scores: [ 48.  24.   4.  48. 231.  63.   2.]Feature Mask: [False False False False  True  True False]Feature Importances: [0.916 0.084]
 -- Ks
 Selected: HuberScores: [(0.16101385020044498, RandomForest(...)), (0.08564313263468588, Isotonic(...)), (0.1592273897456223, Huber(...)), (0.15575185661218216, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [ 64.  18.   0.  21.  28. 142.   0.]Coefficients: [-0.03661806 -0.00254697 -0.30942654]Intercept: 0.3640831386322224Feature Mask: [ True False False False  True  True False]
 
@@ -145,11 +145,11 @@ MR Rojas, J           AAA 33 | 11.5  6.5  3.7  1.8 |  79 277 |  79  45 |  + |  5
 SP Villani, M         AAA 30 | 12.7  4.7  5.1  1.6 |  46     |  77     |  + |  65/ 60 ||  65 ||
 MR Godwin, M        T AAA 21 | 13.2  3.8  3.9  1.3 |  88     |  70     |    |  49/ 64 ||  64 ||
 SP Miles, J           AAA 23 | 12.9  5.2  5.9  2.5 |  54     |  64     |  + |  62/ 54 ||  62 ||
-MR Lyon, M          8   A 21 | 12.7  3.6  3.8  2.1 |  64     |  72     | -+ |  46/ 61 ||  61 ||
 MR Smathers, J         AA 32 | 13.0  5.1  3.9  1.8 |  70  60 |  70 102 |    |  19/ 61 ||  61 ||
+MR Lyon, M          8   A 21 | 12.7  3.6  3.8  2.1 |  64     |  72     | -+ |  46/ 61 ||  61 ||
 SP Johnson, S          AA 30 | 13.0  5.7  5.7  2.2 |  52     |  65     | +  |  60/ 54 ||  60 ||
-SP Mendoza, G       6   A 19 | 12.9  5.4  4.7  2.9 |  57     |  64     |  + |  59/ 54 ||  59 ||
 SP Reinhardt, J        AA 28 | 14.1  4.9  5.1  2.3 |  47     |  63     | -+ |  59/ 51 ||  59 ||
+SP Mendoza, G       6   A 19 | 12.9  5.4  4.7  2.9 |  57     |  64     |  + |  59/ 54 ||  59 ||
 SP Sheldon, L           A 24 | 12.6  4.8  7.4  1.9 |  83     |  57     |  + |  58/ 54 ||  58 ||
 SP Lemay, C         4   A 19 | 14.8  3.2  4.0  3.0 |  54     |  57     |  + |  57/ 49 ||  57 ||
 SP Peralvo, J          AA 29 | 15.5  5.8  6.9  1.5 |  81     |  45     |  + |  48/ 44 ||  48 ||
@@ -158,8 +158,8 @@ MR Montero, R           A 19 | 15.4  3.5  5.1  3.1 |  52     |  49     | -+ |  3
 SP Walker, R        3   A 19 | 17.7  3.8  7.3  2.1 |  52     |  39     |  + |  42/ 36 ||  42 ||
 MR Regalado, U         AA 26 | 17.0  3.8  6.3  2.1 |  47     |  47     |  - |  41/ 41 ||  41 ||
 MR Toyokuni, T         AA 26 | 16.6  3.0  6.2  2.9 |  47     |  46     |  - |  22/ 40 ||  40 ||
-SP Henderson, W         A 21 | 17.7  5.1  8.9  2.6 |  35     |  40     |  + |  39/ 34 ||  39 ||
 MR Pifer, M            AA 30 | 16.3  4.4  6.2  2.7 |  43     |  46     | -+ |  35/ 39 ||  39 ||
+SP Henderson, W         A 21 | 17.7  5.1  8.9  2.6 |  35     |  40     |  + |  39/ 34 ||  39 ||
 MR Kidd, R             AA 25 | 18.7  4.8 10.1  3.0 |  33     |  35     | -  |  17/ 29 ||  29 ||
 
  (25) ML               | (18) AAA              | (18) AA               | (17) A                | ( 0) DL               |
@@ -315,15 +315,15 @@ SS Hector Grillo             28 | SS :  70      -4 :  66 | SS :  72      -4 :  6
  C Dudley Givens             29 |  C :  87      -2 :  85 |  C :  89      -2 :  87 |  +2 | +10         +10       : +10                   | *
 CF Angelo Cabrales           26 | CF :  91      -5 :  86 | CF :  92      -5 :  87 |  +1 |                       :          +10          | *
  C William Ditch             21 |  C :  45       6 :  51 |  C :  45       6 :  51 |  +0 |                +19    :                +19    | +
-CF Michael Cromartie         24 | SS :  68       8 :  76 | SS :  68       8 :  76 |  +0 |                       :                       | +
 3B Orestes Marmolejo         24 | SS :  79       9 :  88 | SS :  79       9 :  88 |  +0 |                       :                       | ++-
+CF Michael Cromartie         24 | SS :  68       8 :  76 | SS :  68       8 :  76 |  +0 |                       :                       | +
 1B Adelardo Lopez            25 | 1B :  91     -10 :  81 | 1B :  91     -10 :  81 |  +0 |    +10                :                       | ++-
  C Raul Bengoa               26 |  C :  55       9 :  64 |  C :  55       9 :  64 |  +0 |    -10                :                       | *
-CF Ryan Malley               28 | CF :  94       9 : 103 | CF :  94       9 : 103 |  +0 |                       :                       | **^
 RF Alejo Torres              28 | CF : 105       3 : 108 | CF : 105       3 : 108 |  +0 |                       :                       | **^
+CF Ryan Malley               28 | CF :  94       9 : 103 | CF :  94       9 : 103 |  +0 |                       :                       | **^
  C Robert Makowski           30 |  C :  81       4 :  85 |  C :  81       4 :  85 |  +0 |                       :    +10                | *
-2B Fausto Castillo           31 | SS :  74      14 :  88 | SS :  74      14 :  88 |  +0 |                       :                       | *
  C Hernando Valido           31 |  C :  74       4 :  78 |  C :  74       4 :  78 |  +0 |                       :                       | *
+2B Fausto Castillo           31 | SS :  74      14 :  88 | SS :  74      14 :  88 |  +0 |                       :                       | *
  C Hector Perdomo            32 |  C :  85      -8 :  77 |  C :  85      -8 :  77 |  +0 |                       :                       | *
 RF James Mistretta           32 | SS :  77       3 :  80 | SS :  77       3 :  80 |  +0 |                       :                       | *
 3B Brian Fletcher            33 | 3B :  73       1 :  74 | 3B :  73       1 :  74 |  +0 |                       :                       | *
@@ -2643,13 +2643,13 @@ East Division -------+
 Philadelphia Phil... | 103.0 105.2 107.9 | 116.5 121.9 133.5 | 109- 53 0.675 | 106- 56 0.654 | 106- 56 0.654 ( 3) 
 Atlanta Braves       | 102.7 104.6 107.2 | 117.7 117.9 132.1 | 108- 54 0.667 |  94- 68 0.580 |  94- 68 0.580 ( 9) 
 Florida Marlins      | 106.6 106.5 112.6 |  75.2  74.2  45.1 |  33-129 0.205 |  75- 87 0.463 |  75- 87 0.463 (19) 
-Washington Nationals | 100.5  99.7 100.2 |  99.3  99.2  98.6 |  80- 82 0.494 |  68- 94 0.420 |  68- 94 0.420 (22) 
+Washington Nationals | 100.5  99.7 100.2 |  99.3  99.2  98.6 |  80- 82 0.494 |  68- 94 0.420 |  68- 94 0.420 (24) 
 New York (N) Mets    |  95.9  96.4  92.2 | 100.5 102.5 102.9 |  77- 85 0.474 |  64- 98 0.395 |  64- 98 0.395 (26) 
 Central Division ----+
 St. Louis Cardinals  | 106.7 106.9 113.1 | 126.7 126.5 145.1 | 118- 44 0.729 | 105- 57 0.648 | 105- 57 0.648 ( 5) 
 Pittsburgh Pirates   | 100.4 100.1 100.5 | 104.4 105.3 109.4 |  89- 73 0.547 | 102- 60 0.630 | 102- 60 0.630 ( 6) 
 Cincinnati Reds      |  96.6  97.1  93.6 |  99.2  98.2  97.3 |  73- 89 0.453 |  79- 83 0.488 |  79- 83 0.488 (16) 
-Houston Astros       | 100.8 101.3 102.1 |  91.2  92.3  83.0 |  68- 94 0.418 |  68- 94 0.420 |  68- 94 0.420 (24) 
+Houston Astros       | 100.8 101.3 102.1 |  91.2  92.3  83.0 |  68- 94 0.418 |  68- 94 0.420 |  68- 94 0.420 (22) 
 Chicago (N) Cubs     |  90.9  91.3  81.6 |  91.8  89.3  80.0 |  48-114 0.299 |  68- 94 0.420 |  68- 94 0.420 (23) 
 Milwaukee Brewers    |  94.9  95.1  89.8 |  85.4  81.5  63.9 |  40-122 0.248 |  58-104 0.358 |  58-104 0.358 (29) 
 West Division -------+
