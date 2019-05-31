@@ -37,7 +37,7 @@ Selected: HuberScores: [(0.07518730967322514, RandomForest(...)), (0.08644678176
 -- Triples
 Selected: HuberScores: [(0.08872754604364501, RandomForest(...)), (0.08326306887480688, Isotonic(...)), (0.10748008177158919, Huber(...)), (0.09930418954393931, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [ 1.  1. 18.  1.  1.  0. 47.]Coefficients: [-8.24144973e-06 -4.34842702e-04  3.02472500e-03  3.15080737e-03  1.62221605e-02]Intercept: -0.0013658873934078346Feature Mask: [ True False  True  True  True False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.16731037627899878, RandomForest(...)), (0.1661877873107942, Isotonic(...)), (0.16010109142933437, Huber(...)), (0.16238069428721083, Linear(...))]Best Parameters: {'regressor__n_estimators': 16, 'regressor__max_depth': 11, 'selection__k': 2}Feature Scores: [ 1.  3.  0. 22.  0.  7.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.893 0.107]
+Selected: RandomForestScores: [(0.16731037627899878, RandomForest(...)), (0.1661877873107942, Isotonic(...)), (0.16010109142933437, Huber(...)), (0.16238069428721083, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 16, 'regressor__max_depth': 11}Feature Scores: [ 1.  3.  0. 22.  0.  7.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.893 0.107]
 -- Walks
 Selected: HuberScores: [(0.32779925550857664, RandomForest(...)), (0.3220595182468355, Isotonic(...)), (0.33832247473992466, Huber(...)), (0.33138629640152223, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [  0.  32.   6.  10. 240.   0.   0.]Coefficients: [0.01675893 0.01173537 0.11583143]Intercept: 0.01114901303970166Feature Mask: [False  True False  True  True False False]
 -- Ks
@@ -52,7 +52,7 @@ Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., End
 -- Hits
 Selected: LinearScores: [(0.06648754512496995, RandomForest(...)), (0.020010787348069863, Isotonic(...)), (0.06892319268730725, Huber(...)), (0.07033086684715788, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [19. 25.  4.  2.  0. 17.  0.  3.]Coefficients: [ 3.32879687e-05 -8.93039660e-04 -5.50157414e-04]Intercept: 0.3456006813756557Feature Mask: [ True  True False False False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.17206707643496935, RandomForest(...)), (0.16219108115783876, Isotonic(...)), (0.16856815894152433, Huber(...)), (0.16867145023007224, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 90, 'regressor__max_depth': 15}Feature Scores: [ 1.  4. 51.  6.  2.  3.  1.  4.]Feature Mask: [False False  True  True False False False  True]Feature Importances: [0.791 0.11  0.098]
+Selected: RandomForestScores: [(0.17206707643496935, RandomForest(...)), (0.16219108115783876, Isotonic(...)), (0.16856815894152433, Huber(...)), (0.16867145023007224, Linear(...))]Best Parameters: {'regressor__n_estimators': 90, 'selection__k': 3, 'regressor__max_depth': 15}Feature Scores: [ 1.  4. 51.  6.  2.  3.  1.  4.]Feature Mask: [False False  True  True False False False  True]Feature Importances: [0.791 0.11  0.098]
 -- HomeRuns
 Selected: HuberScores: [(0.14026287314943267, RandomForest(...)), (0.14913183861845727, Isotonic(...)), (0.16020538002757143, Huber(...)), (0.15829769570304975, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [ 2.  1.  3. 62.  0.  1.  1.  0.]Coefficients: [ 0.00474668 -0.0611994 ]Intercept: 0.0608234456069565Feature Mask: [False False  True  True False False False False]
 -- Walks
@@ -125,8 +125,8 @@ RF Brede, B        20| .210/.232/.319  74     | .209/.240/.321  75     | -5---3-
 LF Benitez, Y      19| .230/.245/.300  74     | .230/.243/.294  73     | -1---4-2 -11 |  - ||  62 || A       |
 
                              |  H/9  K/9 BB/9 HR/9 |
-MR DiPino, F           ML 35 |  7.1  8.2  1.6  0.6 | 187 226 | 175 267 | ++ |  86/153 || 153 ||
 SP Stewart, D          ML 35 |  9.1  6.2  1.0  0.1 | 146 172 | 155 171 |  + | 153/132 || 153 ||
+MR DiPino, F           ML 35 |  7.1  8.2  1.6  0.6 | 187 226 | 175 267 | ++ |  86/153 || 153 ||
 SP Barker, L           ML 37 | 10.4  4.9  1.7  0.2 | 107  59 | 122 168 | ++ | 118/102 || 118 ||
 SP Black, B        F   ML 35 |  9.6  5.5  2.2  1.0 | 103 114 | 106  87 |  + | 105/ 91 || 105 ||
 SP Oliveras, F         ML 29 | 10.1  4.5  1.5  0.6 | 102  69 | 102  90 |    | 102/ 88 || 102 ||
@@ -136,22 +136,22 @@ SP Youmans, F          ML 28 |  9.9  6.6  4.5  0.8 |  84  62 |  94  43 |    |  9
 SP Owchinko, B     F   ML 37 | 10.1  6.2  2.1  1.5 |  92 148 |  86  76 |  - |  81/ 75 ||  81 ||
 MR Vande Berg, E       ML 33 | 11.4  4.4  1.6  0.7 |  95  79 |  90 221 |    |  25/ 79 ||  79 ||
 SP W. Davis, M        AAA 31 |  9.9  6.8  5.2  1.3 |  82     |  78     | ++ |  77/ 68 ||  77 ||
-MR Beck, R          T  ML 24 |  9.3  6.6  2.4  1.8 |  85  91 |  89  71 | ++ |  24/ 76 ||  76 ||
 SP Smith, Z           AAA 31 | 12.9  3.9  3.1  0.5 |  82     |  75     |  + |  76/ 66 ||  76 ||
+MR Beck, R          T  ML 24 |  9.3  6.6  2.4  1.8 |  85  91 |  89  71 | ++ |  24/ 76 ||  76 ||
 SP Hickerson, B       AAA 28 | 11.2  5.5  3.0  1.2 |  79     |  77     |    |  72/ 67 ||  72 ||
 MR Olin, S            AAA 26 | 10.9  5.6  4.8  0.8 |  71     |  78     |    |  21/ 66 ||  66 ||
 SP Bones, R         6 AAA 23 | 10.3  6.9  3.7  2.3 |  64     |  72     |    |  66/ 61 ||  66 ||
 SP Gaff, B            AAA 33 | 12.9  3.2  4.8  0.5 |  63     |  66     |    |  61/ 56 ||  61 ||
 SP Hurst, B            AA 34 | 12.6  4.8  3.1  1.9 |  65     |  62     | ++ |  59/ 54 ||  59 ||
 MR Rodas, R           AAA 32 | 10.5  6.6  4.6  2.3 |  65     |  65     |  - |  18/ 56 ||  56 ||
-MR Benitez, A       7   A 19 | 10.6  5.6  5.4  2.1 |  61     |  64     |  + |  31/ 54 ||  54 ||
 SP Springer, D         AA 27 | 12.7  3.7  4.5  2.4 |  55     |  55     |  - |  54/ 48 ||  54 ||
+MR Benitez, A       7   A 19 | 10.6  5.6  5.4  2.1 |  61     |  64     |  + |  31/ 54 ||  54 ||
 MR Brown, M            AA 33 | 13.3  3.5  3.2  2.0 |  59     |  59     |  - |  52/ 51 ||  52 ||
 MR Wickman, B       8  AA 23 | 11.1  4.4  6.4  1.8 |  59     |  61     | ++ |  29/ 52 ||  52 ||
 MR Booker, G           AA 32 | 13.9  2.6  5.0  0.8 |  58     |  58     |  - |  45/ 50 ||  50 ||
+MR Wohlers, M       5  AA 22 | 11.4  3.8  6.5  1.9 |  52     |  58     |  + |  27/ 48 ||  48 ||
 SP Batista, M           A 21 | 13.8  3.2  5.6  2.2 |  47     |  49     |    |  48/ 42 ||  48 ||
 SP Watson, A      I     A 21 | 13.4  2.8  5.4  2.7 |  49     |  47     | -  |  48/ 42 ||  48 ||
-MR Wohlers, M       5  AA 22 | 11.4  3.8  6.5  1.9 |  52     |  58     |  + |  27/ 48 ||  48 ||
 MR Williams, T          A 21 | 14.2  3.4  6.7  2.3 |  44     |  45     |  - |  12/ 38 ||  38 ||
 MR Fox, C               A 21 | 14.3  2.4  6.7  2.6 |  43     |  43     |    |  21/ 37 ||  37 ||
 SP Jimenez, J           A 19 | 15.3  1.8  6.8  2.6 |  39     |  40     |  - |  37/ 35 ||  37 ||
@@ -328,8 +328,8 @@ CF Mark T. McLemore          27 | RF :  94     -14 :  80 | RF :  94     -14 :  8
 3B Donnie Hill               31 | SS :  99      -6 :  93 | SS :  99      -6 :  93 |  +0 |                       :                       | **
 1B Dave Anderson             32 | SS :  94       3 :  97 | SS :  94       3 :  97 |  +0 |                       :                       | *
  C Mike Scioscia             33 |  C : 104      -8 :  96 |  C : 104      -8 :  96 |  +0 |                       :                       | **^
-LF Jose Moreno               34 | LF :  94      -1 :  93 | LF :  94      -1 :  93 |  +0 |                       :                       | *^
 LF Ed Jurak                  34 | SS : 101      11 : 112 | SS : 101      11 : 112 |  +0 |                       :                       | **^
+LF Jose Moreno               34 | LF :  94      -1 :  93 | LF :  94      -1 :  93 |  +0 |                       :                       | *^
 CF Dale Murphy               36 | CF :  97       1 :  98 | CF :  97       1 :  98 |  +0 |    -10   -10   +10    :                +10    | *^
  C Jamie Nelson              32 |  C :  82       2 :  84 |  C :  81       2 :  83 |  -1 |                       :          -10          | *
 CF George D. Wright          33 | CF :  89      -8 :  81 | CF :  88      -8 :  80 |  -1 |    -10                :    -10                | *
@@ -740,8 +740,8 @@ CATCHER
  6 | Orton, J          75  12  87 | Murphy, D         98  -6  92 | Orton, J          75  12  87
  7 | Phillips, T      121 -34  87 | Phillips, T      121 -34  87 | Phillips, T      121 -34  87
  8 | Diaz, E           69  16  85 | Diaz, E           70  16  86 | Diaz, E           69  16  85
- 9 | Nelson, J         81   2  83 | Nelson, J         82   2  84 | Nelson, J         81   2  83
-10 | Naehring, T      114 -34  80 | Naehring, T      118 -34  84 | Naehring, T      113 -34  79
+ 9 | Nelson, J         81   2  83 | Naehring, T      118 -34  84 | Nelson, J         81   2  83
+10 | Naehring, T      114 -34  80 | Nelson, J         82   2  84 | Naehring, T      113 -34  79
 
 FIRST_BASE
  1 | Phillips, T      121 -16 105 | Phillips, T      121 -16 105 | Phillips, T      121 -16 105
@@ -833,11 +833,11 @@ DESIGNATED_HITTER
  3 | A. Miller, K     111 -18  93 | A. Miller, K     115 -18  97 | A. Miller, K     110 -18  92
  4 | Scioscia, M      104 -18  86 | Neel, T          103 -18  85 | Scioscia, M      104 -18  86
  5 | Neel, T          103 -18  85 | Scioscia, M      102 -18  84 | Neel, T          103 -18  85
- 6 | Doran, B         101 -18  83 | Doran, B         101 -18  83 | Doran, B         101 -18  83
- 7 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83
- 8 | Hill, D           99 -18  81 | Hill, D           99 -18  81 | Hill, D           99 -18  81
- 9 | Murphy, D         97 -18  79 | Lisi, R           99 -18  81 | Murphy, D         97 -18  79
-10 | Lisi, R           95 -18  77 | Murphy, D         98 -18  80 | T. McLemore, M    94 -18  76
+ 6 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83
+ 7 | Doran, B         101 -18  83 | Doran, B         101 -18  83 | Doran, B         101 -18  83
+ 8 | Hill, D           99 -18  81 | Lisi, R           99 -18  81 | Hill, D           99 -18  81
+ 9 | Murphy, D         97 -18  79 | Hill, D           99 -18  81 | Murphy, D         97 -18  79
+10 | Lisi, R           95 -18  77 | Murphy, D         98 -18  80 | Lisi, R           94 -18  76
 
 --- Trade Values ---
 SP Dave Stewart              35| SP :     153      76  35 : 264 |    :                     :   0 |  -6 | 258 |          |         $4M e | $17.31M:$20.99M | p1282 | Cleveland Indians    | ***
@@ -1319,7 +1319,7 @@ CF Scott Bullett             23| RF :  85      -9 -12     :  64 | RF :  96      
 RF Dave Gallagher            31| CF :  94      -6   1     :  89 |    :                     :   0 |   2 |  91 | -321-545 |               |   $156k:$189.1k |  p565 | California Angels    | *
 SS Tomas Perez               18| 2B :  71       1 -18     :  54 | SS :  85       2  -4     :  84 |   6 |  90 | -4665--- |               |        :        | p1421 | California Angels    | ++
 1B Leon Durham               35| RF : 102     -11   4     :  95 |    :                     :   0 |  -6 |  89 | -3---214 |  F    $700k   | $623.9k:$756.5k |  p267 | California Angels    | *
-1B Eric Owens                21| CF :  70      -7 -23     :  40 | LF :  89      -6  -4     :  78 |   6 |  84 | -311-645 |               |        :        | p1399 | California Angels    | ++-
+1B Eric Owens                21| CF :  70      -7 -24     :  40 | LF :  89      -6  -4     :  78 |   6 |  84 | -311-645 |               |        :        | p1399 | California Angels    | ++-
 2B Joey Cora                 27| 2B :  92      -8  -6     :  78 |    :                     :   0 |   6 |  84 | -2311--- |       $300k a |        :        |  p177 | California Angels    | *^
 CF Willie McGee              33| RF :  99     -14  -2     :  83 |    :                     :   0 |   0 |  83 | -1---212 |               |        :        |  p878 | California Angels    | **
 3B Bip Roberts               28| CF :  91      -9  -5     :  77 |    :                     :   0 |   5 |  82 | -211-333 |               |        :        |  p996 | California Angels    | *^
@@ -1958,7 +1958,7 @@ SP Rick Helling              21| SP :      49     -28     :  21 | SP :      69  
 American League
 East ----------------+
 Detroit Tigers       | 105.9 105.1 110.7 | 108.8 109.6 117.4 | 102- 60 0.628 |  76- 40 0.655 | 105- 57 0.648 ( 3) 
-Cleveland Indians    | 103.0 103.8 106.6 |  97.6  98.1  95.6 |  83- 79 0.510 |  70- 46 0.603 |  93- 69 0.574 ( 6) 
+Cleveland Indians    | 103.0 103.8 106.6 |  97.6  98.1  95.6 |  83- 79 0.510 |  70- 46 0.603 |  93- 69 0.574 ( 5) 
 Boston Red Sox       | 100.6 100.4 100.9 |  92.0  90.4  81.5 |  65- 97 0.403 |  54- 62 0.466 |  73- 89 0.451 (14) 
 Baltimore Orioles    |  98.2  98.8  97.0 |  84.9  85.0  68.1 |  49-113 0.304 |  46- 70 0.397 |  60-102 0.370 (17) 
 New York (A) Yankees |  94.4  94.7  88.8 |  86.1  88.8  73.9 |  49-113 0.301 |  40- 76 0.345 |  54-108 0.333 (19) 
@@ -1973,7 +1973,7 @@ National League
 East ----------------+
 Philadelphia Phil... | 106.8 105.4 111.9 | 101.7  99.7 101.4 |  91- 71 0.563 |  86- 30 0.741 | 112- 50 0.691 ( 1) 
 Chicago (N) Cubs     | 105.2 106.1 111.0 | 109.1 111.5 119.2 | 103- 59 0.637 |  82- 34 0.707 | 111- 51 0.685 ( 2) 
-St. Louis Cardinals  | 101.3 101.9 103.2 | 107.7 105.0 112.4 |  93- 69 0.573 |  67- 49 0.578 |  93- 69 0.574 ( 5) 
+St. Louis Cardinals  | 101.3 101.9 103.2 | 107.7 105.0 112.4 |  93- 69 0.573 |  67- 49 0.578 |  93- 69 0.574 ( 6) 
 Pittsburgh Pirates   |  96.2  97.1  93.2 |  98.0  97.6  95.5 |  72- 90 0.442 |  40- 76 0.345 |  60-102 0.370 (18) 
 New York (N) Mets    |  99.2  98.4  97.6 |  90.9  91.1  81.3 |  63- 99 0.386 |  35- 81 0.302 |  53-109 0.327 (20) 
 West ----------------+
