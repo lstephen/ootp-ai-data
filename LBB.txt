@@ -37,7 +37,7 @@ Selected: HuberScores: [(0.08616811606039054, RandomForest(...)), (0.09557603226
 -- Triples
 Selected: HuberScores: [(0.09446525297034873, RandomForest(...)), (0.08909522580678093, Isotonic(...)), (0.11423838074098817, Huber(...)), (0.10445002498557494, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [ 1.  1. 18.  1.  1.  0. 47.]Coefficients: [-0.00052452 -0.00054081  0.00307204  0.00246435  0.01633546]Intercept: -0.0005735958883319421Feature Mask: [ True False  True  True  True False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.1747126792025678, RandomForest(...)), (0.16733974028954293, Isotonic(...)), (0.16020864062988713, Huber(...)), (0.16378085926591798, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 16, 'regressor__max_depth': 11}Feature Scores: [ 1.  3.  0. 22.  0.  6.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.904 0.096]
+Selected: RandomForestScores: [(0.1747126792025678, RandomForest(...)), (0.16733974028954293, Isotonic(...)), (0.16020864062988713, Huber(...)), (0.16378085926591798, Linear(...))]Best Parameters: {'regressor__n_estimators': 16, 'regressor__max_depth': 11, 'selection__k': 2}Feature Scores: [ 1.  3.  0. 22.  0.  6.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.904 0.096]
 -- Walks
 Selected: HuberScores: [(0.3225020898203164, RandomForest(...)), (0.31676240640635467, Isotonic(...)), (0.3271770770460441, Huber(...)), (0.32156372995946875, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [  0.  30.   5.   9. 229.   0.   0.]Coefficients: [0.00734386 0.02646758 0.00659282 0.12330732]Intercept: 0.011418001384587186Feature Mask: [False  True  True  True  True False False]
 -- Ks
@@ -191,12 +191,12 @@ MR Fox, C               A 22 | 14.4  2.3  6.8  2.7 |  42     |  42     |    |  2
 Total:72 (target 70-75)
 Balance:42/30 = 1.400 (ideal: 1.273)
 
- AAA -> ML   MR Steve Olin
- AAA -> ML   SP Zane Smith
- AAA -> ML   SP Mark W. Davis
  AAA -> ML   3B Donnie Hill
- AAA -> ML   2B Mike Sharperson
+ AAA -> ML   MR Steve Olin
  AAA -> ML   1B Troy Neel
+ AAA -> ML   2B Mike Sharperson
+ AAA -> ML   SP Mark W. Davis
+ AAA -> ML   SP Zane Smith
   AA -> AAA  SP Bruce Hurst
   AA -> A     C Tim Spehr
    A -> AAA  MR Armando Benitez
@@ -336,19 +336,19 @@ SS Ricky Gutierrez           22 | SS :  85      13 :  98 | SS :  86      13 :  9
 1B Dave Anderson             32 | SS :  94       3 :  97 | SS :  95       3 :  98 |  +1 | +10                   :                       | *
 3B Juan Castro               20 | SS :  76       2 :  78 | SS :  76       2 :  78 |  +0 |    +10                :                       | +++
 LF Manny Martinez            21 | CF :  81      -3 :  78 | CF :  81      -3 :  78 |  +0 | +10      +10          :    +10                | ++
-SS Travis Fryman             23 | SS :  86       7 :  93 | SS :  86       7 :  93 |  +0 |    -10                :                       | +++++
 1B Dave Hansen               23 | 3B :  89      -7 :  82 | 3B :  89      -7 :  82 |  +0 |                +10+20 :                +10+20 | +++-
+SS Travis Fryman             23 | SS :  86       7 :  93 | SS :  86       7 :  93 |  +0 |    -10                :                       | +++++
 CF Mark T. McLemore          27 | RF :  95     -14 :  81 | RF :  95     -14 :  81 |  +0 |                       :                       | *
 SS Jeff Hamilton             28 | SS :  79      -2 :  77 | SS :  79      -2 :  77 |  +0 |                       :                       | *
 3B Jeff McKnight             29 | SS :  80       0 :  80 | SS :  80       0 :  80 |  +0 |                       :                       | *
 2B Mike Sharperson           30 | SS :  88       7 :  95 | SS :  88       7 :  95 |  +0 |                   +20 :                   +20 | *^
- C John Mizerock             31 |  C :  77      -2 :  75 |  C :  77      -2 :  75 |  +0 |    +10                :                       | *
 3B Donnie Hill               31 | SS :  99      -6 :  93 | SS :  99      -6 :  93 |  +0 |                       :                       | **
+ C John Mizerock             31 |  C :  77      -2 :  75 |  C :  77      -2 :  75 |  +0 |    +10                :                       | *
  C Mike Scioscia             33 |  C : 103      -8 :  95 |  C : 103      -8 :  95 |  +0 |                       :                       | **^
- C Jamie Nelson              33 |  C :  81       2 :  83 |  C :  81       2 :  83 |  +0 |          -10          :          -10          | *
 CF George D. Wright          33 | CF :  90      -8 :  82 | CF :  90      -8 :  82 |  +0 |    -10                :    -10                | *
-LF Jose Moreno               34 | LF :  94      -1 :  93 | LF :  94      -1 :  93 |  +0 |                       :                       | *^
+ C Jamie Nelson              33 |  C :  81       2 :  83 |  C :  81       2 :  83 |  +0 |          -10          :          -10          | *
 LF Ed Jurak                  34 | SS : 101      11 : 112 | SS : 101      11 : 112 |  +0 |                       :                       | **^
+LF Jose Moreno               34 | LF :  94      -1 :  93 | LF :  94      -1 :  93 |  +0 |                       :                       | *^
 RF Yamil Benitez             19 | LF :  74     -11 :  63 | LF :  73     -11 :  62 |  -1 |    +10         +10    :                +10    | +++
 RF Dan Peltier               24 | 2B :  83     -14 :  69 | 2B :  82     -14 :  68 |  -1 |                       :          +10          | ++-
  C Einar Diaz                19 |  C :  72      16 :  88 |  C :  70      16 :  86 |  -2 |                       :                +10    | ++
@@ -856,8 +856,8 @@ DESIGNATED_HITTER
  6 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83 | Jurak, E         101 -18  83
  7 | Doran, B         100 -18  82 | Doran, B         100 -18  82 | Doran, B         100 -18  82
  8 | Hill, D           99 -18  81 | Hill, D           99 -18  81 | Hill, D           99 -18  81
- 9 | T. McLemore, M    95 -18  77 | Anderson, D       99 -18  81 | T. McLemore, M    95 -18  77
-10 | Anderson, D       95 -18  77 | Murphy, D         99 -18  81 | Moreno, J         94 -18  76
+ 9 | Anderson, D       95 -18  77 | Anderson, D       99 -18  81 | T. McLemore, M    95 -18  77
+10 | T. McLemore, M    95 -18  77 | Murphy, D         99 -18  81 | Moreno, J         94 -18  76
 
 --- Trade Values ---
 SP Dave Stewart              35| SP :     151      75  31 : 257 |    :                     :   0 |  -6 | 251 |          |         $4M e | $17.11M:$20.24M | p1282 | Cleveland Indians    | ***
@@ -1979,12 +1979,12 @@ American League
 East ----------------+
 Detroit Tigers       | 105.4 104.6 109.8 | 106.7 106.1 112.3 |  98- 64 0.603 |  94- 49 0.657 | 105- 57 0.648 ( 3) 
 Cleveland Indians    | 102.2 103.2 105.2 |  98.7  99.4  98.1 |  84- 78 0.516 |  83- 60 0.580 |  93- 69 0.574 ( 5) 
-Boston Red Sox       | 101.3 101.2 102.4 |  91.2  89.6  79.7 |  65- 97 0.400 |  66- 77 0.462 |  74- 88 0.457 (14) 
+Boston Red Sox       | 101.3 101.2 102.4 |  91.2  89.6  79.7 |  65- 97 0.400 |  66- 77 0.462 |  74- 88 0.457 (13) 
 Baltimore Orioles    |  98.7  99.3  98.0 |  83.6  83.4  64.8 |  47-115 0.288 |  55- 88 0.385 |  60-102 0.370 (18) 
 New York (A) Yankees |  93.6  93.7  87.0 |  86.4  89.3  74.8 |  48-114 0.298 |  51- 92 0.357 |  57-105 0.352 (19) 
 West ----------------+
 California Angels    | 102.9 103.7 106.5 | 112.8 114.2 124.9 | 104- 58 0.639 |  89- 54 0.622 | 101- 61 0.623 ( 4) 
-Oakland Athletics    | 100.6 101.6 102.1 | 106.6 108.3 114.2 |  93- 69 0.576 |  73- 70 0.510 |  84- 78 0.519 ( 7) 
+Oakland Athletics    | 100.6 101.6 102.1 | 106.6 108.3 114.2 |  93- 69 0.576 |  73- 70 0.510 |  84- 78 0.519 ( 8) 
 Chicago (A) White... |  98.7  99.6  98.3 | 105.9 102.5 108.4 |  86- 76 0.532 |  73- 70 0.510 |  83- 79 0.512 (10) 
 Minnesota Twins      | 100.9  99.7 100.6 |  88.7  85.3  72.0 |  56-106 0.344 |  74- 69 0.517 |  81- 81 0.500 (11) 
 Texas Rangers        |  92.4  92.7  84.6 |  90.7  93.8  84.3 |  55-107 0.337 |  57- 86 0.399 |  63- 99 0.389 (16) 
@@ -1997,10 +1997,10 @@ St. Louis Cardinals  | 102.0 102.8 104.8 | 108.9 106.6 114.9 |  96- 66 0.592 |  
 Pittsburgh Pirates   |  96.3  97.7  93.9 |  99.2  98.5  97.7 |  74- 88 0.457 |  53- 90 0.371 |  62-100 0.383 (17) 
 New York (N) Mets    |  98.9  98.3  97.3 |  90.3  91.2  80.8 |  62-100 0.382 |  47- 96 0.329 |  54-108 0.333 (20) 
 West ----------------+
-San Francisco Giants | 102.7 101.2 103.9 |  97.0  98.4  95.3 |  80- 82 0.495 |  75- 68 0.524 |  84- 78 0.519 ( 8) 
+San Francisco Giants | 102.7 101.2 103.9 |  97.0  98.4  95.3 |  80- 82 0.495 |  75- 68 0.524 |  84- 78 0.519 ( 7) 
 Atlanta Braves       |  98.7  97.6  96.2 | 116.2 121.0 132.7 | 100- 62 0.620 |  71- 72 0.497 |  83- 79 0.512 ( 9) 
 Cincinnati Reds      |  97.6  96.8  94.3 |  94.4  89.0  82.2 |  61-101 0.375 |  69- 74 0.483 |  76- 86 0.469 (12) 
-Los Angeles Dodgers  |  96.6  96.4  92.9 | 115.8 111.0 125.3 |  93- 69 0.575 |  63- 80 0.441 |  74- 88 0.457 (13) 
+Los Angeles Dodgers  |  96.6  96.4  92.9 | 115.8 111.0 125.3 |  93- 69 0.575 |  63- 80 0.441 |  74- 88 0.457 (14) 
 Houston Astros       |  97.9  98.1  96.0 |  96.5 101.9  98.4 |  76- 86 0.471 |  58- 85 0.406 |  67- 95 0.414 (15) 
                      |             103.4 |             108.2 |
 
