@@ -40,7 +40,7 @@ Selected: HuberScores: [(0.08120491523093909, RandomForest(...)), (0.08018096090
 -- Triples
 Selected: HuberScores: [(0.10524161751344419, RandomForest(...)), (0.051531134499554744, Isotonic(...)), (0.0880136950454931, Huber(...)), (0.06692340470264531, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [ 1.  0. 17.  1.  1.  0. 41.]Coefficients: [0.00415955 0.00355459 0.01664882]Intercept: -0.0009011740168997989Feature Mask: [False False  True False  True False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.14557233628243646, RandomForest(...)), (0.14366493550982193, Isotonic(...)), (0.14175215966577603, Huber(...)), (0.13878748420263376, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [ 1.  2.  0. 17.  0.  3.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.921 0.079]
+Selected: RandomForestScores: [(0.14557233628243646, RandomForest(...)), (0.14366493550982193, Isotonic(...)), (0.14175215966577603, Huber(...)), (0.13878748420263376, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 1.  2.  0. 17.  0.  3.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.921 0.079]
 -- Walks
 Selected: HuberScores: [(0.3555458781601007, RandomForest(...)), (0.34290618573225246, Isotonic(...)), (0.3649253947226392, Huber(...)), (0.3599668374221432, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [  0.  33.   4.  11. 232.   0.   0.]Coefficients: [0.0110305  0.00757253 0.11740422]Intercept: 0.016899917424608245Feature Mask: [False  True False  True  True False False]
 -- Ks
@@ -136,8 +136,8 @@ MR Booker, G          AAA 32 | 12.0  2.6  4.7  0.8 |  71     |  71     |  - |  5
 SP Batista, M         AAA 21 | 12.0  3.4  4.8  1.7 |  56     |  63     |    |  59/ 53 ||  59 ||
 MR Brown, M           AAA 33 | 12.2  3.3  2.6  2.0 |  62     |  66     |  - |  57/ 56 ||  57 ||
 MR Wickman, B       7 AAA 23 | 10.3  4.0  5.7  1.9 |  62     |  67     | ++ |  32/ 57 ||  57 ||
-SP Springer, D        AAA 27 | 12.0  3.4  4.6  2.4 |  56     |  56     |  - |  54/ 48 ||  54 ||
 MR Benitez, A           A 20 | 10.9  5.7  5.5  2.0 |  60     |  63     |  + |  31/ 54 ||  54 ||
+SP Springer, D        AAA 27 | 12.0  3.4  4.6  2.4 |  56     |  56     |  - |  54/ 48 ||  54 ||
 MR Wohlers, M       5  AA 23 | 10.5  4.1  6.3  1.9 |  59     |  62     |  + |  30/ 53 ||  53 ||
 SP Bones, R         6  AA 23 | 11.8  7.4  4.0  2.6 |  53     |  59     |    |  53/ 49 ||  53 ||
 MR Rodas, R            AA 33 | 10.8  7.2  4.7  2.5 |  59     |  61     |  - |  16/ 52 ||  52 ||
@@ -175,21 +175,21 @@ SP Jimenez, J           A 19 | 13.8  2.8  6.5  2.5 |  44     |  44     |  - |  4
 Total:59 (target 70-75)
 Balance:35/24 = 1.458 (ideal: 1.273)
 
- AAA -> ML   SP Zane Smith
- AAA -> ML   3B Donnie Hill
- AAA -> ML   SP Bryan Hickerson
- AAA -> ML   MR Steve Olin
- AAA -> ML   SP Mark W. Davis
- AAA -> ML    C John Orton
  AAA -> ML   2B Mike Sharperson
+ AAA -> ML   SP Mark W. Davis
+ AAA -> ML   SP Bryan Hickerson
  AAA -> ML   1B Troy Neel
- AAA -> AA   MR Rich Rodas
+ AAA -> ML   MR Steve Olin
+ AAA -> ML   SP Zane Smith
+ AAA -> ML    C John Orton
+ AAA -> ML   3B Donnie Hill
  AAA -> AA   SP Ricky Bones
+ AAA -> AA   MR Rich Rodas
+  AA -> AAA  MR Bob Wickman
   AA -> AAA  SP Dennis Springer
   AA -> AAA  MR Greg Booker
-  AA -> AAA  SS Rene Gonzales
-  AA -> AAA  MR Bob Wickman
   AA -> AAA  MR Mark Brown
+  AA -> AAA  SS Rene Gonzales
    A -> AAA  SP Miguel Batista
    A -> AAA  1B Aaron Ledesma
    A -> AAA  SS Travis Fryman
@@ -257,29 +257,29 @@ RF| Lisi, R         (D)                 |RF| ( 1) Jose, F
 
 vs LHP+DH
  C| Orton, J        (D)                 | C| ( 1) Ausmus, B      
-1B| Scioscia, M     (D) Sharperson, M   |1B| ( 1) Doran, B       
-2B| Naehring, T     (D) Sharperson, M   |2B| ( 1) Sharperson, M  
-3B| Anderson, D     (D)                 |3B| ( 1) Sharperson, M  
+1B| Anderson, D     (D)                 |1B| ( 1) Hill, D        
+2B| Sharperson, M   (D)                 |2B| ( 1) Gutierrez, R   
+3B| Naehring, T     (D)                 |3B| ( 1) Hill, D        
 SS| Phillips, T     (D)                 |SS| ( 1) Gutierrez, R   
 LF| Neel, T         (D) Jose, F         |LF| ( 1) Jose, F        
 CF| A. Miller, K    (D)                 |CF| ( 1) Jose, F        
 RF| Lisi, R         (D)                 |RF| ( 1) Jose, F        
-DH| Hill, D         (D)                 |DH| ( 1) Doran, B       
+DH| Scioscia, M     (D)                 |DH| ( 1) Hill, D        
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 1B L Scioscia, M      1B L Scioscia, M      1B L Scioscia, M      1B L Scioscia, M     
-2. 2B R Naehring, T      2B R Naehring, T      2B R Naehring, T      2B R Naehring, T     
+1. 1B L Scioscia, M      1B L Scioscia, M      1B L Scioscia, M      DH L Scioscia, M     
+2. 2B R Naehring, T      2B R Naehring, T      2B R Naehring, T      3B R Naehring, T     
 3. LF L Neel, T          LF L Neel, T          LF L Neel, T          LF L Neel, T         
 4. SS S Phillips, T      SS S Phillips, T      SS S Phillips, T      SS S Phillips, T     
 5. CF R A. Miller, K     CF R A. Miller, K     CF R A. Miller, K     CF R A. Miller, K    
 6. RF R Lisi, R          DH S Hill, D          RF R Lisi, R          RF R Lisi, R         
-7. 3B R Anderson, D      RF R Lisi, R          3B R Anderson, D      DH S Hill, D         
-8.  C R Ausmus, B        3B R Anderson, D       C R Orton, J         3B R Anderson, D     
+7. 3B R Anderson, D      RF R Lisi, R          3B R Anderson, D      1B R Anderson, D     
+8.  C R Ausmus, B        3B R Anderson, D       C R Orton, J         2B R Sharperson, M   
 9.  P                     C R Ausmus, B         P                     C R Orton, J        
 
 --- Bunt for Hit ---
 
---- Stealing @ 65.8 ---
+--- Stealing @ 65.7 ---
 SS Tony Phillips             33| SS : 121      13  42  18 : 194 |    :                     :   0 |   0 | 194 | -3558445 |     $17.65Mx5 |  $6.14M: $9.48M | p1682 | Cleveland Indians    | ****^
 SS Ricky Gutierrez           22| SS :  89       9   6     : 104 | SS : 117       9  40     : 166 |   6 | 172 | -3737--- |   2   $300k r | $613.6k:$947.9k |  p527 | Cleveland Indians    | +++++
 RF Keith A. Miller           29| CF : 112       7  32   2 : 153 |    :                     :   0 |   4 | 157 | -2325686 |  F   $2.91M   |  $3.48M: $5.37M |  p843 | Cleveland Indians    | ***^
@@ -310,12 +310,12 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 3B Juan Castro               20 | SS :  76       3 :  79 | SS :  76       3 :  79 |  +0 |                       :                       | +++
  C Einar Diaz                20 |  C :  70      17 :  87 |  C :  70      17 :  87 |  +0 |                       :                       | +
 RF Yamil Benitez             20 | LF :  75     -10 :  65 | LF :  75     -10 :  65 |  +0 |                       :                       | +++
-1B Brent Brede               21 | RF :  73      -8 :  65 | RF :  73      -8 :  65 |  +0 |                       :                       | ++
 1B Aaron Ledesma             21 | SS :  84       8 :  92 | SS :  84       8 :  92 |  +0 |                       :                       | ++-
-SS Ricky Gutierrez           22 | SS :  89       9 :  98 | SS :  89       9 :  98 |  +0 |                       :                       | +++++
+1B Brent Brede               21 | RF :  73      -8 :  65 | RF :  73      -8 :  65 |  +0 |                       :                       | ++
 LF Manny Martinez            22 | CF :  78      -2 :  76 | CF :  78      -2 :  76 |  +0 |                       :                       | ++
-2B Bill Selby                22 | 3B :  73      -2 :  71 | 3B :  73      -2 :  71 |  +0 |                       :                       | ++
+SS Ricky Gutierrez           22 | SS :  89       9 :  98 | SS :  89       9 :  98 |  +0 |                       :                       | +++++
 LF Doug Glanville            22 | CF :  82       5 :  87 | CF :  82       5 :  87 |  +0 |                       :                       | +++
+2B Bill Selby                22 | 3B :  73      -2 :  71 | 3B :  73      -2 :  71 |  +0 |                       :                       | ++
 SS Travis Fryman             23 | SS :  84       8 :  92 | SS :  84       8 :  92 |  +0 |                       :                       | +++++
  C Brad Ausmus               23 |  C :  86      11 :  97 |  C :  86      11 :  97 |  +0 |                       :                       | +++++
 1B Dave Hansen               24 | 3B :  90      -6 :  84 | 3B :  90      -6 :  84 |  +0 |                       :                       | +++-
@@ -323,24 +323,24 @@ SS Travis Fryman             23 | SS :  84       8 :  92 | SS :  84       8 :  9
 RF Dan Peltier               24 | 2B :  82     -13 :  69 | 2B :  82     -13 :  69 |  +0 |                       :                       | ++-
 3B Tim Naehring              25 | 3B : 112       6 : 118 | 3B : 112       6 : 118 |  +0 |                       :                       | ****
  C Tim Spehr                 26 |  C :  78      -3 :  75 |  C :  78      -3 :  75 |  +0 |                       :                       | *
-RF Ruben Amaro Jr.           27 | RF :  81     -11 :  70 | RF :  81     -11 :  70 |  +0 |                       :                       | *
-1B Troy Neel                 27 | LF : 108     -10 :  98 | LF : 108     -10 :  98 |  +0 |                       :                       | **
  C John Orton                27 |  C :  80      13 :  93 |  C :  80      13 :  93 |  +0 |                       :                       | *
+1B Troy Neel                 27 | LF : 108     -10 :  98 | LF : 108     -10 :  98 |  +0 |                       :                       | **
+RF Ruben Amaro Jr.           27 | RF :  81     -11 :  70 | RF :  81     -11 :  70 |  +0 |                       :                       | *
 RF Felix Jose                27 | CF :  90       3 :  93 | CF :  90       3 :  93 |  +0 |                       :                       | *
-CF Mark T. McLemore          28 | RF :  88     -13 :  75 | RF :  88     -13 :  75 |  +0 |                       :                       | *
 SS Jeff Hamilton             28 | SS :  82      -1 :  81 | SS :  82      -1 :  81 |  +0 |                       :                       | *
-RF Keith A. Miller           29 | CF : 112       7 : 119 | CF : 112       7 : 119 |  +0 |                       :                       | ***^
+CF Mark T. McLemore          28 | RF :  88     -13 :  75 | RF :  88     -13 :  75 |  +0 |                       :                       | *
 3B Jeff McKnight             29 | SS :  82       2 :  84 | SS :  82       2 :  84 |  +0 |                       :                       | *
+RF Keith A. Miller           29 | CF : 112       7 : 119 | CF : 112       7 : 119 |  +0 |                       :                       | ***^
  C Tom Pagnozzi              30 |  C :  79       2 :  81 |  C :  79       2 :  81 |  +0 |                       :                       | *
 2B Mike Sharperson           31 | SS :  89       8 :  97 | SS :  89       8 :  97 |  +0 |                       :                       | **
-1B Dave Anderson             32 | 3B :  95       6 : 101 | 3B :  95       6 : 101 |  +0 |                       :                       | *^
-SS Rene Gonzales             32 | 2B :  93     -12 :  81 | 2B :  93     -12 :  81 |  +0 |                       :                       | *
- C John Mizerock             32 |  C :  79      -1 :  78 |  C :  79      -1 :  78 |  +0 |                       :                       | *
 3B Donnie Hill               32 | SS :  99      -5 :  94 | SS :  99      -5 :  94 |  +0 |                       :                       | **
+ C John Mizerock             32 |  C :  79      -1 :  78 |  C :  79      -1 :  78 |  +0 |                       :                       | *
+SS Rene Gonzales             32 | 2B :  93     -12 :  81 | 2B :  93     -12 :  81 |  +0 |                       :                       | *
 2B Ernie Riles               32 | 3B :  85     -13 :  72 | 3B :  85     -13 :  72 |  +0 |                       :                       | *
+1B Dave Anderson             32 | 3B :  95       6 : 101 | 3B :  95       6 : 101 |  +0 |                       :                       | *^
 SS Tony Phillips             33 | SS : 121      13 : 134 | SS : 121      13 : 134 |  +0 |                       :                       | ****^
-2B Bill Doran                34 | LF :  93     -12 :  81 | LF :  93     -12 :  81 |  +0 |                       :                       | *^
  C Mike Scioscia             34 |  C : 107      -6 : 101 |  C : 107      -6 : 101 |  +0 |                       :                       | **^
+2B Bill Doran                34 | LF :  93     -12 :  81 | LF :  93     -12 :  81 |  +0 |                       :                       | *^
 RF Rick Lisi                 36 | RF :  95      -5 :  90 | RF :  95      -5 :  90 |  +0 |                       :                       | *
 
 Pitchers
@@ -352,19 +352,19 @@ SP Miguel Batista            21 | SP :      59     :  59 | SP :      59     :  5
 MR Todd Williams             21 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                          | +-
 SP Allen Watson              22 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | ++-
 SP Ricky Bones               23 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                          :                          | ++++
-MR Mark Wohlers              23 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | +++++
 MR Bob Wickman               23 | MR :      57     :  57 | MR :      57     :  57 |  +0 |                          :                          | +++++
+MR Mark Wohlers              23 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | +++++
 MR Rod Beck                  24 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | +++++
-SP Dennis Springer           27 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
 MR Steve Olin                27 | MR :      76     :  76 | MR :      76     :  76 |  +0 |                          :                          | **^
+SP Dennis Springer           27 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
 SP Floyd Youmans             28 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | *^
 SP Bryan Hickerson           29 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                          | *
 SP Francisco Oliveras        30 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                          :                          | **^
-SP Mark W. Davis             32 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                          :                          | *
-SP Zane Smith                32 | SP :      89     :  89 | SP :      89     :  89 |  +0 |                          :                          | *
 MR Greg Booker               32 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                          :                          | *
-MR Rich Rodas                33 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                          :                          | *
+SP Zane Smith                32 | SP :      89     :  89 | SP :      89     :  89 |  +0 |                          :                          | *
+SP Mark W. Davis             32 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                          :                          | *
 MR Mark Brown                33 | SP :      57     :  57 | SP :      57     :  57 |  +0 |                          :                          | *
+MR Rich Rodas                33 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                          :                          | *
 MR Ed Vande Berg             34 | MR :      86     :  86 | MR :      86     :  86 |  +0 |                          :                          | *^
 SP Dave Stewart              35 | SP :     144     : 144 | SP :     144     : 144 |  +0 |                          :                          | ***
 CL Frank DiPino              36 | MR :     176     : 176 | MR :     176     : 176 |  +0 |                          :                          | ****^
@@ -725,7 +725,7 @@ SP Rocky Coppinger           18| SP :      37     -23     :  14 | SP :      49  
  1 | 111 ( 88-192) | 117 ( 94-198) 107/129 |  20/ 20 || 119 ( 88-355) | 125 ( 94-361) 113/137 | 100/100
  2 |  97 ( 62-117) | 103 ( 68-123)  94/114 |  20/ 20 || 101 ( 62-117) | 107 ( 68-123)  98/118 | 100/100
  3 |  80 ( 58-108) |  86 ( 64-114)  78/ 94 |  20/ 20 ||  91 ( 58-108) |  97 ( 64-114)  88/107 | 100/100
- 4 |  86 ( 66-131) |  92 ( 72-137)  83/101 |  20/ 20 ||  84 ( 62-131) |  90 ( 68-137)  82/ 99 | 100/100
+ 4 |  86 ( 66-131) |  92 ( 72-137)  83/101 |  20/ 20 ||  84 ( 43-131) |  90 ( 51-137)  82/ 99 | 100/100
  5 |  82 ( 52-120) |  88 ( 58-126)  80/ 96 |  20/ 20 ||  74 ( 52-120) |  81 ( 58-126)  74/ 89 | 100/100
  6 |  67 ( 54-116) |  73 ( 60-122)  67/ 81 |  17/ 17 ||  64 ( 49-116) |  71 ( 55-122)  65/ 79 |  59/ 59
  7 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  42 ( 41- 54) |  60 ( 47- 60)  54/ 66 |   3/  3
@@ -937,8 +937,8 @@ DESIGNATED_HITTER
  6 | Hill, D           99 -17  82 | Lisi, R           99 -17  82 | Hill, D           99 -17  82
  7 | Lisi, R           95 -17  78 | Hill, D           99 -17  82 | Anderson, D       95 -17  78
  8 | Anderson, D       95 -17  78 | Anderson, D       99 -17  82 | Lisi, R           94 -17  77
- 9 | Doran, B          93 -17  76 | Doran, B          93 -17  76 | Doran, B          93 -17  76
-10 | Gonzales, R       93 -17  76 | Gonzales, R       93 -17  76 | Gonzales, R       93 -17  76
+ 9 | Gonzales, R       93 -17  76 | Gonzales, R       93 -17  76 | Gonzales, R       93 -17  76
+10 | Doran, B          93 -17  76 | Doran, B          93 -17  76 | Doran, B          93 -17  76
 
 --- Trade Values ---
 CL Frank DiPino              36| MR :     176      99  44 : 319 |    :                     :   0 | -12 | 307 |          |     $14.47Mx2 | $14.63M:$22.59M |  p180 | Cleveland Indians    | ****^
