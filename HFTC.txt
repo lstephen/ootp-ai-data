@@ -53,7 +53,7 @@ Selected: LinearScores: [(0.1947926001027329, RandomForest(...)), (0.17688751702
              Ks | 0.066
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.20670371123596953, RandomForest(...)), (0.10557574942497953, Isotonic(...)), (0.17840863170730548, Huber(...)), (0.18071775081325867, Linear(...))]Best Parameters: {'regressor__max_depth': 11, 'selection__k': 2, 'regressor__n_estimators': 16}Feature Scores: [16. 56.  2.  1.  1. 27.  0.  0.]Feature Mask: [False  True False False False  True False False]Feature Importances: [0.774 0.226]
+Selected: RandomForestScores: [(0.20670371123596953, RandomForest(...)), (0.10557574942497953, Isotonic(...)), (0.17840863170730548, Huber(...)), (0.18071775081325867, Linear(...))]Best Parameters: {'regressor__max_depth': 11, 'regressor__n_estimators': 16, 'selection__k': 2}Feature Scores: [16. 56.  2.  1.  1. 27.  0.  0.]Feature Mask: [False  True False False False  True False False]Feature Importances: [0.774 0.226]
 -- Doubles
 Selected: HuberScores: [(0.28105258103598646, RandomForest(...)), (0.267189865263003, Isotonic(...)), (0.3013383164015346, Huber(...)), (0.29807854686120694, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [  2.   0. 149.   7.   1.   1.  12.   9.]Coefficients: [-0.06791874 -0.00399296  0.00186573  0.01400764]Intercept: 0.07487220752063072Feature Mask: [False False  True  True False False  True  True]
 -- HomeRuns
@@ -197,23 +197,23 @@ Total:80 (target 70-75)
 Balance:45/35 = 1.286 (ideal: 1.273)
 
   ML -> AAA  MR James Koger
-  ML -> AAA  CF Bill Charlie
   ML -> AAA   C Dudley Givens
+  ML -> AAA  CF Bill Charlie
   ML -> AAA  2B Fausto Castillo
   ML -> DL   MR Steven Spell
   ML -> DL   MR Jose Rojas
- AAA -> ML   MR Ryan Bethea
- AAA -> ML   SP John Dao
  AAA -> ML    C Michael Mielke
  AAA -> ML   1B Adelardo Lopez
- AAA -> ML   MR Joseph Smathers
  AAA -> ML   RF Lonnie Lopresti
+ AAA -> ML   MR Joseph Smathers
+ AAA -> ML   SP John Dao
+ AAA -> ML   MR Ryan Bethea
  AAA -> AA   SP John Miles
   AA -> AAA  MR Jose Peralvo
   AA -> AAA   C Hector Perdomo
-   A -> AAA  MR Gabriel Mendoza
    A -> AAA  SP William Henderson
    A -> AAA  SP James Suggs
+   A -> AAA  MR Gabriel Mendoza
    A -> AA   LF Danny Dock
 
 SP
@@ -347,13 +347,13 @@ CF Angelo Cabrales           26 | CF :  93      -5 :  88 | CF :  94      -5 :  8
 CF Michael Cromartie         25 | SS :  70       8 :  78 | SS :  70       8 :  78 |  +0 |                       :                       | +
 3B Pedro Enciso              27 | SS :  75       8 :  83 | SS :  75       8 :  83 |  +0 |                       :                       | *
  C Raul Bengoa               27 |  C :  57      10 :  67 |  C :  57      10 :  67 |  +0 |    +10                :                       | *
+ C Richard Bernabe           28 |  C : 123      -6 : 117 |  C : 123      -6 : 117 |  +0 |                       :                       | ****
 SS Hector Grillo             28 | SS :  77      -4 :  73 | SS :  77      -4 :  73 |  +0 |                       :                       | *
 LF Danny Dock                28 | LF :  73      -8 :  65 | LF :  73      -8 :  65 |  +0 |                       :                       | *
- C Richard Bernabe           28 |  C : 123      -6 : 117 |  C : 123      -6 : 117 |  +0 |                       :                       | ****
+2B Joel Sancho               29 | 2B :  74      -6 :  68 | 2B :  74      -6 :  68 |  +0 |                       :                       | *
 RF Alejo Torres              29 | CF : 106       3 : 109 | CF : 106       3 : 109 |  +0 |                       :                       | **^
 LF Zoilo Diez                29 | RF : 101      -8 :  93 | RF : 101      -8 :  93 |  +0 |                       :                       | *
 CF Ryan Malley               29 | CF :  96       9 : 105 | CF :  96       9 : 105 |  +0 |                       :                       | **^
-2B Joel Sancho               29 | 2B :  74      -6 :  68 | 2B :  74      -6 :  68 |  +0 |                       :                       | *
  C Robert Makowski           30 |  C :  83       4 :  87 |  C :  83       4 :  87 |  +0 |                       :                       | *
  C Hernando Valido           31 |  C :  72       4 :  76 |  C :  72       4 :  76 |  +0 |                       :                       | *
  C Hector Perdomo            32 |  C :  86      -8 :  78 |  C :  86      -8 :  78 |  +0 |                       :                       | *
@@ -383,17 +383,17 @@ SP John Miles                23 | SP :      54     :  54 | SP :      55     :  5
 MR Teruo Toyokuni            27 | MR :      36     :  36 | MR :      37     :  37 |  +1 |       +10                :       +10                | *
 SP Carroll Lemay             19 | SP :      48     :  48 | SP :      48     :  48 |  +0 |                          :                          | +++
 SP Joseph Koenig             21 | SP :      40     :  40 | SP :      40     :  40 |  +0 |                          :                          | +-
-MR Maurice Lyon              22 | MR :      51     :  51 | MR :      51     :  51 |  +0 | +10+10                   : +10                      | ++++-
 MR Ryan Bethea               22 | MR :      67     :  67 | MR :      67     :  67 |  +0 | +10                      : +10                      | +++-
+MR Maurice Lyon              22 | MR :      51     :  51 | MR :      51     :  51 |  +0 | +10+10                   : +10                      | ++++-
 SP John Dao                  23 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                +10       :                          | +++
 MR Larry Sheldon             24 | SP :      46     :  46 | SP :      46     :  46 |  +0 |          +10             :                          | +-
 MR Ronald Kidd               26 | MR :      29     :  29 | MR :      29     :  29 |  +0 |                          :     +9                   | *
 MR Ulises Regalado           27 | SP :      38     :  38 | SP :      38     :  38 |  +0 |                          :                          | *
 SP Jerry Reinhardt           28 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                          :       +10                | *
-SP Michael Villani           30 | SP :      59     :  59 | SP :      59     :  59 |  +0 |       -10                :                          | *
-MR Markus Pifer              30 | MR :      37     :  37 | MR :      37     :  37 |  +0 |                          :                          | *
-SP Samuel Johnson            30 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                          :                          | *
 SP Osvaldo Depalma           30 | SP :     100     : 100 | SP :     100     : 100 |  +0 | +10                      : +10                      | *^
+MR Markus Pifer              30 | MR :      37     :  37 | MR :      37     :  37 |  +0 |                          :                          | *
+SP Michael Villani           30 | SP :      59     :  59 | SP :      59     :  59 |  +0 |       -10                :                          | *
+SP Samuel Johnson            30 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                          :                          | *
 MR Joseph Smathers           33 | MR :      73     :  73 | MR :      73     :  73 |  +0 |                          :                          | *
 SP Pedro Castillo            33 | SP :     125     : 125 | SP :     125     : 125 |  +0 |                          :                          | ****
 SP Doyle Seibold             36 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                          :                          | *
@@ -885,11 +885,11 @@ DESIGNATED_HITTER
  3 | Torres, A        106 -16  90 | Torres, A        106 -16  90 | Torres, A        106 -16  90
  4 | Diez, Z          101 -16  85 | Diez, Z          101 -16  85 | Mcneill, B       102 -16  86
  5 | Mcneill, B       100 -16  84 | Preciado, J      100 -16  84 | Lopresti, L      102 -16  86
- 6 | Lopresti, L      100 -16  84 | Lopez, A          99 -16  83 | Diez, Z          101 -16  85
- 7 | Preciado, J      100 -16  84 | Arroyo, A         99 -16  83 | Preciado, J      100 -16  84
- 8 | Gonzalez, J       97 -16  81 | Mielke, M         97 -16  81 | Gonzalez, J       99 -16  83
- 9 | Malley, R         96 -16  80 | Givens, D         97 -16  81 | Malley, R         99 -16  83
-10 | Lopez, A          96 -16  80 | Foxx, B           95 -16  79 | Alldredge, H      96 -16  80
+ 6 | Lopresti, L      100 -16  84 | Arroyo, A         99 -16  83 | Diez, Z          101 -16  85
+ 7 | Preciado, J      100 -16  84 | Lopez, A          99 -16  83 | Preciado, J      100 -16  84
+ 8 | Gonzalez, J       97 -16  81 | Givens, D         97 -16  81 | Gonzalez, J       99 -16  83
+ 9 | Malley, R         96 -16  80 | Mielke, M         97 -16  81 | Malley, R         99 -16  83
+10 | Lopez, A          96 -16  80 | Peets, J          95 -16  79 | Alldredge, H      96 -16  80
 
 --- Trade Values ---
 MR Maurice Lyon              22| MR :      51     -19     :  32 | MR :     148      60  31 : 239 |   6 | 245 |          |   6           |        :        |  p248 | Detroit Tigers       | ++++-
@@ -2658,7 +2658,7 @@ Texas Rangers        | 107.1 107.4 114.0 | 121.9 122.2 138.6 | 116- 46 0.714 |  
 Seattle Mariners     | 105.6 103.1 108.6 | 114.1 115.6 127.0 | 106- 56 0.655 |  35- 17 0.673 | 107- 55 0.660 ( 4) 
 Oakland Athletics    | 104.4 104.6 108.8 | 106.5 109.5 115.0 |  99- 63 0.610 |  35- 17 0.673 | 102- 60 0.630 ( 7) 
 Colorado Rockies     |  99.8 100.3 100.1 | 105.9 116.4 119.8 |  96- 66 0.590 |  21- 32 0.396 |  85- 77 0.525 (12) 
-Anaheim Angels       |  98.7  97.8  96.4 | 104.6  98.8 103.4 |  81- 81 0.499 |  28- 24 0.538 |  83- 79 0.512 (15) 
+Anaheim Angels       |  98.7  97.8  96.4 | 104.6  98.8 103.4 |  81- 81 0.499 |  28- 24 0.538 |  83- 79 0.512 (14) 
 
 National League
 East Division -------+
@@ -2670,7 +2670,7 @@ Florida Marlins      | 104.5 103.4 107.8 |  74.5  72.3  41.9 |  27-135 0.169 |  
 Central Division ----+
 St. Louis Cardinals  | 105.1 108.9 113.2 | 117.3 119.7 132.8 | 112- 50 0.693 |  35- 16 0.686 | 112- 50 0.691 ( 2) 
 Pittsburgh Pirates   |  99.4 100.3  99.7 | 105.9 107.1 112.5 |  90- 72 0.557 |  35- 17 0.673 |  96- 66 0.593 ( 9) 
-Houston Astros       | 102.6 103.9 106.3 |  99.5  99.2  98.7 |  85- 77 0.524 |  25- 27 0.481 |  83- 79 0.512 (14) 
+Houston Astros       | 102.6 103.9 106.3 |  99.5  99.2  98.7 |  85- 77 0.524 |  25- 27 0.481 |  83- 79 0.512 (15) 
 Cincinnati Reds      |  96.6  96.2  92.7 | 105.6 106.9 112.1 |  84- 78 0.519 |  22- 30 0.423 |  79- 83 0.488 (16) 
 Milwaukee Brewers    |  98.5 101.5 100.0 |  90.4  87.1  75.9 |  59-103 0.366 |  25- 27 0.481 |  65- 97 0.401 (24) 
 Chicago (N) Cubs     |  90.1  89.8  79.0 |  93.3  89.9  82.2 |  48-114 0.296 |  25- 26 0.490 |  58-104 0.358 (25) 
