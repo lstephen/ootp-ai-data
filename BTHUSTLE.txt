@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: HuberScores: [(0.2568135230875595, RandomForest(...)), (0.25527470268862495, Isotonic(...)), (0.26351246063676814, Huber(...)), (0.2626886967594907, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [250. 141. 161. 126. 207.  30.]Coefficients: [0.20076807 0.00943621]Intercept: 0.07650635911610665Feature Mask: [ True False False False  True False]
 -- Doubles
-Selected: RandomForestScores: [(0.06592814228435935, RandomForest(...)), (0.056732955090995074, Isotonic(...)), (0.05219482355833782, Huber(...)), (0.06220765796342705, Linear(...))]Best Parameters: {'regressor__max_depth': 6, 'selection__k': 5, 'regressor__n_estimators': 28}Feature Scores: [35. 39. 33. 18. 30.  3.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.128 0.45  0.121 0.187 0.115]
+Selected: RandomForestScores: [(0.06592814228435935, RandomForest(...)), (0.056732955090995074, Isotonic(...)), (0.05219482355833782, Huber(...)), (0.06220765796342705, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 28, 'regressor__max_depth': 6}Feature Scores: [35. 39. 33. 18. 30.  3.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.128 0.45  0.121 0.187 0.115]
 -- Triples
 Selected: HuberScores: [(0.10468554459091177, RandomForest(...)), (0.05156016381700187, Isotonic(...)), (0.11144011751134153, Huber(...)), (0.102216267086131, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [ 4.  8.  4.  5.  8. 10.]Coefficients: [ 0.00756277 -0.00195212  0.01476037]Intercept: -0.0028614783433366002Feature Mask: [False  True False False  True  True]
 -- HomeRuns
@@ -178,18 +178,18 @@ MR Puente, J           #  AAA 25 | 11.5  4.6  4.4  1.3 |  64     |  66     |  + 
 SP Caffrey, B              AA 23 | 12.9  3.7  5.1  1.8 |  49     |  55     |  - |  53/ 47 ||  53 ||
 MR Benitez, B              AA 21 | 11.7  4.5  3.9  1.9 |  59     |  61     | -  |  39/ 52 ||  52 ||
 SP Hampton, W      F9  #   AA 23 | 12.4  5.5  5.1  2.1 |  51     |  53     |  + |  52/ 45 ||  52 ||
-SP Cumpiano, R              A 18 | 13.4  3.1  4.5  2.2 |  52     |  49     |  + |  50/ 43 ||  50 ||
 MR Samuels, D              AA 21 | 11.8  4.8  4.5  2.0 |  58     |  58     | ++ |  38/ 50 ||  50 ||
+SP Cumpiano, R              A 18 | 13.4  3.1  4.5  2.2 |  52     |  49     |  + |  50/ 43 ||  50 ||
 SP Camacho, B               A 21 | 13.6  2.5  4.2  2.4 |  49     |  49     | ++ |  49/ 42 ||  49 ||
 SP Jacquez, L               A 20 | 13.6  3.2  5.1  2.2 |  59     |  46     | +- |  48/ 42 ||  48 ||
 SP Obanion, C               A 21 | 13.0  3.3  5.8  2.2 |  50     |  49     |  + |  46/ 42 ||  46 ||
 SP Stillings, J        #   AA 23 | 13.2  4.1  7.0  2.5 |  45     |  45     | ++ |  45/ 39 ||  45 ||
 MR Canales, B              AA 23 | 12.8  3.5  4.1  2.4 |  50     |  52     |  + |  14/ 45 ||  45 ||
 MR Camacho, L              AA 21 | 12.7  4.1  5.1  2.2 |  60     |  50     |    |  25/ 45 ||  45 ||
-MR Aleman, J                A 18 | 12.9  4.8  5.4  2.5 |  40     |  51     |  + |  32/ 42 ||  42 ||
 MR Street, D               AA 21 | 12.7  4.6  6.6  2.3 |  49     |  48     |    |  32/ 42 ||  42 ||
-MR Jaime, B                 A 17 | 13.6  3.6  5.3  2.4 |  53     |  45     | -+ |  41/ 41 ||  41 ||
+MR Aleman, J                A 18 | 12.9  4.8  5.4  2.5 |  40     |  51     |  + |  32/ 42 ||  42 ||
 MR Brooks, D           #   AA 21 | 13.4  3.4  6.8  2.0 |  41     |  49     | +  |  31/ 41 ||  41 ||
+MR Jaime, B                 A 17 | 13.6  3.6  5.3  2.4 |  53     |  45     | -+ |  41/ 41 ||  41 ||
 MR Montes, H                A 23 | 13.9  3.0  4.2  2.7 |  44     |  46     |    |  30/ 40 ||  40 ||
 MR Laurel, D                A 21 | 14.0  2.0  4.0  2.7 |  47     |  45     | -- |  12/ 40 ||  40 ||
 MR Haynes, S           #   AA 20 | 13.7  3.4  7.4  2.4 |  44     |  43     |  + |  21/ 37 ||  37 ||
@@ -237,46 +237,46 @@ Total:117 (target 70-75)
 Balance:65/52 = 1.250 (ideal: 1.273)
 
  AAA -> AA   CF Jeffrey Azicri
- AAA -> AA    C Samuel Smith
  AAA -> AA    C Tim Keller
+ AAA -> AA    C Samuel Smith
   AA -> AAA  MR Joshua Borgman
-  AA -> AAA  SP Chad Alvarez
   AA -> AAA  LF Jason Dufresne
-  AA -> AAA  SS Tony Garcia
   AA -> AAA  MR Julian Puente
+  AA -> AAA  SS Tony Garcia
+  AA -> AAA  SP Chad Alvarez
   AA -> A    SP Luciano Jacquez
-  AA -> A     C Justin Sigmon
-  AA -> A    MR Harold Montes
   AA -> A    SS Richard Cullum
   AA -> A    CL Calvin Obanion
+  AA -> A     C Justin Sigmon
+  AA -> A    MR Harold Montes
   AA -> A    CL Derek Laurel
   AA -> A    SP Booker Jaime
-   A -> AAA  1B Raymond Holle
    A -> AAA  3B Winfred Natal
+   A -> AAA  1B Raymond Holle
    A -> AAA  SP George Cuadrado
-   A -> AA   RF Justin Meade
-   A -> AA   MR Daniel Street
-   A -> AA   SS William Lesh
-   A -> AA   MR Benny Canales
-   A -> AA   SP Dwight Perkinson
    A -> AA   MR Leo Camacho
-   A -> AA   SS Walter Bradley
    A -> AA   MR Braulio Benitez
+   A -> AA   RF Justin Meade
+   A -> AA   SP Dwight Perkinson
+   A -> AA   MR Benny Canales
+   A -> AA   SS William Lesh
+   A -> AA   MR Daniel Street
+   A -> AA   SS Walter Bradley
    A -> AA   MR Dwayne Samuels
-  DL -> AAA  LF John Peterson
   DL -> AAA  CF Salvador Mariscal
+  DL -> AAA  LF John Peterson
 
 SP
 Herman Llanes
 Millard Kittel
 Richard Anderson
 Pablo Gallegos
-Robert Jones
 
 LR
 
 MR
 Bennie Ratley
+Robert Jones
 
 SU
 Pruden Silvas
@@ -288,7 +288,7 @@ Bill Prestridge
 NONE
 
 
-BP Ability: 149
+BP Ability: 133
 
 --- Slow Hook ---
 
@@ -324,26 +324,26 @@ CF| Beard, B        (D)                 |CF| ( 1) Tiggs, W
 RF| Bandy, R        (D) Tiggs, W        |RF| ( 1) Kennell, J     
 
 vs LHP+DH
- C| Blakes, D       (D)                 | C| ( 1) Au, N          
-1B| Nicolai, R      (D)                 |1B| ( 1) Villatoro, R   
-2B| Goodridge, J    (D) Villatoro, R    |2B| ( 1) Villatoro, R   
-3B| Griego, C       (D) Walker, J       |3B| ( 1) Villatoro, R   
-SS| Gomez, F        (D)                 |SS| ( 1) Villatoro, R   
+ C| Winer, S        (D) Blakes, D       | C| ( 1) Blakes, D      
+1B| Nicolai, R      (D)                 |1B| ( 1) Blakes, D      
+2B| Goodridge, J    (D)                 |2B| ( 1) Nourse, J      
+3B| Villatoro, R    (D) Walker, J       |3B| ( 1) Walker, J      
+SS| Gomez, F        (D)                 |SS| ( 1) Walker, J      
 LF| Washington, S   (D) Tiggs, W        |LF| ( 1) Kennell, J     
 CF| Beard, B        (D)                 |CF| ( 1) Tiggs, W       
 RF| Bandy, R        (D) Tiggs, W        |RF| ( 1) Kennell, J     
-DH| Winer, S        (D)                 |DH| ( 1) Villatoro, R   
+DH| Griego, C       (D)                 |DH| ( 1) Blakes, D      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1.  C R Winer, S         DH R Winer, S         3B R Griego, C        3B R Griego, C       
+1.  C R Winer, S         DH R Winer, S         3B R Griego, C        DH R Griego, C       
 2. RF R Griego, C        1B R Griego, C        2B R Goodridge, J     2B R Goodridge, J    
 3. 2B R Goodridge, J     2B R Goodridge, J     RF S Bandy, R         RF S Bandy, R        
-4. CF S Bandy, R         RF S Bandy, R          C R Winer, S         DH R Winer, S        
+4. CF S Bandy, R         RF S Bandy, R          C R Winer, S          C R Winer, S        
 5. 1B R Nicolai, R        C R Blakes, D        1B R Nicolai, R       1B R Nicolai, R      
 6. 3B R Villatoro, R     3B R Villatoro, R     LF R Washington, S    LF R Washington, S   
 7. LF R Beard, B         LF R Washington, S    CF R Beard, B         CF R Beard, B        
 8. SS R Gomez, F         CF R Beard, B         SS R Gomez, F         SS R Gomez, F        
-9.  P                    SS R Gomez, F          P                     C R Blakes, D       
+9.  P                    SS R Gomez, F          P                    3B R Villatoro, R    
 
 --- Bunt for Hit ---
 
@@ -544,43 +544,43 @@ RF Steffen Burling           25 | SS :  65       9 :  74 | SS :  72       9 :  8
 SS Barry Lehman              22 | SS :  64      -7 :  57 | SS :  65      -7 :  58 |  +1 |        +3    +1    :        +3          | ++
 SS Juan Walker               25 | SS :  91      14 : 105 | SS :  92      14 : 106 |  +1 |                    :           +6       | **^
 LF Timo Lizarraga            19 | CF :  81      -5 :  76 | CF :  81      -5 :  76 |  +0 |                    :                    | ++++
- C Willie Patterson          19 |  C :  56       1 :  57 |  C :  56       1 :  57 |  +0 |                    :                    | ++
 SS Robert Mayton             19 | SS :  56      -4 :  52 | SS :  56      -4 :  52 |  +0 |                    :                    | +++
-CF Samuel Hernandez          22 | CF :  63       3 :  66 | CF :  63       3 :  66 |  +0 |                    :                    | ++-
-2B Anselmo Rodriguez         22 | 2B :  60      -1 :  59 | 2B :  60      -1 :  59 |  +0 |                    :                    | +-
-RF Avery Manz                22 | RF :  54      -8 :  46 | RF :  54      -8 :  46 |  +0 |                    :                    | ++-
-RF Gary Samaniego            22 | RF :  54     -14 :  40 | RF :  54     -14 :  40 |  +0 |                    :                    | ++
-RF Justin Meade              22 | RF :  58      -7 :  51 | RF :  58      -7 :  51 |  +0 |                    :                    | +
-3B Winfred Natal             22 | SS :  72      15 :  87 | SS :  72      15 :  87 |  +0 |                    :                    | ++++
-2B Eugene Salazar            22 | 2B :  55      -7 :  48 | 2B :  55      -7 :  48 |  +0 |                    :                    | ++
+ C Willie Patterson          19 |  C :  56       1 :  57 |  C :  56       1 :  57 |  +0 |                    :                    | ++
 CF Edward Hilton             22 | CF :  66      -7 :  59 | CF :  66      -7 :  59 |  +0 |                    :                    | +++-
+CF Samuel Hernandez          22 | CF :  63       3 :  66 | CF :  63       3 :  66 |  +0 |                    :                    | ++-
+RF Gary Samaniego            22 | RF :  54     -14 :  40 | RF :  54     -14 :  40 |  +0 |                    :                    | ++
+2B Eugene Salazar            22 | 2B :  55      -7 :  48 | 2B :  55      -7 :  48 |  +0 |                    :                    | ++
 2B Ricky Echevarria          22 | SS :  86       4 :  90 | SS :  86       4 :  90 |  +0 |     +1 +6          :     +1 +3          | ++
-2B James Nourse              23 | SS :  79       8 :  87 | SS :  79       8 :  87 |  +0 |                    :                    | ++++
-SS Joseph Chappelle          23 | SS :  63      15 :  78 | SS :  63      15 :  78 |  +0 |                    :                    | ++
-CF Jeffrey Azicri            23 | CF :  72      -5 :  67 | CF :  72      -5 :  67 |  +0 |                    :                    | ++-
-SS Walter Bradley            23 | SS :  67       6 :  73 | SS :  67       6 :  73 |  +0 |                    :                    | +++
+RF Avery Manz                22 | RF :  54      -8 :  46 | RF :  54      -8 :  46 |  +0 |                    :                    | ++-
+3B Winfred Natal             22 | SS :  72      15 :  87 | SS :  72      15 :  87 |  +0 |                    :                    | ++++
+2B Anselmo Rodriguez         22 | 2B :  60      -1 :  59 | 2B :  60      -1 :  59 |  +0 |                    :                    | +-
+RF Justin Meade              22 | RF :  58      -7 :  51 | RF :  58      -7 :  51 |  +0 |                    :                    | +
 1B Damaso Muñiz              23 | 1B :  60     -19 :  41 | 1B :  60     -19 :  41 |  +0 |              +1    :              +2    | ++
-SS Tony Garcia               24 | SS :  81       4 :  85 | SS :  81       4 :  85 |  +0 |                    :                    | ++++
+CF Jeffrey Azicri            23 | CF :  72      -5 :  67 | CF :  72      -5 :  67 |  +0 |                    :                    | ++-
+SS Joseph Chappelle          23 | SS :  63      15 :  78 | SS :  63      15 :  78 |  +0 |                    :                    | ++
+2B James Nourse              23 | SS :  79       8 :  87 | SS :  79       8 :  87 |  +0 |                    :                    | ++++
+SS Walter Bradley            23 | SS :  67       6 :  73 | SS :  67       6 :  73 |  +0 |                    :                    | +++
 RF George Henriquez          24 | CF :  65      -8 :  57 | CF :  65      -8 :  57 |  +0 |                    :                    | ++-
 SS William Lesh              24 | SS :  49      -2 :  47 | SS :  49      -2 :  47 |  +0 |                    :                    | ++-
-1B Raymond Holle             24 | 1B :  74     -19 :  55 | 1B :  74     -19 :  55 |  +0 |                    :                    | +++
 1B Oscar Fano                24 | SS :  66       7 :  73 | SS :  66       7 :  73 |  +0 |                    :                    | ++
 3B John Palmore              24 | 3B :  64      -4 :  60 | 3B :  64      -4 :  60 |  +0 |                    :                    | +++
-LF Jason Dufresne            25 | 3B :  63       2 :  65 | 3B :  63       2 :  65 |  +0 |                    :                    | +
-CF Salvador Mariscal         25 | RF :  89      -7 :  82 | RF :  89      -7 :  82 |  +0 |                    :                    | *
- C Samuel Smith              25 |  C :  61       0 :  61 |  C :  61       0 :  61 |  +0 |                    :                    | +
+SS Tony Garcia               24 | SS :  81       4 :  85 | SS :  81       4 :  85 |  +0 |                    :                    | ++++
+1B Raymond Holle             24 | 1B :  74     -19 :  55 | 1B :  74     -19 :  55 |  +0 |                    :                    | +++
 LF John Rogers               25 | 3B :  88       4 :  92 | 3B :  88       4 :  92 |  +0 |                    :                    | +++-
-LF Mohammad Conlan           26 | CF :  97       0 :  97 | CF :  97       0 :  97 |  +0 |                    :                    | **^
-LF Jayson Kennell            26 | RF : 101      -6 :  95 | RF : 101      -6 :  95 |  +0 |                    :                    | **^
+CF Salvador Mariscal         25 | RF :  89      -7 :  82 | RF :  89      -7 :  82 |  +0 |                    :                    | *
+LF Jason Dufresne            25 | 3B :  63       2 :  65 | 3B :  63       2 :  65 |  +0 |                    :                    | +
+ C Samuel Smith              25 |  C :  61       0 :  61 |  C :  61       0 :  61 |  +0 |                    :                    | +
  C Tim Keller                26 |  C :  68       4 :  72 |  C :  68       4 :  72 |  +0 |                    :                    | *
+LF Jayson Kennell            26 | RF : 101      -6 :  95 | RF : 101      -6 :  95 |  +0 |                    :                    | **^
 LF Jeremy Millner            26 | CF :  73      -3 :  70 | CF :  73      -3 :  70 |  +0 |                    :                    | *
+LF Mohammad Conlan           26 | CF :  97       0 :  97 | CF :  97       0 :  97 |  +0 |                    :                    | **^
 3B Seve Guadalupe            28 | 3B :  94       1 :  95 | 3B :  94       1 :  95 |  +0 |                    :                    | **^
  C Nicholas Au               29 |  C :  80      14 :  94 |  C :  80      14 :  94 |  +0 |                    :                    | *
-SS George Pendergrass        31 | SS :  84      11 :  95 | SS :  84      11 :  95 |  +0 |                    :                    | *^
 CF Robin Bandy               31 | CF : 122      -4 : 118 | CF : 122      -4 : 118 |  +0 |                    :                    | ***
  C Colby Griego              31 |  C : 115       4 : 119 |  C : 115       4 : 119 |  +0 |                    :                    | ***^
-1B Flavio Hernandez          32 | 2B :  95     -11 :  84 | 2B :  95     -11 :  84 |  +0 |                    :                    | **
+SS George Pendergrass        31 | SS :  84      11 :  95 | SS :  84      11 :  95 |  +0 |                    :                    | *^
 CF Stephen Washington        32 | CF : 102       2 : 104 | CF : 102       2 : 104 |  +0 |                    :                    | **^
+1B Flavio Hernandez          32 | 2B :  95     -11 :  84 | 2B :  95     -11 :  84 |  +0 |                    :                    | **
 1B Tyler Hazel               33 | 3B :  95       5 : 100 | 3B :  95       5 : 100 |  +0 |                    :                    | *
 2B James Goodridge           34 | 2B : 113      -1 : 112 | 2B : 113      -1 : 112 |  +0 |                    :                    | ***^
 3B Robert Villatoro          35 | SS : 101      10 : 111 | SS : 101      10 : 111 |  +0 |                    :                    | **^
@@ -591,34 +591,34 @@ Stuff, Control, Movement, Groundball Pct., Endurance
 SP Benjamin Camacho          21 | SP :      47     :  47 | SP :      49     :  49 |  +2 |        +4       :        +4       | +++
 SP Rupert Cumpiano           18 | SP :      49     :  49 | SP :      50     :  50 |  +1 |  +1             :  +1             | +++
 MR Stuart Haynes             20 | MR :      37     :  37 | MR :      37     :  37 |  +0 |                 :                 | ++
-MR David Brooks              21 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                 :                 | ++++-
-MR Dwayne Samuels            21 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                 :                 | +++-
-MR Daniel Street             21 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                 :                 | ++++
 MR Braulio Benitez           21 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                 :                 | ++++
+MR Dwayne Samuels            21 | MR :      50     :  50 | MR :      50     :  50 |  +0 |                 :                 | +++-
+MR David Brooks              21 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                 :                 | ++++-
+MR Daniel Street             21 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                 :                 | ++++
 MR Leo Camacho               21 | MR :      45     :  45 | MR :      45     :  45 |  +0 |                 :                 | +++
 MR Rey Delvalle              22 | MR :      60     :  60 | MR :      60     :  60 |  +0 |                 :                 | ++++
 SP George Cuadrado           22 | SP :      63     :  63 | SP :      63     :  63 |  +0 |                 :                 | +++
 SP Dwight Perkinson          22 | SP :      58     :  58 | SP :      58     :  58 |  +0 |                 :                 | ++
-MR Joshua Borgman            23 | MR :      58     :  58 | MR :      58     :  58 |  +0 |                 :                 | ++++
-SP Bret Caffrey              23 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                 :                 | +++
-SP Chad Alvarez              23 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | +++
-SP Joseph Stegner            23 | SP :      84     :  84 | SP :      84     :  84 |  +0 |                 :                 | ++++
 SP Johnny Stillings          23 | SP :      45     :  45 | SP :      45     :  45 |  +0 |                 :                 | ++-
 SP William Hampton           23 | SP :      52     :  52 | SP :      52     :  52 |  +0 |                 :                 | ++++
 SP Ferdy Desilva             23 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                 :                 | ++
+SP Joseph Stegner            23 | SP :      84     :  84 | SP :      84     :  84 |  +0 |                 :                 | ++++
+SP Bret Caffrey              23 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                 :                 | +++
 MR Benny Canales             23 | MR :      45     :  45 | MR :      45     :  45 |  +0 |                 :                 | ++++-
+MR Joshua Borgman            23 | MR :      58     :  58 | MR :      58     :  58 |  +0 |                 :                 | ++++
+SP Chad Alvarez              23 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | +++
 SP Ietsuna Fumio             24 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | ++++-
 SP Oswaldo Tello             24 | SP :      61     :  61 | SP :      61     :  61 |  +0 |                 :                 | +++-
 SP Oscar Caudillo            25 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | +++
 MR Julian Puente             25 | MR :      56     :  56 | MR :      56     :  56 |  +0 |                 :                 | ++++-
 MR Raymond Taylor            26 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | **^
-SP Ernest Matz               26 | SP :      59     :  59 | SP :      59     :  59 |  +0 |                 :                 | *
 SP Wilber McMillin           26 | SP :      67     :  67 | SP :      67     :  67 |  +0 |                 :                 | *
+SP Ernest Matz               26 | SP :      59     :  59 | SP :      59     :  59 |  +0 |                 :                 | *
 SP Nick Ellwood              28 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | **^
 MR Roberto Cienfuegos        29 | MR :      87     :  87 | MR :      87     :  87 |  +0 |                 :                 | **^
+MR Bennie Ratley             30 | MR :      97     :  97 | MR :      97     :  97 |  +0 |                 :                 | **^
 SP Herman Llanes             30 | SP :     121     : 121 | SP :     121     : 121 |  +0 |                 :                 | ***
 SP Michael Bergmann          30 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | *
-MR Bennie Ratley             30 | MR :      97     :  97 | MR :      97     :  97 |  +0 |                 :                 | **^
 SP Kenneth Aldana            31 | SP :      65     :  65 | SP :      65     :  65 |  +0 |                 :                 | **^
 SP Richard Anderson          33 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                 :                 | **^
 MR Pruden Silvas             33 | MR :     108     : 108 | MR :     108     : 108 |  +0 |                 :                 | ***
@@ -629,27 +629,27 @@ MR Cliff Jackson             34 | SP :      88     :  88 | MR :      87     :  8
 Drafted Players
 Hitters
 Contact, Gap, Power, Eye, Avoid K's, Running Speed
- C Sidney Alexander          18 |  C :  40       9 :  49 |  C :  40       9 :  49 |  +0 |                    :                    | +
 SS Richard Cullum            18 | SS :  58       8 :  66 | SS :  58       8 :  66 |  +0 |                    :                    | +++-
  C Pedro Santana             18 |  C :  58      -6 :  52 |  C :  58      -6 :  52 |  +0 |                    :                    | +
+ C Sidney Alexander          18 |  C :  40       9 :  49 |  C :  40       9 :  49 |  +0 |                    :                    | +
 3B Vaughn Mohan              19 | 2B :  42      -5 :  37 | 2B :  42      -5 :  37 |  +0 |                    :                    | ++
  C Justin Sigmon             20 |  C :  56      -5 :  51 |  C :  56      -5 :  51 |  +0 |                    :                    | +++++
 2B Gerald Gilliland          21 | 2B :  47      -8 :  39 | 2B :  47      -8 :  39 |  +0 |                    :                    | +++
 2B Kenny Reader              22 | 2B :  56      -4 :  52 | 2B :  56      -4 :  52 |  +0 |                    :                    | +++
-CF Urbano Armenta            23 | CF :  43      -2 :  41 | CF :  43      -2 :  41 |  +0 |                    :                    | +++
 LF David Mercado             23 | LF :  52     -13 :  39 | LF :  52     -13 :  39 |  +0 |                    :                    | ++
+CF Urbano Armenta            23 | CF :  43      -2 :  41 | CF :  43      -2 :  41 |  +0 |                    :                    | +++
 
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
 SP Bill Kowalewski           17 | SP :      31     :  31 | SP :      31     :  31 |  +0 |                 :                 | ++-
 SP Booker Jaime              17 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                 :                 | +++
-SP Samuel Dail               18 | SP :      35     :  35 | SP :      35     :  35 |  +0 |                 :                 | +++-
-MR Joseph Bozek              18 | MR :      29     :  29 | MR :      29     :  29 |  +0 |                 :                 | +++-
 MR Matthew Shabazz           18 | MR :      31     :  31 | MR :      31     :  31 |  +0 |                 :                 | +++
-SP Luciano Jacquez           20 | SP :      48     :  48 | SP :      48     :  48 |  +0 |                 :                 | ++-
+MR Joseph Bozek              18 | MR :      29     :  29 | MR :      29     :  29 |  +0 |                 :                 | +++-
+SP Samuel Dail               18 | SP :      35     :  35 | SP :      35     :  35 |  +0 |                 :                 | +++-
 MR Ricky Gaylord             20 | MR :      33     :  33 | MR :      33     :  33 |  +0 |                 :                 | ++++
-MR John Byers                21 | MR :      26     :  26 | MR :      26     :  26 |  +0 |                 :                 | ++-
+SP Luciano Jacquez           20 | SP :      48     :  48 | SP :      48     :  48 |  +0 |                 :                 | ++-
 CL Derek Laurel              21 | MR :      40     :  40 | MR :      40     :  40 |  +0 |                 :                 | +++
+MR John Byers                21 | MR :      26     :  26 | MR :      26     :  26 |  +0 |                 :                 | ++-
 CL Calvin Obanion            21 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                 :                 | +++++
 MR Harold Montes             23 | MR :      40     :  40 | MR :      40     :  40 |  +0 |                 :                 | ++++
 
@@ -968,32 +968,32 @@ Movement        |  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  3
 85              |          49  48  54  62  64  71  71  76  77  77  81  81  81  83  80  83  83  82  79  77  78  78                             |
 95              |              59  61  67  70  72  79  85  85  88  89  89  91  92  92  91  89  91  88  89                                     |
 
-1E | 141 (131-160) | 147 (137-166) 133/161 |   5/  5 || 134 (118-160) | 140 (124-166) 127/154 |  25/ 25
-1M | 116 (113-130) | 122 (119-136) 111/134 |   5/  5 || 113 (103-130) | 119 (109-136) 108/131 |  25/ 25
-1L |  98 ( 92-103) | 104 ( 98-109)  94/114 |   6/  6 ||  95 ( 57-109) | 101 ( 63-115)  91/111 |  30/ 30
+1E | 141 (131-160) | 147 (137-166) 133/161 |   5/  5 || 134 ( 50-160) | 140 ( 56-166) 127/154 |  25/ 25
+1M | 116 (113-130) | 122 (119-136) 111/134 |   5/  5 || 113 ( 42-130) | 119 ( 48-136) 108/131 |  25/ 25
+1L |  98 ( 92-103) | 104 ( 98-109)  94/114 |   6/  6 ||  94 ( -7-109) | 100 ( -1-115)  91/110 |  30/ 30
 2E |  88 ( 85- 92) |  94 ( 91- 98)  85/103 |   8/  8 ||  87 (-39-100) |  93 (-33-106)  84/102 |  40/ 40
-2L |  78 ( 74- 82) |  84 ( 80- 88)  76/ 92 |   8/  8 ||  78 (-11- 90) |  84 ( -5- 96)  77/ 93 |  40/ 40
+2L |  78 ( 74- 82) |  84 ( 80- 88)  76/ 92 |   8/  8 ||  78 ( 74- 88) |  84 ( 80- 94)  77/ 93 |  40/ 40
 
- 1 | 115 ( 92-160) | 121 ( 98-166) 110/133 |  16/ 16 || 112 ( 57-160) | 118 ( 63-166) 107/130 |  80/ 80
+ 1 | 115 ( 92-160) | 121 ( 98-166) 110/133 |  16/ 16 || 111 ( -7-160) | 117 ( -1-166) 106/129 |  80/ 80
  2 |  83 ( 74- 92) |  89 ( 80- 98)  81/ 98 |  16/ 16 ||  82 (-39-100) |  88 (-33-106)  80/ 97 |  80/ 80
- 3 |  70 ( 66- 74) |  76 ( 72- 80)  69/ 83 |  16/ 16 ||  71 ( 18- 78) |  77 ( 24- 84)  70/ 84 |  80/ 80
- 4 |  62 ( 60- 66) |  68 ( 66- 72)  62/ 75 |  16/ 16 ||  65 (-28- 68) |  71 (-22- 74)  65/ 78 |  80/ 80
+ 3 |  70 ( 66- 74) |  76 ( 72- 80)  69/ 83 |  16/ 16 ||  70 (-12- 78) |  76 ( -6- 84)  69/ 84 |  80/ 80
+ 4 |  62 ( 60- 66) |  68 ( 66- 72)  62/ 75 |  16/ 16 ||  65 (-31- 68) |  71 (-25- 74)  65/ 78 |  80/ 80
  5 |  58 ( 56- 60) |  64 ( 62- 66)  58/ 71 |  16/ 16 ||  60 (-12- 64) |  66 ( -6- 70)  60/ 73 |  80/ 80
- 6 |  55 ( 53- 58) |  61 ( 59- 64)  55/ 67 |  16/ 16 ||  56 (-48- 60) |  62 (-42- 66)  57/ 69 |  80/ 80
- 7 |  52 ( 50- 53) |  58 ( 56- 59)  53/ 64 |  16/ 16 ||  54 (-55- 87) |  60 (-49- 93)  55/ 66 |  80/ 80
+ 6 |  55 ( 53- 58) |  61 ( 59- 64)  55/ 67 |  16/ 16 ||  56 (-25- 67) |  62 (-19- 73)  57/ 69 |  80/ 80
+ 7 |  52 ( 50- 53) |  58 ( 56- 59)  53/ 64 |  16/ 16 ||  54 (-56- 87) |  60 (-50- 93)  55/ 66 |  80/ 80
  8 |  49 ( 48- 50) |  55 ( 54- 56)  50/ 60 |  16/ 16 ||  51 (-57- 94) |  57 (-51-100)  52/ 62 |  80/ 80
- 9 |  47 ( 45- 48) |  53 ( 51- 54)  48/ 58 |  16/ 16 ||  49 ( -6- 74) |  55 (  0- 80)  50/ 60 |  80/ 80
+ 9 |  47 ( 45- 48) |  53 ( 51- 54)  48/ 58 |  16/ 16 ||  49 ( -6- 61) |  55 (  0- 67)  50/ 60 |  80/ 80
 10 |  44 ( 43- 45) |  50 ( 49- 51)  45/ 55 |  16/ 16 ||  46 (-56-115) |  52 (-50-121)  47/ 57 |  80/ 80
-11 |  42 ( 41- 43) |  48 ( 47- 49)  44/ 53 |  16/ 16 ||  44 (-26-113) |  50 (-20-119)  46/ 55 |  80/ 80
-12 |  40 ( 39- 41) |  46 ( 45- 47)  42/ 51 |  16/ 16 ||  42 (-38- 63) |  48 (-32- 69)  43/ 52 |  80/ 80
-13 |  37 ( 36- 41) |  43 ( 42- 47)  39/ 48 |  16/ 16 ||  39 (-38-114) |  45 (-32-120)  41/ 50 |  80/ 80
-14 |  35 ( 34- 36) |  41 ( 40- 42)  37/ 45 |  16/ 16 ||  37 (-49- 65) |  43 (-43- 71)  39/ 47 |  80/ 80
-15 |  33 ( 32- 37) |  39 ( 38- 43)  36/ 43 |  16/ 16 ||  34 (-52- 75) |  40 (-46- 81)  36/ 44 |  80/ 80
+11 |  42 ( 41- 43) |  48 ( 47- 49)  44/ 53 |  16/ 16 ||  44 (-40-113) |  50 (-34-119)  46/ 55 |  80/ 80
+12 |  40 ( 39- 41) |  46 ( 45- 47)  42/ 51 |  16/ 16 ||  42 (-62- 63) |  48 (-56- 69)  43/ 52 |  80/ 80
+13 |  37 ( 36- 41) |  43 ( 42- 47)  39/ 48 |  16/ 16 ||  39 (-30- 71) |  45 (-24- 77)  41/ 50 |  80/ 80
+14 |  35 ( 34- 36) |  41 ( 40- 42)  37/ 45 |  16/ 16 ||  37 (-57- 58) |  43 (-51- 64)  39/ 47 |  80/ 80
+15 |  33 ( 32- 37) |  39 ( 38- 43)  36/ 43 |  16/ 16 ||  34 (-36- 69) |  40 (-30- 75)  37/ 44 |  80/ 80
 16 |  31 ( 30- 36) |  37 ( 36- 42)  34/ 41 |  16/ 16 ||  31 (-30- 65) |  37 (-22- 71)  34/ 41 |  80/ 80
-17 |  29 ( 28- 31) |  35 ( 34- 37)  32/ 39 |  16/ 16 ||  29 (-40- 98) |  35 (-34-104)  32/ 39 |  80/ 80
+17 |  29 ( 28- 31) |  35 ( 34- 37)  32/ 39 |  16/ 16 ||  29 (-40- 55) |  35 (-34- 61)  32/ 39 |  80/ 80
 18 |  26 ( 24- 37) |  32 ( 30- 43)  29/ 35 |  16/ 16 ||  26 (-51- 46) |  32 (-45- 52)  29/ 35 |  80/ 80
 19 |  21 ( 16- 23) |  27 ( 22- 29)  25/ 30 |  16/ 16 ||  21 (-67- 50) |  27 (-59- 56)  24/ 30 |  80/ 80
-20 |  11 ( -0- 16) |  17 (  6- 22)  16/ 19 |  16/ 16 ||  12 (-64- 60) |  18 (-57- 66)  16/ 20 |  80/ 80
+20 |  11 ( -0- 16) |  17 (  6- 22)  16/ 19 |  16/ 16 ||  13 (-58- 60) |  19 (-52- 66)  17/ 21 |  80/ 80
 
 CF Bandy, R        31|  20,830,000  20,830,000
  C Winer, S        32|  17,750,500  17,750,500
@@ -1231,8 +1231,8 @@ DESIGNATED_HITTER
  6 | Blakes, D        104 -22  82 | Washington, S    108 -22  86 | Blakes, D        104 -22  82
  7 | Washington, S    102 -22  80 | Beard, B         106 -22  84 | Villatoro, R     102 -22  80
  8 | Villatoro, R     101 -22  79 | Gomez, F         105 -22  83 | Washington, S    101 -22  79
- 9 | Kennell, J       101 -22  79 | Blakes, D        104 -22  82 | Kennell, J       101 -22  79
-10 | Beard, B         100 -22  78 | Mariscal, S      104 -22  82 | Beard, B          99 -22  77
+ 9 | Kennell, J       101 -22  79 | Mariscal, S      104 -22  82 | Kennell, J       101 -22  79
+10 | Beard, B         100 -22  78 | Blakes, D        104 -22  82 | Beard, B          99 -22  77
 
 --- Trade Values ---
 SP Herman Llanes             30| SP :     121      34  22 : 177 |    :                     :   0 |   3 | 180 |          |    *+    $2.48M a | $21.54M:$26.72M |  p692 | Houston Astros       | ***
