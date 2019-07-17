@@ -40,7 +40,7 @@ Selected: HuberScores: [(0.08120491523093909, RandomForest(...)), (0.08018096090
 -- Triples
 Selected: HuberScores: [(0.10524161751344419, RandomForest(...)), (0.051531134499554744, Isotonic(...)), (0.0880136950454931, Huber(...)), (0.06692340470264531, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [ 1.  0. 17.  1.  1.  0. 41.]Coefficients: [0.00415955 0.00355459 0.01664882]Intercept: -0.0009011740168997989Feature Mask: [False False  True False  True False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.14557233628243646, RandomForest(...)), (0.14366493550982193, Isotonic(...)), (0.14175215966577603, Huber(...)), (0.13878748420263376, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [ 1.  2.  0. 17.  0.  3.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.921 0.079]
+Selected: RandomForestScores: [(0.14557233628243646, RandomForest(...)), (0.14366493550982193, Isotonic(...)), (0.14175215966577603, Huber(...)), (0.13878748420263376, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [ 1.  2.  0. 17.  0.  3.  0.]Feature Mask: [False False False  True False  True False]Feature Importances: [0.921 0.079]
 -- Walks
 Selected: HuberScores: [(0.3555458781601007, RandomForest(...)), (0.34290618573225246, Isotonic(...)), (0.3649253947226392, Huber(...)), (0.3599668374221432, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [  0.  33.   4.  11. 232.   0.   0.]Coefficients: [0.0110305  0.00757253 0.11740422]Intercept: 0.016899917424608245Feature Mask: [False  True False  True  True False False]
 -- Ks
@@ -107,8 +107,8 @@ C  Diaz, E         20| .207/.225/.299  70     | .207/.225/.300  70     | 81-----
 3B Hansen, D       24| .284/.315/.348  90     | .284/.315/.348  90     | -624----  -7 |  - ||  83 || AAA   T |
 SS McKnight, J     30| .252/.293/.305  82     | .252/.293/.305  82     | -23552-2   1 |    ||  83 || AA      |
 LF Doran, B        34| .265/.323/.363  93     | .265/.323/.363  93     | -321-312 -12 | +  ||  81 || AAA  F  |
-SS Hamilton, J     29| .249/.268/.339  82     | .249/.268/.339  82     | -2454---  -1 |  - ||  81 || AA      |
 2B Gonzales, R     32| .291/.315/.369  93     | .292/.316/.365  93     | -2221--- -12 |  - ||  81 || AAA     |
+SS Hamilton, J     29| .249/.268/.339  82     | .249/.268/.339  82     | -2454---  -1 |  - ||  81 || AA      |
 C  Pagnozzi, T     30| .248/.276/.341  83     | .231/.260/.324  79     | 5321-1-1   1 | -  ||  80 || AA      |
 SS Castro, J       20| .237/.254/.311  77     | .236/.252/.306  76     | -2555---   3 |  - ||  79 || A       |
 C  Mizerock, J     32| .207/.283/.273  78     | .209/.285/.276  79     | 4212---2  -1 |  - ||  78 || AA      |
@@ -143,8 +143,8 @@ MR Booker, G          AAA 32 | 12.0  2.6  4.7  0.8 |  71     |  71     |  - |  5
 SP Batista, M         AAA 22 | 12.0  3.4  4.8  1.7 |  56     |  63     |    |  59/ 53 ||  59 ||
 MR Brown, M           AAA 33 | 12.1  3.3  2.4  2.0 |  67     |  66     |  - |  58/ 57 ||  58 ||
 MR Wickman, B       9 AAA 24 | 10.3  4.0  5.7  1.9 |  62     |  67     | ++ |  32/ 57 ||  57 ||
-SP Springer, D        AAA 28 | 12.0  3.4  4.6  2.4 |  56     |  56     |  - |  54/ 48 ||  54 ||
 MR Benitez, A           A 20 | 10.9  5.7  5.5  2.0 |  60     |  63     |  + |  30/ 54 ||  54 ||
+SP Springer, D        AAA 28 | 12.0  3.4  4.6  2.4 |  56     |  56     |  - |  54/ 48 ||  54 ||
 MR Wohlers, M       6  AA 23 | 10.5  4.1  6.3  1.9 |  59     |  62     |  + |  30/ 53 ||  53 ||
 SP Bones, R         5  AA 23 | 11.8  7.4  4.0  2.6 |  53     |  59     |    |  53/ 49 ||  53 ||
 MR Rodas, R            AA 33 | 10.8  7.2  4.7  2.5 |  59     |  61     |  - |  16/ 52 ||  52 ||
@@ -184,30 +184,30 @@ Total:67 (target 70-75)
 Balance:42/25 = 1.680 (ideal: 1.273)
 
   ML -> AAA  2B Bill Doran
- AAA -> ML   SP Mark W. Davis
  AAA -> ML   SP Zane Smith
+ AAA -> ML   MR Steve Olin
  AAA -> ML   3B Donnie Hill
  AAA -> ML   1B Troy Neel
+ AAA -> ML   SP Mark W. Davis
  AAA -> ML   SP Bryan Hickerson
  AAA -> ML   2B Mike Sharperson
- AAA -> ML   MR Steve Olin
- AAA -> AA   SP Ricky Bones
  AAA -> AA   MR Rich Rodas
+ AAA -> AA   SP Ricky Bones
   AA -> AAA  MR Bob Wickman
-  AA -> AAA  SS Rene Gonzales
-  AA -> AAA  SP Dennis Springer
-  AA -> AAA  MR Greg Booker
   AA -> AAA  MR Mark Brown
+  AA -> AAA  SS Rene Gonzales
+  AA -> AAA  MR Greg Booker
+  AA -> AAA  SP Dennis Springer
    A -> ML    C Mark Salas
    A -> ML   LF Mike Young
-   A -> AAA  1B Aaron Ledesma
-   A -> AAA  LF Benny Agbayani
    A -> AAA  SS Travis Fryman
+   A -> AAA  1B Aaron Ledesma
    A -> AAA  SP Miguel Batista
-   A -> AA   SP Allen Watson
+   A -> AAA  LF Benny Agbayani
    A -> AA   RF Dan Peltier
-   A -> AA   2B Clay Bellinger
+   A -> AA   SP Allen Watson
    A -> AA   MR Todd Williams
+   A -> AA   2B Clay Bellinger
 
 SP
 Dave Stewart
@@ -233,11 +233,10 @@ Frank DiPino
 NONE
 
 
-BP Ability: 144
+BP Ability: 164
 BP Endrnce: 10.5
 
 --- Slow Hook ---
-Dave Stewart
 
 vs RHP
  C| Salas, M        (D)                 | C| ( 1) Ausmus, B      
@@ -323,9 +322,9 @@ Active Players
 Hitters
 Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 3B Tim Naehring              26 | 3B : 112       6 : 118 | 3B : 114       6 : 120 |  +2 |                       :          +10          | ****
+RF Yamil Benitez             20 | LF :  75     -10 :  65 | LF :  75     -10 :  65 |  +0 |                       :                       | +++
  C Einar Diaz                20 |  C :  70      17 :  87 |  C :  70      17 :  87 |  +0 |                       :    +10                | +
 3B Juan Castro               20 | SS :  76       3 :  79 | SS :  76       3 :  79 |  +0 |                       :                       | +++
-RF Yamil Benitez             20 | LF :  75     -10 :  65 | LF :  75     -10 :  65 |  +0 |                       :                       | +++
 1B Aaron Ledesma             21 | SS :  84       8 :  92 | SS :  84       8 :  92 |  +0 |                       :                       | ++-
 1B Brent Brede               21 | RF :  73      -8 :  65 | RF :  73      -8 :  65 |  +0 |                       :                       | ++
 SS Ricky Gutierrez           22 | SS :  89       9 :  98 | SS :  89       9 :  98 |  +0 |                       :                       | +++++
@@ -333,29 +332,29 @@ LF Manny Martinez            22 | CF :  78      -2 :  76 | CF :  78      -2 :  7
 LF Doug Glanville            22 | CF :  82       5 :  87 | CF :  82       5 :  87 |  +0 |                       :                       | +++
 2B Bill Selby                22 | 3B :  73      -2 :  71 | 3B :  73      -2 :  71 |  +0 |                       :                       | ++
  C Brad Ausmus               23 |  C :  86      11 :  97 |  C :  86      11 :  97 |  +0 |                       :                       | +++++
-RF Dan Peltier               24 | 2B :  82     -13 :  69 | 2B :  82     -13 :  69 |  +0 |                +10    :                       | ++-
-1B Dave Hansen               24 | 3B :  90      -7 :  83 | 3B :  90      -7 :  83 |  +0 |                       :                       | +++-
 SS Travis Fryman             24 | SS :  84       8 :  92 | SS :  84       8 :  92 |  +0 |                       :                       | +++++
+1B Dave Hansen               24 | 3B :  90      -7 :  83 | 3B :  90      -7 :  83 |  +0 |                       :                       | +++-
+RF Dan Peltier               24 | 2B :  82     -13 :  69 | 2B :  82     -13 :  69 |  +0 |                +10    :                       | ++-
 2B Clay Bellinger            24 | SS :  80      10 :  90 | SS :  80      10 :  90 |  +0 |                       :                       | ++++-
  C Tim Spehr                 26 |  C :  78      -3 :  75 |  C :  78      -3 :  75 |  +0 |                       :                       | *
- C John Orton                27 |  C :  80      13 :  93 |  C :  80      13 :  93 |  +0 |                       :                       | *
 RF Felix Jose                27 | CF :  90       3 :  93 | CF :  90       3 :  93 |  +0 |                       :                       | *
+ C John Orton                27 |  C :  80      13 :  93 |  C :  80      13 :  93 |  +0 |                       :                       | *
 1B Troy Neel                 27 | LF : 108     -10 :  98 | LF : 108     -10 :  98 |  +0 |                       :                       | **
-RF Ruben Amaro Jr.           28 | RF :  81     -11 :  70 | RF :  81     -11 :  70 |  +0 |                       :                       | *
 CF Mark T. McLemore          28 | RF :  88     -13 :  75 | RF :  88     -13 :  75 |  +0 |                       :                       | *
-RF Keith A. Miller           29 | CF : 112       7 : 119 | CF : 112       7 : 119 |  +0 |                       :                       | ***
+RF Ruben Amaro Jr.           28 | RF :  81     -11 :  70 | RF :  81     -11 :  70 |  +0 |                       :                       | *
 SS Jeff Hamilton             29 | SS :  82      -1 :  81 | SS :  82      -1 :  81 |  +0 |                       :                       | *
+RF Keith A. Miller           29 | CF : 112       7 : 119 | CF : 112       7 : 119 |  +0 |                       :                       | ***
 3B Jeff McKnight             30 | SS :  82       1 :  83 | SS :  82       1 :  83 |  +0 |                       :                       | *
  C Tom Pagnozzi              30 |  C :  79       1 :  80 |  C :  79       1 :  80 |  +0 |                       :                       | *
 2B Mike Sharperson           31 | SS :  89       8 :  97 | SS :  89       8 :  97 |  +0 |                       :                       | *^
 1B Dave Anderson             32 | 3B :  95       6 : 101 | 3B :  95       6 : 101 |  +0 |                       :                       | *^
 3B Donnie Hill               32 | SS :  99      -5 :  94 | SS :  99      -5 :  94 |  +0 |                       :                       | **
  C John Mizerock             32 |  C :  79      -1 :  78 |  C :  79      -1 :  78 |  +0 |                       :                       | *
-SS Rene Gonzales             32 | 2B :  93     -12 :  81 | 2B :  93     -12 :  81 |  +0 |                       :                       | *
 2B Ernie Riles               32 | 3B :  85     -13 :  72 | 3B :  85     -13 :  72 |  +0 |                       :                       | *
+SS Rene Gonzales             32 | 2B :  93     -12 :  81 | 2B :  93     -12 :  81 |  +0 |                       :                       | *
 SS Tony Phillips             33 | SS : 121      13 : 134 | SS : 121      13 : 134 |  +0 |                       :                       | ****^
- C Mike Scioscia             34 |  C : 107      -7 : 100 |  C : 107      -7 : 100 |  +0 |                       :                       | **^
 2B Bill Doran                34 | LF :  93     -12 :  81 | LF :  93     -12 :  81 |  +0 |                       :                       | *^
+ C Mike Scioscia             34 |  C : 107      -7 : 100 |  C : 107      -7 : 100 |  +0 |                       :                       | **^
 RF Rick Lisi                 37 | RF :  95      -5 :  90 | RF :  95      -5 :  90 |  +0 |                       :                       | *
 
 Pitchers
@@ -364,20 +363,20 @@ MR Mark Brown                33 | SP :      57     :  57 | SP :      58     :  5
 MR Chad Fox                  22 | MR :      42     :  42 | MR :      43     :  43 |  +1 |                          :    +10   +10             | +++-
 SP Jose Jimenez              19 | SP :      41     :  41 | SP :      41     :  41 |  +0 |                          :                          | +++
 SP Miguel Batista            22 | SP :      59     :  59 | SP :      59     :  59 |  +0 |                          :                          | +++
-SP Allen Watson              22 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | ++-
 MR Todd Williams             22 | MR :      42     :  42 | MR :      42     :  42 |  +0 |                          :                          | +-
+SP Allen Watson              22 | SP :      51     :  51 | SP :      51     :  51 |  +0 |                          :                          | ++-
 SP Ricky Bones               23 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                          :                          | ++++
 MR Mark Wohlers              23 | MR :      53     :  53 | MR :      53     :  53 |  +0 |                          :                          | +++++
-MR Rod Beck                  24 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | +++++
 MR Bob Wickman               24 | MR :      57     :  57 | MR :      57     :  57 |  +0 |                          :                          | +++++
+MR Rod Beck                  24 | MR :      72     :  72 | MR :      72     :  72 |  +0 |                          :                          | +++++
 MR Steve Olin                27 | MR :      76     :  76 | MR :      76     :  76 |  +0 |                          :                          | **^
-SP Floyd Youmans             28 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | *^
 SP Dennis Springer           28 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
+SP Floyd Youmans             28 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                          :                          | *^
 SP Bryan Hickerson           29 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                          :                          | *
 SP Francisco Oliveras        30 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                          :                          | **^
 MR Greg Booker               32 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                          :                          | *
-SP Mark W. Davis             32 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                          :                          | *
 SP Zane Smith                32 | SP :      89     :  89 | SP :      89     :  89 |  +0 |                          :                          | *
+SP Mark W. Davis             32 | SP :      69     :  69 | SP :      69     :  69 |  +0 |                          :                          | *
 MR Rich Rodas                33 | MR :      52     :  52 | MR :      52     :  52 |  +0 |                          :                          | *
 MR Ed Vande Berg             34 | MR :      86     :  86 | MR :      86     :  86 |  +0 |                          :                          | *^
 CL Frank DiPino              36 | MR :     176     : 176 | MR :     176     : 176 |  +0 |                          :                          | ****^
@@ -1901,53 +1900,53 @@ SP Kevin Jarvis              23| SP :      61       1     :  62 | SP :      80  
 SP Masumi Kuwata             25| SP :     198     139  54 : 391 | SP :     225     155  91 : 471 |   6 | 477 |          |      $5.26M a | $18.95M:$28.83M |  p809 | San Francisco Giants | ***^
 SP John Habyan               29| SP :     128      69     : 197 |    :                     :   0 |   4 | 201 |          |      $2.89M a |  $6.77M:$10.31M |  p382 | San Francisco Giants | ***^
 SP George Stablein           35| SP :     133      74     : 207 |    :                     :   0 |  -6 | 201 |          |         $7Mx2 |  $7.26M:$11.05M | p1701 | San Francisco Giants | ***
-MR Pat Hentgen               24| SP :      95      36     : 131 | SP :     125      55     : 180 |   6 | 186 |          |   T   $300k r |  $3.53M: $5.38M |  p741 | San Francisco Giants | ++++-
-MR Brendan Donnelly          21| MR :      43     -16     :  28 | MR :     119      41     : 160 |   6 | 166 |          |   7           |        :        |  p469 | San Francisco Giants | +++++
+MR Pat Hentgen               24| SP :      95      36     : 131 | SP :     125      55     : 180 |   6 | 186 |          |       $300k r |  $3.53M: $5.38M |  p741 | San Francisco Giants | ++++-
+MR Brendan Donnelly          21| MR :      43     -16     :  28 | MR :     119      41     : 160 |   6 | 166 |          |   9           |        :        |  p469 | San Francisco Giants | +++++
 CL Roger McDowell            32| MR :     116      47     : 163 |    :                     :   0 |   1 | 164 |          |       $6.9Mx2 |  $4.61M: $7.02M |  p704 | San Francisco Giants | ****^
-CL Kazuhiro Sasaki           25| MR :      68       6     :  74 | MR :     117      40     : 157 |   6 | 163 |          |   3           |   $589k:$896.3k | p1404 | San Francisco Giants | +++++
+CL Kazuhiro Sasaki           25| MR :      68       6     :  74 | MR :     117      40     : 157 |   6 | 163 |          |   5           |   $589k:$896.3k | p1404 | San Francisco Giants | +++++
 LF Bernard Gilkey            26| LF : 111      -3  27     : 135 | LF : 113      -3  29     : 139 |   6 | 145 | -2221755 |      $1.96M a |  $2.65M: $4.03M |  p270 | San Francisco Giants | ***^
- C Damian Miller             23|  C :  83      19   9     : 111 |  C :  93      19  25     : 137 |   6 | 143 | 93---1-2 |   9           | $883.5k: $1.34M | p1271 | San Francisco Giants | +++
+ C Damian Miller             23|  C :  83      19   9     : 111 |  C :  93      19  25     : 137 |   6 | 143 | 93---1-2 |               | $883.5k: $1.34M | p1271 | San Francisco Giants | +++
 SP Mark Gubicza              30| SP :      99      40     : 139 |    :                     :   0 |   3 | 142 |          |      $1.71Mx2 |  $3.93M: $5.98M |  p512 | San Francisco Giants | **
  C Darren Daulton            31|  C : 122      -7  22   0 : 138 |    :                     :   0 |   2 | 140 | 3312---1 |      $9.62Mx3 |  $2.26M: $3.44M |  p326 | San Francisco Giants | ****^
 RF Dante Bichette            29| RF : 108      -1  27     : 134 |    :                     :   0 |   4 | 138 | -312-468 |      $9.55Mx7 |  $2.65M: $4.03M |  p143 | San Francisco Giants | ****
 SS Jim Presley               31| SS : 110       4  21     : 135 |    :                     :   0 |   2 | 137 | -3455--- |  F   $3.36M   |  $2.06M: $3.14M | p2912 | San Francisco Giants | ***
 3B Bob Horner                35| 3B : 109       5  28     : 143 |    :                     :   0 |  -6 | 137 | -7271--- |       $6.5Mx2 |  $2.75M: $4.18M | p1354 | San Francisco Giants | ***^
-LF Damon Mashore             23| CF :  82       4  -1     :  84 | CF : 102       4  22     : 128 |   6 | 134 | -3---774 |   6           |        :        |  p937 | San Francisco Giants | +++-
+LF Damon Mashore             23| CF :  82       4  -1     :  84 | CF : 102       4  22     : 128 |   6 | 134 | -3---774 |   7           |        :        |  p937 | San Francisco Giants | +++-
  C Henry Mercedes            23|  C :  82      19   8     : 109 |  C :  86      19  18     : 123 |   6 | 129 | 9412---- |               | $785.3k:  $1.2M |  p990 | San Francisco Giants | ++
 3B Mark Carreon              29| LF : 109      -6  22     : 125 |    :                     :   0 |   4 | 129 | -412-622 |         $3Mx2 |  $2.16M: $3.29M |  p176 | San Francisco Giants | **^
-CL Ricky Bottalico           23| MR :      60      -1     :  58 | MR :      96      22     : 118 |   6 | 124 |          |   5           |        :        |  p148 | San Francisco Giants | +++++
+CL Ricky Bottalico           23| MR :      60      -1     :  58 | MR :      96      22     : 118 |   6 | 124 |          |   6           |        :        |  p148 | San Francisco Giants | +++++
  C Terry Steinbach           31|  C :  91      17  15     : 122 |    :                     :   0 |   2 | 124 | 8312---- |  F    $300k   |  $1.47M: $2.24M |  p902 | San Francisco Giants | *^
 SP Ramon A. Garcia           24| SP :      69      10     :  79 | SP :      93      23     : 116 |   6 | 122 |          |   1           | $981.7k: $1.49M |  p485 | San Francisco Giants | +++++
 CF Bob Zupcic                26| CF :  87       7   7     : 100 | CF :  93       7  16     : 116 |   6 | 122 | -2121687 |               | $687.2k: $1.05M | p1323 | San Francisco Giants | *^
 MR Randy O'Neal              32| SP :      90      31     : 121 |    :                     :   0 |   1 | 122 |          |         $3Mx2 |  $3.04M: $4.63M | p1041 | San Francisco Giants | **^
 SP Frank Castillo            24| SP :      81      22     : 103 | SP :      92      22     : 114 |   6 | 120 |          |               |  $2.16M: $3.29M |  p239 | San Francisco Giants | +++
 MR Scott Terry               33| SP :      89      30     : 118 |    :                     :   0 |   0 | 118 |          |      $2.38Mx2 |  $2.95M: $4.48M | p1784 | San Francisco Giants | ***
+SS Neifi Perez               19| SS :  73      14  -6     :  81 | SS :  85      14  13     : 111 |   6 | 117 | -3778--- |               |        :        | p1083 | San Francisco Giants | +++
 SS Craig Grebeck             28| SS :  94       8  10     : 112 |    :                     :   0 |   5 | 117 | -2646214 |               | $981.7k: $1.49M |  p586 | San Francisco Giants | **
 2B Jose Lind                 28| 2B :  92       6  12     : 111 |    :                     :   0 |   5 | 116 | -3884477 |       $300k r |  $1.18M: $1.79M |  p599 | San Francisco Giants | **^
 MR David Palmer              35| SP :      91      31     : 122 |    :                     :   0 |  -6 | 116 |          |       $3.5Mx2 |  $3.04M: $4.63M |  p811 | San Francisco Giants | **^
 CF Curt Ford                 32| CF :  92       7  12     : 112 |    :                     :   0 |   1 | 113 | -2---687 |       $300k a |  $1.18M: $1.79M |  p449 | San Francisco Giants | **
 LF Chuck Carr                25| CF :  82       7   2     :  91 | CF :  88       7  11     : 106 |   6 | 112 | -3211887 |               | $196.3k:$298.8k |  p335 | San Francisco Giants | ++-
-SP Cal Eldred                25| SP :      73      14     :  87 | SP :      88      18     : 106 |   6 | 112 |          |   2           |  $1.37M: $2.09M |  p406 | San Francisco Giants | ++++-
+SP Cal Eldred                25| SP :      73      14     :  87 | SP :      88      18     : 106 |   6 | 112 |          |   3           |  $1.37M: $2.09M |  p406 | San Francisco Giants | ++++-
 RF Shane Spencer             21| CF :  77       2  -8     :  71 | CF :  91       2  10     : 103 |   6 | 109 | -412-567 |               |        :        | p1381 | San Francisco Giants | ++-
 CF Brett Butler              35| CF :  95       4  13     : 112 |    :                     :   0 |  -6 | 106 | -3---473 |  F      $6M   |  $1.28M: $1.94M |  p125 | San Francisco Giants | **
 2B Jason Bates               22| 2B :  76       1  -9     :  68 | 2B :  90       1   8     :  99 |   6 | 105 | -2632--- |               |        :        |  p100 | San Francisco Giants | +++
 RF Rob Ducey                 27| RF :  92      -2   9     :  99 |    :                     :   0 |   6 | 105 | -2221848 |               | $883.5k: $1.34M |  p446 | San Francisco Giants | **
 2B Garey Ingram              22| 2B :  77       2  -7     :  71 | 2B :  89       2   7     :  98 |   6 | 104 | -2654315 |               |        :        |  p717 | San Francisco Giants | ++
+SP Matt Clement              18| SP :      55      -4     :  51 | SP :      83      13     :  96 |   6 | 102 |          |   2           |        :        |  p220 | San Francisco Giants | ++++-
 1B Julio Franco              34| SS : 101      -4   5     : 103 |    :                     :   0 |  -2 | 101 | -5223--- |         $1Mx2 | $490.8k:$746.9k |  p952 | San Francisco Giants | **
 SP Bob Scanlan               26| SP :      76      17     :  93 | SP :      80      10     :  90 |   6 |  99 |          |               |  $1.67M: $2.54M |  p946 | San Francisco Giants | *
-1B Sid Bream                 32| 1B :  98     -10   9     :  98 |    :                     :   0 |   1 |  99 | -712-2-2 |               | $883.5k: $1.34M |  p122 | San Francisco Giants | **
+1B Sid Bream                 32| 1B :  98     -10   9     :  98 |    :                     :   0 |   1 |  99 | -712-2-2 |       $300k a | $883.5k: $1.34M |  p122 | San Francisco Giants | **
+CF Pat Watkins               20| CF :  70       2 -15     :  57 | CF :  85       2   3     :  90 |   6 |  96 | -2---764 |               |        :        | p1475 | San Francisco Giants | ++-
 LF Dave McCarty              23| LF :  80      -6  -7     :  67 | LF :  91      -6   4     :  89 |   6 |  95 | -612-6-5 |               |        :        |  p950 | San Francisco Giants | ++-
  C Bruce Fields              32| RF :  91      -5   6     :  92 |    :                     :   0 |   1 |  93 | 44---326 |               |   $589k:$896.3k |  p422 | San Francisco Giants | *
+SP Glendon Rusch             18| SP :      46     -13     :  33 | SP :      76       6     :  82 |   6 |  88 |          |   8           |        :        | p1257 | San Francisco Giants | +++-
 DH Keith Moreland            38|  C :  93      12  12     : 117 |    :                     :   0 | -30 |  87 | 73-3-3-2 |  F    $500k   |  $1.18M: $1.79M |  p729 | San Francisco Giants | *^
 SP Willie Banks              24| SP :      55      -4     :  51 | SP :      75       5     :  80 |   6 |  86 |          |   4           |        :        |  p108 | San Francisco Giants | ++++
 SP Tim Pugh                  26| SP :      67       8     :  75 | SP :      70       0     :  70 |   6 |  81 |          |               | $785.3k:  $1.2M | p1086 | San Francisco Giants | *
 SP Jaime Navarro             26| SP :      65       6     :  71 | SP :      65      -5     :  60 |   6 |  77 |          |               |   $589k:$896.3k | p1092 | San Francisco Giants | **^
-SP Chris Holt                21| SP :      52      -7     :  45 | SP :      70       0     :  70 |   6 |  76 |          |   8           |        :        |  p805 | San Francisco Giants | +++
+SP Chris Holt                21| SP :      52      -7     :  45 | SP :      70       0     :  70 |   6 |  76 |          |               |        :        |  p805 | San Francisco Giants | +++
 SP Chris Brock               23| SP :      54      -6     :  48 | SP :      67      -2     :  65 |   6 |  71 |          |               |        :        |  p140 | San Francisco Giants | +++
-SP Armando Reynoso           26| SP :      62       3     :  65 | SP :      64      -6     :  58 |   6 |  71 |          |               | $294.5k:$448.2k | p1387 | San Francisco Giants | *
-MR Scott Sanders             24| SP :      53      -7     :  46 | SP :      65      -5     :  60 |   6 |  66 |          |               |        :        | p1403 | San Francisco Giants | +++
-MR Yorkis Perez              25| MR :      58      -3     :  55 | MR :      65      -5     :  60 |   6 |  66 |          |               |        :        | p1141 | San Francisco Giants | +++
-SP Greg Gohr                 25| SP :      53      -6     :  47 | SP :      64      -6     :  58 |   6 |  64 |          |               |        :        |  p511 | San Francisco Giants | ++-
 
 **Now                |  Bat   LU    Ovr  |  Pit   Rot   Ovr  | (rpg:4.84)
 
@@ -1957,26 +1956,26 @@ Detroit Tigers       | 107.2 107.5 114.1 | 118.6 116.7 132.1 | 112- 50 0.694 |  
 Cleveland Indians    |  99.7 101.0 100.7 |  94.6  98.8  93.4 |  76- 86 0.469 |   0-  0 0.500 |  76- 86 0.469 (12) 
 Baltimore Orioles    | 101.9 100.1 102.0 |  91.0  86.2  75.3 |  60-102 0.371 |   0-  0 0.500 |  60-102 0.370 (15) 
 New York (A) Yankees |  98.3  98.7  97.0 |  85.3  87.4  71.5 |  53-109 0.325 |   0-  0 0.500 |  53-109 0.327 (16) 
-Boston Red Sox       |  96.7  96.1  92.6 |  87.5  85.2  70.7 |  49-113 0.301 |   0-  0 0.500 |  49-113 0.302 (18) 
+Boston Red Sox       |  96.7  96.1  92.7 |  87.5  85.2  70.7 |  49-113 0.301 |   0-  0 0.500 |  49-113 0.302 (18) 
 West ----------------+
 California Angels    | 104.1 105.7 109.5 | 113.5 113.3 124.8 | 106- 56 0.651 |   0-  0 0.500 | 106- 56 0.654 ( 3) 
 Oakland Athletics    |  99.7 100.2  99.9 | 112.3 116.9 126.3 |  99- 63 0.614 |   0-  0 0.500 |  99- 63 0.611 ( 5) 
-Chicago (A) White... | 100.6  99.2  99.8 | 109.3 107.2 115.9 |  93- 69 0.573 |   0-  0 0.500 |  93- 69 0.574 ( 8) 
+Chicago (A) White... | 100.9  99.3 100.2 | 109.3 107.2 115.9 |  93- 69 0.574 |   0-  0 0.500 |  93- 69 0.574 ( 8) 
 Minnesota Twins      |  96.2  96.4  92.5 |  86.7  88.4  74.1 |  52-110 0.319 |   0-  0 0.500 |  52-110 0.321 (17) 
-Texas Rangers        |  87.9  86.8  73.1 |  77.2  75.6  48.7 |  18-144 0.113 |   0-  0 0.500 |  18-144 0.111 (20) 
+Texas Rangers        |  87.9  86.8  73.2 |  77.2  75.6  48.7 |  18-144 0.113 |   0-  0 0.500 |  18-144 0.111 (20) 
 
 National League
 East ----------------+
-St. Louis Cardinals  | 105.3 106.1 111.0 | 113.6 115.1 126.3 | 107- 55 0.663 |   0-  0 0.500 | 107- 55 0.660 ( 2) 
-Chicago (N) Cubs     | 105.3 106.6 111.4 | 107.8 106.7 114.0 | 100- 62 0.618 |   0-  0 0.500 | 100- 62 0.617 ( 4) 
+St. Louis Cardinals  | 105.2 106.1 111.0 | 113.6 115.1 126.3 | 107- 55 0.663 |   0-  0 0.500 | 107- 55 0.660 ( 2) 
+Chicago (N) Cubs     | 105.2 106.7 111.4 | 107.8 106.7 114.0 | 100- 62 0.618 |   0-  0 0.500 | 100- 62 0.617 ( 4) 
 Philadelphia Phil... |  99.9  99.5  99.5 | 107.1 108.7 115.0 |  92- 70 0.567 |   0-  0 0.500 |  92- 70 0.568 ( 9) 
 New York (N) Mets    | 103.4 102.3 105.6 | 101.0 102.0 103.0 |  88- 74 0.542 |   0-  0 0.500 |  88- 74 0.543 (10) 
-Pittsburgh Pirates   |  92.6  90.8  82.6 |  90.6  89.4  79.0 |  48-114 0.299 |   0-  0 0.500 |  48-114 0.296 (19) 
+Pittsburgh Pirates   |  92.6  90.9  82.7 |  90.6  89.4  79.0 |  48-114 0.299 |   0-  0 0.500 |  48-114 0.296 (19) 
 West ----------------+
-Atlanta Braves       | 103.2 103.3 106.3 | 107.7 109.3 116.2 |  98- 64 0.604 |   0-  0 0.500 |  98- 64 0.605 ( 6) 
+Atlanta Braves       | 103.1 103.3 106.3 | 107.7 109.3 116.2 |  98- 64 0.604 |   0-  0 0.500 |  98- 64 0.605 ( 6) 
 Houston Astros       | 104.3 104.7 108.7 | 104.1 107.7 111.2 |  96- 66 0.594 |   0-  0 0.500 |  96- 66 0.593 ( 7) 
 San Francisco Giants |  99.7 100.8 100.5 |  97.8  99.3  97.0 |  79- 83 0.488 |   0-  0 0.500 |  79- 83 0.488 (11) 
-Los Angeles Dodgers  |  93.4  94.1  87.1 | 101.6  99.5 101.2 |  71- 91 0.437 |   0-  0 0.500 |  71- 91 0.438 (13) 
+Los Angeles Dodgers  |  93.4  93.7  86.7 | 101.6  99.5 101.2 |  70- 92 0.435 |   0-  0 0.500 |  70- 92 0.432 (13) 
 Cincinnati Reds      | 100.4 100.3 100.7 |  92.6  86.7  77.5 |  61-101 0.378 |   0-  0 0.500 |  61-101 0.377 (14) 
                      |             103.7 |             109.4 |
 
@@ -1994,6 +1993,7 @@ SP Jim Abbott                25| SP :      78      18     :  96 | SP :     106  
 3B Phil Nevin                22|  C :  87       1  -5     :  82 |  C : 112       1  26     : 139 |   6 | 145 | 4415-4-3 |               |        :        | p1375 | Pittsburgh Pirates   | +++++
 2B Carlos Baerga             24| 2B :  99       4  17     : 120 | 2B : 107       4  28     : 139 |   6 | 145 | -3751665 |               |  $1.67M: $2.54M |   p66 | Detroit Tigers       | ++++-
 MR Mike W. Stanton           25| MR :      87      22     : 108 | MR :     107      32     : 139 |   6 | 145 |          |               |  $2.16M: $3.29M | p1297 | St. Louis Cardinals  | +++++
+ C Damian Miller             23|  C :  83      19   9     : 111 |  C :  93      19  25     : 137 |   6 | 143 | 93---1-2 |               | $883.5k: $1.34M | p1271 | San Francisco Giants | +++
 CL Jim Mecir                 22| MR :      71       8     :  79 | MR :     105      29     : 134 |   6 | 140 |          |               | $785.3k:  $1.2M | p1003 | Cincinnati Reds      | ++++-
  C Jason Kendall             18|  C :  78       9  -6     :  80 |  C : 101       9  23     : 133 |   6 | 139 | 61---3-3 |               |        :        |  p620 | Los Angeles Dodgers  | ++++
  C Tony Eusebio              25|  C :  89      11   7     : 107 |  C :  99      11  23     : 133 |   6 | 139 | 73------ |               | $687.2k: $1.05M |  p491 | Cincinnati Reds      | +++-
@@ -2030,7 +2030,6 @@ LF Henry L. Rodriguez        25| 1B :  97     -11   7     :  93 | RF : 110     -
 MR Jason Christiansen        23| MR :      58      -3     :  55 | MR :      96      22     : 118 |   6 | 124 |          |               |        :        |  p257 | Chicago (A) White... | ++++-
  C Gregg Zaun                21|  C :  80       3 -10     :  73 |  C :  99       3  15     : 117 |   6 | 123 | 51------ |               |        :        | p1448 | Texas Rangers        | +++-
 2B Homer Bush                20| 2B :  79       4  -3     :  81 | 2B :  95       4  16     : 116 |   6 | 122 | -2724--- |               |        :        |  p173 | Philadelphia Phil... | +++
-3B Damion Easley             23| 2B :  88       2   4     :  93 | 2B :  98       2  17     : 116 |   6 | 122 | -4664--- |               | $392.7k:$597.5k |  p374 | Chicago (A) White... | +++-
 
 --- ML non-prospects ---
 SP Bill Wilkinson            28| SP :     145      86   1 : 232 |    :                     :   0 |   5 | 237 |          |  F   $3.16M   |  $8.54M:   $13M |  p969 | Philadelphia Phil... | ***^
