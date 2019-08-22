@@ -22,8 +22,6 @@ woba2B: 1.25
 woba3B: 1.57
 wobaHR: 1.72
 
-bip%: 0.888
-
 
 Batting: 8205/16742 0.329/0.671
 Pitching: 8893/15409 0.366/0.634
@@ -55,7 +53,7 @@ Selected: LinearScores: [(0.1862701986123728, RandomForest(...)), (0.15968825103
              Ks | 0.066
 Features: Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(0.2271014812402775, RandomForest(...)), (0.10472555807531618, Isotonic(...)), (0.2020447844392815, Huber(...)), (0.20683694623604124, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 32, 'regressor__n_estimators': 96}Feature Scores: [18. 60.  3.  1.  1. 32.  0.  0.]Feature Mask: [False  True False False False  True False False]Feature Importances: [0.706 0.294]
+Selected: RandomForestScores: [(0.2271014812402775, RandomForest(...)), (0.10472555807531618, Isotonic(...)), (0.2020447844392815, Huber(...)), (0.20683694623604124, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 96, 'regressor__max_depth': 32}Feature Scores: [18. 60.  3.  1.  1. 32.  0.  0.]Feature Mask: [False  True False False False  True False False]Feature Importances: [0.706 0.294]
 -- Doubles
 Selected: HuberScores: [(0.26901713953112555, RandomForest(...)), (0.2200760549020342, Isotonic(...)), (0.2733823149359569, Huber(...)), (0.2614355464651857, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [  4.   1. 137.   9.   1.   2.  13.   9.]Coefficients: [-0.07024466 -0.00642247  0.00259318  0.01041779]Intercept: 0.07970588334264017Feature Mask: [False False  True  True False False  True  True]
 -- HomeRuns
@@ -208,24 +206,24 @@ Total:80 (target 70-75)
 Balance:44/36 = 1.222 (ideal: 1.273)
 
   ML -> AAA  SP Jeffrey Buskirk
- AAA -> ML   MR Joseph Smathers
+ AAA -> ML   MR James Koger
  AAA -> ML   3B Orestes Marmolejo
- AAA -> ML   2B Jesus Fernandez
+ AAA -> ML   SP Erin Siebert
  AAA -> ML   MR Ryan Bethea
  AAA -> ML    C Michael Mielke
- AAA -> ML   SP Erin Siebert
+ AAA -> ML   MR Joseph Smathers
+ AAA -> ML   2B Jesus Fernandez
  AAA -> ML   2B James Peets
- AAA -> ML   MR James Koger
  AAA -> AA   LF Bill Charlie
  AAA -> A    SP William Henderson
-  AA -> ML   2B Alejandro Arroyo
   AA -> ML    C John Crosby
-  AA -> AAA   C Brandon Wilson
+  AA -> ML   2B Alejandro Arroyo
   AA -> AAA  SP Samuel Johnson
   AA -> AAA  RF James Mistretta
+  AA -> AAA   C Brandon Wilson
    A -> AAA  MR Maurice Lyon
-   A -> AAA   C John Bastian
    A -> AAA  SP James Suggs
+   A -> AAA   C John Bastian
    A -> AA   LF Danny Dock
 
 SP
@@ -366,18 +364,18 @@ LF Ryan Ullman               25 | DH :  68       0 :  68 | DH :  76       0 :  7
  C Michael Mielke            31 |  C :  87       1 :  88 |  C :  88       1 :  89 |  +1 |             +10       :                       | *
 3B Mario Smitherman          34 | 3B : 127       5 : 132 | 3B : 128       5 : 133 |  +1 |          -10+10       :                       | ****^
 1B Richard Green             21 | 1B :  44       1 :  45 | 1B :  44       1 :  45 |  +0 |                       :                       | +
- C William Ditch             22 |  C :  45       4 :  49 |  C :  45       4 :  49 |  +0 |                       :                       | +
-1B Wallace Kinder            22 | 1B :  66       2 :  68 | 1B :  66       2 :  68 |  +0 |        -9             :    +10 -9             | +
 2B Juan Nuñez                22 | DH :  75       0 :  75 | DH :  75       0 :  75 |  +0 |             +10       :                       | +
+1B Wallace Kinder            22 | 1B :  66       2 :  68 | 1B :  66       2 :  68 |  +0 |        -9             :    +10 -9             | +
+ C William Ditch             22 |  C :  45       4 :  49 |  C :  45       4 :  49 |  +0 |                       :                       | +
 CF Michael Cromartie         25 | SS :  69      11 :  80 | SS :  69      11 :  80 |  +0 |                       :                       | ++
 2B Ramiro Covarrubias        27 | 2B :  75       4 :  79 | 2B :  75       4 :  79 |  +0 |                +10    :                +10    | *
 SS Pedro Enciso              27 | SS :  73      11 :  84 | SS :  73      11 :  84 |  +0 |    -10                :                       | *
 CF Angelo Cabrales           27 | LF :  92       0 :  92 | LF :  92       0 :  92 |  +0 |          +10   +20    :                +20    | *
 LF Danny Dock                28 | DH :  71       0 :  71 | DH :  71       0 :  71 |  +0 |                       :                       | *
-2B Joel Sancho               29 | DH :  72       0 :  72 | DH :  72       0 :  72 |  +0 |                       :                       | *
 CF Ryan Malley               29 | CF :  94      14 : 108 | CF :  94      14 : 108 |  +0 |                       :                       | **^
-RF Alejo Torres              29 | CF : 106       8 : 114 | CF : 106       8 : 114 |  +0 |                       :                       | **^
  C Richard Bernabe           29 | DH : 123       0 : 123 | DH : 123       0 : 123 |  +0 |                       :                       | ****^
+2B Joel Sancho               29 | DH :  72       0 :  72 | DH :  72       0 :  72 |  +0 |                       :                       | *
+RF Alejo Torres              29 | CF : 106       8 : 114 | CF : 106       8 : 114 |  +0 |                       :                       | **^
  C Hernando Valido           31 |  C :  70       1 :  71 |  C :  70       1 :  71 |  +0 |                       :                       | *
 2B Fausto Castillo           32 | SS :  76      18 :  94 | SS :  76      18 :  94 |  +0 |                       :                       | *
 RF James Mistretta           33 | SS :  78       6 :  84 | SS :  78       6 :  84 |  +0 |                       :    -10                | *
@@ -445,10 +443,10 @@ SP James Suggs               22 | SP :      61     :  61 | SP :      61     :  6
 
  1 | 130 ( 72-229) | 136 ( 78-235) 124/150 |  32/ 32 || 135 ( 72-370) | 141 ( 78-376) 128/155 | 160/160
  2 | 102 ( 32-140) | 108 ( 38-146)  98/118 |  32/ 32 || 100 ( 32-140) | 106 ( 38-146)  96/116 | 160/160
- 3 |  88 ( 65-122) |  94 ( 71-128)  85/103 |  32/ 32 ||  81 ( 65-122) |  87 ( 71-128)  80/ 96 | 160/160
+ 3 |  88 ( 65-122) |  94 ( 71-128)  85/103 |  32/ 32 ||  81 ( 29-122) |  87 ( 35-128)  80/ 96 | 160/160
  4 |  70 ( 59-126) |  76 ( 65-132)  69/ 83 |  32/ 32 ||  68 ( 19-126) |  74 ( 25-132)  67/ 82 | 160/160
- 5 |  55 ( 16-122) |  61 ( 22-128)  56/ 67 |  32/ 32 ||  56 ( -4-122) |  62 (  2-128)  56/ 68 | 160/160
- 6 |  38 ( -1- 77) |  44 (  5- 83)  40/ 48 |  32/ 32 ||  33 (-13- 91) |  39 ( -0- 97)  36/ 43 | 160/160
+ 5 |  55 ( 16-122) |  61 ( 22-128)  56/ 67 |  32/ 32 ||  56 ( 16-122) |  62 ( 22-128)  56/ 68 | 160/160
+ 6 |  38 ( -1- 77) |  44 (  5- 83)  40/ 48 |  32/ 32 ||  33 (-13- 77) |  39 ( -0- 83)  36/ 43 | 160/160
 
 3B Smitherman, M   34|  20,000,000            
  C Bernabe, R      29|   7,680,000   7,680,000
@@ -507,7 +505,7 @@ LF Zoilo Diez                30| RF : 100       1   4     : 104 |    :          
 MR Steven Spell              30| MR :      80       5     :  85 |    :                         :   0 |   3 |  88 |          |       $300k a | $690.6k:$949.8k | p2354 | Detroit Tigers       | *^
 
 --- Top Targets ---
-3B Carlos Almendarez         26| 2B :  71       6 -14     :  64 | 2B :  94       6 -21  10     :  90 |   6 |  96 | -2654--- |               |        :        | p2149 | No Team              | *
+3B Carlos Almendarez         26| 2B :  71       6 -13     :  64 | 2B :  94       6 -21  10     :  90 |   6 |  96 | -2654--- |               |        :        | p2149 | No Team              | *
 3B Timo Acuña                33| 2B :  80      11   0     :  91 |    :                         :   0 |   0 |  91 | -2746--- |               |        :        | p1991 | No Team              | *
 LF Ronald Taylor             22| CF :  68       8 -16     :  59 | CF :  83       8 -11   0     :  80 |   6 |  86 | -2---666 |               |        :        |  p876 | No Team              | +
 1B Jeffrey Lane              25| 1B :  80       1 -15     :  66 | 1B :  89       1  -9  -3     :  79 |   6 |  85 | -3------ |               |        :        |  p490 | No Team              | +-
@@ -517,7 +515,7 @@ SS Mark Tober                37| 1B :  98       0   2     : 100 |    :          
 
 --- Free Agents ---
 SP Ernest Sessions           25| SP :      83      19     : 102 | SP :     161      -4  84  32 : 273 |   6 | 279 |          |               |  $2.62M: $3.61M | p1365 | *CEI* No Team        | +++++
-3B Carlos Almendarez         26| 2B :  71       6 -14     :  64 | 2B :  94       6 -21  10     :  90 |   6 |  96 | -2654--- |               |        :        | p2149 | No Team              | *
+3B Carlos Almendarez         26| 2B :  71       6 -13     :  64 | 2B :  94       6 -21  10     :  90 |   6 |  96 | -2654--- |               |        :        | p2149 | No Team              | *
 3B Timo Acuña                33| 2B :  80      11   0     :  91 |    :                         :   0 |   0 |  91 | -2746--- |               |        :        | p1991 | No Team              | *
 2B Jason Spence              27| 2B :  71       8 -12     :  67 | 2B :  89       8 -22   7     :  83 |   6 |  89 | -3725--- |               |        :        | p1903 | No Team              | *
 LF Ronald Taylor             22| CF :  68       8 -16     :  59 | CF :  83       8 -11   0     :  80 |   6 |  86 | -2---666 |               |        :        |  p876 | No Team              | +
@@ -547,7 +545,7 @@ RF Douglas Constable         25| RF :  67       2 -28     :  41 | RF :  80      
 DH Ricardo Delvalle          29| DH :  74       0 -23     :  51 |    :                         :   0 |   4 |  55 | 21---2-2 |               |        :        |  p962 | No Team              | *
 SP Stephen Kane              38| SP :      75      10     :  85 |    :                         :   0 | -30 |  55 |          |               |  $1.38M:  $1.9M | p2508 | No Team              | *
 MR Kenneth Constantino       33| MR :      63      -9     :  54 |    :                         :   0 |   0 |  54 |          |               |        :        | p2685 | No Team              | *
-SS John Mei                  35| 2B :  77      -2 -16     :  60 |    :                         :   0 |  -6 |  54 | -232113- |               |        :        |  p987 | No Team              | *
+SS John Mei                  35| 2B :  77      -2 -15     :  60 |    :                         :   0 |  -6 |  54 | -232113- |               |        :        |  p987 | No Team              | *
 SP Silvio Betancourt         32| SP :      59      -6     :  52 |    :                         :   0 |   1 |  53 |          |               |        :        | p1282 | No Team              | *
 2B Frank Tatro               32| 2B :  71       1 -19     :  52 |    :                         :   0 |   1 |  53 | -2421--- |               |        :        |   p57 | No Team              | *
  C Andrew Cheney             39|  C :  87       5   3     :  95 |    :                         :   0 | -42 |  53 | 61------ |               | $414.4k:$569.9k | p2266 | No Team              | *
@@ -685,7 +683,7 @@ MR Gabriel Mendoza           20| SP :      65       0     :  65 | SP :     122  
  C Richard Bernabe           29|  C : 123      -9  26  21 : 160 |    :                         :   0 |   4 | 164 | 22-1---- |      $7.68Mx3 |  $6.35M: $8.74M | p2443 | Detroit Tigers       | ****^
 SP Roger Walker              20| SP :      62      -3     :  59 | SP :     110       9  33     : 152 |   6 | 158 |          |   1           |        :        | p1169 | Detroit Tigers       | ++++-
  C John Bastian              23|  C :  71      13  -5     :  79 |  C : 107      13 -10  31   1 : 143 |   6 | 149 | 81------ |   7           |        :        | p2234 | Detroit Tigers       | +++
-2B Jesus Fernandez           26| 2B :  96       0   5     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $690.6k:$949.8k | p2417 | Detroit Tigers       | *^
+2B Jesus Fernandez           26| 2B :  96       0   6     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $828.8k: $1.14M | p2417 | Detroit Tigers       | *^
 SP Osvaldo Depalma           31| SP :     103      39     : 142 |    :                         :   0 |   2 | 144 |          |  F    $450k   |  $5.39M: $7.41M | p1530 | Detroit Tigers       | *^
 RF Alejo Torres              29| CF : 106       8  22     : 135 |    :                         :   0 |   4 | 139 | -2---666 |      $3.48Mx3 |  $3.04M: $4.18M |  p265 | Detroit Tigers       | **^
 MR Ryan Bethea               22| MR :      74       0     :  74 | MR :     101      13  17     : 131 |   6 | 137 |          |   9           |        :        |  p201 | Detroit Tigers       | +++-
@@ -740,7 +738,7 @@ SS Hector Grillo             29| 1B :  75       0 -21     :  54 |    :          
 1B Jeronimo Gonzalez         38| 1B :  91       1  -5     :  87 |    :                         :   0 | -30 |  57 | -311-2-2 |      $3.23Mx2 |        :        | p1415 | Detroit Tigers       | *
 MR Jose Peralvo              30| SP :      59      -6     :  53 |    :                         :   0 |   3 |  56 |          |               |        :        | p1867 | Detroit Tigers       | *
  C Hernando Valido           31|  C :  70       1 -17     :  54 |    :                         :   0 |   2 |  56 | 51------ |               |        :        | p1855 | Detroit Tigers       | *
-2B Joel Sancho               29| 2B :  72      -2 -21     :  50 |    :                         :   0 |   4 |  54 | -2321--- |               |        :        |   p80 | Detroit Tigers       | *
+2B Joel Sancho               29| 2B :  72      -2 -20     :  50 |    :                         :   0 |   4 |  54 | -2321--- |               |        :        |   p80 | Detroit Tigers       | *
 SP John Miles                24| SP :      56      -9     :  47 | SP :      63     -21 -13     :  29 |   6 |  53 |          | I             |        :        | p1023 | Detroit Tigers       | ++
 LF Danny Dock                28| 1B :  71       0 -26     :  45 | DH :  75       0 -23 -18     :  34 |   5 |  50 | -2---413 |               |        :        | p1064 | Detroit Tigers       | *
 1B Richard Green             21| 1B :  44       1 -51     :  -6 | 1B :  80       1 -30 -11     :  40 |   6 |  46 | -3------ |               |        :        | p2018 | Detroit Tigers       | +
@@ -871,7 +869,7 @@ CL Agustin Velazquez         23| MR :      70      -3     :  67 | MR :     125  
 LF Augustine Castaño         26| CF : 108      -1  15     : 123 | CF : 118      -1  16  27     : 161 |   6 | 167 | -2---444 |       $300k a |  $2.07M: $2.85M | p1944 | New York (A) Yankees | ****
 MR Matthew Padron            22| SP :      65       0     :  65 | SP :     116       4  39     : 158 |   6 | 164 |          |               |        :        |  p246 | New York (A) Yankees | ++++
 SP Leroy Jackson             27| SP :     109      44     : 153 | SP :     104      11  27     : 143 |   6 | 159 |          |       $300k a |  $6.08M: $8.36M | p1519 | New York (A) Yankees | **
-2B Darren Naber              22| 2B :  84       4  -3     :  86 | 2B : 114       4   5  28     : 152 |   6 | 158 | -3524--- |   3           |        :        | p1060 | New York (A) Yankees | ++++
+2B Darren Naber              22| 2B :  84       4  -2     :  86 | 2B : 114       4   5  28     : 152 |   6 | 158 | -3524--- |   3           |        :        | p1060 | New York (A) Yankees | ++++
 SS Albert Ocasio             24| SS :  85       7  -1     :  91 | SS : 110       7   0  26     : 143 |   6 | 149 | -2545--- |   4           |        :        | p2195 | New York (A) Yankees | +++-
 SP Fermin Delmonte           32| SP :     106      42     : 148 |    :                         :   0 |   1 | 149 |          |     $634.3k a |   $5.8M: $7.98M | p1200 | New York (A) Yankees | ***^
 MR Victor Raposo             26| MR :      93      16     : 109 | MR :     112       0  27     : 139 |   6 | 145 |          |       $300k r |  $2.21M: $3.04M |  p199 | New York (A) Yankees | ****
@@ -1131,7 +1129,7 @@ MR Gabriel Mendoza           20| SP :      65       0     :  65 | SP :     122  
  C Richard Bernabe           29|  C : 123      -9  26  21 : 160 |    :                         :   0 |   4 | 164 | 22-1---- |      $7.68Mx3 |  $6.35M: $8.74M | p2443 | Detroit Tigers       | ****^
 SP Roger Walker              20| SP :      62      -3     :  59 | SP :     110       9  33     : 152 |   6 | 158 |          |   1           |        :        | p1169 | Detroit Tigers       | ++++-
  C John Bastian              23|  C :  71      13  -5     :  79 |  C : 107      13 -10  31   1 : 143 |   6 | 149 | 81------ |   7           |        :        | p2234 | Detroit Tigers       | +++
-2B Jesus Fernandez           26| 2B :  96       0   5     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $690.6k:$949.8k | p2417 | Detroit Tigers       | *^
+2B Jesus Fernandez           26| 2B :  96       0   6     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $828.8k: $1.14M | p2417 | Detroit Tigers       | *^
 SP Osvaldo Depalma           31| SP :     103      39     : 142 |    :                         :   0 |   2 | 144 |          |  F    $450k   |  $5.39M: $7.41M | p1530 | Detroit Tigers       | *^
 RF Alejo Torres              29| CF : 106       8  22     : 135 |    :                         :   0 |   4 | 139 | -2---666 |      $3.48Mx3 |  $3.04M: $4.18M |  p265 | Detroit Tigers       | **^
 MR Ryan Bethea               22| MR :      74       0     :  74 | MR :     101      13  17     : 131 |   6 | 137 |          |   9           |        :        |  p201 | Detroit Tigers       | +++-
@@ -1940,7 +1938,7 @@ CF Wilson Desilva            29| DH :  91       0  -6     :  85 |    :          
  C Victor Tello              37|  C :  97       1  10     : 108 |    :                         :   0 | -20 |  88 | 51------ |       $3.8Mx2 |  $1.38M:  $1.9M |  p942 | Cincinnati Reds      | **
 1B Dario Velazquez           28| 1B :  88       1  -7     :  82 | 1B :  88       1  -6  -3     :  80 |   5 |  87 | -3------ |       $300k r |        :        | p2400 | Cincinnati Reds      | *
 SP Evelio Alonso             25| SP :      72       7     :  79 | SP :      85     -15   8     :  77 |   6 |  85 |          |   2           | $966.9k: $1.33M | p1547 | Cincinnati Reds      | +++
-2B Adam Janson               30| 2B :  82       2  -7     :  78 |    :                         :   0 |   3 |  81 | -2523--- |       $350k a |        :        | p2203 | Cincinnati Reds      | *
+2B Adam Janson               30| 2B :  82       2  -6     :  78 |    :                         :   0 |   3 |  81 | -2523--- |       $350k a |        :        | p2203 | Cincinnati Reds      | *
 LF Victor Lopez              34| CF :  83       4  -5     :  82 |    :                         :   0 |  -2 |  80 | -2---755 | IF   $1.78M   |        :        |  p489 | Cincinnati Reds      | *
 2B Harold Charette           30| 2B :  75       8  -8     :  76 |    :                         :   0 |   3 |  79 | -3744--- |       $300k r |        :        | p2260 | Cincinnati Reds      | *
 MR Andrew Rutherford         24| MR :      63      -9     :  54 | MR :      83     -14   2     :  71 |   6 |  77 |          |   T           |        :        | p1379 | Cincinnati Reds      | +++
@@ -2145,7 +2143,7 @@ RF Shaun Velasquez           29| RF : 101       0   4     : 106 |    :          
 SP Alton Wightman            31| SP :      84      20     : 104 |    :                         :   0 |   2 | 106 |          |               |  $2.76M:  $3.8M |  p328 | St. Louis Cardinals  | *
 LF Cornelius Nichols         37| DH : 111       0  14     : 125 |    :                         :   0 | -20 | 105 | -2---212 |       $900kx3 |  $1.93M: $2.66M | p2001 | St. Louis Cardinals  | **
 MR Jack Burkhardt            22| SP :      66       2     :  68 | SP :      83       6   6     :  96 |   6 | 102 |          |               | $276.3k:$379.9k |  p731 | St. Louis Cardinals  | +++
-SS Darius Sledge             27| 2B :  83       8   0     :  92 | 2B :  89       8 -10   7     :  95 |   6 | 101 | -3755--- |               |        :        |  p372 | St. Louis Cardinals  | *
+SS Darius Sledge             27| 2B :  83       8   1     :  92 | 2B :  89       8 -10   7     :  95 |   6 | 101 | -3755--- |               | $138.1k:  $190k |  p372 | St. Louis Cardinals  | *
  C King Rosales              29|  C :  91       1   4     :  96 |    :                         :   0 |   4 | 100 | 51------ |               | $552.5k:$759.8k |  p764 | St. Louis Cardinals  | *
 CL Francisco Guillen         31| SP :      81      17     :  98 |    :                         :   0 |   2 | 100 |          |               |  $2.35M: $3.23M | p1446 | St. Louis Cardinals  | *
 SS Leo Ramos                 28| 3B :  85       5  -2     :  88 | 3B :  91       5  -9   5     :  92 |   5 |  97 | -34542-1 | I   $578.6k a |        :        | p1779 | St. Louis Cardinals  | *^
@@ -2425,7 +2423,7 @@ SS Javier Campos             25| SS :  76       0 -18     :  59 | SS :  91      
 
 American League
 East Division -------+
-New York (A) Yankees | 103.2 105.0 108.0 | 113.4 114.6 125.7 | 105- 57 0.648 |  83- 49 0.629 | 102- 60 0.630 ( 8) 
+New York (A) Yankees | 103.2 105.0 108.0 | 113.4 114.6 125.7 | 105- 57 0.648 |  83- 49 0.629 | 102- 60 0.630 ( 7) 
 Toronto Blue Jays    |  94.4  92.2  86.0 |  98.2  94.8  92.6 |  63- 99 0.388 |  73- 59 0.553 |  85- 77 0.525 (12) 
 Tampa Bay Devil Rays |  93.2  94.1  87.0 | 112.9 113.8 124.6 |  88- 74 0.541 |  69- 64 0.519 |  85- 77 0.525 (13) 
 Boston Red Sox       |  84.5  86.0  69.0 |  91.4  94.1  85.2 |  42-120 0.257 |  49- 84 0.368 |  56-106 0.346 (28) 
@@ -2433,35 +2431,35 @@ Baltimore Orioles    |  95.6  93.5  88.6 |  81.3  81.6  60.4 |  36-126 0.223 |  
 Central Division ----+
 Cleveland Indians    | 104.5 104.0 108.4 | 125.6 133.5 147.7 | 117- 45 0.719 |  92- 40 0.697 | 114- 48 0.704 ( 2) 
 Detroit Tigers       | 100.6  99.8 100.4 |  96.2  93.8  89.6 |  72- 90 0.447 |  76- 56 0.576 |  89- 73 0.549 (11) 
-Mexico City Gold Sox | 101.9 100.4 102.3 | 105.8 104.0 109.6 |  90- 72 0.557 |  57- 76 0.429 |  73- 89 0.451 (20) 
-Kansas City Royals   | 105.6 105.4 110.7 |  94.7  91.6  85.6 |  77- 85 0.473 |  58- 75 0.436 |  72- 90 0.444 (23) 
-Chicago (A) White... | 103.9 103.5 107.3 |  97.5  94.9  92.1 |  80- 82 0.494 |  53- 80 0.398 |  67- 95 0.414 (25) 
+Mexico City Gold Sox | 101.9 100.4 102.3 | 105.8 104.0 109.6 |  90- 72 0.557 |  57- 76 0.429 |  73- 89 0.451 (19) 
+Kansas City Royals   | 105.5 105.4 110.6 |  94.7  91.6  85.6 |  77- 85 0.473 |  58- 75 0.436 |  72- 90 0.444 (23) 
+Chicago (A) White... | 103.9 103.5 107.3 |  97.5  94.9  92.1 |  80- 82 0.494 |  53- 80 0.398 |  67- 95 0.414 (24) 
 Minnesota Twins      | 103.3 102.0 105.3 |  76.8  76.4  49.4 |  35-127 0.213 |  49- 84 0.368 |  55-107 0.340 (29) 
 West Division -------+
 Seattle Mariners     | 104.3 102.0 106.3 | 114.4 116.3 127.9 | 105- 57 0.649 |  85- 48 0.639 | 104- 58 0.642 ( 4) 
 Oakland Athletics    | 104.8 105.1 109.6 | 109.3 107.3 116.0 | 100- 62 0.618 |  86- 48 0.642 | 103- 59 0.636 ( 6) 
-Texas Rangers        | 106.8 106.8 113.1 | 118.6 117.7 132.8 | 112- 50 0.693 |  72- 61 0.541 |  92- 70 0.568 (10) 
+Texas Rangers        | 106.8 106.8 113.1 | 118.6 117.7 132.8 | 112- 50 0.693 |  72- 61 0.541 |  92- 70 0.568 ( 9) 
 Anaheim Angels       | 100.1  99.0  99.0 | 107.7 103.4 110.9 |  89- 73 0.547 |  69- 63 0.523 |  85- 77 0.525 (14) 
 Colorado Rockies     |  98.3  98.8  97.0 | 107.4 116.7 121.5 |  94- 68 0.582 |  58- 75 0.436 |  75- 87 0.463 (17) 
 
 National League
 East Division -------+
 Philadelphia Phil... | 101.1 104.6 105.4 | 121.7 129.2 142.3 | 112- 50 0.692 |  94- 38 0.712 | 115- 47 0.710 ( 1) 
-Atlanta Braves       | 103.6 103.7 107.2 | 104.1 103.6 107.6 |  92- 70 0.571 |  75- 57 0.568 |  92- 70 0.568 ( 9) 
+Atlanta Braves       | 103.6 103.7 107.2 | 104.1 103.6 107.6 |  92- 70 0.571 |  75- 57 0.568 |  92- 70 0.568 (10) 
 New York (N) Mets    |  95.5  95.4  90.7 | 103.2 107.9 110.6 |  81- 81 0.501 |  63- 69 0.477 |  78- 84 0.481 (16) 
 Washington Nationals |  99.2  97.8  97.0 |  98.2  95.3  93.3 |  73- 89 0.450 |  49- 85 0.366 |  62-100 0.383 (26) 
 Florida Marlins      | 105.9 105.2 110.8 |  72.6  70.5  37.8 |  24-138 0.149 |  50- 83 0.376 |  54-108 0.333 (30) 
 Central Division ----+
 St. Louis Cardinals  | 105.3 107.6 112.3 | 119.8 123.2 137.3 | 114- 48 0.704 |  91- 42 0.684 | 111- 51 0.685 ( 3) 
-Pittsburgh Pirates   |  98.9  99.1  98.0 | 108.2 109.9 117.0 |  92- 70 0.568 |  86- 47 0.647 | 102- 60 0.630 ( 7) 
+Pittsburgh Pirates   |  98.9  99.1  98.0 | 108.2 109.9 117.0 |  92- 70 0.568 |  86- 47 0.647 | 102- 60 0.630 ( 8) 
 Cincinnati Reds      |  95.7  95.8  91.4 | 103.2 105.1 108.1 |  80- 82 0.494 |  60- 72 0.455 |  75- 87 0.463 (18) 
-Houston Astros       | 103.2 104.2 107.3 |  97.1  96.2  93.1 |  81- 81 0.499 |  59- 74 0.444 |  73- 89 0.451 (19) 
+Houston Astros       | 103.2 104.2 107.3 |  97.1  96.2  93.1 |  81- 81 0.499 |  59- 74 0.444 |  73- 89 0.451 (21) 
 Chicago (N) Cubs     |  89.5  90.1  78.8 |  90.7  88.0  77.3 |  44-118 0.271 |  64- 68 0.485 |  72- 90 0.444 (22) 
-Milwaukee Brewers    |  96.6 100.0  96.6 |  90.1  85.8  74.0 |  55-107 0.338 |  57- 76 0.429 |  67- 95 0.414 (24) 
+Milwaukee Brewers    |  96.6 100.0  96.6 |  90.1  85.8  74.0 |  55-107 0.338 |  57- 76 0.429 |  67- 95 0.414 (25) 
 West Division -------+
 Los Angeles Dodgers  | 104.8 103.8 108.5 | 107.9 107.9 115.2 |  99- 63 0.609 |  85- 48 0.639 | 103- 59 0.636 ( 5) 
 San Francisco Giants | 102.0 101.2 103.2 |  82.9  83.3  64.0 |  49-113 0.304 |  73- 60 0.549 |  82- 80 0.506 (15) 
-Arizona Diamondbacks |  95.2  95.0  89.9 |  90.8  87.8  77.2 |  53-109 0.325 |  64- 69 0.481 |  73- 89 0.451 (21) 
+Arizona Diamondbacks |  95.2  95.0  89.9 |  90.8  87.8  77.2 |  53-109 0.326 |  64- 69 0.481 |  73- 89 0.451 (20) 
 San Diego Padres     | 100.4  99.6 100.0 |  81.8  76.7  54.0 |  37-125 0.226 |  54- 79 0.406 |  61-101 0.377 (27) 
 Portland Beavers     |  98.3  99.2  97.5 |  76.4  74.9  47.1 |  28-134 0.174 |  37- 96 0.278 |  42-120 0.259 (31) 
                      |             102.1 |             103.6 |
@@ -2529,7 +2527,7 @@ SP Christian Jacob           26| SP :      98      34     : 132 | SP :     113  
 MR John Rayburn              27| MR :     103      25     : 128 | MR :     116       5  30     : 151 |   6 | 157 |          |               |  $3.45M: $4.75M |  p253 | Chicago (A) White... | *
 SP Gaspar Albacete           28| SP :      92      27     : 119 | SP :     118      -8  41     : 151 |   5 | 156 |          |               |  $3.73M: $5.13M |  p105 | Chicago (N) Cubs     | *
 SP George Millette           26| SP :      77      12     :  89 | SP :     120     -16  43     : 147 |   6 | 153 |          |               |  $1.66M: $2.28M | p2302 | Milwaukee Brewers    | *
-2B Jesus Fernandez           26| 2B :  96       0   5     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $690.6k:$949.8k | p2417 | Detroit Tigers       | *^
+2B Jesus Fernandez           26| 2B :  96       0   6     : 102 | 2B : 114       0   4  24     : 143 |   6 | 149 | -2432--- |               | $828.8k: $1.14M | p2417 | Detroit Tigers       | *^
 SP Gary Gosha                26| SP :      81      16     :  97 | SP :     116     -12  39     : 143 |   6 | 149 |          |               |  $2.21M: $3.04M |  p640 | Portland Beavers     | **^
 1B Andrea Nagle              26| 1B :  97       0   1     :  98 | 1B : 115       0   5  23     : 143 |   6 | 149 | -2------ |               | $138.1k:  $190k | p1025 | Florida Marlins      | **
 3B Freddie Farias            27| 3B :  95       5   8     : 108 | 3B : 107       5   2  21     : 136 |   6 | 142 | -2251--- |               |  $1.11M: $1.52M | p2206 | Seattle Mariners     | *
