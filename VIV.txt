@@ -40,9 +40,9 @@ Selected: HuberScores: [(-0.2349504519328625, RandomForest(...)), (-0.0722424394
 -- Triples
 Selected: HuberScores: [(-1.5221902168691865, RandomForest(...)), (-2.840520401652265, Isotonic(...)), (-2.46458855489014, Huber(...)), (-2.4916363293045367, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [4. 1. 2. 0. 1. 6.]Coefficients: [ 0.00533184 -0.00288701  0.01008298  0.00059578  0.01170271]Intercept: -0.005435493567916946Feature Mask: [ True  True  True False  True  True]
 -- HomeRuns
-Selected: RandomForestScores: [(-0.08763521178023363, RandomForest(...)), (-0.3094995320045671, Isotonic(...)), (-0.22544079809960627, Huber(...)), (-0.18638973716883864, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 5, 'regressor__max_depth': 1}Feature Scores: [0. 0. 6. 0. 5. 0.]Feature Mask: [False  True  True False  True False]Feature Importances: [0.  0.8 0.2]
+Selected: RandomForestScores: [(-0.08763521178023363, RandomForest(...)), (-0.3094995320045671, Isotonic(...)), (-0.22544079809960627, Huber(...)), (-0.18638973716883864, Linear(...))]Best Parameters: {'regressor__n_estimators': 5, 'selection__k': 3, 'regressor__max_depth': 1}Feature Scores: [0. 0. 6. 0. 5. 0.]Feature Mask: [False  True  True False  True False]Feature Importances: [0.  0.8 0.2]
 -- Walks
-Selected: RandomForestScores: [(0.2578666735995749, RandomForest(...)), (0.11836063109079677, Isotonic(...)), (0.15291757819052776, Huber(...)), (0.1495782451851682, Linear(...))]Best Parameters: {'regressor__max_depth': 1, 'selection__k': 2, 'regressor__n_estimators': 27}Feature Scores: [ 0.  0.  1. 35.  6.  0.]Feature Mask: [False False False  True  True False]Feature Importances: [1. 0.]
+Selected: RandomForestScores: [(0.2578666735995749, RandomForest(...)), (0.11836063109079677, Isotonic(...)), (0.15291757819052776, Huber(...)), (0.1495782451851682, Linear(...))]Best Parameters: {'regressor__n_estimators': 27, 'selection__k': 2, 'regressor__max_depth': 1}Feature Scores: [ 0.  0.  1. 35.  6.  0.]Feature Mask: [False False False  True  True False]Feature Importances: [1. 0.]
 -- Ks
 Selected: LinearScores: [(0.4207724698222954, RandomForest(...)), (0.42577698490995824, Isotonic(...)), (0.48651243282766043, Huber(...)), (0.4928175162965875, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [ 3.  0.  5.  3. 36.  0.]Coefficients: [-0.0046145]Intercept: 0.45539522074307554Feature Mask: [False False False False  True False]
 
@@ -53,7 +53,7 @@ Selected: LinearScores: [(0.4207724698222954, RandomForest(...)), (0.42577698490
              Ks | 0.034
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(-0.31548553846141836, RandomForest(...)), (-0.5542987491154613, Isotonic(...)), (-0.6806043806217325, Huber(...)), (-0.43852469515924913, Linear(...))]Best Parameters: {'regressor__max_depth': 27, 'regressor__n_estimators': 9, 'selection__k': 4}Feature Scores: [0. 0. 1. 0. 4.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.341 0.106 0.288 0.264]
+Selected: RandomForestScores: [(-0.31548553846141836, RandomForest(...)), (-0.5542987491154613, Isotonic(...)), (-0.6806043806217325, Huber(...)), (-0.43852469515924913, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 27, 'regressor__n_estimators': 9}Feature Scores: [0. 0. 1. 0. 4.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.341 0.106 0.288 0.264]
 -- Doubles
 Selected: LinearScores: [(-0.10322293220084695, RandomForest(...)), (-0.38034920921801957, Isotonic(...)), (-0.21787437404521906, Huber(...)), (-0.14911687935727322, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [3. 0. 0. 0. 1.]Coefficients: [0.00025598 0.00120791]Intercept: 0.02703398557977565Feature Mask: [ True False False False  True]
 -- HomeRuns
@@ -84,7 +84,7 @@ Pitching Features
 CF Jones, C        24| .298/.352/.434 107  82 | .298/.352/.434 107 117 | -3---999  11 |    || 118 || ML     +  |
 CF Jordan, B       23| .347/.398/.491 120  98 | .302/.356/.436 108  69 | -2---868   7 |  + || 117 || ML    5   |
 CF Gibson, K       33| .202/.267/.382  86  96 | .295/.366/.505 115 122 | ------33   0 |  + || 110 || ML        |
-CF Rice, J         37| .264/.321/.433 101 102 | .260/.317/.431 100 104 | -1---862   5 |  + || 105 || ML   F    |
+CF Rice, J         37| .264/.321/.433 101 102 | .260/.317/.431 100 104 | -1---862   5 |  + || 105 || AAA  F    |
 2B Herr, T         34| .279/.350/.359 100  76 | .279/.350/.356  99  80 | -262----   3 | +- || 102 || ML   F +  |
 3B Martinez, C     24| .324/.376/.425 110 141 | .275/.331/.382  98 129 | -3362---   1 |  - || 101 || ML        |
 SS Knoblauch, C    22| .259/.319/.353  93     | .255/.316/.369  94     | -3726---   6 | -+ || 100 || AAA   3   |
@@ -95,10 +95,10 @@ CF Williams, B     21| .214/.278/.328  84     | .214/.278/.328  84     | -3---49
 CF Howard, T       25| .253/.311/.366  93     | .253/.311/.366  93     | -1---544   0 |  + ||  93 || AAA       |
 C  Bailey, M       28| .181/.263/.268  75  86 | .227/.326/.335  93 106 | 64---212   3 |  + ||  93 || ML        |
 SS Gerber, C       31| .157/.199/.186  56  37 | .238/.276/.298  80  79 | -4898---  16 |  - ||  92 || AAA    +~ |
-SS Bernazard, T    33| .167/.234/.261  69  77 | .209/.273/.325  82  70 | -3937---  11 |    ||  91 || AA        |
+SS Bernazard, T    33| .167/.234/.261  69  77 | .209/.273/.325  82  70 | -3937---  11 |    ||  91 || ML        |
 CF Buhner, J       25| .250/.311/.433  99  86 | .205/.269/.377  86  87 | -2---556   3 |  - ||  91 || AA    8   |
 3B Oberkfell, K    34| .228/.290/.296  83 103 | .221/.284/.301  82  69 | -3783---   9 |  + ||  91 || ML   F +  |
-CF Clark, D        28| .219/.280/.329  84     | .223/.283/.331  85     | -2---377   5 |    ||  90 || AAA    +  |
+CF Clark, D        28| .219/.280/.329  84     | .223/.283/.331  85     | -2---377   5 |    ||  90 || AA     +  |
 C  Taubensee, E    21| .215/.276/.330  83  36 | .219/.280/.332  84   0 | 71------   4 |  + ||  88 || AAA   4   |
 CF Azocar, O       25| .191/.232/.249  68     | .279/.315/.354  93     | -2---433   0 | ++ ||  88 || AAA       |
 3B Cooper, S       22| .161/.203/.257  63     | .209/.249/.308  76     | -44941-4  13 |  + ||  87 || AAA       |
@@ -128,8 +128,8 @@ MR Don Gleaton, J  F +   ML 32 |  9.5  5.7  3.6  0.9 |  80  76 |  99 115 |  + | 
 SP Robinson, D       +   ML 33 | 10.8  5.5  3.1  1.0 |  65  68 |  90  90 | ++ |  78/ 72 ||  78 ||
 SP Hawkins, A        +   ML 30 | 11.7  2.7  3.8  0.6 |  74  65 |  78  75 |  + |  75/ 67 ||  75 ||
 SP Bordi, R        F     ML 31 |  9.9  5.4  3.0  2.2 |  56  64 |  87 117 | -+ |  73/ 67 ||  73 ||
-SP Can Boyd, O           ML 30 | 11.5  7.1  2.9  1.7 |  71  57 |  71  88 |  + |  71/ 61 ||  71 ||
-MR Henry, D        F    AAA 28 |  8.0 10.6  6.3  2.3 |  69     |  75     |    |  65/ 64 ||  65 ||
+SP Can Boyd, O          AAA 30 | 11.5  7.1  2.9  1.7 |  71  57 |  71  88 |  + |  71/ 61 ||  71 ||
+MR Henry, D        F     ML 28 |  8.0 10.6  6.3  2.3 |  69     |  75     |    |  65/ 64 ||  65 ||
 SP Show, E         F +   ML 34 | 11.7  6.2  5.0  1.3 |  64  67 |  66  61 |  - |  65/ 57 ||  65 ||
 SP Harkey, M            AAA 23 | 11.0  5.0  5.6  1.7 |  64     |  64     |  + |  64/ 55 ||  64 ||
 SP Brown, K             AAA 26 | 11.9  8.7  4.8  1.1 |  66  87 |  66  66 |    |  64/ 57 ||  64 ||
@@ -156,27 +156,27 @@ MR Batista, M             A 19 | 10.8  5.3  8.6  3.2 |  49     |  49     | -  | 
 SP Urbina, U        7     A 16 | 13.6  5.8 10.5  4.5 |  34     |  36     |  + |  34/ 31 ||  34 ||
 
  (25) ML               | (16) AAA              | (15) AA               | (14) A                | ( 2) DL               |
- SP Can Boyd, O     30 | SP Brown, K        26 | SP Arnsberg, B     26 | SP Avery, S        20 | 1B Mattingly, D    29 |
- SP Hawkins, A      30 | SP Cook, M         26 | SP Meacham, R      22 | SP Hutton, M       20 | SS Baez, K         23 |
- SP Scott, M        35 | SP Harkey, M       23 | SP Springer, D     25 | SP Lima, J         17 |                       |
- SP Show, E         34 | SP Leiter, M       27 | SP Valera, J       21 | SP Urbina, U       16 |                       |
- SP Tewksbury, B    29 | MR Christopher, M  26 | MR Easley, L       28 | MR Batista, M      19 |                       |
- MR Bordi, R        31 | MR Henry, D        28 | MR Harris, R       21 | MR Eischen, J      20 |                       |
- MR Frey, S         26 | MR Proctor, D      22 | MR Mauser, T       23 | MR Patterson, D    19 |                       |
+ SP Hawkins, A      30 | SP Brown, K        26 | SP Arnsberg, B     26 | SP Avery, S        20 | 1B Mattingly, D    29 |
+ SP Scott, M        35 | SP Can Boyd, O     30 | SP Meacham, R      22 | SP Hutton, M       20 | SS Baez, K         23 |
+ SP Show, E         34 | SP Cook, M         26 | SP Springer, D     25 | SP Lima, J         17 |                       |
+ SP Tewksbury, B    29 | SP Harkey, M       23 | SP Valera, J       21 | SP Urbina, U       16 |                       |
+ MR Bordi, R        31 | SP Leiter, M       27 | MR Easley, L       28 | MR Batista, M      19 |                       |
+ MR Frey, S         26 | MR Christopher, M  26 | MR Harris, R       21 | MR Eischen, J      20 |                       |
+ MR Henry, D        28 | MR Proctor, D      22 | MR Mauser, T       23 | MR Patterson, D    19 |                       |
  MR Hoyt, L         35 | MR Wright, R       31 | MR Patterson, K    26 | 1B Bullett, S      21 |                       |
  MR Robinson, D     33 |  C Taubensee, E    21 |  C Johnson, B      30 | 1B Gainer, J       23 |                       |
  MR Walter, G       29 | 2B Gerber, C       31 | 3B Meulens, H      23 | 3B Andrews, S      18 |                       |
- CL Don Gleaton, J  32 | 2B Knoblauch, C    22 | SS Bernazard, T    33 | LF Shelton, B      20 |                       |
-  C Bailey, M       28 | 3B Cooper, S       22 | LF Buhner, J       25 | CF Mieske, M       22 |                       |
-  C Carter, G       36 | LF Azocar, O       25 | LF Gerhart, K      29 | CF White, R        18 |                       |
- 2B Herr, T         34 | CF Williams, B     21 | LF Lennon, P       22 | RF Harris, D       22 |                       |
- 2B Oberkfell, K    34 | RF Clark, D        28 | CF Hughes, K       26 |                       |                       |
+ CL Don Gleaton, J  32 | 2B Knoblauch, C    22 | LF Buhner, J       25 | LF Shelton, B      20 |                       |
+  C Bailey, M       28 | 3B Cooper, S       22 | LF Gerhart, K      29 | CF Mieske, M       22 |                       |
+  C Carter, G       36 | LF Azocar, O       25 | LF Lennon, P       22 | CF White, R        18 |                       |
+ 2B Herr, T         34 | LF Rice, J         37 | CF Hughes, K       26 | RF Harris, D       22 |                       |
+ 2B Oberkfell, K    34 | CF Williams, B     21 | RF Clark, D        28 |                       |                       |
  2B Ray, J          33 | RF Howard, T       25 |                       |                       |                       |
  3B Martinez, C     24 |                       |                       |                       |                       |
+ SS Bernazard, T    33 |                       |                       |                       |                       |
  SS Gagne, G        28 |                       |                       |                       |                       |
  LF Lombardi, P     27 |                       |                       |                       |                       |
  LF Pasqua, D       28 |                       |                       |                       |                       |
- LF Rice, J         37 |                       |                       |                       |                       |
  RF Brunansky, T    29 |                       |                       |                       |                       |
  RF Jones, C        24 |                       |                       |                       |                       |
  RF Jordan, B       23 |                       |                       |                       |                       |
@@ -184,17 +184,20 @@ SP Urbina, U        7     A 16 | 13.6  5.8 10.5  4.5 |  34     |  36     |  + | 
 Total:72 (target 70-75)
 Balance:38/34 = 1.118 (ideal: 1.273)
 
+  ML -> AAA  SP Oil Can Boyd
   ML -> AAA  MR Ricky Wright
-  ML -> AA   SS Tony Bernazard
+  ML -> AAA  LF Jim Rice
+ AAA -> ML   MR Dwayne Henry
  AAA -> ML   MR LaMarr Hoyt
- AAA -> AA   SP Dennis Springer
  AAA -> AA   MR Tim Mauser
  AAA -> AA   SP Brad Arnsberg
  AAA -> AA    C Bob Johnson
+ AAA -> AA   RF Dave Clark
+ AAA -> AA   SP Dennis Springer
   AA -> AAA  SP Mark Leiter
   AA -> AAA  LF Oscar Azocar
-  AA -> A    LF Ben Shelton
   AA -> A    MR Miguel Batista
+  AA -> A    LF Ben Shelton
    A -> AAA  MR Dave Proctor
    A -> AAA  2B Chuck Knoblauch
   DL -> ML   2B Tom Herr
@@ -204,13 +207,13 @@ LaMarr Hoyt
 Bob Tewksbury
 Don Robinson
 Andy Hawkins
-Oil Can Boyd
+Rich Bordi
 
 LR
 Mike Scott
 
 MR
-Rich Bordi
+Dwayne Henry
 Eric Show
 
 SU
@@ -223,73 +226,74 @@ Gene Walter
 NONE
 
 
-BP Ability: 117
-BP Endrnce: 13.0
+BP Ability: 116
+BP Endrnce: 12.5
 
 --- Slow Hook ---
 
 vs RHP
  C| Bailey, M       (D)                 | C| ( 1) Carter, G      
-1B| Gibson, K       (D) Carter, G       |1B| ( 1) Brunansky, T   
-2B| Herr, T         (D) Oberkfell, K    |2B| ( 1) Oberkfell, K   
+1B| Gibson, K       (D) Carter, G       |1B| ( 1) Ray, J         
+2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Bernazard, T   
 3B| Martinez, C     (D) Oberkfell, K    |3B| ( 1) Oberkfell, K   
-SS| Gagne, G        (D)                 |SS| ( 1) Oberkfell, K   
-LF| Rice, J         (D)                 |LF| ( 1) Brunansky, T   
-CF| Jones, C        (D)                 |CF| ( 1) Brunansky, T   
-RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
+SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
+LF| Jordan, B       (D)                 |LF| ( 1) Pasqua, D      
+CF| Jones, C        (D)                 |CF| ( 1) Pasqua, D      
+RF| Brunansky, T    (D) Pasqua, D       |RF| ( 1) Pasqua, D      
 
 vs RHP+DH
  C| Bailey, M       (D)                 | C| ( 1) Carter, G      
-1B| Brunansky, T    (D) Carter, G       |1B| ( 1) Ray, J         
-2B| Herr, T         (D) Oberkfell, K    |2B| ( 1) Oberkfell, K   
+1B| Ray, J          (D) Carter, G       |1B| ( 1) Oberkfell, K   
+2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Bernazard, T   
 3B| Martinez, C     (D) Oberkfell, K    |3B| ( 1) Oberkfell, K   
-SS| Gagne, G        (D)                 |SS| ( 1) Oberkfell, K   
-LF| Rice, J         (D)                 |LF| ( 1) Pasqua, D      
+SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
+LF| Jordan, B       (D)                 |LF| ( 1) Pasqua, D      
 CF| Jones, C        (D)                 |CF| ( 1) Pasqua, D      
-RF| Jordan, B       (D)                 |RF| ( 1) Pasqua, D      
-DH| Gibson, K       (D)                 |DH| ( 1) Ray, J         
+RF| Brunansky, T    (D) Pasqua, D       |RF| ( 1) Pasqua, D      
+DH| Gibson, K       (D)                 |DH| ( 1) Bernazard, T   
 
 vs LHP
  C| Lombardi, P     (D) Bailey, M       | C| ( 1) Bailey, M      
-1B| Ray, J          (D) Bailey, M       |1B| ( 1) Brunansky, T   
-2B| Herr, T         (D) Oberkfell, K    |2B| ( 1) Oberkfell, K   
+1B| Ray, J          (D) Bailey, M       |1B| ( 1) Oberkfell, K   
+2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Oberkfell, K   
 3B| Martinez, C     (D) Oberkfell, K    |3B| ( 1) Oberkfell, K   
-SS| Gagne, G        (D)                 |SS| ( 1) Oberkfell, K   
-LF| Rice, J         (D)                 |LF| ( 1) Brunansky, T   
-CF| Jones, C        (D)                 |CF| ( 1) Brunansky, T   
-RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
+SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
+LF| Jordan, B       (D)                 |LF| ( 1) Gibson, K      
+CF| Jones, C        (D)                 |CF| ( 1) Gibson, K      
+RF| Brunansky, T    (D) Pasqua, D       |RF| ( 1) Gibson, K      
 
 vs LHP+DH
- C| Lombardi, P     (D) Bailey, M       | C| ( 1) Bailey, M      
-1B| Brunansky, T    (D) Bailey, M       |1B| ( 1) Oberkfell, K   
-2B| Herr, T         (D) Oberkfell, K    |2B| ( 1) Oberkfell, K   
+ C| Bailey, M       (D)                 | C| ( 1) Carter, G      
+1B| Brunansky, T    (D) Carter, G       |1B| ( 1) Oberkfell, K   
+2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Oberkfell, K   
 3B| Martinez, C     (D) Oberkfell, K    |3B| ( 1) Oberkfell, K   
-SS| Gagne, G        (D)                 |SS| ( 1) Oberkfell, K   
-LF| Rice, J         (D)                 |LF| ( 1) Gibson, K      
+SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
+LF| Lombardi, P     (D) Pasqua, D       |LF| ( 1) Gibson, K      
 CF| Jones, C        (D)                 |CF| ( 1) Gibson, K      
 RF| Jordan, B       (D)                 |RF| ( 1) Gibson, K      
 DH| Ray, J          (D)                 |DH| ( 1) Gibson, K      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. RF R Jordan, B        RF R Jordan, B        3B R Martinez, C      3B R Martinez, C     
-2. CF R Jones, C         CF R Jones, C         CF R Jones, C         CF R Jones, C        
-3. LF R Rice, J          LF R Rice, J          LF R Rice, J          LF R Rice, J         
-4. 1B L Gibson, K        DH L Gibson, K        RF R Jordan, B        RF R Jordan, B       
-5. 2B S Herr, T          2B S Herr, T          1B S Ray, J           DH S Ray, J          
-6. 3B R Martinez, C      3B R Martinez, C      2B S Herr, T          2B S Herr, T         
-7.  C S Bailey, M         C S Bailey, M        SS R Gagne, G         SS R Gagne, G        
-8. SS R Gagne, G         1B R Brunansky, T      C R Lombardi, P       C R Lombardi, P     
-9.  P                    SS R Gagne, G          P                    1B R Brunansky, T    
+1. 2B S Herr, T          2B S Herr, T          2B S Herr, T          2B S Herr, T         
+2. LF R Jordan, B        LF R Jordan, B        3B R Martinez, C      3B R Martinez, C     
+3. CF R Jones, C         CF R Jones, C         CF R Jones, C         CF R Jones, C        
+4. 1B L Gibson, K        DH L Gibson, K        LF R Jordan, B        RF R Jordan, B       
+5. 3B R Martinez, C      3B R Martinez, C      1B S Ray, J           DH S Ray, J          
+6.  C S Bailey, M         C S Bailey, M        SS R Gagne, G         SS R Gagne, G        
+7. RF R Brunansky, T     RF R Brunansky, T      C R Lombardi, P      LF R Lombardi, P     
+8. SS R Gagne, G         1B S Ray, J           RF R Brunansky, T     1B R Brunansky, T    
+9.  P                    SS R Gagne, G          P                     C S Bailey, M       
 
 --- Bunt for Hit ---
 
---- Stealing @ 64.6 ---
+--- Stealing @ 64.2 ---
 RF Brian Jordan              23| RF : 110       7  25     : 142 | RF : 121       7  29  40  13 : 210 |   6 | 216 | -2---868 |   5     $300k r |  $3.97M: $6.42M |  p242 | New York (Y) Yankees | ++++
 SS Greg Gagne                28| SS :  85      14   7     : 106 | SS :  99      14 -15  25   5 : 127 |   5 | 132 | -3338--- |    +    $300k a |  $1.11M:  $1.8M |  p279 | New York (Y) Yankees | *
 DH Kirk Gibson               33| DH : 110       0  17     : 127 |    :                         :   0 |   0 | 127 | ------33 |           $6Mx2 |   $2.7M: $4.36M |  p298 | New York (Y) Yankees | ***
 2B Tom Herr                  34| 2B :  99       3  11     : 113 |    :                         :   0 |  -2 | 111 | -262---- |  F +      $5M   |  $1.75M: $2.82M |  p367 | New York (Y) Yankees | **
 
 --- Waive ---
+SS Tony Bernazard            33| SS :  80      11   0     :  91 |    :                         :   0 |   0 |  91 | -3937--- |        $3.25Mx2 |        :        |   p57 | New York (Y) Yankees | *
 2B Ken Oberkfell             34| 3B :  82       9   0     :  91 |    :                         :   0 |  -2 |  89 | -3783--- |  F +   $3.85M   |        :        |  p600 | New York (Y) Yankees | *
 SP Eric Show                 34| SP :      65       0     :  65 |    :                         :   0 |  -2 |  63 |          |  F +    $500k   |        :        |  p770 | New York (Y) Yankees | *
 
@@ -605,9 +609,9 @@ CATCHER
  5 | Gibson, K        110 -33  77 | Bailey, M         75   3  78 | Jordan, B        108 -33  75
  6 | Jones, C         107 -33  74 | Martinez, C      110 -33  77 | Jones, C         107 -33  74
  7 | Carter, G         72   2  74 | Jones, C         107 -33  74 | Carter, G         72   2  74
- 8 | Lombardi, P       82 -13  69 | Carter, G         72   2  74 | Rice, J          100 -33  67
- 9 | Rice, J          100 -33  67 | Ray, J           103 -33  70 | Lombardi, P       80 -13  67
-10 | Martinez, C      100 -33  67 | Rice, J          101 -33  68 | Herr, T           99 -33  66
+ 8 | Lombardi, P       82 -13  69 | Carter, G         72   2  74 | Lombardi, P       80 -13  67
+ 9 | Martinez, C      100 -33  67 | Ray, J           103 -33  70 | Rice, J          100 -33  67
+10 | Rice, J          100 -33  67 | Rice, J          101 -33  68 | Herr, T           99 -33  66
 
 FIRST_BASE
  1 | Mattingly, D     125   5 130 | Jordan, B        120  -1 119 | Mattingly, D     127   5 132
@@ -698,8 +702,8 @@ DESIGNATED_HITTER
  2 | Jordan, B        110   0 110 | Mattingly, D     114   0 114 | Gibson, K        115   0 115
  3 | Gibson, K        110   0 110 | Martinez, C      110   0 110 | Jordan, B        108   0 108
  4 | Jones, C         107   0 107 | Jones, C         107   0 107 | Jones, C         107   0 107
- 5 | Rice, J          100   0 100 | Ray, J           103   0 103 | Rice, J          100   0 100
- 6 | Martinez, C      100   0 100 | Rice, J          101   0 101 | Herr, T           99   0  99
+ 5 | Martinez, C      100   0 100 | Ray, J           103   0 103 | Rice, J          100   0 100
+ 6 | Rice, J          100   0 100 | Rice, J          101   0 101 | Herr, T           99   0  99
  7 | Herr, T           99   0  99 | Herr, T          100   0 100 | Martinez, C       98   0  98
  8 | Knoblauch, C      94   0  94 | Buhner, J         99   0  99 | Knoblauch, C      94   0  94
  9 | Ray, J            93   0  93 | Gagne, G          96   0  96 | Bailey, M         93   0  93
@@ -1716,18 +1720,18 @@ AL
 Eastern Division ----+
 Toronto Blue Jays    | 102.3  99.5 101.8 | 102.4 103.1 105.5 |  87- 75 0.536 |  59- 42 0.584 |  92- 70 0.568 ( 5) 
 Boston Red Sox       | 100.3  99.3  99.6 | 103.1 104.0 106.9 |  86- 76 0.531 |  49- 52 0.485 |  81- 81 0.500 ( 8) 
-Detroit Tigers       |  96.6  96.2  92.7 |  98.4  98.8  97.1 |  72- 90 0.447 |  53- 48 0.525 |  80- 82 0.494 ( 9) 
+Detroit Tigers       |  96.6  96.2  92.7 |  98.4  98.8  97.1 |  72- 90 0.447 |  53- 48 0.525 |  80- 82 0.494 (10) 
 New York (Y) Yankees |  94.7  93.1  87.4 |  96.8  98.9  95.7 |  67- 95 0.412 |  28- 73 0.277 |  53-109 0.327 (17) 
 Western Division ----+
 Seattle Mariners     | 107.1 107.6 114.1 |  99.5 100.8 100.3 |  92- 70 0.567 |  71- 30 0.703 | 106- 56 0.654 ( 1) 
-Oakland Athletics    |  98.9  99.5  98.4 |  96.4  95.2  91.4 |  72- 90 0.447 |  53- 48 0.525 |  80- 82 0.494 (10) 
+Oakland Athletics    |  98.9  99.5  98.4 |  96.4  95.2  91.4 |  72- 90 0.447 |  53- 48 0.525 |  80- 82 0.494 (11) 
 Kansas City Royals   |  97.4  97.3  94.7 | 103.3 105.5 108.5 |  83- 79 0.513 |  44- 57 0.436 |  75- 87 0.463 (12) 
 Texas Rangers        |  97.4  96.6  93.9 |  94.1  93.7  87.4 |  65- 97 0.402 |  47- 54 0.465 |  72- 90 0.444 (13) 
 
 NL
 Eastern Division ----+
 Atlanta Braves       | 106.1 106.6 112.2 | 109.5 110.8 119.0 | 104- 58 0.641 |  58- 43 0.574 |  97- 65 0.599 ( 4) 
-New York (M) Mets    |  98.1  99.3  97.4 |  95.3  97.6  92.8 |  73- 89 0.450 |  53- 48 0.525 |  80- 82 0.494 (11) 
+New York (M) Mets    |  98.1  99.3  97.4 |  95.3  97.6  92.8 |  73- 89 0.450 |  53- 48 0.525 |  80- 82 0.494 ( 9) 
 Philadelphia Phil... |  96.2  92.5  88.2 |  90.2  89.1  78.3 |  52-110 0.323 |  51- 50 0.505 |  71- 91 0.438 (14) 
 Montreal Expos       |  96.9 101.4  98.3 |  91.6  89.6  80.2 |  62-100 0.383 |  43- 58 0.426 |  66- 96 0.407 (16) 
 Pittsburgh Pirates   |  90.1  90.1  79.4 |  91.5  89.5  79.9 |  46-116 0.287 |  30- 71 0.297 |  47-115 0.290 (18) 
