@@ -34,7 +34,7 @@ Pitching: 8422/10167 0.453/0.547
              Ks | 0.067
 Features: Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.09149388412107311, RandomForest(...)), (0.02211344828119473, Isotonic(...)), (0.07699778173473737, Huber(...)), (0.07735391806082322, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [31.  0.  1.  3. 13.  2.  1.]Feature Mask: [ True False False False  True False False]Feature Importances: [0.882 0.118]
+Selected: RandomForestScores: [(0.09149388412107311, RandomForest(...)), (0.02211344828119473, Isotonic(...)), (0.07699778173473737, Huber(...)), (0.07735391806082322, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 56, 'regressor__max_depth': 3}Feature Scores: [31.  0.  1.  3. 13.  2.  1.]Feature Mask: [ True False False False  True False False]Feature Importances: [0.882 0.118]
 -- Doubles
 Selected: HuberScores: [(0.06432228081838749, RandomForest(...)), (0.07146473083709988, Isotonic(...)), (0.13577645595416732, Huber(...)), (0.11122023146016173, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [ 4. 47.  4. 26. 10.  0.  1.]Coefficients: [-0.00516078  0.04332328 -0.00618569  0.01251791  0.00587392  0.0024283 ]Intercept: 0.012150546659158191Feature Mask: [ True  True  True  True  True False  True]
 -- Triples
@@ -119,8 +119,8 @@ SS Hamilton, J     29| .256/.278/.334  80     | .256/.278/.334  80     | -2454--
 C  Pagnozzi, T     31| .258/.287/.333  81     | .258/.287/.334  81     | 5321-1-1   0 | -  ||  81 || AA      |
 RF Peltier, D      25| .260/.292/.306  79     | .260/.292/.319  81     | -321-112   0 |  - ||  81 || AA      |
 3B Selby, B        23| .256/.280/.312  79     | .257/.281/.317  79     | -245-514   1 |  - ||  80 || A       |
-LF Benitez, Y      21| .254/.271/.330  79     | .254/.271/.330  79     | -1---4-2   0 |  - ||  79 || A     T |
 RF T. McLemore, M  29| .262/.321/.343  84     | .234/.303/.316  78     | -2111212   0 | +  ||  79 || AA      |
+LF Benitez, Y      21| .254/.271/.330  79     | .254/.271/.330  79     | -1---4-2   0 |  - ||  79 || A     T |
 SS Castro, J       21| .254/.271/.312  78     | .254/.271/.299  75     | -2555---   4 |  - ||  79 || A       |
 RF Kieschnick, B   21| .253/.267/.301  76     | .253/.267/.301  76     | -1---3-5   2 |  - ||  78 || A       |
 
@@ -180,20 +180,20 @@ SP Jimenez, J           A 20 | 14.2  1.8  6.0  2.5 |  38     |  45     |  - |  4
 Total:64 (target 70-75)
 Balance:39/25 = 1.560 (ideal: 1.273)
 
-  ML -> AAA   C Brad Ausmus
   ML -> AAA  MR Rod Beck
- AAA -> ML   LF Doug Glanville
- AAA -> ML   3B Travis Fryman
+  ML -> AAA   C Brad Ausmus
  AAA -> ML    C John Orton
- AAA -> AA   CF Mark T. McLemore
+ AAA -> ML   3B Travis Fryman
+ AAA -> ML   LF Doug Glanville
  AAA -> AA   SS Rene Gonzales
+ AAA -> AA   CF Mark T. McLemore
  AAA -> A    LF Benny Agbayani
   AA -> AAA  1B Dave Hansen
-  AA -> AAA  3B Jeff McKnight
   AA -> AAA  LF Clay Bellinger
+  AA -> AAA  3B Jeff McKnight
    A -> ML   MR Tim Burke
-   A -> ML   RF Oddibe McDowell
    A -> ML   1B Shane Mack
+   A -> ML   RF Oddibe McDowell
    A -> AAA  2B Frank Menechino
    A -> AAA  SS Aaron Ledesma
    A -> AA   MR Todd Williams
@@ -210,12 +210,12 @@ LR
 Zane Smith
 
 MR
-Ed Vande Berg
+Steve Olin
 Bob Wickman
 
 SU
 Tim Burke
-Steve Olin
+Ed Vande Berg
 
 CL
 Frank DiPino
@@ -240,14 +240,14 @@ RF| Mack, S         (D) Glanville, D    |RF| ( 1) Young, M
 
 vs RHP+DH
  C| Salas, M        (D)                 | C| ( 1) Orton, J       
-1B| Mack, S         (D) Sharperson, M   |1B| ( 1) Anderson, D    
-2B| Gutierrez, R    (D) Sharperson, M   |2B| ( 1) Sharperson, M  
-3B| Naehring, T     (D)                 |3B| ( 1) Anderson, D    
+1B| Gutierrez, R    (D) Sharperson, M   |1B| ( 1) Young, M       
+2B| Naehring, T     (D) Sharperson, M   |2B| ( 1) Sharperson, M  
+3B| Anderson, D     (D)                 |3B| ( 1) Fryman, T      
 SS| Phillips, T     (D)                 |SS| ( 1) Fryman, T      
-LF| Young, M        (D) Glanville, D    |LF| ( 1) Glanville, D   
+LF| McDowell, O     (D) Glanville, D    |LF| ( 1) Young, M       
 CF| A. Miller, K    (D) Glanville, D    |CF| ( 1) Glanville, D   
-RF| McDowell, O     (D) Glanville, D    |RF| ( 1) Glanville, D   
-DH| Neel, T         (D)                 |DH| ( 1) Anderson, D    
+RF| Mack, S         (D) Glanville, D    |RF| ( 1) Young, M       
+DH| Neel, T         (D)                 |DH| ( 1) Young, M       
 
 vs LHP
  C| Salas, M        (D)                 | C| ( 1) Orton, J       
@@ -271,14 +271,14 @@ RF| Mack, S         (D) Glanville, D    |RF| ( 1) Young, M
 DH| Neel, T         (D)                 |DH| ( 1) Young, M       
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. RF R Mack, S          1B R Mack, S          CF R A. Miller, K     CF R A. Miller, K    
+1. RF R Mack, S          RF R Mack, S          CF R A. Miller, K     CF R A. Miller, K    
 2. CF R A. Miller, K     CF R A. Miller, K     RF R Mack, S          RF R Mack, S         
 3. SS S Phillips, T      SS S Phillips, T      SS S Phillips, T      SS S Phillips, T     
-4. 3B R Naehring, T      3B R Naehring, T      2B R Naehring, T      2B R Naehring, T     
+4. 3B R Naehring, T      2B R Naehring, T      2B R Naehring, T      2B R Naehring, T     
 5. 1B L Neel, T          DH L Neel, T          1B L Neel, T          DH L Neel, T         
-6. 2B R Gutierrez, R     2B R Gutierrez, R     LF L McDowell, O      1B R Gutierrez, R    
-7. LF L McDowell, O      RF L McDowell, O      3B R Anderson, D      LF L McDowell, O     
-8.  C L Salas, M         LF S Young, M          C L Salas, M         3B R Anderson, D     
+6. 2B R Gutierrez, R     1B R Gutierrez, R     LF L McDowell, O      1B R Gutierrez, R    
+7. LF L McDowell, O      LF L McDowell, O      3B R Anderson, D      LF L McDowell, O     
+8.  C L Salas, M         3B R Anderson, D       C L Salas, M         3B R Anderson, D     
 9.  P                     C L Salas, M          P                     C L Salas, M        
 
 --- Bunt for Hit ---
@@ -325,64 +325,64 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 3B Travis Fryman             24 | SS :  89       9 :  98 | SS :  91       9 : 100 |  +2 |          +10          :          +10          | +++++
 CF Damon Hollins             19 | CF :  78      10 :  88 | CF :  78      10 :  88 |  +0 |                       :                       | +++
 SS Jesse Garcia              20 | 2B :  76       6 :  82 | 2B :  76       6 :  82 |  +0 |                       :                       | +-
-3B Juan Castro               21 | SS :  75       4 :  79 | SS :  75       4 :  79 |  +0 |                       :                       | +++
 LF Brooks Kieschnick         21 | RF :  76       2 :  78 | RF :  76       2 :  78 |  +0 |                       :                       | ++
  C Einar Diaz                21 |  C :  77       8 :  85 |  C :  77       8 :  85 |  +0 |                       :                       | ++
 RF Yamil Benitez             21 | DH :  79       0 :  79 | DH :  79       0 :  79 |  +0 |                       :                       | +++
-LF Benny Agbayani            22 | CF :  84       6 :  90 | CF :  84       6 :  90 |  +0 |                       :                       | ++++
+3B Juan Castro               21 | SS :  75       4 :  79 | SS :  75       4 :  79 |  +0 |                       :                       | +++
 SS Aaron Ledesma             22 | SS :  82       9 :  91 | SS :  82       9 :  91 |  +0 |                       :                       | +++
+LF Benny Agbayani            22 | CF :  84       6 :  90 | CF :  84       6 :  90 |  +0 |                       :                       | ++++
 1B Brent Brede               22 | 1B :  83       3 :  86 | 1B :  83       3 :  86 |  +0 |                       :                +10    | ++
-CF Manny Martinez            23 | CF :  78       6 :  84 | CF :  78       6 :  84 |  +0 |                       :                       | ++-
-2B Frank Menechino           23 | 2B :  81       6 :  87 | 2B :  81       6 :  87 |  +0 |                       :                       | +++-
-RF Bill Selby                23 | 3B :  79       1 :  80 | 3B :  79       1 :  80 |  +0 |                       :                       | ++
-LF Doug Glanville            23 | CF :  85      13 :  98 | CF :  85      13 :  98 |  +0 |                       :                       | +++
 SS Ricky Gutierrez           23 | SS : 100       4 : 104 | SS : 100       4 : 104 |  +0 |                       :                       | +++++
+RF Bill Selby                23 | 3B :  79       1 :  80 | 3B :  79       1 :  80 |  +0 |                       :                       | ++
+2B Frank Menechino           23 | 2B :  81       6 :  87 | 2B :  81       6 :  87 |  +0 |                       :                       | +++-
+CF Manny Martinez            23 | CF :  78       6 :  84 | CF :  78       6 :  84 |  +0 |                       :                       | ++-
+LF Doug Glanville            23 | CF :  85      13 :  98 | CF :  85      13 :  98 |  +0 |                       :                       | +++
  C Brad Ausmus               24 |  C :  91       2 :  93 |  C :  91       2 :  93 |  +0 |                       :                       | +++++
-1B Dave Hansen               25 | 1B :  86       3 :  89 | 1B :  86       3 :  89 |  +0 |                       :                       | +++
-LF Clay Bellinger            25 | SS :  82      10 :  92 | SS :  82      10 :  92 |  +0 |                       :                       | +++-
 RF Dan Peltier               25 | 1B :  81       0 :  81 | 1B :  81       0 :  81 |  +0 |                       :                       | ++-
+LF Clay Bellinger            25 | SS :  82      10 :  92 | SS :  82      10 :  92 |  +0 |                       :                       | +++-
+1B Dave Hansen               25 | 1B :  86       3 :  89 | 1B :  86       3 :  89 |  +0 |                       :                       | +++
 3B Tim Naehring              26 | 3B : 124       9 : 133 | 3B : 124       9 : 133 |  +0 |                +10    :                       | ****^
  C Tim Spehr                 27 | DH :  85       0 :  85 | DH :  85       0 :  85 |  +0 |                       :                       | *
-1B Troy Neel                 28 | DH : 107       0 : 107 | DH : 107       0 : 107 |  +0 |                       :                       | **^
 RF Ruben Amaro Jr.           28 | DH :  84       0 :  84 | DH :  84       0 :  84 |  +0 |                       :                       | *
 RF Felix Jose                28 | CF :  83      11 :  94 | CF :  83      11 :  94 |  +0 |                       :                       | *
+1B Troy Neel                 28 | DH : 107       0 : 107 | DH : 107       0 : 107 |  +0 |                       :                       | **^
  C John Orton                28 |  C :  90       4 :  94 |  C :  90       4 :  94 |  +0 |                       :                       | *
-2B Jeff Hamilton             29 | 3B :  80       2 :  82 | 3B :  80       2 :  82 |  +0 |                       :                       | *
 CF Mark T. McLemore          29 | DH :  79       0 :  79 | DH :  79       0 :  79 |  +0 |                       :                       | *
-3B Jeff McKnight             30 | SS :  83       2 :  85 | SS :  83       2 :  85 |  +0 |                       :                       | *
+2B Jeff Hamilton             29 | 3B :  80       2 :  82 | 3B :  80       2 :  82 |  +0 |                       :                       | *
 RF Keith A. Miller           30 | CF : 111      10 : 121 | CF : 111      10 : 121 |  +0 |                       :                       | ***
+3B Jeff McKnight             30 | SS :  83       2 :  85 | SS :  83       2 :  85 |  +0 |                       :                       | *
  C Tom Pagnozzi              31 | 1B :  81       0 :  81 | 1B :  81       0 :  81 |  +0 |                       :                       | *
-2B Mike Sharperson           32 | 2B :  87       9 :  96 | 2B :  87       9 :  96 |  +0 |                       :                       | *^
  C Mark Salas                32 |  C :  93       4 :  97 |  C :  93       4 :  97 |  +0 |                       :                       | **^
-LF Mike Young                33 | LF :  94       3 :  97 | LF :  94       3 :  97 |  +0 |                       :                       | **^
+2B Mike Sharperson           32 | 2B :  87       9 :  96 | 2B :  87       9 :  96 |  +0 |                       :                       | *^
 SS Rene Gonzales             33 | DH :  87       0 :  87 | DH :  87       0 :  87 |  +0 |                       :                       | *
-1B Dave Anderson             33 | 3B :  95       9 : 104 | 3B :  95       9 : 104 |  +0 |                       :                       | **
 2B Ernie Riles               33 | DH :  88       0 :  88 | DH :  88       0 :  88 |  +0 |                       :                       | *
+1B Dave Anderson             33 | 3B :  95       9 : 104 | 3B :  95       9 : 104 |  +0 |                       :                       | **
+LF Mike Young                33 | LF :  94       3 :  97 | LF :  94       3 :  97 |  +0 |                       :                       | **^
 SS Tony Phillips             34 | SS : 120      14 : 134 | SS : 120      14 : 134 |  +0 |                       :                       | ****^
 
 Pitchers
 Runs, Hits, Doubles, Homeruns, Walks, Strikeouts, Groundball Pct., Endurance
 SP Jose Jimenez              20 | SP :      40     :  40 | SP :      40     :  40 |  +0 |                          :                          | +++
 MR Armando Benitez           21 | MR :      59     :  59 | MR :      59     :  59 |  +0 |                          :                          | +++++
-SP Miguel Batista            22 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | +++
-MR Todd Williams             22 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | +-
 SP Brian Moehler             22 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                          :                          | +++
+MR Todd Williams             22 | MR :      41     :  41 | MR :      41     :  41 |  +0 |                          :                          | +-
+SP Miguel Batista            22 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | +++
 SP Allen Watson              23 | SP :      46     :  46 | SP :      46     :  46 |  +0 |                          :                          | ++-
 MR Chad Fox                  23 | MR :      44     :  44 | MR :      44     :  44 |  +0 |                          :                          | +++-
 SP Ricky Bones               24 | SP :      63     :  63 | SP :      63     :  63 |  +0 |                          :                          | ++++
-MR Bob Wickman               24 | MR :      77     :  77 | MR :      77     :  77 |  +0 |                          :                          | +++++
 MR Mark Wohlers              24 | MR :      56     :  56 | MR :      56     :  56 |  +0 |                          :                          | +++++
+MR Bob Wickman               24 | MR :      77     :  77 | MR :      77     :  77 |  +0 |                          :                          | +++++
 MR Rod Beck                  25 | MR :      76     :  76 | MR :      76     :  76 |  +0 |                          :                          | ++++-
-MR Steve Olin                28 | MR :      84     :  84 | MR :      84     :  84 |  +0 |                          :                          | **^
 SP Dennis Springer           28 | SP :      49     :  49 | SP :      49     :  49 |  +0 |                          :                          | *
+MR Steve Olin                28 | MR :      84     :  84 | MR :      84     :  84 |  +0 |                          :                          | **^
 SP Floyd Youmans             29 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                          :                          | *^
 SP Bryan Hickerson           30 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                          :                          | *
 SP Francisco Oliveras        31 | SP :     113     : 113 | SP :     113     : 113 |  +0 |                          :                          | **^
 SP Mark W. Davis             33 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                          :                          | *
 SP Zane Smith                33 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                          :                          | *
 MR Mark Brown                34 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                          :                          | *
-SP Scott Holman              35 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                          :                          | *^
 MR Ed Vande Berg             35 | MR :      84     :  84 | MR :      84     :  84 |  +0 |                          :                          | *^
+SP Scott Holman              35 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                          :                          | *^
 SP Dave Stewart              36 | SP :     160     : 160 | SP :     160     : 160 |  +0 |                          :                          | ***
 CL Frank DiPino              37 | MR :     138     : 138 | MR :     138     : 138 |  +0 |                          :                          | ****^
 SP Len Barker                38 | SP :      99     :  99 | SP :      99     :  99 |  +0 |                          :                          | *
@@ -1847,28 +1847,28 @@ East ----------------+
 Detroit Tigers       | 108.6 109.3 117.0 | 111.2 109.1 119.3 | 107- 55 0.661 |   0-  0 0.500 | 107- 55 0.660 ( 1) 
 Cleveland Indians    | 100.2 101.3 101.5 | 100.2 102.1 102.2 |  84- 78 0.518 |   0-  0 0.500 |  84- 78 0.519 (10) 
 New York (A) Yankees |  99.4 100.0  99.5 |  96.1  98.5  94.6 |  76- 86 0.469 |   0-  0 0.500 |  76- 86 0.469 (12) 
-Baltimore Orioles    | 100.8  99.7 100.5 |  95.7  90.4  85.2 |  69- 93 0.423 |   0-  0 0.500 |  69- 93 0.426 (13) 
-Boston Red Sox       |  98.6  99.4  98.0 |  92.5  92.7  84.8 |  66- 96 0.408 |   0-  0 0.500 |  66- 96 0.407 (16) 
+Baltimore Orioles    | 100.8  99.7 100.5 |  95.7  90.4  85.2 |  69- 93 0.423 |   0-  0 0.500 |  69- 93 0.426 (14) 
+Boston Red Sox       |  98.6  99.4  98.0 |  92.5  92.7  84.8 |  66- 96 0.408 |   0-  0 0.500 |  66- 96 0.407 (15) 
 West ----------------+
-California Angels    | 102.7 104.2 106.8 | 109.1 113.4 120.6 | 101- 61 0.624 |   0-  0 0.500 | 101- 61 0.623 ( 4) 
+California Angels    | 102.8 104.2 106.8 | 109.1 113.4 120.6 | 101- 61 0.624 |   0-  0 0.500 | 101- 61 0.623 ( 4) 
 Chicago (A) White... | 102.4 102.1 104.5 | 111.5 108.5 119.2 |  98- 64 0.608 |   0-  0 0.500 |  98- 64 0.605 ( 5) 
-Oakland Athletics    | 101.3 101.4 102.6 | 108.7 110.9 118.4 |  97- 65 0.596 |   0-  0 0.500 |  97- 65 0.599 ( 6) 
+Oakland Athletics    | 101.3 101.4 102.7 | 108.7 110.9 118.4 |  97- 65 0.596 |   0-  0 0.500 |  97- 65 0.599 ( 6) 
 Minnesota Twins      |  93.6  92.7  85.8 |  85.5  85.1  68.8 |  42-120 0.258 |   0-  0 0.500 |  42-120 0.259 (19) 
 Texas Rangers        |  90.0  88.8  77.7 |  74.5  74.3  44.8 |  17-145 0.108 |   0-  0 0.500 |  17-145 0.105 (20) 
 
 National League
 East ----------------+
 St. Louis Cardinals  | 109.0 109.4 117.4 | 110.2 108.2 117.6 | 106- 56 0.656 |   0-  0 0.500 | 106- 56 0.654 ( 2) 
-New York (N) Mets    |  98.8  97.5  96.3 | 112.1 115.6 125.2 |  96- 66 0.592 |   0-  0 0.500 |  96- 66 0.593 ( 7) 
-Philadelphia Phil... |  97.6  96.6  94.1 | 101.5  98.9 100.4 |  76- 86 0.472 |   0-  0 0.500 |  76- 86 0.469 (11) 
+New York (N) Mets    |  98.9  97.5  96.3 | 112.1 115.6 125.2 |  96- 66 0.593 |   0-  0 0.500 |  96- 66 0.593 ( 7) 
+Philadelphia Phil... |  97.7  96.6  94.1 | 101.5  98.9 100.4 |  76- 86 0.472 |   0-  0 0.500 |  76- 86 0.469 (11) 
 Pittsburgh Pirates   |  95.0  93.7  88.3 |  94.4  91.4  85.0 |  58-104 0.361 |   0-  0 0.500 |  58-104 0.358 (17) 
-Chicago (N) Cubs     | 100.6  99.5 100.1 |  84.7  85.7  68.9 |  52-110 0.322 |   0-  0 0.500 |  52-110 0.321 (18) 
+Chicago (N) Cubs     | 100.3  99.5  99.8 |  84.7  85.7  68.9 |  52-110 0.321 |   0-  0 0.500 |  52-110 0.321 (18) 
 West ----------------+
-Houston Astros       | 107.3 109.4 115.7 | 104.9 109.0 113.0 | 102- 60 0.631 |   0-  0 0.500 | 102- 60 0.630 ( 3) 
+Houston Astros       | 107.3 109.4 115.8 | 104.9 109.0 113.0 | 102- 60 0.631 |   0-  0 0.500 | 102- 60 0.630 ( 3) 
 Atlanta Braves       | 101.4 102.2 103.6 | 105.8 107.5 112.7 |  93- 69 0.577 |   0-  0 0.500 |  93- 69 0.574 ( 8) 
 San Francisco Giants |  98.5  99.9  98.4 | 107.7 109.8 116.5 |  92- 70 0.568 |   0-  0 0.500 |  92- 70 0.568 ( 9) 
-Los Angeles Dodgers  |  96.0  95.5  91.3 |  97.3  97.3  94.5 |  69- 93 0.427 |   0-  0 0.500 |  69- 93 0.426 (14) 
-Cincinnati Reds      |  98.3  97.2  95.4 |  96.6  91.5  87.4 |  66- 96 0.410 |   0-  0 0.500 |  66- 96 0.407 (15) 
+Los Angeles Dodgers  |  96.0  95.5  91.4 |  97.3  97.3  94.5 |  69- 93 0.427 |   0-  0 0.500 |  69- 93 0.426 (13) 
+Cincinnati Reds      |  98.3  97.2  95.4 |  96.6  91.5  87.4 |  66- 96 0.410 |   0-  0 0.500 |  66- 96 0.407 (16) 
                      |             102.9 |             110.3 |
 
 --- Non Top prospects ---
