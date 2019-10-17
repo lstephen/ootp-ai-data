@@ -42,7 +42,7 @@ Selected: IsotonicScores: [(1.0, RandomForest(...)), (1.0, Isotonic(...)), (1.0,
 -- HomeRuns
 Selected: IsotonicScores: [(0.025813391252341573, RandomForest(...)), (-0.4237995485222576, Isotonic(...)), (-0.6645684860634644, Huber(...)), (-0.5842161663497416, Linear(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 8.  3. 10.  6.  8.  0.]Feature Mask: [False False  True False False False]
 -- Walks
-Selected: RandomForestScores: [(0.012991145991894068, RandomForest(...)), (-0.3859050882715233, Isotonic(...)), (-0.16396910568328474, Huber(...)), (-0.2506472915535807, Linear(...))]Best Parameters: {'selection__k': 6, 'regressor__max_depth': 48, 'regressor__n_estimators': 12}Feature Scores: [3. 2. 3. 6. 4. 1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.108 0.123 0.444 0.139 0.157 0.03 ]
+Selected: RandomForestScores: [(0.012991145991894068, RandomForest(...)), (-0.3859050882715233, Isotonic(...)), (-0.16396910568328474, Huber(...)), (-0.2506472915535807, Linear(...))]Best Parameters: {'regressor__n_estimators': 12, 'selection__k': 6, 'regressor__max_depth': 48}Feature Scores: [3. 2. 3. 6. 4. 1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.108 0.123 0.444 0.139 0.157 0.03 ]
 -- Ks
 Selected: IsotonicScores: [(-0.8734986429566733, RandomForest(...)), (-0.5550941379601538, Isotonic(...)), (-1.0956211775068425, Huber(...)), (-1.5066496315193776, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [0. 0. 0. 0. 0. 0.]Feature Mask: [False False False False  True False]
 
@@ -59,7 +59,7 @@ Selected: IsotonicScores: [(-4.568024616806577, RandomForest(...)), (-2.80011297
 -- HomeRuns
 Selected: HuberScores: [(-2.1151173834514196, RandomForest(...)), (-0.8987969439156606, Isotonic(...)), (-0.5529067059305477, Huber(...)), (-2.4115959914700107, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [0. 0. 0. 0. 0.]Coefficients: [-3.74493818e-08]Intercept: 3.9700555388280627e-07Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(-0.3363243991687022, RandomForest(...)), (-0.8634161171720617, Isotonic(...)), (-1.933030356990807, Huber(...)), (-1.977413789758505, Linear(...))]Best Parameters: {'regressor__n_estimators': 37, 'selection__k': 4, 'regressor__max_depth': 24}Feature Scores: [0. 0. 0. 0. 1.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.444 0.187 0.195 0.175]
+Selected: RandomForestScores: [(-0.3363243991687022, RandomForest(...)), (-0.8634161171720617, Isotonic(...)), (-1.933030356990807, Huber(...)), (-1.977413789758505, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 24, 'regressor__n_estimators': 37}Feature Scores: [0. 0. 0. 0. 1.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.444 0.187 0.195 0.175]
 -- Ks
 Selected: IsotonicScores: [(-3.7876072950019655, RandomForest(...)), (-3.6736418681165026, Isotonic(...)), (-4.915176031988628, Huber(...)), (-4.679107486158231, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [2. 0. 0. 1. 0.]Feature Mask: [ True False False False False]
 
@@ -81,18 +81,18 @@ Pitching Features
            Endurance | 100 (-32)  68 | 
 
 SS Hipple, S       35| .367/.420/.603 134 191 | .373/.425/.454 121 148 | -3225---  13 | -  || 142 || ML     *+   |
-1B Burford, J      32| .315/.315/.531 109 106 | .315/.315/.531 109 125 | -5------   2 |  + || 111 || ML     *    |
+1B Burford, J      32| .315/.315/.531 109 106 | .315/.315/.531 109 125 | -5------   2 |  + || 111 || AAA    *    |
 RF Telles, T       34| .276/.336/.497 109 129 | .275/.275/.478  96 128 | -2---727   5 |  + || 109 || ML     *+   |
-CF Clemente, J     32| .265/.265/.482  95  23 | .265/.298/.491 102  47 | -2---254   9 |    || 106 || ML   F *    |
-RF Contreras, J    34| .269/.279/.488  98  47 | .291/.373/.520 117  38 | -2---215   0 |  + || 105 || AAA    *    |
+CF Clemente, J     32| .265/.265/.482  95  23 | .265/.298/.491 102  47 | -2---254   9 |    || 106 || AAA  F *    |
+RF Contreras, J    34| .269/.279/.488  98  47 | .291/.373/.520 117  38 | -2---215   0 |  + || 105 || ML     *    |
 C  Urrutia, R      33| .260/.279/.482  97 156 | .265/.333/.503 109 107 | 61------   4 |  - || 105 || ML     *    |
 RF Tetreault, A    35| .295/.302/.500 103 225 | .305/.310/.522 107   0 | -2---325   1 | +  || 105 || ML     *+   |
-RF Campbell, T     33| .263/.269/.481  95   0 | .278/.284/.673 116  94 | -2---326   2 |  + || 105 || AAA    *    |
-LF Borrero, P      23| .280/.280/.496  99     | .276/.302/.486 102     | -2---633   4 | ++ || 104 || ML     *    |
-RF Dane, B         29| .302/.302/.518 105     | .288/.288/.504 101     | -2---324   0 | ++ || 104 || AAA  F *    |
-RF Lopez, O        32| .256/.281/.480  97     | .253/.267/.473  94     | -2---739   8 | -+ || 104 || AA     *    |
+RF Campbell, T     33| .263/.269/.481  95   0 | .278/.284/.673 116  94 | -2---326   2 |  + || 105 || ML     *    |
+LF Borrero, P      23| .280/.280/.496  99     | .276/.302/.486 102     | -2---633   4 | ++ || 104 || AAA    *    |
+RF Dane, B         29| .302/.302/.518 105     | .288/.288/.504 101     | -2---324   0 | ++ || 104 || AA   F *    |
+RF Lopez, O        32| .256/.281/.480  97     | .253/.267/.473  94     | -2---739   8 | -+ || 104 || AAA    *    |
 LF Torres, J       29| .273/.279/.491  98     | .283/.283/.499 100     | -2---622   4 | ++ || 103 || AAA    *    |
-RF Koan, Y         22| .259/.311/.477 103     | .259/.311/.477 103     | -2---224   0 | -  || 103 || AAA      #  |
+RF Koan, Y         22| .259/.311/.477 103     | .259/.311/.477 103     | -2---224   0 | -  || 103 || A        #  |
 SS Kim, K          23| .175/.258/.415  87     | .169/.230/.403  81     | -3527---  17 | +- || 102 || AAA  F  +#  |
 2B Barragan, M     36| .226/.285/.460  96  98 | .259/.333/.499 108  87 | -21-----   0 |  - || 101 || ML   F *+   |
 C  Slater, T       27| .273/.280/.491  98     | .265/.286/.474  98     | 4-------   0 | ++ ||  98 || AAA  F      |
@@ -119,7 +119,7 @@ SP Gillen, M         *+    ML 33 |  9.0  9.0  1.1  0.0 | 146  40 | 146  51 |    
 SP Draeger, J      F      AAA 28 |  8.5  5.4  2.2  0.0 | 142     | 133     | ++ | 138/120 || 138 ||
 MR Keita, Y          *+   AAA 35 |  8.4  4.3  1.6  0.0 | 156     | 144     |    | 101/132 || 132 ||
 SP Myler, W        F  +   AAA 29 |  8.5  3.7  3.0  0.0 | 130     | 127     |  - | 128/112 || 128 ||
-SP Dossantos, O    F *    AAA 38 |  9.9  6.7  1.8  0.0 | 115  90 | 153 223 |    | 125/108 || 125 ||
+SP Dossantos, O    F *     ML 38 |  9.9  6.7  1.8  0.0 | 115  90 | 153 223 |    | 125/108 || 125 ||
 MR Blood, J         9     AAA 20 |  8.6  3.6  2.5  0.0 | 133     | 134     |  + |  65/115 || 115 ||
 MR Rocha, M          *     AA 33 |  9.2  3.7  2.3  0.0 | 125     | 124     | ++ |  82/108 || 108 ||
 SP Milsap, W         *     ML 34 |  9.6  4.6  3.3  0.0 | 109     | 110     |  + | 106/ 94 || 106 ||
@@ -127,9 +127,9 @@ MR Lamas, M          *     ML 35 |  9.2 11.5  2.6  0.0 | 113 999 | 150 745 |    
 MR Bowling, T        *     AA 33 |  9.2  4.0  2.6  0.0 | 132     | 103     |    |  96/106 || 106 ||
 MR Shinrikiyaru, R          A 26 |  8.9  3.7  3.0  0.0 | 122     | 121     |  + |  79/105 || 105 ||
 MR Planas, S         *     ML 31 |  9.8  6.3  2.0  0.0 | 111  17 | 140 532 |  - |  78/102 || 102 ||
-SP Trautman, E       *     AA 31 |  9.8  3.9  3.7  0.0 | 108     |  90     |  + | 101/ 88 || 101 ||
 SP Ziebarth, C              A 30 |  9.8  3.9  3.7  0.0 | 100     | 109     |  + | 101/ 88 || 101 ||
-SP Bolivar, J       4       A 17 |  9.7  3.8  3.7  0.0 | 107     |  96     |    | 101/ 90 || 101 ||
+SP Trautman, E       *     AA 31 |  9.8  3.9  3.7  0.0 | 108     |  90     |  + | 101/ 88 || 101 ||
+SP Bolivar, J       4     AAA 17 |  9.7  3.8  3.7  0.0 | 107     |  96     |    | 101/ 90 || 101 ||
 SP Manuel, C         *     ML 37 | 10.3  4.8  4.1  0.0 |  82  72 | 157 532 | -- |  98/ 85 ||  98 ||
 MR Johnston, M       *+    ML 33 |  9.7  6.5  2.7  0.0 | 109  59 | 123 106 |  + |  55/ 98 ||  98 ||
 SP Spengler, M       *      A 28 |  9.5  4.0  5.4  0.0 |  98     |  99     |  - |  98/ 85 ||  98 ||
@@ -144,73 +144,72 @@ SP Colon, H         3*      A 24 | 11.2  4.3  6.5  0.0 |  68     |  81     |  + 
 SP Raymond, J        *     ML 31 | 12.5 14.3 11.3  0.0 |  54  45 |  40  17 | -- |  48/ 42 ||  48 ||
 
  (25) ML               | (12) AAA              | (12) AA               | (11) A                | ( 0) DL               |
- SP Allen, R        35 | SP Dossantos, O    38 | SP Trautman, E     31 | SP Bolivar, J      17 |                       |
- SP Dennis, B       25 | SP Draeger, J      28 | MR Bowling, T      33 | SP Colon, H        24 |                       |
- SP Gillen, M       33 | SP Myler, W        29 | MR Farnham, S      34 | SP Spengler, M     28 |                       |
- SP Manuel, C       37 | MR Blood, J        20 | MR Mazzarella, R   33 | SP Ziebarth, C     30 |                       |
- SP Mateo, S        34 | MR Keita, Y        35 | MR Rocha, M        33 | MR Shinrikiyaru, R 26 |                       |
- SP Milsap, W       34 |  C Slater, T       27 | LF Bainbridge, A   27 | 1B Province, R     21 |                       |
- SP Ramirez, T      17 | SS Kim, K          23 | LF Broyles, J      27 | 2B Fernandez, R    20 |                       |
- SP Raymond, J      31 | LF Torres, J       29 | LF Turberville, P  23 | 2B Mercado, M      21 |                       |
- MR Balcom, W       32 | RF Campbell, T     33 | RF Fusco, R        28 | 2B Moya, L         22 |                       |
- MR Horne, K        31 | RF Contreras, J    34 | RF Glessner, K     25 | LF Shisler, D      22 |                       |
- MR Johnston, M     33 | RF Dane, B         29 | RF Lopez, O        32 | RF Sherman, J      23 |                       |
- MR Lamas, M        35 | RF Koan, Y         22 | RF Mito, H         28 |                       |                       |
+ SP Allen, R        35 | SP Bolivar, J      17 | SP Trautman, E     31 | SP Colon, H        24 |                       |
+ SP Dennis, B       25 | SP Draeger, J      28 | MR Bowling, T      33 | SP Spengler, M     28 |                       |
+ SP Dossantos, O    38 | SP Myler, W        29 | MR Farnham, S      34 | SP Ziebarth, C     30 |                       |
+ SP Gillen, M       33 | MR Blood, J        20 | MR Mazzarella, R   33 | MR Shinrikiyaru, R 26 |                       |
+ SP Manuel, C       37 | MR Keita, Y        35 | MR Rocha, M        33 | 1B Province, R     21 |                       |
+ SP Mateo, S        34 |  C Slater, T       27 | LF Bainbridge, A   27 | 2B Fernandez, R    20 |                       |
+ SP Milsap, W       34 | 1B Burford, J      32 | LF Broyles, J      27 | 2B Mercado, M      21 |                       |
+ SP Ramirez, T      17 | SS Kim, K          23 | LF Turberville, P  23 | 2B Moya, L         22 |                       |
+ SP Raymond, J      31 | LF Borrero, P      23 | RF Dane, B         29 | LF Shisler, D      22 |                       |
+ MR Balcom, W       32 | LF Torres, J       29 | RF Fusco, R        28 | RF Koan, Y         22 |                       |
+ MR Horne, K        31 | CF Clemente, J     32 | RF Glessner, K     25 | RF Sherman, J      23 |                       |
+ MR Johnston, M     33 | RF Lopez, O        32 | RF Mito, H         28 |                       |                       |
+ MR Lamas, M        35 |                       |                       |                       |                       |
  MR Luna, M         35 |                       |                       |                       |                       |
  MR Planas, S       31 |                       |                       |                       |                       |
  MR Raposa, J       20 |                       |                       |                       |                       |
  MR Santoyo, J      32 |                       |                       |                       |                       |
   C Urrutia, R      33 |                       |                       |                       |                       |
- 1B Burford, J      32 |                       |                       |                       |                       |
  2B Barragan, M     36 |                       |                       |                       |                       |
  2B Klein, F        29 |                       |                       |                       |                       |
  SS Hipple, S       35 |                       |                       |                       |                       |
- LF Borrero, P      23 |                       |                       |                       |                       |
- CF Clemente, J     32 |                       |                       |                       |                       |
+ RF Campbell, T     33 |                       |                       |                       |                       |
+ RF Contreras, J    34 |                       |                       |                       |                       |
  RF Telles, T       34 |                       |                       |                       |                       |
  RF Tetreault, A    35 |                       |                       |                       |                       |
 Total:60 (target 70-75)
 Balance:29/31 = 0.935 (ideal: 1.273)
 
-  ML -> AAA  RF Timothy Campbell
-  ML -> AAA  SP Oswaldo Dossantos
-  ML -> AAA  RF Jose Contreras
- AAA -> ML   LF Paul Borrero
+  ML -> AAA  CF Jesus Clemente
+  ML -> AAA  1B James Burford
+ AAA -> AA   RF Byron Dane
  AAA -> AA   SP Eric Trautman
  AAA -> AA   LF John Broyles
  AAA -> A    SP Matthew Spengler
   AA -> ML   SP Tony Ramirez
+  AA -> AAA  SP Jose Bolivar
   AA -> A    1B Randolph Province
   AA -> A    2B Manuel Mercado
-  AA -> A    SP Jose Bolivar
    A -> ML   MR Julio Raposa
-  DL -> AAA  SP Walton Myler
-  DL -> AAA  SS Kenneth Kim
-  DL -> AAA   C Travis Slater
-  DL -> AAA  RF Yurihiko Koan
+  DL -> AAA  RF Oscar Lopez
   DL -> AAA  SP Jeffrey Draeger
-  DL -> AA   MR Thomas Bowling
-  DL -> AA   MR Ricky Mazzarella
-  DL -> AA   MR Scott Farnham
-  DL -> AA   RF Oscar Lopez
-  DL -> AA   RF Keith Glessner
-  DL -> AA   LF Adam Bainbridge
-  DL -> AA   RF Robert Fusco
-  DL -> AA   RF Hyu-suton Mito
+  DL -> AAA   C Travis Slater
+  DL -> AAA  SS Kenneth Kim
+  DL -> AAA  SP Walton Myler
   DL -> AA   LF Paul Turberville
+  DL -> AA   MR Thomas Bowling
+  DL -> AA   RF Keith Glessner
+  DL -> AA   RF Hyu-suton Mito
+  DL -> AA   RF Robert Fusco
+  DL -> AA   MR Scott Farnham
+  DL -> AA   MR Ricky Mazzarella
   DL -> AA   MR Max Rocha
-  DL -> A    2B Luis Moya
+  DL -> AA   LF Adam Bainbridge
   DL -> A    SP Chad Ziebarth
-  DL -> A    MR Rodney Shinrikiyaru
-  DL -> A    RF Joseph Sherman
+  DL -> A    RF Yurihiko Koan
+  DL -> A    2B Luis Moya
   DL -> A    SP Hector Colon
+  DL -> A    RF Joseph Sherman
+  DL -> A    MR Rodney Shinrikiyaru
 
 SP
 Tony Ramirez
 Brett Dennis
 Simon Mateo
 Monte Gillen
-Charles Manuel
+Oswaldo Dossantos
 
 LR
 Wayne Milsap
@@ -238,62 +237,61 @@ BP Endrnce: 20.5
 --- Slow Hook ---
 
 vs RHP
- C| Urrutia, R      (D)                 | C| ( 1) Telles, T      
-1B| Burford, J      (D)                 |1B| ( 1) Telles, T      
-2B| Klein, F        (D)                 |2B| ( 1) Telles, T      
-3B| Barragan, M     (D)                 |3B| ( 1) Telles, T      
-SS| Hipple, S       (D)                 |SS| ( 1) Telles, T      
-LF| Borrero, P      (D)                 |LF| ( 1) Telles, T      
-CF| Clemente, J     (D)                 |CF| ( 1) Telles, T      
-RF| Tetreault, A    (D) Telles, T       |RF| ( 1) Telles, T      
+ C| Urrutia, R      (D)                 | C| ( 1) Raymond, J     
+1B| Contreras, J    (D)                 |1B| ( 1) Raymond, J     
+2B| Klein, F        (D)                 |2B| ( 1) Raymond, J     
+3B| Barragan, M     (D)                 |3B| ( 1) Raymond, J     
+SS| Hipple, S       (D)                 |SS| ( 1) Raymond, J     
+LF| Telles, T       (D)                 |LF| ( 1) Raymond, J     
+CF| Tetreault, A    (D)                 |CF| ( 1) Raymond, J     
+RF| Campbell, T     (D)                 |RF| ( 1) Raymond, J     
 
 vs RHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Raymond, J     
-1B| Burford, J      (D)                 |1B| ( 1) Raymond, J     
+1B| Contreras, J    (D)                 |1B| ( 1) Raymond, J     
 2B| Klein, F        (D)                 |2B| ( 1) Raymond, J     
 3B| Barragan, M     (D)                 |3B| ( 1) Raymond, J     
 SS| Hipple, S       (D)                 |SS| ( 1) Raymond, J     
-LF| Borrero, P      (D)                 |LF| ( 1) Raymond, J     
-CF| Clemente, J     (D)                 |CF| ( 1) Raymond, J     
-RF| Telles, T       (D)                 |RF| ( 1) Raymond, J     
-DH| Tetreault, A    (D)                 |DH| ( 1) Raymond, J     
+LF| Telles, T       (D)                 |LF| ( 1) Raymond, J     
+CF| Tetreault, A    (D)                 |CF| ( 1) Raymond, J     
+RF| Campbell, T     (D)                 |RF| ( 1) Raymond, J     
 
 vs LHP
- C| Urrutia, R      (D)                 | C| ( 1) Barragan, M    
-1B| Burford, J      (D)                 |1B| ( 1) Barragan, M    
-2B| Klein, F        (D)                 |2B| ( 1) Barragan, M    
-3B| Tetreault, A    (D) Barragan, M     |3B| ( 1) Barragan, M    
-SS| Hipple, S       (D)                 |SS| ( 1) Barragan, M    
-LF| Borrero, P      (D)                 |LF| ( 1) Barragan, M    
-CF| Clemente, J     (D)                 |CF| ( 1) Barragan, M    
-RF| Telles, T       (D)                 |RF| ( 1) Barragan, M    
+ C| Urrutia, R      (D)                 | C| ( 1) Raymond, J     
+1B| Contreras, J    (D)                 |1B| ( 1) Raymond, J     
+2B| Klein, F        (D)                 |2B| ( 1) Raymond, J     
+3B| Barragan, M     (D)                 |3B| ( 1) Raymond, J     
+SS| Hipple, S       (D)                 |SS| ( 1) Raymond, J     
+LF| Telles, T       (D)                 |LF| ( 1) Raymond, J     
+CF| Tetreault, A    (D)                 |CF| ( 1) Raymond, J     
+RF| Campbell, T     (D)                 |RF| ( 1) Raymond, J     
 
 vs LHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Raymond, J     
-1B| Burford, J      (D)                 |1B| ( 1) Raymond, J     
+1B| Contreras, J    (D)                 |1B| ( 1) Raymond, J     
 2B| Klein, F        (D)                 |2B| ( 1) Raymond, J     
 3B| Barragan, M     (D)                 |3B| ( 1) Raymond, J     
 SS| Hipple, S       (D)                 |SS| ( 1) Raymond, J     
-LF| Borrero, P      (D)                 |LF| ( 1) Raymond, J     
-CF| Clemente, J     (D)                 |CF| ( 1) Raymond, J     
-RF| Telles, T       (D)                 |RF| ( 1) Raymond, J     
-DH| Tetreault, A    (D)                 |DH| ( 1) Raymond, J     
+LF| Telles, T       (D)                 |LF| ( 1) Raymond, J     
+CF| Tetreault, A    (D)                 |CF| ( 1) Raymond, J     
+RF| Campbell, T     (D)                 |RF| ( 1) Raymond, J     
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 1B R Burford, J       1B R Burford, J       1B R Burford, J       1B R Burford, J      
-2. 3B L Barragan, M      3B L Barragan, M      RF L Telles, T        RF L Telles, T       
-3.  C R Urrutia, R        C R Urrutia, R        C R Urrutia, R        C R Urrutia, R      
+1. 1B R Contreras, J     1B R Contreras, J     CF L Tetreault, A     CF L Tetreault, A    
+2. 3B L Barragan, M      3B L Barragan, M      LF L Telles, T        LF L Telles, T       
+3. RF L Campbell, T      RF L Campbell, T       C R Urrutia, R        C R Urrutia, R      
 4. SS R Hipple, S        SS R Hipple, S        SS R Hipple, S        SS R Hipple, S       
-5. RF L Tetreault, A     DH L Tetreault, A     3B L Tetreault, A     DH L Tetreault, A    
-6. LF R Borrero, P       LF R Borrero, P       LF R Borrero, P       LF R Borrero, P      
-7. CF S Clemente, J      CF S Clemente, J      2B R Klein, F         2B R Klein, F        
-8. 2B R Klein, F         RF L Telles, T        CF S Clemente, J      3B L Barragan, M     
-9.  P                    2B R Klein, F          P                    CF S Clemente, J     
+5.  C R Urrutia, R        C R Urrutia, R       2B R Klein, F         2B R Klein, F        
+6. CF L Tetreault, A     CF L Tetreault, A     1B R Contreras, J     1B R Contreras, J    
+7. LF L Telles, T        LF L Telles, T        3B L Barragan, M      3B L Barragan, M     
+8. 2B R Klein, F         2B R Klein, F         RF L Campbell, T      RF L Campbell, T     
+9.  P                     P                     P                     P                   
 
 --- Bunt for Hit ---
 
 --- Stealing @ 73.8 ---
-LF Paul Borrero              23| LF : 100       4   1     : 105 | LF : 100       4   9   3     : 117 |   6 | 123 | -2---633 |    *              | $306.7k:$662.1k |  p319 | Houston Astros       | ++-
+RF Timothy Campbell          33| RF : 103       2   3     : 107 |    :                         :   0 |   0 | 107 | -2---326 |    *     $3.67Mx2 | $920.2k: $1.99M |   p69 | Houston Astros       | **^
+RF Jose Contreras            34| RF : 105       0   4     : 109 |    :                         :   0 |  -2 | 107 | -2---215 |    *     $3.67Mx3 |  $1.23M: $2.65M |  p486 | Houston Astros       | **^
 
 40 man: 37/40, Remove: 9, Add: 10
 
@@ -520,13 +518,13 @@ CATCHER
  1 | Urrutia, R       101   4 105 | Hipple, S        134 -32 102 | Urrutia, R       109   4 113
  2 | Hipple, S        129 -32  97 | Urrutia, R        97   4 101 | Slater, T         98  -4  94
  3 | Slater, T         98  -4  94 | Slater, T         98  -4  94 | Hipple, S        121 -32  89
- 4 | Burford, J       109 -32  77 | Telles, T        109 -32  77 | Contreras, J     117 -32  85
- 5 | Contreras, J     105 -32  73 | Burford, J       109 -32  77 | Campbell, T      116 -32  84
- 6 | Dane, B          104 -32  72 | Dane, B          105 -32  73 | Mito, H          109 -32  77
- 7 | Tetreault, A     104 -32  72 | Koan, Y          103 -32  71 | Burford, J       109 -32  77
+ 4 | Burford, J       109 -32  77 | Burford, J       109 -32  77 | Contreras, J     117 -32  85
+ 5 | Contreras, J     105 -32  73 | Telles, T        109 -32  77 | Campbell, T      116 -32  84
+ 6 | Dane, B          104 -32  72 | Dane, B          105 -32  73 | Burford, J       109 -32  77
+ 7 | Tetreault, A     104 -32  72 | Koan, Y          103 -32  71 | Mito, H          109 -32  77
  8 | Telles, T        104 -32  72 | Tetreault, A     103 -32  71 | Barragan, M      108 -32  76
  9 | Koan, Y          103 -32  71 | Borrero, P        99 -32  67 | Tetreault, A     107 -32  75
-10 | Campbell, T      103 -32  71 | Contreras, J      98 -32  66 | Koan, Y          103 -32  71
+10 | Campbell, T      103 -32  71 | Torres, J         98 -32  66 | Koan, Y          103 -32  71
 
 FIRST_BASE
  1 | Hipple, S        129   1 130 | Hipple, S        134   1 135 | Hipple, S        121   1 122
@@ -547,9 +545,9 @@ SECOND_BASE
  4 | Burford, J       109 -19  90 | Burford, J       109 -19  90 | Barragan, M      108 -11  97
  5 | Tetreault, A     104 -17  87 | Kim, K            87   2  89 | Klein, F          93   0  93
  6 | Kim, K            85   2  87 | Dane, B          105 -18  87 | Mito, H          109 -18  91
- 7 | Campbell, T      103 -17  86 | Tetreault, A     103 -17  86 | Urrutia, R       109 -18  91
- 8 | Contreras, J     105 -19  86 | Barragan, M       96 -11  85 | Tetreault, A     107 -17  90
- 9 | Dane, B          104 -18  86 | Koan, Y          103 -19  84 | Burford, J       109 -19  90
+ 7 | Dane, B          104 -18  86 | Tetreault, A     103 -17  86 | Urrutia, R       109 -18  91
+ 8 | Campbell, T      103 -17  86 | Barragan, M       96 -11  85 | Tetreault, A     107 -17  90
+ 9 | Contreras, J     105 -19  86 | Koan, Y          103 -19  84 | Burford, J       109 -19  90
 10 | Telles, T        104 -18  86 | Borrero, P        99 -17  82 | Borrero, P       102 -17  85
 
 THIRD_BASE
@@ -594,8 +592,8 @@ CENTER_FIELD
  3 | Telles, T        104   1 105 | Dane, B          105  -1 104 | Clemente, J      102   9 111
  4 | Tetreault, A     104   0 104 | Clemente, J       95   9 104 | Tetreault, A     107   0 107
  5 | Dane, B          104  -1 103 | Tetreault, A     103   0 103 | Hipple, S        121 -14 107
- 6 | Campbell, T      103   0 103 | Koan, Y          103  -1 102 | Mito, H          109  -5 104
- 7 | Contreras, J     105  -2 103 | Lopez, O          97   4 101 | Borrero, P       102   1 103
+ 6 | Contreras, J     105  -2 103 | Koan, Y          103  -1 102 | Mito, H          109  -5 104
+ 7 | Campbell, T      103   0 103 | Lopez, O          97   4 101 | Borrero, P       102   1 103
  8 | Koan, Y          103  -1 102 | Borrero, P        99   1 100 | Koan, Y          103  -1 102
  9 | Borrero, P       100   1 101 | Burford, J       109 -11  98 | Dane, B          101  -1 100
 10 | Lopez, O          96   4 100 | Torres, J         98   0  98 | Torres, J        100   0 100
@@ -614,15 +612,15 @@ RIGHT_FIELD
 
 DESIGNATED_HITTER
  1 | Hipple, S        129   0 129 | Hipple, S        134   0 134 | Hipple, S        121   0 121
- 2 | Burford, J       109   0 109 | Telles, T        109   0 109 | Contreras, J     117   0 117
- 3 | Contreras, J     105   0 105 | Burford, J       109   0 109 | Campbell, T      116   0 116
- 4 | Dane, B          104   0 104 | Dane, B          105   0 105 | Mito, H          109   0 109
- 5 | Tetreault, A     104   0 104 | Koan, Y          103   0 103 | Urrutia, R       109   0 109
- 6 | Telles, T        104   0 104 | Tetreault, A     103   0 103 | Burford, J       109   0 109
+ 2 | Burford, J       109   0 109 | Burford, J       109   0 109 | Contreras, J     117   0 117
+ 3 | Contreras, J     105   0 105 | Telles, T        109   0 109 | Campbell, T      116   0 116
+ 4 | Dane, B          104   0 104 | Dane, B          105   0 105 | Burford, J       109   0 109
+ 5 | Tetreault, A     104   0 104 | Koan, Y          103   0 103 | Mito, H          109   0 109
+ 6 | Telles, T        104   0 104 | Tetreault, A     103   0 103 | Urrutia, R       109   0 109
  7 | Koan, Y          103   0 103 | Borrero, P        99   0  99 | Barragan, M      108   0 108
  8 | Campbell, T      103   0 103 | Slater, T         98   0  98 | Tetreault, A     107   0 107
- 9 | Urrutia, R       101   0 101 | Contreras, J      98   0  98 | Koan, Y          103   0 103
-10 | Barragan, M      101   0 101 | Torres, J         98   0  98 | Clemente, J      102   0 102
+ 9 | Urrutia, R       101   0 101 | Torres, J         98   0  98 | Koan, Y          103   0 103
+10 | Barragan, M      101   0 101 | Contreras, J      98   0  98 | Clemente, J      102   0 102
 
 --- Trade Values ---
 MR Julio Raposa              20| MR :     179      63  23 : 265 | MR :     114      50  10     : 175 |   6 | 271 |          |                   | $26.38M:$56.94M |  p725 | Houston Astros       | +++-
@@ -1316,8 +1314,8 @@ American
 American ------------+
 Pittsburgh Pirates   | 103.3 102.3 105.6 | 110.9 111.1 120.7 | 100- 62 0.619 |   2-  3 0.400 |  99- 63 0.611 ( 1) 
 New York Mets        | 102.7 102.3 104.9 | 101.9 105.5 107.1 |  90- 72 0.558 |   4-  1 0.800 |  92- 70 0.568 ( 2) 
-Oakland A's          | 101.4 102.4 103.7 |  98.6  98.3  96.9 |  81- 81 0.502 |   3-  2 0.600 |  82- 80 0.506 ( 3) 
-Milwaukee Brewers    | 100.9 100.4 101.4 | 100.9 100.5 101.4 |  83- 79 0.514 |   1-  4 0.200 |  82- 80 0.506 ( 4) 
+Milwaukee Brewers    | 100.9 100.4 101.4 | 100.9 100.5 101.4 |  83- 79 0.514 |   1-  4 0.200 |  82- 80 0.506 ( 3) 
+Oakland A's          | 101.4 102.4 103.7 |  98.6  98.3  96.9 |  81- 81 0.502 |   3-  2 0.600 |  82- 80 0.506 ( 4) 
 Toronto Blue Jays    |  97.0  96.2  93.1 | 102.1 102.8 104.8 |  79- 83 0.488 |   3-  2 0.600 |  80- 82 0.494 ( 6) 
 Los Angeles Dodgers  | 102.0 103.5 105.4 |  94.8  93.8  88.2 |  75- 87 0.464 |   2-  3 0.400 |  75- 87 0.463 (11) 
 
@@ -1326,8 +1324,8 @@ National ------------+
 Atlanta Braves       |  97.7  98.3  95.9 | 101.6 101.4 103.0 |  80- 82 0.494 |   3-  2 0.600 |  81- 81 0.500 ( 5) 
 Houston Astros       |  96.1  97.4  93.4 | 102.6 102.9 105.4 |  80- 82 0.492 |   2-  3 0.400 |  79- 83 0.488 ( 7) 
 Baltimore Orioles    |  95.8  96.2  91.9 | 103.7 102.1 105.8 |  79- 83 0.486 |   3-  2 0.600 |  79- 83 0.488 ( 8) 
-Minnesota Twins      | 104.1 104.4 108.3 |  92.3  93.1  85.0 |  74- 88 0.459 |   4-  1 0.800 |  76- 86 0.469 ( 9) 
-Washington Nationals | 103.1 102.6 105.6 |  95.7  93.8  89.1 |  76- 86 0.470 |   2-  3 0.400 |  76- 86 0.469 (10) 
+Washington Nationals | 103.1 102.6 105.6 |  95.7  93.8  89.1 |  76- 86 0.470 |   2-  3 0.400 |  76- 86 0.469 ( 9) 
+Minnesota Twins      | 104.1 104.4 108.3 |  92.3  93.1  85.0 |  74- 88 0.459 |   4-  1 0.800 |  76- 86 0.469 (10) 
 New York Yankees     |  95.9  94.0  89.5 |  95.0  94.6  89.2 |  63- 99 0.390 |   1-  4 0.200 |  62-100 0.383 (12) 
                      |             106.3 |             138.6 |
 
