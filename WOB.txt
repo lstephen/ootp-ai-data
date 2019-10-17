@@ -42,7 +42,7 @@ Selected: IsotonicScores: [(1.0, RandomForest(...)), (1.0, Isotonic(...)), (1.0,
 -- HomeRuns
 Selected: IsotonicScores: [(0.025813391252341573, RandomForest(...)), (-0.4237995485222576, Isotonic(...)), (-0.6645684860634644, Huber(...)), (-0.5842161663497416, Linear(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 8.  3. 10.  6.  8.  0.]Feature Mask: [False False  True False False False]
 -- Walks
-Selected: RandomForestScores: [(0.012991145991894068, RandomForest(...)), (-0.3859050882715233, Isotonic(...)), (-0.16396910568328474, Huber(...)), (-0.2506472915535807, Linear(...))]Best Parameters: {'selection__k': 6, 'regressor__n_estimators': 12, 'regressor__max_depth': 48}Feature Scores: [3. 2. 3. 6. 4. 1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.108 0.123 0.444 0.139 0.157 0.03 ]
+Selected: RandomForestScores: [(0.012991145991894068, RandomForest(...)), (-0.3859050882715233, Isotonic(...)), (-0.16396910568328474, Huber(...)), (-0.2506472915535807, Linear(...))]Best Parameters: {'regressor__max_depth': 48, 'selection__k': 6, 'regressor__n_estimators': 12}Feature Scores: [3. 2. 3. 6. 4. 1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.108 0.123 0.444 0.139 0.157 0.03 ]
 -- Ks
 Selected: IsotonicScores: [(-0.8734986429566733, RandomForest(...)), (-0.5550941379601538, Isotonic(...)), (-1.0956211775068425, Huber(...)), (-1.5066496315193776, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [0. 0. 0. 0. 0. 0.]Feature Mask: [False False False False  True False]
 
@@ -59,7 +59,7 @@ Selected: IsotonicScores: [(-4.568024616806577, RandomForest(...)), (-2.80011297
 -- HomeRuns
 Selected: HuberScores: [(-2.1151173834514196, RandomForest(...)), (-0.8987969439156606, Isotonic(...)), (-0.5529067059305477, Huber(...)), (-2.4115959914700107, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [0. 0. 0. 0. 0.]Coefficients: [-3.74493818e-08]Intercept: 3.9700555388280627e-07Feature Mask: [False False  True False False]
 -- Walks
-Selected: RandomForestScores: [(-0.3363243991687022, RandomForest(...)), (-0.8634161171720617, Isotonic(...)), (-1.933030356990807, Huber(...)), (-1.977413789758505, Linear(...))]Best Parameters: {'regressor__n_estimators': 37, 'selection__k': 4, 'regressor__max_depth': 24}Feature Scores: [0. 0. 0. 0. 1.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.444 0.187 0.195 0.175]
+Selected: RandomForestScores: [(-0.3363243991687022, RandomForest(...)), (-0.8634161171720617, Isotonic(...)), (-1.933030356990807, Huber(...)), (-1.977413789758505, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 37, 'regressor__max_depth': 24}Feature Scores: [0. 0. 0. 0. 1.]Feature Mask: [False  True  True  True  True]Feature Importances: [0.444 0.187 0.195 0.175]
 -- Ks
 Selected: IsotonicScores: [(-3.7876072950019655, RandomForest(...)), (-3.6736418681165026, Isotonic(...)), (-4.915176031988628, Huber(...)), (-4.679107486158231, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [2. 0. 0. 1. 0.]Feature Mask: [ True False False False False]
 
@@ -90,7 +90,7 @@ RF Tetreault, A    35| .295/.302/.500 103 225 | .305/.310/.522 107   0 | -2---32
 RF Campbell, T     33| .263/.269/.481  95   0 | .278/.284/.673 116  94 | -2---326   2 |  + || 105 || ML     *    |
 LF Borrero, P      23| .280/.280/.496  99     | .276/.302/.486 102     | -2---633   4 | ++ || 104 || AAA    *    |
 RF Dane, B         29| .302/.302/.518 105     | .288/.288/.504 101     | -2---324   0 | ++ || 104 || AAA  F *    |
-RF Lopez, O        32| .256/.281/.480  97     | .253/.267/.473  94     | -2---739   8 | -+ || 104 || AAA    *    |
+RF Lopez, O        32| .256/.281/.480  97     | .253/.267/.473  94     | -2---739   8 | -+ || 104 || ML     *    |
 LF Torres, J       29| .273/.279/.491  98     | .283/.283/.499 100     | -2---622   4 | ++ || 103 || AAA    *    |
 RF Koan, Y         22| .259/.311/.477 103     | .259/.311/.477 103     | -2---224   0 | -  || 103 || AAA      #  |
 SS Kim, K          23| .175/.258/.415  87     | .169/.230/.403  81     | -3527---  17 | +- || 102 || AAA  F  +#  |
@@ -121,41 +121,36 @@ MR Keita, Y          *+   AAA 35 |  8.4  4.3  1.6  0.0 | 156     | 144     |    
 SP Myler, W        F  +   AAA 29 |  8.5  3.7  3.0  0.0 | 130     | 127     |  - | 128/112 || 128 ||
 SP Dossantos, O    F *     ML 38 |  9.9  6.7  1.8  0.0 | 115  90 | 153 223 |    | 125/108 || 125 ||
 MR Blood, J         9     AAA 20 |  8.6  3.6  2.5  0.0 | 133     | 134     |  + |  65/115 || 115 ||
-MR Rocha, M          *     AA 33 |  9.2  3.7  2.3  0.0 | 125     | 124     | ++ |  82/108 || 108 ||
+MR Rocha, M          *     ML 33 |  9.2  3.7  2.3  0.0 | 125     | 124     | ++ |  82/108 || 108 ||
+MR Bowling, T        *     ML 33 |  9.2  4.0  2.6  0.0 | 132     | 103     |    |  96/106 || 106 ||
 SP Milsap, W         *     ML 34 |  9.6  4.6  3.3  0.0 | 109     | 110     |  + | 106/ 94 || 106 ||
 MR Lamas, M          *     ML 35 |  9.2 11.5  2.6  0.0 | 113 999 | 150 745 |    |  81/106 || 106 ||
-MR Bowling, T        *     AA 33 |  9.2  4.0  2.6  0.0 | 132     | 103     |    |  96/106 || 106 ||
 MR Shinrikiyaru, R          A 26 |  8.9  3.7  3.0  0.0 | 122     | 121     |  + |  79/105 || 105 ||
 MR Planas, S         *     ML 31 |  9.8  6.3  2.0  0.0 | 111  17 | 140 532 |  - |  78/102 || 102 ||
-SP Bolivar, J       4     AAA 17 |  9.7  3.8  3.7  0.0 | 107     |  96     |    | 101/ 90 || 101 ||
 SP Trautman, E       *     AA 31 |  9.8  3.9  3.7  0.0 | 108     |  90     |  + | 101/ 88 || 101 ||
-SP Ziebarth, C              A 30 |  9.8  3.9  3.7  0.0 | 100     | 109     |  + | 101/ 88 || 101 ||
+SP Ziebarth, C             AA 30 |  9.8  3.9  3.7  0.0 | 100     | 109     |  + | 101/ 88 || 101 ||
+SP Bolivar, J       4       A 17 |  9.7  3.8  3.7  0.0 | 107     |  96     |    | 101/ 90 || 101 ||
+SP Spengler, M       *     AA 28 |  9.5  4.0  5.4  0.0 |  98     |  99     |  - |  98/ 85 ||  98 ||
 SP Manuel, C         *     ML 37 | 10.3  4.8  4.1  0.0 |  82  72 | 157 532 | -- |  98/ 85 ||  98 ||
 MR Johnston, M       *+    ML 33 |  9.7  6.5  2.7  0.0 | 109  59 | 123 106 |  + |  55/ 98 ||  98 ||
-SP Spengler, M       *      A 28 |  9.5  4.0  5.4  0.0 |  98     |  99     |  - |  98/ 85 ||  98 ||
 MR Mazzarella, R     *+    AA 33 | 10.0  4.9  2.7  0.0 | 117     |  92     |  + |  72/ 94 ||  94 ||
-SP Allen, R        F *     ML 35 | 10.4  6.7  5.2  0.0 | 114 112 |  52 999 |  + |  89/ 77 ||  89 ||
 MR Santoyo, J        *+    ML 32 |  9.8  9.6  3.5  0.0 |  94     | 130     |  + |  81/ 89 ||  89 ||
-MR Luna, M         F *     ML 35 | 10.4 10.9  2.8  0.0 | 102  65 | 102  35 |  - |  80/ 88 ||  88 ||
-MR Horne, K        F *+    ML 31 | 10.3  7.4  4.5  0.0 |  83  70 | 112 106 |  - |  44/ 79 ||  79 ||
-MR Farnham, S        *     AA 34 | 10.5  6.2  5.0  0.0 |  87     |  83     |  + |  67/ 74 ||  74 ||
 SP Colon, H         3*      A 24 | 11.2  4.3  6.5  0.0 |  68     |  81     |  + |  70/ 62 ||  70 ||
 
- (25) ML               | (12) AAA              | (11) AA               | (10) A                | ( 0) DL               |
- SP Allen, R        35 | SP Bolivar, J      17 | SP Trautman, E     31 | SP Colon, H        24 |                       |
- SP Dennis, B       25 | SP Draeger, J      28 | MR Bowling, T      33 | SP Spengler, M     28 |                       |
- SP Dossantos, O    38 | SP Myler, W        29 | MR Farnham, S      34 | SP Ziebarth, C     30 |                       |
- SP Gillen, M       33 | MR Blood, J        20 | MR Mazzarella, R   33 | MR Shinrikiyaru, R 26 |                       |
- SP Manuel, C       37 | MR Keita, Y        35 | MR Rocha, M        33 | 1B Province, R     21 |                       |
+ (25) ML               | (10) AAA              | (10) AA               | ( 9) A                | ( 0) DL               |
+ SP Dennis, B       25 | SP Draeger, J      28 | SP Spengler, M     28 | SP Bolivar, J      17 |                       |
+ SP Dossantos, O    38 | SP Myler, W        29 | SP Trautman, E     31 | SP Colon, H        24 |                       |
+ SP Gillen, M       33 | MR Blood, J        20 | SP Ziebarth, C     30 | MR Shinrikiyaru, R 26 |                       |
+ SP Manuel, C       37 | MR Keita, Y        35 | MR Mazzarella, R   33 | 1B Province, R     21 |                       |
  SP Mateo, S        34 |  C Slater, T       27 | LF Bainbridge, A   27 | 2B Fernandez, R    20 |                       |
  SP Milsap, W       34 | SS Kim, K          23 | LF Broyles, J      27 | 2B Mercado, M      21 |                       |
  SP Ramirez, T      17 | LF Borrero, P      23 | LF Turberville, P  23 | 2B Moya, L         22 |                       |
- MR Horne, K        31 | LF Torres, J       29 | RF Fusco, R        28 | LF Shisler, D      22 |                       |
+ MR Bowling, T      33 | LF Torres, J       29 | RF Fusco, R        28 | LF Shisler, D      22 |                       |
  MR Johnston, M     33 | RF Dane, B         29 | RF Glessner, K     25 | RF Sherman, J      23 |                       |
  MR Lamas, M        35 | RF Koan, Y         22 | RF Mito, H         28 |                       |                       |
- MR Luna, M         35 | RF Lopez, O        32 |                       |                       |                       |
  MR Planas, S       31 |                       |                       |                       |                       |
  MR Raposa, J       20 |                       |                       |                       |                       |
+ MR Rocha, M        33 |                       |                       |                       |                       |
  MR Santoyo, J      32 |                       |                       |                       |                       |
   C Urrutia, R      33 |                       |                       |                       |                       |
  1B Burford, J      32 |                       |                       |                       |                       |
@@ -165,41 +160,45 @@ SP Colon, H         3*      A 24 | 11.2  4.3  6.5  0.0 |  68     |  81     |  + 
  CF Clemente, J     32 |                       |                       |                       |                       |
  RF Campbell, T     33 |                       |                       |                       |                       |
  RF Contreras, J    34 |                       |                       |                       |                       |
+ RF Lopez, O        32 |                       |                       |                       |                       |
  RF Telles, T       34 |                       |                       |                       |                       |
  RF Tetreault, A    35 |                       |                       |                       |                       |
-Total:58 (target 70-75)
-Balance:29/29 = 1.000 (ideal: 1.273)
+Total:54 (target 70-75)
+Balance:29/25 = 1.160 (ideal: 1.273)
 
+  ML ->      MR Kenneth Horne
+  ML ->      SP Ralph Allen
   ML ->      MR Wayne Balcom
+  ML ->      MR Manuel Luna
   ML ->      SP Jacob Raymond
- AAA -> AA   SP Eric Trautman
  AAA -> AA   LF John Broyles
- AAA -> A    SP Matthew Spengler
+ AAA -> AA   SP Matthew Spengler
+ AAA -> AA   SP Eric Trautman
   AA -> ML   SP Tony Ramirez
-  AA -> AAA  SP Jose Bolivar
-  AA -> A    1B Randolph Province
+  AA -> A    SP Jose Bolivar
   AA -> A    2B Manuel Mercado
+  AA -> A    1B Randolph Province
    A -> ML   MR Julio Raposa
+  DL -> ML   RF Oscar Lopez
+  DL -> ML   MR Thomas Bowling
+  DL -> ML   MR Max Rocha
+  DL -> AAA  SS Kenneth Kim
+  DL -> AAA  SP Jeffrey Draeger
   DL -> AAA  SP Walton Myler
   DL -> AAA  RF Yurihiko Koan
   DL -> AAA   C Travis Slater
-  DL -> AAA  RF Oscar Lopez
-  DL -> AAA  SS Kenneth Kim
-  DL -> AAA  SP Jeffrey Draeger
-  DL -> AA   MR Ricky Mazzarella
-  DL -> AA   RF Hyu-suton Mito
-  DL -> AA   MR Thomas Bowling
   DL -> AA   RF Keith Glessner
-  DL -> AA   LF Paul Turberville
   DL -> AA   LF Adam Bainbridge
+  DL -> AA   MR Ricky Mazzarella
+  DL -> AA   LF Paul Turberville
+  DL -> AA   RF Hyu-suton Mito
+  DL -> AA   SP Chad Ziebarth
   DL -> AA   RF Robert Fusco
-  DL -> AA   MR Max Rocha
-  DL -> AA   MR Scott Farnham
   DL -> A    MR Rodney Shinrikiyaru
-  DL -> A    SP Chad Ziebarth
   DL -> A    2B Luis Moya
-  DL -> A    SP Hector Colon
   DL -> A    RF Joseph Sherman
+  DL -> A    SP Hector Colon
+  DL ->      MR Scott Farnham
 
 SP
 Tony Ramirez
@@ -210,17 +209,17 @@ Oswaldo Dossantos
 
 LR
 Wayne Milsap
-Jon Santoyo
-
-MR
-Serafin Planas
-Ralph Allen
-Manuel Luna
 Charles Manuel
 
-SU
-Michael Lamas
+MR
+Thomas Bowling
 Milton Johnston
+Serafin Planas
+Jon Santoyo
+
+SU
+Max Rocha
+Michael Lamas
 
 CL
 Julio Raposa
@@ -228,8 +227,8 @@ Julio Raposa
 NONE
 
 
-BP Ability: 188
-BP Endrnce: 24.0
+BP Ability: 192
+BP Endrnce: 22.5
 
 --- Slow Hook ---
 
@@ -239,51 +238,51 @@ vs RHP
 2B| Barragan, M     (D) Klein, F        |2B| ( 1) Klein, F       
 3B| Tetreault, A    (D) Klein, F        |3B| ( 1) Klein, F       
 SS| Hipple, S       (D)                 |SS| ( 1) Klein, F       
-LF| Contreras, J    (D) Telles, T       |LF| ( 1) Telles, T      
-CF| Clemente, J     (D)                 |CF| ( 1) Telles, T      
-RF| Campbell, T     (D) Telles, T       |RF| ( 1) Telles, T      
+LF| Contreras, J    (D) Lopez, O        |LF| ( 1) Telles, T      
+CF| Clemente, J     (D)                 |CF| ( 1) Lopez, O       
+RF| Campbell, T     (D) Lopez, O        |RF| ( 1) Lopez, O       
 
 vs RHP+DH
- C| Urrutia, R      (D)                 | C| ( 1) Klein, F       
-1B| Burford, J      (D)                 |1B| ( 1) Klein, F       
+ C| Urrutia, R      (D)                 | C| ( 1) Lopez, O       
+1B| Burford, J      (D)                 |1B| ( 1) Lopez, O       
 2B| Barragan, M     (D) Klein, F        |2B| ( 1) Klein, F       
 3B| Tetreault, A    (D) Klein, F        |3B| ( 1) Klein, F       
 SS| Hipple, S       (D)                 |SS| ( 1) Klein, F       
-LF| Telles, T       (D)                 |LF| ( 1) Klein, F       
-CF| Clemente, J     (D)                 |CF| ( 1) Klein, F       
-RF| Campbell, T     (D)                 |RF| ( 1) Klein, F       
-DH| Contreras, J    (D)                 |DH| ( 1) Klein, F       
+LF| Telles, T       (D)                 |LF| ( 1) Lopez, O       
+CF| Clemente, J     (D)                 |CF| ( 1) Lopez, O       
+RF| Campbell, T     (D) Lopez, O        |RF| ( 1) Lopez, O       
+DH| Contreras, J    (D)                 |DH| ( 1) Lopez, O       
 
 vs LHP
  C| Urrutia, R      (D)                 | C| ( 1) Contreras, J   
 1B| Burford, J      (D)                 |1B| ( 1) Contreras, J   
-2B| Klein, F        (D)                 |2B| ( 1) Contreras, J   
-3B| Barragan, M     (D)                 |3B| ( 1) Contreras, J   
-SS| Hipple, S       (D)                 |SS| ( 1) Campbell, T    
+2B| Klein, F        (D)                 |2B| ( 1) Barragan, M    
+3B| Tetreault, A    (D) Barragan, M     |3B| ( 1) Barragan, M    
+SS| Hipple, S       (D)                 |SS| ( 1) Barragan, M    
 LF| Telles, T       (D)                 |LF| ( 1) Contreras, J   
 CF| Clemente, J     (D)                 |CF| ( 1) Contreras, J   
-RF| Tetreault, A    (D)                 |RF| ( 1) Contreras, J   
+RF| Lopez, O        (D)                 |RF| ( 1) Contreras, J   
 
 vs LHP+DH
- C| Urrutia, R      (D)                 | C| ( 1) Campbell, T    
-1B| Burford, J      (D)                 |1B| ( 1) Campbell, T    
-2B| Klein, F        (D)                 |2B| ( 1) Campbell, T    
-3B| Barragan, M     (D)                 |3B| ( 1) Campbell, T    
-SS| Hipple, S       (D)                 |SS| ( 1) Campbell, T    
+ C| Urrutia, R      (D)                 | C| ( 1) Barragan, M    
+1B| Burford, J      (D)                 |1B| ( 1) Barragan, M    
+2B| Klein, F        (D)                 |2B| ( 1) Barragan, M    
+3B| Tetreault, A    (D) Barragan, M     |3B| ( 1) Barragan, M    
+SS| Hipple, S       (D)                 |SS| ( 1) Barragan, M    
 LF| Telles, T       (D)                 |LF| ( 1) Campbell, T    
 CF| Clemente, J     (D)                 |CF| ( 1) Campbell, T    
-RF| Tetreault, A    (D)                 |RF| ( 1) Campbell, T    
-DH| Contreras, J    (D)                 |DH| ( 1) Campbell, T    
+RF| Lopez, O        (D)                 |RF| ( 1) Campbell, T    
+DH| Contreras, J    (D)                 |DH| ( 1) Barragan, M    
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. LF R Contreras, J     DH R Contreras, J     1B R Burford, J       1B R Burford, J      
 2.  C R Urrutia, R        C R Urrutia, R       LF L Telles, T        LF L Telles, T       
 3. RF L Campbell, T      RF L Campbell, T       C R Urrutia, R        C R Urrutia, R      
 4. SS R Hipple, S        SS R Hipple, S        SS R Hipple, S        SS R Hipple, S       
-5. 1B R Burford, J       1B R Burford, J       RF L Tetreault, A     RF L Tetreault, A    
+5. 1B R Burford, J       1B R Burford, J       3B L Tetreault, A     3B L Tetreault, A    
 6. 2B L Barragan, M      2B L Barragan, M      2B R Klein, F         2B R Klein, F        
-7. 3B L Tetreault, A     3B L Tetreault, A     3B L Barragan, M      DH R Contreras, J    
-8. CF S Clemente, J      CF S Clemente, J      CF S Clemente, J      3B L Barragan, M     
+7. 3B L Tetreault, A     3B L Tetreault, A     RF R Lopez, O         DH R Contreras, J    
+8. CF S Clemente, J      CF S Clemente, J      CF S Clemente, J      RF R Lopez, O        
 9.  P                    LF L Telles, T         P                    CF S Clemente, J     
 
 --- Bunt for Hit ---
@@ -291,8 +290,9 @@ DH| Contreras, J    (D)                 |DH| ( 1) Campbell, T
 --- Stealing @ 73.8 ---
 RF Timothy Campbell          33| RF : 103       2   3     : 107 |    :                         :   0 |   0 | 107 | -2---326 |    *     $3.67Mx2 |     $1M: $2.18M |   p69 | Houston Astros       | **^
 RF Jose Contreras            34| RF : 105       0   4     : 109 |    :                         :   0 |  -2 | 107 | -2---215 |    *     $3.67Mx3 |  $1.33M:  $2.9M |  p486 | Houston Astros       | **^
+RF Oscar Lopez               32| RF :  96       8   2     : 105 |    :                         :   0 |   1 | 106 | -2---739 |    *     $3.28Mx2 | $667.3k: $1.45M |  p299 | Houston Astros       | **
 
-40 man: 35/40, Remove: 7, Add: 10
+40 man: 31/40, Remove: 1, Add: 9
 
 --- +40 ---
 MR Julio Raposa              20| MR :     179      63  23 : 265 | MR :     114      49   9     : 173 |   6 | 271 |          |                   | $28.69M:$62.42M |  p725 | Houston Astros       | +++-
@@ -301,18 +301,11 @@ SP Jeffrey Draeger           28| SP :     138      32     : 170 | SP :     152  
 SP Walton Myler              29| SP :     128      22     : 150 |    :                         :   0 |   4 | 154 |          |  F  +             |  $7.34M:$15.97M |  p510 | Houston Astros       | *
 MR Joshua Blood              20| MR :     115       7     : 123 | MR :     110     -15   6     : 101 |   6 | 129 |          |   9               |  $2.34M: $5.08M |  p681 | Houston Astros       | ++++
 RF Yurihiko Koan             22| DH : 103       0   0     : 103 | DH : 101       0  20  -1     : 121 |   6 | 127 | -2---224 |      #            |        :        |  p126 | Houston Astros       | ++
-MR Rodney Shinrikiyaru       26| MR :     105      -1     : 103 | MR :     106     -16   3     :  93 |   6 | 109 |          |           $350k a |        :        |   p74 | Houston Astros       | *
 SS Kenneth Kim               23| SS :  85      17   0     : 102 | SS :  82      17  -7  -2     :  90 |   6 | 108 | -3527--- |  F  +#            |        :        |  p228 | Houston Astros       | ++
  C Travis Slater             27|  C :  98      -4   0     :  94 | DH : 103       0  -7   1     :  97 |   6 | 103 | 4------- |  F        $550k   |        :        |  p162 | Houston Astros       | *
 RF Hyu-suton Mito            28| DH :  95       0  -8     :  87 | DH : 101       0  -8  -1     :  93 |   5 |  98 | -1---1-4 |  F  +             |        :        |  p471 | Houston Astros       | *
 
 --- -40 ---
-SP Matthew Spengler          28| SP :      98      -8     :  90 | SP :      98     -22  -5     :  71 |   5 |  95 |          |    *     $1.31Mx3 |        :        |  p150 | Houston Astros       | **
-MR Milton Johnston           33| MR :      98      -7     :  90 |    :                         :   0 |   0 |  90 |          |    *+    $5.58Mx3 |        :        |  p416 | Houston Astros       | ***^
-MR Ricky Mazzarella          33| MR :      94     -10     :  84 |    :                         :   0 |   0 |  84 |          |    *+    $2.45Mx5 |        :        |  p517 | Houston Astros       | **^
-MR Jon Santoyo               32| MR :      89     -15     :  74 |    :                         :   0 |   1 |  75 |          |    *+    $3.35Mx4 |        :        |  p446 | Houston Astros       | ***
-MR Kenneth Horne             31| MR :      79     -24     :  55 |    :                         :   0 |   2 |  57 |          |  F *+    $4.65M   |        :        |  p476 | Houston Astros       | ***^
-MR Scott Farnham             34| MR :      74     -28     :  47 |    :                         :   0 |  -2 |  45 |          |    *     $2.45Mx5 |        :        |   p13 | Houston Astros       | **^
 SP Hector Colon              24| SP :      70     -36     :  34 |    :      76     -53 -27     :  -5 |   6 |  40 |          |   3*    $507.1k r |        :        |  p553 | Houston Astros       | +++
 
 --- Waive ---
@@ -327,10 +320,6 @@ MR Milton Johnston           33| MR :      98      -7     :  90 |    :          
 MR Ricky Mazzarella          33| MR :      94     -10     :  84 |    :                         :   0 |   0 |  84 |          |    *+    $2.45Mx5 |        :        |  p517 | Houston Astros       | **^
 MR Jon Santoyo               32| MR :      89     -15     :  74 |    :                         :   0 |   1 |  75 |          |    *+    $3.35Mx4 |        :        |  p446 | Houston Astros       | ***
 SP Charles Manuel            37| SP :      98      -8     :  90 |    :                         :   0 | -20 |  70 |          |    *     $8.27Mx2 |        :        |  p155 | Houston Astros       | ***
-MR Manuel Luna               35| MR :      88     -16     :  73 |    :                         :   0 |  -6 |  67 |          |  F *     $5.58M   |        :        |  p450 | Houston Astros       | ****
-SP Ralph Allen               35| SP :      89     -17     :  72 |    :                         :   0 |  -6 |  66 |          |  F *    $12.06M   |        :        |   p61 | Houston Astros       | ***
-MR Kenneth Horne             31| MR :      79     -24     :  55 |    :                         :   0 |   2 |  57 |          |  F *+    $4.65M   |        :        |  p476 | Houston Astros       | ***^
-MR Scott Farnham             34| MR :      74     -28     :  47 |    :                         :   0 |  -2 |  45 |          |    *     $2.45Mx5 |        :        |   p13 | Houston Astros       | **^
 
 --- Waivers ---
 SP Brett Dennis              25| SP :     150      44     : 194 | SP :     151      27  48   3 : 228 |   6 | 234 |          |    *+    $1.33Mx4 | $14.68M:$31.93M |  p419 | Houston Astros       | **
@@ -372,7 +361,6 @@ SP Walton Myler              29| SP :     128      22     : 150 |    :          
 MR Yasunaga Keita            35| MR :     132      22     : 155 |    :                         :   0 |  -6 | 149 |          |    *+    $2.56Mx2 |  $7.34M:$15.97M |  p405 | Houston Astros       | **^
 SP Chad Ziebarth             30| SP :     101      -5     :  96 |    :                         :   0 |   3 |  99 |          |           $450kx4 |        :        |   p47 | Houston Astros       | *
 SP Eric Trautman             31| SP :     101      -5     :  96 |    :                         :   0 |   2 |  98 |          |    *              |        :        |  p353 | Houston Astros       | *^
-MR Scott Farnham             34| MR :      74     -28     :  47 |    :                         :   0 |  -2 |  45 |          |    *     $2.45Mx5 |        :        |   p13 | Houston Astros       | **^
 
 --- Release ---
 
@@ -462,10 +450,7 @@ SS Kenneth Kim               23| SS :  85      17   0     : 102 | SS :  82      
 RF Hyu-suton Mito            28| DH :  95       0  -8     :  87 | DH : 101       0  -8  -1     :  93 |   5 |  98 | -1---1-4 |  F  +             |        :        |  p471 | Houston Astros       | *
 RF Keith Glessner            25| RF :  89       6  -7     :  89 | RF :  92       6 -10  -3     :  85 |   6 |  95 | -2---338 |  F  +             |        :        |  p511 | Houston Astros       | *
 2B Manuel Barragan           36| DH : 101       0  -2     :  99 |    :                         :   0 | -12 |  87 | -21----- |  F *+    $1.75M   |        :        |  p222 | Houston Astros       | **
-MR Manuel Luna               35| MR :      88     -16     :  73 |    :                         :   0 |  -6 |  67 |          |  F *     $5.58M   |        :        |  p450 | Houston Astros       | ****
 LF John Broyles              27| LF :  76       6 -22     :  60 | LF :  79       6 -29 -17     :  39 |   6 |  66 | -2---726 |  F                |        :        |  p454 | Houston Astros       | *
-SP Ralph Allen               35| SP :      89     -17     :  72 |    :                         :   0 |  -6 |  66 |          |  F *    $12.06M   |        :        |   p61 | Houston Astros       | ***
-MR Kenneth Horne             31| MR :      79     -24     :  55 |    :                         :   0 |   2 |  57 |          |  F *+    $4.65M   |        :        |  p476 | Houston Astros       | ***^
 LF Paul Turberville          23| RF :  56       4 -42     :  18 | RF :  81       4 -36 -16     :  33 |   6 |  39 | -2-1-627 |  F   #            |        :        |  p668 | Houston Astros       | +-
 
 --- Arbitration ---
@@ -515,8 +500,8 @@ CATCHER
  3 | Slater, T         98  -4  94 | Slater, T         98  -4  94 | Hipple, S        121 -32  89
  4 | Burford, J       109 -32  77 | Telles, T        109 -32  77 | Contreras, J     117 -32  85
  5 | Contreras, J     105 -32  73 | Burford, J       109 -32  77 | Campbell, T      116 -32  84
- 6 | Tetreault, A     104 -32  72 | Dane, B          105 -32  73 | Mito, H          109 -32  77
- 7 | Telles, T        104 -32  72 | Tetreault, A     103 -32  71 | Burford, J       109 -32  77
+ 6 | Tetreault, A     104 -32  72 | Dane, B          105 -32  73 | Burford, J       109 -32  77
+ 7 | Telles, T        104 -32  72 | Tetreault, A     103 -32  71 | Mito, H          109 -32  77
  8 | Dane, B          104 -32  72 | Koan, Y          103 -32  71 | Barragan, M      108 -32  76
  9 | Campbell, T      103 -32  71 | Borrero, P        99 -32  67 | Tetreault, A     107 -32  75
 10 | Koan, Y          103 -32  71 | Contreras, J      98 -32  66 | Koan, Y          103 -32  71
@@ -539,8 +524,8 @@ SECOND_BASE
  3 | Barragan, M      101 -11  90 | Telles, T        109 -18  91 | Contreras, J     117 -19  98
  4 | Burford, J       109 -19  90 | Burford, J       109 -19  90 | Barragan, M      108 -11  97
  5 | Tetreault, A     104 -17  87 | Kim, K            87   2  89 | Klein, F          93   0  93
- 6 | Kim, K            85   2  87 | Dane, B          105 -18  87 | Mito, H          109 -18  91
- 7 | Campbell, T      103 -17  86 | Tetreault, A     103 -17  86 | Urrutia, R       109 -18  91
+ 6 | Kim, K            85   2  87 | Dane, B          105 -18  87 | Urrutia, R       109 -18  91
+ 7 | Campbell, T      103 -17  86 | Tetreault, A     103 -17  86 | Mito, H          109 -18  91
  8 | Contreras, J     105 -19  86 | Barragan, M       96 -11  85 | Tetreault, A     107 -17  90
  9 | Telles, T        104 -18  86 | Koan, Y          103 -19  84 | Burford, J       109 -19  90
 10 | Dane, B          104 -18  86 | Borrero, P        99 -17  82 | Borrero, P       102 -17  85
@@ -550,8 +535,8 @@ THIRD_BASE
  2 | Burford, J       109 -10  99 | Telles, T        109  -8 101 | Campbell, T      116  -7 109
  3 | Tetreault, A     104  -7  97 | Burford, J       109 -10  99 | Contreras, J     117  -9 108
  4 | Klein, F          96   0  96 | Klein, F          98   0  98 | Barragan, M      108  -5 103
- 5 | Campbell, T      103  -7  96 | Dane, B          105  -8  97 | Mito, H          109  -8 101
- 6 | Barragan, M      101  -5  96 | Tetreault, A     103  -7  96 | Urrutia, R       109  -8 101
+ 5 | Campbell, T      103  -7  96 | Dane, B          105  -8  97 | Urrutia, R       109  -8 101
+ 6 | Barragan, M      101  -5  96 | Tetreault, A     103  -7  96 | Mito, H          109  -8 101
  7 | Telles, T        104  -8  96 | Koan, Y          103  -9  94 | Tetreault, A     107  -7 100
  8 | Dane, B          104  -8  96 | Borrero, P        99  -7  92 | Burford, J       109 -10  99
  9 | Contreras, J     105  -9  96 | Lopez, O          97  -6  91 | Borrero, P       102  -7  95
@@ -563,8 +548,8 @@ SHORTSTOP
  3 | Klein, F          96  -6  90 | Telles, T        109 -16  93 | Contreras, J     117 -18  99
  4 | Tetreault, A     104 -14  90 | Klein, F          98  -6  92 | Kim, K            81  17  98
  5 | Burford, J       109 -19  90 | Burford, J       109 -19  90 | Barragan, M      108 -12  96
- 6 | Barragan, M      101 -12  89 | Dane, B          105 -16  89 | Mito, H          109 -16  93
- 7 | Campbell, T      103 -14  89 | Tetreault, A     103 -14  89 | Urrutia, R       109 -16  93
+ 6 | Barragan, M      101 -12  89 | Dane, B          105 -16  89 | Urrutia, R       109 -16  93
+ 7 | Campbell, T      103 -14  89 | Tetreault, A     103 -14  89 | Mito, H          109 -16  93
  8 | Telles, T        104 -16  88 | Koan, Y          103 -18  85 | Tetreault, A     107 -14  93
  9 | Dane, B          104 -16  88 | Borrero, P        99 -14  85 | Burford, J       109 -19  90
 10 | Contreras, J     105 -18  87 | Lopez, O          97 -12  85 | Borrero, P       102 -14  88
@@ -587,8 +572,8 @@ CENTER_FIELD
  3 | Telles, T        104   1 105 | Dane, B          105  -1 104 | Clemente, J      102   9 111
  4 | Tetreault, A     104   0 104 | Clemente, J       95   9 104 | Tetreault, A     107   0 107
  5 | Dane, B          104  -1 103 | Tetreault, A     103   0 103 | Hipple, S        121 -14 107
- 6 | Campbell, T      103   0 103 | Koan, Y          103  -1 102 | Mito, H          109  -5 104
- 7 | Contreras, J     105  -2 103 | Lopez, O          97   4 101 | Borrero, P       102   1 103
+ 6 | Contreras, J     105  -2 103 | Koan, Y          103  -1 102 | Mito, H          109  -5 104
+ 7 | Campbell, T      103   0 103 | Lopez, O          97   4 101 | Borrero, P       102   1 103
  8 | Koan, Y          103  -1 102 | Borrero, P        99   1 100 | Koan, Y          103  -1 102
  9 | Borrero, P       100   1 101 | Burford, J       109 -11  98 | Dane, B          101  -1 100
 10 | Lopez, O          96   4 100 | Torres, J         98   0  98 | Torres, J        100   0 100
@@ -609,9 +594,9 @@ DESIGNATED_HITTER
  1 | Hipple, S        129   0 129 | Hipple, S        134   0 134 | Hipple, S        121   0 121
  2 | Burford, J       109   0 109 | Telles, T        109   0 109 | Contreras, J     117   0 117
  3 | Contreras, J     105   0 105 | Burford, J       109   0 109 | Campbell, T      116   0 116
- 4 | Tetreault, A     104   0 104 | Dane, B          105   0 105 | Mito, H          109   0 109
- 5 | Telles, T        104   0 104 | Tetreault, A     103   0 103 | Urrutia, R       109   0 109
- 6 | Dane, B          104   0 104 | Koan, Y          103   0 103 | Burford, J       109   0 109
+ 4 | Tetreault, A     104   0 104 | Dane, B          105   0 105 | Urrutia, R       109   0 109
+ 5 | Telles, T        104   0 104 | Tetreault, A     103   0 103 | Burford, J       109   0 109
+ 6 | Dane, B          104   0 104 | Koan, Y          103   0 103 | Mito, H          109   0 109
  7 | Campbell, T      103   0 103 | Borrero, P        99   0  99 | Barragan, M      108   0 108
  8 | Koan, Y          103   0 103 | Contreras, J      98   0  98 | Tetreault, A     107   0 107
  9 | Urrutia, R       101   0 101 | Klein, F          98   0  98 | Koan, Y          103   0 103
@@ -668,12 +653,8 @@ MR Ricky Mazzarella          33| MR :      94     -10     :  84 |    :          
 LF Adam Bainbridge           27| LF :  83       5 -16     :  72 | LF :  79       5 -22 -18     :  44 |   6 |  78 | -2---723 |     +     $380kx4 |        :        |  p325 | Houston Astros       | *
 MR Jon Santoyo               32| MR :      89     -15     :  74 |    :                         :   0 |   1 |  75 |          |    *+    $3.35Mx4 |        :        |  p446 | Houston Astros       | ***
 SP Charles Manuel            37| SP :      98      -8     :  90 |    :                         :   0 | -20 |  70 |          |    *     $8.27Mx2 |        :        |  p155 | Houston Astros       | ***
-MR Manuel Luna               35| MR :      88     -16     :  73 |    :                         :   0 |  -6 |  67 |          |  F *     $5.58M   |        :        |  p450 | Houston Astros       | ****
 LF John Broyles              27| LF :  76       6 -22     :  60 | LF :  79       6 -29 -17     :  39 |   6 |  66 | -2---726 |  F                |        :        |  p454 | Houston Astros       | *
-SP Ralph Allen               35| SP :      89     -17     :  72 |    :                         :   0 |  -6 |  66 |          |  F *    $12.06M   |        :        |   p61 | Houston Astros       | ***
 RF Robert Fusco              28| RF :  81       0 -21     :  60 | RF :  83       0 -22 -18     :  43 |   5 |  65 | -2---325 |           $440kx4 |        :        |  p480 | Houston Astros       | *
-MR Kenneth Horne             31| MR :      79     -24     :  55 |    :                         :   0 |   2 |  57 |          |  F *+    $4.65M   |        :        |  p476 | Houston Astros       | ***^
-MR Scott Farnham             34| MR :      74     -28     :  47 |    :                         :   0 |  -2 |  45 |          |    *     $2.45Mx5 |        :        |   p13 | Houston Astros       | **^
 SP Hector Colon              24| SP :      70     -36     :  34 |    :      76     -53 -27     :  -5 |   6 |  40 |          |   3*    $507.1k r |        :        |  p553 | Houston Astros       | +++
 LF Paul Turberville          23| RF :  56       4 -42     :  18 | RF :  81       4 -36 -16     :  33 |   6 |  39 | -2-1-627 |  F   #            |        :        |  p668 | Houston Astros       | +-
 
@@ -1028,8 +1009,8 @@ MR James Anderson            20| MR :     105      -1     : 103 | MR :      98  
 2B Michael Shulman           24| 2B :  95      -2   6     : 100 | 2B :  94      -2  -1  -1     :  90 |   6 | 106 | -241---- |   6*+    $1.76M r |     $2M: $4.35M |    p9 | New York Yankees     | +++-
 2B Amadeo Gomez              21| 2B :  60       0 -27     :  32 | 2B : 103       0 -12   9     :  99 |   6 | 105 | -251---- |                   |        :        |  p697 | New York Yankees     | ++
 SP David Evens               26| SP :      98      -8     :  90 | SP :     112     -22   9     :  99 |   6 | 105 |          |    *+    $3.51Mx5 |        :        |  p249 | New York Yankees     | **^
+2B Ronald Yazzie             27| 2B :  87       5   5     :  97 | 2B :  86       5 -18  -3     :  70 |   6 | 103 | -2621--- |    *+     $600kx5 |  $1.67M: $3.63M |  p413 | New York Yankees     | **
  C Herbert Baxter            32|  C :  92       6   4     : 102 |    :                         :   0 |   1 | 103 | 71------ |  F *+     $550k   |  $1.33M:  $2.9M |   p67 | New York Yankees     | *
-2B Ronald Yazzie             27| 2B :  87       5   5     :  96 | 2B :  86       5 -18  -3     :  70 |   6 | 102 | -2621--- |    *+     $600kx5 |  $1.67M: $3.63M |  p413 | New York Yankees     | **
 RF Larry Kensaku             31| RF : 101       0  -1     : 100 |    :                         :   0 |   2 | 102 | -2---325 |  F                |        :        |  p455 | New York Yankees     | *
 MR Larry Ransom              26| MR :      99      -6     :  93 | MR :     108     -21   4     :  91 |   6 |  99 |          |    *+    $1.31M a |        :        |  p527 | New York Yankees     | **^
 2B Vaughn Concepcion         18| 2B :  67       2 -18     :  51 | 2B :  93       2  -4   1     :  92 |   6 |  98 | -251---- |   T               |        :        |  p700 | New York Yankees     | ++-
@@ -1048,7 +1029,7 @@ RF Tyler Soares              26| CF : 115      11  23  11 : 160 | CF : 121      
 CF Sid Caperton              18| CF :  67      16 -19     :  64 | CF : 120      16  -4  35  13 : 180 |   6 | 186 | -2---373 |   2               |        :        |  p567 | Minnesota Twins      | +++-
 SP Shawn Santoro             26| SP :     135      29     : 164 | SP :     123      14  19     : 157 |   6 | 170 |          |    *     $1.49M a |  $9.68M:$21.05M |  p102 | Minnesota Twins      | **^
 LF Herman Ordoñez            21| CF :  71       8 -23     :  57 | CF : 119       8  -1  26   4 : 156 |   6 | 162 | -2---652 |   4*              |        :        |  p620 | Minnesota Twins      | +++
-2B Vernon Anderson           17| 2B :  66       1 -20     :  46 | 2B : 124       1  -4  31     : 152 |   6 | 158 | -251---- |   3               |        :        |  p647 | Minnesota Twins      | +++-
+2B Vernon Anderson           17| 2B :  66       1 -20     :  47 | 2B : 124       1  -4  31     : 152 |   6 | 158 | -251---- |   3               |        :        |  p647 | Minnesota Twins      | +++-
 CF Juan Davidson             18| CF :  73      12 -17     :  68 | CF : 112      12   2  23   1 : 149 |   6 | 155 | -2---363 |   9               |        :        |  p604 | Minnesota Twins      | ++-
 SS Louis Constantine         24| SS :  73      21  -8     :  86 | SS : 114      21 -23  34     : 146 |   6 | 152 | -3337--- |   5               |        :        |  p706 | Minnesota Twins      | +++
 MR David Elms                25| MR :     117       9     : 126 | MR :     129      -6  22     : 145 |   6 | 151 |          |    *              |     $3M: $6.53M |  p158 | Minnesota Twins      | +++
@@ -1069,9 +1050,9 @@ RF Tommy Howells             28| CF : 105       9  12     : 126 | CF : 105      
 LF Joel Dearborn             22| LF :  87       5 -11     :  81 | LF : 104       5   4   7     : 121 |   6 | 127 | -2---726 |   6*      $550k r |        :        |  p679 | Minnesota Twins      | +++
 2B Mike Gadson               30| 2B : 104      -2  15     : 117 |    :                         :   0 |   3 | 120 | -24----- |    *              |     $5M:$10.89M |  p156 | Minnesota Twins      | *
 SP Shane Knoll               25| SP :     110       3     : 113 | SP :     111     -13   8     : 107 |   6 | 119 |          |    *     $2.74M a |     $1M: $2.18M |  p113 | Minnesota Twins      | ***
+2B Silvio Barrera            31| 2B : 101       1  15     : 117 |    :                         :   0 |   2 | 119 | -251---- |  F *+     $550k   |     $5M:$10.89M |  p138 | Minnesota Twins      | *
 CL Paul Groff                32| MR :     112       5     : 118 |    :                         :   0 |   1 | 119 |          |  F *     $2.78M   |  $1.67M: $3.63M |   p72 | Minnesota Twins      | ***^
 3B Bricio Cardenas           25| 3B :  89      14   9     : 112 | 3B :  86      14 -10   3     :  93 |   6 | 118 | -3362--- |  F                |     $3M: $6.53M |   p52 | Minnesota Twins      | *
-2B Silvio Barrera            31| 2B : 101       1  15     : 116 |    :                         :   0 |   2 | 118 | -251---- |  F *+     $550k   |     $5M:$10.89M |  p138 | Minnesota Twins      | *
 3B Ahmed Ramos               31| 3B :  92      13  11     : 116 |    :                         :   0 |   2 | 118 | -3363--- |  F                |  $3.67M: $7.98M |  p338 | Minnesota Twins      | *
 MR James Mumford             27| MR :     106      -1     : 105 | MR :     106     -14   3     :  95 |   6 | 111 |          |    *     $1.31M a |        :        |  p187 | Minnesota Twins      | **^
 LF Paul Escudero             31| DH : 106       0   3     : 109 |    :                         :   0 |   2 | 111 | -2---314 |    *+    $2.74Mx2 |     $1M: $2.18M |  p296 | Minnesota Twins      | **^
@@ -1307,18 +1288,18 @@ American
 American ------------+
 Pittsburgh Pirates   | 103.3 102.3 105.6 | 110.9 111.1 120.7 | 100- 62 0.619 |   2-  3 0.400 |  99- 63 0.611 ( 1) 
 New York Mets        | 102.7 102.3 104.9 | 101.9 105.5 107.1 |  90- 72 0.558 |   4-  1 0.800 |  92- 70 0.568 ( 2) 
-Oakland A's          | 101.4 102.4 103.7 |  98.6  98.3  96.9 |  81- 81 0.502 |   3-  2 0.600 |  82- 80 0.506 ( 3) 
-Milwaukee Brewers    | 100.9 100.4 101.4 | 100.9 100.5 101.4 |  83- 79 0.514 |   1-  4 0.200 |  82- 80 0.506 ( 4) 
+Milwaukee Brewers    | 100.9 100.4 101.4 | 100.9 100.5 101.4 |  83- 79 0.514 |   1-  4 0.200 |  82- 80 0.506 ( 3) 
+Oakland A's          | 101.4 102.4 103.7 |  98.6  98.3  96.9 |  81- 81 0.502 |   3-  2 0.600 |  82- 80 0.506 ( 4) 
 Toronto Blue Jays    |  97.0  96.2  93.1 | 102.1 102.8 104.8 |  79- 83 0.488 |   3-  2 0.600 |  80- 82 0.494 ( 6) 
 Los Angeles Dodgers  | 102.0 103.5 105.4 |  94.8  93.8  88.2 |  75- 87 0.464 |   2-  3 0.400 |  75- 87 0.463 (11) 
 
 National
 National ------------+
 Atlanta Braves       |  97.7  98.3  95.9 | 101.6 101.4 103.0 |  80- 82 0.494 |   3-  2 0.600 |  81- 81 0.500 ( 5) 
-Houston Astros       |  96.1  97.4  93.4 | 102.6 102.9 105.4 |  80- 82 0.492 |   2-  3 0.400 |  79- 83 0.488 ( 7) 
-Baltimore Orioles    |  95.8  96.2  91.9 | 103.7 102.1 105.8 |  79- 83 0.486 |   3-  2 0.600 |  79- 83 0.488 ( 8) 
-Washington Nationals | 103.1 102.6 105.6 |  95.7  93.8  89.1 |  76- 86 0.470 |   2-  3 0.400 |  76- 86 0.469 ( 9) 
-Minnesota Twins      | 104.1 104.4 108.3 |  92.3  93.1  85.0 |  74- 88 0.459 |   4-  1 0.800 |  76- 86 0.469 (10) 
+Baltimore Orioles    |  95.8  96.2  91.9 | 103.7 102.1 105.8 |  79- 83 0.486 |   3-  2 0.600 |  79- 83 0.488 ( 7) 
+Houston Astros       |  96.1  97.4  93.4 | 102.6 102.9 105.4 |  80- 82 0.492 |   2-  3 0.400 |  79- 83 0.488 ( 8) 
+Minnesota Twins      | 104.1 104.4 108.3 |  92.3  93.1  85.0 |  74- 88 0.459 |   4-  1 0.800 |  76- 86 0.469 ( 9) 
+Washington Nationals | 103.1 102.6 105.6 |  95.7  93.8  89.1 |  76- 86 0.470 |   2-  3 0.400 |  76- 86 0.469 (10) 
 New York Yankees     |  95.9  94.0  89.5 |  95.0  94.6  89.2 |  63- 99 0.390 |   1-  4 0.200 |  62-100 0.383 (12) 
                      |             106.3 |             138.6 |
 
