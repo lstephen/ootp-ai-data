@@ -34,7 +34,7 @@ Pitching: 2612/3664 0.416/0.584
              Ks | 0.074
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.06617266689802041, RandomForest(...)), (-0.04529002922412991, Isotonic(...)), (0.03333468469901942, Huber(...)), (0.06046046176228074, Linear(...))]Best Parameters: {'regressor__n_estimators': 8, 'selection__k': 4, 'regressor__max_depth': 17}Feature Scores: [11.  2.  3.  0.  1.  0.]Feature Mask: [ True  True  True False  True False]Feature Importances: [0.476 0.253 0.138 0.133]
+Selected: RandomForestScores: [(0.06617266689802041, RandomForest(...)), (-0.04529002922412991, Isotonic(...)), (0.03333468469901942, Huber(...)), (0.06046046176228074, Linear(...))]Best Parameters: {'regressor__max_depth': 17, 'regressor__n_estimators': 8, 'selection__k': 4}Feature Scores: [11.  2.  3.  0.  1.  0.]Feature Mask: [ True  True  True False  True False]Feature Importances: [0.476 0.253 0.138 0.133]
 -- Doubles
 Selected: HuberScores: [(-0.06214768922954798, RandomForest(...)), (-0.1249541496205963, Isotonic(...)), (0.0363281062306533, Huber(...)), (-0.004794303351590146, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [6. 5. 5. 0. 0. 1.]Coefficients: [0.01001164 0.0288013  0.00411703]Intercept: 0.022288165211196656Feature Mask: [ True  True  True False False False]
 -- Triples
@@ -86,10 +86,10 @@ SS Knoblauch, C    22| .259/.335/.375  97     | .306/.366/.413 106     | -3726--
 CF Gibson, K       33| .234/.300/.394  92     | .294/.367/.491 113     | ------33   0 |  + || 109 || ML   F *   |
 CF Jordan, B       23| .279/.331/.427 101     | .265/.317/.409  97     | -2---868   6 |  + || 104 || ML    5*   |
 3B Martinez, C     25| .255/.308/.367  91     | .309/.358/.400 103     | -3362---   0 |  - || 101 || ML     *   |
-CF Williams, B     22| .221/.288/.382  89     | .221/.288/.382  89     | -3---494  11 | ++ || 100 || AAA   1*   |
+CF Williams, B     22| .221/.288/.382  89     | .221/.288/.382  89     | -3---494  11 | ++ || 100 || ML    1*   |
 CF Brunansky, T    30| .229/.320/.396  96     | .229/.320/.396  96     | -2---367   4 |  + || 100 || ML   F *+  |
 2B Herr, T         34| .252/.340/.331  95     | .252/.341/.331  95     | -262----   3 | +- ||  98 || ML     *+  |
-CF Buhner, J       26| .292/.365/.448 109     | .215/.296/.367  89     | -2---556   2 |  - ||  95 || ML     *   |
+CF Buhner, J       26| .292/.365/.448 109     | .215/.296/.367  89     | -2---556   2 |  - ||  95 || AAA    *   |
 SS Bernazard, T    34| .198/.281/.292  80     | .204/.286/.313  83     | -3938---  12 |    ||  94 || ML   F *   |
 C  Bailey, M       29| .131/.234/.231  66     | .205/.325/.340  92     | 64---212   3 |  + ||  91 || ML     *   |
 CF Pasqua, D       29| .195/.239/.305  73     | .228/.283/.360  86     | -2---777   4 | -- ||  88 || ML     *+  |
@@ -110,8 +110,8 @@ CF Hughes, K       27| .199/.217/.247  64     | .206/.225/.258  66     | -211235
 CF Mieske, M       22| .183/.228/.261  67     | .156/.203/.232  60     | -1---777   5 |  + ||  66 || A          |
 LF Harris, D       23| .233/.263/.279  75     | .163/.196/.206  56     | -1---525   1 |  + ||  61 || A          |
 1B Gainer, J       24| .178/.223/.228  63     | .156/.203/.225  59     | -2------   0 |  + ||  60 || A          |
-LF Gerhart, K      29| .151/.197/.243  60     | .151/.197/.243  60     | -1---52-   0 |    ||  60 || AA     *   |
 C  Johnson, B      31| .157/.203/.211  58     | .182/.214/.216  60     | 32------   0 | ++ ||  60 || AAA    *   |
+LF Gerhart, K      29| .151/.197/.243  60     | .151/.197/.243  60     | -1---52-   0 |    ||  60 || AA     *   |
 CF Shelton, B      21| .160/.193/.191  54     | .160/.193/.191  54     | -4---556   3 | +  ||  57 || AA         |
 CF White, R        18| .150/.183/.177  51     | .150/.183/.177  51     | -2---773   5 | -+ ||  56 || A     9    |
 CF Lennon, P       22| .160/.193/.191  54     | .160/.193/.191  54     | -1---651   1 |  + ||  55 || AA         |
@@ -134,11 +134,11 @@ SP Cook, M           *+   ML 27 | 11.9  8.8  5.6  1.3 |  63     |  64     |  - |
 SP Leiter, M         *    AA 27 | 12.1  7.0  6.1  1.3 |  63     |  62     |  + |  60/ 54 ||  60 ||
 SP Lima, J          T      A 18 | 12.4  5.0  6.8  1.3 |  59     |  59     |  + |  59/ 51 ||  59 ||
 SP Hutton, M               A 20 | 12.1  7.2  6.1  1.3 |  62     |  62     |    |  58/ 54 ||  58 ||
-MR Mauser, T             AAA 24 | 11.9  6.6  5.7  1.3 |  60     |  65     |  - |  56/ 55 ||  56 ||
 MR Walter, G         *+   ML 30 | 11.9  7.9  5.5  1.3 |  67     |  64     |  + |  51/ 56 ||  56 ||
 SP Harris, R              AA 22 | 12.2  7.9  6.3  1.3 |  56     |  62     |    |  56/ 52 ||  56 ||
-MR Easley, L         *   AAA 29 | 12.1 10.2  6.0  1.3 |  57     |  65     |  - |  55/ 54 ||  55 ||
+MR Mauser, T             AAA 24 | 11.9  6.6  5.7  1.3 |  60     |  65     |  - |  56/ 55 ||  56 ||
 SP Meacham, R             AA 23 | 12.5  6.7  7.3  1.3 |  53     |  58     |  - |  55/ 49 ||  55 ||
+MR Easley, L         *   AAA 29 | 12.1 10.2  6.0  1.3 |  57     |  65     |  - |  55/ 54 ||  55 ||
 SP Valera, J        6*    AA 22 | 12.7  8.2  7.7  1.3 |  54     |  54     | ++ |  53/ 47 ||  53 ||
 SP Urbina, U        7      A 16 | 12.9  7.3  8.3  1.4 |  49     |  53     |  + |  49/ 45 ||  49 ||
 MR Christopher, M    *    AA 27 | 12.5  4.7  7.3  1.3 |  56     |  56     |    |  44/ 48 ||  48 ||
@@ -156,17 +156,17 @@ MR Patterson, D            A 19 | 12.6  6.3  7.4  1.3 |  56     |  56     | ++ |
  MR Patterson, K    26 | 2B Diaz, E         19 | LF Gerhart, K      29 | 3B Andrews, S      19 |                       |
  MR Robinson, D     33 | 3B Cooper, S       23 | LF Lennon, P       22 | CF Mieske, M       22 |                       |
  MR Walter, G       30 | SS Gerber, C       32 | LF Shelton, B      21 | CF White, R        18 |                       |
- CL Don Gleaton, J  33 | CF Howard, T       26 | CF Clark, D        29 | RF Harris, D       23 |                       |
-  C Bailey, M       29 | CF Williams, B     22 | CF Hughes, K       27 |                       |                       |
+ CL Don Gleaton, J  33 | LF Buhner, J       26 | CF Clark, D        29 | RF Harris, D       23 |                       |
+  C Bailey, M       29 | CF Howard, T       26 | CF Hughes, K       27 |                       |                       |
  2B Herr, T         34 |                       |                       |                       |                       |
  2B Knoblauch, C    22 |                       |                       |                       |                       |
  2B Woodard, M      30 |                       |                       |                       |                       |
  3B Martinez, C     25 |                       |                       |                       |                       |
  SS Bernazard, T    34 |                       |                       |                       |                       |
  SS Gagne, G        29 |                       |                       |                       |                       |
- LF Buhner, J       26 |                       |                       |                       |                       |
  LF Lombardi, P     27 |                       |                       |                       |                       |
  LF Pasqua, D       29 |                       |                       |                       |                       |
+ CF Williams, B     22 |                       |                       |                       |                       |
  RF Brunansky, T    30 |                       |                       |                       |                       |
  RF Jones, C        25 |                       |                       |                       |                       |
  RF Jordan, B       23 |                       |                       |                       |                       |
@@ -174,23 +174,23 @@ MR Patterson, D            A 19 | 12.6  6.3  7.4  1.3 |  56     |  56     | ++ |
 Total:62 (target 70-75)
 Balance:36/26 = 1.385 (ideal: 1.273)
 
+  ML -> AAA  LF Jay Buhner
   ML -> AAA   C Eddie Taubensee
-  ML -> AAA  CF Bernie Williams
-  ML -> AA   MR Mike Christopher
   ML -> AA   SP Mark Leiter
+  ML -> AA   MR Mike Christopher
  AAA -> ML   SP Mike Harkey
  AAA -> ML   SP Keith Brown
- AAA -> AA   CF Dave Clark
  AAA -> AA   LF Oscar Azocar
- AAA -> A    MR Danny Patterson
+ AAA -> AA   CF Dave Clark
  AAA -> A    SP Mark Hutton
- AAA -> A    1B Scott Bullett
+ AAA -> A    MR Danny Patterson
  AAA -> A    SP Jose Lima
+ AAA -> A    1B Scott Bullett
   AA -> ML   MR Ken Patterson
-  AA -> AAA  MR Logan Easley
   AA -> AAA  3B Scott Cooper
-   A -> AAA  2B Eddy Diaz
+  AA -> AAA  MR Logan Easley
    A -> AAA  SP Steve Avery
+   A -> AAA  2B Eddy Diaz
    A -> AA   MR Reggie Harris
    A -> AA   SP Rusty Meacham
 
@@ -225,56 +225,56 @@ BP Endrnce: 9.0
 
 vs RHP
  C| Bailey, M       (D)                 | C| ( 1) Lombardi, P    
-1B| Gibson, K       (D) Bernazard, T    |1B| ( 1) Buhner, J      
+1B| Gibson, K       (D) Bernazard, T    |1B| ( 1) Brunansky, T   
 2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Bernazard, T   
-3B| Martinez, C     (D)                 |3B| ( 1) Bernazard, T   
+3B| Martinez, C     (D)                 |3B| ( 1) Brunansky, T   
 SS| Knoblauch, C    (D) Gagne, G        |SS| ( 1) Bernazard, T   
-LF| Jordan, B       (D)                 |LF| ( 1) Pasqua, D      
-CF| Jones, C        (D)                 |CF| ( 1) Pasqua, D      
-RF| Brunansky, T    (D)                 |RF| ( 1) Buhner, J      
+LF| Jones, C        (D)                 |LF| ( 1) Brunansky, T   
+CF| Williams, B     (D)                 |CF| ( 1) Brunansky, T   
+RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
 
 vs RHP+DH
  C| Bailey, M       (D)                 | C| ( 1) Lombardi, P    
-1B| Brunansky, T    (D) Bernazard, T    |1B| ( 1) Buhner, J      
+1B| Brunansky, T    (D) Bernazard, T    |1B| ( 1) Pasqua, D      
 2B| Herr, T         (D) Bernazard, T    |2B| ( 1) Bernazard, T   
 3B| Martinez, C     (D)                 |3B| ( 1) Bernazard, T   
 SS| Knoblauch, C    (D) Gagne, G        |SS| ( 1) Bernazard, T   
-LF| Pasqua, D       (D)                 |LF| ( 1) Buhner, J      
-CF| Jones, C        (D)                 |CF| ( 1) Buhner, J      
-RF| Jordan, B       (D)                 |RF| ( 1) Buhner, J      
-DH| Gibson, K       (D)                 |DH| ( 1) Buhner, J      
+LF| Jones, C        (D)                 |LF| ( 1) Pasqua, D      
+CF| Williams, B     (D)                 |CF| ( 1) Pasqua, D      
+RF| Jordan, B       (D)                 |RF| ( 1) Pasqua, D      
+DH| Gibson, K       (D)                 |DH| ( 1) Pasqua, D      
 
 vs LHP
  C| Lombardi, P     (D) Bailey, M       | C| ( 1) Bailey, M      
-1B| Buhner, J       (D) Bailey, M       |1B| ( 1) Herr, T        
+1B| Brunansky, T    (D) Bailey, M       |1B| ( 1) Herr, T        
 2B| Knoblauch, C    (D) Bernazard, T    |2B| ( 1) Herr, T        
 3B| Martinez, C     (D)                 |3B| ( 1) Herr, T        
 SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
-LF| Jordan, B       (D)                 |LF| ( 1) Gibson, K      
-CF| Jones, C        (D)                 |CF| ( 1) Gibson, K      
-RF| Brunansky, T    (D)                 |RF| ( 1) Gibson, K      
+LF| Jones, C        (D)                 |LF| ( 1) Gibson, K      
+CF| Williams, B     (D)                 |CF| ( 1) Gibson, K      
+RF| Jordan, B       (D)                 |RF| ( 1) Gibson, K      
 
 vs LHP+DH
  C| Lombardi, P     (D) Bailey, M       | C| ( 1) Bailey, M      
-1B| Herr, T         (D) Bailey, M       |1B| ( 1) Gibson, K      
+1B| Brunansky, T    (D) Bailey, M       |1B| ( 1) Gibson, K      
 2B| Knoblauch, C    (D) Bernazard, T    |2B| ( 1) Bernazard, T   
 3B| Martinez, C     (D)                 |3B| ( 1) Bernazard, T   
 SS| Gagne, G        (D)                 |SS| ( 1) Bernazard, T   
-LF| Jordan, B       (D)                 |LF| ( 1) Gibson, K      
-CF| Jones, C        (D)                 |CF| ( 1) Gibson, K      
-RF| Brunansky, T    (D)                 |RF| ( 1) Gibson, K      
-DH| Buhner, J       (D)                 |DH| ( 1) Gibson, K      
+LF| Jones, C        (D)                 |LF| ( 1) Gibson, K      
+CF| Williams, B     (D)                 |CF| ( 1) Gibson, K      
+RF| Jordan, B       (D)                 |RF| ( 1) Gibson, K      
+DH| Herr, T         (D)                 |DH| ( 1) Gibson, K      
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. 3B R Martinez, C      3B R Martinez, C      2B R Knoblauch, C     2B R Knoblauch, C    
-2. SS R Knoblauch, C     SS R Knoblauch, C     CF R Jones, C         CF R Jones, C        
-3. LF R Jordan, B        RF R Jordan, B        LF R Jordan, B        LF R Jordan, B       
-4. 1B L Gibson, K        DH L Gibson, K        1B R Buhner, J        DH R Buhner, J       
-5. CF R Jones, C         CF R Jones, C          C R Lombardi, P       C R Lombardi, P     
-6. RF R Brunansky, T     1B R Brunansky, T     RF R Brunansky, T     RF R Brunansky, T    
-7. 2B S Herr, T          2B S Herr, T          3B R Martinez, C      1B S Herr, T         
-8.  C S Bailey, M         C S Bailey, M        SS R Gagne, G         3B R Martinez, C     
-9.  P                    LF L Pasqua, D         P                    SS R Gagne, G        
+2. SS R Knoblauch, C     SS R Knoblauch, C     RF R Jordan, B        RF R Jordan, B       
+3. RF R Jordan, B        RF R Jordan, B        1B R Brunansky, T     1B R Brunansky, T    
+4. 1B L Gibson, K        DH L Gibson, K        LF R Jones, C         LF R Jones, C        
+5. LF R Jones, C         LF R Jones, C          C R Lombardi, P       C R Lombardi, P     
+6. 2B S Herr, T          1B R Brunansky, T     3B R Martinez, C      DH S Herr, T         
+7.  C S Bailey, M        2B S Herr, T          SS R Gagne, G         3B R Martinez, C     
+8. CF S Williams, B       C S Bailey, M        CF S Williams, B      SS R Gagne, G        
+9.  P                    CF S Williams, B       P                    CF S Williams, B     
 
 --- Bunt for Hit ---
 
@@ -350,34 +350,34 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 CF Bernie Williams           22 | CF :  84      11 :  95 | CF :  89      11 : 100 |  +5 |             -20    :             -20    | +++++
 SS Tony Bernazard            34 | 2B :  82      11 :  93 | SS :  82      12 :  94 |  +1 |                    :                    | *
 CF Rondell White             18 | CF :  51       5 :  56 | CF :  51       5 :  56 |  +0 |                    :                    | +++
-2B Eddy Diaz                 19 | SS :  61      10 :  71 | SS :  61      10 :  71 |  +0 |                    :                    | +
 3B Shane Andrews             19 | 3B :  50       3 :  53 | 3B :  50       3 :  53 |  +0 |                    :                    | +++
+2B Eddy Diaz                 19 | SS :  61      10 :  71 | SS :  61      10 :  71 |  +0 |                    :                    | +
 LF Ben Shelton               21 | RF :  54       3 :  57 | RF :  54       3 :  57 |  +0 |                    :                    | +
- C Eddie Taubensee           22 |  C :  76       5 :  81 |  C :  76       5 :  81 |  +0 |                    :                    | ++++-
-1B Scott Bullett             22 | RF :  73       4 :  77 | RF :  73       4 :  77 |  +0 |                    :                    | ++-
-CF Matt Mieske               22 | RF :  61       5 :  66 | RF :  61       5 :  66 |  +0 |                    :                    | ++
 2B Chuck Knoblauch           22 | 2B : 105       5 : 110 | 2B : 105       5 : 110 |  +0 |                    :                    | +++++
 LF Patrick Lennon            22 | LF :  54       1 :  55 | LF :  54       1 :  55 |  +0 |                    :                    | +
-RF Donald Harris             23 | RF :  60       1 :  61 | RF :  60       1 :  61 |  +0 |                    :                    | +
+1B Scott Bullett             22 | RF :  73       4 :  77 | RF :  73       4 :  77 |  +0 |                    :                    | ++-
+CF Matt Mieske               22 | RF :  61       5 :  66 | RF :  61       5 :  66 |  +0 |                    :                    | ++
+ C Eddie Taubensee           22 |  C :  76       5 :  81 |  C :  76       5 :  81 |  +0 |                    :                    | ++++-
 3B Hensley Meulens           23 | 3B :  61       8 :  69 | 3B :  61       8 :  69 |  +0 |                    :                    | +
+RF Donald Harris             23 | RF :  60       1 :  61 | RF :  60       1 :  61 |  +0 |                    :                    | +
 RF Brian Jordan              23 | RF :  98       6 : 104 | RF :  98       6 : 104 |  +0 |                    :                    | ++++
 3B Scott Cooper              23 | 3B :  65      12 :  77 | 3B :  65      12 :  77 |  +0 |                    :                    | ++-
 SS Kevin Baez                24 | SS :  55      15 :  70 | SS :  55      15 :  70 |  +0 |                    :                    | +
 1B Jay Gainer                24 | DH :  60       0 :  60 | DH :  60       0 :  60 |  +0 |                    :                    | ++
 LF Oscar Azocar              25 | DH :  82       0 :  82 | DH :  82       0 :  82 |  +0 |                    :                    | +
 3B Carlos Martinez           25 | 3B : 101       0 : 101 | 3B : 101       0 : 101 |  +0 |                    :                    | ++
-LF Jay Buhner                26 | RF :  93       2 :  95 | RF :  93       2 :  95 |  +0 |                    :                    | *
 CF Thomas Howard             26 | RF :  86       1 :  87 | RF :  86       1 :  87 |  +0 |                    :                    | *
+LF Jay Buhner                26 | RF :  93       2 :  95 | RF :  93       2 :  95 |  +0 |                    :                    | *
 LF Phil Lombardi             27 | LF :  84       3 :  87 | LF :  84       3 :  87 |  +0 |                    :                    | *
 CF Keith Hughes              27 | DH :  66       0 :  66 | DH :  66       0 :  66 |  +0 |                    :                    | *
- C Mark Bailey               29 |  C :  88       3 :  91 |  C :  88       3 :  91 |  +0 |                    :                    | **
-SS Greg Gagne                29 | SS :  76      12 :  88 | SS :  76      12 :  88 |  +0 |                    :                    | *
-LF Dan Pasqua                29 | RF :  84       4 :  88 | RF :  84       4 :  88 |  +0 |                    :                    | *
 1B Don Mattingly             29 | 1B : 109       5 : 114 | 1B : 109       5 : 114 |  +0 |                    :                    | ***^
+LF Dan Pasqua                29 | RF :  84       4 :  88 | RF :  84       4 :  88 |  +0 |                    :                    | *
+SS Greg Gagne                29 | SS :  76      12 :  88 | SS :  76      12 :  88 |  +0 |                    :                    | *
 LF Ken Gerhart               29 | DH :  60       0 :  60 | DH :  60       0 :  60 |  +0 |                    :                    | *
 CF Dave Clark                29 | CF :  78       4 :  82 | CF :  78       4 :  82 |  +0 |                    :                    | *
-RF Tom Brunansky             30 | RF :  96       4 : 100 | RF :  96       4 : 100 |  +0 |                    :                    | *^
+ C Mark Bailey               29 |  C :  88       3 :  91 |  C :  88       3 :  91 |  +0 |                    :                    | **
 2B Mike Woodard              30 | 2B :  73       2 :  75 | 2B :  73       2 :  75 |  +0 |                    :                    | *
+RF Tom Brunansky             30 | RF :  96       4 : 100 | RF :  96       4 : 100 |  +0 |                    :                    | *^
  C Bob Johnson               31 | DH :  60       0 :  60 | DH :  60       0 :  60 |  +0 |                    :                    | *
 SS Craig Gerber              32 | SS :  69      14 :  83 | SS :  69      14 :  83 |  +0 |                    :                    | *
 DH Kirk Gibson               33 | DH : 109       0 : 109 | DH : 109       0 : 109 |  +0 |                    :                    | ***
@@ -391,26 +391,26 @@ SP Jose Lima                 18 | SP :      59     :  59 | SP :      59     :  5
 MR Danny Patterson           19 | MR :      48     :  48 | MR :      48     :  48 |  +0 |                 :       +10       | +
 SP Steve Avery               20 | SP :      70     :  70 | SP :      70     :  70 |  +0 |                 :                 | ++++
 SP Mark Hutton               20 | SP :      58     :  58 | SP :      58     :  58 |  +0 |                 :                 | +
-MR Reggie Harris             22 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                 :                 | +
 SP Julio Valera              22 | SP :      53     :  53 | SP :      53     :  53 |  +0 |                 :                 | ++++
+MR Reggie Harris             22 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                 :                 | +
 MR Dave Proctor              22 | MR :      48     :  48 | MR :      48     :  48 |  +0 |                 :                 | +
 MR Bill Bene                 23 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | ++
 SP Rusty Meacham             23 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | +
-SP Mike Harkey               24 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                 :                 | ++-
 MR Tim Mauser                24 | SP :      56     :  56 | SP :      56     :  56 |  +0 |                 :                 | ++
+SP Mike Harkey               24 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                 :                 | ++-
 SP Dennis Springer           25 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | +-
-MR Ken Patterson             26 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *
 SP Keith Brown               26 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                 :                 | *
-MR Steve Frey                27 | MR :      67     :  67 | MR :      67     :  67 |  +0 |                 :                 | *^
-SP Mike Cook                 27 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *^
-SP Mark Leiter               27 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *
+MR Ken Patterson             26 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *
 MR Mike Christopher          27 | MR :      48     :  48 | MR :      48     :  48 |  +0 |                 :                 | *
+SP Mike Cook                 27 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *^
+MR Steve Frey                27 | MR :      67     :  67 | MR :      67     :  67 |  +0 |                 :                 | *^
 SP Brad Arnsberg             27 | SP :      63     :  63 | SP :      63     :  63 |  +0 |                 :                 | *
+SP Mark Leiter               27 | SP :      60     :  60 | SP :      60     :  60 |  +0 |                 :                 | *
 MR Logan Easley              29 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | *
-SP Oil Can Boyd              31 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | *
 SP Andy Hawkins              31 | SP :      74     :  74 | SP :      74     :  74 |  +0 |                 :                 | *
-MR Don Robinson              33 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :       +10       | *
+SP Oil Can Boyd              31 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | *
 CL Jerry Don Gleaton         33 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *^
+MR Don Robinson              33 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :       +10       | *
 MR Gene Walter               30 | MR :      57     :  57 | MR :      56     :  56 |  -1 |    -10          :                 | *^
 
 Drafted Players
@@ -582,7 +582,7 @@ SECOND_BASE
  7 | Jones, C         103 -21  82 | Jordan, B        101 -19  82 | Gerber, C         75   9  84
  8 | Jordan, B         98 -19  79 | Jones, C         103 -21  82 | Jones, C         103 -21  82
  9 | Gerber, C         69   9  78 | Mattingly, D      91 -14  77 | Jordan, B         97 -19  78
-10 | Brunansky, T      96 -19  77 | Brunansky, T      96 -19  77 | Brunansky, T      96 -19  77
+10 | Brunansky, T      96 -19  77 | Brunansky, T      96 -19  77 | Bailey, M         92 -15  77
 
 THIRD_BASE
  1 | Martinez, C      101   0 101 | Martinez, C       91   0  91 | Martinez, C      103   0 103
