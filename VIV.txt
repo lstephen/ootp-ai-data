@@ -1,7 +1,7 @@
   GOSU: Coefficients(1.00, [0.78, 2.34, 3.9, 2.34, 0.039])
 SIMPLE: Coefficients(1.00, [0.8, 2.1, 3.4, 1.8, 0.1])
  TANGO: Coefficients(1.00, [0.726, 1.948, 3.134, 1.694, 0.052])
-CURENT: Coefficients(1.00, [0.9292800000000001, 2.4921600000000006, 4.011520000000001, 1.7020000000000002, 0.052])
+CURENT: Coefficients(1.00, [0.9292800000000001, 2.4921600000000006, 4.011520000000001, 1.6979999999999995, 0.052])
 act: 7071
 
 
@@ -55,13 +55,13 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: IsotonicScores: [(-0.08826020078316144, RandomForest(...)), (0.08102848606348967, Isotonic(...)), (0.030844778594048366, Huber(...)), (0.07092911189080349, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [2. 7. 3. 2. 0.]Feature Mask: [False  True False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.04788689144764972, RandomForest(...)), (-0.10602247412691197, Isotonic(...)), (-0.1166923875471481, Huber(...)), (-0.1434114594856232, Linear(...))]Best Parameters: {'regressor__n_estimators': 9, 'selection__k': 3, 'regressor__max_depth': 14}Feature Scores: [0. 1. 5. 0. 0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.414 0.334 0.251]
+Selected: RandomForestScores: [(-0.04788689144764972, RandomForest(...)), (-0.10602247412691197, Isotonic(...)), (-0.1166923875471481, Huber(...)), (-0.1434114594856232, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 14, 'regressor__n_estimators': 9}Feature Scores: [0. 1. 5. 0. 0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.414 0.334 0.251]
 -- HomeRuns
 Selected: HuberScores: [(-1.4448620699623025, RandomForest(...)), (-0.7034219200375418, Isotonic(...)), (-0.30694884566315656, Huber(...)), (-0.6729306662145002, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [0. 0. 0. 1. 1.]Coefficients: [0.01093589]Intercept: 0.01936204000634969Feature Mask: [False False False  True False]
 -- Walks
 Selected: HuberScores: [(-0.22853042793539843, RandomForest(...)), (-0.1614121161380051, Isotonic(...)), (-0.14377728847416252, Huber(...)), (-0.22309142979464694, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [2. 5. 3. 1. 0.]Coefficients: [-0.08044399 -0.0060394 ]Intercept: 0.14339735687812638Feature Mask: [False  True  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.19734664729219, RandomForest(...)), (0.17443246143055768, Isotonic(...)), (0.17587189614552204, Huber(...)), (0.1657807492364279, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 16, 'regressor__n_estimators': 15}Feature Scores: [19.  7.  0.  1.  0.]Feature Mask: [ True  True False  True False]Feature Importances: [0.712 0.139 0.149]
+Selected: RandomForestScores: [(0.19734664729219, RandomForest(...)), (0.17443246143055768, Isotonic(...)), (0.17587189614552204, Huber(...)), (0.1657807492364279, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 15, 'regressor__max_depth': 16}Feature Scores: [19.  7.  0.  1.  0.]Feature Mask: [ True  True False  True False]Feature Importances: [0.712 0.139 0.149]
 
 Hitting Features
              Average |  -    92   +  |   5  15  25  35  45  55  65  75  85  95
@@ -84,7 +84,7 @@ Pitching Features
 CF Jones, C        25| .284/.348/.415 103  92 | .284/.348/.415 103  74 | -3---999  10 |    || 113 || ML     *+  |
 CF Guerrero, P     34| .286/.357/.476 109 217 | .286/.357/.457 108 137 | -3131887   5 | -+ || 113 || ML     *   |
 CF Jordan, B       24| .313/.375/.476 113 129 | .284/.348/.441 105 110 | -2---868   6 |  + || 112 || ML    7*   |
-CF Williams, B     22| .254/.322/.426  99     | .254/.322/.426  99     | -3---494  10 | ++ || 109 || ML    1*   |
+CF Williams, B     22| .254/.322/.426  99     | .254/.322/.426  99     | -3---494  10 | ++ || 109 || AAA   1*   |
 CF Gibson, K       33| .225/.295/.390  91     | .286/.355/.489 110     | ------33   0 |  + || 107 || ML   F *   |
 3B Horner, B       33| .254/.322/.413  98  73 | .254/.322/.413  98 116 | -6262---   3 |  + || 101 || ML     *   |
 SS Gagne, G        29| .225/.295/.348  87   0 | .225/.295/.347  87  94 | -3338---  13 | -- || 100 || ML     *+  |
@@ -93,10 +93,10 @@ C  Bailey, M       29| .197/.277/.298  79   0 | .239/.350/.377 100 137 | 64---21
 C  Taubensee, E    22| .254/.322/.355  93     | .254/.322/.375  94     | 71------   6 |  + || 100 || ML    3*   |
 SS Bernazard, T    34| .197/.274/.287  78     | .226/.301/.330  87     | -3938---  13 |    ||  98 || DL  IF * ~ |
 CF Buhner, J       26| .256/.328/.439 101     | .226/.301/.403  93     | -2---556   2 |  - ||  96 || AAA    *   |
-2B Herr, T         35| .257/.330/.326  92  44 | .257/.330/.326  92 120 | -262----   3 | +- ||  95 || AAA    *+~ |
+2B Herr, T         35| .257/.330/.326  92  44 | .257/.330/.326  92 120 | -262----   3 | +- ||  95 || ML     *+~ |
 CF Brunansky, T    30| .227/.303/.391  92  27 | .227/.303/.391  92  62 | -2---367   3 |  + ||  95 || ML   F *+  |
-3B Martinez, C     25| .284/.348/.409 102     | .254/.322/.354  93     | -3362---   1 |  - ||  95 || ML     *   |
-2B Flannery, T     33| .226/.301/.285  83 165 | .227/.303/.285  83  78 | -3983---  11 | -+ ||  94 || AAA  F *   |
+3B Martinez, C     25| .284/.348/.409 102     | .254/.322/.354  93     | -3362---   1 |  - ||  95 || AAA    *   |
+2B Flannery, T     33| .226/.301/.285  83 165 | .227/.303/.285  83  78 | -3983---  11 | -+ ||  94 || ML   F *   |
 CF Howard, T       26| .254/.322/.329  91     | .254/.322/.329  91     | -1---555   0 |  + ||  91 || AAA    *   |
 CF Pasqua, D       29| .195/.268/.328  80 138 | .225/.295/.364  88  77 | -2---777   4 | -- ||  91 || AAA    *+~ |
 CF Clark, D        29| .225/.295/.341  87     | .225/.295/.343  87     | -2---377   3 |    ||  90 || AAA    *+~ |
@@ -104,13 +104,13 @@ CF Bullett, S      22| .213/.243/.296  73     | .241/.270/.329  81     | -5---66
 3B Cooper, S       23| .185/.216/.234  62     | .213/.243/.269  70     | -44941-4  12 |  + ||  81 || AAA    *   |
 SS Gerber, C       32| .181/.197/.213  57     | .209/.224/.259  66     | -4898---  16 |  - ||  80 || AAA    *+~ |
 CF Azocar, O       26| .185/.216/.236  62     | .241/.270/.303  78     | -2---433   0 | ++ ||  76 || AA     * ~ |
-CF Lombardi, P     28| .237/.255/.350  80 206 | .209/.228/.294  70 104 | 21---761   3 |  + ||  74 || ML     *+  |
+CF Lombardi, P     28| .237/.255/.350  80 205 | .209/.228/.294  70 104 | 21---761   3 |  + ||  74 || ML     *+  |
 2B Woodard, M      31| .157/.189/.204  55   0 | .195/.268/.251  74 120 | -26513-1   2 |    ||  73 || AAA    *+~ |
 1B Gainer, J       24| .157/.189/.232  57     | .166/.241/.267  70     | -2------   0 |  + ||  68 || AA         |
 LF Gerhart, K      29| .185/.216/.284  67     | .185/.216/.284  67     | -1---52-   0 |    ||  67 || AA     *   |
 SS Baez, K         24| .154/.174/.181  49     | .154/.174/.181  49     | -4449---  17 |  + ||  66 || AAA        |
-3B Perez, E        21| .154/.174/.225  53     | .154/.174/.225  53     | -3393---  11 |    ||  64 || AAA        |
-SS Womack, T       21| .154/.174/.186  50     | .154/.174/.198  51     | -3337---  11 |  + ||  62 || A          |
+3B Perez, E        21| .154/.174/.225  53     | .154/.174/.225  53     | -3393---  11 |    ||  64 || A          |
+SS Womack, T       21| .154/.174/.186  50     | .154/.174/.198  51     | -3337---  11 |  + ||  62 || AAA        |
 CF Mieske, M       23| .157/.189/.233  57     | .157/.189/.232  57     | -1---777   4 |  + ||  61 || AA         |
 LF Harris, D       23| .209/.228/.254  66     | .182/.201/.220  58     | -1---525   0 |  + ||  59 || AA         |
 3B Meulens, H      23| .157/.189/.195  54     | .154/.174/.193  51     | -4383---   8 |    ||  59 || AA     *   |
@@ -134,7 +134,7 @@ SP Sele, A               AAA 20 |  8.5  4.8  5.6  1.1 |  85     |  99     |  - |
 SP Leiter, M         * ~  ML 28 |  8.4  7.3  5.2  1.1 | 100     |  97     |  + |  95/ 85 ||  95 ||
 SP Byrd, P               AAA 20 |  8.4  3.7  5.3  1.1 |  98     |  98     |  - |  95/ 85 ||  95 ||
 SP Harris, R             AAA 22 |  8.4  6.5  5.4  0.9 |  93     | 102     |    |  94/ 87 ||  94 ||
-SP Cook, M           *+~  ML 27 |  8.4 11.5  5.1  1.0 | 101 167 |  98 999 |  - |  93/ 86 ||  93 ||
+SP Cook, M           *+~  ML 27 |  8.4 11.5  5.1  1.0 | 101 166 |  98 999 |  - |  93/ 86 ||  93 ||
 SP Hutton, M             AAA 21 |  8.4  8.5  5.2  1.1 |  97     |  97     |    |  91/ 84 ||  91 ||
 SP Radke, B              AAA 18 |  8.6  3.6  6.0  1.1 |  92     |  92     |  + |  91/ 80 ||  91 ||
 SP Valera, J        8*    ML 22 |  8.6  7.4  5.9  1.1 |  91     |  91     | ++ |  89/ 79 ||  89 ||
@@ -166,21 +166,21 @@ MR Don Gleaton, J    *+   ML 33 | 11.4  6.5  3.5  1.3 |  70  50 |  74  68 |  + |
  SP Leiter, M       28 | SP Sele, A         20 | MR Frey, S         27 | SP Urbina, U       17 |                       |
  SP Lima, J         18 | MR Harris, R       22 | MR Patterson, K    26 | MR Mauser, T       24 |                       |
  SP Valera, J       22 | MR Proctor, D      23 | MR Robinson, D     33 | MR Patterson, D    20 |                       |
- MR Bene, B         23 | 2B Flannery, T     33 |  C Johnson, B      31 |  C Sweeney, M      17 |                       |
- MR Christopher, M  27 | 2B Herr, T         35 | 1B Bullett, S      22 | 1B Floyd, C        18 |                       |
- MR Easley, L       29 | 2B Woodard, M      31 | 1B Gainer, J       24 | 2B Bush, H         18 |                       |
- MR Walter, G       30 | 3B Perez, E        21 | 3B Meulens, H      23 | 2B Diaz, E         19 |                       |
- CL Don Gleaton, J  33 | SS Baez, K         24 | LF Azocar, O       26 | 3B Andrews, S      19 |                       |
-  C Bailey, M       29 | SS Gerber, C       32 | LF Gerhart, K      29 | SS Stocker, K      21 |                       |
-  C Taubensee, E    22 | LF Buhner, J       26 | LF Lennon, P       22 | SS Womack, T       21 |                       |
- 1B Mattingly, D    29 | LF Pasqua, D       29 | LF Shelton, B      21 | CF Hidalgo, R      15 |                       |
- 2B Knoblauch, C    22 | CF Clark, D        29 | CF Hughes, K       27 | CF Jones, D        20 |                       |
- 3B Horner, B       33 | RF Cooper, S       23 | CF Mieske, M       23 | CF White, R        19 |                       |
- 3B Martinez, C     25 | RF Howard, T       26 | RF Harris, D       23 |                       |                       |
+ MR Bene, B         23 | 2B Woodard, M      31 |  C Johnson, B      31 |  C Sweeney, M      17 |                       |
+ MR Christopher, M  27 | 3B Martinez, C     25 | 1B Bullett, S      22 | 1B Floyd, C        18 |                       |
+ MR Easley, L       29 | SS Baez, K         24 | 1B Gainer, J       24 | 2B Bush, H         18 |                       |
+ MR Walter, G       30 | SS Gerber, C       32 | 3B Meulens, H      23 | 2B Diaz, E         19 |                       |
+ CL Don Gleaton, J  33 | SS Womack, T       21 | LF Azocar, O       26 | 3B Andrews, S      19 |                       |
+  C Bailey, M       29 | LF Buhner, J       26 | LF Gerhart, K      29 | 3B Perez, E        21 |                       |
+  C Taubensee, E    22 | LF Pasqua, D       29 | LF Lennon, P       22 | SS Stocker, K      21 |                       |
+ 1B Mattingly, D    29 | CF Clark, D        29 | LF Shelton, B      21 | CF Hidalgo, R      15 |                       |
+ 2B Flannery, T     33 | CF Williams, B     22 | CF Hughes, K       27 | CF Jones, D        20 |                       |
+ 2B Herr, T         35 | RF Cooper, S       23 | CF Mieske, M       23 | CF White, R        19 |                       |
+ 2B Knoblauch, C    22 | RF Howard, T       26 | RF Harris, D       23 |                       |                       |
+ 3B Horner, B       33 |                       |                       |                       |                       |
  SS Gagne, G        29 |                       |                       |                       |                       |
  LF Guerrero, P     34 |                       |                       |                       |                       |
  LF Lombardi, P     28 |                       |                       |                       |                       |
- CF Williams, B     22 |                       |                       |                       |                       |
  RF Brunansky, T    30 |                       |                       |                       |                       |
  RF Jones, C        25 |                       |                       |                       |                       |
  RF Jordan, B       24 |                       |                       |                       |                       |
@@ -189,39 +189,33 @@ Total:76 (target 70-75)
 Balance:47/29 = 1.621 (ideal: 1.273)
 
   ML -> AAA  2B Mike Woodard
-  ML -> AAA  2B Tim Flannery
-  ML -> AAA  2B Tom Herr
   ML -> AAA  LF Dan Pasqua
-  ML -> AA   SP Keith Brown
   ML -> AA   SP Brad Arnsberg
+  ML -> AA   SP Keith Brown
   ML -> AA   MR Steve Frey
   ML -> AA   MR Don Robinson
   ML -> A    SP Mike Harkey
   ML -> DL   SS Tony Bernazard
- AAA -> ML   3B Carlos Martinez
  AAA -> ML   DH Kirk Gibson
- AAA -> ML   CF Bernie Williams
- AAA -> ML   SP Mark Leiter
  AAA -> ML    C Eddie Taubensee
- AAA -> AA   SP Dennis Springer
+ AAA -> ML   SP Mark Leiter
  AAA -> AA    C Bob Johnson
  AAA -> AA   MR Ken Patterson
+ AAA -> AA   SP Dennis Springer
  AAA -> A    2B Eddy Diaz
- AAA -> A    SP Steve Avery
  AAA -> A    MR Tim Mauser
- AAA -> A    SS Tony Womack
+ AAA -> A    SP Steve Avery
   AA -> ML   MR Mike Christopher
-  AA -> ML   SP Julio Valera
   AA -> ML   MR Logan Easley
-  AA -> AAA  MR Reggie Harris
+  AA -> ML   SP Julio Valera
   AA -> AAA  CF Dave Clark
+  AA -> AAA  MR Reggie Harris
   AA -> AAA  MR Dave Proctor
   AA -> A    SP Rusty Meacham
    A -> ML   SP Jose Lima
-   A -> AAA  SP Paul Byrd
-   A -> AAA  SP Brad Radke
    A -> AAA  SP Mark Hutton
-   A -> AAA  3B Eduardo Perez
+   A -> AAA  SP Brad Radke
+   A -> AAA  SP Paul Byrd
    A -> AA   CF Matt Mieske
   DL -> ML   1B Don Mattingly
   DL -> AAA  SS Kevin Baez
@@ -258,54 +252,54 @@ BP Endrnce: 9.5
 vs RHP
  C| Bailey, M       (D)                 | C| ( 1) Taubensee, E   
 1B| Mattingly, D    (D)                 |1B| ( 1) Gibson, K      
-2B| Knoblauch, C    (D)                 |2B| ( 1) Gibson, K      
-3B| Horner, B       (D)                 |3B| ( 1) Martinez, C    
-SS| Gagne, G        (D)                 |SS| ( 1) Martinez, C    
+2B| Knoblauch, C    (D) Flannery, T     |2B| ( 1) Herr, T        
+3B| Horner, B       (D) Flannery, T     |3B| ( 1) Flannery, T    
+SS| Gagne, G        (D)                 |SS| ( 1) Gibson, K      
 LF| Guerrero, P     (D)                 |LF| ( 1) Gibson, K      
-CF| Jones, C        (D)                 |CF| ( 1) Williams, B    
+CF| Jones, C        (D)                 |CF| ( 1) Gibson, K      
 RF| Jordan, B       (D)                 |RF| ( 1) Gibson, K      
 
 vs RHP+DH
  C| Bailey, M       (D)                 | C| ( 1) Taubensee, E   
-1B| Mattingly, D    (D)                 |1B| ( 1) Williams, B    
-2B| Knoblauch, C    (D)                 |2B| ( 1) Martinez, C    
-3B| Horner, B       (D)                 |3B| ( 1) Martinez, C    
-SS| Gagne, G        (D)                 |SS| ( 1) Martinez, C    
-LF| Guerrero, P     (D)                 |LF| ( 1) Williams, B    
-CF| Jones, C        (D)                 |CF| ( 1) Williams, B    
-RF| Jordan, B       (D)                 |RF| ( 1) Williams, B    
-DH| Gibson, K       (D)                 |DH| ( 1) Williams, B    
+1B| Mattingly, D    (D)                 |1B| ( 1) Taubensee, E   
+2B| Knoblauch, C    (D) Flannery, T     |2B| ( 1) Herr, T        
+3B| Horner, B       (D) Flannery, T     |3B| ( 1) Flannery, T    
+SS| Gagne, G        (D)                 |SS| ( 1) Flannery, T    
+LF| Guerrero, P     (D)                 |LF| ( 1) Brunansky, T   
+CF| Jones, C        (D)                 |CF| ( 1) Brunansky, T   
+RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
+DH| Gibson, K       (D)                 |DH| ( 1) Taubensee, E   
 
 vs LHP
  C| Taubensee, E    (D)                 | C| ( 1) Bailey, M      
-1B| Guerrero, P     (D) Mattingly, D    |1B| ( 1) Mattingly, D   
-2B| Knoblauch, C    (D)                 |2B| ( 1) Horner, B      
-3B| Martinez, C     (D)                 |3B| ( 1) Horner, B      
-SS| Gagne, G        (D)                 |SS| ( 1) Horner, B      
-LF| Jones, C        (D)                 |LF| ( 1) Mattingly, D   
-CF| Williams, B     (D)                 |CF| ( 1) Brunansky, T   
+1B| Mattingly, D    (D)                 |1B| ( 1) Brunansky, T   
+2B| Knoblauch, C    (D) Flannery, T     |2B| ( 1) Herr, T        
+3B| Horner, B       (D) Flannery, T     |3B| ( 1) Flannery, T    
+SS| Gagne, G        (D)                 |SS| ( 1) Flannery, T    
+LF| Guerrero, P     (D)                 |LF| ( 1) Brunansky, T   
+CF| Jones, C        (D)                 |CF| ( 1) Brunansky, T   
 RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
 
 vs LHP+DH
  C| Taubensee, E    (D)                 | C| ( 1) Bailey, M      
-1B| Mattingly, D    (D)                 |1B| ( 1) Horner, B      
-2B| Knoblauch, C    (D)                 |2B| ( 1) Horner, B      
-3B| Martinez, C     (D)                 |3B| ( 1) Horner, B      
-SS| Gagne, G        (D)                 |SS| ( 1) Horner, B      
-LF| Jones, C        (D)                 |LF| ( 1) Brunansky, T   
-CF| Williams, B     (D)                 |CF| ( 1) Brunansky, T   
+1B| Mattingly, D    (D)                 |1B| ( 1) Brunansky, T   
+2B| Knoblauch, C    (D) Flannery, T     |2B| ( 1) Flannery, T    
+3B| Horner, B       (D) Flannery, T     |3B| ( 1) Flannery, T    
+SS| Gagne, G        (D)                 |SS| ( 1) Flannery, T    
+LF| Guerrero, P     (D)                 |LF| ( 1) Brunansky, T   
+CF| Jones, C        (D)                 |CF| ( 1) Brunansky, T   
 RF| Jordan, B       (D)                 |RF| ( 1) Brunansky, T   
-DH| Guerrero, P     (D)                 |DH| ( 1) Horner, B      
+DH| Herr, T         (D)                 |DH| ( 1) Brunansky, T   
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1.  C S Bailey, M        RF R Jordan, B        2B R Knoblauch, C     2B R Knoblauch, C    
-2. RF R Jordan, B        LF R Guerrero, P      3B R Martinez, C      3B R Martinez, C     
-3. LF R Guerrero, P      DH L Gibson, K        1B R Guerrero, P      DH R Guerrero, P     
+2. RF R Jordan, B        LF R Guerrero, P      CF R Jones, C         CF R Jones, C        
+3. LF R Guerrero, P      DH L Gibson, K        LF R Guerrero, P      LF R Guerrero, P     
 4. 1B L Mattingly, D     1B L Mattingly, D     RF R Jordan, B        RF R Jordan, B       
-5. CF R Jones, C         CF R Jones, C         LF R Jones, C         LF R Jones, C        
-6. 3B R Horner, B         C S Bailey, M        CF S Williams, B      CF S Williams, B     
-7. 2B R Knoblauch, C     3B R Horner, B         C L Taubensee, E     1B L Mattingly, D    
-8. SS R Gagne, G         2B R Knoblauch, C     SS R Gagne, G          C L Taubensee, E    
+5. CF R Jones, C         CF R Jones, C         1B L Mattingly, D     1B L Mattingly, D    
+6. 3B R Horner, B         C S Bailey, M        3B R Horner, B        3B R Horner, B       
+7. 2B R Knoblauch, C     3B R Horner, B         C L Taubensee, E      C L Taubensee, E    
+8. SS R Gagne, G         2B R Knoblauch, C     SS R Gagne, G         DH S Herr, T         
 9.  P                    SS R Gagne, G          P                    SS R Gagne, G        
 
 --- Bunt for Hit ---
@@ -314,6 +308,7 @@ DH| Guerrero, P     (D)                 |DH| ( 1) Horner, B
 2B Chuck Knoblauch           22| SS :  94       6  20     : 120 | SS : 125       6  19  48  28 : 225 |   6 | 231 | -3726--- |   2*     $300k r |  $4.17M: $6.26M |  p163 | New York (Y) Yankees | +++++
 RF Brian Jordan              24| LF : 106       5  20     : 130 | RF : 113       6  22  28  10 : 179 |   6 | 185 | -2---868 |   7*     $300k r |  $4.17M: $6.26M |  p242 | New York (Y) Yankees | ++++
 DH Kirk Gibson               33| DH : 107       0  15     : 122 |    :                         :   0 |   0 | 122 | ------33 |  F *       $6M   |  $3.13M: $4.69M |  p298 | New York (Y) Yankees | **^
+2B Tom Herr                  35| 2B :  92       3   0     :  95 |    :                         :   0 |  -6 |  89 | -262---- |    *+~  $1.82Mx2 |        :        |  p367 | New York (Y) Yankees | *^
 
 40 man: 47/40, Remove: 17, Add: 7
 
@@ -399,8 +394,8 @@ Active Players
 Hitters
 Contact, Gap, Power, Eye, Avoid K's, Running Speed
 1B Jay Gainer                24 | DH :  57       0 :  57 | DH :  68       0 :  68 | +11 |    +10+10          :    +10+10+10       | ++
-CF Bernie Williams           22 | CF :  91      10 : 101 | CF :  99      10 : 109 |  +8 | +10         -10    : +10         -10    | +++++
  C Eddie Taubensee           22 |  C :  86       6 :  92 |  C :  94       6 : 100 |  +8 | +10                : +10                | ++++-
+CF Bernie Williams           22 | CF :  91      10 : 101 | CF :  99      10 : 109 |  +8 | +10         -10    : +10         -10    | +++++
 3B Hensley Meulens           23 | 3B :  43       8 :  51 | 3B :  51       8 :  59 |  +8 | +10                : +10                | +
 1B Scott Bullett             22 | RF :  72       4 :  76 | RF :  79       4 :  83 |  +7 | +10                : +10                | ++-
 3B Shane Andrews             19 | 3B :  42       3 :  45 | 3B :  42       7 :  49 |  +4 |             +10    :    +10             | +++-
@@ -412,24 +407,24 @@ RF Scott Cooper              23 | 3B :  68      12 :  80 | 3B :  69      12 :  8
 LF Oscar Azocar              26 | DH :  75       0 :  75 | DH :  76       0 :  76 |  +1 |          +10       :                    | *
 LF Jay Buhner                26 | RF :  93       2 :  95 | RF :  94       2 :  96 |  +1 |       +10          :       +10          | *
 2B Eddy Diaz                 19 | SS :  46      12 :  58 | SS :  46      12 :  58 |  +0 |             +10    :             +10    | +
-2B Chuck Knoblauch           22 | SS :  94       6 : 100 | SS :  94       6 : 100 |  +0 |                    :                    | +++++
 LF Patrick Lennon            22 | LF :  41       1 :  42 | LF :  41       1 :  42 |  +0 |             +10    :                    | +
-RF Donald Harris             23 | LF :  59       0 :  59 | LF :  59       0 :  59 |  +0 |                    :                    | +
+2B Chuck Knoblauch           22 | SS :  94       6 : 100 | SS :  94       6 : 100 |  +0 |                    :                    | +++++
 CF Matt Mieske               23 | RF :  57       4 :  61 | RF :  57       4 :  61 |  +0 |                    :                    | ++
+RF Donald Harris             23 | LF :  59       0 :  59 | LF :  59       0 :  59 |  +0 |                    :                    | +
 RF Brian Jordan              24 | RF : 106       6 : 112 | RF : 106       6 : 112 |  +0 |          +10       :                    | ++++
 SS Kevin Baez                24 | SS :  49      17 :  66 | SS :  49      17 :  66 |  +0 |                    :                    | +
-3B Carlos Martinez           25 | 3B :  94       1 :  95 | 3B :  94       1 :  95 |  +0 |                    :                    | ++
 RF Chris Jones               25 | CF : 103      10 : 113 | CF : 103      10 : 113 |  +0 |    -10             :    -10             | **
+3B Carlos Martinez           25 | 3B :  94       1 :  95 | 3B :  94       1 :  95 |  +0 |                    :                    | ++
 RF Thomas Howard             26 | RF :  91       0 :  91 | RF :  91       0 :  91 |  +0 |                    :                    | *
 CF Keith Hughes              27 | DH :  57       0 :  57 | DH :  57       0 :  57 |  +0 |                    :                    | *
 LF Phil Lombardi             28 | LF :  71       3 :  74 | LF :  71       3 :  74 |  +0 |                    :                    | *
-1B Don Mattingly             29 | 1B : 114       5 : 119 | 1B : 114       5 : 119 |  +0 |                    :             +10    | ***^
-LF Ken Gerhart               29 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |                    :                    | *
- C Mark Bailey               29 |  C :  96       4 : 100 |  C :  96       4 : 100 |  +0 |                    :                    | **
 CF Dave Clark                29 | CF :  87       3 :  90 | CF :  87       3 :  90 |  +0 |                    :                    | *
+LF Ken Gerhart               29 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |                    :                    | *
+1B Don Mattingly             29 | 1B : 114       5 : 119 | 1B : 114       5 : 119 |  +0 |                    :             +10    | ***^
+ C Mark Bailey               29 |  C :  96       4 : 100 |  C :  96       4 : 100 |  +0 |                    :                    | **
 RF Tom Brunansky             30 | RF :  92       3 :  95 | RF :  92       3 :  95 |  +0 |                    :                    | *
- C Bob Johnson               31 | DH :  52       0 :  52 | DH :  52       0 :  52 |  +0 |                    :                    | *
 2B Mike Woodard              31 | 2B :  71       2 :  73 | 2B :  71       2 :  73 |  +0 |                    :                    | *
+ C Bob Johnson               31 | DH :  52       0 :  52 | DH :  52       0 :  52 |  +0 |                    :                    | *
 SS Craig Gerber              32 | SS :  64      16 :  80 | SS :  64      16 :  80 |  +0 |                    :                    | *
 DH Kirk Gibson               33 | DH : 107       0 : 107 | DH : 107       0 : 107 |  +0 |                    :                    | **^
 2B Tom Herr                  35 | 2B :  92       3 :  95 | 2B :  92       3 :  95 |  +0 |                    :                    | *^
@@ -440,19 +435,19 @@ Stuff, Control, Movement, Groundball Pct., Endurance
 SP Julio Valera              22 | SP :      83     :  83 | SP :      89     :  89 |  +6 |    +10-10       :    +10-10       | ++++
 MR Danny Patterson           20 | MR :      79     :  79 | MR :      80     :  80 |  +1 |                 :       +10       | +
 SP Jose Lima                 18 | SP :     101     : 101 | SP :     101     : 101 |  +0 |                 :                 | +++
-SP Steve Avery               21 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :                 | ++++
 SP Mark Hutton               21 | SP :      91     :  91 | SP :      91     :  91 |  +0 |                 :                 | +
+SP Steve Avery               21 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :                 | ++++
 MR Reggie Harris             22 | SP :      94     :  94 | SP :      94     :  94 |  +0 |                 :                 | +
-MR Dave Proctor              23 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | +
-SP Rusty Meacham             23 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                 :                 | +
 MR Bill Bene                 23 | MR :      77     :  77 | MR :      77     :  77 |  +0 |                 :                 | ++
+SP Rusty Meacham             23 | SP :      88     :  88 | SP :      88     :  88 |  +0 |                 :                 | +
+MR Dave Proctor              23 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | +
 MR Tim Mauser                24 | SP :      71     :  71 | SP :      71     :  71 |  +0 |                 :                 | ++
-SP Dennis Springer           26 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                 :                 | *
 MR Ken Patterson             26 | SP :      76     :  76 | SP :      76     :  76 |  +0 |                 :                 | *
-MR Mike Christopher          27 | MR :      84     :  84 | MR :      84     :  84 |  +0 |       -10       :       -10       | *
+SP Dennis Springer           26 | SP :      79     :  79 | SP :      79     :  79 |  +0 |                 :                 | *
 SP Mike Cook                 27 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                 :                 | **
-MR Steve Frey                27 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *^
+MR Mike Christopher          27 | MR :      84     :  84 | MR :      84     :  84 |  +0 |       -10       :       -10       | *
 SP Keith Brown               27 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | *
+MR Steve Frey                27 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *^
 SP Mark Leiter               28 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                 :                 | *
 MR Logan Easley              29 | SP :      81     :  81 | SP :      81     :  81 |  +0 |                 :                 | *
 SP Oil Can Boyd              31 | SP :      81     :  81 | SP :      81     :  81 |  +0 |                 :                 | *^
@@ -485,13 +480,13 @@ CF Johnny Damon              17| CF :  49       5 -40     :  13 | CF : 112      
 3B Jose Vidro                16| 2B :  33       6 -56     : -17 | 2B : 111       6 -12  26  14 : 145 |   6 | 151 | -3762--- |                |        :        |  p229 | No Team              | +++-
 3B Phil Nevin                20| 1B :  44       3 -45     :   2 | 1B : 101       3 -18  14     : 100 |   6 | 106 | -62624-2 |                |        :        |  p189 | No Team              | ++++
 
-1E | 198 (178-239) | 204 (184-245) 185/224 |   6/  6 || 186 (161-247) | 192 (167-253) 174/211 |  12/ 12
+1E | 198 (178-239) | 204 (184-245) 185/224 |   6/  6 || 186 (161-244) | 192 (167-250) 174/211 |  12/ 12
 1M | 148 (100-166) | 154 (106-172) 140/169 |   4/  4 || 137 (100-166) | 143 (106-172) 130/158 |  10/ 10
 1L | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 121 (117-125) | 127 (123-131) 115/140 |   6/  6
 2E | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 || 105 (100-114) | 111 (106-120) 101/122 |   9/  9
 2L | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  94 ( 90- 97) | 100 ( 96-104)  91/110 |   9/  9
 
- 1 | 181 (100-239) | 187 (106-245) 170/206 |  10/ 10 || 154 (100-247) | 160 (106-253) 146/176 |  28/ 28
+ 1 | 181 (100-239) | 187 (106-245) 170/206 |  10/ 10 || 154 (100-244) | 160 (106-250) 146/176 |  28/ 28
  2 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  98 ( 90-114) | 105 ( 96-120)  95/115 |  18/ 18
  3 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  81 ( 76- 90) |  93 ( 84-108)  85/103 |  18/ 18
  4 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  69 ( 66- 75) |  91 ( 72-108)  83/101 |  18/ 18
@@ -720,7 +715,7 @@ DESIGNATED_HITTER
  7 | Horner, B         98   0  98 | Williams, B       99   0  99 | Williams, B       99   0  99
  8 | Bailey, M         96   0  96 | Mattingly, D      98   0  98 | Horner, B         98   0  98
  9 | Buhner, J         94   0  94 | Horner, B         98   0  98 | Taubensee, E      94   0  94
-10 | Taubensee, E      94   0  94 | Taubensee, E      93   0  93 | Buhner, J         93   0  93
+10 | Martinez, C       94   0  94 | Taubensee, E      93   0  93 | Buhner, J         93   0  93
 
 --- Trade Values ---
 2B Chuck Knoblauch           22| SS :  94       6  20     : 120 | SS : 125       6  19  48  28 : 225 |   6 | 231 | -3726--- |   2*     $300k r |  $4.17M: $6.26M |  p163 | New York (Y) Yankees | +++++
@@ -841,7 +836,7 @@ MR Chad Zerbe                18| MR :      85       3     :  88 | MR :      69  
 MR Mike James                23| MR :      85       3     :  88 | MR :      73      -7 -10     :  55 |   6 |  94 |          |                  | $626.2k:$938.5k |  p419 | Boston Red Sox       | ++
 SP Kent Mercker              23| SP :      87      -1     :  86 | SP :      81      -5  -7     :  70 |   6 |  92 |          |                  |        :        | p1468 | Boston Red Sox       | +
 SP Julian Tavarez            17| SP :      87      -2     :  85 | SP :      80      -6  -8     :  65 |   6 |  91 |          |                  |        :        |  p381 | Boston Red Sox       | ++-
-MR Rodney Myers              21| MR :      83       1     :  85 | MR :      77      -9  -6     :  62 |   6 |  91 |          |                  | $208.7k:$312.8k |  p686 | Boston Red Sox       | +
+MR Rodney Myers              21| MR :      83       1     :  85 | MR :      78      -9  -6     :  63 |   6 |  91 |          |                  | $208.7k:$312.8k |  p686 | Boston Red Sox       | +
 MR Chris Myers               23| MR :      83       1     :  85 | MR :      83      -9  -1     :  73 |   6 |  91 |          |                  | $208.7k:$312.8k | p1575 | Boston Red Sox       | +
 MR Kazuhiro Sasaki           23| MR :      83       1     :  85 | MR :      67      -9 -15     :  42 |   6 |  91 |          |                  | $208.7k:$312.8k | p1102 | Boston Red Sox       | +++++
 SP Eric Hetzel               27| SP :      86      -2     :  84 | SP :      81      -1  -7     :  74 |   6 |  90 |          |    *             |        :        | p1210 | Boston Red Sox       | *
@@ -1068,7 +1063,7 @@ RF Jose Canseco              26| DH : 115       0  23   1 : 139 | DH : 125      
 RF Greg Vaughn               25| LF :  87       3  -1     :  89 | RF : 121       4  -2  34  16 : 174 |   6 | 180 | -611-767 |   1*             |        :        | p1448 | Oakland Athletics    | +++++
 1B Mark McGwire              27| 1B : 107       3  18     : 128 | 1B : 115       3  13  28   6 : 165 |   6 | 171 | -6151--- |    *    $3.06M a |  $3.76M: $5.63M | p1189 | Oakland Athletics    | ***
 LF Rickey Henderson          32| LF : 118       5  32  11 : 166 |    :                         :   0 |   1 | 167 | -3---874 |    *    $17.5Mx3 |  $8.97M:$13.45M |  p358 | Oakland Athletics    | ***^
- C Tony Eusebio              23|  C :  61       6   6     :  72 |  C : 109       6 -20  40  12 : 147 |   6 | 153 | 73------ |   T*+            |  $1.25M: $1.88M | p1338 | Oakland Athletics    | ++-
+ C Tony Eusebio              23|  C :  61       5   6     :  72 |  C : 109       5 -20  40  12 : 147 |   6 | 153 | 73------ |   T*+            |  $1.25M: $1.88M | p1338 | Oakland Athletics    | ++-
 2B Tony Phillips             31| 3B : 103      12  23  13 : 151 |    :                         :   0 |   2 | 153 | -4994--- |    *    $1.75Mx2 |  $7.51M:$11.26M |  p648 | Oakland Athletics    | **^
 LF Marty Cordova             21| LF :  76       3 -12     :  66 | RF : 109       4   4  22   4 : 143 |   6 | 149 | -2---757 |   4              |        :        |  p405 | Oakland Athletics    | ++++
 LF Derrick May               22| LF :  68       6 -17     :  57 | LF : 109       6  -7  26   6 : 139 |   6 | 145 | -631-868 |   8              |        :        | p1502 | Oakland Athletics    | +++
@@ -1166,10 +1161,10 @@ SP Rick Reed                 26| SP :      84      -4     :  80 | SP :      86  
 
 --- Texas Rangers ---
 CF Sammy Sosa                22| RF : 117       6  28  11 : 162 | RF : 140       6  42  55  37 : 279 |   6 | 285 | -2---778 |   1*     $300k r |  $8.14M: $12.2M | p1428 | Texas Rangers        | +++++
-LF Manny Ramirez             18| DH :  61       0 -31     :  30 | DH : 148       0  10  58  38 : 255 |   6 | 261 | -1---444 |   2              |        :        |    p1 | Texas Rangers        | +++++
+LF Manny Ramirez             18| DH :  61       0 -31     :  30 | DH : 147       0  10  57  37 : 252 |   6 | 258 | -1---444 |   2              |        :        |    p1 | Texas Rangers        | +++++
 1B Jeff Bagwell              22| DH : 118       0  26   4 : 148 | 1B : 130       1  43  42  19 : 235 |   6 | 241 | -4------ |   4*     $300k r |  $6.26M: $9.38M |    p8 | Texas Rangers        | +++++
  C Mike Stanley              27|  C : 101       5  46   6 : 158 |  C : 126       5   7  57  28 : 224 |   6 | 230 | 76-3-331 |    *    $3.54M a | $10.85M:$16.27M | p1382 | Texas Rangers        | ****
- C Carlos Delgado            18|  C :  53       0  -8     :  44 |  C : 132       0   2  57  29 : 220 |   6 | 226 | 56111--- |   3              |        :        |   p17 | Texas Rangers        | +++++
+ C Carlos Delgado            18|  C :  53      -1  -8     :  44 |  C : 132      -1   2  57  29 : 220 |   6 | 226 | 56111--- |   3              |        :        |   p17 | Texas Rangers        | +++++
 CF Ruben Sierra              25| CF : 117       8  31  12 : 168 | CF : 116       8  28  34  15 : 200 |   6 | 206 | -2---898 |    *    $7.31Mx5 |  $8.97M:$13.45M | p1381 | Texas Rangers        | ***^
 LF Kevin Reimer              26| LF : 103       0  12     : 115 | LF : 118       0  11  29   9 : 167 |   6 | 173 | -1---531 |    *+    $300k a |   $2.5M: $3.75M | p1379 | Texas Rangers        | **^
 3B Larry Wayne Jones         18| SS :  42      10 -28     :  23 | SS : 109      10  -9  35  15 : 160 |   6 | 166 | -3387623 |   6              |        :        |    p4 | Texas Rangers        | ++++-
@@ -1210,7 +1205,7 @@ SP Steve Wilson              26| MR :      83       1     :  85 | MR :      86  
 RF Glenallen Hill            26| LF :  76       2 -13     :  64 | LF :  93       2 -16   5     :  84 |   6 |  90 | -4---646 |    *             |        :        | p1365 | Texas Rangers        | *
 MR Paul Wagner               23| SP :      85      -3     :  82 | SP :      89      -7   1     :  83 |   6 |  89 |          |                  |        :        |  p789 | Texas Rangers        | +
 SP Lance Painter             23| SP :      85      -3     :  82 | SP :      88      -7   0     :  82 |   6 |  88 |          |                  |        :        |  p690 | Texas Rangers        | +
- C Orlando Mercado           29|  C :  66       6  11     :  82 |    :                         :   0 |   4 |  86 | 7------- |    *             |   $2.3M: $3.44M | p1377 | Texas Rangers        | *
+ C Orlando Mercado           29|  C :  66       5  11     :  82 |    :                         :   0 |   4 |  86 | 7------- |    *             |   $2.3M: $3.44M | p1377 | Texas Rangers        | *
 SP Joe Grahe                 23| SP :      84      -5     :  79 | SP :      77      -8 -11     :  57 |   6 |  85 |          |                  |        :        |  p748 | Texas Rangers        | +-
 MR Rich Garces               19| MR :      80      -1     :  78 | MR :      70     -13 -12     :  44 |   6 |  84 |          |                  |        :        |  p115 | Texas Rangers        | ++
 MR Mitch Williams            26| MR :      79      -2     :  76 | MR :      74     -10  -9     :  56 |   6 |  82 |          |    *    $1.13M a |        :        | p1384 | Texas Rangers        | ***
@@ -1390,7 +1385,7 @@ CF Todd Hollandsworth        17| CF :  57       8 -29     :  36 | CF :  95      
 RF Joe Orsulak               28| DH :  95       0   3     :  98 | DH : 103       0   0  13     : 116 |   5 | 121 | -2---455 |    *    $1.54Mx4 | $626.2k:$938.5k |  p614 | Philadelphia Phil... | *^
 CF Rich Becker               19| CF :  57       1 -36     :  23 | CF :  98       1   2   9     : 110 |   6 | 116 | -2---262 |                  |        :        |  p900 | Philadelphia Phil... | +++
 LF Gerald Perry              30| 1B :  99       2  10     : 111 |    :                         :   0 |   3 | 114 | -5---631 |    *+   $2.54Mx2 |  $2.09M: $3.13M |  p642 | Philadelphia Phil... | **
- C Mike Urman                22|  C :  53      -2 -10     :  40 |  C : 103      -2 -22  26     : 105 |   6 | 111 | 5------- |                  |        :        | p1579 | Philadelphia Phil... | ++-
+ C Mike Urman                22|  C :  53      -3 -10     :  40 |  C : 103      -3 -22  26     : 105 |   6 | 111 | 5------- |                  |        :        | p1579 | Philadelphia Phil... | ++-
 RF R.J. Reynolds             31| LF :  94       6   9     : 109 |    :                         :   0 |   2 | 111 | -24--888 |    *    $1.75Mx2 |  $1.88M: $2.82M |  p688 | Philadelphia Phil... | *
 3B Scott Livingstone         25| 1B :  97       1   6     : 104 | 1B :  91       1   8   2     : 101 |   6 | 110 | -3353--- |                  |  $1.25M: $1.88M |  p550 | Philadelphia Phil... | +
 1B Tony Clark                18| 1B :  52       1 -38     :  15 | 1B :  93       1   1   5     : 100 |   6 | 106 | -4------ |   7              |        :        |   p70 | Philadelphia Phil... | +++-
@@ -1438,7 +1433,7 @@ SP Dennis Burlingame         21| SP :     101      12     : 113 | SP :      93  
 SP Derek Lowe                17| SP :     100      12     : 112 | SP :      78       7 -10     :  76 |   6 | 118 |          |   4              |   $2.5M: $3.75M |   p73 | Pittsburgh Pirates   | ++++
 3B Chris Stynes              18| 3B :  59       3 -30     :  32 | 3B :  93       3   8   6     : 111 |   6 | 117 | -2661--- |                  |        :        |  p716 | Pittsburgh Pirates   | ++
 MR Terry Mulholland          28| SP :     100      12     : 112 | SP :      85      12  -3     :  95 |   5 | 117 |          |    *+            |   $2.5M: $3.75M | p1257 | Pittsburgh Pirates   | *
- C Ron Karkovice             27|  C :  76      10  25     : 110 |  C :  90      10 -18  25     : 107 |   6 | 116 | 81------ |    *     $350k a |  $5.22M: $7.82M | p1388 | Pittsburgh Pirates   | *
+ C Ron Karkovice             27|  C :  76       9  25     : 110 |  C :  90       9 -18  25     : 107 |   6 | 116 | 81------ |    *     $350k a |  $5.22M: $7.82M | p1388 | Pittsburgh Pirates   | *
 CF Chad Curtis               22| LF :  64       2 -25     :  41 | CF : 103       3 -11  15     : 109 |   6 | 115 | -2---676 |   8              |        :        |  p259 | Pittsburgh Pirates   | +++-
 MR Stan Fansler              26| SP :      94       6     : 100 | SP :      95       6   7     : 109 |   6 | 115 |          |    *             |  $1.25M: $1.88M |  p950 | Pittsburgh Pirates   | *
 3B Olmedo Saenz              20| 3B :  50       7 -36     :  21 | 3B :  98       7 -12  15   0 : 108 |   6 | 114 | -4483--- |   T              |        :        |  p735 | Pittsburgh Pirates   | +++-
@@ -1575,10 +1570,10 @@ CF Tony Tarasco              20| LF :  54       1 -36     :  19 | CF :  83      
 MR Don August                27| SP :      80      -8     :  72 | SP :      77      -7 -11     :  60 |   6 |  78 |          |    *     $350k a |        :        | p1336 | Cincinnati Reds      | **^
 LF Ivan Calderon             29| 1B :  81       1 -10     :  72 |    :                         :   0 |   4 |  76 | -3---545 |    *+            |        :        |  p122 | Cincinnati Reds      | *
 1B Tracy Jones               30| CF :  77       6 -11     :  72 |    :                         :   0 |   3 |  75 | -4---783 |    *+            |        :        | p1085 | Cincinnati Reds      | *
-SP Kevin Appier              23| SP :      78     -11     :  67 | SP :      79     -14  -9     :  56 |   6 |  73 |          |   8*     $300k r |        :        |   p23 | Cincinnati Reds      | +++
+SP Kevin Appier              23| SP :      77     -12     :  65 | SP :      79     -15  -9     :  55 |   6 |  71 |          |   8*     $300k r |        :        |   p23 | Cincinnati Reds      | +++
 
 --- Los Angeles Dodgers ---
- C Chris Hoiles              26|  C : 118      10  67  27 : 222 |  C : 119      10  26  54  26 : 235 |   6 | 241 | 81------ |    *     $300k a | $19.62M:$29.41M | p1460 | Los Angeles Dodgers  | ***
+ C Chris Hoiles              26|  C : 118       9  67  27 : 222 |  C : 119       9  26  54  26 : 235 |   6 | 241 | 81------ |    *     $300k a | $19.62M:$29.41M | p1460 | Los Angeles Dodgers  | ***
 1B Fred McGriff              27| 1B : 123       4  36   9 : 171 | 1B : 131       4  29  46  23 : 233 |   6 | 239 | -713---- |    *    $3.71M a |  $9.18M:$13.76M | p1368 | Los Angeles Dodgers  | ****
 LF Bo Jackson                28| CF : 113       8  27   8 : 156 | CF : 120       8  18  37  18 : 202 |   5 | 207 | -2---898 | I  *    $5.37M a |  $7.31M:$10.95M | p1445 | Los Angeles Dodgers  | ****
 1B Wally Joyner              28| DH : 122       0  30   8 : 160 | 1B : 118       1  27  30   7 : 183 |   5 | 188 | -4------ |    *     $5.8Mx3 |  $7.93M:$11.89M |  p992 | Los Angeles Dodgers  | **^
@@ -1615,7 +1610,7 @@ SP Brian Bohanon             22| SP :      89       0     :  89 | SP :      83  
  C Eddie Perez               22|  C :  55      15   9     :  80 |  C :  76      15 -20  17     :  88 |   6 |  94 | 94---1-1 |                  |  $1.88M: $2.82M | p1505 | Los Angeles Dodgers  | +
 SP Jason Isringhausen        18| SP :      87      -2     :  85 | SP :      73      -6 -15     :  52 |   6 |  91 |          | I 4              |        :        |   p51 | Los Angeles Dodgers  | +++-
  C Greg Myers                25|  C :  63      10  12     :  85 |  C :  70      10 -26   6     :  60 |   6 |  91 | 81------ |    *             |   $2.5M: $3.75M | p1372 | Los Angeles Dodgers  | +
- C Raul Casanova             18|  C :  44       8  -9     :  42 |  C :  75       8  -7   8     :  84 |   6 |  90 | 71------ |                  |        :        |  p531 | Los Angeles Dodgers  | ++
+ C Raul Casanova             18|  C :  44       7  -9     :  42 |  C :  75       7  -7   8     :  84 |   6 |  90 | 71------ |                  |        :        |  p531 | Los Angeles Dodgers  | ++
 RF John Mabry                20| CF :  50       6 -38     :  19 | CF :  87       6 -12   3     :  84 |   6 |  90 | -2---388 |                  |        :        |  p269 | Los Angeles Dodgers  | ++
 RF Jose Gonzalez             26| CF :  81       8  -5     :  84 | CF :  75       8 -11  -8     :  64 |   6 |  90 | -3112888 |    *             |        :        |  p305 | Los Angeles Dodgers  | *
 1B Sid Bream                 30| 1B :  87       3  -2     :  87 |    :                         :   0 |   3 |  90 | -5---1-1 |    *+    $350k a |        :        |   p88 | Los Angeles Dodgers  | *
@@ -1743,8 +1738,8 @@ Toronto Blue Jays    | 102.3  98.6 100.9 |  93.7  95.0  88.4 |  72- 90 0.443 |  
 Detroit Tigers       |  97.9  95.9  93.7 |  98.1  98.2  96.4 |  73- 89 0.449 |   5-  9 0.357 |  71- 91 0.438 (16) 
 Western Division ----+
 Seattle Mariners     | 103.3 103.6 106.8 | 105.3 104.3 109.5 |  94- 68 0.577 |  11-  3 0.786 |  96- 66 0.593 ( 1) 
-Texas Rangers        |  98.1  97.8  95.8 | 101.0 101.1 102.0 |  79- 83 0.489 |   6-  8 0.429 |  78- 84 0.481 (10) 
 Oakland Athletics    | 100.6 101.7 102.3 |  96.7  97.1  93.8 |  78- 84 0.479 |   7-  7 0.500 |  78- 84 0.481 (11) 
+Texas Rangers        |  98.1  97.8  95.8 | 101.0 101.1 102.0 |  79- 83 0.489 |   6-  8 0.429 |  78- 84 0.481 (10) 
 Kansas City Royals   |  94.6  93.1  87.3 | 101.4 101.4 102.7 |  72- 90 0.446 |   9-  5 0.643 |  75- 87 0.463 (12) 
 
 NL
