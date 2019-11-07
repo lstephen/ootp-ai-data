@@ -34,13 +34,13 @@ Pitching: 779/907 0.462/0.538
              Ks | 0.276
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.736357647135442, RandomForest(...)), (0.5872883583424883, Isotonic(...)), (0.6258625516689497, Huber(...)), (0.6136723576865454, Linear(...))]Best Parameters: {'regressor__max_depth': 36, 'regressor__n_estimators': 19, 'selection__k': 3}Feature Scores: [137.  81.  75.  63.  99.  17.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.504 0.321 0.175]
+Selected: RandomForestScores: [(0.736357647135442, RandomForest(...)), (0.5872883583424883, Isotonic(...)), (0.6258625516689497, Huber(...)), (0.6136723576865454, Linear(...))]Best Parameters: {'regressor__n_estimators': 19, 'regressor__max_depth': 36, 'selection__k': 3}Feature Scores: [137.  81.  75.  63.  99.  17.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.504 0.321 0.175]
 -- Doubles
 Selected: LinearScores: [(0.09952500744760666, RandomForest(...)), (0.25256866322117144, Isotonic(...)), (0.29546607679769565, Huber(...)), (0.3053954751683215, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [50. 35. 21. 30. 44.  4.]Coefficients: [0.00075164]Intercept: 0.004797720246475193Feature Mask: [ True False False False False False]
 -- Triples
-Selected: RandomForestScores: [(0.6012191399606802, RandomForest(...)), (0.43362074057735905, Isotonic(...)), (0.281766677785167, Huber(...)), (0.14262592705428798, Linear(...))]Best Parameters: {'regressor__n_estimators': 4, 'regressor__max_depth': 40, 'selection__k': 3}Feature Scores: [10. 36. 18.  6. 12. 17.]Feature Mask: [False  True  True False False  True]Feature Importances: [0.509 0.148 0.343]
+Selected: RandomForestScores: [(0.6012191399606802, RandomForest(...)), (0.43362074057735905, Isotonic(...)), (0.281766677785167, Huber(...)), (0.14262592705428798, Linear(...))]Best Parameters: {'regressor__max_depth': 40, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [10. 36. 18.  6. 12. 17.]Feature Mask: [False  True  True False False  True]Feature Importances: [0.509 0.148 0.343]
 -- HomeRuns
-Selected: RandomForestScores: [(-0.06831890691781128, RandomForest(...)), (-0.485231520780568, Isotonic(...)), (-0.24905495848812534, Huber(...)), (-0.28375981031384123, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 14, 'regressor__n_estimators': 27}Feature Scores: [29. 17. 74. 66. 35.  0.]Feature Mask: [False False  True  True False False]Feature Importances: [0.44 0.56]
+Selected: RandomForestScores: [(-0.06831890691781128, RandomForest(...)), (-0.485231520780568, Isotonic(...)), (-0.24905495848812534, Huber(...)), (-0.28375981031384123, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 27, 'regressor__max_depth': 14}Feature Scores: [29. 17. 74. 66. 35.  0.]Feature Mask: [False False  True  True False False]Feature Importances: [0.44 0.56]
 -- Walks
 Selected: LinearScores: [(0.21305658992667156, RandomForest(...)), (0.10157543316054574, Isotonic(...)), (0.20777246603828758, Huber(...)), (0.33671284454737777, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [37. 24. 33. 47. 25.  6.]Coefficients: [6.41320258e-05 1.25482780e-03]Intercept: -0.004483430528120419Feature Mask: [ True False False  True False False]
 -- Ks
@@ -53,7 +53,7 @@ Selected: HuberScores: [(0.17043769237202736, RandomForest(...)), (-0.0669399696
              Ks | 0.080
 Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
-Selected: RandomForestScores: [(-0.06543753626489594, RandomForest(...)), (-0.08566166516860785, Isotonic(...)), (-0.8671211812559642, Huber(...)), (-0.7108300240166127, Linear(...))]Best Parameters: {'regressor__n_estimators': 9, 'regressor__max_depth': 27, 'selection__k': 4}Feature Scores: [4. 1. 1. 3. 1.]Feature Mask: [ True  True  True  True False]Feature Importances: [0.293 0.181 0.405 0.121]
+Selected: RandomForestScores: [(-0.06543753626489594, RandomForest(...)), (-0.08566166516860785, Isotonic(...)), (-0.8671211812559642, Huber(...)), (-0.7108300240166127, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 27, 'regressor__n_estimators': 9}Feature Scores: [4. 1. 1. 3. 1.]Feature Mask: [ True  True  True  True False]Feature Importances: [0.293 0.181 0.405 0.121]
 -- Doubles
 Selected: HuberScores: [(-0.041548437618202004, RandomForest(...)), (-0.06965698426362965, Isotonic(...)), (-0.025100716169938104, Huber(...)), (-0.10976305668289754, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [4. 3. 2. 1. 1.]Coefficients: [-0.01284745]Intercept: 0.07387647930130327Feature Mask: [ True False False False False]
 -- HomeRuns
@@ -89,16 +89,16 @@ CF Clemente, J     32| .218/.269/.342  84  69 | .258/.296/.443  97 106 | -2---25
 RF Glessner, K     25| .284/.344/.442 107     | .277/.324/.333  93     | -2---338   6 |  + || 102 || ML     *+   |
 LF Broyles, J      27| .278/.333/.379  99     | .283/.326/.349  95     | -2---726   6 |  - || 102 || AAA  F      |
 RF Campbell, T     33| .215/.280/.443  94 108 | .231/.311/.450 100 103 | -2---326   1 |  + || 100 || ML     *    |
-LF Torres, J       29| .240/.292/.362  90     | .248/.307/.411  97     | -2---622   5 | ++ || 100 || ML     *    |
+LF Torres, J       29| .240/.292/.362  90     | .248/.307/.411  97     | -2---622   5 | ++ || 100 || AAA    *    |
 SS Davis, Z        24| .274/.318/.341  93     | .276/.316/.344  92     | -3554---   6 | ++ ||  99 || AAA     +#  |
-SS Davis, D        33| .257/.302/.334  89     | .215/.252/.265  73     | -3838---  19 | ++ ||  96 || AA   F      |
+SS Davis, D        33| .257/.302/.334  89     | .215/.252/.265  73     | -3838---  19 | ++ ||  96 || AAA  F      |
 2B Klein, F        29| .253/.317/.439 101  95 | .252/.305/.378  93  76 | -2521---   0 |  + ||  95 || ML     *+ ~ |
-1B Salerno, C      30| .234/.298/.372  92     | .238/.295/.357  90     | -611-212   4 | -  ||  94 || AAA  F  +   |
+1B Salerno, C      30| .234/.298/.372  92     | .238/.295/.357  90     | -611-212   4 | -  ||  94 || AA   F  +   |
 3B Hellwig, D      25| .206/.294/.403  93  70 | .178/.252/.375  82  92 | -3551---   8 |    ||  93 || AAA    *    |
 3B Escobar, J      28| .264/.302/.326  88     | .264/.302/.326  88     | -3241---   2 |    ||  90 || AA   F      |
 RF Lopez, O        32| .276/.303/.447 100 109 | .206/.235/.355  78  66 | -2---739   7 | -+ ||  90 || ML     *  ~ |
 1B Burford, J      32| .234/.270/.389  88  93 | .234/.270/.389  88  84 | -5------   2 |  + ||  90 || ML     *  ~ |
-RF Dane, B         30| .265/.308/.455 101     | .235/.272/.373  86     | -2---324   0 | ++ ||  90 || AAA  F *  ~ |
+RF Dane, B         30| .265/.308/.455 101     | .235/.272/.373  86     | -2---324   0 | ++ ||  90 || AA   F *  ~ |
 RF Fusco, R        28| .187/.243/.234  69     | .267/.327/.343  95     | -2---325   0 |    ||  89 || AAA    *  ~ |
 RF Contreras, J    34| .331/.390/.468 117 104 | .191/.252/.270  74  80 | -2---215   0 |  + ||  84 || ML     *  ~ |
 RF Mito, H         29| .198/.230/.276  70     | .226/.271/.368  86     | -1---1-4   0 |  + ||  83 || AA     *+ ~ |
@@ -116,7 +116,7 @@ RF Sherman, J      24| .058/.058/.074  18     | .109/.113/.134  34     | -2---21
                                  |  H/9  K/9 BB/9 HR/9 |
 SP Milsap, W         *  ~  ML 34 |  5.0  6.7  2.3  0.9 | 111 268 | 230 706 |  + | 179/159 || 179 ||
 SP Manuel, C         *     ML 37 |  6.9  6.6  1.4  0.9 |  77  66 | 201 217 | -- | 148/128 || 148 ||
-MR Balcom, W         *+ ~ AAA 32 |  6.5  4.8  0.8  0.9 | 171 424 | 167 171 | -  |  82/146 || 146 ||
+MR Balcom, W         *+ ~  ML 32 |  6.5  4.8  0.8  0.9 | 171 424 | 167 171 | -  |  82/146 || 146 ||
 SP Raymond, J        *     ML 31 |  7.3 10.5  2.4  1.0 | 111 106 | 138 153 | -- | 126/112 || 126 ||
 SP Colon, H         1*  ~ AAA 24 |  8.9  4.1  1.1  1.0 | 117     | 113     |  + | 111/ 99 || 111 ||
 MR Santoyo, J        *+ ~  ML 32 |  7.3  8.0  2.4  1.0 | 252 999 |  97 145 |  + | 100/110 || 110 ||
@@ -140,25 +140,25 @@ SP Myler, W        F  +    AA 29 | 16.0  7.2  6.1  1.3 |  43     |  43     |  - 
 SP Ramirez, T       6*  ~   A 17 | 15.5  4.5  6.0  1.3 |  50 164 |  42  13 | ++ |  41/ 38 ||  41 ||
 MR Blood, J         2       A 20 | 16.2  2.9  6.1  1.3 |  42     |  42     |  + |  20/ 36 ||  36 ||
 
- (25) ML               | (12) AAA              | (10) AA               | (10) A                | ( 0) DL               |
+ (25) ML               | (11) AAA              | (11) AA               | (10) A                | ( 0) DL               |
  SP Allen, R        35 | SP Bolivar, J      17 | SP Nye, P          32 | SP Draeger, J      28 |                       |
  SP Dossantos, O    38 | SP Colon, H        24 | SP Trautman, E     31 | SP Ramirez, T      17 |                       |
  SP Gillen, M       33 | SP Dennis, B       26 | MR Keita, Y        35 | SP Spengler, M     28 |                       |
- SP Manuel, C       37 | MR Balcom, W       32 | MR Myler, W        29 | MR Blood, J        20 |                       |
- SP Mateo, S        34 | MR Horne, K        31 | 3B Escobar, J      28 | 1B Province, R     21 |                       |
- SP Milsap, W       34 |  C Slater, T       27 | SS Davis, D        33 | 2B Fernandez, R    20 |                       |
- SP Raymond, J      31 | 1B Salerno, C      30 | LF Borrero, P      24 | 2B Mercado, M      21 |                       |
- MR Johnston, M     33 | 3B Davis, Z        24 | LF Turberville, P  23 | 2B Moya, L         22 |                       |
- MR Lamas, M        35 | 3B Hellwig, D      25 | RF Mito, H         29 | LF Shisler, D      22 |                       |
- MR Luna, M         35 | RF Broyles, J      27 | RF Sherman, J      24 | RF Koan, Y         22 |                       |
- MR Planas, S       31 | RF Dane, B         30 |                       |                       |                       |
- MR Santoyo, J      32 | RF Fusco, R        28 |                       |                       |                       |
+ SP Manuel, C       37 | MR Horne, K        31 | MR Myler, W        29 | MR Blood, J        20 |                       |
+ SP Mateo, S        34 |  C Slater, T       27 | 1B Salerno, C      30 | 1B Province, R     21 |                       |
+ SP Milsap, W       34 | 3B Davis, Z        24 | 3B Escobar, J      28 | 2B Fernandez, R    20 |                       |
+ SP Raymond, J      31 | 3B Hellwig, D      25 | LF Borrero, P      24 | 2B Mercado, M      21 |                       |
+ MR Balcom, W       32 | SS Davis, D        33 | LF Turberville, P  23 | 2B Moya, L         22 |                       |
+ MR Johnston, M     33 | LF Torres, J       29 | RF Dane, B         30 | LF Shisler, D      22 |                       |
+ MR Lamas, M        35 | RF Broyles, J      27 | RF Mito, H         29 | RF Koan, Y         22 |                       |
+ MR Luna, M         35 | RF Fusco, R        28 | RF Sherman, J      24 |                       |                       |
+ MR Planas, S       31 |                       |                       |                       |                       |
+ MR Santoyo, J      32 |                       |                       |                       |                       |
   C Urrutia, R      33 |                       |                       |                       |                       |
  1B Burford, J      32 |                       |                       |                       |                       |
  2B Klein, F        29 |                       |                       |                       |                       |
  SS Hipple, S       35 |                       |                       |                       |                       |
  SS Kim, K          23 |                       |                       |                       |                       |
- LF Torres, J       29 |                       |                       |                       |                       |
  CF Clemente, J     32 |                       |                       |                       |                       |
  RF Campbell, T     33 |                       |                       |                       |                       |
  RF Contreras, J    34 |                       |                       |                       |                       |
@@ -171,16 +171,13 @@ Balance:32/25 = 1.280 (ideal: 1.273)
 
   ML -> AAA  3B Dominick Hellwig
   ML -> AAA  SP Brett Dennis
-  ML -> AAA  MR Wayne Balcom
  AAA -> ML   RF Keith Glessner
- AAA -> ML   LF Juan Torres
  AAA -> ML   2B Frederick Klein
- AAA -> AA   SP Eric Trautman
- AAA -> AA   MR Yasunaga Keita
+ AAA -> AA   1B Carlos Salerno
  AAA -> AA   3B Jamey Escobar
- AAA -> AA   SS David Davis
+ AAA -> AA   MR Yasunaga Keita
+ AAA -> AA   SP Eric Trautman
   AA -> AAA  RF Robert Fusco
-  AA -> AAA  RF Byron Dane
   AA -> AAA  RF John Broyles
   AA -> A    SP Jeffrey Draeger
    A -> AAA  SP Jose Bolivar
@@ -194,6 +191,7 @@ Monte Gillen
 Ralph Allen
 
 LR
+Simon Mateo
 Oswaldo Dossantos
 
 MR
@@ -202,42 +200,41 @@ Jon Santoyo
 Milton Johnston
 
 SU
+Michael Lamas
 Manuel Luna
-Simon Mateo
 
 CL
-Michael Lamas
+Wayne Balcom
 
 NONE
 
 
-BP Ability: 126
-BP Endrnce: 13.5
+BP Ability: 159
+BP Endrnce: 22.5
 
 --- Slow Hook ---
 Wayne Milsap
-Charles Manuel
 
 vs RHP
- C| Urrutia, R      (D)                 | C| ( 1) Torres, J      
-1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Torres, J      
-2B| Klein, F        (D)                 |2B| ( 1) Torres, J      
-3B| Hipple, S       (D)                 |3B| ( 1) Torres, J      
-SS| Kim, K          (D)                 |SS| ( 1) Glessner, K    
-LF| Telles, T       (D)                 |LF| ( 1) Torres, J      
-CF| Clemente, J     (D)                 |CF| ( 1) Torres, J      
-RF| Campbell, T     (D) Lopez, O        |RF| ( 1) Glessner, K    
-
-vs RHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Glessner, K    
 1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Glessner, K    
 2B| Klein, F        (D)                 |2B| ( 1) Glessner, K    
 3B| Hipple, S       (D)                 |3B| ( 1) Glessner, K    
 SS| Kim, K          (D)                 |SS| ( 1) Glessner, K    
-LF| Torres, J       (D)                 |LF| ( 1) Glessner, K    
+LF| Telles, T       (D)                 |LF| ( 1) Glessner, K    
 CF| Clemente, J     (D)                 |CF| ( 1) Glessner, K    
-RF| Telles, T       (D) Lopez, O        |RF| ( 1) Glessner, K    
-DH| Campbell, T     (D)                 |DH| ( 1) Glessner, K    
+RF| Campbell, T     (D) Lopez, O        |RF| ( 1) Glessner, K    
+
+vs RHP+DH
+ C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
+1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Burford, J     
+2B| Klein, F        (D)                 |2B| ( 1) Burford, J     
+3B| Hipple, S       (D)                 |3B| ( 1) Burford, J     
+SS| Kim, K          (D)                 |SS| ( 1) Burford, J     
+LF| Telles, T       (D)                 |LF| ( 1) Lopez, O       
+CF| Clemente, J     (D)                 |CF| ( 1) Lopez, O       
+RF| Glessner, K     (D)                 |RF| ( 1) Lopez, O       
+DH| Campbell, T     (D)                 |DH| ( 1) Burford, J     
 
 vs LHP
  C| Urrutia, R      (D)                 | C| ( 1) Campbell, T    
@@ -245,35 +242,35 @@ vs LHP
 2B| Klein, F        (D)                 |2B| ( 1) Campbell, T    
 3B| Hipple, S       (D)                 |3B| ( 1) Campbell, T    
 SS| Kim, K          (D)                 |SS| ( 1) Campbell, T    
-LF| Lopez, O        (D)                 |LF| ( 1) Torres, J      
+LF| Lopez, O        (D)                 |LF| ( 1) Campbell, T    
 CF| Tetreault, A    (D) Clemente, J     |CF| ( 1) Campbell, T    
 RF| Glessner, K     (D)                 |RF| ( 1) Campbell, T    
 
 vs LHP+DH
- C| Urrutia, R      (D)                 | C| ( 1) Torres, J      
+ C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
 1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Burford, J     
-2B| Klein, F        (D)                 |2B| ( 1) Torres, J      
-3B| Hipple, S       (D)                 |3B| ( 1) Torres, J      
-SS| Kim, K          (D)                 |SS| ( 1) Torres, J      
-LF| Lopez, O        (D)                 |LF| ( 1) Torres, J      
+2B| Klein, F        (D)                 |2B| ( 1) Burford, J     
+3B| Hipple, S       (D)                 |3B| ( 1) Burford, J     
+SS| Kim, K          (D)                 |SS| ( 1) Burford, J     
+LF| Lopez, O        (D)                 |LF| ( 1) Telles, T      
 CF| Campbell, T     (D) Clemente, J     |CF| ( 1) Clemente, J    
-RF| Glessner, K     (D)                 |RF| ( 1) Torres, J      
-DH| Contreras, J    (D)                 |DH| ( 1) Torres, J      
+RF| Glessner, K     (D)                 |RF| ( 1) Clemente, J    
+DH| Contreras, J    (D)                 |DH| ( 1) Burford, J     
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. SS R Kim, K           SS R Kim, K           1B R Contreras, J     DH R Contreras, J    
-2. LF L Telles, T        RF L Telles, T        CF L Tetreault, A     1B L Tetreault, A    
+2. LF L Telles, T        LF L Telles, T        CF L Tetreault, A     1B L Tetreault, A    
 3. 3B R Hipple, S        3B R Hipple, S        3B R Hipple, S        3B R Hipple, S       
 4.  C R Urrutia, R        C R Urrutia, R        C R Urrutia, R        C R Urrutia, R      
 5. 1B L Tetreault, A     1B L Tetreault, A     RF R Glessner, K      RF R Glessner, K     
 6. RF L Campbell, T      DH L Campbell, T      2B R Klein, F         2B R Klein, F        
 7. CF S Clemente, J      CF S Clemente, J      LF R Lopez, O         LF R Lopez, O        
-8. 2B R Klein, F         LF L Torres, J        SS R Kim, K           CF L Campbell, T     
+8. 2B R Klein, F         RF R Glessner, K      SS R Kim, K           CF L Campbell, T     
 9.  P                    2B R Klein, F          P                    SS R Kim, K          
 
 --- Bunt for Hit ---
 
---- Stealing @ 68.0 ---
+--- Stealing @ 67.8 ---
 RF Timothy Campbell          33| DH :  99       0   3     : 102 |    :                         :   0 |   0 | 102 | -2---326 |    *     $3.67Mx2 | $815.7k:$886.5k |   p69 | Houston Astros       | **
 RF Oscar Lopez               32| RF :  83       7  -9     :  82 |    :                         :   0 |   1 |  83 | -2---739 |    *  ~  $3.28Mx2 |        :        |  p299 | Houston Astros       | **
 RF Jose Contreras            34| DH :  84       0 -12     :  72 |    :                         :   0 |  -2 |  70 | -2---215 |    *  ~  $3.67Mx3 |        :        |  p486 | Houston Astros       | **^
@@ -463,9 +460,9 @@ CATCHER
  4 | Telles, T        105 -32  73 | Contreras, J     117 -32  85 | Tetreault, A     103 -32  71
  5 | Campbell, T       99 -32  67 | Tetreault, A     113 -32  81 | Kim, K           101 -32  69
  6 | Kim, K            98 -32  66 | Glessner, K      107 -32  75 | Campbell, T      100 -32  68
- 7 | Slater, T         68  -4  64 | Klein, F         101 -32  69 | Torres, J         97 -32  65
- 8 | Glessner, K       96 -32  64 | Dane, B          101 -32  69 | Clemente, J       97 -32  65
- 9 | Broyles, J        96 -32  64 | Lopez, O         100 -32  68 | Fusco, R          95 -32  63
+ 7 | Slater, T         68  -4  64 | Dane, B          101 -32  69 | Torres, J         97 -32  65
+ 8 | Broyles, J        96 -32  64 | Klein, F         101 -32  69 | Clemente, J       97 -32  65
+ 9 | Glessner, K       96 -32  64 | Lopez, O         100 -32  68 | Fusco, R          95 -32  63
 10 | Torres, J         95 -32  63 | Broyles, J        99 -32  67 | Broyles, J        95 -32  63
 
 FIRST_BASE
@@ -558,9 +555,9 @@ DESIGNATED_HITTER
  3 | Tetreault, A     105   0 105 | Contreras, J     117   0 117 | Telles, T        112   0 112
  4 | Telles, T        105   0 105 | Tetreault, A     113   0 113 | Tetreault, A     103   0 103
  5 | Campbell, T       99   0  99 | Glessner, K      107   0 107 | Kim, K           101   0 101
- 6 | Kim, K            98   0  98 | Klein, F         101   0 101 | Campbell, T      100   0 100
- 7 | Glessner, K       96   0  96 | Dane, B          101   0 101 | Torres, J         97   0  97
- 8 | Broyles, J        96   0  96 | Lopez, O         100   0 100 | Clemente, J       97   0  97
+ 6 | Kim, K            98   0  98 | Dane, B          101   0 101 | Campbell, T      100   0 100
+ 7 | Broyles, J        96   0  96 | Klein, F         101   0 101 | Torres, J         97   0  97
+ 8 | Glessner, K       96   0  96 | Lopez, O         100   0 100 | Clemente, J       97   0  97
  9 | Torres, J         95   0  95 | Broyles, J        99   0  99 | Fusco, R          95   0  95
 10 | Klein, F          95   0  95 | Slater, T         97   0  97 | Broyles, J        95   0  95
 
@@ -1254,8 +1251,8 @@ American ------------+
 Oakland A's          |  98.8  98.4  97.2 | 115.2 118.4 130.0 | 100- 62 0.615 |  27- 20 0.574 |  98- 64 0.605 ( 1) 
 Milwaukee Brewers    |  97.2  98.4  95.6 | 108.7 108.9 116.7 |  90- 72 0.555 |  17- 30 0.362 |  81- 81 0.500 ( 5) 
 Los Angeles Dodgers  | 101.2 100.9 102.1 |  95.2  95.8  90.9 |  75- 87 0.463 |  26- 21 0.553 |  79- 83 0.488 ( 6) 
-New York Mets        |  97.8  97.0  94.7 | 100.8  99.7 100.6 |  77- 85 0.476 |  19- 28 0.404 |  74- 88 0.457 ( 8) 
-Pittsburgh Pirates   | 102.1 102.2 104.2 |  94.1  90.7  84.0 |  70- 92 0.434 |  24- 23 0.511 |  74- 88 0.457 ( 9) 
+Pittsburgh Pirates   | 102.1 102.2 104.2 |  94.1  90.7  84.0 |  70- 92 0.434 |  24- 23 0.511 |  74- 88 0.457 ( 8) 
+New York Mets        |  97.8  97.0  94.7 | 100.8  99.7 100.6 |  77- 85 0.476 |  19- 28 0.404 |  74- 88 0.457 ( 9) 
 Toronto Blue Jays    | 101.6 102.3 103.8 |  90.7  86.4  75.3 |  61-101 0.379 |  28- 19 0.596 |  72- 90 0.444 (11) 
 
 National
