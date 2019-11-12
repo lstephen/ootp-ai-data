@@ -34,13 +34,13 @@ Pitching: 928/1090 0.460/0.540
              Ks | 0.265
 Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
-Selected: RandomForestScores: [(0.6680694502266663, RandomForest(...)), (0.6541339126327645, Isotonic(...)), (0.5771489983214267, Huber(...)), (0.6284318624269898, Linear(...))]Best Parameters: {'regressor__max_depth': 22, 'selection__k': 3, 'regressor__n_estimators': 28}Feature Scores: [195. 110.  65.  68. 131.  19.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.399 0.296 0.305]
+Selected: RandomForestScores: [(0.6680694502266663, RandomForest(...)), (0.6541339126327645, Isotonic(...)), (0.5771489983214267, Huber(...)), (0.6284318624269898, Linear(...))]Best Parameters: {'regressor__n_estimators': 28, 'selection__k': 3, 'regressor__max_depth': 22}Feature Scores: [195. 110.  65.  68. 131.  19.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.399 0.296 0.305]
 -- Doubles
 Selected: HuberScores: [(0.20387842467175388, RandomForest(...)), (0.3161044514126971, Isotonic(...)), (0.40678319772354743, Huber(...)), (0.35169057473845483, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [49. 41. 15. 26. 42.  5.]Coefficients: [-0.01363128  0.02261239  0.02687034  0.03652166]Intercept: -0.001323017506474674Feature Mask: [ True  True False  True  True False]
 -- Triples
-Selected: RandomForestScores: [(0.5071260877816645, RandomForest(...)), (0.34698994430467583, Isotonic(...)), (0.19377462005170606, Huber(...)), (0.006747358270916474, Linear(...))]Best Parameters: {'regressor__max_depth': 13, 'selection__k': 4, 'regressor__n_estimators': 3}Feature Scores: [11. 34. 21.  9. 11. 18.]Feature Mask: [False  True  True False  True  True]Feature Importances: [0.385 0.111 0.093 0.41 ]
+Selected: RandomForestScores: [(0.5071260877816645, RandomForest(...)), (0.34698994430467583, Isotonic(...)), (0.19377462005170606, Huber(...)), (0.006747358270916474, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 13, 'regressor__n_estimators': 3}Feature Scores: [11. 34. 21.  9. 11. 18.]Feature Mask: [False  True  True False  True  True]Feature Importances: [0.385 0.111 0.093 0.41 ]
 -- HomeRuns
-Selected: RandomForestScores: [(0.43368739545744095, RandomForest(...)), (0.28513453912744585, Isotonic(...)), (0.32448159197057735, Huber(...)), (0.3256614322745686, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__n_estimators': 3, 'regressor__max_depth': 13}Feature Scores: [ 34.  20. 112.  60.  39.   1.]Feature Mask: [ True False  True  True  True False]Feature Importances: [0.275 0.445 0.224 0.056]
+Selected: RandomForestScores: [(0.43368739545744095, RandomForest(...)), (0.28513453912744585, Isotonic(...)), (0.32448159197057735, Huber(...)), (0.3256614322745686, Linear(...))]Best Parameters: {'regressor__n_estimators': 3, 'selection__k': 4, 'regressor__max_depth': 13}Feature Scores: [ 34.  20. 112.  60.  39.   1.]Feature Mask: [ True False  True  True  True False]Feature Importances: [0.275 0.445 0.224 0.056]
 -- Walks
 Selected: LinearScores: [(0.272394869372838, RandomForest(...)), (0.07614740996928313, Isotonic(...)), (0.10092149205511765, Huber(...)), (0.29302103792077366, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [44. 27. 50. 62. 27.  8.]Coefficients: [ 0.00052481  0.00058924  0.00108596 -0.0009725 ]Intercept: -0.001426529349516023Feature Mask: [ True False  True  True  True False]
 -- Ks
@@ -89,8 +89,8 @@ RF Tetreault, A    35| .317/.374/.531 119 134 | .254/.326/.466 104  96 | -2---32
 SS Kim, K          23| .254/.293/.331  87  86 | .274/.304/.357  91 102 | -3527---  15 | +- || 105 || ML     *+   |
 RF Campbell, T     33| .215/.281/.480  96 101 | .249/.326/.470 105  99 | -2---326   1 |  + || 104 || ML     *    |
 LF Broyles, J      27| .272/.305/.402  95     | .279/.298/.401  94     | -2---726   6 |  - || 100 || AAA    *    |
-RF Dane, B         30| .247/.304/.461 100     | .242/.287/.468  97     | -2---324   0 | ++ ||  97 || AAA  F *  ~ |
 2B Sipes, J        32| .256/.304/.344  90     | .285/.337/.379  99     | -23-----   0 |    ||  97 || AA   F  +   |
+RF Dane, B         30| .247/.304/.461 100     | .242/.287/.468  97     | -2---324   0 | ++ ||  97 || AAA  F *  ~ |
 SS Davis, Z        24| .260/.277/.347  85     | .280/.294/.380  91     | -3554---   7 | ++ ||  97 || AAA    *+   |
 3B Hellwig, D      25| .205/.290/.402  92  70 | .181/.252/.419  86  92 | -3551---   8 |    ||  95 || AA     *    |
 1B Burford, J      32| .250/.291/.406  93  90 | .250/.291/.406  93  92 | -5------   2 |  + ||  95 || ML     *  ~ |
@@ -127,9 +127,9 @@ SP Allen, R        F *  ~  ML 35 | 11.4  8.1  2.6  0.8 |  75  84 |  84 116 |  + 
 MR Lamas, M          *     ML 36 |  9.3 11.0  4.1  1.0 | 118 183 |  86  94 |    |  61/ 80 ||  80 ||
 SP Mateo, S        F *+ ~  ML 34 | 12.4  6.1  1.3  1.0 |  80  84 |  77  67 |  + |  78/ 67 ||  78 ||
 MR Santoyo, J        *+ ~  ML 32 | 10.3  8.8  2.5  1.0 | 120 115 |  82 111 |  + |  71/ 78 ||  78 ||
-SP Colon, H         1*  ~ AAA 24 | 12.8  5.0  1.3  1.0 |  72     |  80     |  + |  76/ 67 ||  76 ||
 SP Milsap, W         *  ~  ML 34 | 11.5  8.1  2.6  1.0 |  73 286 |  80 107 |  + |  76/ 67 ||  76 ||
 MR Balcom, W         *+ ~  ML 32 | 11.5  5.5  0.6  1.0 |  88 526 |  88 146 | -  |  43/ 76 ||  76 ||
+SP Colon, H         1*  ~ AAA 24 | 12.8  5.0  1.3  1.0 |  72     |  80     |  + |  76/ 67 ||  76 ||
 SP Dennis, B         *+ ~ AAA 26 | 11.7  9.2  3.2  1.1 |  58  76 |  77  85 |  - |  71/ 61 ||  71 ||
 SP Trautman, E     F    ~ AAA 31 | 12.7  5.0  2.7  1.1 |  64     |  68     |  + |  66/ 58 ||  66 ||
 SP Nye, P          F       AA 32 | 13.6  5.6  2.7  1.1 |  62     |  63     |  + |  62/ 54 ||  62 ||
@@ -175,8 +175,8 @@ Balance:33/25 = 1.320 (ideal: 1.273)
  AAA -> AA   3B Dominick Hellwig
  AAA -> AA   2B Jonathan Sipes
  AAA -> A    SP Jose Bolivar
-  AA -> AAA  RF Byron Dane
   AA -> AAA  SP Eric Trautman
+  AA -> AAA  RF Byron Dane
   AA -> A    RF Joseph Sherman
    A -> AA   SP Jeffrey Draeger
 
@@ -271,14 +271,12 @@ RF Timothy Campbell          33| RF : 103       1   7     : 112 |    :          
 RF Oscar Lopez               32| RF :  80       7 -10     :  78 |    :                         :   0 |   1 |  79 | -2---739 |    *  ~  $3.28Mx2 |        :        |  p299 | Houston Astros       | **
 RF Jose Contreras            34| RF :  85       0 -12     :  74 |    :                         :   0 |  -2 |  72 | -2---215 |    *  ~  $3.67Mx3 |        :        |  p486 | Houston Astros       | **^
 
-40 man: 38/40, Remove: 2, Add: 2
+40 man: 38/40, Remove: 1, Add: 1
 
 --- +40 ---
 2B Jonathan Sipes            32| DH :  97       0   0     :  97 |    :                         :   0 |   1 |  98 | -23----- |  F  +             |        :        |  p408 | Houston Astros       | *
-2B Luis Moya                 22| 2B :  50      10 -33     :  28 | 2B :  87      10 -21   6     :  83 |   6 |  89 | -3821--- |   4  #            |        :        |  p615 | Houston Astros       | ++-
 
 --- -40 ---
-1B Carlos Salerno            30| 1B :  82       4 -11     :  76 |    :                         :   0 |   3 |  79 | -611-212 |    *+             |        :        |  p378 | Houston Astros       | *
 SP Brett Dennis              26| SP :      71      -7     :  64 | SP :      59     -29 -25     :   5 |   6 |  70 |          |    *+ ~  $1.33Mx4 |        :        |  p419 | Houston Astros       | **^
 
 --- Waive ---
@@ -457,9 +455,9 @@ CATCHER
  5 | Slater, T         77  -4  73 | Contreras, J     114 -32  82 | Campbell, T      105 -32  73
  6 | Telles, T        105 -32  73 | Lopez, O         105 -32  73 | Tetreault, A     104 -32  72
  7 | Campbell, T      103 -32  71 | Klein, F         101 -32  69 | Clemente, J      104 -32  72
- 8 | Clemente, J      103 -32  71 | Clemente, J      100 -32  68 | Slater, T         73  -4  69
- 9 | Dane, B           97 -32  65 | Glessner, K      100 -32  68 | Sipes, J          99 -32  67
-10 | Sipes, J          97 -32  65 | Dane, B          100 -32  68 | Dane, B           97 -32  65
+ 8 | Clemente, J      103 -32  71 | Dane, B          100 -32  68 | Slater, T         73  -4  69
+ 9 | Sipes, J          97 -32  65 | Clemente, J      100 -32  68 | Sipes, J          99 -32  67
+10 | Dane, B           97 -32  65 | Glessner, K      100 -32  68 | Dane, B           97 -32  65
 
 FIRST_BASE
  1 | Urrutia, R       132  -1 131 | Urrutia, R       155  -1 154 | Urrutia, R       126  -1 125
@@ -552,9 +550,9 @@ DESIGNATED_HITTER
  4 | Tetreault, A     107   0 107 | Contreras, J     114   0 114 | Telles, T        111   0 111
  5 | Telles, T        105   0 105 | Lopez, O         105   0 105 | Campbell, T      105   0 105
  6 | Campbell, T      103   0 103 | Klein, F         101   0 101 | Tetreault, A     104   0 104
- 7 | Clemente, J      103   0 103 | Clemente, J      100   0 100 | Clemente, J      104   0 104
- 8 | Dane, B           97   0  97 | Glessner, K      100   0 100 | Sipes, J          99   0  99
- 9 | Sipes, J          97   0  97 | Dane, B          100   0 100 | Dane, B           97   0  97
+ 7 | Clemente, J      103   0 103 | Dane, B          100   0 100 | Clemente, J      104   0 104
+ 8 | Sipes, J          97   0  97 | Clemente, J      100   0 100 | Sipes, J          99   0  99
+ 9 | Dane, B           97   0  97 | Glessner, K      100   0 100 | Dane, B           97   0  97
 10 | Klein, F          94   0  94 | Slater, T         97   0  97 | Fusco, R          95   0  95
 
 --- Trade Values ---
@@ -1246,7 +1244,7 @@ SP Eric Trautman             31| SP :      66     -11     :  55 |    :          
 American
 American ------------+
 New York Mets        | 102.8 103.1 105.7 | 103.7 106.0 109.3 |  93- 69 0.572 |  24- 32 0.429 |  85- 77 0.525 ( 3) 
-Los Angeles Dodgers  | 101.6 102.1 103.6 |  99.6  98.8  98.4 |  83- 79 0.510 |  30- 26 0.536 |  84- 78 0.519 ( 5) 
+Los Angeles Dodgers  | 101.6 102.1 103.6 |  99.6  98.8  98.4 |  83- 79 0.510 |  30- 26 0.536 |  84- 78 0.519 ( 6) 
 Toronto Blue Jays    |  98.3  99.1  97.4 |  98.5  97.3  95.7 |  75- 87 0.465 |  34- 22 0.607 |  83- 79 0.512 ( 7) 
 Pittsburgh Pirates   | 100.3  98.7  99.0 |  97.5  97.6  95.1 |  76- 86 0.469 |  28- 28 0.500 |  78- 84 0.481 ( 8) 
 Milwaukee Brewers    |  98.5  99.8  98.4 |  97.8  99.1  96.9 |  77- 85 0.476 |  23- 33 0.411 |  73- 89 0.451 ( 9) 
@@ -1257,7 +1255,7 @@ National ------------+
 Houston Astros       | 100.1 101.3 101.4 | 114.6 115.6 127.6 | 101- 61 0.626 |  30- 26 0.536 |  96- 66 0.593 ( 1) 
 Minnesota Twins      | 101.1 102.5 103.6 | 103.2 100.2 103.4 |  87- 75 0.534 |  34- 22 0.607 |  91- 71 0.562 ( 2) 
 New York Yankees     |  96.7  95.2  91.6 | 102.1 103.8 105.7 |  78- 84 0.484 |  33- 23 0.589 |  84- 78 0.519 ( 4) 
-Washington Nationals | 105.4 104.5 109.7 | 101.3 103.7 104.8 |  92- 70 0.569 |  24- 32 0.429 |  84- 78 0.519 ( 6) 
+Washington Nationals | 105.4 104.5 109.7 | 101.3 103.7 104.8 |  92- 70 0.569 |  24- 32 0.429 |  84- 78 0.519 ( 5) 
 Atlanta Braves       |  98.9  98.3  97.2 |  95.8  96.6  92.4 |  72- 90 0.446 |  22- 34 0.393 |  69- 93 0.426 (11) 
 Baltimore Orioles    |  95.6  94.8  90.2 |  94.3  93.2  87.0 |  62-100 0.381 |  25- 31 0.446 |  65- 97 0.401 (12) 
                      |             103.5 |              83.9 |
