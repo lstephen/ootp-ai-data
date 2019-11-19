@@ -38,13 +38,13 @@ Selected: IsotonicScores: [(0.6123275492563413, RandomForest(...)), (0.656639984
 -- Doubles
 Selected: HuberScores: [(0.372014859566334, RandomForest(...)), (0.3763078895224388, Isotonic(...)), (0.5121434281834418, Huber(...)), (0.444402127468412, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [52. 42. 13. 28. 52.  5.]Coefficients: [-0.01032937  0.03719272 -0.03493956  0.02362089  0.05909766]Intercept: -0.007575975655047792Feature Mask: [ True  True  True  True  True False]
 -- Triples
-Selected: RandomForestScores: [(0.3795451092855031, RandomForest(...)), (0.28355961656765205, Isotonic(...)), (0.021069760130849453, Huber(...)), (-0.21303676033284338, Linear(...))]Best Parameters: {'regressor__n_estimators': 15, 'selection__k': 4, 'regressor__max_depth': 23}Feature Scores: [11. 30. 22. 11. 12. 14.]Feature Mask: [False  True  True False  True  True]Feature Importances: [0.384 0.197 0.198 0.221]
+Selected: RandomForestScores: [(0.3795451092855031, RandomForest(...)), (0.28355961656765205, Isotonic(...)), (0.021069760130849453, Huber(...)), (-0.21303676033284338, Linear(...))]Best Parameters: {'regressor__n_estimators': 15, 'regressor__max_depth': 23, 'selection__k': 4}Feature Scores: [11. 30. 22. 11. 12. 14.]Feature Mask: [False  True  True False  True  True]Feature Importances: [0.384 0.197 0.198 0.221]
 -- HomeRuns
-Selected: RandomForestScores: [(0.41975690799958937, RandomForest(...)), (0.15370586509533757, Isotonic(...)), (0.2512900726935572, Huber(...)), (0.23880613515881519, Linear(...))]Best Parameters: {'regressor__max_depth': 17, 'regressor__n_estimators': 8, 'selection__k': 4}Feature Scores: [35. 19. 91. 52. 38.  0.]Feature Mask: [ True False  True  True  True False]Feature Importances: [0.1   0.504 0.289 0.108]
+Selected: RandomForestScores: [(0.41975690799958937, RandomForest(...)), (0.15370586509533757, Isotonic(...)), (0.2512900726935572, Huber(...)), (0.23880613515881519, Linear(...))]Best Parameters: {'regressor__n_estimators': 8, 'regressor__max_depth': 17, 'selection__k': 4}Feature Scores: [35. 19. 91. 52. 38.  0.]Feature Mask: [ True False  True  True  True False]Feature Importances: [0.1   0.504 0.289 0.108]
 -- Walks
 Selected: LinearScores: [(0.2568817201488835, RandomForest(...)), (-0.0062856184350574456, Isotonic(...)), (0.1915704374472732, Huber(...)), (0.2976713743633046, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [53. 30. 46. 61. 33. 10.]Coefficients: [ 0.000286    0.0004496   0.00098683 -0.00045623]Intercept: 0.001436512407902199Feature Mask: [ True False  True  True  True False]
 -- Ks
-Selected: RandomForestScores: [(0.237126283548448, RandomForest(...)), (0.052718247845100964, Isotonic(...)), (0.16475859487649022, Huber(...)), (0.17612172523767466, Linear(...))]Best Parameters: {'regressor__max_depth': 6, 'selection__k': 3, 'regressor__n_estimators': 54}Feature Scores: [19. 19. 12. 11. 19.  2.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.242 0.211 0.547]
+Selected: RandomForestScores: [(0.237126283548448, RandomForest(...)), (0.052718247845100964, Isotonic(...)), (0.16475859487649022, Huber(...)), (0.17612172523767466, Linear(...))]Best Parameters: {'regressor__n_estimators': 54, 'selection__k': 3, 'regressor__max_depth': 6}Feature Scores: [19. 19. 12. 11. 19.  2.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.242 0.211 0.547]
 
            Hits | 0.060
         Doubles | 0.046
@@ -170,14 +170,14 @@ MR Blood, J         2       A 20 | 14.9  3.0  4.7  1.1 |  50     |  50     |  + 
 Total:58 (target 70-75)
 Balance:33/25 = 1.320 (ideal: 1.273)
 
-  ML -> AAA  3B Dominick Hellwig
   ML -> AAA  LF Juan Torres
- AAA -> ML   2B Frederick Klein
+  ML -> AAA  3B Dominick Hellwig
  AAA -> ML   2B Jonathan Sipes
+ AAA -> ML   2B Frederick Klein
  AAA -> AA   3B Zack Davis
  AAA -> AA   MR Yasunaga Keita
-  AA -> AAA  3B Jamey Escobar
   AA -> AAA  SP Eric Trautman
+  AA -> AAA  3B Jamey Escobar
 
 SP
 Jacob Raymond
@@ -190,13 +190,13 @@ LR
 Wayne Milsap
 
 MR
+Wayne Balcom
 Serafin Planas
-Michael Lamas
 Jon Santoyo
 
 SU
-Wayne Balcom
 Milton Johnston
+Michael Lamas
 
 CL
 Manuel Luna
@@ -204,8 +204,8 @@ Manuel Luna
 NONE
 
 
-BP Ability: 135
-BP Endrnce: 12.0
+BP Ability: 134
+BP Endrnce: 11.5
 
 --- Slow Hook ---
 
@@ -986,7 +986,7 @@ MR Larry Ransom              26| MR :      61     -22     :  38 | MR :      64  
 2B Chet Davis                32| SS : 136      15  68  19 : 238 |    :                         :   0 |   1 | 239 | -3737--- |    *     $9.94Mx2 | $31.92M:$38.65M |  p426 | Minnesota Twins      | ****^
 3B Luis Gomez                26| 3B : 137       6  55  17 : 215 | 3B : 129       6  36  48   8 : 227 |   6 | 233 | -3251--- |    *    $16.72Mx4 | $26.73M:$32.36M |   p92 | Minnesota Twins      | ****^
 1B Henry Johnson             25| 1B : 116       2  26     : 143 | 1B : 117       2  21  30     : 169 |   6 | 175 | -4------ |    *     $4.72Mx2 |  $9.65M:$11.68M |  p109 | Minnesota Twins      | ***
-RF Tommy Howells             28| CF : 117       9  33   2 : 161 | CF : 108       9  17  28     : 162 |   5 | 167 | -2---357 |  F *     $4.05M   | $12.99M:$15.73M |  p357 | Minnesota Twins      | ***^
+RF Tommy Howells             28| CF : 117       9  33   2 : 161 | CF : 108       9  17  28     : 162 |   5 | 167 | -2---357 |  F *     $4.05M   | $13.36M:$16.18M |  p357 | Minnesota Twins      | ***^
 CF Sid Caperton              18| CF :  52      16 -25     :  44 | CF : 103      16  -7  30     : 142 |   6 | 148 | -2---373 |   5               |        :        |  p567 | Minnesota Twins      | +++-
 CF Frank Crawford            33| CF : 108      12  28     : 148 |    :                         :   0 |   0 | 148 | -2---763 |    *     $3.71Mx3 | $10.39M:$12.58M |  p398 | Minnesota Twins      | ***
 SP Alexander Cory            21| SP :      56     -22     :  34 | SP :     110       2  28     : 139 |   6 | 145 |          |   1               |        :        |  p682 | Minnesota Twins      | +++++
@@ -1247,8 +1247,8 @@ SP Patrick Nye               32| SP :      65     -12     :  53 |    :          
 American
 American ------------+
 Toronto Blue Jays    | 103.6 104.8 108.2 | 100.9 102.0 102.8 |  90- 72 0.553 |  42- 28 0.600 |  93- 69 0.574 ( 1) 
-Pittsburgh Pirates   | 102.2 102.3 104.5 |  99.1  99.2  98.3 |  83- 79 0.513 |  35- 35 0.500 |  82- 80 0.506 ( 6) 
-Los Angeles Dodgers  |  99.8  99.6  99.4 |  98.2  97.8  95.9 |  77- 85 0.476 |  38- 32 0.543 |  82- 80 0.506 ( 7) 
+Los Angeles Dodgers  |  99.8  99.6  99.4 |  98.2  97.8  95.9 |  77- 85 0.476 |  38- 32 0.543 |  82- 80 0.506 ( 6) 
+Pittsburgh Pirates   | 102.2 102.3 104.5 |  99.1  99.2  98.3 |  83- 79 0.513 |  35- 35 0.500 |  82- 80 0.506 ( 7) 
 New York Mets        |  99.4  97.6  96.9 | 103.9 105.3 109.0 |  85- 77 0.527 |  31- 39 0.443 |  80- 82 0.494 ( 8) 
 Oakland A's          | 100.4 101.5 101.9 |  91.7  88.2  78.6 |  63- 99 0.391 |  38- 32 0.543 |  74- 88 0.457 ( 9) 
 Milwaukee Brewers    |  97.9  96.9  94.7 |  96.6  96.8  93.2 |  71- 91 0.438 |  26- 44 0.371 |  66- 96 0.407 (12) 
