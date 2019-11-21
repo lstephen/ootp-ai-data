@@ -38,7 +38,7 @@ Selected: LinearScores: [(0.4219343728979803, RandomForest(...)), (0.25227382256
 -- Doubles
 Selected: HuberScores: [(0.31401579658772655, RandomForest(...)), (0.40971482628534317, Isotonic(...)), (0.4587282452598204, Huber(...)), (0.3944693486808755, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [58. 39. 16. 25. 51.  8.]Coefficients: [0.02136344 0.03506055 0.02353408]Intercept: -0.007412133722505319Feature Mask: [ True  True False False  True False]
 -- Triples
-Selected: RandomForestScores: [(0.3701566262074245, RandomForest(...)), (0.23734473496040395, Isotonic(...)), (0.10657763430546108, Huber(...)), (-0.13827610030460105, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 40, 'regressor__n_estimators': 4}Feature Scores: [12. 27. 22. 10. 12. 14.]Feature Mask: [False  True  True False False  True]Feature Importances: [0.144 0.352 0.504]
+Selected: RandomForestScores: [(0.3701566262074245, RandomForest(...)), (0.23734473496040395, Isotonic(...)), (0.10657763430546108, Huber(...)), (-0.13827610030460105, Linear(...))]Best Parameters: {'regressor__max_depth': 40, 'regressor__n_estimators': 4, 'selection__k': 3}Feature Scores: [12. 27. 22. 10. 12. 14.]Feature Mask: [False  True  True False False  True]Feature Importances: [0.144 0.352 0.504]
 -- HomeRuns
 Selected: RandomForestScores: [(0.5059522883615389, RandomForest(...)), (0.12679612230126094, Isotonic(...)), (0.24305512141371052, Huber(...)), (0.2391879932239651, Linear(...))]Best Parameters: {'regressor__max_depth': 40, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [33. 16. 84. 43. 32.  1.]Feature Mask: [ True False  True  True False False]Feature Importances: [0.051 0.609 0.34 ]
 -- Walks
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: IsotonicScores: [(-0.07233658588983305, RandomForest(...)), (-0.05686049802598873, Isotonic(...)), (-0.0743934763667901, Huber(...)), (-0.08419965613397203, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [8. 5. 2. 6. 2.]Feature Mask: [ True False False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.025486612368254002, RandomForest(...)), (-0.10750977356711228, Isotonic(...)), (-0.20884526175191295, Huber(...)), (-0.23258521484872804, Linear(...))]Best Parameters: {'regressor__max_depth': 22, 'regressor__n_estimators': 11, 'selection__k': 4}Feature Scores: [4. 3. 1. 2. 1.]Feature Mask: [ True  True  True  True False]Feature Importances: [0.32  0.232 0.28  0.169]
+Selected: RandomForestScores: [(-0.025486612368254002, RandomForest(...)), (-0.10750977356711228, Isotonic(...)), (-0.20884526175191295, Huber(...)), (-0.23258521484872804, Linear(...))]Best Parameters: {'regressor__n_estimators': 11, 'selection__k': 4, 'regressor__max_depth': 22}Feature Scores: [4. 3. 1. 2. 1.]Feature Mask: [ True  True  True  True False]Feature Importances: [0.32  0.232 0.28  0.169]
 -- HomeRuns
 Selected: IsotonicScores: [(-0.25949547402674517, RandomForest(...)), (-0.02262828065315577, Isotonic(...)), (-0.06999783184173942, Huber(...)), (-0.11000405562949767, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [0. 2. 1. 3. 0.]Feature Mask: [False False False  True False]
 -- Walks
@@ -126,8 +126,8 @@ SP Allen, R        F *  ~  ML 36 | 10.1  7.8  2.3  0.7 |  90  85 |  95 107 |  + 
 MR Luna, M         F *     ML 35 |  9.8  8.0  1.4  0.9 | 109 182 | 106 170 |  - |  84/ 93 ||  93 ||
 SP Raymond, J        *     ML 32 | 10.1 11.5  2.3  0.9 |  88  98 |  94 118 | -- |  90/ 80 ||  90 ||
 SP Milsap, W         *  ~  ML 35 | 10.1  8.0  2.3  0.9 |  95 136 |  92  95 |  + |  90/ 80 ||  90 ||
-MR Johnston, M       *+ ~  ML 33 |  9.8  9.5  1.6  0.7 |  94  47 | 104 115 |  + |  50/ 88 ||  88 ||
 SP Gillen, M      I  *+    DL 33 | 10.1  8.9  2.4  0.9 |  86  84 |  90 125 |    |  88/ 77 ||  88 ||
+MR Johnston, M       *+ ~  ML 33 |  9.8  9.5  1.6  0.7 |  94  47 | 104 115 |  + |  50/ 88 ||  88 ||
 SP Nye, P         IF      AAA 32 | 10.1  5.2  2.4  0.9 |  89     |  89     |  + |  88/ 77 ||  88 ||
 SP Trautman, E     F    ~ AAA 31 | 10.1  3.4  2.3  0.9 |  87     |  87     |  + |  86/ 75 ||  86 ||
 MR Planas, S         *  ~  ML 31 |  9.8  7.1  1.4  0.9 |  98  50 |  98  95 |  - |  64/ 85 ||  85 ||
@@ -172,14 +172,14 @@ Total:59 (target 70-75)
 Balance:34/25 = 1.360 (ideal: 1.273)
 
   ML -> AAA  2B Frederick Klein
- AAA -> AA   1B Carlos Salerno
- AAA -> AA   CF Sean Duque
  AAA -> AA   LF John Broyles
+ AAA -> AA   1B Carlos Salerno
  AAA -> AA   3B Jamey Escobar
+ AAA -> AA   CF Sean Duque
  AAA -> A    SP Brett Dennis
-  AA -> AAA  SP Patrick Nye
   AA -> AAA  3B Zack Davis
   AA -> AAA  RF Hyu-suton Mito
+  AA -> AAA  SP Patrick Nye
   AA -> A    RF Joseph Sherman
    A -> ML   SP Jose Bolivar
    A -> AA   SP Matthew Spengler
@@ -1276,8 +1276,8 @@ Houston Astros       |  97.8  98.5  96.3 | 104.4 103.9 108.2 |  84- 78 0.520 |  
 Minnesota Twins      | 101.1 103.1 104.1 | 102.3 103.3 105.6 |  89- 73 0.547 |  40- 35 0.533 |  88- 74 0.543 ( 3) 
 New York Yankees     |  96.3  96.0  92.1 |  99.5  99.1  98.6 |  73- 89 0.452 |  44- 31 0.587 |  83- 79 0.512 ( 5) 
 Washington Nationals | 104.2 104.6 108.5 |  98.9  98.6  97.5 |  86- 76 0.528 |  37- 38 0.493 |  83- 79 0.512 ( 6) 
-Baltimore Orioles    |  96.9  95.6  92.3 |  98.1  96.4  94.3 |  70- 92 0.431 |  32- 43 0.427 |  70- 92 0.432 (10) 
-Atlanta Braves       |  97.6  96.5  94.0 | 100.6 101.4 101.9 |  78- 84 0.478 |  28- 47 0.373 |  70- 92 0.432 (11) 
+Baltimore Orioles    |  96.9  95.6  92.3 |  98.1  96.4  94.3 |  70- 92 0.431 |  32- 43 0.427 |  70- 92 0.432 (11) 
+Atlanta Braves       |  97.6  96.5  94.0 | 100.6 101.4 101.9 |  78- 84 0.478 |  28- 47 0.373 |  70- 92 0.432 (10) 
                      |             105.0 |              92.7 |
 
 --- Non Top prospects ---
