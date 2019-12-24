@@ -61,7 +61,7 @@ Selected: HuberScores: [(0.18641434163116033, RandomForest(...)), (0.19311124217
 -- Walks
 Selected: LinearScores: [(0.32731000886607414, RandomForest(...)), (0.24397419457374836, Isotonic(...)), (0.36942584841652754, Huber(...)), (0.38144957550453834, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [  1.   6.  27.   2. 166.   1.   1.   4.]Coefficients: [ 0.00013831 -0.00182186]Intercept: 0.18063989060690655Feature Mask: [False False  True False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.19129542487045403, RandomForest(...)), (0.10319351908682317, Isotonic(...)), (0.16901110911369013, Huber(...)), (0.14316614062738842, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [ 61.  68.   8.   1.   1. 147.   0.   8.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [0.198 0.109 0.693]
+Selected: RandomForestScores: [(0.19129542487045403, RandomForest(...)), (0.10319351908682317, Isotonic(...)), (0.16901110911369013, Huber(...)), (0.14316614062738842, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__n_estimators': 2, 'regressor__max_depth': 49}Feature Scores: [ 61.  68.   8.   1.   1. 147.   0.   8.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [0.198 0.109 0.693]
 
 Hitting Features
              Average |  -   102   +  |   5  15  25  35  45  55  65  75  85  95
@@ -153,8 +153,8 @@ SP Watson, A           AA 23 | 13.3  6.2  5.1  2.8 |  48     |  48     | -  |  4
 SP Springer, D    I    AA 29 | 13.3  6.2  5.4  2.9 |  42     |  48     |  - |  45/ 40 ||  45 ||
 MR Fox, C               A 23 | 12.1  4.3  7.0  2.4 |  50     |  50     |    |  14/ 43 ||  43 ||
 SP Jimenez, J           A 21 | 14.6  6.5  6.1  2.5 |  43     |  43     |  - |  40/ 37 ||  40 ||
-SP Brower, J            A 21 | 14.9  6.6  6.5  3.0 |  34     |  41     |    |  38/ 34 ||  38 ||
 MR Williams, T         AA 23 | 14.1  6.6  7.2  2.2 |  42     |  45     |  - |  12/ 38 ||  38 ||
+SP Brower, J            A 21 | 14.9  6.6  6.5  3.0 |  34     |  41     |    |  38/ 34 ||  38 ||
 MR Holtz, M             A 21 | 16.0  7.5  7.2  3.0 |  40     |  35     |    |  10/ 31 ||  31 ||
 
  (27) ML               | (15) AAA              | (14) AA               | (14) A                | ( 0) DL               |
@@ -189,11 +189,11 @@ Total:70 (target 70-75)
 Balance:41/29 = 1.414 (ideal: 1.273)
 
   ML -> AAA  2B Mike Sharperson
- AAA -> ML   MR Ed Vande Berg
- AAA -> ML   2B Clay Bellinger
  AAA -> ML   SP Bryan Hickerson
- AAA -> AA   RF Felix Jose
+ AAA -> ML   2B Clay Bellinger
+ AAA -> ML   MR Ed Vande Berg
  AAA -> AA   SP Miguel Batista
+ AAA -> AA   RF Felix Jose
   AA -> AAA  MR Armando Benitez
   AA -> A    1B Brent Brede
   AA -> A    RF Fernando Tatis Sr.
@@ -203,22 +203,22 @@ SP
 Dave Stewart
 Tim Burke
 Floyd Youmans
+Roger Mason
 Francisco Oliveras
-Scott Holman
 
 LR
-Danny Jackson
-Len Barker
+Scott Holman
+Bryan Hickerson
 
 MR
-Steve Olin
-Ed Vande Berg
 Bob Wickman
-Bryan Hickerson
+Danny Jackson
+Ed Vande Berg
+Len Barker
 
 SU
 Rod Beck
-Roger Mason
+Steve Olin
 
 CL
 Frank DiPino
@@ -226,8 +226,8 @@ Frank DiPino
 NONE
 
 
-BP Ability: 164
-BP Endrnce: 20.0
+BP Ability: 163
+BP Endrnce: 23.0
 
 --- Slow Hook ---
 
@@ -335,8 +335,8 @@ CF Benny Agbayani            22 | CF :  77       7 :  84 | CF :  81       7 :  8
 2B Bill Selby                24 | LF :  65       1 :  66 | LF :  67       1 :  68 |  +2 |    +10         +10    :             +10+10    | ++
 RF Dan Peltier               26 | 1B :  75       0 :  75 | 1B :  77       0 :  77 |  +2 |          +10+10+10    :             +10+10    | *
 LF Brooks Kieschnick         22 | RF :  67       3 :  70 | RF :  68       3 :  71 |  +1 |        -9             :    +10 -9             | ++
-SS Aaron Ledesma             23 | SS :  79       8 :  87 | SS :  80       8 :  88 |  +1 |                +10    :             +10       | +++
 2B Frank Menechino           23 | 2B :  71       6 :  77 | 2B :  72       6 :  78 |  +1 | +10+10                :    +10                | +++-
+SS Aaron Ledesma             23 | SS :  79       8 :  87 | SS :  80       8 :  88 |  +1 |                +10    :             +10       | +++
 1B Dave Hansen               25 | 1B :  86       3 :  89 | 1B :  87       3 :  90 |  +1 |                       :             +10       | +++
 RF Ruben Amaro Jr.           29 | DH :  77       0 :  77 | DH :  78       0 :  78 |  +1 |    +10                :    +10                | *
  C Einar Diaz                21 |  C :  60       8 :  68 |  C :  60       8 :  68 |  +0 |                       :                       | ++
@@ -383,8 +383,8 @@ MR Mark Wohlers              24 | MR :      54     :  54 | MR :      54     :  5
 SP Bryan Hickerson           30 | SP :      70     :  70 | SP :      70     :  70 |  +0 |                -10       :                          | *
 SP Francisco Oliveras        31 | SP :     114     : 114 | SP :     114     : 114 |  +0 |       +10                :                          | **^
 SP Zane Smith                33 | SP :      76     :  76 | SP :      76     :  76 |  +0 |                -10       :                          | *
-SP Scott Holman              35 | SP :     100     : 100 | SP :     100     : 100 |  +0 | +10   -10                : +10                      | *^
 MR Mark Brown                35 | SP :      55     :  55 | SP :      55     :  55 |  +0 |    -10                   :       +10-10+10          | *
+SP Scott Holman              35 | SP :     100     : 100 | SP :     100     : 100 |  +0 | +10   -10                : +10                      | *^
 SP Dennis Springer           29 | SP :      47     :  47 | SP :      45     :  45 |  -2 |          -10-10          :       -10                | *
 MR Ed Vande Berg             35 | MR :      89     :  89 | MR :      84     :  84 |  -5 |       +10      +10       :    -10         +10       | *
 CL Frank DiPino              37 | MR :     144     : 144 | MR :     137     : 137 |  -8 |    -10   -10   -10       :                          | ****^
@@ -412,7 +412,7 @@ SP Jim Brower                21 | SP :      50     :  50 | SP :      38     :  3
  3 |  79 ( 37-116) |  87 ( 47-122)  79/ 96 |  20/ 20 ||  85 ( 37-116) |  91 ( 47-122)  83/100 | 100/100
  4 |  75 ( 30-138) |  81 ( 47-144)  74/ 89 |  20/ 20 ||  73 ( 30-138) |  79 ( 47-144)  72/ 87 | 100/100
  5 |  76 ( 22-119) |  82 ( 28-125)  74/ 90 |  20/ 20 ||  60 ( 22-119) |  66 ( 28-125)  60/ 73 | 100/100
- 6 |  63 ( 47- 79) |  69 ( 53- 85)  63/ 76 |   2/  2 ||  46 ( 23- 79) |  52 ( 29- 85)  47/ 57 |  59/ 59
+ 6 |  63 ( 47- 79) |  69 ( 53- 85)  63/ 76 |   2/  2 ||  46 ( 17- 79) |  52 ( 29- 85)  47/ 57 |  59/ 59
  7 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  22 ( 12- 35) |  31 ( 28- 41)  28/ 34 |   3/  3
 
 SS Phillips, T     35|  17,650,000  17,650,000
@@ -1759,8 +1759,8 @@ American League
 East ----------------+
 Detroit Tigers       | 108.1 108.0 115.5 |  99.4  96.9  96.2 |  90- 72 0.553 |  82- 48 0.631 | 100- 62 0.617 ( 5) 
 Cleveland Indians    | 100.1 100.4 100.5 | 101.2  99.6 100.8 |  82- 80 0.506 |  82- 48 0.631 |  98- 64 0.605 ( 7) 
-New York (A) Yankees | 100.9 101.7 102.6 |  89.1  93.4  82.1 |  67- 95 0.415 |  76- 54 0.585 |  89- 73 0.549 (10) 
-Baltimore Orioles    | 103.6 102.4 105.9 | 102.2  96.8  98.9 |  85- 77 0.523 |  72- 58 0.554 |  89- 73 0.549 ( 9) 
+New York (A) Yankees | 100.9 101.7 102.6 |  89.1  93.4  82.1 |  67- 95 0.415 |  76- 54 0.585 |  89- 73 0.549 ( 9) 
+Baltimore Orioles    | 103.6 102.4 105.9 | 102.2  96.8  98.9 |  85- 77 0.523 |  72- 58 0.554 |  89- 73 0.549 (10) 
 Boston Red Sox       |  97.0  97.8  94.8 |  85.3  83.5  66.5 |  46-116 0.284 |  67- 63 0.515 |  76- 86 0.469 (13) 
 West ----------------+
 California Angels    | 102.5 103.7 106.1 | 113.3 117.6 127.7 | 105- 57 0.647 |  90- 40 0.692 | 111- 51 0.685 ( 1) 
