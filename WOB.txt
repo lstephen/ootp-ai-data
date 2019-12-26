@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: IsotonicScores: [(0.2158612251125616, RandomForest(...)), (0.37643587620077507, Isotonic(...)), (0.24492410027435887, Huber(...)), (0.3386168564003009, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [45. 27. 11. 20. 22.  2.]Feature Mask: [ True False False False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.009411958931134187, RandomForest(...)), (-0.23132338485364723, Isotonic(...)), (-1.2836299964130677, Huber(...)), (-0.4893955135028562, Linear(...))]Best Parameters: {'regressor__max_depth': 42, 'regressor__n_estimators': 77, 'selection__k': 4}Feature Scores: [37. 28. 16. 29. 44.  2.]Feature Mask: [ True  True False  True  True False]Feature Importances: [0.382 0.244 0.189 0.185]
+Selected: RandomForestScores: [(-0.009411958931134187, RandomForest(...)), (-0.23132338485364723, Isotonic(...)), (-1.2836299964130677, Huber(...)), (-0.4893955135028562, Linear(...))]Best Parameters: {'selection__k': 4, 'regressor__max_depth': 42, 'regressor__n_estimators': 77}Feature Scores: [37. 28. 16. 29. 44.  2.]Feature Mask: [ True  True False  True  True False]Feature Importances: [0.382 0.244 0.189 0.185]
 -- Triples
 Selected: LinearScores: [(0.25792070460210936, RandomForest(...)), (0.09364224194395447, Isotonic(...)), (0.20103195996658704, Huber(...)), (0.26895924876326166, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [11. 31. 13.  6. 12. 16.]Coefficients: [0.0004758  0.00016819]Intercept: -0.025724109845721266Feature Mask: [False  True False False False  True]
 -- HomeRuns
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: LinearScores: [(0.19023418436927633, RandomForest(...)), (-0.11549952927057978, Isotonic(...)), (0.21859449773240983, Huber(...)), (0.24909473241298943, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [22.  3. 22.  1.  1.]Coefficients: [-0.00135891  0.00045828 -0.00095837]Intercept: 0.37941128441459104Feature Mask: [ True  True  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.033077005244048656, RandomForest(...)), (-0.2055995243661127, Isotonic(...)), (-0.5420236976873029, Huber(...)), (-0.25365567425720653, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 48, 'regressor__n_estimators': 16}Feature Scores: [10.  4. 11.  1.  1.]Feature Mask: [ True False  True False False]Feature Importances: [0.417 0.583]
+Selected: RandomForestScores: [(0.033077005244048656, RandomForest(...)), (-0.2055995243661127, Isotonic(...)), (-0.5420236976873029, Huber(...)), (-0.25365567425720653, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 16, 'regressor__max_depth': 48}Feature Scores: [10.  4. 11.  1.  1.]Feature Mask: [ True False  True False False]Feature Importances: [0.417 0.583]
 -- HomeRuns
 Selected: HuberScores: [(-0.10938594732155942, RandomForest(...)), (-0.05511463497339908, Isotonic(...)), (-0.0041281920023463385, Huber(...)), (-0.09076864808356562, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [0. 2. 4. 1. 0.]Coefficients: [-0.06380265]Intercept: 0.07116265144293357Feature Mask: [False False  True False False]
 -- Walks
@@ -126,8 +126,8 @@ SP Gillen, M         *+ ~  ML 33 |  9.1  8.5  2.5  0.9 | 113  88 | 100 138 |    
 MR Johnston, M       *+ ~  ML 33 |  9.1  9.0  2.2  0.3 | 106  61 | 118 108 |  + |  56/ 99 ||  99 ||
 SP Allen, R        F *  ~  ML 36 | 10.2  7.7  2.5  0.7 |  89  83 |  95 122 |  + |  93/ 80 ||  93 ||
 MR Balcom, W         *+ ~  ML 33 | 10.5  7.6  1.3  0.3 |  96 363 | 110 112 | -  |  52/ 92 ||  92 ||
-MR Santoyo, J        *+ ~  ML 32 |  9.5  8.4  2.6  0.7 | 134 109 |  95  87 |  + |  81/ 89 ||  89 ||
 MR Horne, K        F *+ ~ AAA 31 |  9.3  8.4  2.4  1.0 |  91  59 | 108 376 |  - |  50/ 89 ||  89 ||
+MR Santoyo, J        *+ ~  ML 32 |  9.5  8.4  2.6  0.7 | 134 109 |  95  87 |  + |  81/ 89 ||  89 ||
 SP Dennis, B          + ~ AAA 26 | 10.2  7.9  3.3  0.7 |  66  75 |  97  84 |  - |  88/ 76 ||  88 ||
 SP Milsap, W         *  ~  ML 35 | 10.5  7.4  2.5  0.8 |  79 107 |  93  96 |  + |  87/ 77 ||  87 ||
 SP Colon, H         1   ~ AAA 24 | 11.5  6.4  1.8  0.8 |  75     |  90     |  + |  84/ 74 ||  84 ||
@@ -172,13 +172,13 @@ MR Blood, J         2       A 21 | 14.9  4.1  5.9  1.9 |  44     |  40     |  + 
 Total:60 (target 70-75)
 Balance:36/24 = 1.500 (ideal: 1.273)
 
-  ML -> AAA  2B Frederick Klein
   ML -> AAA  RF John Broyles
+  ML -> AAA  2B Frederick Klein
  AAA -> ML   LF Juan Torres
- AAA -> AA   3B Jamey Escobar
  AAA -> AA   MR Yasunaga Keita
-  AA -> AAA  3B Dominick Hellwig
+ AAA -> AA   3B Jamey Escobar
   AA -> AAA  SP Patrick Nye
+  AA -> AAA  3B Dominick Hellwig
   DL -> ML   MR Serafin Planas
   DL -> AAA  SS David Davis
   DL -> A    SP Jose Bolivar
@@ -186,8 +186,8 @@ Balance:36/24 = 1.500 (ideal: 1.273)
 SP
 Jacob Raymond
 Monte Gillen
-Oswaldo Dossantos
 Charles Manuel
+Oswaldo Dossantos
 Ralph Allen
 
 LR
@@ -466,8 +466,8 @@ CATCHER
  5 | Klein, F         104 -32  72 | Tetreault, A     110 -32  78 | Torres, J        107 -32  75
  6 | Torres, J        103 -32  71 | Klein, F         109 -32  77 | Sipes, J         105 -32  73
  7 | Telles, T        103 -32  71 | Broyles, J       108 -32  76 | Telles, T        105 -32  73
- 8 | Burford, J       103 -32  71 | Dane, B          107 -32  75 | Klein, F         103 -32  71
- 9 | Contreras, J     102 -32  70 | Hellwig, D       106 -32  74 | Burford, J       103 -32  71
+ 8 | Burford, J       103 -32  71 | Dane, B          107 -32  75 | Burford, J       103 -32  71
+ 9 | Contreras, J     102 -32  70 | Hellwig, D       106 -32  74 | Klein, F         103 -32  71
 10 | Slater, T         73  -4  69 | Clemente, J      104 -32  72 | Fusco, R         100 -32  68
 
 FIRST_BASE
@@ -562,8 +562,8 @@ DESIGNATED_HITTER
  5 | Klein, F         104   0 104 | Klein, F         109   0 109 | Torres, J        107   0 107
  6 | Torres, J        103   0 103 | Broyles, J       108   0 108 | Sipes, J         105   0 105
  7 | Telles, T        103   0 103 | Dane, B          107   0 107 | Telles, T        105   0 105
- 8 | Burford, J       103   0 103 | Hellwig, D       106   0 106 | Klein, F         103   0 103
- 9 | Contreras, J     102   0 102 | Clemente, J      104   0 104 | Burford, J       103   0 103
+ 8 | Burford, J       103   0 103 | Hellwig, D       106   0 106 | Burford, J       103   0 103
+ 9 | Contreras, J     102   0 102 | Clemente, J      104   0 104 | Klein, F         103   0 103
 10 | Sipes, J         101   0 101 | Glessner, K      104   0 104 | Fusco, R         100   0 100
 
 --- Trade Values ---
