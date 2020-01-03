@@ -59,7 +59,7 @@ Selected: IsotonicScores: [(-0.06310814652795771, RandomForest(...)), (-0.056237
 -- HomeRuns
 Selected: HuberScores: [(-0.10203465796760454, RandomForest(...)), (-0.07711756903130691, Isotonic(...)), (-0.05356401046336442, Huber(...)), (-0.08640778905271036, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [2. 0. 6. 3. 0.]Coefficients: [-2.31098930e-02  1.12728495e-06]Intercept: 0.045789298927572324Feature Mask: [False False  True  True False]
 -- Walks
-Selected: RandomForestScores: [(0.14515771097430494, RandomForest(...)), (0.12925365537354783, Isotonic(...)), (0.0895187438072464, Huber(...)), (0.08812787516503168, Linear(...))]Best Parameters: {'regressor__max_depth': 3, 'selection__k': 2, 'regressor__n_estimators': 56}Feature Scores: [ 0. 10.  1.  1.  0.]Feature Mask: [False  True False  True False]Feature Importances: [0.841 0.159]
+Selected: RandomForestScores: [(0.14515771097430494, RandomForest(...)), (0.12925365537354783, Isotonic(...)), (0.0895187438072464, Huber(...)), (0.08812787516503168, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 0. 10.  1.  1.  0.]Feature Mask: [False  True False  True False]Feature Importances: [0.841 0.159]
 -- Ks
 Selected: LinearScores: [(0.3607991517209472, RandomForest(...)), (0.343908177544539, Isotonic(...)), (0.35781273947156844, Huber(...)), (0.368301236714337, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [39.  4.  1.  0.  0.]Coefficients: [0.00302855]Intercept: 0.0064715742748548966Feature Mask: [ True False False False False]
 
@@ -141,19 +141,19 @@ SP Brown, K       I  *    DL 27 |  9.8  8.5  5.2  1.6 |  80 108 |  80  99 |    |
 SP Robinson, D       *+~ AAA 34 | 11.0  5.7  3.6  1.1 |  76 104 |  82 104 | ++ |  76/ 70 ||  76 ||
 SP Leiter, M         * ~ AAA 28 | 10.1  5.8  5.4  1.3 |  73  62 |  78  43 |  + |  75/ 67 ||  75 ||
 SP Sutcliffe, R    F * ~  ML 35 |  9.9  8.4  6.0  1.5 |  76  60 |  76  72 | -  |  75/ 66 ||  75 ||
-SP Valera, J        6*    AA 23 | 10.3  6.1  5.4  1.1 |  76 115 |  76  38 | ++ |  74/ 66 ||  74 ||
 MR Walter, G         *+~ AAA 30 |  9.4  7.7  5.3  1.1 |  89 109 |  84  59 |  + |  74/ 74 ||  74 ||
+SP Valera, J        6*    AA 23 | 10.3  6.1  5.4  1.1 |  76 115 |  76  38 | ++ |  74/ 66 ||  74 ||
 MR Easley, L         *    ML 29 |  9.2  9.5  5.6  1.8 |  82  69 |  84 112 |  - |  73/ 72 ||  73 ||
 SP Radke, B          *     A 19 | 10.6  4.8  5.4  1.7 |  76     |  72     |  + |  72/ 63 ||  72 ||
 SP Morgan, M       F *+   ML 32 | 11.0  6.1  4.5  1.3 |  74  77 |  74  79 |  + |  72/ 64 ||  72 ||
 SP Sele, A           *     A 21 | 10.5  5.7  6.1  1.8 |  71     |  71     |  - |  71/ 61 ||  71 ||
 SP Harris, R         *    AA 23 |  9.9  7.4  5.9  1.7 |  79     |  75     |    |  71/ 66 ||  71 ||
+MR DeLeon, L       F *   AAA 33 | 10.9  6.9  3.4  1.4 |  77     |  82     |  + |  64/ 70 ||  70 ||
 SP Hutton, M               A 21 |  9.9  6.1  5.9  1.6 |  75     |  75     |    |  70/ 65 ||  70 ||
 SP Harkey, M        T*    AA 25 | 10.6  6.2  6.1  1.2 |  71  90 |  71  66 |  + |  70/ 61 ||  70 ||
-MR DeLeon, L       F *   AAA 33 | 10.9  6.9  3.4  1.4 |  77     |  82     |  + |  64/ 70 ||  70 ||
+MR Frey, S           * ~ AAA 28 | 10.8  6.0  4.1  1.1 |  80 276 |  80  49 |  + |  53/ 69 ||  69 ||
 SP Byrd, P           *     A 20 | 10.9  4.6  5.5  1.8 |  68     |  72     |  - |  69/ 61 ||  69 ||
 SP Arnsberg, B       * ~  AA 28 | 10.8  6.3  6.2  1.5 |  69 115 |  69  63 |  + |  69/ 60 ||  69 ||
-MR Frey, S           * ~ AAA 28 | 10.8  6.0  4.1  1.1 |  80 276 |  80  49 |  + |  53/ 69 ||  69 ||
 MR Don Gleaton, J    *+~  ML 34 | 10.7  6.0  4.0  1.1 |  80  71 |  80  72 |  + |  39/ 69 ||  69 ||
 SP Hawkins, A        *+~  AA 31 | 12.0  2.2  4.3  1.0 |  71  78 |  70  91 |  + |  68/ 61 ||  68 ||
 MR Proctor, D              A 23 |  9.8  5.8  5.8  1.5 |  78     |  78     | ++ |  51/ 67 ||  67 ||
@@ -193,22 +193,22 @@ MR Mauser, T              AA 25 | 10.8  6.0  6.1  1.5 |  68     |  69     |  - |
 Total:81 (target 70-75)
 Balance:45/36 = 1.250 (ideal: 1.273)
 
-  ML -> AAA  MR Don Robinson
   ML -> AAA  MR Rich Bordi
+  ML -> AAA  MR Don Robinson
   ML -> DL   SP Keith Brown
- AAA -> ML   MR Logan Easley
  AAA -> ML    C Mark Bailey
- AAA -> AA   SS Craig Gerber
- AAA -> AA   SP Brad Arnsberg
+ AAA -> ML   MR Logan Easley
  AAA -> AA   SS Greg Gagne
+ AAA -> AA   SS Craig Gerber
  AAA -> AA   MR Reggie Harris
- AAA -> A    SS Tony Womack
+ AAA -> AA   SP Brad Arnsberg
  AAA -> A    MR Bill Bene
+ AAA -> A    SS Tony Womack
   AA -> ML   SP Dennis Springer
-  AA -> AAA  RF Thomas Howard
-  AA -> AAA  SP Mark Leiter
-  AA -> AAA  SP Rusty Meacham
   AA -> AAA  CF Phil Lombardi
+  AA -> AAA  RF Thomas Howard
+  AA -> AAA  SP Rusty Meacham
+  AA -> AAA  SP Mark Leiter
    A -> AAA  CF Mike Cameron
    A -> AAA  SP Ugueth Urbina
    A -> AA   3B Shane Andrews
@@ -420,8 +420,8 @@ SP Jose Lima                 19 | SP :      64     :  64 | SP :      64     :  6
 MR Dave Proctor              23 | MR :      67     :  67 | MR :      67     :  67 |  +0 |              -1 :              -1 | +
 MR Bill Bene                 23 | MR :      64     :  64 | MR :      64     :  64 |  +0 |                 :                 | +++
 MR Mike Christopher          27 | MR :      63     :  63 | MR :      63     :  63 |  +0 |                 :                 | *
-SP Mike Cook                 28 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | *
 MR Steve Frey                28 | MR :      69     :  69 | MR :      69     :  69 |  +0 |                 :                 | *
+SP Mike Cook                 28 | SP :      80     :  80 | SP :      80     :  80 |  +0 |                 :                 | *
 MR Logan Easley              29 | SP :      73     :  73 | SP :      73     :  73 |  +0 |                 :                 | *
 SP Oil Can Boyd              32 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                 :                 | **
 MR Don Robinson              34 | SP :      76     :  76 | SP :      76     :  76 |  +0 |                 :                 | **^
@@ -1860,14 +1860,14 @@ Toronto Blue Jays    |  95.7  94.0  89.3 | 104.3 105.5 109.5 |  79- 83 0.489 |  
 Boston Red Sox       | 100.0  99.9 100.0 |  93.5  91.9  84.8 |  68- 94 0.418 |  72- 90 0.444 |  72- 90 0.444 (14) 
 New York (Y) Yankees |  96.8  93.7  90.2 |  94.8  93.8  88.3 |  63- 99 0.388 |  61-101 0.377 |  61-101 0.377 (17) 
 Western Division ----+
-Oakland Athletics    | 105.2 107.8 112.4 |  99.8  99.0  98.8 |  89- 73 0.552 |  98- 64 0.605 |  98- 64 0.605 ( 3) 
+Oakland Athletics    | 105.2 107.8 112.4 |  99.8  99.0  98.8 |  89- 73 0.552 |  98- 64 0.605 |  98- 64 0.605 ( 4) 
 Seattle Mariners     | 104.1 104.2 108.1 | 101.8 102.1 103.9 |  90- 72 0.558 |  90- 72 0.556 |  90- 72 0.556 ( 6) 
 Kansas City Royals   |  93.8  91.9  85.0 | 105.3 106.1 111.1 |  76- 86 0.471 |  78- 84 0.481 |  78- 84 0.481 (11) 
-Texas Rangers        |  96.7  96.5  93.0 | 102.6 103.1 105.5 |  80- 82 0.491 |  76- 86 0.469 |  76- 86 0.469 (13) 
+Texas Rangers        |  96.7  96.5  93.0 | 102.6 103.1 105.5 |  80- 82 0.491 |  76- 86 0.469 |  76- 86 0.469 (12) 
 
 NL
 Eastern Division ----+
-Atlanta Braves       | 103.8 104.6 108.3 | 104.5 105.2 109.4 |  95- 67 0.584 |  98- 64 0.605 |  98- 64 0.605 ( 4) 
+Atlanta Braves       | 103.8 104.6 108.3 | 104.5 105.2 109.4 |  95- 67 0.584 |  98- 64 0.605 |  98- 64 0.605 ( 3) 
 St. Louis Cardinals  |  97.7  97.9  95.6 |  99.7 100.5 100.2 |  77- 85 0.478 |  89- 73 0.549 |  89- 73 0.549 ( 7) 
 Philadelphia Phil... |  97.1  97.1  94.1 |  98.6  98.7  97.3 |  74- 88 0.456 |  69- 93 0.426 |  69- 93 0.426 (15) 
 Montreal Expos       |  97.9 100.2  98.0 |  93.6  92.2  85.3 |  67- 95 0.411 |  64- 98 0.395 |  64- 98 0.395 (16) 
@@ -1877,7 +1877,7 @@ San Diego Padres     | 107.9 109.0 116.0 | 104.7 103.6 108.1 |  99- 63 0.611 | 1
 Cincinnati Reds      | 101.6 102.0 103.6 | 100.0 100.5 100.5 |  84- 78 0.520 |  98- 64 0.605 |  98- 64 0.605 ( 2) 
 Chicago Cubs         | 104.4 103.3 107.6 | 105.8 106.9 112.2 |  96- 66 0.593 |  88- 74 0.543 |  88- 74 0.543 ( 8) 
 Los Angeles Dodgers  | 102.1 102.3 104.4 |  98.0  98.9  96.8 |  82- 80 0.506 |  79- 83 0.488 |  79- 83 0.488 (10) 
-New York (M) Mets    | 105.1 106.5 111.2 |  99.4 100.0  99.4 |  89- 73 0.550 |  76- 86 0.469 |  76- 86 0.469 (12) 
+New York (M) Mets    | 105.1 106.5 111.2 |  99.4 100.0  99.4 |  89- 73 0.550 |  76- 86 0.469 |  76- 86 0.469 (13) 
                      |              98.2 |              86.6 |
 
 --- Non Top prospects ---
