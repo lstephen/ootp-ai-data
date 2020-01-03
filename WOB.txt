@@ -36,11 +36,11 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: IsotonicScores: [(0.27850921315505106, RandomForest(...)), (0.3902506693066063, Isotonic(...)), (0.3574509357085082, Huber(...)), (0.3790092016506536, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [45. 28. 12. 21. 22.  1.]Feature Mask: [ True False False False False False]
 -- Doubles
-Selected: RandomForestScores: [(-0.21852931896202885, RandomForest(...)), (-0.3116140838566916, Isotonic(...)), (-1.109767218890288, Huber(...)), (-0.7608531154778918, Linear(...))]Best Parameters: {'selection__k': 6, 'regressor__n_estimators': 80, 'regressor__max_depth': 35}Feature Scores: [33. 26. 17. 28. 40.  1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.227 0.254 0.076 0.165 0.14  0.138]
+Selected: RandomForestScores: [(-0.21852931896202885, RandomForest(...)), (-0.3116140838566916, Isotonic(...)), (-1.109767218890288, Huber(...)), (-0.7608531154778918, Linear(...))]Best Parameters: {'regressor__max_depth': 35, 'regressor__n_estimators': 80, 'selection__k': 6}Feature Scores: [33. 26. 17. 28. 40.  1.]Feature Mask: [ True  True  True  True  True  True]Feature Importances: [0.227 0.254 0.076 0.165 0.14  0.138]
 -- Triples
 Selected: LinearScores: [(0.2568925486440022, RandomForest(...)), (-0.17140247195547964, Isotonic(...)), (0.23495005590344634, Huber(...)), (0.25475870933364775, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [10. 28.  9.  6. 12. 18.]Coefficients: [0.00041288 0.00018918]Intercept: -0.022728844142502258Feature Mask: [False  True False False False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.6350935017793021, RandomForest(...)), (0.5705654659048484, Isotonic(...)), (0.5302270900824477, Huber(...)), (0.5225467783599456, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 28, 'regressor__n_estimators': 57}Feature Scores: [ 30.  23. 106.  36.  38.   1.]Feature Mask: [False False  True False  True False]Feature Importances: [0.879 0.121]
+Selected: RandomForestScores: [(0.6350935017793021, RandomForest(...)), (0.5705654659048484, Isotonic(...)), (0.5302270900824477, Huber(...)), (0.5225467783599456, Linear(...))]Best Parameters: {'regressor__n_estimators': 57, 'regressor__max_depth': 28, 'selection__k': 2}Feature Scores: [ 30.  23. 106.  36.  38.   1.]Feature Mask: [False False  True False  True False]Feature Importances: [0.879 0.121]
 -- Walks
 Selected: HuberScores: [(0.4057043096411443, RandomForest(...)), (0.31559835210588133, Isotonic(...)), (0.48715946332398685, Huber(...)), (0.47234299833631965, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [ 57.  36.  40. 134.  54.   2.]Coefficients: [0.11144894]Intercept: 0.012890781714891584Feature Mask: [False False False  True False False]
 -- Ks
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.07729281375961657, RandomForest(...)), (-0.2250265614882729, Isotonic(...)), (0.31164812156375604, Huber(...)), (0.28757494644086473, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [20.  3. 20.  1.  1.]Coefficients: [-0.09660913 -0.00207216]Intercept: 0.3219568645120144Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.08292391606175842, RandomForest(...)), (-0.25011418379616046, Isotonic(...)), (-0.43926380727718417, Huber(...)), (-0.16184304321459356, Linear(...))]Best Parameters: {'regressor__n_estimators': 4, 'selection__k': 3, 'regressor__max_depth': 32}Feature Scores: [ 8.  4. 11.  1.  0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.261 0.207 0.531]
+Selected: RandomForestScores: [(0.08292391606175842, RandomForest(...)), (-0.25011418379616046, Isotonic(...)), (-0.43926380727718417, Huber(...)), (-0.16184304321459356, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 32, 'regressor__n_estimators': 4}Feature Scores: [ 8.  4. 11.  1.  0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.261 0.207 0.531]
 -- HomeRuns
 Selected: IsotonicScores: [(-0.16521679695635436, RandomForest(...)), (-0.0404792864899178, Isotonic(...)), (-0.040493605073619765, Huber(...)), (-0.13748528682364325, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -92,9 +92,9 @@ RF Telles, T       35| .240/.263/.389  86  89 | .293/.323/.438 102 106 | -2---62
 2B Klein, F        29| .304/.362/.444 110 110 | .264/.315/.457 102  96 | -2521---   0 |  + || 103 || ML     *+ ~ |
 CF Duque, S        31| .201/.241/.238  69     | .247/.290/.302  84     | -2---897  19 |  + || 101 || ML     *  ~ |
 CF Clemente, J     33| .277/.322/.414 100  93 | .237/.276/.402  90  95 | -2---266  10 |    || 101 || ML   F *  ~ |
+2B Gadson, M       31| .240/.286/.468  97     | .240/.287/.471  98     | -24-----   0 |  + ||  98 || AAA  F      |
 RF Contreras, J    34| .307/.367/.449 111 104 | .265/.320/.375  96  75 | -2---215   0 |  + ||  98 || ML     *  ~ |
 RF Dane, B         30| .291/.329/.507 109     | .257/.289/.447  96     | -2---324   0 | ++ ||  98 || ML   F *  ~ |
-2B Gadson, M       31| .240/.286/.468  97     | .240/.287/.471  98     | -24-----   0 |  + ||  98 || AAA  F      |
 LF Broyles, J      27| .301/.352/.400 105 113 | .261/.305/.331  90  97 | -2---726   5 |  - ||  97 || ML     *    |
 3B Hellwig, D      25| .276/.356/.387 104  89 | .209/.280/.384  89  85 | -2451---   5 |    ||  96 || ML     *  ~ |
 CF Mito, H         29| .198/.226/.331  74   0 | .259/.297/.462  99  99 | -1---234   1 |  + ||  96 || DL  IF  + ~ |
@@ -133,9 +133,9 @@ SP Spengler, M    I     ~ AAA 28 | 11.2  6.3  2.4  0.8 |  83     |  82     |  - 
 MR Johnston, M       *+ ~  ML 33 |  9.9  9.2  2.3  1.0 |  90  66 |  94 104 |  + |  45/ 80 ||  80 ||
 MR Santoyo, J        *+ ~  ML 32 | 10.0  8.6  2.3  0.8 | 106 100 |  90  76 |  + |  73/ 80 ||  80 ||
 MR Keita, Y           + ~ AAA 36 | 10.4  8.0  2.3  0.8 |  88     |  92     |    |  60/ 79 ||  79 ||
+MR Planas, S         *  ~  ML 31 | 10.3  7.6  2.3  0.8 |  83  51 |  92 110 |  - |  59/ 78 ||  78 ||
 SP Myler, W        F  +    AA 29 | 11.8  5.8  2.4  0.8 |  76     |  80     |  - |  78/ 68 ||  78 ||
 SP Colon, H         1   ~   A 24 | 11.7  6.5  2.4  0.8 |  75     |  82     |  + |  78/ 69 ||  78 ||
-MR Planas, S         *  ~  ML 31 | 10.3  7.6  2.3  0.8 |  83  51 |  92 110 |  - |  59/ 78 ||  78 ||
 SP Trautman, E       *  ~  AA 31 | 11.5  5.5  2.4  0.8 |  77     |  78     |  + |  77/ 67 ||  77 ||
 SP Nye, P          F       AA 32 | 12.3  5.6  2.4  0.8 |  75     |  76     |  + |  75/ 66 ||  75 ||
 MR Balcom, W         *+ ~  ML 33 | 11.1  7.7  2.4  0.8 |  82 363 |  87 122 | -  |  42/ 74 ||  74 ||
@@ -183,23 +183,23 @@ Total:60 (target 70-75)
 Balance:36/24 = 1.500 (ideal: 1.273)
 
  AAA -> ML   LF Juan Torres
- AAA -> ML   MR Kenneth Horne
  AAA -> ML    C Travis Slater
  AAA -> ML   CF Sean Duque
+ AAA -> ML   MR Kenneth Horne
  AAA -> ML   RF Byron Dane
  AAA -> A    SP Hector Colon
-  AA -> ML   3B Dominick Hellwig
   AA -> ML   RF Robert Fusco
+  AA -> ML   3B Dominick Hellwig
   AA -> AAA  SP Jeffrey Draeger
   AA -> AAA  3B Ben Pulido
   AA -> AAA  LF Paul Borrero
-   A -> AAA  RF Yurihiko Koan
    A -> AAA  SP Matthew Spengler
+   A -> AAA  RF Yurihiko Koan
    A -> AA   2B Luis Moya
    A -> AA   2B Zack Davis
-  DL -> ML   SS David Davis
-  DL -> ML   MR Serafin Planas
   DL -> ML   SP Jose Bolivar
+  DL -> ML   MR Serafin Planas
+  DL -> ML   SS David Davis
 
 SP
 Jacob Raymond
@@ -581,7 +581,7 @@ DESIGNATED_HITTER
  7 | Burford, J       102   0 102 | Glessner, K      105   0 105 | Telles, T        102   0 102
  8 | Torres, J        100   0 100 | Broyles, J       105   0 105 | Klein, F         102   0 102
  9 | Telles, T        100   0 100 | Hellwig, D       104   0 104 | Burford, J       102   0 102
-10 | Contreras, J      98   0  98 | Burford, J       102   0 102 | Fusco, R          99   0  99
+10 | Gadson, M         98   0  98 | Burford, J       102   0 102 | Mito, H           99   0  99
 
 --- Trade Values ---
  C Ramiro Urrutia            33|  C : 130       4  62  40 : 236 |    :                         :   0 |   0 | 236 | 61------ |    *     $9.98Mx4 | $55.04M:$61.22M |  p166 | Houston Astros       | ****^
@@ -1272,7 +1272,7 @@ MR Walton Myler              29| SP :      78      -9     :  69 |    :          
 American
 American ------------+
 Toronto Blue Jays    | 102.8 102.4 105.1 |  99.7 101.4 101.0 |  86- 76 0.530 |  83- 60 0.580 |  93- 69 0.574 ( 1) 
-Los Angeles Dodgers  | 100.8  99.4 100.2 |  99.1 100.3  99.4 |  81- 81 0.498 |  80- 63 0.559 |  89- 73 0.549 ( 3) 
+Los Angeles Dodgers  | 100.8  99.4 100.2 |  99.1 100.3  99.4 |  81- 81 0.498 |  80- 63 0.559 |  89- 73 0.549 ( 2) 
 Pittsburgh Pirates   | 102.7 102.2 104.8 | 102.2 102.0 104.1 |  88- 74 0.543 |  75- 68 0.524 |  85- 77 0.525 ( 6) 
 Oakland A's          |  99.5 100.9 100.3 |  93.4  91.1  83.8 |  67- 95 0.414 |  73- 70 0.510 |  81- 81 0.500 ( 8) 
 New York Mets        |  98.7  97.9  96.6 | 105.8 107.5 112.7 |  88- 74 0.543 |  61- 82 0.427 |  71- 91 0.438 (10) 
@@ -1280,7 +1280,7 @@ Milwaukee Brewers    |  98.7  99.1  97.8 | 100.1  99.9 100.0 |  79- 83 0.489 |  
 
 National
 National ------------+
-Houston Astros       |  98.8  99.3  98.1 | 107.3 106.9 113.6 |  90- 72 0.554 |  78- 65 0.545 |  89- 73 0.549 ( 2) 
+Houston Astros       |  98.8  99.3  98.1 | 107.3 106.9 113.6 |  90- 72 0.554 |  78- 65 0.545 |  89- 73 0.549 ( 3) 
 New York Yankees     |  97.6  97.2  94.8 | 104.8 105.1 109.6 |  84- 78 0.519 |  78- 65 0.545 |  88- 74 0.543 ( 4) 
 Minnesota Twins      | 100.6 102.2 102.7 |  97.3  96.2  93.3 |  78- 84 0.479 |  77- 66 0.538 |  86- 76 0.531 ( 5) 
 Washington Nationals | 103.3 103.7 106.8 |  98.0  98.4  96.3 |  83- 79 0.514 |  73- 70 0.510 |  83- 79 0.512 ( 7) 
