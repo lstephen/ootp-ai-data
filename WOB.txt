@@ -40,7 +40,7 @@ Selected: RandomForestScores: [(-0.21852931896202885, RandomForest(...)), (-0.31
 -- Triples
 Selected: LinearScores: [(0.2568925486440022, RandomForest(...)), (-0.17140247195547964, Isotonic(...)), (0.23495005590344634, Huber(...)), (0.25475870933364775, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [10. 28.  9.  6. 12. 18.]Coefficients: [0.00041288 0.00018918]Intercept: -0.022728844142502258Feature Mask: [False  True False False False  True]
 -- HomeRuns
-Selected: RandomForestScores: [(0.6350935017793021, RandomForest(...)), (0.5705654659048484, Isotonic(...)), (0.5302270900824477, Huber(...)), (0.5225467783599456, Linear(...))]Best Parameters: {'regressor__n_estimators': 57, 'regressor__max_depth': 28, 'selection__k': 2}Feature Scores: [ 30.  23. 106.  36.  38.   1.]Feature Mask: [False False  True False  True False]Feature Importances: [0.879 0.121]
+Selected: RandomForestScores: [(0.6350935017793021, RandomForest(...)), (0.5705654659048484, Isotonic(...)), (0.5302270900824477, Huber(...)), (0.5225467783599456, Linear(...))]Best Parameters: {'regressor__max_depth': 28, 'regressor__n_estimators': 57, 'selection__k': 2}Feature Scores: [ 30.  23. 106.  36.  38.   1.]Feature Mask: [False False  True False  True False]Feature Importances: [0.879 0.121]
 -- Walks
 Selected: HuberScores: [(0.4057043096411443, RandomForest(...)), (0.31559835210588133, Isotonic(...)), (0.48715946332398685, Huber(...)), (0.47234299833631965, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [ 57.  36.  40. 134.  54.   2.]Coefficients: [0.11144894]Intercept: 0.012890781714891584Feature Mask: [False False False  True False False]
 -- Ks
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.07729281375961657, RandomForest(...)), (-0.2250265614882729, Isotonic(...)), (0.31164812156375604, Huber(...)), (0.28757494644086473, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [20.  3. 20.  1.  1.]Coefficients: [-0.09660913 -0.00207216]Intercept: 0.3219568645120144Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.08292391606175842, RandomForest(...)), (-0.25011418379616046, Isotonic(...)), (-0.43926380727718417, Huber(...)), (-0.16184304321459356, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 32, 'regressor__n_estimators': 4}Feature Scores: [ 8.  4. 11.  1.  0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.261 0.207 0.531]
+Selected: RandomForestScores: [(0.08292391606175842, RandomForest(...)), (-0.25011418379616046, Isotonic(...)), (-0.43926380727718417, Huber(...)), (-0.16184304321459356, Linear(...))]Best Parameters: {'regressor__max_depth': 32, 'selection__k': 3, 'regressor__n_estimators': 4}Feature Scores: [ 8.  4. 11.  1.  0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.261 0.207 0.531]
 -- HomeRuns
 Selected: IsotonicScores: [(-0.16521679695635436, RandomForest(...)), (-0.0404792864899178, Isotonic(...)), (-0.040493605073619765, Huber(...)), (-0.13748528682364325, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -182,24 +182,24 @@ SP Bolivar, J       8*     ML 18 | 13.9  0.6  2.5  0.7 |  57  18 |  55  31 |    
 Total:60 (target 70-75)
 Balance:36/24 = 1.500 (ideal: 1.273)
 
- AAA -> ML   LF Juan Torres
- AAA -> ML    C Travis Slater
- AAA -> ML   CF Sean Duque
  AAA -> ML   MR Kenneth Horne
+ AAA -> ML   LF Juan Torres
+ AAA -> ML   CF Sean Duque
  AAA -> ML   RF Byron Dane
+ AAA -> ML    C Travis Slater
  AAA -> A    SP Hector Colon
   AA -> ML   RF Robert Fusco
   AA -> ML   3B Dominick Hellwig
-  AA -> AAA  SP Jeffrey Draeger
-  AA -> AAA  3B Ben Pulido
   AA -> AAA  LF Paul Borrero
-   A -> AAA  SP Matthew Spengler
+  AA -> AAA  3B Ben Pulido
+  AA -> AAA  SP Jeffrey Draeger
    A -> AAA  RF Yurihiko Koan
+   A -> AAA  SP Matthew Spengler
    A -> AA   2B Luis Moya
    A -> AA   2B Zack Davis
+  DL -> ML   SS David Davis
   DL -> ML   SP Jose Bolivar
   DL -> ML   MR Serafin Planas
-  DL -> ML   SS David Davis
 
 SP
 Jacob Raymond
@@ -234,14 +234,14 @@ BP Endrnce: 18.0
 --- Slow Hook ---
 
 vs RHP
- C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
-1B| Sipes, J        (D) Burford, J      |1B| ( 1) Burford, J     
-2B| Klein, F        (D) Davis, D        |2B| ( 1) Fusco, R       
-3B| Hipple, S       (D)                 |3B| ( 1) Fusco, R       
-SS| Kim, K          (D) Davis, D        |SS| ( 1) Fusco, R       
-LF| Torres, J       (D) Duque, S        |LF| ( 1) Telles, T      
-CF| Campbell, T     (D) Duque, S        |CF| ( 1) Duque, S       
-RF| Tetreault, A    (D) Lopez, O        |RF| ( 1) Telles, T      
+ C| Urrutia, R      (D)                 | C| ( 1) Sipes, J       
+1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Sipes, J       
+2B| Klein, F        (D) Davis, D        |2B| ( 1) Sipes, J       
+3B| Hipple, S       (D)                 |3B| ( 1) Sipes, J       
+SS| Kim, K          (D) Davis, D        |SS| ( 1) Sipes, J       
+LF| Torres, J       (D)                 |LF| ( 1) Telles, T      
+CF| Duque, S        (D)                 |CF| ( 1) Telles, T      
+RF| Campbell, T     (D) Lopez, O        |RF| ( 1) Telles, T      
 
 vs RHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
@@ -276,28 +276,29 @@ RF| Glessner, K     (D) Lopez, O        |RF| ( 1) Tetreault, A
 DH| Contreras, J    (D)                 |DH| ( 1) Tetreault, A   
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
-1. 1B L Sipes, J         DH L Sipes, J         2B R Klein, F         2B R Klein, F        
-2. CF L Campbell, T      RF L Campbell, T      1B R Contreras, J     DH R Contreras, J    
+1. RF L Campbell, T      DH L Sipes, J         2B R Klein, F         2B R Klein, F        
+2. 1B L Tetreault, A     RF L Campbell, T      1B R Contreras, J     DH R Contreras, J    
 3.  C R Urrutia, R        C R Urrutia, R       3B R Hipple, S        3B R Hipple, S       
 4. 3B R Hipple, S        3B R Hipple, S         C R Urrutia, R        C R Urrutia, R      
-5. RF L Tetreault, A     1B L Tetreault, A     RF R Glessner, K      1B R Dane, B         
-6. LF L Torres, J        LF L Torres, J        LF R Broyles, J       RF R Glessner, K     
-7. 2B R Klein, F         2B R Klein, F         SS R Kim, K           LF R Broyles, J      
-8. SS R Kim, K           SS R Kim, K           CF S Clemente, J      SS R Kim, K          
+5. LF L Torres, J        1B L Tetreault, A     RF R Glessner, K      1B R Dane, B         
+6. 2B R Klein, F         LF L Torres, J        LF R Broyles, J       RF R Glessner, K     
+7. SS R Kim, K           2B R Klein, F         SS R Kim, K           LF R Broyles, J      
+8. CF L Duque, S         SS R Kim, K           CF S Clemente, J      SS R Kim, K          
 9.  P                    CF L Duque, S          P                    CF S Clemente, J     
 
 --- Bunt for Hit ---
 
---- Stealing @ 66.8 ---
+--- Stealing @ 66.6 ---
 RF Timothy Campbell          33| RF : 107       1   6     : 114 |    :                         :   0 |   0 | 114 | -2---326 |    *     $3.67Mx2 |  $3.24M:  $3.6M |   p69 | Houston Astros       | **^
 RF Jose Contreras            34| DH :  98       0  -4     :  94 |    :                         :   0 |  -2 |  92 | -2---215 |    *  ~  $3.67Mx3 |        :        |  p486 | Houston Astros       | **^
 RF Oscar Lopez               32| RF :  83       7 -12     :  78 |    :                         :   0 |   1 |  79 | -2---739 |    *  ~  $3.28Mx2 |        :        |  p299 | Houston Astros       | **
 
-40 man: 40/40, Remove: 4, Add: 2
+40 man: 40/40, Remove: 4, Add: 3
 
 --- +40 ---
 RF Yurihiko Koan             22| DH :  92       0 -10     :  82 | DH :  94       0  18  -4     : 108 |   6 | 114 | -2---224 |      #            |        :        |  p126 | Houston Astros       | ++
 SP Brett Dennis              26| SP :      90       2     :  92 | SP :      90      -6  -1     :  83 |   6 |  98 |          |     + ~  $1.33Mx4 |  $1.08M:  $1.2M |  p419 | Houston Astros       | **^
+MR Yasunaga Keita            36| MR :      79      -1     :  77 |    :                         :   0 | -12 |  65 |          |     + ~  $2.56Mx2 |        :        |  p405 | Houston Astros       | ***
 
 --- -40 ---
 3B Jamey Escobar             29| 3B :  85       2  -9     :  78 |    :                         :   0 |   4 |  82 | -3241--- |    *  ~           |        :        |  p107 | Houston Astros       | *
