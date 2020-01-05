@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.05191711372929941, RandomForest(...)), (0.012901554305862484, Isotonic(...)), (0.0797642445782828, Huber(...)), (0.07810216783507103, Linear(...))]Best Parameters: {'selection__k': 5}Feature Scores: [30. 10.  1.  5.  2.]Coefficients: [-0.06512674  0.05198761 -0.02564898 -0.01442364 -0.00983677]Intercept: 0.2820320221666612Feature Mask: [ True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(0.024293028412466545, RandomForest(...)), (-0.018634133712632634, Isotonic(...)), (-0.03922833653156118, Huber(...)), (-0.028994590295475797, Linear(...))]Best Parameters: {'regressor__n_estimators': 38, 'regressor__max_depth': 17, 'selection__k': 5}Feature Scores: [0. 0. 2. 4. 0.]Feature Mask: [ True  True  True  True  True]Feature Importances: [0.173 0.17  0.28  0.276 0.102]
+Selected: RandomForestScores: [(0.024293028412466545, RandomForest(...)), (-0.018634133712632634, Isotonic(...)), (-0.03922833653156118, Huber(...)), (-0.028994590295475797, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 38, 'regressor__max_depth': 17}Feature Scores: [0. 0. 2. 4. 0.]Feature Mask: [ True  True  True  True  True]Feature Importances: [0.173 0.17  0.28  0.276 0.102]
 -- HomeRuns
 Selected: IsotonicScores: [(0.16192104422599615, RandomForest(...)), (0.15228475172506842, Isotonic(...)), (0.10153767757818026, Huber(...)), (0.10895096640788741, Linear(...))]Best Parameters: {'regressor__increasing': False}Feature Scores: [ 1.  0. 51.  0.  1.]Feature Mask: [False False  True False False]
 -- Walks
@@ -148,8 +148,8 @@ SP Albuerne, L         AA 31 |  9.6  7.5  7.9  1.8 |  66     |  70     |    |  6
 SP Hayton, L           AA 30 | 11.0  4.6  6.1  1.8 |  61     |  73     | ++ |  67/ 60 ||  67 ||
 MR Corrado, A          ML 32 | 10.8  5.1  7.0  0.6 |  75     |  79     |  + |  51/ 67 ||  67 ||
 SP Crary, R           AAA 35 | 11.3  5.0  4.8  2.3 |  67     |  70     |  + |  67/ 60 ||  67 ||
-SP Cintron, F           A 27 | 11.1  4.6  5.9  2.2 |  64     |  68     | ++ |  66/ 58 ||  66 ||
 SP Lopp, B             AA 26 | 10.7  5.9  5.1  2.3 |  76     |  70     | ++ |  66/ 61 ||  66 ||
+SP Cintron, F           A 27 | 11.1  4.6  5.9  2.2 |  64     |  68     | ++ |  66/ 58 ||  66 ||
 MR Pass, T            AAA 34 | 11.1  5.7  3.1  2.2 |  73     |  77     |  + |  50/ 66 ||  66 ||
 MR Alcala, R          AAA 34 |  9.8  6.8  5.3  2.0 |  76     |  76     |  - |  60/ 66 ||  66 ||
 MR Briceno, J         AAA 29 | 11.7  4.5  4.3  1.6 |  71     |  77     | +- |  37/ 65 ||  65 ||
@@ -157,10 +157,10 @@ SP Ramage, C        1   A 20 | 10.4  6.5  7.4  2.4 |  66     |  63     | -+ |  6
 MR Freeman, K         AAA 31 |  9.2  9.4  6.9  2.3 |  70     |  76     | -+ |  58/ 64 ||  64 ||
 MR Martinez, J        AAA 32 | 10.6  7.3  4.4  2.2 |  77     |  72     |  - |  64/ 63 ||  64 ||
 SP Barrett, C           A 24 | 10.9  4.6  6.8  1.8 |  59     |  70     |  + |  63/ 58 ||  63 ||
-SP Vilaseca, J          A 21 | 10.9  4.6  7.4  2.2 |  62     |  62     |  - |  62/ 54 ||  62 ||
 SP Trevino, E          AA 29 | 11.1  6.2  6.6  2.4 |  64     |  64     |  + |  62/ 55 ||  62 ||
 SP Harris, J           AA 28 | 11.7  5.0  6.1  2.4 |  59     |  65     | +  |  62/ 55 ||  62 ||
 MR Bottomley, J        AA 31 | 11.8  4.3  3.4  2.1 |  71     |  72     | -- |  35/ 62 ||  62 ||
+SP Vilaseca, J          A 21 | 10.9  4.6  7.4  2.2 |  62     |  62     |  - |  62/ 54 ||  62 ||
 SP Colligan, J         AA 29 | 11.4  4.6  6.2  2.4 |  59     |  64     |    |  61/ 54 ||  61 ||
 MR Mendoza, C           A 26 | 11.2  5.1  5.8  2.1 |  67     |  67     | -+ |  53/ 58 ||  58 ||
 MR Sewell, D            A 22 | 11.2  4.5  5.8  2.1 |  62     |  68     | -+ |  52/ 57 ||  57 ||
@@ -198,28 +198,28 @@ MR Romero, C           AA 34 | 11.2  6.4  8.2  2.3 |  61     |  56     |  + |  4
 Total:86 (target 70-75)
 Balance:49/37 = 1.324 (ideal: 1.273)
 
+  ML -> AAA  MR Rafael Alcala
   ML -> AAA  CF Wilfredo Franco
   ML -> AAA  CF Carl Holsinger
-  ML -> AAA  MR Rafael Alcala
- AAA -> ML   SP Koji Ankuru
- AAA -> ML   2B Warren Bixby
- AAA -> ML   SP Alphonso Fernandez
- AAA -> ML    C Steven Zendejas
  AAA -> ML   SP Derrick Moore
+ AAA -> ML   2B Warren Bixby
+ AAA -> ML    C Steven Zendejas
+ AAA -> ML   SP Koji Ankuru
+ AAA -> ML   SP Alphonso Fernandez
+ AAA -> AA   MR Johnathan Bottomley
  AAA -> AA   SP Louie Albuerne
  AAA -> AA   RF Duane Damian
- AAA -> AA   MR Johnathan Bottomley
  AAA -> AA   2B Thomas Barker
  AAA -> A    SP Fede Cintron
  AAA -> A    CF Gordon Hoefer
-  AA -> AAA  1B Kevin Hickerson
   AA -> AAA  SP Ronald Crary
-   A -> AAA  RF Billy Hoover
+  AA -> AAA  1B Kevin Hickerson
    A -> AAA  3B Zachery Tims
+   A -> AAA  RF Billy Hoover
    A -> AAA  SP Johnathan Adams
    A -> AA   SP Brian Lopp
-   A -> AA   SS Davis Rolling
    A -> AA   2B David Brown
+   A -> AA   SS Davis Rolling
    A -> AA   SP Emilio Trevino
   DL -> AAA  MR Jose Martinez
   DL -> A     C William Lisk
@@ -286,29 +286,29 @@ RF| Abrego, E       (D) Maroney, M      |RF| ( 1) Maroney, M
 
 vs LHP+DH
  C| Zendejas, S     (D)                 | C| ( 1) Gilson, A      
-1B| Edelman, M      (D) Espino, A       |1B| ( 1) Saville, C     
+1B| Saville, C      (D) Espino, A       |1B| ( 1) Sanchez, M     
 2B| Bixby, W        (D)                 |2B| ( 1) Sanchez, M     
 3B| Lerch, E        (D)                 |3B| ( 1) Sanchez, M     
 SS| Benjiro, Y      (D)                 |SS| ( 1) Espino, A      
-LF| Maroney, M      (D)                 |LF| ( 1) Saville, C     
-CF| Terry, J        (D)                 |CF| ( 1) Saville, C     
-RF| Abrego, E       (D) Huckstep, K     |RF| ( 1) Saville, C     
-DH| Dambrosio, M    (D)                 |DH| ( 1) Saville, C     
+LF| Terry, J        (D) Maroney, M      |LF| ( 1) Maroney, M     
+CF| Edelman, M      (D) Maroney, M      |CF| ( 1) Maroney, M     
+RF| Abrego, E       (D) Maroney, M      |RF| ( 1) Maroney, M     
+DH| Dambrosio, M    (D)                 |DH| ( 1) Sanchez, M     
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1. 2B L Saville, C       1B L Saville, C        C R Zendejas, S       C R Zendejas, S     
-2. 1B R Edelman, M       DH R Edelman, M       LF R Terry, J         CF R Terry, J        
+2. 1B R Edelman, M       DH R Edelman, M       LF R Terry, J         LF R Terry, J        
 3. SS S Lerch, E         3B S Lerch, E         2B R Bixby, W         2B R Bixby, W        
 4. RF R Abrego, E        RF R Abrego, E        RF R Abrego, E        RF R Abrego, E       
-5. 3B R Bixby, W         2B R Bixby, W         CF R Edelman, M       1B R Edelman, M      
+5. 3B R Bixby, W         2B R Bixby, W         CF R Edelman, M       CF R Edelman, M      
 6. CF R Terry, J         CF R Terry, J         1B R Dambrosio, M     DH R Dambrosio, M    
 7.  C R Zendejas, S      SS R Benjiro, Y       SS R Benjiro, Y       SS R Benjiro, Y      
-8. LF L Maroney, M        C R Zendejas, S      3B S Lerch, E         3B S Lerch, E        
-9.  P                    LF L Maroney, M        P                    LF L Maroney, M      
+8. LF L Maroney, M        C R Zendejas, S      3B S Lerch, E         1B L Saville, C      
+9.  P                    LF L Maroney, M        P                    3B S Lerch, E        
 
 --- Bunt for Hit ---
 
---- Stealing @ 66.3 ---
+--- Stealing @ 66.4 ---
 CF Mark Edelman              22| RF : 103       0  20     : 123 | CF : 117       1  32  32  10 : 193 |   6 | 199 | -1---245 |   4   $300k r |  $4.16M: $4.19M |  p706 | Port Adelaide Mag... | +++++
 2B Warren Bixby              32| 2B :  99      14  40   6 : 159 |    :                         :   0 |   1 | 160 | -4984--- |       $4.5Mx3 |  $9.57M: $9.64M | p1967 | Port Adelaide Mag... | **
 RF Jason Terry               29| LF :  98      -1  16     : 112 |    :                         :   0 |   4 | 116 | -2---444 |       $300k r |  $3.33M: $3.35M |  p620 | Port Adelaide Mag... | **
@@ -355,48 +355,48 @@ Active Players
 Hitters
 Contact, Gap, Power, Eye, Avoid K's, Running Speed
  C Carlos Valle              18 |  C :  50       5 :  55 |  C :  50       5 :  55 |  +0 |                    :                    | ++-
- C William Lisk              19 | 1B :  63       3 :  66 | 1B :  63       3 :  66 |  +0 |                    :                    | +++-
 LF David Kurland             19 | LF :  51       1 :  52 | LF :  51       1 :  52 |  +0 |                    :                    | ++
+ C William Lisk              19 | 1B :  63       3 :  66 | 1B :  63       3 :  66 |  +0 |                    :                    | +++-
 RF Eichi Kiyotaka            19 | DH :  54       0 :  54 | DH :  54       0 :  54 |  +0 |                    :                    | +
 3B Trinidad Ward             20 | SS :  60       8 :  68 | SS :  60       8 :  68 |  +0 |                    :                    | ++
 CF Gordon Hoefer             22 | CF :  66       7 :  73 | CF :  66       7 :  73 |  +0 |                    :                    | +
 CF Mark Edelman              22 | CF : 103       1 : 104 | CF : 103       1 : 104 |  +0 |                    :                    | +++++
  C Anthony Gilson            23 |  C :  79       5 :  84 |  C :  79       5 :  84 |  +0 |                    :                    | +++++
-2B James Roselli             23 | 2B :  55       2 :  57 | 2B :  55       2 :  57 |  +0 |                    :                    | ++-
 SS Alberto Dasilva           23 | SS :  58       9 :  67 | SS :  58       9 :  67 |  +0 |                    :                    | +
+2B James Roselli             23 | 2B :  55       2 :  57 | 2B :  55       2 :  57 |  +0 |                    :                    | ++-
+1B Kenneth Smith             24 | 1B :  82       1 :  83 | 1B :  82       1 :  83 |  +0 |                    :                    | +++-
+ C Amado Escandon            24 | DH :  75       0 :  75 | DH :  75       0 :  75 |  +0 |                    :                    | +-
+LF Andrew Styer              24 | RF :  56       3 :  59 | RF :  56       3 :  59 |  +0 |                    :                    | ++
 1B Israel Herreros           24 | 1B :  75       2 :  77 | 1B :  75       2 :  77 |  +0 |                    :                    | +++++
 3B William Stokley           24 | SS :  61      21 :  82 | SS :  61      21 :  82 |  +0 |                    :                    | ++
-1B Kenneth Smith             24 | 1B :  82       1 :  83 | 1B :  82       1 :  83 |  +0 |                    :                    | +++-
-LF Andrew Styer              24 | RF :  56       3 :  59 | RF :  56       3 :  59 |  +0 |                    :                    | ++
- C Amado Escandon            24 | DH :  75       0 :  75 | DH :  75       0 :  75 |  +0 |                    :                    | +-
  C Roger Watlington          25 | 1B :  74       0 :  74 | 1B :  74       0 :  74 |  +0 |                    :                    | +++
+SS Youji Benjiro             25 | SS :  94      13 : 107 | SS :  94      13 : 107 |  +0 |                    :                    | ++-
 SS Davis Rolling             25 | 2B :  64       2 :  66 | 2B :  64       2 :  66 |  +0 |                    :                    | ++
 2B Jay Koga                  25 | SS :  60       8 :  68 | SS :  60       8 :  68 |  +0 |                    :                    | +
-SS Youji Benjiro             25 | SS :  94      13 : 107 | SS :  94      13 : 107 |  +0 |                    :                    | ++-
-RF Antonio Chapa             26 | LF :  64       4 :  68 | LF :  64       4 :  68 |  +0 |                    :                    | *
-2B David Brown               26 | DH :  64       0 :  64 | DH :  64       0 :  64 |  +0 |                    :                    | *
 3B Michael Sanchez           26 | 2B :  88       6 :  95 | 2B :  88       6 :  95 |  +0 |                    :                    | **
-1B Harvey Kinnison           26 | 1B :  71       3 :  74 | 1B :  71       3 :  74 |  +0 |                    :                    | *
-CF Carl Holsinger            26 | CF :  77      11 :  88 | CF :  77      11 :  88 |  +0 |                    :                    | *
+2B David Brown               26 | DH :  64       0 :  64 | DH :  64       0 :  64 |  +0 |                    :                    | *
 3B Jon Celentano             26 | 1B :  74       3 :  77 | 1B :  74       3 :  77 |  +0 |                    :                    | *
+CF Carl Holsinger            26 | CF :  77      11 :  88 | CF :  77      11 :  88 |  +0 |                    :                    | *
+1B Harvey Kinnison           26 | 1B :  71       3 :  74 | 1B :  71       3 :  74 |  +0 |                    :                    | *
+RF Antonio Chapa             26 | LF :  64       4 :  68 | LF :  64       4 :  68 |  +0 |                    :                    | *
 LF Ramon Iradier             26 | DH :  80       0 :  80 | DH :  80       0 :  80 |  +0 |                    :                    | *
 RF Duane Damian              26 | CF :  68       9 :  77 | CF :  68       9 :  77 |  +0 |                    :                    | *
  C Michael Dambrosio         27 |  C :  89       3 :  92 |  C :  89       3 :  92 |  +0 |                    :                    | *^
-3B Eric Lerch                28 | SS : 101      15 : 116 | SS : 101      15 : 116 |  +0 |                    :                    | ***
-LF Edmundo Abrego            28 | RF : 112       2 : 114 | RF : 112       2 : 114 |  +0 |                    :                    | **^
 3B Emilio Viader             28 | 1B :  69       0 :  69 | 1B :  69       0 :  69 |  +0 |                    :                    | *
+3B Eric Lerch                28 | SS : 101      15 : 116 | SS : 101      15 : 116 |  +0 |                    :                    | ***
 1B Victor Lundin             28 | 1B :  75       4 :  79 | 1B :  75       4 :  79 |  +0 |                    :                    | *
-RF Jason Terry               29 | CF :  98       1 :  99 | CF :  98       1 :  99 |  +0 |                    :                    | **
+LF Edmundo Abrego            28 | RF : 112       2 : 114 | RF : 112       2 : 114 |  +0 |                    :                    | **^
 SS Aldo Espino               29 | SS :  83      14 :  97 | SS :  83      14 :  97 |  +0 |                    :                    | *^
 2B Thomas Barker             29 | SS :  64       8 :  72 | SS :  64       8 :  72 |  +0 |                    :                    | *
-3B Hugh Riter                30 | DH :  63       0 :  63 | DH :  63       0 :  63 |  +0 |                    :                    | *
+RF Jason Terry               29 | CF :  98       1 :  99 | CF :  98       1 :  99 |  +0 |                    :                    | **
 3B Modesto Nissen            30 | 3B :  76       5 :  81 | 3B :  76       5 :  81 |  +0 |                    :                    | *
-LF Mike Maroney              31 | CF :  89       9 :  98 | CF :  89       9 :  98 |  +0 |                    :                    | **
+3B Hugh Riter                30 | DH :  63       0 :  63 | DH :  63       0 :  63 |  +0 |                    :                    | *
 2B David Ashman              31 | DH :  63       0 :  63 | DH :  63       0 :  63 |  +0 |                    :                    | *
+LF Mike Maroney              31 | CF :  89       9 :  98 | CF :  89       9 :  98 |  +0 |                    :                    | **
 CF Wilfredo Franco           32 | CF :  75      16 :  91 | CF :  75      16 :  91 |  +0 |                    :                    | *
-1B Kevin Hickerson           35 | 1B :  77       1 :  78 | 1B :  77       1 :  78 |  +0 |                    :                    | *
 2B Clarence Saville          35 | 2B :  98       2 : 100 | 2B :  98       2 : 100 |  +0 |                    :                    | **
 RF Karl Huckstep             35 | RF :  89       4 :  93 | RF :  89       4 :  93 |  +0 |                    :                    | *^
+1B Kevin Hickerson           35 | 1B :  77       1 :  78 | 1B :  77       1 :  78 |  +0 |                    :                    | *
  C Donald Glisson            36 |  C :  73       3 :  76 |  C :  73       3 :  76 |  +0 |                    :                    | *
 
 Pitchers
@@ -410,31 +410,31 @@ SP Charles Barrett           24 | SP :      63     :  63 | SP :      63     :  6
 MR Joseph Rooney             25 | MR :      55     :  55 | MR :      55     :  55 |  +0 |                 :                 | ++
 SP Brian Lopp                26 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                 :                 | *
 MR Celestino Mendoza         26 | MR :      58     :  58 | MR :      58     :  58 |  +0 |                 :                 | *
-SP Fede Cintron              27 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                 :                 | *
 MR Luis Hernandez            27 | MR :      73     :  73 | MR :      73     :  73 |  +0 |                 :                 | *^
-SP Scott Spafford            28 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                 :                 | **
+SP Fede Cintron              27 | SP :      66     :  66 | SP :      66     :  66 |  +0 |                 :                 | *
 MR Kenneth Swiger            28 | MR :      71     :  71 | MR :      71     :  71 |  +0 |                 :                 | *
 SP Joshua Harris             28 | SP :      62     :  62 | SP :      62     :  62 |  +0 |                 :                 | *
-MR Juan Briceno              29 | MR :      65     :  65 | MR :      65     :  65 |  +0 |                 :                 | **
+SP Scott Spafford            28 | SP :      93     :  93 | SP :      93     :  93 |  +0 |                 :                 | **
 SP James Colligan            29 | SP :      61     :  61 | SP :      61     :  61 |  +0 |                 :                 | *
 SP Emilio Trevino            29 | SP :      62     :  62 | SP :      62     :  62 |  +0 |                 :                 | *
+MR Juan Briceno              29 | MR :      65     :  65 | MR :      65     :  65 |  +0 |                 :                 | **
 SP Loren Hayton              30 | SP :      67     :  67 | SP :      67     :  67 |  +0 |                 :                 | *
-MR Johnathan Bottomley       31 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                 :                 | **
-SP Koji Ankuru               31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | *
-SP Bob Collins               31 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                 :                 | *
 MR Kenneth Freeman           31 | MR :      64     :  64 | MR :      64     :  64 |  +0 |                 :                 | *
+SP Bob Collins               31 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                 :                 | *
 SP Vasili Kobalev            31 | SP :      54     :  54 | SP :      54     :  54 |  +0 |                 :                 | *
 SP Louie Albuerne            31 | SP :      67     :  67 | SP :      67     :  67 |  +0 |                 :                 | *
+SP Koji Ankuru               31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | *
+MR Johnathan Bottomley       31 | MR :      62     :  62 | MR :      62     :  62 |  +0 |                 :                 | **
 SP Derrick Moore             32 | SP :      72     :  72 | SP :      72     :  72 |  +0 |                 :                 | *
 MR Anton Corrado             32 | MR :      67     :  67 | MR :      67     :  67 |  +0 |                 :                 | **
-SP Fernando Via              32 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                 :                 | *
 MR Jose Martinez             32 | SP :      64     :  64 | SP :      64     :  64 |  +0 |                 :                 | *
-MR Terrance Pass             34 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *
+SP Fernando Via              32 | SP :      95     :  95 | SP :      95     :  95 |  +0 |                 :                 | *
 SP Charles Romero            34 | MR :      49     :  49 | MR :      49     :  49 |  +0 |                 :                 | *
+MR Terrance Pass             34 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *
 MR Rafael Alcala             34 | MR :      66     :  66 | MR :      66     :  66 |  +0 |                 :                 | *
 MR Michael Fouch             34 | SP :      70     :  70 | SP :      70     :  70 |  +0 |                 :                 | *
-SP Oswaldo Cartagena         35 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :                 | *
 SP Ronald Crary              35 | SP :      67     :  67 | SP :      67     :  67 |  +0 |                 :                 | *
+SP Oswaldo Cartagena         35 | SP :      78     :  78 | SP :      78     :  78 |  +0 |                 :                 | *
 
 Drafted Players
 Hitters
@@ -543,18 +543,18 @@ MR Terrance Banks            24| MR :      43     -19     :  24 | MR :      63  
 
 1E | 178 (150-237) | 184 (156-243) 167/202 |   5/  5 || 193 (150-253) | 199 (156-259) 181/219 |  25/ 25
 1M | 138 (133-142) | 144 (139-148) 131/158 |   5/  5 || 140 (121-189) | 146 (127-195) 133/161 |  25/ 25
-1L | 130 (128-132) | 136 (134-138) 124/150 |   6/  6 || 131 (116-145) | 137 (122-151) 124/150 |  30/ 30
+1L | 130 (128-132) | 136 (134-138) 124/150 |   6/  6 || 131 ( 39-145) | 137 ( 45-151) 124/150 |  30/ 30
 2E | 117 (112-122) | 123 (118-128) 112/136 |   8/  8 || 116 (109-129) | 122 (115-135) 111/134 |  40/ 40
 2L | 106 (100-109) | 112 (106-115) 102/124 |   8/  8 || 106 (100-115) | 112 (106-121) 102/124 |  40/ 40
 
- 1 | 137 (128-237) | 143 (134-243) 130/157 |  16/ 16 || 140 (116-253) | 146 (122-259) 133/160 |  80/ 80
+ 1 | 137 (128-237) | 143 (134-243) 130/157 |  16/ 16 || 140 ( 39-253) | 146 ( 45-259) 133/160 |  80/ 80
  2 | 111 (100-122) | 117 (106-128) 106/128 |  16/ 16 || 111 (100-129) | 117 (106-135) 106/128 |  80/ 80
  3 |  92 ( 85- 99) |  98 ( 91-105)  89/107 |  16/ 16 ||  96 ( 85-108) | 102 ( 91-114)  92/112 |  80/ 80
  4 |  82 ( 78- 87) |  88 ( 84- 93)  80/ 96 |  16/ 16 ||  87 ( 78- 99) |  93 ( 84-105)  84/102 |  80/ 80
- 5 |  75 ( 71- 78) |  81 ( 77- 84)  74/ 90 |  16/ 16 ||  78 ( 57- 88) |  84 ( 63- 94)  77/ 93 |  80/ 80
- 6 |  67 ( 64- 71) |  73 ( 70- 77)  67/ 81 |  16/ 16 ||  71 ( 59- 80) |  77 ( 65- 86)  70/ 84 |  80/ 80
- 7 |  58 ( 54- 63) |  64 ( 60- 69)  58/ 71 |  16/ 16 ||  58 ( 53- 98) |  64 ( 59-104)  59/ 71 |  80/ 80
- 8 |  38 ( 16- 54) |  44 ( 23- 60)  40/ 49 |  16/ 16 ||  43 (-63-157) |  49 (-31-163)  44/ 54 |  80/ 80
+ 5 |  75 ( 71- 78) |  81 ( 77- 84)  74/ 90 |  16/ 16 ||  78 ( 71- 88) |  84 ( 77- 94)  77/ 93 |  80/ 80
+ 6 |  67 ( 64- 71) |  73 ( 70- 77)  67/ 81 |  16/ 16 ||  71 (-59- 80) |  77 (-30- 86)  70/ 84 |  80/ 80
+ 7 |  58 ( 54- 63) |  64 ( 60- 69)  58/ 71 |  16/ 16 ||  59 ( 53- 98) |  65 ( 59-104)  59/ 71 |  80/ 80
+ 8 |  38 ( 16- 54) |  44 ( 23- 60)  40/ 49 |  16/ 16 ||  43 (-63- 55) |  49 (-31- 61)  44/ 54 |  80/ 80
 
 2B Saville, C      35|   5,810,000            
 2B Bixby, W        32|   4,500,000   4,500,000
@@ -1683,13 +1683,13 @@ SS Jean Retherford           29| 2B :  73       7   7     :  88 |    :          
 
 The Kid
 41 ------------------+
-Long Beach Longsh... | 105.4 105.6 110.7 | 105.5 108.2 113.0 |  99- 63 0.610 |   0-  0 0.500 |  99- 63 0.611 ( 4) 
+Long Beach Longsh... | 105.4 105.6 110.7 | 105.5 108.2 113.0 |  99- 63 0.610 |   0-  0 0.500 |  99- 63 0.611 ( 3) 
 Dakota Destroyers    |  99.0  99.9  98.9 | 105.5 104.7 110.0 |  88- 74 0.542 |   0-  0 0.500 |  88- 74 0.543 ( 5) 
-Maryland Bandits     | 100.9 101.1 102.0 | 103.3 101.1 104.3 |  86- 76 0.531 |   0-  0 0.500 |  86- 76 0.531 ( 7) 
+Maryland Bandits     | 100.9 101.1 102.0 | 103.3 101.1 104.3 |  86- 76 0.531 |   0-  0 0.500 |  86- 76 0.531 ( 6) 
 Las Vegas Aces       | 101.7 101.8 103.5 |  97.7  97.6  95.3 |  80- 82 0.493 |   0-  0 0.500 |  80- 82 0.494 ( 9) 
 9 -------------------+
-Rhode Island Rats    | 101.4 102.6 103.9 | 111.2 110.9 120.7 |  99- 63 0.612 |   0-  0 0.500 |  99- 63 0.611 ( 3) 
-Patrone Saints       |  98.0 100.0  97.9 | 102.0 107.6 109.1 |  86- 76 0.533 |   0-  0 0.500 |  86- 76 0.531 ( 6) 
+Rhode Island Rats    | 101.4 102.6 103.9 | 111.2 110.9 120.7 |  99- 63 0.612 |   0-  0 0.500 |  99- 63 0.611 ( 4) 
+Patrone Saints       |  98.0 100.0  97.9 | 102.0 107.6 109.1 |  86- 76 0.533 |   0-  0 0.500 |  86- 76 0.531 ( 7) 
 Homestead Grays      |  99.5  98.0  97.4 |  99.5  99.1  98.6 |  78- 84 0.480 |   0-  0 0.500 |  78- 84 0.481 (10) 
 Roswell 51s          |  98.0  96.8  94.7 |  98.8  97.8  96.5 |  74- 88 0.455 |   0-  0 0.500 |  74- 88 0.457 (13) 
 
