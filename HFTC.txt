@@ -36,7 +36,7 @@ Features: Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 -- Hits
 Selected: IsotonicScores: [(0.18440951433341898, RandomForest(...)), (0.20606993301399956, Isotonic(...)), (0.1702510958460799, Huber(...)), (0.1686618396616468, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [173.  72.   4.  40.  28. 133.   1.]Feature Mask: [ True False False False False False False]
 -- Doubles
-Selected: RandomForestScores: [(0.05161538174861757, RandomForest(...)), (0.049437703144499356, Isotonic(...)), (0.041174166204022776, Huber(...)), (0.03933047721978885, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'selection__k': 2, 'regressor__max_depth': 3}Feature Scores: [12. 33.  3.  6.  4. 10.  0.]Feature Mask: [ True  True False False False False False]Feature Importances: [0.107 0.893]
+Selected: RandomForestScores: [(0.05161538174861757, RandomForest(...)), (0.049437703144499356, Isotonic(...)), (0.041174166204022776, Huber(...)), (0.03933047721978885, Linear(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [12. 33.  3.  6.  4. 10.  0.]Feature Mask: [ True  True False False False False False]Feature Importances: [0.107 0.893]
 -- Triples
 Selected: LinearScores: [(0.031141995239955162, RandomForest(...)), (0.02036229050284673, Isotonic(...)), (0.022220934201964433, Huber(...)), (0.02371691476709692, Linear(...))]Best Parameters: {'selection__k': 4}Feature Scores: [ 3.  0.  4.  0.  2.  0. 13.]Coefficients: [ 2.03282754e-05  9.84604999e-06 -3.43562226e-05  1.37899684e-04]Intercept: 0.0007986225418264142Feature Mask: [ True False  True False  True False  True]
 -- HomeRuns
@@ -204,12 +204,12 @@ MR Kidd, R             AA 27 | 19.7  6.8 19.6  3.6 |  25     |  25     | -  |  1
 Total:88 (target 70-75)
 Balance:44/44 = 1.000 (ideal: 1.273)
 
-  ML -> AAA  SP Osvaldo Depalma
   ML -> AAA  MR Ryan Sandlin
- AAA -> ML   MR Maurice Lyon
+  ML -> AAA  SP Osvaldo Depalma
  AAA -> ML   3B Fausto Castillo
- AAA -> A     C John Bastian
+ AAA -> ML   MR Maurice Lyon
  AAA -> A    LF Elbert Houser
+ AAA -> A     C John Bastian
   AA -> AAA  2B James Peets
   AA -> AAA  SS Michael Cromartie
    A -> AAA  LF Ryan Ullman
@@ -352,17 +352,17 @@ CF Angelo Cabrales           28 | LF :  93       0 :  93 | LF :  94       0 :  9
 LF Zoilo Diez                31 | DH : 101       0 : 101 | DH : 102       0 : 102 |  +1 | +10                   :                       | *
  C Hernando Valido           33 | DH :  72       0 :  72 | DH :  73       0 :  73 |  +1 | +10                   :                       | *
 1B Richard Green             22 | 1B :  46       1 :  47 | 1B :  46       1 :  47 |  +0 |                       :                       | +
- C William Ditch             23 |  C :  49       2 :  51 |  C :  49       2 :  51 |  +0 |    +10                :    +10                | +
 1B Wallace Kinder            23 | 1B :  68       2 :  70 | 1B :  68       2 :  70 |  +0 |    +10                :                       | +
+ C William Ditch             23 |  C :  49       2 :  51 |  C :  49       2 :  51 |  +0 |    +10                :    +10                | +
 3B Orestes Marmolejo         26 | SS :  85      13 :  98 | SS :  85      13 :  98 |  +0 |    -10         +10    :    -10         +10    | *
 2B Ramiro Covarrubias        28 | 2B :  75       5 :  80 | 2B :  75       5 :  80 |  +0 |                       :                       | *
 LF Danny Dock                29 | DH :  72       0 :  72 | DH :  72       0 :  72 |  +0 |                       :                       | *
-2B Joel Sancho               30 | DH :  73       0 :  73 | DH :  73       0 :  73 |  +0 |                       :                       | *
 SS Hector Grillo             30 | 1B :  76       0 :  76 | 1B :  76       0 :  76 |  +0 |                       :                       | *
- C Michael Mielke            32 |  C :  88       0 :  88 |  C :  88       0 :  88 |  +0 |             +10       :                       | *
+2B Joel Sancho               30 | DH :  73       0 :  73 | DH :  73       0 :  73 |  +0 |                       :                       | *
  C Robert Makowski           32 |  C :  78       0 :  78 |  C :  78       0 :  78 |  +0 |                       :                       | *
-3B Fausto Castillo           33 | SS :  78      18 :  96 | SS :  78      18 :  96 |  +0 |                       :                       | *
+ C Michael Mielke            32 |  C :  88       0 :  88 |  C :  88       0 :  88 |  +0 |             +10       :                       | *
 2B Alejandro Arroyo          33 | DH :  95       0 :  95 | DH :  95       0 :  95 |  +0 |             -10       :                       | *^
+3B Fausto Castillo           33 | SS :  78      18 :  96 | SS :  78      18 :  96 |  +0 |                       :                       | *
 SS Pedro Enciso              28 | SS :  74      12 :  86 | SS :  73      12 :  85 |  -1 |             -10       :                       | *
 CF Ryan Malley               30 | CF :  97      13 : 110 | CF :  93      13 : 106 |  -4 |    -10      -10       :    -10      -10       | **
 RF Alejo Torres              30 | CF : 106       7 : 113 | CF : 106       2 : 108 |  -5 |                       :                       | **^
@@ -431,7 +431,7 @@ MR Lucio Ronquillo           19 | MR :      62     :  62 | MR :      62     :  6
 
  1 | 123 ( 73-214) | 129 ( 79-220) 117/142 |  32/ 32 || 125 ( 73-258) | 131 ( 79-264) 119/144 | 160/160
  2 |  94 ( 30-154) | 100 ( 36-160)  91/110 |  32/ 32 ||  93 ( 30-154) |  99 ( 36-160)  90/109 | 160/160
- 3 |  76 ( 56-118) |  82 ( 62-124)  75/ 90 |  32/ 32 ||  75 ( 17-118) |  81 ( 23-124)  74/ 90 | 160/160
+ 3 |  76 ( 56-118) |  82 ( 62-124)  75/ 90 |  32/ 32 ||  75 ( 56-118) |  81 ( 62-124)  74/ 90 | 160/160
  4 |  62 ( 38-115) |  68 ( 44-121)  62/ 75 |  32/ 32 ||  63 ( 38-115) |  69 ( 44-121)  62/ 76 | 160/160
  5 |  43 ( -4- 70) |  49 (  2- 76)  45/ 54 |  32/ 32 ||  46 ( -4- 70) |  52 (  2- 76)  47/ 57 | 160/160
  6 |  16 (-23- 80) |  22 (-17- 86)  20/ 24 |  32/ 32 ||  20 (-23- 80) |  26 (-17- 86)  23/ 28 | 160/160
@@ -1542,7 +1542,7 @@ MR Zoilo Rodriguez           26| MR :      60     -21     :  39 | MR :      73  
 MR James Brown               26| SP :     115      30     : 145 | SP :     150      20  61  20 : 251 |   6 | 257 |          |       $300k r |  $5.82M: $5.95M | p1720 | Texas Rangers        | ****
 MR Edmundo Guerrero          25| SP :     110      24     : 134 | SP :     139      23  50   9 : 220 |   6 | 226 |          |   8   $300k r |  $4.65M: $4.76M | p1120 | Texas Rangers        | ++++
 3B Vernon Cranston           24| 3B :  90       6   4     : 101 | 3B : 124       6   6  38  13 : 187 |   6 | 193 | 53251--- |   3           | $775.6k:$793.7k | p1151 | Texas Rangers        | ++++
-2B Rashad Macneil            29| 2B : 123       9  37  20 : 188 |    :                         :   0 |   4 | 192 | -3632--- |       $6.5Mx3 | $10.86M:$11.11M |  p150 | Texas Rangers        | ****^
+2B Rashad Macneil            29| 2B : 123       9  37  19 : 188 |    :                         :   0 |   4 | 192 | -3632--- |       $6.5Mx3 | $10.86M:$11.11M |  p150 | Texas Rangers        | ****^
  C Richard Blackshear        26| DH : 117       0  22     : 139 | DH : 124       0  24  30   4 : 182 |   6 | 188 | 41------ |       $300k r |  $4.27M: $4.37M | p2307 | Texas Rangers        | ***
 LF Tyler Dart                25| RF : 114       1  24   3 : 142 | RF : 120       1  25  29   6 : 181 |   6 | 187 | -2---414 |   1   $300k r |  $5.43M: $5.56M | p1564 | Texas Rangers        | +++++
 MR Luis Chao                 26| MR :      99      13     : 113 | MR :     120       4  28     : 152 |   6 | 158 |          |       $300k r |  $2.52M: $2.58M |  p108 | Texas Rangers        | *****
@@ -2439,21 +2439,21 @@ Chicago (A) White... | 104.1 104.0 107.9 |  97.1  96.5  93.5 |  82- 80 0.505 |  
 Mexico City Gold Sox |  96.6  95.6  92.0 | 106.8 103.9 110.5 |  82- 80 0.508 |  75- 87 0.463 |  75- 87 0.463 (24) 
 Minnesota Twins      | 103.0 101.5 104.4 |  78.5  77.1  51.8 |  37-125 0.227 |  68- 94 0.420 |  68- 94 0.420 (28) 
 West Division -------+
-Oakland Athletics    | 105.3 106.5 111.3 | 106.6 105.7 111.9 |  98- 64 0.608 |  95- 67 0.586 |  95- 67 0.586 ( 5) 
+Oakland Athletics    | 105.3 106.5 111.3 | 106.6 105.7 111.9 |  98- 64 0.608 |  95- 67 0.586 |  95- 67 0.586 ( 6) 
 Anaheim Angels       | 102.1 101.1 103.3 | 107.6 103.7 111.2 |  92- 70 0.569 |  93- 69 0.574 |  93- 69 0.574 ( 8) 
-Seattle Mariners     | 103.7 102.5 106.1 | 116.3 116.2 129.6 | 106- 56 0.654 |  88- 74 0.543 |  88- 74 0.543 (10) 
+Seattle Mariners     | 103.7 102.5 106.1 | 116.3 116.2 129.6 | 106- 56 0.654 |  88- 74 0.543 |  88- 74 0.543 ( 9) 
 Texas Rangers        | 107.2 106.9 113.6 | 105.1 102.9 107.9 |  97- 65 0.600 |  87- 75 0.537 |  87- 75 0.537 (12) 
 Colorado Rockies     |  91.1  92.8  83.4 | 105.0 110.9 114.8 |  77- 85 0.478 |  72- 90 0.444 |  72- 90 0.444 (26) 
 
 National League
 East Division -------+
 Atlanta Braves       | 103.3 103.4 106.6 | 107.1 107.6 114.1 |  97- 65 0.597 |  98- 64 0.605 |  98- 64 0.605 ( 4) 
-Philadelphia Phil... |  98.8  99.6  98.4 | 101.5 100.7 102.2 |  81- 81 0.503 |  95- 67 0.586 |  95- 67 0.586 ( 7) 
-New York (N) Mets    |  96.8  96.6  93.4 | 102.1 105.0 106.8 |  81- 81 0.499 |  95- 67 0.586 |  95- 67 0.586 ( 6) 
+New York (N) Mets    |  96.8  96.6  93.4 | 102.1 105.0 106.8 |  81- 81 0.499 |  95- 67 0.586 |  95- 67 0.586 ( 7) 
+Philadelphia Phil... |  98.8  99.6  98.4 | 101.5 100.7 102.2 |  81- 81 0.503 |  95- 67 0.586 |  95- 67 0.586 ( 5) 
 Washington Nationals |  99.2  99.6  98.7 | 103.9 103.3 107.1 |  86- 76 0.528 |  75- 87 0.463 |  75- 87 0.463 (23) 
 Florida Marlins      | 106.7 105.4 111.9 |  80.4  80.2  57.8 |  48-114 0.295 |  71- 91 0.438 |  71- 91 0.438 (27) 
 Central Division ----+
-St. Louis Cardinals  | 105.3 106.5 111.4 | 109.9 110.4 119.1 | 103- 59 0.638 |  88- 74 0.543 |  88- 74 0.543 ( 9) 
+St. Louis Cardinals  | 105.3 106.5 111.4 | 109.9 110.4 119.1 | 103- 59 0.638 |  88- 74 0.543 |  88- 74 0.543 (10) 
 Milwaukee Brewers    |  98.3 100.9  99.2 |  89.3  89.8  78.2 |  61-101 0.376 |  81- 81 0.500 |  81- 81 0.500 (16) 
 Pittsburgh Pirates   |  98.6  97.8  96.3 | 104.3 104.6 108.6 |  85- 77 0.523 |  80- 82 0.494 |  80- 82 0.494 (20) 
 Cincinnati Reds      |  96.6  95.5  91.8 | 101.7 100.8 102.5 |  76- 86 0.470 |  80- 82 0.494 |  80- 82 0.494 (18) 
