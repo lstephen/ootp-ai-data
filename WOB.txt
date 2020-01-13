@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: LinearScores: [(0.24099136717037684, RandomForest(...)), (0.3285623478536053, Isotonic(...)), (0.33501053239460554, Huber(...)), (0.3589540564698743, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [45. 37. 22. 16. 20.  1.]Coefficients: [ 2.29018135e-03  2.42697187e-03 -1.21843312e-04 -1.65862157e-04 -8.41778460e-05 -6.57502718e-04]Intercept: 0.013485540705134497Feature Mask: [ True  True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(0.09462418681119922, RandomForest(...)), (0.01573672145217468, Isotonic(...)), (-0.8933718089554508, Huber(...)), (-0.22377924285182763, Linear(...))]Best Parameters: {'regressor__max_depth': 6, 'regressor__n_estimators': 28, 'selection__k': 5}Feature Scores: [18. 17. 13. 16. 19.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.326 0.205 0.075 0.176 0.217]
+Selected: RandomForestScores: [(0.09462418681119922, RandomForest(...)), (0.01573672145217468, Isotonic(...)), (-0.8933718089554508, Huber(...)), (-0.22377924285182763, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__n_estimators': 28, 'regressor__max_depth': 6}Feature Scores: [18. 17. 13. 16. 19.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.326 0.205 0.075 0.176 0.217]
 -- Triples
 Selected: HuberScores: [(-0.0012084679751799647, RandomForest(...)), (-0.10090799933587802, Isotonic(...)), (0.19431417023082617, Huber(...)), (0.12235251108698182, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [10. 25.  7.  5. 11. 25.]Coefficients: [0.01799977 0.01378017]Intercept: -0.009187765491824864Feature Mask: [False  True False False False  True]
 -- HomeRuns
@@ -44,7 +44,7 @@ Selected: HuberScores: [(0.4475766762960369, RandomForest(...)), (0.422349709296
 -- Walks
 Selected: HuberScores: [(0.2951378107326755, RandomForest(...)), (0.26914984412704207, Isotonic(...)), (0.3207107256214656, Huber(...)), (0.3140639131410231, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [27. 15. 18. 45. 25.  3.]Coefficients: [0.1122868]Intercept: 0.01390176721455605Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.31532231340070355, RandomForest(...)), (0.10123235924379403, Isotonic(...)), (0.25411122264062647, Huber(...)), (0.27476950567029107, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [43. 50. 21. 20. 32.  3.]Feature Mask: [ True  True False False False False]Feature Importances: [0.431 0.569]
+Selected: RandomForestScores: [(0.31532231340070355, RandomForest(...)), (0.10123235924379403, Isotonic(...)), (0.25411122264062647, Huber(...)), (0.27476950567029107, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 3, 'regressor__n_estimators': 56}Feature Scores: [43. 50. 21. 20. 32.  3.]Feature Mask: [ True  True False False False False]Feature Importances: [0.431 0.569]
 
            Hits | 0.061
         Doubles | 0.029
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.10897746409125719, RandomForest(...)), (-0.07991764372537935, Isotonic(...)), (0.3954278770170643, Huber(...)), (0.3674891282168263, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [23.  3. 15.  1.  1.]Coefficients: [-0.09478581 -0.0195749 ]Intercept: 0.3330156971329214Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.032758759161362616, RandomForest(...)), (-0.07526645980605713, Isotonic(...)), (-0.15970445836927824, Huber(...)), (-0.23734555392820655, Linear(...))]Best Parameters: {'regressor__max_depth': 48, 'regressor__n_estimators': 23, 'selection__k': 3}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.369 0.268 0.363]
+Selected: RandomForestScores: [(0.032758759161362616, RandomForest(...)), (-0.07526645980605713, Isotonic(...)), (-0.15970445836927824, Huber(...)), (-0.23734555392820655, Linear(...))]Best Parameters: {'regressor__n_estimators': 23, 'regressor__max_depth': 48, 'selection__k': 3}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True  True  True False False]Feature Importances: [0.369 0.268 0.363]
 -- HomeRuns
 Selected: IsotonicScores: [(0.02419133209112545, RandomForest(...)), (-0.03627724222491535, Isotonic(...)), (-0.1906492274443222, Huber(...)), (-0.2965370322167507, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -173,23 +173,23 @@ Total:60 (target 70-75)
 Balance:36/24 = 1.500 (ideal: 1.273)
 
   ML -> AAA  MR Kenneth Horne
+  ML -> AAA  RF Robert Fusco
   ML -> AAA  2B Frederick Klein
   ML -> AAA  SS David Davis
-  ML -> AAA  RF Robert Fusco
   ML -> AAA   C Travis Slater
-  ML -> AA   3B Dominick Hellwig
   ML -> AA   RF John Broyles
+  ML -> AA   3B Dominick Hellwig
   ML -> AA   CF Sean Duque
   ML -> A    SP Jose Bolivar
   ML -> DL   LF Juan Torres
- AAA -> AA   SP Jeffrey Draeger
  AAA -> AA   3B Ben Pulido
+ AAA -> AA   SP Jeffrey Draeger
  AAA -> AA   LF Paul Borrero
- AAA -> A    RF Yurihiko Koan
  AAA -> A    SP Matthew Spengler
+ AAA -> A    RF Yurihiko Koan
   AA -> AAA  1B Carlos Salerno
-  AA -> A    2B Zack Davis
   AA -> A    2B Luis Moya
+  AA -> A    2B Zack Davis
    A -> AAA  SP Hector Colon
   DL -> AAA  RF Hyu-suton Mito
 
@@ -200,13 +200,13 @@ Oswaldo Dossantos
 Monte Gillen
 
 LR
-Ralph Allen
 Jon Santoyo
+Wayne Milsap
 
 MR
 Michael Lamas
+Ralph Allen
 Serafin Planas
-Wayne Milsap
 
 SU
 Wayne Balcom
@@ -219,7 +219,7 @@ NONE
 
 
 BP Ability: 139
-BP Endrnce: 19.5
+BP Endrnce: 18.5
 
 --- Slow Hook ---
 
@@ -245,14 +245,14 @@ RF| Tetreault, A    (D) Lopez, O        |RF| ( 1) Lopez, O
 DH| Dane, B         (D)                 |DH| ( 1) Contreras, J   
 
 vs LHP
- C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
-1B| Contreras, J    (D) Burford, J      |1B| ( 1) Burford, J     
-2B| Tetreault, A    (D) Sipes, J        |2B| ( 1) Sipes, J       
-3B| Hipple, S       (D)                 |3B| ( 1) Sipes, J       
-SS| Kim, K          (D)                 |SS| ( 1) Sipes, J       
-LF| Dane, B         (D) Lopez, O        |LF| ( 1) Lopez, O       
-CF| Clemente, J     (D)                 |CF| ( 1) Campbell, T    
-RF| Glessner, K     (D) Lopez, O        |RF| ( 1) Campbell, T    
+ C| Urrutia, R      (D)                 | C| ( 1) Tetreault, A   
+1B| Contreras, J    (D) Burford, J      |1B| ( 1) Tetreault, A   
+2B| Sipes, J        (D)                 |2B| ( 1) Tetreault, A   
+3B| Hipple, S       (D)                 |3B| ( 1) Tetreault, A   
+SS| Kim, K          (D)                 |SS| ( 1) Tetreault, A   
+LF| Dane, B         (D) Lopez, O        |LF| ( 1) Tetreault, A   
+CF| Clemente, J     (D)                 |CF| ( 1) Tetreault, A   
+RF| Glessner, K     (D) Lopez, O        |RF| ( 1) Tetreault, A   
 
 vs LHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
@@ -273,12 +273,12 @@ DH| Contreras, J    (D)                 |DH| ( 1) Burford, J
 5. RF L Tetreault, A     RF L Tetreault, A     RF R Glessner, K      RF R Glessner, K     
 6. LF L Telles, T        LF L Telles, T        1B R Contreras, J     DH R Contreras, J    
 7. 1B R Burford, J       DH R Dane, B          CF S Clemente, J      CF S Clemente, J     
-8. SS R Kim, K           1B R Burford, J       2B L Tetreault, A     1B L Tetreault, A    
+8. SS R Kim, K           1B R Burford, J       2B L Sipes, J         1B L Tetreault, A    
 9.  P                    SS R Kim, K            P                    2B L Sipes, J        
 
 --- Bunt for Hit ---
 
---- Stealing @ 69.5 ---
+--- Stealing @ 69.2 ---
 RF Timothy Campbell          33| RF : 116       1  21   2 : 140 |    :                         :   0 |   0 | 140 | -2---326 |    *     $3.67Mx2 |  $9.22M:$11.56M |   p69 | Houston Astros       | **^
 RF Oscar Lopez               32| RF :  86       7  -3     :  90 |    :                         :   0 |   1 |  91 | -2---739 |    *  ~  $3.28Mx2 |        :        |  p299 | Houston Astros       | **
 RF Jose Contreras            34| RF :  92      -2  -5     :  85 |    :                         :   0 |  -2 |  83 | -2---214 |    *  ~  $3.67Mx3 |        :        |  p486 | Houston Astros       | **
@@ -1276,8 +1276,8 @@ Milwaukee Brewers    |  98.3  98.1  96.4 |  95.8  94.6  90.1 |  70- 92 0.430 |  
 National
 National ------------+
 Houston Astros       |  96.9  97.2  94.1 | 108.9 108.2 116.4 |  88- 74 0.545 |  91- 71 0.562 |  91- 71 0.562 ( 2) 
-Minnesota Twins      | 101.4 104.4 105.6 | 102.4 101.9 104.2 |  89- 73 0.548 |  86- 76 0.531 |  86- 76 0.531 ( 5) 
-New York Yankees     |  99.0  98.0  96.9 | 102.5 103.7 106.1 |  83- 79 0.514 |  86- 76 0.531 |  86- 76 0.531 ( 6) 
+New York Yankees     |  99.0  98.0  96.9 | 102.5 103.7 106.1 |  83- 79 0.514 |  86- 76 0.531 |  86- 76 0.531 ( 5) 
+Minnesota Twins      | 101.4 104.4 105.6 | 102.4 101.9 104.2 |  89- 73 0.548 |  86- 76 0.531 |  86- 76 0.531 ( 6) 
 Washington Nationals | 103.8 104.8 108.4 |  99.6 100.8 100.4 |  88- 74 0.542 |  85- 77 0.525 |  85- 77 0.525 ( 7) 
 Baltimore Orioles    |  99.6 100.3 100.0 |  97.8  97.7  95.4 |  77- 85 0.476 |  75- 87 0.463 |  75- 87 0.463 ( 9) 
 Atlanta Braves       |  99.6  98.6  98.2 |  96.2  96.8  92.9 |  74- 88 0.454 |  63- 99 0.389 |  63- 99 0.389 (11) 
