@@ -38,9 +38,9 @@ Selected: HuberScores: [(0.08656642125917313, RandomForest(...)), (0.08024539137
 -- Doubles
 Selected: HuberScores: [(0.05818447552015704, RandomForest(...)), (0.07211690577064211, Isotonic(...)), (0.11515875609468447, Huber(...)), (0.1025773879131668, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [ 4. 42.  3. 24.  9.  0.  0.]Coefficients: [-6.23385791e-05  4.76136857e-02 -2.36580421e-03  1.22637456e-02  8.93863925e-03  3.09254597e-03]Intercept: 0.0033250507083132006Feature Mask: [ True  True  True  True  True  True False]
 -- Triples
-Selected: RandomForestScores: [(0.10214892592481921, RandomForest(...)), (0.09818731036141097, Isotonic(...)), (0.09995022844709518, Huber(...)), (0.10174991607651018, Linear(...))]Best Parameters: {'regressor__n_estimators': 56, 'regressor__max_depth': 3, 'selection__k': 2}Feature Scores: [ 2.  0. 22.  0.  2.  2. 42.]Feature Mask: [False False  True False False False  True]Feature Importances: [0.056 0.944]
+Selected: RandomForestScores: [(0.10214892592481921, RandomForest(...)), (0.09818731036141097, Isotonic(...)), (0.09995022844709518, Huber(...)), (0.10174991607651018, Linear(...))]Best Parameters: {'regressor__max_depth': 3, 'regressor__n_estimators': 56, 'selection__k': 2}Feature Scores: [ 2.  0. 22.  0.  2.  2. 42.]Feature Mask: [False False  True False False False  True]Feature Importances: [0.056 0.944]
 -- HomeRuns
-Selected: RandomForestScores: [(0.08961948472708292, RandomForest(...)), (0.08258027420075868, Isotonic(...)), (0.07960308557568352, Huber(...)), (0.08621436579833024, Linear(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 3}Feature Scores: [ 1.  2.  0. 18.  0.  3.  0.]Feature Mask: [False  True False  True False  True False]Feature Importances: [0.113 0.816 0.071]
+Selected: RandomForestScores: [(0.08961948472708292, RandomForest(...)), (0.08258027420075868, Isotonic(...)), (0.07960308557568352, Huber(...)), (0.08621436579833024, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [ 1.  2.  0. 18.  0.  3.  0.]Feature Mask: [False  True False  True False  True False]Feature Importances: [0.113 0.816 0.071]
 -- Walks
 Selected: HuberScores: [(0.40577559523867485, RandomForest(...)), (0.40507929632524214, Isotonic(...)), (0.41367184067290225, Huber(...)), (0.4127203505498276, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [  1.  40.   5.  15. 286.   0.   3.]Coefficients: [0.0112351  0.01435567 0.11904902]Intercept: 0.01180883776296572Feature Mask: [False  True False  True  True False False]
 -- Ks
@@ -61,7 +61,7 @@ Selected: HuberScores: [(0.18499046902503133, RandomForest(...)), (0.19998593123
 -- Walks
 Selected: LinearScores: [(0.3236192829179154, RandomForest(...)), (0.2297021136117899, Isotonic(...)), (0.3686920843797879, Huber(...)), (0.3776280559082504, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [  1.   5.  29.   3. 164.   1.   1.   4.]Coefficients: [ 0.00016202 -0.00183877]Intercept: 0.18089079697457802Feature Mask: [False False  True False  True False False False]
 -- Ks
-Selected: RandomForestScores: [(0.20811868221533084, RandomForest(...)), (0.10308673569348341, Isotonic(...)), (0.16597006933612748, Huber(...)), (0.13885977539550773, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'regressor__n_estimators': 2, 'selection__k': 3}Feature Scores: [ 63.  69.   7.   1.   1. 147.   0.   9.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [0.199 0.085 0.716]
+Selected: RandomForestScores: [(0.20811868221533084, RandomForest(...)), (0.10308673569348341, Isotonic(...)), (0.16597006933612748, Huber(...)), (0.13885977539550773, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 49, 'regressor__n_estimators': 2}Feature Scores: [ 63.  69.   7.   1.   1. 147.   0.   9.]Feature Mask: [ True  True False False False  True False False]Feature Importances: [0.199 0.085 0.716]
 
 Hitting Features
              Average |  -   106   +  |   5  15  25  35  45  55  65  75  85  95
@@ -188,8 +188,8 @@ Balance:41/29 = 1.414 (ideal: 1.273)
 
   ML -> AAA  2B Clay Bellinger
  AAA -> ML   SP Floyd Youmans
- AAA -> AA   SP Ricky Bones
  AAA -> AA   SS Rene Gonzales
+ AAA -> AA   SP Ricky Bones
  AAA -> AA   SP Miguel Batista
   AA -> AAA  SP Mark W. Davis
   AA -> A    LF Manny Martinez
@@ -322,8 +322,8 @@ Hits, Doubles, Triples, Homeruns, Walks, Strikeouts, Running Speed
 1B Dave Hansen               25 | 1B :  84       3 :  87 | 1B :  92       3 :  95 |  +8 |                       : +10         +10+10    | +++
 SS Ricky Gutierrez           24 | SS :  92       4 :  96 | SS :  94       9 : 103 |  +7 |             +10+10+20 :             +10+10+20 | +++++
 SS Aaron Ledesma             23 | SS :  80       9 :  89 | SS :  87       9 :  96 |  +7 |                +10    :             +10+10    | +++
-3B Travis Fryman             25 | SS :  80       9 :  89 | SS :  86       9 :  95 |  +6 |    -10   +10          :          +10          | +++++
 2B Clay Bellinger            25 | SS :  78      10 :  88 | SS :  84      10 :  94 |  +6 | +10         +10       : +10         +10+10    | ++++-
+3B Travis Fryman             25 | SS :  80       9 :  89 | SS :  86       9 :  95 |  +6 |    -10   +10          :          +10          | +++++
 LF Doug Glanville            24 | CF :  81      14 :  95 | CF :  86      14 : 100 |  +5 | +10            +10    :                +10    | +++
 CF Benny Agbayani            22 | CF :  77       7 :  84 | CF :  81       7 :  88 |  +4 |                +10    : +10            +10    | +++++
 2B Frank Menechino           23 | 2B :  70       6 :  76 | 2B :  74       6 :  80 |  +4 | +10+10                : +10+10                | +++-
@@ -336,17 +336,17 @@ LF Brooks Kieschnick         22 | RF :  66       3 :  69 | RF :  67       3 :  7
 2B Bill Selby                24 | 3B :  63       2 :  65 | 3B :  64       2 :  66 |  +1 |    +10      +10+10    :             +10+10    | ++
 RF Ruben Amaro Jr.           29 | DH :  78       0 :  78 | DH :  79       0 :  79 |  +1 |                       :    +10                | *
  C Einar Diaz                21 |  C :  66       8 :  74 |  C :  66       8 :  74 |  +0 |    +10                :                       | ++
-RF Yamil Benitez             22 | DH :  70       0 :  70 | DH :  70       0 :  70 |  +0 |                       :                       | +++
 3B Juan Castro               22 | SS :  70       4 :  74 | SS :  70       4 :  74 |  +0 |                +10    :                       | +++
+RF Yamil Benitez             22 | DH :  70       0 :  70 | DH :  70       0 :  70 |  +0 |                       :                       | +++
 LF Manny Martinez            24 | CF :  70       7 :  77 | CF :  70       7 :  77 |  +0 |                +10+20 :                   +20 | ++
 2B Tim Naehring              27 | 3B : 121      10 : 131 | 3B : 121      10 : 131 |  +0 |                +20    :          -10   +20    | ****
  C Tim Spehr                 28 | DH :  73       0 :  73 | DH :  73       0 :  73 |  +0 |                       :                       | *
 CF Mark T. McLemore          30 | DH :  81       0 :  81 | DH :  81       0 :  81 |  +0 |                       :                       | *
-2B Mike Sharperson           33 | 2B :  84      10 :  94 | 2B :  84      10 :  94 |  +0 |                +10    :                       | *^
  C Mark Salas                33 |  C :  99       4 : 103 |  C :  99       4 : 103 |  +0 |                       :                       | **^
+2B Mike Sharperson           33 | 2B :  84      10 :  94 | 2B :  84      10 :  94 |  +0 |                +10    :                       | *^
+SS Rene Gonzales             34 | DH :  89       0 :  89 | DH :  89       0 :  89 |  +0 |                       :                -10    | *
 LF Mike Young                34 | LF : 105       3 : 108 | LF : 105       3 : 108 |  +0 |                       :                       | **^
 2B Ernie Riles               34 | DH :  79       0 :  79 | DH :  79       0 :  79 |  +0 |                       :                       | *
-SS Rene Gonzales             34 | DH :  89       0 :  89 | DH :  89       0 :  89 |  +0 |                       :                -10    | *
 SS Tony Phillips             35 | SS : 125      14 : 139 | SS : 125      14 : 139 |  +0 |                       :                       | ****^
 2B Jeff Hamilton             30 | 3B :  73       2 :  75 | 3B :  72       2 :  74 |  -1 |                       :    -10                | *
 3B Jeff McKnight             31 | SS :  79       2 :  81 | DH :  79       0 :  79 |  -2 |                       :                       | *
@@ -397,14 +397,14 @@ SP Jim Brower                21 | SP :      51     :  51 | SP :      41     :  4
 1M | 110 ( 93-165) | 116 ( 99-171) 105/127 |   6/  6 || 120 ( 36-165) | 126 ( 59-171) 114/139 |  30/ 30
 1L | 101 ( 77-150) | 107 ( 83-156)  97/118 |   8/  8 || 113 ( 76-150) | 119 ( 82-156) 108/131 |  40/ 40
 2E |  98 ( 48-116) | 104 ( 54-122)  95/115 |  10/ 10 || 105 ( 48-116) | 111 ( 54-122) 101/122 |  50/ 50
-2L | 100 ( 59-136) | 106 ( 65-142)  97/117 |  10/ 10 ||  96 ( 59-136) | 102 ( 65-142)  93/112 |  50/ 50
+2L | 100 ( 59-136) | 106 ( 65-142)  97/117 |  10/ 10 ||  96 ( 43-136) | 102 ( 49-142)  93/112 |  50/ 50
 
  1 | 113 ( 69-165) | 119 ( 75-171) 108/131 |  20/ 20 || 119 ( 36-190) | 125 ( 59-196) 113/137 | 100/100
- 2 |  99 ( 48-136) | 105 ( 54-142)  95/115 |  20/ 20 || 100 ( 48-136) | 106 ( 54-142)  96/116 | 100/100
+ 2 |  99 ( 48-136) | 105 ( 54-142)  95/115 |  20/ 20 || 100 ( 43-136) | 106 ( 49-142)  96/116 | 100/100
  3 |  89 ( 48-112) |  95 ( 54-134)  86/104 |  20/ 20 ||  86 ( 47-112) |  92 ( 53-134)  84/102 | 100/100
  4 |  68 ( 37-132) |  74 ( 43-138)  67/ 81 |  20/ 20 ||  72 ( 37-132) |  78 ( 43-138)  71/ 86 | 100/100
  5 |  74 ( 23-116) |  80 ( 29-122)  73/ 88 |  20/ 20 ||  59 ( 23-116) |  66 ( 29-122)  60/ 72 | 100/100
- 6 |  49 ( 29- 70) |  55 ( 35- 76)  50/ 61 |   2/  2 ||  45 ( 19- 70) |  52 ( 30- 84)  47/ 57 |  59/ 59
+ 6 |  49 ( 29- 70) |  55 ( 35- 76)  50/ 61 |   2/  2 ||  45 ( 24- 70) |  52 ( 30- 84)  47/ 57 |  59/ 59
  7 | NaN (NaN-NaN) | NaN (NaN-NaN) NaN/NaN |   0/  0 ||  22 ( 15- 35) |  33 ( 28- 41)  30/ 37 |   3/  3
 
 SS Phillips, T     35|  17,650,000  17,650,000
