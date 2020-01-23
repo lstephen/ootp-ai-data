@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: LinearScores: [(0.24843981554595082, RandomForest(...)), (0.36551809784557454, Isotonic(...)), (0.3229663552725063, Huber(...)), (0.36641093712427814, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [47. 38. 21. 16. 21.  1.]Coefficients: [ 0.00239631  0.00236558 -0.00017422 -0.00013488 -0.00011507 -0.00060989]Intercept: 0.010249310269867806Feature Mask: [ True  True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(0.20678885451274465, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.25613780286514437, Huber(...)), (-0.1127711560582499, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__max_depth': 6, 'regressor__n_estimators': 28}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.212]
+Selected: RandomForestScores: [(0.20678885451274465, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.25613780286514437, Huber(...)), (-0.1127711560582499, Linear(...))]Best Parameters: {'regressor__max_depth': 6, 'selection__k': 5, 'regressor__n_estimators': 28}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.212]
 -- Triples
 Selected: HuberScores: [(-0.030503885676717617, RandomForest(...)), (-0.09262141551990737, Isotonic(...)), (0.19791298655362785, Huber(...)), (0.14470344332828697, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [10. 25.  7.  5. 12. 25.]Coefficients: [ 0.01888602 -0.00221544  0.01456514]Intercept: -0.008424097263530956Feature Mask: [False  True False False  True  True]
 -- HomeRuns
@@ -44,7 +44,7 @@ Selected: HuberScores: [(0.4524593004284718, RandomForest(...)), (0.414723966607
 -- Walks
 Selected: HuberScores: [(0.2965848165588099, RandomForest(...)), (0.2876467431530662, Isotonic(...)), (0.3431486349385376, Huber(...)), (0.33722825157932723, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [28. 15. 17. 44. 28.  3.]Coefficients: [0.11215226]Intercept: 0.014046846020183348Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.3220015138160918, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581759932792191, Huber(...)), (0.2779807690718939, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
+Selected: RandomForestScores: [(0.3220015138160918, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581759932792191, Huber(...)), (0.2779807690718939, Linear(...))]Best Parameters: {'selection__k': 3, 'regressor__max_depth': 49, 'regressor__n_estimators': 2}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
 
            Hits | 0.062
         Doubles | 0.029
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.0999598494146801, RandomForest(...)), (-0.07617912771472217, Isotonic(...)), (0.3982528249657152, Huber(...)), (0.3643590913205747, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [23.  3. 15.  1.  1.]Coefficients: [-0.09596466 -0.01680886]Intercept: 0.3316584419872525Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.116585591419334, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267474647568648, Huber(...)), (-0.22004945297944234, Linear(...))]Best Parameters: {'regressor__max_depth': 15, 'selection__k': 2, 'regressor__n_estimators': 72}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.501 0.499]
+Selected: RandomForestScores: [(0.116585591419334, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267474647568648, Huber(...)), (-0.22004945297944234, Linear(...))]Best Parameters: {'regressor__n_estimators': 72, 'selection__k': 2, 'regressor__max_depth': 15}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.501 0.499]
 -- HomeRuns
 Selected: IsotonicScores: [(0.0007258851512383554, RandomForest(...)), (-0.03627724222491535, Isotonic(...)), (-0.22773856645029258, Huber(...)), (-0.2987146986979321, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -121,8 +121,8 @@ SP Raymond, J        *     ML 32 |  8.3 10.1  2.2  0.8 | 118 125 | 119 132 | -- 
 MR Luna, M         F *     ML 36 |  8.6  9.4  1.5  0.8 | 126 116 | 118  95 |  - |  94/104 || 104 ||
 SP Dossantos, O    F *  ~  ML 38 | 10.2  7.4  1.7  0.8 | 109 126 |  96  92 |    |  99/ 86 ||  99 ||
 SP Manuel, C         *     ML 37 | 10.1  7.7  2.1  0.8 |  88  77 | 100 157 | -- |  97/ 84 ||  97 ||
-SP Gillen, M         *+ ~  ML 33 |  9.7  8.8  2.7  0.8 | 107  94 |  93 111 |    |  95/ 83 ||  95 ||
 MR Horne, K        F *+ ~ AAA 31 |  9.4  9.0  2.1  0.8 | 100  77 | 113 165 |  - |  54/ 95 ||  95 ||
+SP Gillen, M         *+ ~  ML 33 |  9.7  8.8  2.7  0.8 | 107  94 |  93 111 |    |  95/ 83 ||  95 ||
 SP Allen, R        F *  ~  ML 36 | 10.4  7.5  2.3  0.8 |  88 102 |  94 112 |  + |  93/ 80 ||  93 ||
 MR Lamas, M          *  ~  ML 36 |  9.1  9.9  3.0  0.8 | 119 283 | 103  71 |    |  70/ 92 ||  92 ||
 MR Johnston, M       *+ ~  ML 33 |  9.5  8.1  1.9  0.9 |  97  67 | 105 109 |  + |  50/ 89 ||  89 ||
@@ -135,8 +135,8 @@ MR Planas, S         *  ~  ML 31 | 10.2  7.8  2.1  0.8 |  83  46 |  95 108 |  - 
 SP Trautman, E       *  ~  AA 31 | 11.6  6.4  2.3  0.8 |  71     |  79     |  + |  76/ 67 ||  76 ||
 MR Keita, Y           + ~ AAA 36 | 10.6  7.9  3.2  0.8 |  73     |  87     |    |  55/ 73 ||  73 ||
 SP Draeger, J      F       AA 28 | 11.6  7.3  4.0  0.9 |  85     |  70     | ++ |  72/ 63 ||  72 ||
-SP Spengler, M          ~   A 29 | 12.1  6.7  3.8  0.9 |  69     |  67     |  - |  68/ 59 ||  68 ||
 SP Nye, P          F       AA 32 | 12.6  5.3  2.9  0.9 |  69     |  70     |  + |  68/ 61 ||  68 ||
+SP Spengler, M          ~   A 29 | 12.1  6.7  3.8  0.9 |  69     |  67     |  - |  68/ 59 ||  68 ||
 SP Myler, W        F  +    AA 29 | 12.2  6.5  3.8  0.9 |  65     |  69     |  - |  67/ 59 ||  67 ||
 MR Blood, J         2       A 21 | 12.4  5.8  3.2  0.9 |  71     |  69     |  + |  34/ 61 ||  61 ||
 SP Bolivar, J       8*      A 18 | 14.5  3.6  2.6  0.7 |  57  23 |  57  35 |    |  55/ 49 ||  55 ||
@@ -452,14 +452,14 @@ MR Rodney Shinrikiyaru       26| MR :      61     -19     :  42 |    :      58  
 CATCHER
  1 | Urrutia, R       126   4 130 | Urrutia, R       145   4 149 | Urrutia, R       123   4 127
  2 | Hipple, S        124 -32  92 | Slater, T         96  -4  92 | Hipple, S        124 -32  92
- 3 | Campbell, T      115 -32  83 | Dane, B          123 -32  91 | Campbell, T      118 -32  86
- 4 | Tetreault, A     114 -32  82 | Hipple, S        123 -32  91 | Tetreault, A     116 -32  84
+ 3 | Campbell, T      115 -32  83 | Hipple, S        123 -32  91 | Campbell, T      118 -32  86
+ 4 | Tetreault, A     114 -32  82 | Dane, B          123 -32  91 | Tetreault, A     116 -32  84
  5 | Sipes, J         111 -32  79 | Klein, F         121 -32  89 | Sipes, J         112 -32  80
  6 | Slater, T         81  -4  77 | Kim, K           113 -32  81 | Telles, T        109 -32  77
  7 | Dane, B          106 -32  74 | Glessner, K      113 -32  81 | Slater, T         79  -4  75
- 8 | Telles, T        104 -32  72 | Broyles, J       111 -32  79 | Torres, J        106 -32  74
- 9 | Torres, J        103 -32  71 | Contreras, J     111 -32  79 | Mito, H          103 -32  71
-10 | Kim, K           102 -32  70 | Clemente, J      111 -32  79 | Dane, B          103 -32  71
+ 8 | Telles, T        104 -32  72 | Contreras, J     111 -32  79 | Torres, J        106 -32  74
+ 9 | Torres, J        103 -32  71 | Clemente, J      111 -32  79 | Mito, H          103 -32  71
+10 | Kim, K           102 -32  70 | Broyles, J       111 -32  79 | Dane, B          103 -32  71
 
 FIRST_BASE
  1 | Urrutia, R       126  -1 125 | Urrutia, R       145  -1 144 | Hipple, S        124   0 124
@@ -483,7 +483,7 @@ SECOND_BASE
  7 | Tetreault, A     114 -15  99 | Glessner, K      113 -16  97 | Tetreault, A     116 -15 101
  8 | Fusco, R          97   1  98 | Gadson, M         96  -1  95 | Gadson, M         99  -1  98
  9 | Gadson, M         98  -1  97 | Sipes, J         100  -5  95 | Klein, F          99  -1  98
-10 | Dane, B          106 -17  89 | Broyles, J       111 -18  93 | Telles, T        109 -17  92
+10 | Dane, B          106 -17  89 | Contreras, J     111 -18  93 | Telles, T        109 -17  92
 
 THIRD_BASE
  1 | Hipple, S        124   8 132 | Urrutia, R       145 -12 133 | Hipple, S        124   8 132
@@ -493,9 +493,9 @@ THIRD_BASE
  5 | Sipes, J         111  -8 103 | Dane, B          123 -12 111 | Sipes, J         112  -8 104
  6 | Kim, K           102  -2 100 | Hellwig, D       100   5 105 | Kim, K           101  -2  99
  7 | Klein, F         102  -5  97 | Glessner, K      113 -11 102 | Escobar, J        95   2  97
- 8 | Escobar, J        95   2  97 | Broyles, J       111 -13  98 | Telles, T        109 -12  97
- 9 | Dane, B          106 -12  94 | Contreras, J     111 -13  98 | Fusco, R         100  -4  96
-10 | Fusco, R          97  -4  93 | Clemente, J      111 -13  98 | Klein, F          99  -5  94
+ 8 | Escobar, J        95   2  97 | Contreras, J     111 -13  98 | Telles, T        109 -12  97
+ 9 | Dane, B          106 -12  94 | Clemente, J      111 -13  98 | Fusco, R         100  -4  96
+10 | Fusco, R          97  -4  93 | Broyles, J       111 -13  98 | Klein, F          99  -5  94
 
 SHORTSTOP
  1 | Hipple, S        124  13 137 | Hipple, S        123  13 136 | Hipple, S        124  13 137
@@ -506,8 +506,8 @@ SHORTSTOP
  6 | Sipes, J         111 -11 100 | Glessner, K      113 -14  99 | Sipes, J         112 -11 101
  7 | Klein, F         102  -6  96 | Davis, Z          88   9  97 | Fusco, R         100  -5  95
  8 | Escobar, J        95  -2  93 | Hellwig, D       100  -3  97 | Telles, T        109 -15  94
- 9 | Fusco, R          97  -5  92 | Broyles, J       111 -17  94 | Pulido, B         85   8  93
-10 | Pulido, B         83   8  91 | Contreras, J     111 -17  94 | Klein, F          99  -6  93
+ 9 | Fusco, R          97  -5  92 | Contreras, J     111 -17  94 | Pulido, B         85   8  93
+10 | Pulido, B         83   8  91 | Clemente, J      111 -17  94 | Klein, F          99  -6  93
 
 LEFT_FIELD
  1 | Urrutia, R       126 -12 114 | Urrutia, R       145 -12 133 | Campbell, T      118  -3 115
@@ -547,14 +547,14 @@ RIGHT_FIELD
 
 DESIGNATED_HITTER
  1 | Urrutia, R       126   0 126 | Urrutia, R       145   0 145 | Hipple, S        124   0 124
- 2 | Hipple, S        124   0 124 | Dane, B          123   0 123 | Urrutia, R       123   0 123
- 3 | Campbell, T      115   0 115 | Hipple, S        123   0 123 | Campbell, T      118   0 118
+ 2 | Hipple, S        124   0 124 | Hipple, S        123   0 123 | Urrutia, R       123   0 123
+ 3 | Campbell, T      115   0 115 | Dane, B          123   0 123 | Campbell, T      118   0 118
  4 | Tetreault, A     114   0 114 | Klein, F         121   0 121 | Tetreault, A     116   0 116
  5 | Sipes, J         111   0 111 | Kim, K           113   0 113 | Sipes, J         112   0 112
  6 | Dane, B          106   0 106 | Glessner, K      113   0 113 | Telles, T        109   0 109
- 7 | Telles, T        104   0 104 | Broyles, J       111   0 111 | Torres, J        106   0 106
- 8 | Torres, J        103   0 103 | Contreras, J     111   0 111 | Mito, H          103   0 103
- 9 | Kim, K           102   0 102 | Clemente, J      111   0 111 | Dane, B          103   0 103
+ 7 | Telles, T        104   0 104 | Contreras, J     111   0 111 | Torres, J        106   0 106
+ 8 | Torres, J        103   0 103 | Clemente, J      111   0 111 | Mito, H          103   0 103
+ 9 | Kim, K           102   0 102 | Broyles, J       111   0 111 | Dane, B          103   0 103
 10 | Klein, F         102   0 102 | Tetreault, A     105   0 105 | Burford, J       102   0 102
 
 --- Trade Values ---
@@ -1144,7 +1144,7 @@ SS Pedro Silva               27| SS : 110      16  33     : 159 | SS : 113      
 CF James Kittrell            22| CF :  88      11   0     :  99 | CF : 109      11  13  24   3 : 160 |   6 | 166 | -2---767 |   1               |        :        |  p663 | Washington Nationals | +++++
 3B Joel Fresquez             27| 2B : 117       8  27   8 : 160 | 2B : 111       8  13  23     : 155 |   6 | 166 | -3752--- |    *+    $4.59Mx3 | $14.74M:$17.65M |  p393 | Washington Nationals | **^
 SS Ronald Lanier             24| SS : 100      21  28     : 149 | SS : 100      21   2  28     : 150 |   6 | 156 | -3337--- |   6*+             |  $11.8M:$14.12M |  p507 | Washington Nationals | +++
-2B Marcelo Lamas             29| 2B : 117       5  24   5 : 151 |    :                         :   0 |   4 | 155 | -261---- |    *     $6.56Mx2 | $12.22M:$14.62M |  p344 | Washington Nationals | ****
+2B Marcelo Lamas             29| 2B : 117       5  25   5 : 151 |    :                         :   0 |   4 | 155 | -261---- |    *     $6.56Mx2 | $12.22M:$14.62M |  p344 | Washington Nationals | ****
 SS Louis Ballew              32| SS : 104      19  30     : 152 |    :                         :   0 |   1 | 153 | -3737--- |    *     $2.74Mx3 | $12.64M:$15.13M |  p276 | Washington Nationals | **
 CL Richard Baeza             27| MR :     112      26   7 : 146 | MR :     106      17  15     : 138 |   6 | 152 |          |    *     $4.19Mx3 | $14.32M:$17.14M |  p283 | Washington Nationals | *****
  C William Pinegar           30|  C :  98      11  32     : 141 |    :                         :   0 |   3 | 144 | 81------ |    *              | $13.48M:$16.14M |  p349 | Washington Nationals | *
@@ -1255,8 +1255,8 @@ National
 National ------------+
 Houston Astros       |  97.1  97.1  94.1 | 108.4 107.9 115.6 |  88- 74 0.542 |  91- 71 0.562 |  91- 71 0.562 ( 2) 
 New York Yankees     |  98.9  97.9  96.7 | 103.2 104.7 107.6 |  84- 78 0.520 |  87- 76 0.534 |  86- 76 0.531 ( 5) 
-Washington Nationals | 103.7 104.9 108.4 |  99.8 101.1 100.9 |  88- 74 0.545 |  85- 77 0.525 |  85- 77 0.525 ( 6) 
-Minnesota Twins      | 101.3 104.1 105.2 | 103.1 102.2 105.2 |  89- 73 0.551 |  86- 77 0.528 |  85- 77 0.525 ( 7) 
+Minnesota Twins      | 101.3 104.1 105.2 | 103.1 102.2 105.2 |  89- 73 0.551 |  86- 77 0.528 |  85- 77 0.525 ( 6) 
+Washington Nationals | 103.7 104.9 108.4 |  99.8 101.1 100.9 |  88- 74 0.545 |  85- 77 0.525 |  85- 77 0.525 ( 7) 
 Baltimore Orioles    | 100.5 100.8 101.2 |  96.4  96.9  93.2 |  76- 86 0.471 |  75- 87 0.463 |  75- 87 0.463 ( 9) 
 Atlanta Braves       |  99.6  98.6  98.2 |  96.1  96.1  92.1 |  73- 89 0.450 |  63- 99 0.389 |  63- 99 0.389 (12) 
                      |             111.6 |              90.0 |
