@@ -44,7 +44,7 @@ Selected: HuberScores: [(0.4544653241594167, RandomForest(...)), (0.414723966607
 -- Walks
 Selected: HuberScores: [(0.2965848165588099, RandomForest(...)), (0.2876467431530662, Isotonic(...)), (0.34314864222151914, Huber(...)), (0.33722825157932723, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [28. 15. 17. 44. 28.  3.]Coefficients: [0.11215226]Intercept: 0.014046844013247671Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.32201031159391047, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581771073804845, Huber(...)), (0.2779807690718938, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'regressor__n_estimators': 2, 'selection__k': 3}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
+Selected: RandomForestScores: [(0.32201031159391047, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581771073804845, Huber(...)), (0.2779807690718938, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
 
            Hits | 0.062
         Doubles | 0.029
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.10181317130278589, RandomForest(...)), (-0.07617912771472217, Isotonic(...)), (0.39825277895914457, Huber(...)), (0.36435909132057476, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [23.  3. 15.  1.  1.]Coefficients: [-0.09596465 -0.01680701]Intercept: 0.33165711136053394Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.1160914622667973, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267453220329198, Huber(...)), (-0.22004945297944242, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__n_estimators': 72, 'regressor__max_depth': 15}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.502 0.498]
+Selected: RandomForestScores: [(0.1160914622667973, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267453220329198, Huber(...)), (-0.22004945297944242, Linear(...))]Best Parameters: {'regressor__max_depth': 15, 'selection__k': 2, 'regressor__n_estimators': 72}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.502 0.498]
 -- HomeRuns
 Selected: IsotonicScores: [(0.0007258851512383554, RandomForest(...)), (-0.03627724222491535, Isotonic(...)), (-0.22773757248849322, Huber(...)), (-0.29871469869793166, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -166,11 +166,11 @@ Balance:28/17 = 1.647 (ideal: 1.273)
   AA -> AAA  3B Dominick Hellwig
    A -> ML   SP Jose Bolivar
    A -> AAA  2B Zack Davis
-   A -> AA   SP Matthew Spengler
-   A -> AA   RF Yurihiko Koan
    A -> AA   2B Luis Moya
-  DL -> ML   LF Juan Torres
+   A -> AA   RF Yurihiko Koan
+   A -> AA   SP Matthew Spengler
   DL -> ML   RF Tommy Howells
+  DL -> ML   LF Juan Torres
   DL -> AAA  SP Robert Hurst
   DL -> AAA  SS Craig Gaffney
 
@@ -204,14 +204,14 @@ BP Endrnce: 10.5
 --- Slow Hook ---
 
 vs RHP
- C| Urrutia, R      (D)                 | C| ( 1) Torres, J      
-1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Torres, J      
-2B| Klein, F        (D)                 |2B| ( 1) Escobar, J     
+ C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
+1B| Tetreault, A    (D) Burford, J      |1B| ( 1) Burford, J     
+2B| Campbell, T     (D) Klein, F        |2B| ( 1) Klein, F       
 3B| Hipple, S       (D)                 |3B| ( 1) Escobar, J     
-SS| Kim, K          (D)                 |SS| ( 1) Escobar, J     
-LF| Telles, T       (D) Broyles, J      |LF| ( 1) Torres, J      
-CF| Howells, T      (D) Bolivar, J      |CF| ( 1) Torres, J      
-RF| Campbell, T     (D) Glessner, K     |RF| ( 1) Torres, J      
+SS| Kim, K          (D)                 |SS| ( 1) Klein, F       
+LF| Torres, J       (D)                 |LF| ( 1) Burford, J     
+CF| Howells, T      (D) Bolivar, J      |CF| ( 1) Burford, J     
+RF| Telles, T       (D) Glessner, K     |RF| ( 1) Glessner, K    
 
 vs RHP+DH
  C| Urrutia, R      (D)                 | C| ( 1) Burford, J     
@@ -247,18 +247,18 @@ DH| Contreras, J    (D)                 |DH| ( 1) Burford, J
 
    vsRHP                 vsRHP+DH              vsLHP                 vsLHP+DH             
 1.  C R Urrutia, R        C R Urrutia, R       SS R Kim, K           SS R Kim, K          
-2. RF L Campbell, T      DH L Campbell, T      2B R Klein, F         2B R Klein, F        
+2. 2B L Campbell, T      DH L Campbell, T      2B R Klein, F         2B R Klein, F        
 3. 3B R Hipple, S        3B R Hipple, S        3B R Hipple, S        3B R Hipple, S       
 4. CF L Howells, T       CF L Howells, T        C R Urrutia, R        C R Urrutia, R      
 5. 1B L Tetreault, A     1B L Tetreault, A     RF R Glessner, K      RF R Glessner, K     
-6. LF L Telles, T        RF L Telles, T        1B R Contreras, J     DH R Contreras, J    
-7. SS R Kim, K           LF L Torres, J        LF R Broyles, J       LF R Broyles, J      
-8. 2B R Klein, F         SS R Kim, K           CF L Howells, T       1B L Tetreault, A    
+6. RF L Telles, T        RF L Telles, T        1B R Contreras, J     DH R Contreras, J    
+7. LF L Torres, J        LF L Torres, J        LF R Broyles, J       LF R Broyles, J      
+8. SS R Kim, K           SS R Kim, K           CF L Howells, T       1B L Tetreault, A    
 9.  P                    2B R Escobar, J        P                    CF L Howells, T      
 
 --- Bunt for Hit ---
 
---- Stealing @ 68.3 ---
+--- Stealing @ 68.4 ---
 RF Timothy Campbell          34| RF : 115       1  23     : 139 |    :                         :   0 |  -2 | 137 | -2---326 |  F *     $3.67M   |  $7.34M: $9.98M |   p69 | Houston Astros       | ***
 RF Jose Contreras            34| RF :  92      -2  -2     :  88 |    :                         :   0 |  -2 |  86 | -2---214 |    *     $3.67Mx2 |        :        |  p486 | Houston Astros       | **
 
@@ -358,44 +358,44 @@ Hitters
 Contact, Gap, Power, Eye, Avoid K's, Running Speed
 1B Randolph Province         21 | 1B :  86       2 :  88 | 1B :  87       2 :  89 |  +1 |  +1                :  +1                | ++-
 2B Rene Fernandez            21 | 3B :  56       4 :  60 | 3B :  56       4 :  60 |  +0 |              +1    :              +1    | ++-
-2B Luis Moya                 22 | 2B :  65      12 :  77 | 2B :  65      12 :  77 |  +0 |                    :                    | ++-
 2B Manuel Mercado            22 | 2B :  34       3 :  37 | 2B :  34       3 :  37 |  +0 |                    :                    | ++
-LF Derrick Shisler           23 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |              +1    :              +1    | ++
+2B Luis Moya                 22 | 2B :  65      12 :  77 | 2B :  65      12 :  77 |  +0 |                    :                    | ++-
 RF Yurihiko Koan             23 | DH :  88       0 :  88 | DH :  88       0 :  88 |  +0 |                    :                    | ++
-LF Paul Borrero              24 | LF :  84       6 :  90 | LF :  84       6 :  90 |  +0 |                    :                    | ++-
-RF Joseph Sherman            24 | DH :  48       0 :  48 | DH :  48       0 :  48 |  +0 |                    :                    | ++
+LF Derrick Shisler           23 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |              +1    :              +1    | ++
 SS Kenneth Kim               24 | SS : 102      16 : 118 | SS : 102      16 : 118 |  +0 |                    :                    | **
+RF Joseph Sherman            24 | DH :  48       0 :  48 | DH :  48       0 :  48 |  +0 |                    :                    | ++
+LF Paul Borrero              24 | LF :  84       6 :  90 | LF :  84       6 :  90 |  +0 |                    :                    | ++-
 2B Zack Davis                25 | SS :  81       7 :  88 | SS :  81       7 :  88 |  +0 |                    :                    | +
 3B Dominick Hellwig          26 | 3B :  82       4 :  86 | 3B :  82       4 :  86 |  +0 |                    :                    | *
 RF Keith Glessner            26 | RF :  91       4 :  95 | RF :  91       4 :  95 |  +0 |                    :                    | *
-RF Robert Fusco              28 | RF :  97       1 :  98 | RF :  97       1 :  98 |  +0 |                    :                    | *
 RF John Broyles              28 | LF :  88       6 :  94 | LF :  88       6 :  94 |  +0 |                    :                    | **
-LF Juan Torres               29 | LF : 103       4 : 107 | LF : 103       4 : 107 |  +0 |                    :                    | **^
-2B Frederick Klein           29 | DH : 102       0 : 102 | DH : 102       0 : 102 |  +0 |                    :                    | ***
+RF Robert Fusco              28 | RF :  97       1 :  98 | RF :  97       1 :  98 |  +0 |                    :                    | *
 3B Jamey Escobar             29 | 3B :  95       1 :  96 | 3B :  95       1 :  96 |  +0 |                    :                    | *
+2B Frederick Klein           29 | DH : 102       0 : 102 | DH : 102       0 : 102 |  +0 |                    :                    | ***
+LF Juan Torres               29 | LF : 103       4 : 107 | LF : 103       4 : 107 |  +0 |                    :                    | **^
 1B Carlos Salerno            31 | 1B :  94       3 :  97 | 1B :  94       3 :  97 |  +0 |                    :                    | *
-RF Oscar Lopez               33 | RF :  86       7 :  93 | RF :  86       7 :  93 |  +0 |                    :                    | **
 1B James Burford             33 | 1B : 102       2 : 104 | 1B : 102       2 : 104 |  +0 |                    :                    | **^
- C Ramiro Urrutia            34 |  C : 126       0 : 126 |  C : 126       0 : 126 |  +0 |                    :                    | ****^
+RF Oscar Lopez               33 | RF :  86       7 :  93 | RF :  86       7 :  93 |  +0 |                    :                    | **
 RF Jose Contreras            34 | DH :  92       0 :  92 | DH :  92       0 :  92 |  +0 |                    :                    | **
 RF Timothy Campbell          34 | RF : 115       1 : 116 | RF : 115       1 : 116 |  +0 |                    :                    | ***
+ C Ramiro Urrutia            34 |  C : 126       0 : 126 |  C : 126       0 : 126 |  +0 |                    :                    | ****^
 RF Tony Telles               35 | LF : 104       3 : 107 | LF : 104       3 : 107 |  +0 |                    :                    | **^
 SS Stephen Hipple            36 | SS : 124      11 : 135 | SS : 124      11 : 135 |  +0 |                    :                    | ****^
 RF Abraham Tetreault         36 | 1B : 114       1 : 115 | 1B : 114       1 : 115 |  +0 |                    :                    | ***
 
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
-SP Tony Ramirez              18 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                 :                 | ++
 SP Jose Bolivar              18 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | ++
+SP Tony Ramirez              18 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                 :                 | ++
 MR Joshua Blood              21 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | +++
 SP Hector Colon              25 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | ++++-
 SP Brett Dennis              26 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                 :                 | **^
 SP Matthew Spengler          29 | SP :      68     :  68 | SP :      68     :  68 |  +0 |                 :                 | *^
-MR Serafin Planas            31 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | **^
 SP Eric Trautman             31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | **
+MR Serafin Planas            31 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | **^
 SP Jacob Raymond             32 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                 :                 | ***^
-MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 MR Milton Johnston           33 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ***
+MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 MR Wayne Balcom              33 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ****^
 SP Monte Gillen              34 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                 :                 | **^
 SP Wayne Milsap              35 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                 :                 | *^
@@ -1529,8 +1529,8 @@ SP Tony Ramirez              18| MR :      43     -26     :  17 | SP :      63  
 
 American
 American ------------+
-Toronto Blue Jays    | 100.9 101.3 102.2 | 102.2 103.4 105.5 |  87- 75 0.537 |   0-  0 0.500 |  87- 75 0.537 ( 3) 
-Pittsburgh Pirates   | 102.0 102.4 104.3 | 101.9 101.7 103.6 |  87- 75 0.538 |   0-  0 0.500 |  87- 75 0.537 ( 4) 
+Pittsburgh Pirates   | 102.0 102.4 104.3 | 101.9 101.7 103.6 |  87- 75 0.538 |   0-  0 0.500 |  87- 75 0.537 ( 3) 
+Toronto Blue Jays    | 100.9 101.3 102.2 | 102.2 103.4 105.5 |  87- 75 0.537 |   0-  0 0.500 |  87- 75 0.537 ( 4) 
 New York Mets        |  99.1  97.4  96.4 | 104.6 106.0 110.3 |  86- 76 0.530 |   0-  0 0.500 |  86- 76 0.531 ( 5) 
 Oakland A's          | 101.9 100.9 102.8 |  97.6  95.4  92.7 |  77- 85 0.476 |   0-  0 0.500 |  77- 85 0.475 ( 9) 
 Los Angeles Dodgers  |  96.3  97.7  94.0 |  97.3  95.2  92.2 |  69- 93 0.429 |   0-  0 0.500 |  69- 93 0.426 (11) 
