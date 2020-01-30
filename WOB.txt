@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: LinearScores: [(0.24876628025552536, RandomForest(...)), (0.36551809784557454, Isotonic(...)), (0.32296626680914275, Huber(...)), (0.3664109371242783, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [47. 38. 21. 16. 21.  1.]Coefficients: [ 0.00239631  0.00236558 -0.00017422 -0.00013488 -0.00011507 -0.00060989]Intercept: 0.010249310269867501Feature Mask: [ True  True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(0.21019084896386442, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.2566497687762736, Huber(...)), (-0.1127711560582501, Linear(...))]Best Parameters: {'regressor__n_estimators': 28, 'selection__k': 5, 'regressor__max_depth': 6}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.213]
+Selected: RandomForestScores: [(0.21019084896386442, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.2566497687762736, Huber(...)), (-0.1127711560582501, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__max_depth': 6, 'regressor__n_estimators': 28}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.213]
 -- Triples
 Selected: HuberScores: [(-0.030503885676717617, RandomForest(...)), (-0.09262141551990737, Isotonic(...)), (0.19792756029746617, Huber(...)), (0.1447034433282871, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [10. 25.  7.  5. 12. 25.]Coefficients: [ 0.01888949 -0.00221651  0.01456912]Intercept: -0.00842731597360965Feature Mask: [False  True False False  True  True]
 -- HomeRuns
@@ -161,22 +161,22 @@ SP Ramirez, T       5       A 18 | 14.4  5.0  5.0  0.9 |  50     |  51     | ++ 
 Total:49 (target 70-75)
 Balance:31/18 = 1.722 (ideal: 1.273)
 
-  ML -> AAA  RF Oscar Lopez
   ML -> AAA  1B James Burford
+  ML -> AAA  RF Oscar Lopez
  AAA -> ML   RF Robert Fusco
  AAA -> ML   SP Hector Colon
  AAA -> AA   1B Carlos Salerno
   AA -> ML   RF John Broyles
   AA -> AAA  SP Eric Trautman
-   A -> AA   2B Zack Davis
-   A -> AA   RF Yurihiko Koan
    A -> AA   SP Matthew Spengler
+   A -> AA   RF Yurihiko Koan
    A -> AA   MR Joshua Blood
+   A -> AA   2B Zack Davis
   DL -> ML   LF Juan Torres
-  DL -> AAA  MR Manuel Luna
   DL -> AAA  LF Jose Suarez
-  DL -> AAA   C Sam Kelly
+  DL -> AAA  MR Manuel Luna
   DL -> AAA  3B Joel Castillo
+  DL -> AAA   C Sam Kelly
 
 SP
 Jacob Raymond
@@ -193,8 +193,8 @@ Jon Santoyo
 Serafin Planas
 
 SU
-Milton Johnston
 Wayne Balcom
+Milton Johnston
 
 CL
 Michael Lamas
@@ -372,9 +372,9 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 2B Luis Moya                 22 | 2B :  65      11 :  76 | 2B :  65      11 :  76 |  +0 |                    :                    | ++-
 RF Yurihiko Koan             23 | DH :  88       0 :  88 | DH :  88       0 :  88 |  +0 |                    :                    | ++
 LF Derrick Shisler           23 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |              +1    :              +1    | ++
-LF Paul Borrero              24 | LF :  84       5 :  89 | LF :  84       5 :  89 |  +0 |                    :                    | ++-
-RF Joseph Sherman            24 | DH :  48       0 :  48 | DH :  48       0 :  48 |  +0 |                    :                    | ++
 SS Kenneth Kim               24 | SS : 102      16 : 118 | SS : 102      16 : 118 |  +0 |                    :                    | **
+RF Joseph Sherman            24 | DH :  48       0 :  48 | DH :  48       0 :  48 |  +0 |                    :                    | ++
+LF Paul Borrero              24 | LF :  84       5 :  89 | LF :  84       5 :  89 |  +0 |                    :                    | ++-
 2B Zack Davis                25 | SS :  81       7 :  88 | SS :  81       7 :  88 |  +0 |                    :                    | +
 3B Dominick Hellwig          26 | 3B :  82       3 :  85 | 3B :  82       3 :  85 |  +0 |                    :                    | *
 RF Keith Glessner            26 | RF :  91       4 :  95 | RF :  91       4 :  95 |  +0 |                    :                    | *
@@ -386,12 +386,12 @@ LF Juan Torres               30 | LF : 103       4 : 107 | LF : 103       4 : 10
 1B Carlos Salerno            31 | 1B :  94       3 :  97 | 1B :  94       3 :  97 |  +0 |                    :                    | *
 1B James Burford             33 | 1B : 102       2 : 104 | 1B : 102       2 : 104 |  +0 |                    :                    | **^
 RF Oscar Lopez               33 | RF :  86       7 :  93 | RF :  86       7 :  93 |  +0 |                    :                    | **
+ C Ramiro Urrutia            34 |  C : 126       3 : 129 |  C : 126       3 : 129 |  +0 |                    :                    | ****^
 RF Timothy Campbell          34 | RF : 115       1 : 116 | RF : 115       1 : 116 |  +0 |                    :                    | ***
 RF Jose Contreras            34 | DH :  92       0 :  92 | DH :  92       0 :  92 |  +0 |                    :                    | **
- C Ramiro Urrutia            34 |  C : 126       3 : 129 |  C : 126       3 : 129 |  +0 |                    :                    | ****^
 RF Tony Telles               35 | LF : 104       3 : 107 | LF : 104       3 : 107 |  +0 |                    :                    | **^
-SS Stephen Hipple            36 | SS : 124      11 : 135 | SS : 124      11 : 135 |  +0 |                    :                    | ****^
 RF Abraham Tetreault         36 | 1B : 114       1 : 115 | 1B : 114       1 : 115 |  +0 |                    :                    | ***
+SS Stephen Hipple            36 | SS : 124      11 : 135 | SS : 124      11 : 135 |  +0 |                    :                    | ****^
 
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
@@ -404,13 +404,13 @@ SP Matthew Spengler          29 | SP :      68     :  68 | SP :      68     :  6
 SP Eric Trautman             31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | **
 MR Serafin Planas            31 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | **^
 SP Jacob Raymond             32 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                 :                 | ***^
+MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 MR Milton Johnston           33 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ***
 MR Wayne Balcom              33 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ****^
-MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 SP Monte Gillen              34 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                 :                 | **^
 SP Wayne Milsap              35 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                 :                 | *^
-MR Michael Lamas             36 | MR :      93     :  93 | MR :      93     :  93 |  +0 |                 :                 | **^
 MR Manuel Luna               36 | MR :     105     : 105 | MR :     105     : 105 |  +0 |                 :                 | ***
+MR Michael Lamas             36 | MR :      93     :  93 | MR :      93     :  93 |  +0 |                 :                 | **^
 SP Charles Manuel            38 | SP :      98     :  98 | SP :      98     :  98 |  +0 |                 :                 | ***
 
 Drafted Players
@@ -822,9 +822,9 @@ CATCHER
  5 | Campbell, T      115 -34  81 | Hipple, S        123 -34  89 | Campbell, T      118 -34  84
  6 | Tetreault, A     114 -34  80 | Klein, F         121 -34  87 | Tetreault, A     116 -34  82
  7 | Suarez, J        112 -34  78 | Kim, K           113 -34  79 | Telles, T        109 -34  75
- 8 | Gaffney, C       107 -34  73 | Glessner, K      113 -34  79 | Suarez, J        107 -34  73
- 9 | Castillo, J      107 -34  73 | Contreras, J     111 -34  77 | Torres, J        106 -34  72
-10 | Telles, T        104 -34  70 | Broyles, J       111 -34  77 | Castillo, J      106 -34  72
+ 8 | Castillo, J      107 -34  73 | Glessner, K      113 -34  79 | Suarez, J        107 -34  73
+ 9 | Gaffney, C       107 -34  73 | Castillo, J      111 -34  77 | Castillo, J      106 -34  72
+10 | Telles, T        104 -34  70 | Contreras, J     111 -34  77 | Torres, J        106 -34  72
 
 FIRST_BASE
  1 | Howells, T       128   0 128 | Urrutia, R       145  -1 144 | Howells, T       133   0 133
@@ -918,9 +918,9 @@ DESIGNATED_HITTER
  5 | Tetreault, A     114   0 114 | Klein, F         121   0 121 | Tetreault, A     116   0 116
  6 | Suarez, J        112   0 112 | Kim, K           113   0 113 | Kelly, S         111   0 111
  7 | Kelly, S         111   0 111 | Glessner, K      113   0 113 | Telles, T        109   0 109
- 8 | Gaffney, C       107   0 107 | Contreras, J     111   0 111 | Suarez, J        107   0 107
- 9 | Castillo, J      107   0 107 | Broyles, J       111   0 111 | Torres, J        106   0 106
-10 | Telles, T        104   0 104 | Kelly, S         111   0 111 | Castillo, J      106   0 106
+ 8 | Castillo, J      107   0 107 | Kelly, S         111   0 111 | Suarez, J        107   0 107
+ 9 | Gaffney, C       107   0 107 | Castillo, J      111   0 111 | Castillo, J      106   0 106
+10 | Telles, T        104   0 104 | Contreras, J     111   0 111 | Torres, J        106   0 106
 
 --- Trade Values ---
  C Ramiro Urrutia            34|  C : 126       3  59  20 : 208 |    :                         :   0 |  -2 | 206 | 61------ |    *     $9.98Mx3 | $25.43M:$35.71M |  p166 | Houston Astros       | ****^
