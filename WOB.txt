@@ -36,7 +36,7 @@ Features: Contact, Gap, Power, Eye, Avoid K's, Running Speed
 -- Hits
 Selected: LinearScores: [(0.24876628025552536, RandomForest(...)), (0.36551809784557454, Isotonic(...)), (0.32296626680914275, Huber(...)), (0.3664109371242783, Linear(...))]Best Parameters: {'selection__k': 6}Feature Scores: [47. 38. 21. 16. 21.  1.]Coefficients: [ 0.00239631  0.00236558 -0.00017422 -0.00013488 -0.00011507 -0.00060989]Intercept: 0.010249310269867501Feature Mask: [ True  True  True  True  True  True]
 -- Doubles
-Selected: RandomForestScores: [(0.21019084896386442, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.2566497687762736, Huber(...)), (-0.1127711560582501, Linear(...))]Best Parameters: {'regressor__max_depth': 6, 'regressor__n_estimators': 28, 'selection__k': 5}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.213]
+Selected: RandomForestScores: [(0.21019084896386442, RandomForest(...)), (0.09564393873342109, Isotonic(...)), (-0.2566497687762736, Huber(...)), (-0.1127711560582501, Linear(...))]Best Parameters: {'selection__k': 5, 'regressor__max_depth': 6, 'regressor__n_estimators': 28}Feature Scores: [19. 17. 12. 16. 21.  0.]Feature Mask: [ True  True  True  True  True False]Feature Importances: [0.352 0.207 0.058 0.171 0.213]
 -- Triples
 Selected: HuberScores: [(-0.030503885676717617, RandomForest(...)), (-0.09262141551990737, Isotonic(...)), (0.19792756029746617, Huber(...)), (0.1447034433282871, Linear(...))]Best Parameters: {'selection__k': 3}Feature Scores: [10. 25.  7.  5. 12. 25.]Coefficients: [ 0.01888949 -0.00221651  0.01456912]Intercept: -0.00842731597360965Feature Mask: [False  True False False  True  True]
 -- HomeRuns
@@ -44,7 +44,7 @@ Selected: HuberScores: [(0.4544653241594167, RandomForest(...)), (0.414723966607
 -- Walks
 Selected: HuberScores: [(0.2965848165588099, RandomForest(...)), (0.2876467431530662, Isotonic(...)), (0.34314864222151914, Huber(...)), (0.33722825157932723, Linear(...))]Best Parameters: {'selection__k': 1}Feature Scores: [28. 15. 17. 44. 28.  3.]Coefficients: [0.11215226]Intercept: 0.014046844013247671Feature Mask: [False False False  True False False]
 -- Ks
-Selected: RandomForestScores: [(0.32201031159391047, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581771073804845, Huber(...)), (0.2779807690718938, Linear(...))]Best Parameters: {'regressor__n_estimators': 2, 'regressor__max_depth': 49, 'selection__k': 3}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
+Selected: RandomForestScores: [(0.32201031159391047, RandomForest(...)), (0.2712793894748448, Isotonic(...)), (0.2581771073804845, Huber(...)), (0.2779807690718938, Linear(...))]Best Parameters: {'regressor__max_depth': 49, 'selection__k': 3, 'regressor__n_estimators': 2}Feature Scores: [42. 49. 22. 20. 31.  3.]Feature Mask: [ True  True False False  True False]Feature Importances: [0.02  0.713 0.267]
 
            Hits | 0.062
         Doubles | 0.029
@@ -55,7 +55,7 @@ Features: Stuff, Control, Movement, Groundball Pct., Endurance
 -- Hits
 Selected: HuberScores: [(0.10181317130278589, RandomForest(...)), (-0.07617912771472217, Isotonic(...)), (0.39825277895914457, Huber(...)), (0.36435909132057476, Linear(...))]Best Parameters: {'selection__k': 2}Feature Scores: [23.  3. 15.  1.  1.]Coefficients: [-0.09596465 -0.01680701]Intercept: 0.33165711136053394Feature Mask: [ True False  True False False]
 -- Doubles
-Selected: RandomForestScores: [(0.1160914622667973, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267453220329198, Huber(...)), (-0.22004945297944242, Linear(...))]Best Parameters: {'selection__k': 2, 'regressor__max_depth': 15, 'regressor__n_estimators': 72}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.502 0.498]
+Selected: RandomForestScores: [(0.1160914622667973, RandomForest(...)), (-0.07811932450371399, Isotonic(...)), (-0.12267453220329198, Huber(...)), (-0.22004945297944242, Linear(...))]Best Parameters: {'regressor__max_depth': 15, 'selection__k': 2, 'regressor__n_estimators': 72}Feature Scores: [8. 5. 7. 1. 0.]Feature Mask: [ True False  True False False]Feature Importances: [0.502 0.498]
 -- HomeRuns
 Selected: IsotonicScores: [(0.0007258851512383554, RandomForest(...)), (-0.03627724222491535, Isotonic(...)), (-0.22773757248849322, Huber(...)), (-0.29871469869793166, Linear(...))]Best Parameters: {'regressor__increasing': True}Feature Scores: [1. 2. 4. 1. 0.]Feature Mask: [False False  True False False]
 -- Walks
@@ -168,13 +168,13 @@ Balance:32/18 = 1.778 (ideal: 1.273)
  AAA -> ML   SP Hector Colon
  AAA -> AA   3B Jamey Escobar
  AAA -> AA   1B Carlos Salerno
-  AA -> AAA  SP Eric Trautman
   AA -> AAA  RF John Broyles
-   A -> AA   2B Zack Davis
-   A -> AA   SP Matthew Spengler
+  AA -> AAA  SP Eric Trautman
    A -> AA   MR Joshua Blood
-  DL -> AAA  LF Juan Torres
+   A -> AA   SP Matthew Spengler
+   A -> AA   2B Zack Davis
   DL -> AAA  1B James Burford
+  DL -> AAA  LF Juan Torres
   DL -> AAA  SS Arturo Llorent
 
 SP
@@ -188,12 +188,12 @@ LR
 Wayne Milsap
 
 MR
-Milton Johnston
+Wayne Balcom
 Jon Santoyo
 
 SU
 Michael Lamas
-Wayne Balcom
+Milton Johnston
 
 CL
 Manuel Luna
@@ -359,9 +359,9 @@ Contact, Gap, Power, Eye, Avoid K's, Running Speed
 2B Manuel Mercado            22 | 2B :  34       1 :  35 | 2B :  34       1 :  35 |  +0 |                    :                    | ++
 LF Derrick Shisler           23 | DH :  67       0 :  67 | DH :  67       0 :  67 |  +0 |              +1    :              +1    | ++
 RF Yurihiko Koan             23 | DH :  88       0 :  88 | DH :  88       0 :  88 |  +0 |                    :                    | ++
-SS Kenneth Kim               24 | SS : 102      14 : 116 | SS : 102      14 : 116 |  +0 |                    :                    | **
 LF Paul Borrero              24 | LF :  84       5 :  89 | LF :  84       5 :  89 |  +0 |                    :                    | ++-
 RF Joseph Sherman            24 | DH :  48       0 :  48 | DH :  48       0 :  48 |  +0 |                    :                    | ++
+SS Kenneth Kim               24 | SS : 102      14 : 116 | SS : 102      14 : 116 |  +0 |                    :                    | **
 2B Zack Davis                25 | SS :  81       6 :  87 | SS :  81       6 :  87 |  +0 |                    :                    | +
 RF Keith Glessner            26 | RF :  91       4 :  95 | RF :  91       4 :  95 |  +0 |                    :                    | *
 3B Dominick Hellwig          26 | 3B :  82       2 :  84 | 3B :  82       2 :  84 |  +0 |                    :                    | *
@@ -373,17 +373,17 @@ LF Juan Torres               30 | LF : 103       4 : 107 | LF : 103       4 : 10
 1B Carlos Salerno            31 | 1B :  94       3 :  97 | 1B :  94       3 :  97 |  +0 |                    :                    | *
 RF Oscar Lopez               33 | RF :  86       7 :  93 | RF :  86       7 :  93 |  +0 |                    :                    | **
 1B James Burford             33 | 1B : 102       2 : 104 | 1B : 102       2 : 104 |  +0 |                    :                    | **^
+ C Ramiro Urrutia            34 |  C : 126       3 : 129 |  C : 126       3 : 129 |  +0 |                    :                    | ****^
 RF Timothy Campbell          34 | RF : 115       1 : 116 | RF : 115       1 : 116 |  +0 |                    :                    | ***
 RF Jose Contreras            34 | DH :  92       0 :  92 | DH :  92       0 :  92 |  +0 |                    :                    | **
- C Ramiro Urrutia            34 |  C : 126       3 : 129 |  C : 126       3 : 129 |  +0 |                    :                    | ****^
 RF Tony Telles               35 | LF : 104       3 : 107 | LF : 104       3 : 107 |  +0 |                    :                    | **^
 SS Stephen Hipple            36 | SS : 124       9 : 133 | SS : 124       9 : 133 |  +0 |                    :                    | ****^
 RF Abraham Tetreault         36 | 1B : 114       1 : 115 | 1B : 114       1 : 115 |  +0 |                    :                    | ***
 
 Pitchers
 Stuff, Control, Movement, Groundball Pct., Endurance
-SP Jose Bolivar              18 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | ++
 SP Tony Ramirez              18 | SP :      47     :  47 | SP :      47     :  47 |  +0 |                 :                 | ++
+SP Jose Bolivar              18 | SP :      55     :  55 | SP :      55     :  55 |  +0 |                 :                 | ++
 MR Joshua Blood              21 | MR :      61     :  61 | MR :      61     :  61 |  +0 |                 :                 | +++
 SP Hector Colon              25 | SP :      87     :  87 | SP :      87     :  87 |  +0 |                 :                 | ++++-
 SP Brett Dennis              26 | SP :      85     :  85 | SP :      85     :  85 |  +0 |                 :                 | **^
@@ -391,8 +391,8 @@ SP Matthew Spengler          29 | SP :      68     :  68 | SP :      68     :  6
 SP Eric Trautman             31 | SP :      77     :  77 | SP :      77     :  77 |  +0 |                 :                 | **
 MR Serafin Planas            31 | MR :      80     :  80 | MR :      80     :  80 |  +0 |                 :                 | **^
 SP Jacob Raymond             32 | SP :     117     : 117 | SP :     117     : 117 |  +0 |                 :                 | ***^
-MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 MR Wayne Balcom              33 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ****^
+MR Jon Santoyo               33 | MR :      83     :  83 | MR :      83     :  83 |  +0 |                 :                 | *^
 SP Monte Gillen              34 | SP :      96     :  96 | SP :      96     :  96 |  +0 |                 :                 | **^
 MR Milton Johnston           34 | MR :      90     :  90 | MR :      90     :  90 |  +0 |                 :                 | ***
 SP Wayne Milsap              35 | SP :      86     :  86 | SP :      86     :  86 |  +0 |                 :                 | *^
@@ -1172,7 +1172,7 @@ SS Joel Diz                  29| 3B : 121       2  26     : 150 |    :          
 1B Ed Wright                 25| 3B : 106       8  17     : 130 | 3B : 109       8   2  20     : 139 |   6 | 145 | -7373--- |    *     $2.81M a |  $6.19M: $8.62M |   p71 | New York Mets        | **^
 LF Zachary Gleeson           27| CF : 117       1  15     : 133 | CF : 113       1  11  14     : 139 |   6 | 145 | -2---523 |    *     $1.96M a |  $5.46M: $7.61M |  p339 | New York Mets        | **^
 RF Morris Auerbach           24| CF :  94      12   4     : 110 | CF : 107      12  -3  20     : 135 |   6 | 141 | -2---768 |    *      $550k a |  $1.46M: $2.03M |  p271 | New York Mets        | ++++
-2B Victor Vanhouten          26| 2B : 106      11  13     : 130 | 2B : 106      11   1  17     : 134 |   6 | 140 | -3832--- |    *     $1.96M a |  $4.74M: $6.59M |   p54 | New York Mets        | **^
+2B Victor Vanhouten          26| 2B : 106      10  13     : 130 | 2B : 106      10   1  17     : 134 |   6 | 140 | -3832--- |    *     $1.96M a |  $4.74M: $6.59M |   p54 | New York Mets        | **^
 1B Gregory Wiebe             21| 1B :  80       1 -23     :  58 | 1B : 107       1  16   8     : 132 |   6 | 138 | -3---3-1 |   1  #            |        :        |  p643 | New York Mets        | ++++
 MR Robert Green              26| MR :     107      23   1 : 131 | MR :     106       7  15     : 129 |   6 | 137 |          |    *     $2.99M a |  $8.74M:$12.17M |  p487 | New York Mets        | ***
 CF Henry Hausman             30| CF : 100      17  15     : 132 |    :                         :   0 |   3 | 135 | -3---983 |    *+     $2.4Mx3 |  $5.46M: $7.61M |  p105 | New York Mets        | **^
@@ -1551,7 +1551,7 @@ SP Tony Ramirez              18| MR :      43     -32     :  11 | SP :      63  
 
 American
 American ------------+
-Pittsburgh Pirates   | 101.2 102.1 103.3 | 101.7 101.0 102.7 |  86- 76 0.529 |   0-  0 0.500 |  86- 76 0.531 ( 3) 
+Pittsburgh Pirates   | 101.2 102.1 103.3 | 101.7 101.0 102.7 |  86- 76 0.529 |   0-  0 0.500 |  86- 76 0.531 ( 4) 
 Toronto Blue Jays    | 100.2 101.0 101.2 | 101.5 102.5 103.9 |  85- 77 0.525 |   0-  0 0.500 |  85- 77 0.525 ( 5) 
 New York Mets        |  98.4  97.1  95.4 | 103.8 105.1 108.7 |  84- 78 0.518 |   0-  0 0.500 |  84- 78 0.519 ( 6) 
 Oakland A's          | 102.4 101.4 103.7 |  96.9  94.5  91.1 |  76- 86 0.472 |   0-  0 0.500 |  76- 86 0.469 ( 9) 
@@ -1562,7 +1562,7 @@ National
 National ------------+
 Houston Astros       | 103.6 101.7 105.3 | 108.6 109.6 117.2 |  98- 64 0.604 |   0-  0 0.500 |  98- 64 0.605 ( 1) 
 Washington Nationals | 106.2 106.1 111.9 |  98.3  98.2  96.5 |  87- 75 0.538 |   0-  0 0.500 |  87- 75 0.537 ( 2) 
-Baltimore Orioles    | 102.4 101.6 104.0 | 100.5 101.6 102.0 |  86- 76 0.530 |   0-  0 0.500 |  86- 76 0.531 ( 4) 
+Baltimore Orioles    | 102.4 101.6 104.0 | 100.5 101.6 102.0 |  86- 76 0.530 |   0-  0 0.500 |  86- 76 0.531 ( 3) 
 New York Yankees     |  98.1  96.9  94.9 | 102.9 104.8 107.5 |  83- 79 0.510 |   0-  0 0.500 |  83- 79 0.512 ( 7) 
 Atlanta Braves       |  99.9  99.3  99.2 |  98.1  98.4  96.4 |  77- 85 0.478 |   0-  0 0.500 |  77- 85 0.475 ( 8) 
 Minnesota Twins      |  96.3  99.7  96.0 |  97.5  97.9  95.4 |  74- 88 0.456 |   0-  0 0.500 |  74- 88 0.457 (10) 
